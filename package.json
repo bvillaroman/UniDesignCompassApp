@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Beautycall",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "An app that lets you schedule appointments with your barber/hair dresser",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Abraham Bruce Villaroman", "Kelly Lu", "Jeter Gutierrez", "Ronny Diaz", "Ramon Petgrave",
   "dependencies": {
     "gatsby": "^2.1.24",
     "gatsby-image": "^2.0.31",
@@ -13,10 +13,12 @@
     "gatsby-plugin-sharp": "^2.0.25",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-sharp": "^2.1.15",
+    "pngquant-bin": "^5.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "sharp": "^0.21.3"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
@@ -35,7 +37,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/bvillaroman/BarbershopAppointmentApp"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
