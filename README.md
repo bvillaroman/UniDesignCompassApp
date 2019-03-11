@@ -1,11 +1,11 @@
 ## Team Name: 
-    Barbershop Appointment (Jagged?? Like a jagged razor?)
+    UNISEX
 ## Scrum Master: 
     Abraham Villaroman
 ## Product Owner: 
     Ronuel Diaz
 ## Others: 
-    Ronuel Diaz, Abraham Bruce Villaroman, Jeter Gutierrez, Kelly Lu, Ramon Petgrave
+    Jeter Gutierrez, Kelly Lu, Ramon Petgrave
 ## Team Master Repo: 
     https://github.com/bvillaroman/BarbershopAppointmentApp/tree/master 
 
