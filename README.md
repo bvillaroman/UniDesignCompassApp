@@ -1,5 +1,5 @@
 ## Team Name: 
-    UNISEX
+    UniDesignCompass
 ## Scrum Master: 
     Abraham Villaroman
 ## Product Owner: 
