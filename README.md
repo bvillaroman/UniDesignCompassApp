@@ -7,8 +7,7 @@
 ## Others: 
     Jeter Gutierrez, Kelly Lu, Ramon Petgrave
 ## Team Master Repo: 
-    https://github.com/bvillaroman/BarbershopAppointmentApp/tree/master 
-
+    https://github.com/bvillaroman/UniDesignCompassApp
 
 # installation guide
 
