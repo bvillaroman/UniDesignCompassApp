@@ -1,24 +1,22 @@
 {
-  "name": "Beautycall",
+  "name": "UniDesignCompass",
   "private": true,
-  "description": "An app that lets you schedule appointments with your barber/hair dresser",
+  "description": " A tool for designers to record,track and visualize their progress within their design process",
   "version": "0.1.0",
-  "author": "Abraham Bruce Villaroman", "Kelly Lu", "Jeter Gutierrez", "Ronny Diaz", "Ramon Petgrave",
+  "author": "Abraham Bruce Villaroman, Kelly Lu, Jeter Gutierrez, Ronny Diaz ,Ramon Petgrave",
   "dependencies": {
-    "gatsby": "^2.1.24",
-    "gatsby-image": "^2.0.31",
-    "gatsby-plugin-manifest": "^2.0.22",
-    "gatsby-plugin-offline": "^2.0.24",
-    "gatsby-plugin-react-helmet": "^3.0.8",
-    "gatsby-plugin-sharp": "^2.0.25",
-    "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-transformer-sharp": "^2.1.15",
-    "pngquant-bin": "^5.0.2",
+    "gatsby": "^2.3.3",
+    "gatsby-image": "^2.0.35",
+    "gatsby-plugin-manifest": "^2.0.25",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-sharp": "^2.1.17",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^5.2.0",
-    "sharp": "^0.21.3"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
@@ -37,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bvillaroman/BarbershopAppointmentApp"
+    "url": "https://github.com/bvillaroman/UniDesignCompassApp"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
