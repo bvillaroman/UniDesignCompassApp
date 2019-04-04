@@ -18,7 +18,7 @@ class IndexPage extends React.Component {
   }
 
   loginHandler(){
-    this.setState({displaylogin:true});
+    this.setState({displaylogin:!this.state.displaylogin});
   }
 
   render() {
@@ -37,9 +37,19 @@ class IndexPage extends React.Component {
     }else{ 
       return(
         <div>
+          <nav className='navbarlist'>
+            <label className='listitem' onClick={this.loginHandler}>Home</label>
+            <label className='listitem' onClick=''>About Us</label>
+            <label className='listitem' onClick='' >Getting Started</label>
+            <label className='listitem' onClick=''>Login</label>
+          </nav>
+          <div>
+            <br/>
+            <br/>
           <Authenticator hide={[SignIn]} amplifyConfig={config}>
           <CustomSignIn/>
           </Authenticator>
+          </div>
         </div>
       )
     }
