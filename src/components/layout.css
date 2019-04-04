@@ -1,3 +1,17 @@
+.navbarlist{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.listitem{
+  float:left;
+  margin-left: 2em;
+  margin-right:2em;
+  color: white;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

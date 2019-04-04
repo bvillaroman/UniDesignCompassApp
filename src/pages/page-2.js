@@ -1,16 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import {SignIn} from "aws-amplify-react";
+import config from "../aws-exports";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { CustomSignIn } from "./CustomSignIn";
+import {Authenticator} from "aws-amplify-react/dist/Auth"
+class sec extends React.Component{
+  render(){
+    return(
+      <Authenticator hide={[SignIn]} amplifyConfig={config}>
+      <CustomSignIn/>
+      </Authenticator>
+    )
+  }
+}
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
-  </Layout>
-)
-
-export default SecondPage
+export default sec
