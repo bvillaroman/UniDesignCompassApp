@@ -1,12 +1,12 @@
 {
-    "identityPoolName": "cognito92ce8f68_identitypool_92ce8f68",
+    "identityPoolName": "cognitocf0e55cd_identitypool_cf0e55cd",
     "allowUnauthenticatedIdentities": false,
-    "lambdaLogPolicy": "cognito92ce8f68_lambda_log_policy",
-    "openIdLambdaRoleName": "cognito92ce8f68_openid_lambda_role",
-    "openIdRolePolicy": "cognito92ce8f68_openid_pass_role_policy",
-    "openIdLambdaIAMPolicy": "cognito92ce8f68_openid_lambda_iam_policy",
-    "openIdLogPolicy": "cognito92ce8f68_openid_lambda_log_policy",
-    "userPoolName": "cognito92ce8f68_userpool_92ce8f68",
+    "lambdaLogPolicy": "cognitocf0e55cd_lambda_log_policy",
+    "openIdLambdaRoleName": "cognitocf0e55cd_openid_lambda_role",
+    "openIdRolePolicy": "cognitocf0e55cd_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "cognitocf0e55cd_openid_lambda_iam_policy",
+    "openIdLogPolicy": "cognitocf0e55cd_openid_lambda_log_policy",
+    "userPoolName": "cognitocf0e55cd_userpool_cf0e55cd",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -14,9 +14,9 @@
     "mfaTypes": [
         "SMS Text Message"
     ],
-    "roleName": "cognito92ce8f68_sns-role",
-    "roleExternalId": "cognito92ce8f68_role_external_id",
-    "policyName": "cognito92ce8f68-sns-policy",
+    "roleName": "cognitocf0e55cd_sns-role",
+    "roleExternalId": "cognitocf0e55cd_role_external_id",
+    "policyName": "cognitocf0e55cd-sns-policy",
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
@@ -30,11 +30,10 @@
         "Requires Symbols"
     ],
     "requiredAttributes": [
-        "birthdate",
         "email",
         "name"
     ],
-    "userpoolClientName": "cognito92ce8f68_app_client",
+    "userpoolClientName": "cognitocf0e55cd_app_client",
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
@@ -43,15 +42,15 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "mfaLambdaRole": "cognito92ce8f68_totp_lambda_role",
-    "mfaLambdaLogPolicy": "cognito92ce8f68_totp_lambda_log_policy",
-    "mfaPassRolePolicy": "cognito92ce8f68_totp_pass_role_policy",
-    "mfaLambdaIAMPolicy": "cognito92ce8f68_totp_lambda_iam_policy",
-    "userpoolClientLambdaRole": "cognito92ce8f68_userpoolclient_lambda_role",
-    "userpoolClientLogPolicy": "cognito92ce8f68_userpoolclient_lambda_log_policy",
-    "userpoolClientLambdaPolicy": "cognito92ce8f68_userpoolclient_lambda_iam_policy",
+    "mfaLambdaRole": "cognitocf0e55cd_totp_lambda_role",
+    "mfaLambdaLogPolicy": "cognitocf0e55cd_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "cognitocf0e55cd_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "cognitocf0e55cd_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "cognitocf0e55cd_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "cognitocf0e55cd_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "cognitocf0e55cd_userpoolclient_lambda_iam_policy",
     "userpoolClientSetAttributes": false,
-    "resourceName": "cognito92ce8f68",
+    "resourceName": "cognitocf0e55cd",
     "authSelections": "identityPoolAndUserPool",
     "authRoleName": {
         "Ref": "AuthRoleName"

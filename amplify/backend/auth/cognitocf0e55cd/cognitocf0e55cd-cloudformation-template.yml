@@ -172,11 +172,6 @@ Resources:
       Schema: 
         
         -
-          Name: birthdate
-          Required: true
-          Mutable: true
-        
-        -
           Name: email
           Required: true
           Mutable: true
@@ -212,7 +207,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: cognito92ce8f68_app_clientWeb
+      ClientName: cognitocf0e55cd_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -344,7 +339,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'cognito92ce8f68_identitypool_92ce8f68', !Join ['',['cognito92ce8f68_identitypool_92ce8f68', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'cognitocf0e55cd_identitypool_cf0e55cd', !Join ['',['cognitocf0e55cd_identitypool_cf0e55cd', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient
