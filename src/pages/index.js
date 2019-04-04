@@ -31,7 +31,9 @@ class IndexPage extends React.Component {
             <label className='listitem' onClick='' >Getting Started</label>
             <label className='listitem' onClick={this.loginHandler}>Login</label>
           </nav>
-          <img src={inter}></img>
+          <div>
+          <img src={inter} className='img-fluid w-100' ></img>
+          </div>
         </div>
       );
     }else{ 
@@ -45,7 +47,7 @@ class IndexPage extends React.Component {
           </nav>
           <div>
             <br/>
-            <br/>
+            <br />
           <Authenticator hide={[SignIn]} amplifyConfig={config}>
           <CustomSignIn/>
           </Authenticator>
