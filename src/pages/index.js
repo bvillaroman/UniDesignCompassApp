@@ -1,21 +1,48 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import Amplify from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react";
+import Navbar from "../components/Navbar";
+import { Redirect } from "@reach/router";
+import { CustomSignIn } from "./CustomSignIn";
+import {Authenticator} from "aws-amplify-react/dist/Auth"
+import {SignIn} from "aws-amplify-react";
+import config from "../aws-exports";
+import inter from "../images/interesting.jpg";
+class IndexPage extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      displaylogin: false,
+    }
+    this.loginHandler = this.loginHandler.bind(this);
+  }
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+  loginHandler(){
+    this.setState({displaylogin:true});
+  }
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
-export default IndexPage
+  render() {
+    if (this.state.displaylogin == false) {
+      return (
+        <div>
+          <nav className='navbarlist'>
+            <label className='listitem' onClick=''>Home</label>
+            <label className='listitem' onClick=''>About Us</label>
+            <label className='listitem' onClick='' >Getting Started</label>
+            <label className='listitem' onClick={this.loginHandler}>Login</label>
+          </nav>
+          <img src={inter}></img>
+        </div>
+      );
+    }else{ 
+      return(
+        <div>
+          <Authenticator hide={[SignIn]} amplifyConfig={config}>
+          <CustomSignIn/>
+          </Authenticator>
+        </div>
+      )
+    }
+  }
+}
+export default IndexPage;
