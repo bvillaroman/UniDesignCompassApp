@@ -1,5 +1,8 @@
 import React from "react";
 import { SignIn } from "aws-amplify-react";
+// import { connect } from 'react-redux';
+// import {fetchUserInfo} from '../state/actions'
+
 export class CustomSignIn extends SignIn {
   constructor(props) {
     super(props);
