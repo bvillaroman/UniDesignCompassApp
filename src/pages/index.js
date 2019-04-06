@@ -22,25 +22,28 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    console.log(this.state)
-    if (this.state.isAuthenticated ==false) {
-      if (this.state.displaylogin == false) {
-        return (
-          <div>
-            <nav className='navbarlist'>
-              <label className='listitem' onClick=''>Home</label>
-              <label className='listitem' onClick=''>About Us</label>
-              <label className='listitem' onClick='' >Getting Started</label>
-              <label className='listitem' onClick={this.loginHandler}>Login</label>
-            </nav>
-            <div>
-              <img src={inter} className='img-fluid w-100' ></img>
-            </div>
-          </div>
-        );
-      } else {
-        return (
-          <div>
+    // if (this.state.isAuthenticated ==false) {
+    //   return (
+    //       <div>
+    //         <nav className='navbarlist'>
+    //           <label className='listitem' onClick=''>Home</label>
+    //           <label className='listitem' onClick=''>About Us</label>
+    //           <label className='listitem' onClick='' >Getting Started</label>
+    //           <label className='listitem' onClick={this.loginHandler}>Login</label>
+    //         </nav>
+    //         <div>
+    //           <img src={inter} className='img-fluid w-100' ></img>
+    //         </div>
+    //       </div>
+    //     );
+    // }
+    // else {
+      return (
+        <div>
+          {/* PASS IN PROPS TO HEADER TO DETERMINE LOGIN/LOGOUT STATUS OF USER*/}
+          <Header handler={this.handleAuth}/>
+          <img src={inter}></img>
+          {/* <div>
             <nav className='navbarlist'>
               <label className='listitem' onClick={this.loginHandler}>Home</label>
               <label className='listitem' onClick=''>About Us</label>
@@ -50,33 +53,10 @@ class IndexPage extends React.Component {
             <div>
               <Login handler={this.handleAuth} />
             </div>
-          </div>
-        )
-      }
-    }
-    else {
-      return (
-        <div>
-          {/* PASS IN PROPS TO HEADER TO DETERMINE LOGIN/LOGOUT STATUS OF USER*/}
-          <Header />
-          <img src={inter}></img>
+          </div> */}
         </div>
       );
-    }else{
-      return(
-        <div>
-          <nav className='navbarlist'>
-            <label className='listitem' onClick={this.loginHandler}>Home</label>
-            <label className='listitem' onClick=''>About Us</label>
-            <label className='listitem' onClick='' >Getting Started</label>
-            <label className='listitem' onClick=''>Login</label>
-          </nav>
-          <div>
-            <img src={inter} className='img-fluid w-100' ></img>
-          </div>
-        </div>
-      )
-    }
+    // }
   }
 }
 export default IndexPage;
