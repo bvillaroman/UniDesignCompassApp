@@ -5,17 +5,18 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
 import { Auth } from "aws-amplify";
 import config from "../aws-exports";
+import Layout from "../components/layout"
 import "../components/bootstrap.css"
+
 Auth.configure(config);
 
- class Login extends Component {
+class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
             password: ""
         };
-
     }
     
     handleChange = event => {
@@ -37,6 +38,7 @@ Auth.configure(config);
 
     render() {
         return (
+            <Layout>
             <div className="Login">
                 <form onSubmit={this.handleSubmit}>
                     <FormGroup controlId="email" bsSize="large">
@@ -62,9 +64,10 @@ Auth.configure(config);
                         type="submit"
                     >
                         Login
-          </Button>
+                    </Button>
                 </form>
             </div>
+        </Layout>
         )
     }
   }
