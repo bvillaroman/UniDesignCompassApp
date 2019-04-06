@@ -1,6 +1,5 @@
 import React from "react";
 import HomePage from "./HomePage"
-
 class IndexPage extends React.Component {
   constructor(props, context) {
     super(props, context);
