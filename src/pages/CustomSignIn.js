@@ -1,81 +1,72 @@
-import React from "react";
-import { SignIn } from "aws-amplify-react";
-// import { connect } from 'react-redux';
-// import {fetchUserInfo} from '../state/actions'
+import React, { Component } from "react";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
+import FormGroup from "react-bootstrap/FormGroup";
+import ControlLabel from "react-bootstrap/FormLabel";
+import { Auth } from "aws-amplify";
+import config from "../aws-exports";
+import "../components/bootstrap.css"
+Auth.configure(config);
 
-export class CustomSignIn extends SignIn {
-  constructor(props) {
-    super(props);
-    this._validAuthStates = ["signIn", "signedOut", "signedUp"];
+ class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "",
+            password: ""
+        };
+
+    }
+    
+    handleChange = event => {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
+
+    handleSubmit = async event => {
+        event.preventDefault();
+        try {
+            await Auth.signIn(this.state.email, this.state.password);
+            this.props.handler();
+            alert("Logged in");
+        }catch(e){
+            alert(e);
+        }
+    }
+
+    render() {
+        return (
+            <div className="Login">
+                <form onSubmit={this.handleSubmit}>
+                    <FormGroup controlId="email" bsSize="large">
+                        <ControlLabel>Email</ControlLabel>
+                        <FormControl
+                            autoFocus
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="password" bsSize="large">
+                        <ControlLabel>Password</ControlLabel>
+                        <FormControl
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            type="password"
+                        />
+                    </FormGroup>
+                    <Button
+                        block
+                        bsSize="large"
+                        type="submit"
+                    >
+                        Login
+          </Button>
+                </form>
+            </div>
+        )
+    }
   }
 
-  showComponent(theme) {
-    return (
-      <div className="container">
-        <form className="form-signin">
-          <div className="mb-4">
-            <label
-              className="sr-only"
-              htmlFor="username"
-            >
-              Username
-            </label>
-            <input
-              className="form-control"
-              id="username"
-              key="username"
-              name="username"
-              onChange={this.handleInputChange}
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-          <div className="mb-6">
-            <label
-              className="sr-only"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <input
-              className="form-control"
-              id="password"
-              key="password"
-              name="password"
-              onChange={this.handleInputChange}
-              type="password"
-              placeholder="******************"
-            />
-            <p className="text-grey-dark text-xs">
-              Forgot your password?{" "}
-              <a
-                className="text-indigo cursor-pointer hover:text-indigo-darker"
-                onClick={() => super.changeState("forgotPassword")}
-              >
-                Reset Password
-              </a>
-            </p>
-          </div>
-          <div className="flex items-center justify-between">
-            <button
-              className="btn-primary"
-              type="button"
-              onClick={() => super.signIn()}
-            >
-              Login
-            </button>
-            <p className="text-grey-dark text-xs">
-              No Account?{" "}
-              <a
-                className="text-indigo cursor-pointer hover:text-indigo-darker"
-                onClick={() => super.changeState("signUp")}
-              >
-                Create account
-              </a>
-            </p>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+  export default Login;
