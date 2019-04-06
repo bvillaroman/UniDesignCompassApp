@@ -23,6 +23,7 @@ class IndexPage extends React.Component {
     if (this.state.displaylogin === false) {
       return (
         <div>
+          {/* PASS IN PROPS TO HEADER TO DETERMINE LOGIN/LOGOUT STATUS OF USER*/}
           <Header />
           <img src={inter}></img>
         { /*

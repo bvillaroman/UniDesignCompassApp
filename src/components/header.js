@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 // import PropTypes from "prop-types"
 import React from "react"
+import { Navbar, Nav } from 'react-bootstrap';
 
 class Header extends React.Component {
   // constructor(props) {
@@ -10,24 +11,23 @@ class Header extends React.Component {
   render () {
     return (
       <div>
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-          {/* add <a className="navbar-brand"><img src="../.."></a>* when we have a logo */}
-          <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapse_target" aria-controls="collapse_target" aria-expanded="false" aria-label="Toggle naviagation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <span className="navbar-text">Universal Design Compass</span>
-          <div className="collapse navbar-collapse" id="collapse_target">
-            <ul className="navbar-nav">
-              <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
-              <li className="nav-item"><Link to="/" className="nav-link">About Us</Link></li>
-              <li className="nav-item"><Link to="/" className="nav-link">Contact</Link></li>
-              <li className="nav-item"><Link to="/" className="nav-link">Create</Link></li>
-              <li className="nav-item"><Link to="/" className="nav-link">LogIn</Link></li>
-            </ul>
-          </div>
-        </nav>
+        <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
+          <Navbar.Brand>Universal Design Compass</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              {/* NEED TO REPLACE LINKS ONCE READY!! */}
+              <Nav.Link><Link to="/">Home</Link></Nav.Link>
+              <Nav.Link><Link to="/">About Us</Link></Nav.Link>
+              <Nav.Link><Link to="/">Contact</Link></Nav.Link>
+              <Nav.Link><Link to="/">Create</Link></Nav.Link>
+              <Nav.Link><Link to="/">Login</Link></Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </div>
     );
   }
 }
+
 export default Header;
