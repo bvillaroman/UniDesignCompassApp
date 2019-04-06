@@ -4,7 +4,7 @@ import {Authenticator} from "aws-amplify-react/dist/Auth"
 import {SignIn} from "aws-amplify-react";
 import config from "../aws-exports";
 import inter from "../images/interesting.jpg";
-
+import Header from '../components/header';
 
 class IndexPage extends React.Component {
   constructor(props, context) {
@@ -23,6 +23,11 @@ class IndexPage extends React.Component {
     if (this.state.displaylogin === false) {
       return (
         <div>
+          {/* PASS IN PROPS TO HEADER TO DETERMINE LOGIN/LOGOUT STATUS OF USER*/}
+          <Header />
+          <img src={inter}></img>
+        { /*
+        <div>
           <nav className='navbarlist'>
             <label className='listitem' onClick=''>Home</label>
             <label className='listitem' onClick=''>About Us</label>
@@ -31,8 +36,10 @@ class IndexPage extends React.Component {
           </nav>
           <img src={inter}></img>
         </div>
+        */ }
+      </div>
       );
-    }else{ 
+    }else{
       return(
         <div>
           <nav className='navbarlist'>
