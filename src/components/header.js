@@ -1,42 +1,33 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
+import { Navbar, Nav } from 'react-bootstrap';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+class Header extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+  // NEED TO OBTAIN PROPS FROM PARENT TO IDENTIFY WHETHER TO SHOW SIGN IN OR LOG OUT
+  render () {
+    return (
+      <div>
+        <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
+          <Navbar.Brand>Universal Design Compass</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              {/* NEED TO REPLACE LINKS ONCE READY!! */}
+              <Nav.Link><Link to="/">Home</Link></Nav.Link>
+              <Nav.Link><Link to="/">About Us</Link></Nav.Link>
+              <Nav.Link><Link to="/">Contact</Link></Nav.Link>
+              <Nav.Link><Link to="/">Create</Link></Nav.Link>
+              <Nav.Link><Link to="/">Login</Link></Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

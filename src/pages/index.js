@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "./CustomSignIn";
 import inter from "../images/interesting.jpg";
+import Header from '../components/header';
 
 class IndexPage extends React.Component {
   constructor(props, context) {
@@ -56,11 +57,19 @@ class IndexPage extends React.Component {
     else {
       return (
         <div>
+          {/* PASS IN PROPS TO HEADER TO DETERMINE LOGIN/LOGOUT STATUS OF USER*/}
+          <Header />
+          <img src={inter}></img>
+        </div>
+      );
+    }else{
+      return(
+        <div>
           <nav className='navbarlist'>
-            <label className='listitem' onClick=''>Home</label>
+            <label className='listitem' onClick={this.loginHandler}>Home</label>
             <label className='listitem' onClick=''>About Us</label>
             <label className='listitem' onClick='' >Getting Started</label>
-            <label className='listitem' onClick=''>Logout</label>
+            <label className='listitem' onClick=''>Login</label>
           </nav>
           <div>
             <img src={inter} className='img-fluid w-100' ></img>
