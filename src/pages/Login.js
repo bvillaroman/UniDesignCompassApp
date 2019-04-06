@@ -5,8 +5,9 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import {connect} from 'react-redux';
-import {authenticateUser} from '../state/actions';
+import { connect } from 'react-redux';
+import { authenticateUser } from '../state/actions';
+import { Redirect } from "@reach/router";
 
 
 class Login extends Component {
@@ -18,22 +19,20 @@ class Login extends Component {
         };
 
     }
-    
+
     handleChange = event => {
         this.setState({
             [event.target.id]: event.target.value
         });
     }
-    handleAuth = (e) =>{
+    handleAuth = (e) => {
         e.preventDefault();
         console.log('working');
-        this.props.authenticateUser(this.state.email,this.state.password);
+        this.props.authenticateUser(this.state.email, this.state.password);
     };
 
     render() {
-        console.log(this.props.isAuthenticated)
-        return (
-            <Layout>
+        const isLoggedIn = (this.props.isAuthenticated) ? <Redirect to='/' /> : <Layout>
             <div className="Login">
                 <form onSubmit={this.handleAuth}>
                     <FormGroup controlId="email" bsSize="large">
@@ -59,18 +58,22 @@ class Login extends Component {
                         type="submit"
                     >
                         Login
-                    </Button>
+                </Button>
                 </form>
             </div>
         </Layout>
+        return (
+            isLoggedIn
         )
     }
-  }
+}
 
-  function mapStateToProps (state){
-    console.log(state);
-      return{
-          isAuthenticated:state.isAuthenticated,
-      }
-  }
-  export default connect(mapStateToProps,{authenticateUser})(Login);
+function mapStateToProps(state) {
+    return {
+        isAuthenticated: state.Reducer.isAuthenticated,
+    }
+}
+const mapDispatchToProps = dispatch => ({
+    authenticateUser: (username, password) => dispatch(authenticateUser("rdiaz001", "Holder1423!@#$"))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

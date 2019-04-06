@@ -1,27 +1,15 @@
 import React from "react";
 import HomePage from "./HomePage"
+import { Provider } from 'react-redux';
+import {store} from "../state/store";
 class IndexPage extends React.Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      displaylogin: false,
-      isAuthenticated: false
-    }
-    this.loginHandler = this.loginHandler.bind(this);
-    this.handleAuth = this.handleAuth.bind(this);
-  }
-
-  loginHandler() {
-    this.setState({ displaylogin: !this.state.displaylogin });
-  }
-  handleAuth(){
-    this.setState({isAuthenticated:true});
-  }
-
   render() {
+    console.log(store);
       return (
         <div>
+          <Provider store={store}>
           <HomePage />
+          </Provider>
         </div>
       );
   }

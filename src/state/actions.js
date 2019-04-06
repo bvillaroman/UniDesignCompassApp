@@ -8,10 +8,10 @@ export const fetchUserInfo = (orderID) => ({
   payload: orderID
 })
 
-export const authenticateUser =(username,password) => {
+export const authenticateUser =(username,password) => dispatch=> {
   const user = Auth.signIn(username,password);
   console.log('authing')
-  return dispatch =>({
+  dispatch({
     type: AUTH_USER,
     payload: true
   });
