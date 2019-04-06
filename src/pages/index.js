@@ -1,13 +1,11 @@
 import React from "react";
-import Amplify from "aws-amplify";
-import { withAuthenticator } from "aws-amplify-react";
-import Navbar from "../components/Navbar";
-import { Redirect } from "@reach/router";
 import { CustomSignIn } from "./CustomSignIn";
 import {Authenticator} from "aws-amplify-react/dist/Auth"
 import {SignIn} from "aws-amplify-react";
 import config from "../aws-exports";
 import inter from "../images/interesting.jpg";
+
+
 class IndexPage extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -22,7 +20,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    if (this.state.displaylogin == false) {
+    if (this.state.displaylogin === false) {
       return (
         <div>
           <nav className='navbarlist'>
