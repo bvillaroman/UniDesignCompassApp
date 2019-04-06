@@ -1,5 +1,6 @@
 import React from "react";
-import HomePage from "./HomePage"
+import inter from "../images/interesting.jpg";
+import Layout from '../components/layout';
 
 class IndexPage extends React.Component {
   constructor(props, context) {
@@ -21,9 +22,9 @@ class IndexPage extends React.Component {
 
   render() {
       return (
-        <div>
-          <HomePage />
-        </div>
+        <Layout>
+          <img alt={"inter"} src={inter}></img>
+        </Layout>
       );
   }
 }

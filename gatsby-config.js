@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Universal Design Compass`,
+    description: `A tool for designers to record,track and visualize their progress within their design process`,
+    author: `Abraham Bruce Villaroman, Kelly Lu, Jeter Gutierrez, Ronny Diaz ,Ramon Petgrave`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
