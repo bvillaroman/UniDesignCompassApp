@@ -39,37 +39,39 @@ class Login extends Component {
     render() {
         return (
             <Layout>
-            <div className="Login">
-                <form onSubmit={this.handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                        />
-                    </FormGroup>
-                    <Button
-                        block
-                        bsSize="large"
-                        type="submit"
-                    >
-                        Login
-                    </Button>
-                </form>
-            </div>
-        </Layout>
+                <div className='container'>
+                    <div className="Login">
+                        <form onSubmit={this.handleSubmit}>
+                            <FormGroup controlId="email" bsSize="large">
+                                <ControlLabel>Email</ControlLabel>
+                                <FormControl
+                                    autoFocus
+                                    type="text"
+                                    value={this.state.email}
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="password" bsSize="large">
+                                <ControlLabel>Password</ControlLabel>
+                                <FormControl
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                    type="password"
+                                />
+                            </FormGroup>
+                            <Button
+                                block
+                                bsSize="large"
+                                type="submit"
+                            >
+                                Login
+                            </Button>
+                        </form>
+                    </div>
+                </div>
+            </Layout>
         )
     }
-  }
+}
 
-  export default Login;
+export default Login;

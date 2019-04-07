@@ -14,6 +14,7 @@ const Header = (props) => (
         <Nav.Link><Link to="/">About Us</Link></Nav.Link>
         <Nav.Link><Link to="/">Contact</Link></Nav.Link>
         <Nav.Link><Link to="/">Create</Link></Nav.Link>
+        <Nav.Link><Link to="/Compass">Compass</Link></Nav.Link>
         <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
       </Nav>
     </Navbar.Collapse>
