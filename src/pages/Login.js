@@ -27,12 +27,12 @@ class Login extends Component {
     }
     handleAuth = (e) => {
         e.preventDefault();
-        console.log('working');
         this.props.authenticateUser(this.state.email, this.state.password);
     };
 
     render() {
         const isLoggedIn = (this.props.isAuthenticated) ? <Redirect to='/' /> : <Layout>
+            <div className='container'>
             <div className="Login">
                 <form onSubmit={this.handleAuth}>
                     <FormGroup controlId="email" bsSize="large">
@@ -60,6 +60,7 @@ class Login extends Component {
                         Login
                 </Button>
                 </form>
+            </div>
             </div>
         </Layout>
         return (

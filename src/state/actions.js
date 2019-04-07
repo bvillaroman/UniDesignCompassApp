@@ -10,7 +10,6 @@ export const fetchUserInfo = (orderID) => ({
 
 export const authenticateUser =(username,password) => dispatch=> {
   const user = Auth.signIn(username,password);
-  console.log('authing')
   dispatch({
     type: AUTH_USER,
     payload: true
