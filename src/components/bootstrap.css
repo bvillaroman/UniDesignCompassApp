@@ -100,7 +100,6 @@
 }
 
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3507,6 +3506,7 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  width: 8rem;
 }
 
 .nav-link {
@@ -3620,13 +3620,18 @@ tbody.collapse.show {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-left: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
 }
+.navbar-brand a {
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
 
-.navbar-brand:focus, .navbar-brand:hover {
+.navbar-brand a:focus, .navbar-brand a:hover {
   text-decoration: none;
 }
 
@@ -3638,11 +3643,22 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  width: 23rem;
+  justify-content: space-between;
+  margin-left: auto;
 }
 
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
+}
+
+.navbar-nav .nav-link a {
+  color: white
+}
+
+.navbar-nav .nav-link a:hover {
+  text-decoration: none;
 }
 
 .navbar-nav .dropdown-menu {

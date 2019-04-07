@@ -6,7 +6,7 @@ import NavBarStyles from '../styles/components.modules.css'
 
 const Header = (props) => (
   <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
-    <Navbar.Brand  variant="light"> <Link to="/"> {props.siteTitle}</Link> </Navbar.Brand>
+    <Navbar.Brand variant="light"> <Link to="/"> {props.siteTitle}</Link> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
