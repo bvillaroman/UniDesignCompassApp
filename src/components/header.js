@@ -6,7 +6,7 @@ import NavBarStyles from '../styles/components.modules.css'
 
 const Header = (props) => (
   <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
-    <Navbar.Brand  variant="light"> <Link to="/"> {props.siteTitle}</Link> </Navbar.Brand>
+    <Navbar.Brand variant="light"> <Link to="/"> {props.siteTitle}</Link> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
@@ -14,6 +14,7 @@ const Header = (props) => (
         <Nav.Link><Link to="/">About Us</Link></Nav.Link>
         <Nav.Link><Link to="/">Contact</Link></Nav.Link>
         <Nav.Link><Link to="/">Create</Link></Nav.Link>
+        <Nav.Link><Link to="/Compass">Compass</Link></Nav.Link>
         <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
       </Nav>
     </Navbar.Collapse>
