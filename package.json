@@ -16,6 +16,7 @@
     "gatsby-plugin-sharp": "^2.0.32",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-sharp": "^2.1.17",
+    "graphql": "^14.2.1",
     "npm-install-all": "^1.1.21",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
@@ -32,7 +33,12 @@
     "thunk": "0.0.1"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "babel-jest": "^24.7.1",
+    "babel-preset-gatsby": "^0.1.11",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.6"
   },
   "keywords": [
     "gatsby"
@@ -44,7 +50,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest"
   },
   "repository": {
     "type": "git",
