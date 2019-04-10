@@ -1,5 +1,5 @@
 import React from "react";
-import inter from "../images/interesting.jpg";
+import inter from "../images/home-image.jpg";
 import Layout from '../components/layout';
 
 class IndexPage extends React.Component {
