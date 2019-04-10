@@ -55,4 +55,4 @@ class IndexPage extends React.Component {
       );
   }
 }
-export default IndexPage;
+export default HomePage;

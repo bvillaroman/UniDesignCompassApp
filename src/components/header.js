@@ -21,8 +21,5 @@ const Header = (props) => (
   </Navbar>
 );
 
-export default Header;
 
-Header.propTypes = {
-  siteTitle : PropTypes.string,
-}
+export default Header;

@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
-import FormGroup from "react-bootstrap/FormGroup";
-import ControlLabel from "react-bootstrap/FormLabel";
-import { Auth } from "aws-amplify";
-import config from "../aws-exports";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-
+import { connect } from 'react-redux';
+import { authenticateUser } from '../state/actions';
+import { Auth } from "aws-amplify";
+import config from "../aws-exports";
+import NewPassword from "../components/newPassword";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
+import Verification from "../components/Verification";
+import { Redirect } from "@reach/router";
 Auth.configure(config);
 
 class Login extends Component {
@@ -15,63 +17,135 @@ class Login extends Component {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            repeat_pass: "",
+            phone: "",
+            username: "",
+            code: "",
+            user: [],
         };
-    }
-    
-    handleChange = event => {
-        this.setState({
-            [event.target.id]: event.target.value
-        });
+        this.handleAuth = this.handleAuth.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this._comp = null;
+        this.Log_state = "SignIn";
     }
 
-    handleSubmit = async event => {
-        event.preventDefault();
-        try {
-            await Auth.signIn(this.state.email, this.state.password);
-            this.props.handler();
-            alert("Logged in");
-        }catch(e){
-            alert(e);
+    handleChange = (e) => {
+        this.setState({ [e.target.id]: e.target.value });
+    }
+    handleAuth = (e) => {
+        e.preventDefault();
+        Auth.signIn(this.state.username, this.state.password)
+            .then((res) => {
+                switch (res.challengeName) {
+                    case "NEW_PASSWORD_REQUIRED":
+                        this.Log_state = "NEWPASS";
+                        this.setState({
+                            user: res
+                        })
+                        break;
+                    case "SOFTWARE_TOKEN_MFA":
+                        this.Log_state = "OTP";
+                        break;
+                    case "MFA_SETUP":
+                        break;
+                    case "SMS_MFA":
+                        break;
+                    default:
+                        console.log(res);
+                        this.Log_state = "LoggedIn";
+                        this.props.authenticateUser("true");
+                }
+                this.forceUpdate();
+
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+
+            });
+    };
+    handlePass = (e) => {
+        e.preventDefault();
+        console.log(this.state.user)
+        Auth.completeNewPassword(this.state.user, this.state.password)
+            .then((res) => {
+                console.log(res);
+                alert("Account verified Please Log In");
+                this.Log_state = "SignIn";
+                this.forceUpdate();
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
+    }
+    createAccount = (e) => {
+        e.preventDefault();
+        this.Log_state = "SIGNUP";
+        this.forceUpdate();
+    }
+    handleCreate = (e) => {
+        e.preventDefault();
+        let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
+        Auth.signUp(attributes)
+            .then((res) => {
+                this.Log_state = "Verify";
+                this.forceUpdate();
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
+    }
+    handleVerify = (e) => {
+        e.preventDefault();
+        Auth.confirmSignUp(this.state.username, this.state.code)
+            .then((res) => {
+                console.log(res);
+                alert("Account Confirmed");
+                this.Log_state = "SignIn";
+
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
+    }
+    determineRender() {
+        console.log(this.Log_state);
+        switch (this.Log_state) {
+            case 'SignIn':
+                this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
+                break;
+            case 'NEWPASS':
+                this._comp = <NewPassword handlePass={this.handlePass} handleChange={this.handleChange} />
+                break;
+            case 'MFA_SETUP':
+                break;
+            case 'OTP':
+                break;
+            case 'Verify':
+                this._comp = <Verification handleChange={this.handleChange} handleVerify={this.handleVerify} />
+                break;
+            case 'SIGNUP':
+                this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
+                break;
+            default:
+                //Needs Redirection for Logged In user.
         }
     }
-
     render() {
-        return (
-            <Layout>
-                <div className='container'>
-                    <div className="Login">
-                        <form onSubmit={this.handleSubmit}>
-                            <FormGroup controlId="email" bsSize="large">
-                                <ControlLabel>Email</ControlLabel>
-                                <FormControl
-                                    autoFocus
-                                    type="text"
-                                    value={this.state.email}
-                                    onChange={this.handleChange}
-                                />
-                            </FormGroup>
-                            <FormGroup controlId="password" bsSize="large">
-                                <ControlLabel>Password</ControlLabel>
-                                <FormControl
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                    type="password"
-                                />
-                            </FormGroup>
-                            <Button
-                                block
-                                bsSize="large"
-                                type="submit"
-                            >
-                                Login
-                            </Button>
-                        </form>
-                    </div>
-                </div>
-            </Layout>
+        this.determineRender()
+        return (<Layout>{
+            this._comp
+        }</Layout>
         )
     }
 }
 
-export default Login;
+function mapStateToProps(state) {
+    return {
+        isAuthenticated: state.Reducer.isAuthenticated,
+    }
+}
+const mapDispatchToProps = dispatch => ({
+    authenticateUser: (auth) => dispatch(authenticateUser(auth))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
