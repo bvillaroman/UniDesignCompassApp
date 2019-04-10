@@ -11,6 +11,7 @@ export default (state = initialState, action) => {
     case "AUTH_USER" :
       return {
         ...state,
+        aws_user: action.aws_user,
         isAuthenticated: action.payload
       };
     default:

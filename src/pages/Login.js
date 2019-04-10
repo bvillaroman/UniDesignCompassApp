@@ -1,80 +1,85 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
-import FormGroup from "react-bootstrap/FormGroup";
-import ControlLabel from "react-bootstrap/FormLabel";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { connect } from 'react-redux';
 import { authenticateUser } from '../state/actions';
-import { Redirect } from "@reach/router";
+import { Auth } from "aws-amplify";
+import config from "../aws-exports";
 
+import SignIn from "../components/SignIn";
+Auth.configure(config);
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: "",
-            password: ""
-        };
+            password: "",
 
+        };
+        this.handleAuth = this.handleAuth.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.contRef = React.createRef();
+        this._comp = null;
+        this.Log_state = "SignIn"
     }
 
-    handleChange = event => {
-        this.setState({
-            [event.target.id]: event.target.value
-        });
+    handleChange = (e)=>{
+        this.setState({[e.target.id]:e.target.value});
     }
     handleAuth = (e) => {
         e.preventDefault();
-        this.props.authenticateUser(this.state.email, this.state.password);
+        Auth.signIn(this.state.email, this.state.password)
+            .then((res) => {
+                switch (res.challengeName) {
+                    case "NEW_PASSWORD_REQUIRED":
+                        this.Log_state = "NEWPASS";
+                        break;
+                    case "SOFTWARE_TOKEN_MFA":
+                        this.Log_state = "OTP";
+                        break;
+                    case "MFA_SETUP":
+                        break;
+                    case "SMS_MFA":
+                        break;
+                    default:
+                        this.Log_state = "LoggedIn";
+                        this.authenticateUser("true");
+                }
+                this.forceUpdate();
+
+            });
     };
-
-    render() {
-        const isLoggedIn = (this.props.isAuthenticated) ? <Redirect to='/' /> : <Layout>
-            <div className='container'>
-            <div className="Login">
-                <form onSubmit={this.handleAuth}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
-                        <FormControl
-                            autoFocus
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                        />
-                    </FormGroup>
-                    <Button
-                        block
-                        bsSize="large"
-                        type="submit"
-                    >
-                        Login
-                </Button>
-                </form>
-            </div>
-            </div>
-        </Layout>
-        return (
-            isLoggedIn
-        )
+    determineRender() {
+        switch (this.Log_state) {
+            case 'SignIn':
+                this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange}/>
+                break;
+            case 'NEWPASS':
+                this._comp=null;
+                break;
+            case 'MFA_SETUP':
+                break;
+            case 'OTP':
+                break;
+            default:
+        }
     }
-}
-
+        render() {
+            this.determineRender()
+            return (<Layout>{
+                this._comp
+            }</Layout>
+            )
+        }
+    }
+    
 function mapStateToProps(state) {
     return {
         isAuthenticated: state.Reducer.isAuthenticated,
     }
 }
 const mapDispatchToProps = dispatch => ({
-    authenticateUser: (username, password) => dispatch(authenticateUser("rdiaz001", "Holder1423!@#$"))
+    authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

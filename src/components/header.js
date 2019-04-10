@@ -15,7 +15,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const isAuth = (store.getState().Reducer.isAuthenticated) ?
+    const isAuth = (store.getState().Reducer.isAuthenticated=="true") ?
       <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
         <Navbar.Brand variant="light"> <Link to="/"> {this.props.siteTitle}</Link> </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

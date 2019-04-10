@@ -1,4 +1,5 @@
 export const initialState = {
   userID: '',
-  isAuthenticated: false,
+  aws_user: [],
+  isAuthenticated: "false",
 }
