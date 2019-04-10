@@ -16,16 +16,16 @@ constructor(props){
                             <FormGroup controlId="username" bsSize="large">
                                 <ControlLabel>Username</ControlLabel>
                                 <FormControl
+                                    placeholder="Username"
                                     autoFocus
                                     type="text"
-                                    value={this.props.username}
                                     onChange={this.props.handleChange}
                                 />
                             </FormGroup>
                             <FormGroup controlId="password" bsSize="large">
                                 <ControlLabel>Password</ControlLabel>
                                 <FormControl
-                                    value={this.props.password}
+                                    placeholder="Password"
                                     onChange={this.props.handleChange}
                                     type="password"
                                 />

@@ -17,31 +17,31 @@ class SignUp extends Component {
                 <form onSubmit={this.props.handleCreate}>
                     <FormGroup controlId="username">
                         <ControlLabel>Username</ControlLabel>
-                        <FormControl autoFocus type="text" value={this.props.username}
+                        <FormControl placeholder= "jondoe1" autoFocus type="text" 
                             onChange={this.props.handleChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="email">
                         <ControlLabel>email</ControlLabel>
-                        <FormControl autoFocus type="text" value={this.props.email}
+                        <FormControl placeholder="john.doe@email.com" autoFocus type="text"
                             onChange={this.props.handleChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="password">
                         <ControlLabel>New Password</ControlLabel>
-                        <FormControl autoFocus type="password" value={this.props.password}
+                        <FormControl placeholder="New Password" autoFocus type="password" 
                             onChange={this.props.handleChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="repeat_pass">
                         <ControlLabel>Confirm Password</ControlLabel>
-                        <FormControl autoFocus type="password" value={this.props.repeat_pass}
+                        <FormControl autoFocus type="password" 
                             onChange={this.props.handleChange}
                         />
                     </FormGroup>
                     <FormGroup controlId="phone">
                         <ControlLabel>Phone Number</ControlLabel>
-                        <FormControl autoFocus type="tel" value={this.props.phone}
+                        <FormControl placeholder="+###########" autoFocus type="tel"
                             onChange={this.props.handleChange}
                         />
                     </FormGroup>

@@ -19,14 +19,13 @@ class NewPassword extends Component{
                     <ControlLabel>New Password</ControlLabel>
                     <FormControl
                         autoFocus
+                        placeholder="New Password"
                         type="text"
-                        value={this.props.password}
                         onChange={this.props.handleChange}/>                    
                 </FormGroup>
                 <FormGroup controlId="repeat_pass" bsSize="large">
                     <ControlLabel>Confirm password</ControlLabel>
                     <FormControl
-                        value={this.props.repeat_pass}
                         onChange={this.props.handleChange}
                         type="password"
                     />
