@@ -13,12 +13,12 @@ constructor(props){
         <div className='container'>
                     <div className="Login">
                         <form onSubmit={this.props.handleAuth}>
-                            <FormGroup controlId="email" bsSize="large">
-                                <ControlLabel>Email</ControlLabel>
+                            <FormGroup controlId="username" bsSize="large">
+                                <ControlLabel>Username</ControlLabel>
                                 <FormControl
                                     autoFocus
                                     type="text"
-                                    value={this.props.email}
+                                    value={this.props.username}
                                     onChange={this.props.handleChange}
                                 />
                             </FormGroup>

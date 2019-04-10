@@ -8,6 +8,7 @@ import config from "../aws-exports";
 import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
+import Verification from "../components/Verification";
 Auth.configure(config);
 
 class Login extends Component {
@@ -19,12 +20,13 @@ class Login extends Component {
             repeat_pass:"",
             phone:"",
             username:"",
+            code:"",
             user: [],
         };
         this.handleAuth = this.handleAuth.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this._comp = null;
-        this.Log_state = "SignIn"
+        this.Log_state = "SignIn";
     }
 
     handleChange = (e)=>{
@@ -32,7 +34,7 @@ class Login extends Component {
     }
     handleAuth = (e) => {
         e.preventDefault();
-        Auth.signIn(this.state.email, this.state.password)
+        Auth.signIn(this.state.username, this.state.password)
             .then((res) => {
                 switch (res.challengeName) {
                     case "NEW_PASSWORD_REQUIRED":
@@ -71,6 +73,9 @@ class Login extends Component {
         Auth.completeNewPassword(this.state.user,this.state.password)
         .then((res)=>{
             console.log(res);
+            alert("Account verified Please Log In");
+            this.Log_state="SignIn";
+            this.forceUpdate();
         },(error)=>{
             console.log(error)
         })
@@ -83,12 +88,25 @@ class Login extends Component {
     handleCreate=(e)=>{
         e.preventDefault();
         let attributes={username:this.state.username,password:this.state.password,attributes:{email:this.state.email,phone_number:this.state.phone}};
-        console.log(attributes);
         Auth.signUp(attributes)
         .then((res)=>{
             this.Log_state="Verify";
+            this.forceUpdate();
         },(error)=>{
             console.log(error);
+        })
+    }
+    handleVerify=(e)=>{
+        e.preventDefault();
+        Auth.confirmSignUp(this.state.username,this.state.code)
+        .then((res)=>{
+            console.log(res);
+            alert("Account Confirmed");
+            this.Log_state="SignIn";
+            
+        },(error)=>{
+            console.log(error);
+            alert("This was a problem verifing this account");
         })
     }
     determineRender() {
@@ -103,6 +121,9 @@ class Login extends Component {
             case 'MFA_SETUP':
                 break;
             case 'OTP':
+                break;
+            case 'Verify':
+                this._comp =<Verification handleChange ={this.handleChange} handleVerify={this.handleVerify}/>
                 break;
             case 'SIGNUP':
                 this._comp =<SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
