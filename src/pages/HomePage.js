@@ -12,7 +12,6 @@ class IndexPage extends React.Component {
     }
     this.loginHandler = this.loginHandler.bind(this);
     this.handleAuth = this.handleAuth.bind(this);
-    this.routeCompass = this.routeCompass.bind(this);
   }
 
   loginHandler() {
@@ -21,11 +20,7 @@ class IndexPage extends React.Component {
   handleAuth(){
     this.setState({isAuthenticated:true});
   }
-  routeCompass() {
-    let path = "/Compass";
-    this.props.history.push(path);
-  }
-
+ 
   render() {
       return (
         <Layout>
@@ -34,7 +29,8 @@ class IndexPage extends React.Component {
             <h1 className="presentation-description">DESIGN COMPASS</h1>
             <h3 className="presentation-description1">to facililate</h3>
             <h1 className="presentation-description2">Creation</h1>
-            <Button className="presentation-button" variant="info" size="lg" onClick={this.routeCompass}>Begin</Button>
+            {/*find better way to link Compass page*/}
+            <Button className="presentation-button" variant="info" size="lg" href="/Compass">Begin</Button>
           </div>
           {/* REPLACE CARD TEXT */}
           <CardDeck>
