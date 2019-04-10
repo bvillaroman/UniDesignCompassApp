@@ -48,6 +48,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.presentation-button {
+  position: absolute;
+  z-index: 5;
+  top: 360px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-deck {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 html {
   font-family: sans-serif;
