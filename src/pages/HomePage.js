@@ -3,7 +3,7 @@ import inter from "../images/home-image.jpg";
 import Layout from '../components/layout';
 import { CardDeck, Card, Button } from 'react-bootstrap';
 
-class IndexPage extends React.Component {
+class HomePage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
