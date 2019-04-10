@@ -12,6 +12,43 @@
   color: white;
 }
 
+#homeImg {
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (min-width: 800px) {
+  #homeImg {
+    object-fit: cover;
+    object-position: 100% 0;
+    height: 600px;
+    width: 100%;
+  }
+}
+
+.presentation-description {
+  position: absolute;
+  z-index: 2;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.presentation-description1 {
+  position: absolute;
+  z-index: 3;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.presentation-description2 {
+  position: absolute;
+  z-index: 4;
+  top: 290px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

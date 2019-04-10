@@ -23,7 +23,12 @@ class IndexPage extends React.Component {
   render() {
       return (
         <Layout>
-          <img alt={"inter"} src={inter}></img>
+          <div className="presentation">
+            <img id="homeImg" role="presentation" alt={"inter"} src={inter}></img>
+            <h1 className="presentation-description">DESIGN COMPASS</h1>
+            <h3 className="presentation-description1">to facililate</h3>
+            <h1 className="presentation-description2">Creation</h1>
+          </div>
         </Layout>
       );
   }
