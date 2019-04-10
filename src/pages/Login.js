@@ -9,6 +9,7 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
+import { Redirect } from "@reach/router";
 Auth.configure(config);
 
 class Login extends Component {
@@ -17,10 +18,10 @@ class Login extends Component {
         this.state = {
             email: "",
             password: "",
-            repeat_pass:"",
-            phone:"",
-            username:"",
-            code:"",
+            repeat_pass: "",
+            phone: "",
+            username: "",
+            code: "",
             user: [],
         };
         this.handleAuth = this.handleAuth.bind(this);
@@ -29,8 +30,8 @@ class Login extends Component {
         this.Log_state = "SignIn";
     }
 
-    handleChange = (e)=>{
-        this.setState({[e.target.id]:e.target.value});
+    handleChange = (e) => {
+        this.setState({ [e.target.id]: e.target.value });
     }
     handleAuth = (e) => {
         e.preventDefault();
@@ -40,7 +41,7 @@ class Login extends Component {
                     case "NEW_PASSWORD_REQUIRED":
                         this.Log_state = "NEWPASS";
                         this.setState({
-                            user:res
+                            user: res
                         })
                         break;
                     case "SOFTWARE_TOKEN_MFA":
@@ -57,89 +58,88 @@ class Login extends Component {
                 }
                 this.forceUpdate();
 
-            },(error)=>{
-                switch(error.code){
-                    case "UserNotFoundException":
-                        alert("User not found Make an account");
-                        break;
-                    default:
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
 
-                }
             });
     };
-    handlePass=(e)=>{
+    handlePass = (e) => {
         e.preventDefault();
         console.log(this.state.user)
-        Auth.completeNewPassword(this.state.user,this.state.password)
-        .then((res)=>{
-            console.log(res);
-            alert("Account verified Please Log In");
-            this.Log_state="SignIn";
-            this.forceUpdate();
-        },(error)=>{
-            console.log(error)
-        })
+        Auth.completeNewPassword(this.state.user, this.state.password)
+            .then((res) => {
+                console.log(res);
+                alert("Account verified Please Log In");
+                this.Log_state = "SignIn";
+                this.forceUpdate();
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
     }
-    createAccount=(e)=>{
+    createAccount = (e) => {
         e.preventDefault();
-        this.Log_state="SIGNUP";
+        this.Log_state = "SIGNUP";
         this.forceUpdate();
     }
-    handleCreate=(e)=>{
+    handleCreate = (e) => {
         e.preventDefault();
-        let attributes={username:this.state.username,password:this.state.password,attributes:{email:this.state.email,phone_number:this.state.phone}};
+        let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
         Auth.signUp(attributes)
-        .then((res)=>{
-            this.Log_state="Verify";
-            this.forceUpdate();
-        },(error)=>{
-            console.log(error);
-        })
+            .then((res) => {
+                this.Log_state = "Verify";
+                this.forceUpdate();
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
     }
-    handleVerify=(e)=>{
+    handleVerify = (e) => {
         e.preventDefault();
-        Auth.confirmSignUp(this.state.username,this.state.code)
-        .then((res)=>{
-            console.log(res);
-            alert("Account Confirmed");
-            this.Log_state="SignIn";
-            
-        },(error)=>{
-            console.log(error);
-            alert("This was a problem verifing this account");
-        })
+        Auth.confirmSignUp(this.state.username, this.state.code)
+            .then((res) => {
+                console.log(res);
+                alert("Account Confirmed");
+                this.Log_state = "SignIn";
+
+            }, (error) => {
+                console.log(error);
+                alert(error.message);
+            })
     }
     determineRender() {
         console.log(this.Log_state);
         switch (this.Log_state) {
             case 'SignIn':
-                this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount}/>
+                this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
                 break;
             case 'NEWPASS':
-                this._comp=<NewPassword handlePass={this.handlePass} handleChange={this.handleChange}/>
+                this._comp = <NewPassword handlePass={this.handlePass} handleChange={this.handleChange} />
                 break;
             case 'MFA_SETUP':
                 break;
             case 'OTP':
                 break;
             case 'Verify':
-                this._comp =<Verification handleChange ={this.handleChange} handleVerify={this.handleVerify}/>
+                this._comp = <Verification handleChange={this.handleChange} handleVerify={this.handleVerify} />
                 break;
             case 'SIGNUP':
-                this._comp =<SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
+                this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
                 break;
             default:
+                //Needs Redirection for Logged In user.
         }
     }
-        render() {
-            this.determineRender()
-            return (<Layout>{
-                this._comp
-            }</Layout>
-            )
-        }
+    render() {
+        this.determineRender()
+        return (<Layout>{
+            this._comp
+        }</Layout>
+        )
     }
-    
+}
+
 function mapStateToProps(state) {
     return {
         isAuthenticated: state.Reducer.isAuthenticated,
