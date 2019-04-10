@@ -30,13 +30,13 @@ constructor(props){
                                     type="password"
                                 />
                             </FormGroup>
-                            <Button
-                                block
+                            <Button 
                                 bsSize="large"
                                 type="submit"
                             >
                                 Login
                             </Button>
+                            <Button className="float-right" onClick={this.props.handleAccount}>Create New Account</Button>
                         </form>
                     </div>
                 </div>
