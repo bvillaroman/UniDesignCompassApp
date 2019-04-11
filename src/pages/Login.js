@@ -89,6 +89,7 @@ class Login extends Component {
         Auth.signUp(attributes)
             .then((res) => {
                 this.Log_state = "Verify";
+                alert("Check your email for Verification code")
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -109,7 +110,6 @@ class Login extends Component {
             })
     }
     determineRender() {
-        console.log(this.Log_state);
         switch (this.Log_state) {
             case 'SignIn':
                 this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
@@ -128,15 +128,13 @@ class Login extends Component {
                 this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
                 break;
             default:
-                //Needs Redirection for Logged In user.
+                this._comp=null;
+            //Needs Redirection for Logged In user.
         }
     }
     render() {
         this.determineRender()
-        return (<Layout>{
-            this._comp
-        }</Layout>
-        )
+        return(<Layout>{this._comp}</Layout>);
     }
 }
 
