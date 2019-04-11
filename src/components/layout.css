@@ -12,6 +12,25 @@
   color: white;
 }
 
+footer {
+  background-color: #c7d1e0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+
+main {
+  min-height: calc(100vh - 190px);
+}
+
+.footer-container {
+  padding: 15px 15px;
+}
+
+.footer-container p {
+  margin-bottom: 0;
+}
+
 #homeImg {
   position: relative;
   z-index: 1;
@@ -59,6 +78,7 @@
 .card-deck {
   margin-left: 20px;
   margin-right: 20px;
+  padding-bottom: 1.45rem;
 }
 
 .card-header {
@@ -112,6 +132,7 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -123,15 +144,16 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+/* footer, */
 header,
-main,
+/* main, */
 menu,
 nav,
 section,
 summary {
   display: block;
 }
+
 audio,
 canvas,
 progress,
