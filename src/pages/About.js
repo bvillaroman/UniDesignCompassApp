@@ -1,0 +1,17 @@
+import React from "react";
+import Layout from '../components/layout';
+
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+      return (
+        <Layout>
+          <h1 className="text-center">Our Mission</h1>
+          <h1 className="text-center">The Team</h1>
+        </Layout>
+      );
+  }
+}
+export default About;

@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from 'gatsby';
 import inter from "../images/home-image.jpg";
 import Layout from '../components/layout';
 import { CardDeck, Card, Button } from 'react-bootstrap';
 
-class IndexPage extends React.Component {
+class HomePage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -20,7 +21,7 @@ class IndexPage extends React.Component {
   handleAuth(){
     this.setState({isAuthenticated:true});
   }
- 
+
   render() {
       return (
         <Layout>
@@ -30,11 +31,11 @@ class IndexPage extends React.Component {
             <h3 className="presentation-description1">to facililate</h3>
             <h1 className="presentation-description2">Creation</h1>
             {/*find better way to link Compass page*/}
-            <Button className="presentation-button" variant="info" size="lg" href="/Compass">Begin</Button>
+            <Link to="/Compass"><Button className="presentation-button" variant="info" size="lg">Begin</Button></Link>
           </div>
           {/* REPLACE CARD TEXT */}
           <CardDeck>
-            <Card bg="dark" text="white" border="warning">
+            <Card bg="danger" text="white">
               <Card.Header>Objective</Card.Header>
               <Card.Body>
                 <Card.Text>
@@ -42,7 +43,7 @@ class IndexPage extends React.Component {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card bg="secondary" text="white" border="success">
+            <Card bg="warning" text="dark">
               <Card.Header>Features</Card.Header>
               <Card.Body>
                 <Card.Text>
