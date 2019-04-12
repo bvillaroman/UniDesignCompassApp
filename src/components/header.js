@@ -11,7 +11,7 @@ const Header = (props) => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav>
         {/* NEED TO REPLACE LINKS ONCE READY!! */}
-        <Nav.Link><Link to="/About">About Us</Link></Nav.Link>
+        <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
         <Nav.Link><Link to="/">Contact</Link></Nav.Link>
         <Nav.Link><Link to="/">Create</Link></Nav.Link>
         <Nav.Link><Link to="/Compass">Compass</Link></Nav.Link>

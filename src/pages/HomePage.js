@@ -15,7 +15,7 @@ const HomePage = (props) => (
     </div>
     {/* REPLACE CARD TEXT */}
     <CardDeck>
-      <Card bg="dark" text="white" border="warning">
+      <Card bg="danger" text="white">
         <Card.Header>Objective</Card.Header>
         <Card.Body>
           <Card.Text>
@@ -23,7 +23,7 @@ const HomePage = (props) => (
           </Card.Text>
         </Card.Body>
       </Card>
-      <Card bg="secondary" text="white" border="success">
+      <Card bg="warning" text="dark">
         <Card.Header>Features</Card.Header>
         <Card.Body>
           <Card.Text>
