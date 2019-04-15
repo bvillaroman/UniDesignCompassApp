@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
+import { Row } from "react-bootstrap";
+import {Col} from "react-bootstrap";
 
 class Compass extends Component {
     constructor(props) {
@@ -60,19 +62,22 @@ class Compass extends Component {
                                 })
                         }
                         <br></br>
+                        <div>
+                            <Row>
+                                <Col>
                         <Button 
                             className='float-left' 
                             variant={this.state.previous?"primary":"secondary"}
                             onClick={()=>this.previousButtonHandler()}
                             active>Previous
                         </Button>
-                        <div className="row">
-                        <div className="col-md-5 col-md-offset-6">
-                        <textarea > 
+                        </Col>
+                        <Col>
+                        <textarea placeholder="Log Text"> 
 
                         </textarea>
-                        </div>
-                        </div>
+                        </Col>
+                        <Col>
                         <Button 
                             className='float-right' 
                             variant={this.state.next?"primary":"secondary"}
@@ -80,8 +85,10 @@ class Compass extends Component {
                             active>
                             Next
                         </Button>
-                       
+                        </Col>
+                       </Row>
                     </div>
+                </div>
                 </div>
          
             </Layout>
