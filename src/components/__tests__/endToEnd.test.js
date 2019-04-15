@@ -26,6 +26,12 @@ describe("Application rundown", () => {
     const canonical = await page.$eval("a[rel=about]", el => el.href);
     expect(canonical).toEqual("http://localhost:8000/About");
     await page.click("a[rel=about]");
+    await page.click("a[rel=login]");
+    // try logging in
+    await page.click("input[id=username]");
+    await page.type("input[id=username]", "JaneDoe");
+    await page.click("input[id=password]");
+    await page.type("input[id=password]", "isPlain");
   }, 16000);
   // unfinished
 });

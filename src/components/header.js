@@ -12,10 +12,11 @@ const Header = (props) => (
       <Nav>
         {/* NEED TO REPLACE LINKS ONCE READY!! */}
         <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
-        <Nav.Link><Link to="/">Contact</Link></Nav.Link>
-        <Nav.Link><Link to="/">Create</Link></Nav.Link>
-        <Nav.Link><Link to="/Compass">Compass</Link></Nav.Link>
-        <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
+        <Nav.Link><Link rel="create" to="/">Create</Link></Nav.Link>
+        <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
+        {/* The two below requires a props.status (loged in or out?) to determine what link to display */}
+        <Nav.Link><Link rel="profile" to="/">Profile</Link></Nav.Link>
+        <Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
