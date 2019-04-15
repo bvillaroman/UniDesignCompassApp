@@ -73,7 +73,11 @@ class Compass extends Component {
                         </Button>
                         </Col>
                         <Col>
-                        <textarea placeholder="Log Text"> 
+                        <textarea 
+                        placeholder="Log Text"
+                        rows="5"
+                        cols="20"
+                        > 
 
                         </textarea>
                         </Col>
