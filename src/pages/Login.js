@@ -9,7 +9,7 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import { Redirect } from "@reach/router";
+import { Redirect } from 'react-router-dom'
 import IndexPage from ".";
 import HomePage from "./HomePage";
 Auth.configure(config);
@@ -134,7 +134,8 @@ class Login extends Component {
 
 
             case 'LOGGED_IN':
-                this._comp = null;
+                this._comp = <IndexPage />
+                break;
 
 
             default:
