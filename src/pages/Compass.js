@@ -18,8 +18,8 @@ class Compass extends Component {
                 {key: '7', name:'G. Communicate', icon:'', description: '', link: '#'},
                 {key: '8', name:'H. Redisign', icon:'', description: '', link: '#'},
             ],
-            previous:true//testing
-            ,next:true
+            previous:true,
+            next:true,
         }
     }
 
@@ -28,13 +28,13 @@ class Compass extends Component {
     }
 
     previousButtonHandler = () => {
-        var temp=!this.previous//need to handle active and disabled booleans too
+        var temp=!this.state.previous//need to handle active and disabled booleans too
         this.setState({previous:temp})
     }
 
 
-    nextButtonHandler = () => {
-        var temp=!this.next//need to handle active and disabled booleans too
+    nextButtonHandler = (e) => {
+        var temp=!this.state.next//need to handle active and disabled booleans too
         this.setState({next:temp})
     }
 
@@ -61,14 +61,14 @@ class Compass extends Component {
                         }
                         <Button 
                             className='float-left' 
-                            actvie
-                            variant={this.previous?"primary":"secondary"}//Change 1 to a boolean for previous
-                            onClick={(e)=>this.previousButtonHandler()}
-                            >Previous
+                            variant={this.state.previous?"primary":"secondary"}
+                            onClick={()=>this.previousButtonHandler()}
+                            active>Previous
                         </Button>
                         <Button 
                             className='float-right' 
-                            variant="primary outline-danger" 
+                            variant={this.state.next?"primary":"secondary"}
+                            onClick={(e)=>this.nextButtonHandler()} 
                             active>
                             Next
                         </Button>
