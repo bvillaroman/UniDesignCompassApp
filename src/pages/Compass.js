@@ -47,16 +47,11 @@ class Compass extends Component {
                                     );
                                 })
                         }
+                        <Button variant="primary" disabled>Primary</Button>
+                        <Button className='float-right' variant="primary" disabled>Next</Button>
                     </div>
-
-                    <div>
-           <ButtonToolbar>
-                <Button variant="primary" disabled>Primary</Button>
-                <Button className="text-right" variant="primary" disabled>Next</Button>
-            </ButtonToolbar>
-            </div>
                 </div>
-                
+         
             </Layout>
            
         );
