@@ -134,7 +134,7 @@ class Login extends Component {
 
 
             case 'LOGGED_IN':
-                this._comp = <IndexPage />
+                this._comp = <Redirect to='/' />
                 break;
 
 
