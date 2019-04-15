@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { ButtonToolbar } from "react-bootstrap";
 
 class Compass extends Component {
     constructor(props) {
@@ -18,12 +17,25 @@ class Compass extends Component {
                 {key: '6', name:'F. Evaluate', icon:'', description: '', link: '#'},
                 {key: '7', name:'G. Communicate', icon:'', description: '', link: '#'},
                 {key: '8', name:'H. Redisign', icon:'', description: '', link: '#'},
-            ]
+            ],
+            previous:true//testing
+            ,next:true
         }
     }
 
     compassButtonHandler = (phase) => {
         console.log(phase);
+    }
+
+    previousButtonHandler = () => {
+        var temp=!this.previous//need to handle active and disabled booleans too
+        this.setState({previous:temp})
+    }
+
+
+    nextButtonHandler = () => {
+        var temp=!this.next//need to handle active and disabled booleans too
+        this.setState({next:temp})
     }
 
     render() {
@@ -47,8 +59,22 @@ class Compass extends Component {
                                     );
                                 })
                         }
-                        <Button variant="primary" disabled>Primary</Button>
-                        <Button className='float-right' variant="primary" disabled>Next</Button>
+                        <Button 
+                            className='float-left' 
+                            actvie
+                            variant={this.previous?"primary":"secondary"}//Change 1 to a boolean for previous
+                            onClick={(e)=>this.previousButtonHandler()}
+                            >Previous
+                        </Button>
+                        <Button 
+                            className='float-right' 
+                            variant="primary outline-danger" 
+                            active>
+                            Next
+                        </Button>
+                        {/* <br></br> */}
+                        {/* <textarea className='center'> */}
+                        {/* </textarea> */}
                     </div>
                 </div>
          
