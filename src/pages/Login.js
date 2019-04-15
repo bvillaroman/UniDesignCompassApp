@@ -10,6 +10,8 @@ import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
 import { Redirect } from "@reach/router";
+import IndexPage from ".";
+import HomePage from "./HomePage";
 Auth.configure(config);
 
 class Login extends Component {
@@ -53,7 +55,7 @@ class Login extends Component {
                         break;
                     default:
                         console.log(res);
-                        this.Log_state = "LoggedIn";
+                        this.Log_state = "LOGGED_IN";
                         this.props.authenticateUser("true");
                 }
                 this.forceUpdate();
@@ -110,6 +112,8 @@ class Login extends Component {
             })
     }
     determineRender() {
+        console.log(this.Log_state);
+
         switch (this.Log_state) {
             case 'SignIn':
                 this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
@@ -127,6 +131,12 @@ class Login extends Component {
             case 'SIGNUP':
                 this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
                 break;
+
+
+            case 'LOGGED_IN':
+                this._comp = null;
+
+
             default:
                 this._comp=null;
             //Needs Redirection for Logged In user.
