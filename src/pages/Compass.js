@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
+import { ButtonToolbar } from "react-bootstrap";
 
 class Compass extends Component {
     constructor(props) {
@@ -47,8 +48,17 @@ class Compass extends Component {
                                 })
                         }
                     </div>
+
+                    <div>
+           <ButtonToolbar>
+                <Button variant="primary" disabled>Primary</Button>
+                <Button className="text-right" variant="primary" disabled>Next</Button>
+            </ButtonToolbar>
+            </div>
                 </div>
+                
             </Layout>
+           
         );
     }
 }
