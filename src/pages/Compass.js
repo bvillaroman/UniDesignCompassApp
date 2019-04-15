@@ -59,12 +59,20 @@ class Compass extends Component {
                                     );
                                 })
                         }
+                        <br></br>
                         <Button 
                             className='float-left' 
                             variant={this.state.previous?"primary":"secondary"}
                             onClick={()=>this.previousButtonHandler()}
                             active>Previous
                         </Button>
+                        <div className="row">
+                        <div className="col-md-5 col-md-offset-6">
+                        <textarea > 
+
+                        </textarea>
+                        </div>
+                        </div>
                         <Button 
                             className='float-right' 
                             variant={this.state.next?"primary":"secondary"}
@@ -72,9 +80,7 @@ class Compass extends Component {
                             active>
                             Next
                         </Button>
-                        {/* <br></br> */}
-                        {/* <textarea className='center'> */}
-                        {/* </textarea> */}
+                       
                     </div>
                 </div>
          
