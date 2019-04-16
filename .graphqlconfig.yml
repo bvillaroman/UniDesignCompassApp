@@ -1,0 +1,16 @@
+projects:
+  unidesigncompassapp:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: mhfj5e3r6rfe7mgbfpu2tjvpk4
+      endpoints:
+        prod: >-
+          https://vfgg7lwkpvbfhjxcobeomccgdi.appsync-api.us-east-1.amazonaws.com/graphql

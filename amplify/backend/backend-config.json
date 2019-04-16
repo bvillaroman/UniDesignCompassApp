@@ -1,6 +1,15 @@
 {
+	"api": {
+		"unidesigncompassapp": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY"
+			}
+		}
+	},
 	"auth": {
-		"cognitocf0e55cd": {
+		"cognitoe5bb51ed": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}

@@ -8,6 +8,9 @@
     "aws-amplify": "^1.1.24",
     "aws-amplify-react": "^2.3.4",
     "bootstrap": "^4.3.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
     "gatsby": "^2.3.3",
     "gatsby-image": "^2.0.35",
     "gatsby-plugin-manifest": "^2.0.25",
@@ -26,6 +29,7 @@
     "react-redux": "^6.0.1",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
+    "react-testing-library": "^6.1.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise-middleware": "^6.1.0",
@@ -38,6 +42,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
     "prettier": "^1.16.4",
+    "puppeteer": "^1.14.0",
     "react-test-renderer": "^16.8.6"
   },
   "keywords": [
