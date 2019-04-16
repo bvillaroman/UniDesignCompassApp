@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row } from "react-bootstrap";
+import { Row, ButtonGroup, ButtonToolbar } from "react-bootstrap";
 import {Col} from "react-bootstrap";
 
 class Compass extends Component {
@@ -55,6 +55,8 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
+                                        <div className="d-flex flex-column" >
+                                            <ButtonGroup size="lg">
                                         <Button 
                                             key={phase.key} 
                                             onClick={() => this.compassButtonHandler(phase)} 
@@ -64,6 +66,12 @@ class Compass extends Component {
                                             variant={(this.state.currentPhase==phase.key)?"success":"outline-warning"}
                                             >{phase.name}
                                         </Button>
+                                        <Button
+                                        >
+                                            Timer
+                                        </Button>
+                                        </ButtonGroup>
+                                        </div>
                                     );
                                 })
                         }
