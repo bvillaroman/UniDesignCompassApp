@@ -11,7 +11,7 @@
 
 # installation guide
 
-1. npm install 
+1. npm install to load modules
 2. npm start to run online server
 
 
