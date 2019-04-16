@@ -35,6 +35,7 @@ class Login extends Component {
     }
     handleAuth = (e) => {
         e.preventDefault();
+
         Auth.signIn(this.state.username, this.state.password)
             .then((res) => {
                 switch (res.challengeName) {
@@ -83,8 +84,19 @@ class Login extends Component {
         this.Log_state = "SIGNUP";
         this.forceUpdate();
     }
+    comparePasswords = () => {
+        if (this.state.password == this.state.repeat_pass) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     handleCreate = (e) => {
         e.preventDefault();
+        if (!this.comparePasswords()) {
+            alert("Passwords do not match");
+            return; 
+        }
         let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
         Auth.signUp(attributes)
             .then((res) => {
@@ -103,6 +115,7 @@ class Login extends Component {
                 console.log(res);
                 alert("Account Confirmed");
                 this.Log_state = "SignIn";
+                this.forceUpdate();
 
             }, (error) => {
                 console.log(error);
@@ -128,13 +141,13 @@ class Login extends Component {
                 this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
                 break;
             default:
-                this._comp=null;
+                this._comp = null;
             //Needs Redirection for Logged In user.
         }
     }
     render() {
         this.determineRender()
-        return(<Layout>{this._comp}</Layout>);
+        return (<Layout>{this._comp}</Layout>);
     }
 }
 
