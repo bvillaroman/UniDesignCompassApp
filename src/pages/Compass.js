@@ -27,27 +27,30 @@ class Compass extends Component {
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
-        console.log(phase);
         // var temp=phase.key
-        this.setState({currentPhase:phase.key})
-        console.log(this.state.currentPhase)
+        this.setState({currentPhase:phase.key})// Some sort of delay when logging maybe also delay in updating?
+        // console.log(this.state.currentPhase)
     }
 
     previousButtonHandler = () => {
         var temp=!this.state.previous//need to handle active and disabled booleans too
-        this.setState({previous:temp})
+        this.setState({previous:temp});
     }
 
 
     nextButtonHandler = (e) => {
         var temp=!this.state.next//need to handle active and disabled booleans too
-        this.setState({next:temp})
+        this.setState({next:temp});
     }
 
     updateLogHandler = () =>{
-        console.log('Success')
+        console.log('Success');
     } 
 
+    timerHandler = (phase)=>{
+        (phase.key==this.state.currentPhase)?console.log("Timer "+phase.key):console.log("Current Phase: "+this.state.currentPhase +" Not Phase (Clicked) "+phase.key)
+
+    }
     render() {
         return (
             <Layout>
@@ -71,6 +74,7 @@ class Compass extends Component {
                                         </Button>
                                         <Button
                                         variant={(this.state.currentPhase==phase.key)?"danger":"outline-primary"}
+                                        onClick={()=>this.timerHandler(phase)}
                                         >Timer
                                         </Button>
                                         </ButtonGroup>
