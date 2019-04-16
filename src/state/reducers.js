@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
         ...state,
         userID: action.payload
       };
-    case "AUTH_USER" :
+    case AUTH_USER :
       return {
         ...state,
         aws_user: action.aws_user,
