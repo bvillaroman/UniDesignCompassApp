@@ -9,7 +9,6 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import {getUser} from "../graphql_utils/utils";
 import { Redirect } from "@reach/router";
 Auth.configure(config);
 
@@ -147,7 +146,6 @@ class Login extends Component {
         }
     }
     render() {
-        getUser(1);
         this.determineRender()
         return (<Layout>{this._comp}</Layout>);
     }
