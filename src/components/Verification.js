@@ -5,9 +5,6 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
 
 class Verification extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <div className="container">

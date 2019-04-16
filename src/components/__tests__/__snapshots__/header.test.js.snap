@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<nav
+  className="navbar navbar-expand-md navbar-dark bg-dark sticky-top"
+>
+  <span
+    className="navbar-brand"
+    variant="light"
+  >
+     
+    <a
+      href="/"
+    >
+       
+      Universal Design Compass
+    </a>
+     
+  </span>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="basic-navbar-nav"
+  >
+    <div
+      className="navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        <a
+          href="/"
+        >
+          About Us
+        </a>
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        <a
+          href="/"
+        >
+          Contact
+        </a>
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        <a
+          href="/"
+        >
+          Create
+        </a>
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        <a
+          href="/Compass"
+        >
+          Compass
+        </a>
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        <a
+          href="/Login"
+        >
+          Login
+        </a>
+      </a>
+    </div>
+  </div>
+</nav>
+`;

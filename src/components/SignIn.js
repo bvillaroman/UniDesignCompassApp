@@ -5,15 +5,12 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
     
 class SignIn extends Component{
-constructor(props){
-    super(props);
-}
   render(){
     return(
         <div className='container'>
                     <div className="Login">
                         <form onSubmit={this.props.handleAuth}>
-                            <FormGroup controlId="username" bsSize="large">
+                            <FormGroup controlId="username" bssize="large">
                                 <ControlLabel>Username</ControlLabel>
                                 <FormControl
                                     placeholder="Username"
@@ -22,7 +19,7 @@ constructor(props){
                                     onChange={this.props.handleChange}
                                 />
                             </FormGroup>
-                            <FormGroup controlId="password" bsSize="large">
+                            <FormGroup controlId="password" bssize="large">
                                 <ControlLabel>Password</ControlLabel>
                                 <FormControl
                                     placeholder="Password"
@@ -31,7 +28,7 @@ constructor(props){
                                 />
                             </FormGroup>
                             <Button 
-                                bsSize="large"
+                                bssize="large"
                                 type="submit"
                             >
                                 Login
