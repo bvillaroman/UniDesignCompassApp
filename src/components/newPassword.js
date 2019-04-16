@@ -5,11 +5,6 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
 
 class NewPassword extends Component{
-    constructor(props){
-        super(props);
-    }
-
-
     render(){
         return(
             <div className='container'>
