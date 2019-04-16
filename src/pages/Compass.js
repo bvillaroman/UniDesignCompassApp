@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import Layout from "../components/layout"
-import "../components/bootstrap.css"
+import Layout from "../components/layout";
+import "../components/bootstrap.css";
 
 class Compass extends Component {
     constructor(props) {
@@ -35,11 +35,11 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
-                                        <Button 
-                                            key={phase.key} 
-                                            onClick={() => this.compassButtonHandler(phase)} 
-                                            bsSize='large' 
-                                            block 
+                                        <Button
+                                            key={phase.key}
+                                            onClick={() => this.compassButtonHandler(phase)}
+                                            bsSize='large'
+                                            block
                                             className='btn-outline-primary text-left'>
                                                 {phase.name}
                                         </Button>

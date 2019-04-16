@@ -6,10 +6,6 @@ import ControlLabel from "react-bootstrap/FormLabel";
 
 
 class SignUp extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="container">

@@ -1,14 +1,19 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "unidesigncompassapp-20190415161111-authRole",
-            "UnauthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190415161111-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190415161111-authRole",
+            "AuthRoleName": "unidesigncompassapp-20190414192909-authRole",
+            "UnauthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190414192909-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190414192909-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "unidesigncompassapp-20190415161111-deployment",
-            "UnauthRoleName": "unidesigncompassapp-20190415161111-unauthRole",
-            "StackName": "unidesigncompassapp-20190415161111",
-            "StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-20190415161111/9d325cb0-5fba-11e9-b961-0a780bcb48a6"
+            "DeploymentBucketName": "unidesigncompassapp-20190414192909-deployment",
+            "UnauthRoleName": "unidesigncompassapp-20190414192909-unauthRole",
+            "StackName": "unidesigncompassapp-20190414192909",
+            "StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-20190414192909/1aa56010-5f0d-11e9-b5b5-126c686965ae"
+        },
+        "categories": {
+            "auth": {
+                "cognitoe5bb51ed": {}
+            }
         }
     }
 }
