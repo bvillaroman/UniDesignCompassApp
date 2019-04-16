@@ -22,11 +22,15 @@ class Compass extends Component {
             ],
             previous:true,
             next:true,
+            currentPhase:'0'
         }
     }
 
-    compassButtonHandler = (phase) => {
+    compassButtonHandler = (phase) => {//handle current phase too.
         console.log(phase);
+        // var temp=phase.key
+        this.setState({currentPhase:phase.key})
+        console.log(this.state.currentPhase)
     }
 
     previousButtonHandler = () => {
@@ -39,6 +43,7 @@ class Compass extends Component {
         var temp=!this.state.next//need to handle active and disabled booleans too
         this.setState({next:temp})
     }
+
 
     render() {
         return (
@@ -55,8 +60,9 @@ class Compass extends Component {
                                             onClick={() => this.compassButtonHandler(phase)} 
                                             bsSize='large' 
                                             block 
-                                            className='btn-outline-primary text-left'>
-                                                {phase.name}
+                                            className='text-left'
+                                            variant={(this.state.currentPhase==phase.key)?"success":"outline-warning"}
+                                            >{phase.name}
                                         </Button>
                                     );
                                 })
