@@ -74,5 +74,26 @@ export async function updateProjects(id,name,timestamp){
     const updatedProject = await API.graphql(graphqlOperation(mutations.updateProject,{input:projectInfo}));
     return updatedProject;
 }
+export async function deleteUser(id){
+    const userinfo ={
+        id:id
+    }
+    const deletedUser= await API.graphql(graphqlOperation(mutations.deleteUser,{input:userinfo}));
+    return deletedUser;
+}
+export async function deleteProjects(id){
+    const projectInfo={
+        id:id
+    }
+    const deletedProject = await API.graphql(graphqlOperation(mutations.deleteProject,{input:projectInfo}));
+    return deletedProject;
+}
 
+export async function deleteLogs(id){
+    const loginfo={
+        id:id
+    }
+    const deletedLog = await API.graphql(graphqlOperation(mutations.deleteLog,{input:loginfo}));
+    return deletedLog;
+}
 

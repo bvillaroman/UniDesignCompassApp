@@ -116,7 +116,7 @@ class Login extends Component {
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
                 console.log(res);
-                createUser(this.state.first_name, 
+                createUser(this.state.first_name,
                     this.state.last_name,
                     this.state.email,
                     1234).then( // CHange PAssword Hash.
@@ -125,6 +125,7 @@ class Login extends Component {
                             this.Log_state = "SignIn";
                             this.forceUpdate();
                         }, (error) => {
+                            alert("Something went wrong");
                             console.log(error);
                         }
                     );
