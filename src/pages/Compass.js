@@ -22,7 +22,8 @@ class Compass extends Component {
             ],
             previous:true,
             next:true,
-            currentPhase:'0'
+            currentPhase:'0',
+            emptyTime:"00:00:00"
         }
     }
 
@@ -75,7 +76,8 @@ class Compass extends Component {
                                         <Button
                                         variant={(this.state.currentPhase==phase.key)?"danger":"outline-primary"}
                                         onClick={()=>this.timerHandler(phase)}
-                                        >Timer
+                                        >
+                                        {this.state.emptyTime}
                                         </Button>
                                         </ButtonGroup>
                                         </div>
