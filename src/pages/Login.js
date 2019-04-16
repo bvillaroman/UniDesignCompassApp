@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Text } from "react";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { connect } from 'react-redux';
@@ -9,7 +9,11 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
+
 import { Redirect } from 'react-router-dom'
+import {browserHistory} from 'react-router';
+import { withRouter } from 'react-router-dom'
+
 import IndexPage from ".";
 import HomePage from "./HomePage";
 Auth.configure(config);
@@ -112,8 +116,6 @@ class Login extends Component {
             })
     }
     determineRender() {
-        console.log(this.Log_state);
-
         switch (this.Log_state) {
             case 'SignIn':
                 this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
@@ -134,8 +136,22 @@ class Login extends Component {
 
 
             case 'LOGGED_IN':
-                this._comp = <Redirect to='/' />
+            //     // this._comp = <Redirect to='/' />
+            //     // const RedirectButton = withRouter(({ history }) => (
+            //     //     <button
+            //     //       type='button'
+            //     //       onClick={() => { history.push('/new-location') }}
+            //     //     >
+            //     //       Click Me!
+            //     //     </button>
+            //     //   ))
+            //     // this._comp = <RedirectButton />;
+                // this._comp = null;
+                
+                console.log('logged in!!');
                 break;
+            //     // browserHistory.push('/login');
+            //     break;
 
 
             default:
