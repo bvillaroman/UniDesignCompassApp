@@ -10,12 +10,15 @@ import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
 import { Redirect } from "@reach/router";
+import { createUser } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            first_name: " ", //Add firstname and Lastname to Sign Up page
+            last_name: " ",
             email: "",
             password: "",
             repeat_pass: "",
@@ -95,7 +98,7 @@ class Login extends Component {
         e.preventDefault();
         if (!this.comparePasswords()) {
             alert("Passwords do not match");
-            return; 
+            return;
         }
         let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
         Auth.signUp(attributes)
@@ -113,10 +116,18 @@ class Login extends Component {
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
                 console.log(res);
-                alert("Account Confirmed");
-                this.Log_state = "SignIn";
-                this.forceUpdate();
-
+                createUser(this.state.first_name, 
+                    this.state.last_name,
+                    this.state.email,
+                    1234).then( // CHange PAssword Hash.
+                        (result) => {
+                            alert("Account Confirmed");
+                            this.Log_state = "SignIn";
+                            this.forceUpdate();
+                        }, (error) => {
+                            console.log(error);
+                        }
+                    );
             }, (error) => {
                 console.log(error);
                 alert(error.message);
