@@ -1,42 +1,35 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Navbar, Nav } from 'react-bootstrap';
+import NavBarStyles from '../styles/components.modules.css';
+import { store } from '../state/store';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+var userStatus = store.getState().Reducer.isAuthenticated;
+var displayLogin = (userStatus == "false") ?
+  ( <Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link> ) :
+  ( <Nav.Link><Link rel="logout" to="/">Logout</Link></Nav.Link> );
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+var displayProfile = (userStatus == "false") ?
+  null : ( <Nav.Link><Link rel="profile" to="/">Profile</Link></Nav.Link> );
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Header = (props) => (
+  <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
+    <Navbar.Brand variant="light"> <Link to="/"> {props.siteTitle}</Link> </Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav>
+        {/* NEED TO REPLACE LINKS ONCE READY!! */}
+        <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
+        <Nav.Link><Link rel="create" to="/">Create</Link></Nav.Link>
+        <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
+        {displayProfile}
+        {displayLogin}
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 
-export default Header
+);
+
+
+export default Header;
