@@ -10,9 +10,7 @@ import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
 
-import { Redirect } from 'react-router-dom'
-import {browserHistory} from 'react-router';
-import { withRouter } from 'react-router-dom'
+import { BrowserRouter, Router, Redirect } from 'react-router-dom';
 
 import IndexPage from ".";
 import HomePage from "./HomePage";
@@ -58,7 +56,6 @@ class Login extends Component {
                     case "SMS_MFA":
                         break;
                     default:
-                        console.log(res);
                         this.Log_state = "LOGGED_IN";
                         this.props.authenticateUser("true");
                 }
@@ -136,22 +133,17 @@ class Login extends Component {
 
 
             case 'LOGGED_IN':
-            //     // this._comp = <Redirect to='/' />
-            //     // const RedirectButton = withRouter(({ history }) => (
-            //     //     <button
-            //     //       type='button'
-            //     //       onClick={() => { history.push('/new-location') }}
-            //     //     >
-            //     //       Click Me!
-            //     //     </button>
-            //     //   ))
-            //     // this._comp = <RedirectButton />;
-                // this._comp = null;
-                
                 console.log('logged in!!');
+                this._comp =  
+                        <BrowserRouter>
+                            {/* <Router
+                                exact 
+                                path="/" 
+                                render={props => <Redirect to="/About"/>}
+                            /> */}
+                            <Redirect to="/About"/>
+                        </BrowserRouter>
                 break;
-            //     // browserHistory.push('/login');
-            //     break;
 
 
             default:
@@ -161,7 +153,7 @@ class Login extends Component {
     }
     render() {
         this.determineRender()
-        return(<Layout>{this._comp}</Layout>);
+        return(<Layout> {this._comp} </Layout>);
     }
 }
 
@@ -171,6 +163,8 @@ function mapStateToProps(state) {
     }
 }
 const mapDispatchToProps = dispatch => ({
-    authenticateUser: (auth) => dispatch(authenticateUser(auth))
+    authenticateUser: (auth) => {
+        dispatch(authenticateUser(auth));
+    }
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
