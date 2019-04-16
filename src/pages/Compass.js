@@ -23,7 +23,8 @@ class Compass extends Component {
             previous:true,
             next:true,
             currentPhase:'0',
-            emptyTime:"00:00:00"
+            emptyTime:"00:00:00",
+            currentTime: " "
         }
     }
 
@@ -50,7 +51,13 @@ class Compass extends Component {
 
     timerHandler = (phase)=>{
         (phase.key==this.state.currentPhase)?console.log("Timer "+phase.key):console.log("Current Phase: "+this.state.currentPhase +" Not Phase (Clicked) "+phase.key)
-
+        var x = new Date()
+        var minutes= x.getMinutes();
+        var seconds= x.getSeconds();
+        var milliseconds= x.getUTCMilliseconds();
+        var temp = minutes.toString()+":"+seconds.toString()+":"+milliseconds.toString()
+        console.log(minutes)
+        this.setState({currentTime:temp})
     }
     render() {
         return (
@@ -77,7 +84,7 @@ class Compass extends Component {
                                         variant={(this.state.currentPhase==phase.key)?"danger":"outline-primary"}
                                         onClick={()=>this.timerHandler(phase)}
                                         >
-                                        {this.state.emptyTime}
+                                        {(this.state.currentPhase==phase.key)?this.state.currentTime:this.state.emptyTime}
                                         </Button>
                                         </ButtonGroup>
                                         </div>
