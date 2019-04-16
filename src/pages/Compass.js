@@ -44,6 +44,9 @@ class Compass extends Component {
         this.setState({next:temp})
     }
 
+    updateLogHandler = () =>{
+        console.log('Success')
+    } 
 
     render() {
         return (
@@ -67,8 +70,8 @@ class Compass extends Component {
                                             >{phase.name}
                                         </Button>
                                         <Button
-                                        >
-                                            Timer
+                                        variant={(this.state.currentPhase==phase.key)?"danger":"outline-primary"}
+                                        >Timer
                                         </Button>
                                         </ButtonGroup>
                                         </div>
@@ -104,6 +107,19 @@ class Compass extends Component {
                             Next
                         </Button>
                         </Col>
+                       </Row>
+                       <Row>
+                           <Col></Col>
+                           <Col>
+                           <Button
+                           block
+                           size="sm"
+                           variant="warning"
+                           onClick={(e) => this.updateLogHandler()}
+                           >Update Log
+                           </Button>
+                           </Col>
+                           <Col></Col>
                        </Row>
                     </div>
                 </div>
