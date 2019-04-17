@@ -77,4 +77,5 @@ build/
 dist/
 node_modules/
 aws-exports.js
-awsconfiguration.jsonemplify/.temp/
+awsconfiguration.jsona
+amplify/.temp/
