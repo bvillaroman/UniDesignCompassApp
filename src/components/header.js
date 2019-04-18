@@ -23,6 +23,7 @@ const Header = (props) => (
         <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
         <Nav.Link><Link rel="create" to="/Create">Create</Link></Nav.Link>
         <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
+        <Nav.Link><Link rel="analytics" to="/Analytics">Analytics</Link></Nav.Link>
         {displayProfile}
         {displayLogin}
       </Nav>

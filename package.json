@@ -30,11 +30,13 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-testing-library": "^6.1.2",
+    "react-vega": "^6.0.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise-middleware": "^6.1.0",
     "redux-thunk": "^2.3.0",
-    "thunk": "0.0.1"
+    "thunk": "0.0.1",
+    "vega": "^5.3.5"
   },
   "devDependencies": {
     "babel-jest": "^24.7.1",
