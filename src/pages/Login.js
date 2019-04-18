@@ -9,7 +9,11 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import { Redirect } from "@reach/router";
+import {API,graphqlOperation} from 'aws-amplify';
+import { createUser } from "../graphql/mutations"
+import { getUser } from "../graphql/queries"
+
+
 Auth.configure(config);
 
 class Login extends Component {
@@ -57,12 +61,9 @@ class Login extends Component {
                         this.Log_state = "LoggedIn";
                         this.props.authenticateUser("true");
                 }
-                this.forceUpdate();
-
             }, (error) => {
                 console.log(error);
                 alert(error.message);
-
             });
     };
     handlePass = (e) => {
@@ -84,6 +85,9 @@ class Login extends Component {
         this.Log_state = "SIGNUP";
         this.forceUpdate();
     }
+    logIng = () => {
+        
+    }
     comparePasswords = () => {
         if (this.state.password == this.state.repeat_pass) {
             return true;
@@ -101,7 +105,9 @@ class Login extends Component {
         Auth.signUp(attributes)
             .then((res) => {
                 this.Log_state = "Verify";
-                alert("Check your email for Verification code")
+                alert("Check your email for Verification code");
+                const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
+                API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -112,11 +118,8 @@ class Login extends Component {
         e.preventDefault();
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
-                console.log(res);
                 alert("Account Confirmed");
                 this.Log_state = "SignIn";
-                this.forceUpdate();
-
             }, (error) => {
                 console.log(error);
                 alert(error.message);

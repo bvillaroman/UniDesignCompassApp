@@ -5,7 +5,6 @@ import { store } from "../state/store";
 
 class IndexPage extends React.Component {
   render() {
-
     return (
       <div>
         <Provider store={store}>
