@@ -4,10 +4,12 @@
 export const onCreateUser = `subscription OnCreateUser {
   onCreateUser {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -18,10 +20,12 @@ export const onCreateUser = `subscription OnCreateUser {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -33,10 +37,12 @@ export const onCreateUser = `subscription OnCreateUser {
 export const onUpdateUser = `subscription OnUpdateUser {
   onUpdateUser {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -47,10 +53,12 @@ export const onUpdateUser = `subscription OnUpdateUser {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -62,10 +70,12 @@ export const onUpdateUser = `subscription OnUpdateUser {
 export const onDeleteUser = `subscription OnDeleteUser {
   onDeleteUser {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -76,10 +86,12 @@ export const onDeleteUser = `subscription OnDeleteUser {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -104,10 +116,12 @@ export const onCreateProcess = `subscription OnCreateProcess {
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -137,10 +151,12 @@ export const onUpdateProcess = `subscription OnUpdateProcess {
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -170,10 +186,12 @@ export const onDeleteProcess = `subscription OnDeleteProcess {
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name

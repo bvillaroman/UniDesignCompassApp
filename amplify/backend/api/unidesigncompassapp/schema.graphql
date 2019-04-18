@@ -1,9 +1,11 @@
 type User @model {
 	id: ID!
-	first_name: String!
-	last_name: String!
+	username: String!
+	first_name: String
+	last_name: String
 	email: String!
-	password_hash: Int!
+	password_hash: Int
+	phone_number: String
 	processes: [Process]
 }
 type Process @model{

@@ -4,10 +4,12 @@
 export const createUser = `mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -18,10 +20,12 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -33,10 +37,12 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
 export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
   updateUser(input: $input) {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -47,10 +53,12 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -62,10 +70,12 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
 export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -76,10 +86,12 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -104,10 +116,12 @@ export const createProcess = `mutation CreateProcess($input: CreateProcessInput!
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -137,10 +151,12 @@ export const updateProcess = `mutation UpdateProcess($input: UpdateProcessInput!
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -170,10 +186,12 @@ export const deleteProcess = `mutation DeleteProcess($input: DeleteProcessInput!
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name

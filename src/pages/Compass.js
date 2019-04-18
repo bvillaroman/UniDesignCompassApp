@@ -5,7 +5,6 @@ import "../components/bootstrap.css"
 import { Row, ButtonGroup, ButtonToolbar } from "react-bootstrap";
 import {Col} from "react-bootstrap";
 import Amplify, {API,graphqlOperation} from 'aws-amplify';
-import { withAuthenticator} from 'aws-amplify-react'; 
 import { createLog } from "../graphql/mutations"
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 Amplify.configure(aws_exports);

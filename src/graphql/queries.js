@@ -4,10 +4,12 @@
 export const getUser = `query GetUser($id: ID!) {
   getUser(id: $id) {
     id
+    username
     first_name
     last_name
     email
     password_hash
+    phone_number
     processes {
       id
       phase_ids {
@@ -18,10 +20,12 @@ export const getUser = `query GetUser($id: ID!) {
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
@@ -38,10 +42,12 @@ export const listUsers = `query ListUsers(
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -69,10 +75,12 @@ export const getProcess = `query GetProcess($id: ID!) {
     }
     user_id {
       id
+      username
       first_name
       last_name
       email
       password_hash
+      phone_number
       processes {
         id
         name
@@ -102,10 +110,12 @@ export const listProcesss = `query ListProcesss(
       }
       user_id {
         id
+        username
         first_name
         last_name
         email
         password_hash
+        phone_number
       }
       name
       date_start
