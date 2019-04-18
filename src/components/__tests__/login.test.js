@@ -11,11 +11,32 @@ configure({adapter:new Adapter()});
 
 const tree = mount(<Provider store={store} ><Login /></Provider>);
 
-describe("Login_Page", () => {
+describe("Check Login_Page", () => {
     it("render", () => {
         expect(mountToJson(tree)).toMatchSnapshot()
     })
 })
+describe("Check Password", () => {
+    it("render", () => {
+        expect(mountToJson(tree)).toMatchSnapshot()
+    })
+})
+describe("Check verification page loads", () => {
+    it("render", () => {
+        expect(mountToJson(tree)).toMatchSnapshot()
+    })
+})
+describe("Check user signup page ", () => {
+    it("render", () => {
+        expect(mountToJson(tree)).toMatchSnapshot()
+    })
+})
+describe("", () => {
+    it("render", () => {
+        expect(mountToJson(tree)).toMatchSnapshot()
+    })
+})
+
 // describe("SignIn exceptions",() =>{
 //      it("failed Log in",()=>{
 //          console.log();
