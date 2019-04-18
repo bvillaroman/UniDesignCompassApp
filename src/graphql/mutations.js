@@ -8,16 +8,24 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
     last_name
     email
     password_hash
-    projects {
+    processes {
       id
-      name
-      timestamp
-      logs {
+      phase_ids {
         id
-        timestamp
-        phase_log_json
-        attachments
+        duration
+        title
+        description
       }
+      user_id {
+        id
+        first_name
+        last_name
+        email
+        password_hash
+      }
+      name
+      date_start
+      date_end
     }
   }
 }
@@ -29,16 +37,24 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
     last_name
     email
     password_hash
-    projects {
+    processes {
       id
-      name
-      timestamp
-      logs {
+      phase_ids {
         id
-        timestamp
-        phase_log_json
-        attachments
+        duration
+        title
+        description
       }
+      user_id {
+        id
+        first_name
+        last_name
+        email
+        password_hash
+      }
+      name
+      date_start
+      date_end
     }
   }
 }
@@ -50,59 +66,166 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
     last_name
     email
     password_hash
-    projects {
+    processes {
       id
+      phase_ids {
+        id
+        duration
+        title
+        description
+      }
+      user_id {
+        id
+        first_name
+        last_name
+        email
+        password_hash
+      }
       name
-      timestamp
+      date_start
+      date_end
+    }
+  }
+}
+`;
+export const createProcess = `mutation CreateProcess($input: CreateProcessInput!) {
+  createProcess(input: $input) {
+    id
+    phase_ids {
+      id
       logs {
         id
         timestamp
-        phase_log_json
-        attachments
+        text
+      }
+      duration
+      title
+      description
+    }
+    user_id {
+      id
+      first_name
+      last_name
+      email
+      password_hash
+      processes {
+        id
+        name
+        date_start
+        date_end
       }
     }
+    name
+    date_start
+    date_end
   }
 }
 `;
-export const createProject = `mutation CreateProject($input: CreateProjectInput!) {
-  createProject(input: $input) {
+export const updateProcess = `mutation UpdateProcess($input: UpdateProcessInput!) {
+  updateProcess(input: $input) {
     id
-    name
-    timestamp
-    logs {
+    phase_ids {
       id
-      timestamp
-      phase_log_json
-      attachments
+      logs {
+        id
+        timestamp
+        text
+      }
+      duration
+      title
+      description
     }
+    user_id {
+      id
+      first_name
+      last_name
+      email
+      password_hash
+      processes {
+        id
+        name
+        date_start
+        date_end
+      }
+    }
+    name
+    date_start
+    date_end
   }
 }
 `;
-export const updateProject = `mutation UpdateProject($input: UpdateProjectInput!) {
-  updateProject(input: $input) {
+export const deleteProcess = `mutation DeleteProcess($input: DeleteProcessInput!) {
+  deleteProcess(input: $input) {
     id
-    name
-    timestamp
-    logs {
+    phase_ids {
       id
-      timestamp
-      phase_log_json
-      attachments
+      logs {
+        id
+        timestamp
+        text
+      }
+      duration
+      title
+      description
     }
+    user_id {
+      id
+      first_name
+      last_name
+      email
+      password_hash
+      processes {
+        id
+        name
+        date_start
+        date_end
+      }
+    }
+    name
+    date_start
+    date_end
   }
 }
 `;
-export const deleteProject = `mutation DeleteProject($input: DeleteProjectInput!) {
-  deleteProject(input: $input) {
+export const createPhase = `mutation CreatePhase($input: CreatePhaseInput!) {
+  createPhase(input: $input) {
     id
-    name
-    timestamp
     logs {
       id
       timestamp
-      phase_log_json
-      attachments
+      text
     }
+    duration
+    title
+    description
+  }
+}
+`;
+export const updatePhase = `mutation UpdatePhase($input: UpdatePhaseInput!) {
+  updatePhase(input: $input) {
+    id
+    logs {
+      id
+      timestamp
+      text
+    }
+    duration
+    title
+    description
+  }
+}
+`;
+export const deletePhase = `mutation DeletePhase($input: DeletePhaseInput!) {
+  deletePhase(input: $input) {
+    id
+    logs {
+      id
+      timestamp
+      text
+    }
+    duration
+    title
+    description
   }
 }
 `;
@@ -110,8 +233,7 @@ export const createLog = `mutation CreateLog($input: CreateLogInput!) {
   createLog(input: $input) {
     id
     timestamp
-    phase_log_json
-    attachments
+    text
   }
 }
 `;
@@ -119,8 +241,7 @@ export const updateLog = `mutation UpdateLog($input: UpdateLogInput!) {
   updateLog(input: $input) {
     id
     timestamp
-    phase_log_json
-    attachments
+    text
   }
 }
 `;
@@ -128,8 +249,7 @@ export const deleteLog = `mutation DeleteLog($input: DeleteLogInput!) {
   deleteLog(input: $input) {
     id
     timestamp
-    phase_log_json
-    attachments
+    text
   }
 }
 `;
