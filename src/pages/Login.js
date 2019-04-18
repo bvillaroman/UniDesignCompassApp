@@ -9,16 +9,8 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-<<<<<<< HEAD
 import { Redirect } from "@reach/router";
 import { createUser } from "../graphql_utils/utils";
-=======
-import {API,graphqlOperation} from 'aws-amplify';
-import { createUser } from "../graphql/mutations"
-import { getUser } from "../graphql/queries"
-
-
->>>>>>> upstream/master
 Auth.configure(config);
 
 class Login extends Component {
@@ -113,8 +105,8 @@ class Login extends Component {
             .then((res) => {
                 this.Log_state = "Verify";
                 alert("Check your email for Verification code");
-                const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
-                API.graphql(graphqlOperation(createUser,{ input: user }));
+                //const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
+                //API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -125,11 +117,10 @@ class Login extends Component {
         e.preventDefault();
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
-<<<<<<< HEAD
                 console.log(res);
-                createUser(this.state.first_name,
+                createUser(this.state.username,this.state.first_name,
                     this.state.last_name,
-                    this.state.email,
+                    this.state.email,this.state.phone,
                     1234).then( // CHange PAssword Hash.
                         (result) => {
                             alert("Account Confirmed");
@@ -140,10 +131,6 @@ class Login extends Component {
                             console.log(error);
                         }
                     );
-=======
-                alert("Account Confirmed");
-                this.Log_state = "SignIn";
->>>>>>> upstream/master
             }, (error) => {
                 console.log(error);
                 alert(error.message);
@@ -174,7 +161,8 @@ class Login extends Component {
     }
     render() {
         this.determineRender()
-        return (<Layout>{this._comp}</Layout>);
+        return (//<Layout>{this._comp}</Layout>
+            this._comp);
     }
 }
 

@@ -19,12 +19,14 @@ export async function getProjects(project_id){
     const Project = await API.graphql(graphqlOperation(queries.getProject,{id:project_id}));
     return Project;
 }
-export async function createUser(first_name,last_name,email,password_hash){
+export async function createUser(username,first_name,last_name,email,phone,password_hash){
     const userinfo ={
+        username:username,
         first_name:first_name,
         last_name:last_name,
         email:email,
-        password_hash:password_hash
+        password_hash:password_hash,
+        phone_number:phone
     }
     const newUser = await API.graphql(graphqlOperation(mutations.createUser,{input:userinfo}));
     return newUser;
