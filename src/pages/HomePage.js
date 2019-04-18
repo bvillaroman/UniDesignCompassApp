@@ -10,7 +10,7 @@ const HomePage = (props) => (
       <h1 className="presentation-description">DESIGN COMPASS</h1>
       <h3 className="presentation-description1">to facililate</h3>
       <h1 className="presentation-description2">Creation</h1>
-      {/*find better way to link Compass page*/}
+
       <Button className="presentation-button" variant="info" size="lg" href="/Compass">Begin</Button>
     </div>
     {/* REPLACE CARD TEXT */}

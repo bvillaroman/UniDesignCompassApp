@@ -21,7 +21,7 @@ const Header = (props) => (
       <Nav>
         {/* NEED TO REPLACE LINKS ONCE READY!! */}
         <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
-        <Nav.Link><Link rel="create" to="/">Create</Link></Nav.Link>
+        <Nav.Link><Link rel="create" to="/Create">Create</Link></Nav.Link>
         <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
         {displayProfile}
         {displayLogin}
