@@ -51,21 +51,21 @@ class Compass extends Component {
 
     timerHandler = (phase)=>{
         (phase.key==this.state.currentPhase)?console.log("Timer "+phase.key):console.log("Current Phase: "+this.state.currentPhase +" Not Phase (Clicked) "+phase.key)
-        var start = new Date()
+        var start = new Date();
         var startMinutes= start.getMinutes();
         var startSeconds= start.getSeconds();
-        var startMilliseconds= start.getUTCMilliseconds();
-        var temp = startMinutes.toString()+":"+startSeconds.toString()+":"+startMilliseconds.toString()
-        // console.log(minutes)
+        var startMilliseconds= start.getMilliseconds();
+        var temp = ""+startMinutes.toString()+":"+startSeconds.toString()+":"+startMilliseconds.toString();
         this.setState({currentTime:temp})
-        while(){//Set Condition for updating the time.
-        var elapsed= new Date()
-        var elapsedMinutes= elapsed.getMinutes();
-        var elapsedSeconds= elapsed.getSeconds();
-        var elapsedMilliseconds= elapsed.getUTCMilliseconds();
-        var temp = elapsedMinutes.toString()+":"+elapsedSeconds.toString()+":"+elapsedMilliseconds.toString()
-        console.log(temp)
-        }
+        console.log(this.state.currentTime)
+        // while(0){//Set Condition for updating the time.
+        // var elapsed= new Date()
+        // var elapsedMinutes= elapsed.getMinutes();
+        // var elapsedSeconds= elapsed.getSeconds();
+        // var elapsedMilliseconds= elapsed.getMilliseconds();
+        // var temp = elapsedMinutes.toString()+":"+elapsedSeconds.toString()+":"+elapsedMilliseconds.toString()
+        // console.log(temp)
+        // }
     }
     render() {
         return (
