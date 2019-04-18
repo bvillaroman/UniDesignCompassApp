@@ -30,6 +30,7 @@
     "react-redux": "^6.0.1",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
+    "react-scrollable-list": "^1.2.0",
     "react-testing-library": "^6.1.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
