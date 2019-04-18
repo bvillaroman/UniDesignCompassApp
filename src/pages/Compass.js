@@ -64,7 +64,6 @@ class Compass extends Component {
         const log = {"id": 3,"timestamp": temp, "text":this.state.log};
 
         API.graphql(graphqlOperation(createLog,{ input: log}));
-        console.log(log);
     } 
 
     timerHandler = (phase)=>{
