@@ -4,6 +4,11 @@ import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { Row, ButtonGroup, ButtonToolbar } from "react-bootstrap";
 import {Col} from "react-bootstrap";
+import Amplify, {API,graphqlOperation} from 'aws-amplify';
+import { withAuthenticator} from 'aws-amplify-react'; 
+import { createLog } from "../graphql/mutations"
+import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
+Amplify.configure(aws_exports);
 
 class Compass extends Component {
     constructor(props) {
@@ -24,7 +29,8 @@ class Compass extends Component {
             next:true,
             currentPhase:'0',
             emptyTime:"00:00:00",
-            currentTime: " "
+            currentTime: " ",
+            log:""
         }
     }
 
@@ -45,8 +51,20 @@ class Compass extends Component {
         this.setState({next:temp});
     }
 
-    updateLogHandler = () =>{
-        console.log('Success');
+    handleTextArea = (e) => {
+        this.setState({log : e.target.value})
+    }
+
+    updateLogHandler = (event) => { 
+        var x = new Date()
+        var minutes= x.getMinutes();
+        var seconds= x.getSeconds();
+        var milliseconds= x.getUTCMilliseconds();
+        var temp = minutes.toString()+":"+seconds.toString()+":"+milliseconds.toString()
+        const log = {"id": 3,"timestamp": temp, "text":this.state.log};
+
+        API.graphql(graphqlOperation(createLog,{ input: log}));
+        console.log(log);
     } 
 
     timerHandler = (phase)=>{
@@ -107,6 +125,8 @@ class Compass extends Component {
                         placeholder="Log Text"
                         rows="5"
                         cols="20"
+                        value={this.state.log}
+                        onChange={this.handleTextArea}
                         > 
 
                         </textarea>
