@@ -100,3 +100,35 @@ export const listLogs = `query ListLogs($filter: ModelLogFilterInput, $limit: In
   }
 }
 `;
+export const listProcesses = `query ListProcesses {
+  listProcesses {
+    id
+    title
+    phase_logs {
+      id
+      title
+      description
+      log_entry {
+        id
+        text
+        timestamp
+      }
+      duration
+    }
+    user {
+      id
+      first_name
+      last_name
+      email
+      password_hash
+      projects {
+        id
+        name
+        timestamp
+      }
+    }
+    start_time
+    end_time
+  }
+}
+`;
