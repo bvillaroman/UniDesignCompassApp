@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Layout from "../components/layout"
 import { Button } from "react-bootstrap";
-import ResponsiveBarChart from "./ResponsiveBarChart";
+import ResponsiveBarChart from '../components/ResponsiveBarChart';
 
 class Analytics extends Component {
     constructor(props) {
@@ -22,7 +22,6 @@ class Analytics extends Component {
       }
         
     render() {
-        console.log(this.state);
         return (
             <Layout>
                 <div className='container'>
