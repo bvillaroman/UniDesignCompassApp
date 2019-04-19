@@ -4,25 +4,32 @@ import {createClassFromSpec} from 'react-vega';
 
 export default createClassFromSpec('BarChart', {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "width": 400,
-    "height": 200,
-    "padding": 5,
+    
+    "padding": "20",
+    "width": "300",
+    "height": "300",
+    "autosize": {
+        "type": "pad",
+        "contains": "content",
+        "resize": true
+    },
   
-    "data": [
-      {
-        "name": "table",
-        "values": [
-          {"category": "A", "amount": 28},
-          {"category": "B", "amount": 55},
-          {"category": "C", "amount": 43},
-          {"category": "D", "amount": 91},
-          {"category": "E", "amount": 81},
-          {"category": "F", "amount": 53},
-          {"category": "G", "amount": 19},
-          {"category": "H", "amount": 87}
-        ]
-      }
-    ],
+    "data": [{ "name": "table" }],
+    // "data": [
+    //   {
+    //     "name": "table",
+    //     "values": [
+    //       {"category": "A", "amount": 28},
+    //       {"category": "B", "amount": 55},
+    //       {"category": "C", "amount": 43},
+    //       {"category": "D", "amount": 91},
+    //       {"category": "E", "amount": 81},
+    //       {"category": "F", "amount": 53},
+    //       {"category": "G", "amount": 19},
+    //       {"category": "H", "amount": 87}
+    //     ]
+    //   }
+    // ],
   
     "signals": [
       {

@@ -32,10 +32,8 @@ class Analytics extends Component {
         console.log("handlinng");
     }
 
-    data = [
-        {
-          "name": "table",
-          "values": [
+    data = {
+        table : [
             {"category": "A", "amount": 28},
             {"category": "B", "amount": 55},
             {"category": "C", "amount": 43},
@@ -44,9 +42,8 @@ class Analytics extends Component {
             {"category": "F", "amount": 53},
             {"category": "G", "amount": 19},
             {"category": "H", "amount": 87}
-          ]
-        }
-    ]
+        ]
+    }
 }
 
 export default Analytics;
