@@ -161,8 +161,7 @@ class Login extends Component {
     }
     render() {
         this.determineRender()
-        return (//<Layout>{this._comp}</Layout>
-            this._comp);
+        return (<Layout>{this._comp}</Layout>);
     }
 }
 
