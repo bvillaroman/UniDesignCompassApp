@@ -8,32 +8,18 @@ class BarChart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            spec: this.spec,
-            chartData: this.data
+            spec: props.spec ? props.spec : this.defaultSpec,
+            data: props.data
         }
     }
         
     render() {
         return (
-            <Vega spec={this.state.spec} data={this.state.chartData} />
+            <Vega spec={this.state.spec} data={this.state.data} />
         );
     }
 
-    data = {
-        table : [
-            {"category": "A", "amount": 28},
-            {"category": "B", "amount": 55},
-            {"category": "C", "amount": 43},
-            {"category": "D", "amount": 91},
-            {"category": "E", "amount": 81},
-            {"category": "F", "amount": 53},
-            {"category": "G", "amount": 19},
-            {"category": "H", "amount": 87},
-            {"category": "I", "amount": 23}
-        ]
-    }
-
-    spec = {
+    defaultSpec = {
         "$schema": "https://vega.github.io/schema/vega/v5.json",
         
         "padding": "20",

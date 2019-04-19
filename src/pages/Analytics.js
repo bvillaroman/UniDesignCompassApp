@@ -31,7 +31,7 @@ class Analytics extends Component {
                 <div className='container'>
                     {/* <Vega spec={this.state.spec} data={this.state.chartData} />
                     <Button onClick={this.chartButtonHandler}>ok</Button> */}
-                    <ResponsiveBarChart />
+                    <ResponsiveBarChart data={this.data}/>
                 </div>
             </Layout>
         );
