@@ -61,9 +61,11 @@ class Compass extends Component {
         var seconds = x.getSeconds();
         var milliseconds = x.getUTCMilliseconds();
         var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-        const log = { "id": 3, "timestamp": temp, "text": this.state.log };
-
-        API.graphql(graphqlOperation(createLog, { input: log }));
+        const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
+        log_list.data.push(log); // Temporary
+        console.log(log_list.data); //Temporary
+        this.forceUpdate();
+        //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
     timerHandler = (phase) => {
@@ -79,7 +81,7 @@ class Compass extends Component {
     generateList(phase){
         if(this.state.currentPhase==phase){
             const filtered= log_list.data.filter((entry)=>{
-                return (entry.phase==phase);
+                return (entry.id==phase);
             })
             return (filtered.map((data)=>{
                 return(<h4>{data.text}</h4>);
