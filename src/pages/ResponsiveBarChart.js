@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
 import Vega from 'react-vega';
 
-import Layout from "../components/layout"
 import { Button } from "react-bootstrap";
-import { SizeMe } from 'react-sizeme'
-import ResponsiveBarChart from "./ResponsiveBarChart";
+import BarChart from "./BarChart";
 
-class Analytics extends Component {
+class ResponsiveBarChart extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,15 +22,8 @@ class Analytics extends Component {
       }
         
     render() {
-        console.log(this.state);
         return (
-            <Layout>
-                <div className='container'>
-                    {/* <Vega spec={this.state.spec} data={this.state.chartData} />
-                    <Button onClick={this.chartButtonHandler}>ok</Button> */}
-                    <ResponsiveBarChart />
-                </div>
-            </Layout>
+            <BarChart onSize={this.onSize}/>
         );
     }
 
@@ -140,4 +130,4 @@ class Analytics extends Component {
     }
 }
 
-export default Analytics;
+export default ResponsiveBarChart;

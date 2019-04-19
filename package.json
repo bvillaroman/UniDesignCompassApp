@@ -31,6 +31,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scrollable-list": "^1.2.0",
+    "react-sizeme": "^2.5.2",
     "react-testing-library": "^6.1.2",
     "react-vega": "^6.0.1",
     "redux": "^4.0.1",
