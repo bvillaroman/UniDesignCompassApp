@@ -45,7 +45,7 @@ class BarChart extends Component {
         "autosize": {
             "type": "fit",
             "contains": "padding",
-            "resize": true
+            "resize": false
         },
       
         "data": [{ "name": "table" }],
@@ -114,10 +114,10 @@ class BarChart extends Component {
                 "x": {"scale": "xscale", "signal": "tooltip.category", "band": 0.5},
                 "y": {"scale": "yscale", "signal": "tooltip.amount", "offset": -2},
                 "text": {"signal": "tooltip.amount"},
-                "fillOpacity": [
-                  {"test": "datum === tooltip", "value": 0},
-                  {"value": 1}
-                ]
+                // "fillOpacity": [
+                //   {"test": "datum === tooltip", "value": 0},
+                //   {"value": 1}
+                // ]
               }
             }
           }
