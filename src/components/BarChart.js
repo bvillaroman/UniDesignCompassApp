@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Vega from 'react-vega';
 import sizeMe from 'react-sizeme'
 import { Handler } from 'vega-tooltip';
-import { Button } from "react-bootstrap";
 
 class BarChart extends Component {
     constructor(props) {
