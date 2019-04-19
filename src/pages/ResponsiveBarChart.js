@@ -14,13 +14,24 @@ class ResponsiveBarChart extends Component {
     }
 
     onSize = size => {
-        console.log('MyComponent has a width of', size.width)
+        this.setState({
+            width: size.width*5/5,
+            height: size.width*2/3
+        })
       }
         
     render() {
         const spec = this.state.spec ? this.state.spec : null;
         return (
-            <BarChart onSize={this.onSize} spec={spec} data={this.state.data}/>
+            <div>
+                <BarChart
+                    onSize={this.onSize} 
+                    spec={spec} 
+                    width={this.state.width} 
+                    height={this.state.height} 
+                    data={this.state.data}
+                />
+            </div>
         );
     }
 }

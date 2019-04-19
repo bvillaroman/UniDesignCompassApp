@@ -9,9 +9,21 @@ class BarChart extends Component {
         super(props);
         this.state = {
             spec: props.spec ? props.spec : this.defaultSpec,
-            data: props.data
+            width: props.width ? props.width : this.defaultSize.width,
+            height: props.height ? props.height : this.defaultSize.height,
+            data: props.data,
         }
     }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            spec: {
+                ...this.state.spec,
+                'width': nextProps.width,
+                'height': nextProps.height
+            }
+        });  
+      }
         
     render() {
         return (
@@ -19,15 +31,20 @@ class BarChart extends Component {
         );
     }
 
+    defaultSize = {
+        width: 300,
+        height: 300
+    }
+
     defaultSpec = {
         "$schema": "https://vega.github.io/schema/vega/v5.json",
         
-        "padding": "20",
-        "width": "300",
-        "height": "300",
+        "padding": "0",
+        // "width": this.defaultSize.width,
+        // "height": this.defaultSize.height,
         "autosize": {
-            "type": "pad",
-            "contains": "content",
+            "type": "fit",
+            "contains": "padding",
             "resize": true
         },
       
