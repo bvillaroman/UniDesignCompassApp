@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import Vega from 'react-vega';
-
-import { Button } from "react-bootstrap";
 import BarChart from "./BarChart";
 
 class ResponsiveBarChart extends Component {
