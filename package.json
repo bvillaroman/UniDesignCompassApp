@@ -39,7 +39,8 @@
     "redux-promise-middleware": "^6.1.0",
     "redux-thunk": "^2.3.0",
     "thunk": "0.0.1",
-    "vega": "^5.3.5"
+    "vega": "^5.3.5",
+    "vega-tooltip": "^0.17.0"
   },
   "devDependencies": {
     "babel-jest": "^24.7.1",

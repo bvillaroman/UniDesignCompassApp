@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Vega from 'react-vega';
 import sizeMe from 'react-sizeme'
-
+import { Handler } from 'vega-tooltip';
 import { Button } from "react-bootstrap";
 
 class BarChart extends Component {
@@ -27,7 +27,7 @@ class BarChart extends Component {
         
     render() {
         return (
-            <Vega spec={this.state.spec} data={this.state.data} />
+            <Vega spec={this.state.spec} data={this.state.data} tooltip={new Handler().call} />
         );
     }
 

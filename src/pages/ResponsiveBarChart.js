@@ -15,8 +15,8 @@ class ResponsiveBarChart extends Component {
 
     onSize = size => {
         this.setState({
-            width: size.width*5/5,
-            height: size.width*2/3
+            width: size.width,
+            height: size.height ? size.height : size.width*2/3
         })
       }
         
