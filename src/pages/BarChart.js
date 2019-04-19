@@ -39,7 +39,7 @@ export default createClassFromSpec('BarChart', {
           {"events": "rect:mouseover", "update": "datum"},
           {"events": "rect:mouseout",  "update": "{}"}
         ]
-      }
+      },
     ],
   
     "scales": [
