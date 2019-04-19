@@ -9,17 +9,16 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import {API,graphqlOperation} from 'aws-amplify';
-import { createUser } from "../graphql/mutations"
-import { getUser } from "../graphql/queries"
-
-
+import { Redirect } from "@reach/router";
+import { createUser } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            first_name: " ", //Add firstname and Lastname to Sign Up page
+            last_name: " ",
             email: "",
             password: "",
             repeat_pass: "",
@@ -99,15 +98,15 @@ class Login extends Component {
         e.preventDefault();
         if (!this.comparePasswords()) {
             alert("Passwords do not match");
-            return; 
+            return;
         }
         let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
         Auth.signUp(attributes)
             .then((res) => {
                 this.Log_state = "Verify";
                 alert("Check your email for Verification code");
-                const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
-                API.graphql(graphqlOperation(createUser,{ input: user }));
+                //const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
+                //API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -118,8 +117,20 @@ class Login extends Component {
         e.preventDefault();
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
-                alert("Account Confirmed");
-                this.Log_state = "SignIn";
+                console.log(res);
+                createUser(this.state.username,this.state.first_name,
+                    this.state.last_name,
+                    this.state.email,this.state.phone,
+                    1234).then( // CHange PAssword Hash.
+                        (result) => {
+                            alert("Account Confirmed");
+                            this.Log_state = "SignIn";
+                            this.forceUpdate();
+                        }, (error) => {
+                            alert("Something went wrong");
+                            console.log(error);
+                        }
+                    );
             }, (error) => {
                 console.log(error);
                 alert(error.message);
@@ -150,7 +161,8 @@ class Login extends Component {
     }
     render() {
         this.determineRender()
-        return (<Layout>{this._comp}</Layout>);
+        return (//<Layout>{this._comp}</Layout>
+            this._comp);
     }
 }
 
