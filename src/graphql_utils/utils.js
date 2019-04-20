@@ -10,14 +10,20 @@ export async function getUser(id){
     return user;
 }
 
+export async function getUserbyUsername(username){
+    const filter = { username : { eq : username } }
+    const user = await API.graphql(graphqlOperation(queries.listUsers,{filter}));
+    return user;
+}
+
 export async function getLogs(log_id){
     const Log= await API.graphql(graphqlOperation(queries.getLog,{id:log_id}));
     return Log;
 }
 
-export async function getProjects(project_id){
-    const Project = await API.graphql(graphqlOperation(queries.getProject,{id:project_id}));
-    return Project;
+export async function getProcessess(process_id){
+    const Process = await API.graphql(graphqlOperation(queries.getProcess,{id:process_id}));
+    return Process;
 }
 export async function createUser(username,first_name,last_name,email,phone,password_hash){
     const userinfo ={
@@ -39,13 +45,13 @@ export async function createLogs(timestamp,phase_log_json){
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
 }
-export async function createProjects(name,timestamp){
-    const projectInfo={
+export async function createProcess(name,timestamp){
+    const processInfo={
         name:name,
         timestamp:timestamp
     }
-    const newProject = await API.graphql(graphqlOperation(mutations.createProject,{input:projectInfo}));
-    return newProject;
+    const newProcess = await API.graphql(graphqlOperation(mutations.createProcess,{input:processInfo}));
+    return newProcess;
 }
 export async function updateUser(id,first_name,last_name,email,password_hash){
     const userinfo ={
@@ -67,14 +73,14 @@ export async function updateLogs(id,timestamp,phase_log_json){
     const updatedLog = await API.graphql(graphqlOperation(mutations.updateLog,{input:loginfo}));
     return updatedLog;
 }
-export async function updateProjects(id,name,timestamp){
-    const projectInfo={
+export async function updateProcess(id,name,timestamp){
+    const processInfo={
         id:id,
         name:name,
         timestamp:timestamp
     }
-    const updatedProject = await API.graphql(graphqlOperation(mutations.updateProject,{input:projectInfo}));
-    return updatedProject;
+    const updatedProcess = await API.graphql(graphqlOperation(mutations.updateProcess,{input:processInfo}));
+    return updatedProcess;
 }
 export async function deleteUser(id){
     const userinfo ={
@@ -84,11 +90,11 @@ export async function deleteUser(id){
     return deletedUser;
 }
 export async function deleteProjects(id){
-    const projectInfo={
+    const processInfo={
         id:id
     }
-    const deletedProject = await API.graphql(graphqlOperation(mutations.deleteProject,{input:projectInfo}));
-    return deletedProject;
+    const deletedProcess = await API.graphql(graphqlOperation(mutations.deleteProcess,{input:processInfo}));
+    return deletedProcess;
 }
 
 export async function deleteLogs(id){

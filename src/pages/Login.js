@@ -10,7 +10,7 @@ import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
 import { Redirect } from "@reach/router";
-import { createUser } from "../graphql_utils/utils";
+import { createUser,getUserbyUsername } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
@@ -58,6 +58,11 @@ class Login extends Component {
                     default:
                         console.log(res);
                         this.Log_state = "LoggedIn";
+                        getUserbyUsername(this.state.username)
+                        .then((res) => {
+                            const user = res.data.listUsers.items[0]
+                            console.log(user)
+                        })
                         this.props.authenticateUser("true");
                 }
             }, (error) => {
