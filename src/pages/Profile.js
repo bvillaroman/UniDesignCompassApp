@@ -1,22 +1,26 @@
 import React from "react";
-import { store } from '../state/store';
 import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
+import  {connect} from "react-redux"
+import {authenticateUser} from "../state/actions"
 
 class Profile extends React.Component {
-//store.getState().Render.aws_user
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: []
-    }
+  state = {
+    first_name: "", 
+    last_name: "",
+    email: "", 
+    phone_number: "", 
+    processes: [], 
+    username: ""
   }
+
   componentDidMount() {
     // load data of user and set to state
-    this.setState({user: store.getState().Reducer.aws_user});
-    //console.log(this.state);
+    const { first_name, last_name, email, phone_number, username} = this.props.user;
+    this.setState({first_name, last_name, email, phone_number, username});
   }
   render() {
+    const { first_name, last_name, email, phone_number, username} = this.state;
     return (
       <Layout>
         <Tabs defailtActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
@@ -27,12 +31,16 @@ class Profile extends React.Component {
             <h2 className="text-center">General Account Settings</h2>
             <div className="container">
               <a role="button">
-                <h3 className="label">Name</h3>
-                <span>{/*this.state.user.name*/}</span>
+                <h3 className="label">Name: </h3>
+                <span>{`${first_name} ${last_name}`}</span>
+              </a>
+              <a>
+                <h3 className="label">Username</h3>
+                <span>{username}</span>
               </a>
               <a>
                 <h3 className="label">E-mail</h3>
-                <span>{/*this.state.user.email*/}</span>
+                <span>{email}</span>
               </a>
               <a>
                 <h3 className="label">Password</h3>
@@ -40,9 +48,9 @@ class Profile extends React.Component {
               </a>
               <a>
                 <h3 className="label">Phone number</h3>
-                <span>{/*this.state.user.number*/}</span>
+                <span>{phone_number}</span>
               </a>
-          </div>
+            </div>
           </Tab>
         </Tabs>
       </Layout>
@@ -50,4 +58,14 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+const mapStateToProps = ({state}) => ({ 
+  isAuthenticated: state.isAuthenticated, 
+  user: state.user 
+}) 
+const mapDispatchToProps = dispatch => ({
+  authenticateUser: (auth) => dispatch(authenticateUser(auth))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+
+
