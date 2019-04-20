@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {navigate} from "gatsby"
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { connect } from 'react-redux';
@@ -61,6 +62,7 @@ class Login extends Component {
                         .then((res) => {
                             const user = res.data.listUsers.items[0]
                             this.props.authenticateUser(user);
+                            navigate("/")
                         })
                 }
             }, (error) => {
@@ -108,8 +110,6 @@ class Login extends Component {
             .then((res) => {
                 this.Log_state = "Verify";
                 alert("Check your email for Verification code");
-                //const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
-                //API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -128,7 +128,7 @@ class Login extends Component {
                         (result) => {
                             alert("Account Confirmed");
                             this.Log_state = "SignIn";
-                            this.forceUpdate();
+                            navigate("/Login")
                         }, (error) => {
                             alert("Something went wrong");
                             console.log(error);
