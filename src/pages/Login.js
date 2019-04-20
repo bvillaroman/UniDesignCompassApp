@@ -89,9 +89,6 @@ class Login extends Component {
         this.Log_state = "SIGNUP";
         this.forceUpdate();
     }
-    logIng = () => {
-        
-    }
     comparePasswords = () => {
         if (this.state.password === this.state.repeat_pass) {
             return true;
@@ -159,7 +156,6 @@ class Login extends Component {
                 break;
             default:
                 this._comp = null;
-            //Needs Redirection for Logged In user.
         }
     }
     render() {
