@@ -93,7 +93,7 @@ class Login extends Component {
         
     }
     comparePasswords = () => {
-        if (this.state.password == this.state.repeat_pass) {
+        if (this.state.password === this.state.repeat_pass) {
             return true;
         } else {
             return false;

@@ -30,26 +30,20 @@ class Profile extends React.Component {
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
             <div className="container">
-              <a role="button">
                 <h3 className="label">Name: </h3>
                 <span>{`${first_name} ${last_name}`}</span>
-              </a>
-              <a>
+                            
                 <h3 className="label">Username</h3>
                 <span>{username}</span>
-              </a>
-              <a>
+              
                 <h3 className="label">E-mail</h3>
                 <span>{email}</span>
-              </a>
-              <a>
+              
                 <h3 className="label">Password</h3>
                 <span>**********</span>
-              </a>
-              <a>
+              
                 <h3 className="label">Phone number</h3>
-                <span>{phone_number}</span>
-              </a>
+                <span>{phone_number}</span>   
             </div>
           </Tab>
         </Tabs>

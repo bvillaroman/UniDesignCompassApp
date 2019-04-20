@@ -1,5 +1,4 @@
 import React from "react";
-import { store } from '../state/store';
 import { Table } from 'react-bootstrap';
 import Layout from "../components/layout";
 
