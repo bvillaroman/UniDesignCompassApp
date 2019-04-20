@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
+import { Link,navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { authenticateUser } from '../state/actions';
+import { logOutUser } from '../state/actions';
 
 const Header = (props) => {
   return (
@@ -18,7 +18,7 @@ const Header = (props) => {
           {props.isAuthenticated && <Nav.Link><Link rel="profile" to="/Profile">Profile</Link></Nav.Link> }
           {
             props.isAuthenticated ?  
-            (<Nav.Link><Link rel="logout" to="/">Logout</Link></Nav.Link>)
+            (<Nav.Link><Link rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/");}}>Logout</Link></Nav.Link>)
             : (<Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link>) 
           }
         </Nav>
@@ -36,7 +36,7 @@ const mapStateToProps = ({state}) => ({
   isAuthenticated: state.isAuthenticated 
 }) 
 const mapDispatchToProps = dispatch => ({
-  authenticateUser: (auth) => dispatch(authenticateUser(auth))
+  logOutUser: () => dispatch(logOutUser())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
