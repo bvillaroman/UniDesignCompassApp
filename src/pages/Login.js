@@ -9,7 +9,6 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import { Redirect } from "@reach/router";
 import { createUser,getUserbyUsername } from "../graphql_utils/utils";
 Auth.configure(config);
 
@@ -61,9 +60,8 @@ class Login extends Component {
                         getUserbyUsername(this.state.username)
                         .then((res) => {
                             const user = res.data.listUsers.items[0]
-                            console.log(user)
+                            this.props.authenticateUser(user);
                         })
-                        this.props.authenticateUser("true");
                 }
             }, (error) => {
                 console.log(error);
@@ -170,11 +168,8 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        isAuthenticated: state.Reducer.isAuthenticated,
-    }
-}
+const mapStateToProps = ({state}) => ({ isAuthenticated: state.isAuthenticated })
+
 const mapDispatchToProps = dispatch => ({
     authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
