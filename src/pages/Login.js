@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {navigate} from "gatsby"
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { connect } from 'react-redux';
@@ -9,8 +10,7 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import { Redirect } from "@reach/router";
-import { createUser } from "../graphql_utils/utils";
+import { createUser,getUserbyUsername } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
@@ -58,7 +58,12 @@ class Login extends Component {
                     default:
                         console.log(res);
                         this.Log_state = "LoggedIn";
-                        this.props.authenticateUser("true");
+                        getUserbyUsername(this.state.username)
+                        .then((res) => {
+                            const user = res.data.listUsers.items[0]
+                            this.props.authenticateUser(user);
+                            navigate("/")
+                        })
                 }
             }, (error) => {
                 console.log(error);
@@ -105,8 +110,6 @@ class Login extends Component {
             .then((res) => {
                 this.Log_state = "Verify";
                 alert("Check your email for Verification code");
-                //const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
-                //API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -125,7 +128,7 @@ class Login extends Component {
                         (result) => {
                             alert("Account Confirmed");
                             this.Log_state = "SignIn";
-                            this.forceUpdate();
+                            navigate("/Login")
                         }, (error) => {
                             alert("Something went wrong");
                             console.log(error);
@@ -165,11 +168,8 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        isAuthenticated: state.Reducer.isAuthenticated,
-    }
-}
+const mapStateToProps = ({state}) => ({ isAuthenticated: state.isAuthenticated })
+
 const mapDispatchToProps = dispatch => ({
     authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
