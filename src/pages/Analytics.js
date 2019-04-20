@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Layout from "../components/layout"
-import { Button } from "react-bootstrap";
 import ResponsiveBarChart from '../components/ResponsiveBarChart';
 
 class Analytics extends Component {

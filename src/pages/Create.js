@@ -1,7 +1,6 @@
 import React from "react";
-import inter from "../images/home-image-min.jpg";
 import Layout from '../components/layout';
-import { CardDeck, Card, Button, Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import CompassForm from '../components/compassForm'
 
 const CustomOrPremade = (props) =>  (

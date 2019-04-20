@@ -11,6 +11,18 @@ class SignUp extends Component {
             <div className="container">
                 <div className="SignUp">
                 <form onSubmit={this.props.handleCreate}>
+                    <FormGroup controlId="first_name">
+                    <ControlLabel>First name</ControlLabel>
+                        <FormControl placeholder= "jon" autoFocus type="text" 
+                            onChange={this.props.handleChange}
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="last_name">
+                    <ControlLabel>Last name</ControlLabel>
+                        <FormControl placeholder= "doe" autoFocus type="text" 
+                            onChange={this.props.handleChange}
+                        />
+                    </FormGroup>
                     <FormGroup controlId="username">
                         <ControlLabel>Username</ControlLabel>
                         <FormControl placeholder= "jondoe1" autoFocus type="text" 

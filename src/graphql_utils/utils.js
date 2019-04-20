@@ -25,6 +25,10 @@ export async function getProcessess(process_id){
     const Process = await API.graphql(graphqlOperation(queries.getProcess,{id:process_id}));
     return Process;
 }
+export async function getPhase(phase_id){
+    const Phase = await API.graphql(graphqlOperation(queries.getPhase,{id:phase_id}));
+    return Phase;
+}
 export async function createUser(username,first_name,last_name,email,phone,password_hash){
     const userinfo ={
         username:username,
@@ -52,6 +56,14 @@ export async function createProcess(name,timestamp){
     }
     const newProcess = await API.graphql(graphqlOperation(mutations.createProcess,{input:processInfo}));
     return newProcess;
+}
+export async function createPhase(title,description){
+    const phaseInfo={
+        title:title,
+        description:description
+    }
+    const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
+    return newPhase;
 }
 export async function updateUser(id,first_name,last_name,email,password_hash){
     const userinfo ={
@@ -82,6 +94,16 @@ export async function updateProcess(id,name,timestamp){
     const updatedProcess = await API.graphql(graphqlOperation(mutations.updateProcess,{input:processInfo}));
     return updatedProcess;
 }
+export async function updatePhase(id,duration,title,description){
+    const phaseInfo={
+        id:id,
+        duration:duration,
+        title:title,
+        description:description
+    }  
+    const updatedPhase = await API.graphql(graphqlOperation(mutations.updatePhase,{input:phaseInfo}));
+    return updatedPhase;
+}
 export async function deleteUser(id){
     const userinfo ={
         id:id
@@ -89,7 +111,7 @@ export async function deleteUser(id){
     const deletedUser= await API.graphql(graphqlOperation(mutations.deleteUser,{input:userinfo}));
     return deletedUser;
 }
-export async function deleteProjects(id){
+export async function deleteProcess(id){
     const processInfo={
         id:id
     }
@@ -104,4 +126,10 @@ export async function deleteLogs(id){
     const deletedLog = await API.graphql(graphqlOperation(mutations.deleteLog,{input:loginfo}));
     return deletedLog;
 }
-
+export async function deletePhase(id){
+    const phaseInfo ={
+        id:id
+    }
+    const deletedPhase = await API.graphql(graphqlOperation(mutations.deletePhase,{input:phaseInfo}));
+    return deletedPhase;
+}
