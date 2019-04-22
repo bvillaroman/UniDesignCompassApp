@@ -36,28 +36,32 @@ export async function createUser(username,first_name,last_name,email,phone,passw
         last_name:last_name,
         email:email,
         password_hash:password_hash,
-        phone_number:phone
+        phone_number:phone,
+        processes:[]
     }
     const newUser = await API.graphql(graphqlOperation(mutations.createUser,{input:userinfo}));
     return newUser;
 }
-export async function createLogs(timestamp,phase_log_json){
+export async function createLogs(timestamp,text){
     const loginfo={
-        timestamp:timestamp,
-        phase_log_json:phase_log_json
+        timestamp,
+        text
     }
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
 }
-export async function createProcess(name,timestamp){
+async function createProcess(id,name,date_start,date_end,phases){
     const processInfo={
+        user_id:id,
+        phase_ids:phases,
         name:name,
-        timestamp:timestamp
+        date_start,
+        date_end
     }
     const newProcess = await API.graphql(graphqlOperation(mutations.createProcess,{input:processInfo}));
     return newProcess;
 }
-export async function createPhase(title,description){
+async function createPhase(title,description){
     const phaseInfo={
         title:title,
         description:description
@@ -65,13 +69,14 @@ export async function createPhase(title,description){
     const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
     return newPhase;
 }
-export async function updateUser(id,first_name,last_name,email,password_hash){
+export async function updateUser(id,first_name,last_name,email,password_hash,processes){
     const userinfo ={
         id:id,
         first_name:first_name,
         last_name:last_name,
         email:email,
-        password_hash:password_hash
+        password_hash:password_hash,
+        processes
     }
     const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:userinfo}));
     return updatedUser;
@@ -94,12 +99,13 @@ export async function updateProcess(id,name,timestamp){
     const updatedProcess = await API.graphql(graphqlOperation(mutations.updateProcess,{input:processInfo}));
     return updatedProcess;
 }
-export async function updatePhase(id,duration,title,description){
+export async function updatePhase(id,logs,duration,title,description){
     const phaseInfo={
         id:id,
-        duration:duration,
-        title:title,
-        description:description
+        logs,
+        duration,
+        title,
+        description
     }  
     const updatedPhase = await API.graphql(graphqlOperation(mutations.updatePhase,{input:phaseInfo}));
     return updatedPhase;
@@ -132,4 +138,38 @@ export async function deletePhase(id){
     }
     const deletedPhase = await API.graphql(graphqlOperation(mutations.deletePhase,{input:phaseInfo}));
     return deletedPhase;
+}
+export async function createNewCompass(user,phases){
+    let newPhase=[];
+    for(let i= 0; i<phases.length;i++){
+        await createPhase(phases[i].title,phases[i].Description).then(
+            (res)=>{
+                newPhase.push(res.data.createPhase.id);
+                console.log(newPhase);
+            }
+        );
+    }
+    console.log("Hello");
+    await createProcess(user.id,"Blank Project","0000000","00000000",newPhase).then(
+        (res)=>{
+            console.log(res.data.createProcess.id);
+            updateUser(user.id,user.first_name,user.last_name,user.email,user.password_hash,user.processes.push(res.data.createProcess.id))
+        }
+    )
+    
+}
+export async function appendNewLog(phaseId,log){
+    createLogs(log.timestamp,log.text).then(
+        (logres)=>{
+            getPhase(phaseId).then(
+                (res)=>{
+                    let phase_info= res.data.getPhase;
+                    console.log(res);
+                    console.log(logres);
+                    //updatePhase(phase_info.id,phase_info.logs.push(logres.data.createLog),phase_info.duration,phase_info.title,phase_info.description);
+                }
+            )
+        }
+    )
+
 }

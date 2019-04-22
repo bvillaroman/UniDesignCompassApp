@@ -2,15 +2,28 @@ import React from "react";
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import CompassForm from '../components/compassForm'
+import {createNewCompass} from '../graphql_utils/utils';
+import { connect } from 'react-redux';
 
 const CustomOrPremade = (props) =>  (
     <Form.Group controlId="formBasicEmail">
       <Form.Label>Do you want a custom Compass or a prebuilt Compass?</Form.Label>
-      <Button variant="primary" onClick={e => {props.createDefaultCompass(false)}}> Custom </Button>
-      <Button variant="primary" onClick={e => {props.createDefaultCompass(true)}}> Default </Button>
+      <Button variant="primary" onClick={e => {props.createCompass(false)}}> Custom </Button>
+      <Button variant="primary" onClick={e => {props.createCompass(true)}}> Default </Button>
     </Form.Group>
 )
-
+const default_phases= [
+  {title:"Research",
+   Description:"Phase for Research"},
+   {title:"Design",
+   Description:"Phase for Design"},
+   {title:"Build",
+   Description:"Phase for Build"},
+   {title:"Brainstorm",
+   Description:"Phase for Brainstorm"},
+   {title:"Laugh",
+   Description:"Phase for Laugh"}
+]
 const PhaseNumber = (props) =>  (
   <Form.Group controlId="exampleForm.ControlSelect1">
     <Form.Label>How many phases are in your design process</Form.Label>
@@ -64,7 +77,15 @@ class CreatePage extends React.Component {
     const phases = this.state.phases.append({title,description,phaseNumber});
     this.setState({phases})
   }
-
+  createCompass=(isDefault) =>{
+    this.handleCompassType(isDefault);
+    if(this.state.defaultCompass){
+      console.log(this.props.user);
+       createNewCompass(this.props.user,default_phases)
+    }else{
+      console.log("not default");
+    }
+  }
   handleForms = () => {
     switch(true) {
       case !this.state.defaultCompass && this.state.numberOfPhases < 1:
@@ -72,7 +93,7 @@ class CreatePage extends React.Component {
       case !this.state.defaultCompass && this.state.numberOfPhases > 0:
         return <DescribePhases/>
       default: 
-        return <CustomOrPremade createDefaultCompass={this.handleCompassType}/>   
+        return <CustomOrPremade createCompass={this.createCompass}/>   
     }
   }
 
@@ -86,4 +107,7 @@ class CreatePage extends React.Component {
     )
   }
 }
-export default CreatePage;
+const mapStateToProps =({state})=>(
+  {user: state.user}
+)
+export default connect(mapStateToProps,null)(CreatePage);

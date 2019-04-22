@@ -1,9 +1,15 @@
-import { Link,navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
+
+const signedIn=(props)=>{
+  if(props.isAuthenticated){
+    return(<Nav.Link><Link rel="profile" to="/Profile">Profile</Link></Nav.Link>)
+  }
+}
 
 const Header = (props) => {
   return (
@@ -15,11 +21,11 @@ const Header = (props) => {
           <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
           <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
           <Nav.Link><Link rel="analytics" to="/Analytics">Analytics</Link></Nav.Link>
-          {props.isAuthenticated && <Nav.Link><Link rel="profile" to="/Profile">Profile</Link></Nav.Link> }
+          {signedIn(props)}
           {
-            props.isAuthenticated ?  
-            (<Nav.Link><Link rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/");}}>Logout</Link></Nav.Link>)
-            : (<Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link>) 
+            props.isAuthenticated ?
+              (<Nav.Link><Link rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></Nav.Link>)
+              : (<Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link>)
           }
         </Nav>
       </Navbar.Collapse>
@@ -32,9 +38,9 @@ Header.propsTypes = {
   authenticateUser: PropTypes.func
 }
 
-const mapStateToProps = ({state}) => ({ 
-  isAuthenticated: state.isAuthenticated 
-}) 
+const mapStateToProps = ({ state }) => ({
+  isAuthenticated: state.isAuthenticated
+})
 const mapDispatchToProps = dispatch => ({
   logOutUser: () => dispatch(logOutUser())
 })
