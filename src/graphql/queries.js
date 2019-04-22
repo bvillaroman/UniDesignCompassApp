@@ -10,27 +10,7 @@ export const getUser = `query GetUser($id: ID!) {
     email
     password_hash
     phone_number
-    processes {
-      id
-      phase_ids {
-        id
-        duration
-        title
-        description
-      }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
+    processes
   }
 }
 `;
@@ -48,12 +28,7 @@ export const listUsers = `query ListUsers(
       email
       password_hash
       phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
+      processes
     }
     nextToken
   }
@@ -62,32 +37,8 @@ export const listUsers = `query ListUsers(
 export const getProcess = `query GetProcess($id: ID!) {
   getProcess(id: $id) {
     id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
+    phase_ids
+    user_id
     name
     date_start
     date_end
@@ -102,21 +53,8 @@ export const listProcesss = `query ListProcesss(
   listProcesss(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      phase_ids {
-        id
-        duration
-        title
-        description
-      }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
+      phase_ids
+      user_id
       name
       date_start
       date_end
@@ -128,11 +66,7 @@ export const listProcesss = `query ListProcesss(
 export const getPhase = `query GetPhase($id: ID!) {
   getPhase(id: $id) {
     id
-    logs {
-      id
-      timestamp
-      text
-    }
+    logs
     duration
     title
     description
@@ -147,11 +81,7 @@ export const listPhases = `query ListPhases(
   listPhases(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      logs {
-        id
-        timestamp
-        text
-      }
+      logs
       duration
       title
       description
