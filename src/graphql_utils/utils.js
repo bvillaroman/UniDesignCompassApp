@@ -76,7 +76,7 @@ export async function updateUser(id,first_name,last_name,email,password_hash,pro
         last_name:last_name,
         email:email,
         password_hash:password_hash,
-        processes
+        processes:processes
     }
     const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:userinfo}));
     return updatedUser;
@@ -145,17 +145,18 @@ export async function createNewCompass(user,phases){
         await createPhase(phases[i].title,phases[i].Description).then(
             (res)=>{
                 newPhase.push(res.data.createPhase.id);
-                console.log(newPhase);
             }
         );
     }
-    console.log("Hello");
+    let process_info;
     await createProcess(user.id,"Blank Project","0000000","00000000",newPhase).then(
         (res)=>{
-            console.log(res.data.createProcess.id);
-            updateUser(user.id,user.first_name,user.last_name,user.email,user.password_hash,user.processes.push(res.data.createProcess.id))
+            process_info=res.data.createProcess;
         }
     )
+    
+    user.processes.push(process_info.id);
+    await updateUser(user.id,user.first_name,user.last_name,user.email,user.password_hash,user.processes)
     
 }
 export async function appendNewLog(phaseId,log){
@@ -171,5 +172,4 @@ export async function appendNewLog(phaseId,log){
             )
         }
     )
-
 }
