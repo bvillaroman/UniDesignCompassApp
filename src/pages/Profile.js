@@ -3,7 +3,7 @@ import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
-
+import {getUsersProjects} from '../graphql_utils/utils';
 class Profile extends React.Component {
   state = {
     first_name: "", 
