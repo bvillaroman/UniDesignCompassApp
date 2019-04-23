@@ -92,18 +92,19 @@ class Compass extends Component {
             var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
 
             // while(phase.key===this.state.currentPhase){
-                // this.secondDelay()
-                start.setSeconds(start.getSeconds()+1) 
+                setInterval(() => {
+                    this.secondDelay()
+                    start.setSeconds(start.getSeconds()+1) 
+    
+                    var minutes = start.getMinutes()
+                    var seconds = start.getSeconds();
+                    // var milliseconds = start.getMilliseconds();
+                    var temp = minutes.toString() + ":" + seconds.toString()
+                    this.setState({ currentTime: temp })    
+                },1000);
+                
 
-                var minutes = start.getMinutes()
-                var seconds = start.getSeconds();
-                // var milliseconds = start.getMilliseconds();
-                var temp = minutes.toString() + ":" + seconds.toString()
-                this.setState({ currentTime: temp })
-
-            // }
-
-            
+            // } 
         }
         else{
             console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
