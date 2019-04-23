@@ -28,7 +28,7 @@ class Compass extends Component {
             next: true,
             currentPhase: '0',
             emptyTime: "00:00:00",
-            currentTime: " ",
+            currentTime: "00:00:00",
             log: ""
         }
     }
@@ -37,6 +37,7 @@ class Compass extends Component {
         // var temp=phase.key
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
         // console.log(this.state.currentPhase)
+        this.timerHandler(phase)
     }
 
     previousButtonHandler = () => {
@@ -58,7 +59,7 @@ class Compass extends Component {
         var x = new Date()
         var minutes = x.getMinutes();
         var seconds = x.getSeconds();
-        var milliseconds = x.getUTCMilliseconds();
+        var milliseconds = x.getMilliseconds();
         var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
         const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
         log_list.data.push(log); // Temporary
@@ -67,15 +68,48 @@ class Compass extends Component {
         //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
+
+    secondDelay = () => {
+        var startTime=new Date().getTime();
+        var endTime=startTime;
+        while (endTime<startTime+1000){
+            endTime= new Date().getTime();
+        }
+    }
+
+
+
     timerHandler = (phase) => {
-        (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        var x = new Date()
-        var minutes = x.getMinutes();
-        var seconds = x.getSeconds();
-        var milliseconds = x.getUTCMilliseconds();
-        var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-        console.log(minutes)
-        this.setState({ currentTime: temp })
+        // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
+        if(phase.key===this.state.currentPhase){
+            // var x = new Date()
+            // var minutes = x.getMinutes()
+            // var seconds = x.getSeconds();
+            // var milliseconds = x.getMilliseconds();
+            // var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
+            // this.setState({ currentTime: temp })
+            var tempTime= new Date()
+            var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
+
+            // while(phase.key===this.state.currentPhase){
+                // this.secondDelay()
+                start.setSeconds(start.getSeconds()+1) 
+
+                var minutes = start.getMinutes()
+                var seconds = start.getSeconds();
+                // var milliseconds = start.getMilliseconds();
+                var temp = minutes.toString() + ":" + seconds.toString()
+                this.setState({ currentTime: temp })
+
+            // }
+
+            
+        }
+        else{
+            console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
+        }
+        
+        
             // while(0){//Set Condition for updating the time.
         // var elapsed= new Date()
         // var elapsedMinutes= elapsed.getMinutes();
