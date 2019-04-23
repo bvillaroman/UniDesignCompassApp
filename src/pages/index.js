@@ -3,15 +3,9 @@ import HomePage from "./HomePage"
 import { Provider } from 'react-redux';
 import { store } from "../state/store";
 
-class IndexPage extends React.Component {
-  render() {
-    return (
-      <div>
-        <Provider store={store}>
-          <HomePage />
-        </Provider>
-      </div>
-    );
-  }
-}
+const IndexPage = (props) => (
+  <Provider store={store}>
+    <HomePage />
+  </Provider>
+);
 export default IndexPage;

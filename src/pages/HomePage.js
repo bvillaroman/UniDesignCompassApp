@@ -13,7 +13,6 @@ const HomePage = (props) => (
 
       <Button className="presentation-button" variant="info" size="lg" href="/Compass">Begin</Button>
     </div>
-    {/* REPLACE CARD TEXT */}
     <CardDeck>
       <Card bg="danger" text="white">
         <Card.Header>Objective</Card.Header>

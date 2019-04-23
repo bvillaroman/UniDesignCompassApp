@@ -10,27 +10,7 @@ export const onCreateUser = `subscription OnCreateUser {
     email
     password_hash
     phone_number
-    processes {
-      id
-      phase_ids {
-        id
-        duration
-        title
-        description
-      }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
+    processes
   }
 }
 `;
@@ -43,27 +23,7 @@ export const onUpdateUser = `subscription OnUpdateUser {
     email
     password_hash
     phone_number
-    processes {
-      id
-      phase_ids {
-        id
-        duration
-        title
-        description
-      }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
+    processes
   }
 }
 `;
@@ -76,59 +36,15 @@ export const onDeleteUser = `subscription OnDeleteUser {
     email
     password_hash
     phone_number
-    processes {
-      id
-      phase_ids {
-        id
-        duration
-        title
-        description
-      }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
+    processes
   }
 }
 `;
 export const onCreateProcess = `subscription OnCreateProcess {
   onCreateProcess {
     id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
+    phase_ids
+    user_id
     name
     date_start
     date_end
@@ -138,32 +54,8 @@ export const onCreateProcess = `subscription OnCreateProcess {
 export const onUpdateProcess = `subscription OnUpdateProcess {
   onUpdateProcess {
     id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
+    phase_ids
+    user_id
     name
     date_start
     date_end
@@ -173,32 +65,8 @@ export const onUpdateProcess = `subscription OnUpdateProcess {
 export const onDeleteProcess = `subscription OnDeleteProcess {
   onDeleteProcess {
     id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
+    phase_ids
+    user_id
     name
     date_start
     date_end
@@ -208,11 +76,7 @@ export const onDeleteProcess = `subscription OnDeleteProcess {
 export const onCreatePhase = `subscription OnCreatePhase {
   onCreatePhase {
     id
-    logs {
-      id
-      timestamp
-      text
-    }
+    logs
     duration
     title
     description
@@ -222,11 +86,7 @@ export const onCreatePhase = `subscription OnCreatePhase {
 export const onUpdatePhase = `subscription OnUpdatePhase {
   onUpdatePhase {
     id
-    logs {
-      id
-      timestamp
-      text
-    }
+    logs
     duration
     title
     description
@@ -236,11 +96,7 @@ export const onUpdatePhase = `subscription OnUpdatePhase {
 export const onDeletePhase = `subscription OnDeletePhase {
   onDeletePhase {
     id
-    logs {
-      id
-      timestamp
-      text
-    }
+    logs
     duration
     title
     description

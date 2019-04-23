@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {navigate} from "gatsby"
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
 import { connect } from 'react-redux';
@@ -9,17 +10,15 @@ import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import Verification from "../components/Verification";
-import {API,graphqlOperation} from 'aws-amplify';
-import { createUser } from "../graphql/mutations"
-import { getUser } from "../graphql/queries"
-
-
+import { createUser,getUserbyUsername } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            first_name: " ", //Add firstname and Lastname to Sign Up page
+            last_name: " ",
             email: "",
             password: "",
             repeat_pass: "",
@@ -59,7 +58,12 @@ class Login extends Component {
                     default:
                         console.log(res);
                         this.Log_state = "LoggedIn";
-                        this.props.authenticateUser("true");
+                        getUserbyUsername(this.state.username)
+                        .then((res) => {
+                            const user = res.data.listUsers.items[0]
+                            this.props.authenticateUser(user);
+                            navigate("/")
+                        })
                 }
             }, (error) => {
                 console.log(error);
@@ -85,11 +89,8 @@ class Login extends Component {
         this.Log_state = "SIGNUP";
         this.forceUpdate();
     }
-    logIng = () => {
-        
-    }
     comparePasswords = () => {
-        if (this.state.password == this.state.repeat_pass) {
+        if (this.state.password === this.state.repeat_pass) {
             return true;
         } else {
             return false;
@@ -99,15 +100,13 @@ class Login extends Component {
         e.preventDefault();
         if (!this.comparePasswords()) {
             alert("Passwords do not match");
-            return; 
+            return;
         }
         let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
         Auth.signUp(attributes)
             .then((res) => {
                 this.Log_state = "Verify";
                 alert("Check your email for Verification code");
-                const user = { email: this.state.email, phone_number: this.state.phone, username: this.state.username }
-                API.graphql(graphqlOperation(createUser,{ input: user }));
                 this.forceUpdate();
             }, (error) => {
                 console.log(error);
@@ -118,8 +117,20 @@ class Login extends Component {
         e.preventDefault();
         Auth.confirmSignUp(this.state.username, this.state.code)
             .then((res) => {
-                alert("Account Confirmed");
-                this.Log_state = "SignIn";
+                console.log(res);
+                createUser(this.state.username,this.state.first_name,
+                    this.state.last_name,
+                    this.state.email,this.state.phone,
+                    1234).then( // CHange PAssword Hash.
+                        (result) => {
+                            alert("Account Confirmed");
+                            this.Log_state = "SignIn";
+                            navigate("/Login")
+                        }, (error) => {
+                            alert("Something went wrong");
+                            console.log(error);
+                        }
+                    );
             }, (error) => {
                 console.log(error);
                 alert(error.message);
@@ -145,7 +156,6 @@ class Login extends Component {
                 break;
             default:
                 this._comp = null;
-            //Needs Redirection for Logged In user.
         }
     }
     render() {
@@ -154,11 +164,8 @@ class Login extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        isAuthenticated: state.Reducer.isAuthenticated,
-    }
-}
+const mapStateToProps = ({state}) => ({ isAuthenticated: state.isAuthenticated })
+
 const mapDispatchToProps = dispatch => ({
     authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
