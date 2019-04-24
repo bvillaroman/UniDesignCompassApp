@@ -11,7 +11,8 @@ class Analytics extends Component {
         super(props);
         this.state = {
             spec: this.spec,
-            chartData: this.data
+            chartData: this.data,
+            selected_process_id: -1
         };
     }
 
@@ -41,8 +42,10 @@ class Analytics extends Component {
                 })
             );
         }).then((processes) => {
+            const default_process = processes[0]
             this.setState({
                 processes: processes,
+                selected_process_id: default_process ? default_process.id : -1,
                 loading: false
             });
         });
@@ -60,8 +63,11 @@ class Analytics extends Component {
     }
 
     process_select_handler = (event) => {
-        const process_id = event.target.value
+        const process_id = event.target.value;
         console.log(process_id)
+        this.setState({
+            selected_process_id: process_id
+        })
         this.load_process_data(process_id);
         // perhaps initiate the plot here
     }
@@ -88,16 +94,16 @@ class Analytics extends Component {
     process_select_render = () => {
         return(
             <div className="d-flex flex-column" >
-                <select className={'custom-select'} onChange={e => this.process_select_handler(e)}>
+                <select className={'custom-select'} value={this.state.selected_process_id} onChange={e => this.process_select_handler(e)}>
                     {this.state.processes 
                         ? 
                             this.state.processes.map((process, index) => {
                                 return (
-                                    <option value={process.id}>{process.name}</option>
+                                    <option value={process.id} key={index}>{process.name}</option>
                                 )
                             })
                         : 
-                            <option disabled selected>This user has no Processes</option>
+                            <option disabled value={-1}>This user has no Processes</option>
                     }
                 </select>
             </div>
