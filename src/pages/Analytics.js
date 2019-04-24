@@ -25,7 +25,7 @@ class Analytics extends Component {
             console.log(processes_ids)
             
             processes_ids.forEach(process_id => {
-                Utils.getProcessess(process_id).then(res => {
+                Utils.getProcess(process_id).then(res => {
                     console.log(res.data.getProcess);
                 })
             });
