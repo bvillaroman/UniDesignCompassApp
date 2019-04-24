@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-
 import Layout from "../components/layout"
 import ResponsiveBarChart from '../components/ResponsiveBarChart';
+import  {connect} from "react-redux"
+import {authenticateUser} from "../state/actions"
 
 class Analytics extends Component {
     constructor(props) {
@@ -10,6 +11,12 @@ class Analytics extends Component {
             spec: this.spec,
             chartData: this.data
         }
+    }
+
+    componentDidMount() {
+        // load data of user and set to state
+        const user = this.props.user;
+        console.log(user);
     }
 
     chartButtonHandler = () => {
@@ -45,4 +52,12 @@ class Analytics extends Component {
     }
 }
 
-export default Analytics;
+const mapStateToProps = ({state}) => ({ 
+    isAuthenticated: state.isAuthenticated, 
+    user: state.user 
+}) 
+const mapDispatchToProps = dispatch => ({
+authenticateUser: (auth) => dispatch(authenticateUser(auth))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Analytics);
