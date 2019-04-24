@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import ResponsiveBarChart from '../components/ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
+import * as Utils from '../graphql_utils/utils'
 
 class Analytics extends Component {
     constructor(props) {
@@ -16,7 +17,19 @@ class Analytics extends Component {
     componentDidMount() {
         // load data of user and set to state
         const user = this.props.user;
-        console.log(user);
+        // console.log(user);
+
+        Utils.getUser(user.id).then(res => {
+            let user = res.data.getUser
+            let processes_ids = user.processes
+            console.log(processes_ids)
+            
+            processes_ids.forEach(process_id => {
+                Utils.getProcessess(process_id).then(res => {
+                    console.log(res.data.getProcess);
+                })
+            });
+        })
     }
 
     chartButtonHandler = () => {
