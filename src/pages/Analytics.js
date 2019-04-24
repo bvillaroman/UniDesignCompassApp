@@ -97,7 +97,11 @@ class Analytics extends Component {
         }).then(phases => {
             console.log(phases)
             this.setState({
-                loading: false
+                loading: false,
+                chartData: {
+                    table: phases
+                    // table: this.data.table
+                }
             });
         })
     }
@@ -122,13 +126,10 @@ class Analytics extends Component {
     }
 
     bar_chart_render = () => {
-        const d = null
-        const chart = d
-            ?
-                <ResponsiveBarChart data={d}/>
-            :
-                <ResponsiveBarChart data={this.data}/>;
-        return chart;
+        const data = this.state.chartData
+            ? this.setState.chartData
+            : this.setState.chartData;
+        return <ResponsiveBarChart data={data}/>;
     }
 
     loading_render = () => {
