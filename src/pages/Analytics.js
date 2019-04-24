@@ -24,12 +24,12 @@ class Analytics extends Component {
         // console.log(user);
 
         const processes_promise = Utils.getUser(user.id).then(res => {
-            let user = res.data.getUser;
-            let processes_ids = user.processes;
-            let promise = Promise.all(
+            const user = res.data.getUser;
+            const processes_ids = user.processes;
+            const promise = Promise.all(
                 processes_ids.map((process_id, index) => {
                     return Utils.getProcess(process_id).then(res => {
-                        let process = res.data.getProcess;
+                        const process = res.data.getProcess;
     
                         return {
                             name: process.name,
@@ -61,12 +61,17 @@ class Analytics extends Component {
         console.log("handlinng");
     }
 
-    onSize = size => {
-        console.log('MyComponent has a width of', size.width)
+    process_select_handler = (event) => {
+        const process_id = event.target.value
+        console.log(process_id)
+        this.load_process_data(process_id);
     }
 
-    process_select_handler = (event) => {
-        console.log(event.target.value)
+    load_process_data(process_id) {
+        Utils.getProcess(process_id).then(res => {
+            
+            console.log(res);
+        })
     }
 
     process_select_render = () => {
