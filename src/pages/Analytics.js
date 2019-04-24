@@ -60,26 +60,26 @@ class Analytics extends Component {
         console.log('MyComponent has a width of', size.width)
     }
 
+    process_select_handler = (event) => {
+        console.log(event.target.value)
+    }
+
     process_select_render = () => {
-        return(this.state.processes 
-            ? 
-                <div className="d-flex flex-column" >
-                    <select class="custom-select">
-                        {
-                            this.state.processes.map((process, id) => {
+        return(
+            <div className="d-flex flex-column" >
+                <select class="custom-select" onChange={e => this.process_select_handler(e)}>
+                    {this.state.processes 
+                        ? 
+                            this.state.processes.map((process) => {
                                 return (
                                     <option value={process.id}>{process.name}</option>
                                 )
                             })
-                        }
-                    </select>
-                </div>
-            : 
-                <div className="d-flex flex-column" >
-                    <select disabled class="custom-select">
-                        <option selected>This user has no Processes</option>
-                    </select>
-                </div>
+                        : 
+                            <option disabled selected>This user has no Processes</option>
+                    }
+                </select>
+            </div>
         );
     }
 
@@ -98,6 +98,7 @@ class Analytics extends Component {
         return (
             <Layout>
                 <div className='container'>
+                    
                     {this.process_select_render()}
                     {this.bar_chart_render()}
                     {/* <ResponsiveBarChart data={this.data}/> */}
