@@ -23,12 +23,17 @@ class Analytics extends Component {
             let user = res.data.getUser
             let processes_ids = user.processes
             console.log(processes_ids)
-            
-            processes_ids.forEach(process_id => {
-                Utils.getProcess(process_id).then(res => {
-                    console.log(res.data.getProcess);
+
+            let names_promises = processes_ids.map((process_id, index) => {
+                return Utils.getProcess(process_id).then(res => {
+                    let process = res.data.getProcess
+                    let name = process.name;
+                    return name;
                 })
-            });
+            })
+            Promise.all(names_promises).then(function(results) {
+                console.log(results)
+            })
         })
     }
 
