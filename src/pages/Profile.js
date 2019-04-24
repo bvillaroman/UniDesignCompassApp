@@ -57,24 +57,24 @@ class Profile extends React.Component {
                     </form>
                   </div>
                   <div label="Username" change={username}>
-                    <p>
-                      <strong>Common Name:</strong> Chinese Alligator
-                    </p>
+                    <form>
+                      Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
+                    </form>
                   </div>
                   <div label="E-Mail" change={email}>
-                    <p>
-                      <strong>Common Name:</strong> Chinese Alligator
-                    </p>
+                    <form>
+                      E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
+                    </form>
                   </div>
                   <div label="Password" change="**********">
-                    <p>
-                      <strong>Common Name:</strong> Chinese Alligator
-                    </p>
+                    <form>
+                      Password: <input className="col input-text" type="text" name="password" defaultValue="**********" />
+                    </form>
                   </div>
                   <div label="Phone Number" change={phone_number}>
-                    <p>
-                      <strong>Common Name:</strong> Chinese Alligator
-                    </p>
+                    <form>
+                      Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
+                    </form>
                   </div>
                 </Accordion>
               </div>
