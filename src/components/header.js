@@ -1,13 +1,13 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
 
 const signedIn=(props)=>{
   if(props.isAuthenticated){
-    return(<Nav.Link><Link rel="profile" to="/Profile">Profile</Link></Nav.Link>)
+    return(<NavItem><Link rel="profile" to="/Profile">Profile</Link></NavItem>)
   }
 }
 
@@ -18,14 +18,14 @@ const Header = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <Nav.Link><Link rel="about" to="/About">About Us</Link></Nav.Link>
-          <Nav.Link><Link rel="compass" to="/Compass">Compass</Link></Nav.Link>
-          <Nav.Link><Link rel="analytics" to="/Analytics">Analytics</Link></Nav.Link>
+          <NavItem><Link rel="about" to="/About">About Us</Link></NavItem>
+          <NavItem><Link rel="compass" to="/Compass">Compass</Link></NavItem>
+          <NavItem><Link rel="analytics" to="/Analytics">Analytics</Link></NavItem>
           {signedIn(props)}
           {
             props.isAuthenticated ?
-              (<Nav.Link><Link rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></Nav.Link>)
-              : (<Nav.Link><Link rel="login" to="/Login">Login</Link></Nav.Link>)
+              (<NavItem><Link rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>)
+              : (<NavItem><Link rel="login" to="/Login">Login</Link></NavItem>)
           }
         </Nav>
       </Navbar.Collapse>
