@@ -54,7 +54,7 @@ class Analytics extends Component {
     componentDidMount() {
         // load data of user and set to state
         const user = this.props.user;
-        
+
         this.initProcessSelect();
     }
 
@@ -95,14 +95,14 @@ class Analytics extends Component {
         return(
             <div className="d-flex flex-column" >
                 <select className={'custom-select'} value={this.state.selected_process_id} onChange={e => this.process_select_handler(e)}>
-                    {this.state.processes 
-                        ? 
+                    {this.state.processes
+                        ?
                             this.state.processes.map((process, index) => {
                                 return (
                                     <option value={process.id} key={index}>{process.name}</option>
                                 )
                             })
-                        : 
+                        :
                             <option disabled value={-1}>This user has no Processes</option>
                     }
                 </select>
@@ -122,13 +122,13 @@ class Analytics extends Component {
 
     loading_render = () => {
         return (this.state.loading
-            ?   
+            ?
                 <div className={'spinner-border text-primary'}></div>
             :
                 null
         );
     }
-        
+
     render() {
         console.log(this.state)
         return (
@@ -162,10 +162,10 @@ class Analytics extends Component {
     }
 }
 
-const mapStateToProps = ({state}) => ({ 
-    isAuthenticated: state.isAuthenticated, 
-    user: state.user 
-}) 
+const mapStateToProps = ({state}) => ({
+    isAuthenticated: state.isAuthenticated,
+    user: state.user
+})
 const mapDispatchToProps = dispatch => ({
 authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
