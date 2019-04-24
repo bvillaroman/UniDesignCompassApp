@@ -4,6 +4,7 @@ import ResponsiveBarChart from '../components/ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
+import Form from 'react-bootstrap/Form'
 
 class Analytics extends Component {
     constructor(props) {
@@ -43,13 +44,32 @@ class Analytics extends Component {
 
     onSize = size => {
         console.log('MyComponent has a width of', size.width)
-      }
+    }
+
+    project_select = () => {return (
+        <div className="d-flex flex-column" >
+            <select class="custom-select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            {/* <Form.Control as="custom-select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </Form.Control> */}
+        </div>
+    )}
         
     render() {
         return (
             <Layout>
                 <div className='container'>
-                    <ResponsiveBarChart data={this.data}/>
+                    {this.project_select()}
+                    {/* <ResponsiveBarChart data={this.data}/> */}
                 </div>
             </Layout>
         );
