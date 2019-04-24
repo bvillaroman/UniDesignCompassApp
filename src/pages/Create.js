@@ -83,7 +83,7 @@ class CreatePage extends React.Component {
       console.log(this.props.user);
        createNewCompass(this.props.user,default_phases)
     }else{
-      console.log("not default");
+      console.log("not default"); // Take the newly created phasess and create new compass
     }
   }
   handleForms = () => {
