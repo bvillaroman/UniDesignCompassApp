@@ -11,7 +11,7 @@ class Analytics extends Component {
         super(props);
         this.state = {
             spec: this.spec,
-            chartData: this.data,
+            // chartData: this.data,
             selected_process_id: -1
         };
     }
@@ -59,18 +59,12 @@ class Analytics extends Component {
         this.initProcessSelect();
     }
 
-    chartButtonHandler = () => {
-        console.log("handlinng");
-    }
-
     process_select_handler = (event) => {
         const process_id = event.target.value;
-        console.log(process_id)
         this.setState({
             selected_process_id: process_id
         })
         this.load_process_data(process_id);
-        // perhaps initiate the plot here
     }
 
     load_process_data(process_id) {
@@ -85,7 +79,6 @@ class Analytics extends Component {
                     return (
                         Utils.getPhase(phase_id).then(res => {
                             const phase = res.data.getPhase;
-                            // console.log(phase)
                             return {
                                 category: phase.title,
                                 amount: phase.duration
@@ -95,8 +88,6 @@ class Analytics extends Component {
                 })
             );
         }).then(phases => {
-            // console.log(phases)
-            console.log('done load process data')
             this.setState({
                 loading: false,
                 chartData: {
@@ -126,12 +117,9 @@ class Analytics extends Component {
     }
 
     bar_chart_render = () => {
-        const data = this.state.chartData
-            ? this.state.chartData
-            : this.state.chartData;
-        console.log('bar chart render')
-        return <ResponsiveBarChart data={data}/>;
-        // return <ResponsiveBarChart data={this.data}/>;
+        return this.state.chartData
+            ? <ResponsiveBarChart data={this.state.chartData} />
+            : null;
     }
 
     loading_render = () => {
