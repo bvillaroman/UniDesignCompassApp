@@ -65,12 +65,18 @@ class Analytics extends Component {
         const process_id = event.target.value
         console.log(process_id)
         this.load_process_data(process_id);
+        // perhaps initiate the plot here
     }
 
     load_process_data(process_id) {
         Utils.getProcess(process_id).then(res => {
-            
-            console.log(res);
+            const phase_ids = res.data.getProcess.phase_ids;
+            console.log(phase_ids);
+            const phase_id = phase_ids[0];
+            Utils.getPhase(phase_id).then(res => {
+                console.log(res)
+                // duration is null ?
+            })
         })
     }
 
