@@ -23,14 +23,14 @@ class Analytics extends Component {
         const user = this.props.user;
         // console.log(user);
 
-        const processes_promise = Utils.getUser(user.id).then(res => {
+        Utils.getUser(user.id).then(res => {
             const user = res.data.getUser;
             const processes_ids = user.processes;
-            const promise = Promise.all(
+            // retrieving the names of all the user's Processes
+            return Promise.all(
                 processes_ids.map((process_id, index) => {
                     return Utils.getProcess(process_id).then(res => {
                         const process = res.data.getProcess;
-    
                         return {
                             name: process.name,
                             id: process.id
@@ -38,11 +38,7 @@ class Analytics extends Component {
                     })
                 })
             );
-
-            return promise;
-        });
-
-        processes_promise.then((processes) => {
+        }).then((processes) => {
             this.setState({
                 processes: processes,
                 loading: false
@@ -69,6 +65,10 @@ class Analytics extends Component {
     }
 
     load_process_data(process_id) {
+        this.setState({
+            loading: true
+        });
+
         Utils.getProcess(process_id).then(res => {
             const phase_ids = res.data.getProcess.phase_ids;
             console.log(phase_ids);
@@ -76,6 +76,9 @@ class Analytics extends Component {
             Utils.getPhase(phase_id).then(res => {
                 console.log(res)
                 // duration is null ?
+                this.setState({
+                    loading: false
+                });
             })
         })
     }
