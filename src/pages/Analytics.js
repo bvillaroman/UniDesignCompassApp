@@ -29,13 +29,15 @@ class Analytics extends Component {
             // retrieving the names of all the user's Processes
             return Promise.all(
                 processes_ids.map((process_id, index) => {
-                    return Utils.getProcess(process_id).then(res => {
-                        const process = res.data.getProcess;
-                        return {
-                            name: process.name,
-                            id: process.id
-                        }
-                    })
+                    return (
+                        Utils.getProcess(process_id).then(res => {
+                            const process = res.data.getProcess;
+                            return {
+                                name: process.name,
+                                id: process.id
+                            }
+                        })
+                    )
                 })
             );
         }).then((processes) => {
