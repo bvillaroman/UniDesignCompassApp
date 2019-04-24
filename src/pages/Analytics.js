@@ -48,6 +48,7 @@ class Analytics extends Component {
                 selected_process_id: default_process ? default_process.id : -1,
                 loading: false
             });
+            this.load_process_data(default_process.id)
         });
     }
 
@@ -79,15 +80,25 @@ class Analytics extends Component {
 
         Utils.getProcess(process_id).then(res => {
             const phase_ids = res.data.getProcess.phase_ids;
-            console.log(phase_ids);
-            const phase_id = phase_ids[0];
-            Utils.getPhase(phase_id).then(res => {
-                console.log(res)
-                // duration is null ?
-                this.setState({
-                    loading: false
-                });
-            })
+            return Promise.all(
+                phase_ids.map((phase_id, index) => {
+                    return (
+                        Utils.getPhase(phase_id).then(res => {
+                            const phase = res.data.getPhase;
+                            // console.log(phase)
+                            return {
+                                category: phase.title,
+                                amount: phase.duration
+                            }
+                        })
+                    );
+                })
+            );
+        }).then(phases => {
+            console.log(phases)
+            this.setState({
+                loading: false
+            });
         })
     }
 
@@ -116,7 +127,7 @@ class Analytics extends Component {
             ?
                 <ResponsiveBarChart data={d}/>
             :
-                null;
+                <ResponsiveBarChart data={this.data}/>;
         return chart;
     }
 
