@@ -21,7 +21,7 @@ export async function getLogs(log_id){
     return Log;
 }
 
-export async function getProcessess(process_id){
+export async function getProcess(process_id){
     const Process = await API.graphql(graphqlOperation(queries.getProcess,{id:process_id}));
     return Process;
 }
