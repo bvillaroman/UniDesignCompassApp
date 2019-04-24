@@ -10,12 +10,18 @@ class ResponsiveBarChart extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            data: nextProps.data ? nextProps.data : this.state.data
+        })
+    }
+
     onSize = size => {
         this.setState({
             width: size.width,
             height: size.height ? size.height : size.width*2/3
         })
-      }
+    }
         
     render() {
         const spec = this.state.spec ? this.state.spec : null;

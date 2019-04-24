@@ -95,12 +95,12 @@ class Analytics extends Component {
                 })
             );
         }).then(phases => {
-            console.log(phases)
+            // console.log(phases)
+            console.log('done load process data')
             this.setState({
                 loading: false,
                 chartData: {
                     table: phases
-                    // table: this.data.table
                 }
             });
         })
@@ -127,9 +127,11 @@ class Analytics extends Component {
 
     bar_chart_render = () => {
         const data = this.state.chartData
-            ? this.setState.chartData
-            : this.setState.chartData;
+            ? this.state.chartData
+            : this.state.chartData;
+        console.log('bar chart render')
         return <ResponsiveBarChart data={data}/>;
+        // return <ResponsiveBarChart data={this.data}/>;
     }
 
     loading_render = () => {
