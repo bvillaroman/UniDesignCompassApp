@@ -100,12 +100,13 @@ class Analytics extends Component {
 
     loading_render = () => {
         return (this.state.loading
-            ?
-                <div>
-                    <h2>Loading...</h2>
+            ?   
+                <div className={'text-center'}>
+                    <div className={'spinner-border text-primary'}></div>
                 </div>
             :
-        )
+                null
+        );
     }
         
     render() {
@@ -116,15 +117,9 @@ class Analytics extends Component {
                     <div className={'page-header'}>
                         <h1 className={'text-center'}>Anlytics</h1>
                     </div>
-                    <div>
                         {this.loading_render()}
-                    </div>
-                    <div>
                         {this.process_select_render()}
-                    </div>
-                    <div>
                         {this.bar_chart_render()}
-                    </div>
                 </div>
             </Layout>
         );
