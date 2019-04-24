@@ -11,21 +11,24 @@ class Analytics extends Component {
         this.state = {
             spec: this.spec,
             chartData: this.data
-        }
+        };
     }
 
     initProcessSelect() {
+        this.setState({
+            loading: true
+        });
         // load data of user and set to state
         const user = this.props.user;
         // console.log(user);
 
         const processes_promise = Utils.getUser(user.id).then(res => {
-            let user = res.data.getUser
-            let processes_ids = user.processes
+            let user = res.data.getUser;
+            let processes_ids = user.processes;
             let promise = Promise.all(
                 processes_ids.map((process_id, index) => {
                     return Utils.getProcess(process_id).then(res => {
-                        let process = res.data.getProcess
+                        let process = res.data.getProcess;
     
                         return {
                             name: process.name,
@@ -33,16 +36,17 @@ class Analytics extends Component {
                         }
                     })
                 })
-            )
+            );
 
-            return promise
-        })
+            return promise;
+        });
 
         processes_promise.then((processes) => {
             this.setState({
-                processes: processes
-            })
-        })
+                processes: processes,
+                loading: false
+            });
+        });
     }
 
     componentDidMount() {
@@ -92,13 +96,17 @@ class Analytics extends Component {
                 null;
         return chart;
     }
+
+    loading_render = () => {
+
+    }
         
     render() {
         console.log(this.state)
         return (
             <Layout>
                 <div className='container'>
-                    
+
                     {this.process_select_render()}
                     {this.bar_chart_render()}
                     {/* <ResponsiveBarChart data={this.data}/> */}
