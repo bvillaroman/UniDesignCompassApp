@@ -4,7 +4,6 @@ import ResponsiveBarChart from '../components/ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
-import Form from 'react-bootstrap/Form'
 
 class Analytics extends Component {
     constructor(props) {
@@ -15,27 +14,42 @@ class Analytics extends Component {
         }
     }
 
-    componentDidMount() {
+    initProcessSelect() {
         // load data of user and set to state
         const user = this.props.user;
         // console.log(user);
 
-        Utils.getUser(user.id).then(res => {
+        const processes_promise = Utils.getUser(user.id).then(res => {
             let user = res.data.getUser
             let processes_ids = user.processes
-            console.log(processes_ids)
-
-            let names_promises = processes_ids.map((process_id, index) => {
-                return Utils.getProcess(process_id).then(res => {
-                    let process = res.data.getProcess
-                    let name = process.name;
-                    return name;
+            let promise = Promise.all(
+                processes_ids.map((process_id, index) => {
+                    return Utils.getProcess(process_id).then(res => {
+                        let process = res.data.getProcess
+    
+                        return {
+                            name: process.name,
+                            id: process.id
+                        }
+                    })
                 })
-            })
-            Promise.all(names_promises).then(function(results) {
-                console.log(results)
+            )
+
+            return promise
+        })
+
+        processes_promise.then((processes) => {
+            this.setState({
+                processes: processes
             })
         })
+    }
+
+    componentDidMount() {
+        // load data of user and set to state
+        const user = this.props.user;
+        
+        this.initProcessSelect();
     }
 
     chartButtonHandler = () => {
@@ -65,11 +79,12 @@ class Analytics extends Component {
     )}
         
     render() {
+        console.log(this.state)
         return (
             <Layout>
                 <div className='container'>
                     {this.project_select()}
-                    {/* <ResponsiveBarChart data={this.data}/> */}
+                    <ResponsiveBarChart data={this.data}/>
                 </div>
             </Layout>
         );
