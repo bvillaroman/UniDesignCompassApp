@@ -60,31 +60,47 @@ class Analytics extends Component {
         console.log('MyComponent has a width of', size.width)
     }
 
-    project_select = () => {return (
-        <div className="d-flex flex-column" >
-            <select class="custom-select">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            {/* <Form.Control as="custom-select">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </Form.Control> */}
-        </div>
-    )}
+    process_select_render = () => {
+        return(this.state.processes 
+            ? 
+                <div className="d-flex flex-column" >
+                    <select class="custom-select">
+                        {
+                            this.state.processes.map((process, id) => {
+                                return (
+                                    <option value={process.id}>{process.name}</option>
+                                )
+                            })
+                        }
+                    </select>
+                </div>
+            : 
+                <div className="d-flex flex-column" >
+                    <select disabled class="custom-select">
+                        <option selected>This user has no Processes</option>
+                    </select>
+                </div>
+        );
+    }
+
+    bar_chart_render = () => {
+        const d = null
+        const chart = d
+            ?
+                <ResponsiveBarChart data={d}/>
+            :
+                null;
+        return chart;
+    }
         
     render() {
         console.log(this.state)
         return (
             <Layout>
                 <div className='container'>
-                    {this.project_select()}
-                    <ResponsiveBarChart data={this.data}/>
+                    {this.process_select_render()}
+                    {this.bar_chart_render()}
+                    {/* <ResponsiveBarChart data={this.data}/> */}
                 </div>
             </Layout>
         );
