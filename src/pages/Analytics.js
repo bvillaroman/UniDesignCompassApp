@@ -98,7 +98,7 @@ class Analytics extends Component {
     }
 
     loading_render = () => {
-
+        null;
     }
         
     render() {
