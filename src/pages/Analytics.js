@@ -4,6 +4,7 @@ import ResponsiveBarChart from '../components/ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Analytics extends Component {
     constructor(props) {
@@ -71,10 +72,10 @@ class Analytics extends Component {
     process_select_render = () => {
         return(
             <div className="d-flex flex-column" >
-                <select class="custom-select" onChange={e => this.process_select_handler(e)}>
+                <select className={'custom-select'} onChange={e => this.process_select_handler(e)}>
                     {this.state.processes 
                         ? 
-                            this.state.processes.map((process) => {
+                            this.state.processes.map((process, index) => {
                                 return (
                                     <option value={process.id}>{process.name}</option>
                                 )
@@ -98,7 +99,13 @@ class Analytics extends Component {
     }
 
     loading_render = () => {
-        null;
+        return (this.state.loading
+            ?
+                <div>
+                    <h2>Loading...</h2>
+                </div>
+            :
+        )
     }
         
     render() {
@@ -106,10 +113,18 @@ class Analytics extends Component {
         return (
             <Layout>
                 <div className='container'>
-
-                    {this.process_select_render()}
-                    {this.bar_chart_render()}
-                    {/* <ResponsiveBarChart data={this.data}/> */}
+                    <div className={'page-header'}>
+                        <h1 className={'text-center'}>Anlytics</h1>
+                    </div>
+                    <div>
+                        {this.loading_render()}
+                    </div>
+                    <div>
+                        {this.process_select_render()}
+                    </div>
+                    <div>
+                        {this.bar_chart_render()}
+                    </div>
                 </div>
             </Layout>
         );
