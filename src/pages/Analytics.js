@@ -123,9 +123,7 @@ class Analytics extends Component {
     loading_render = () => {
         return (this.state.loading
             ?   
-                <div className={'text-center'}>
-                    <div className={'spinner-border text-primary'}></div>
-                </div>
+                <div className={'spinner-border text-primary'}></div>
             :
                 null
         );
@@ -136,10 +134,12 @@ class Analytics extends Component {
         return (
             <Layout>
                 <div className='container'>
-                    <div className={'page-header'}>
-                        <h1 className={'text-center'}>Anlytics</h1>
+                    <div className={'page-header row'}>
+                        <div className={'col-1 align-self-center'}>
+                            {this.loading_render()}
+                        </div>
+                        <h1 className={'col-10 text-center'}>Anlytics</h1>
                     </div>
-                        {this.loading_render()}
                         {this.process_select_render()}
                         {this.bar_chart_render()}
                 </div>
