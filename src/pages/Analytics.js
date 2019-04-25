@@ -11,7 +11,7 @@ class Analytics extends Component {
         super(props);
         this.state = {
             spec: this.spec,
-            chartData: this.data,
+            // chartData: this.data,
             selected_process_id: -1
         };
     }
@@ -48,28 +48,20 @@ class Analytics extends Component {
                 selected_process_id: default_process ? default_process.id : -1,
                 loading: false
             });
+            this.load_process_data(default_process.id)
         });
     }
 
     componentDidMount() {
-        // load data of user and set to state
-        const user = this.props.user;
-
         this.initProcessSelect();
-    }
-
-    chartButtonHandler = () => {
-        console.log("handlinng");
     }
 
     process_select_handler = (event) => {
         const process_id = event.target.value;
-        console.log(process_id)
         this.setState({
             selected_process_id: process_id
         })
         this.load_process_data(process_id);
-        // perhaps initiate the plot here
     }
 
     load_process_data(process_id) {
@@ -79,15 +71,26 @@ class Analytics extends Component {
 
         Utils.getProcess(process_id).then(res => {
             const phase_ids = res.data.getProcess.phase_ids;
-            console.log(phase_ids);
-            const phase_id = phase_ids[0];
-            Utils.getPhase(phase_id).then(res => {
-                console.log(res)
-                // duration is null ?
-                this.setState({
-                    loading: false
-                });
-            })
+            return Promise.all(
+                phase_ids.map((phase_id, index) => {
+                    return (
+                        Utils.getPhase(phase_id).then(res => {
+                            const phase = res.data.getPhase;
+                            return {
+                                category: phase.title,
+                                amount: phase.duration
+                            }
+                        })
+                    );
+                })
+            );
+        }).then(phases => {
+            this.setState({
+                loading: false,
+                chartData: {
+                    table: phases
+                }
+            });
         })
     }
 
@@ -111,13 +114,9 @@ class Analytics extends Component {
     }
 
     bar_chart_render = () => {
-        const d = null
-        const chart = d
-            ?
-                <ResponsiveBarChart data={d}/>
-            :
-                null;
-        return chart;
+        return this.state.chartData
+            ? <ResponsiveBarChart data={this.state.chartData} />
+            : null;
     }
 
     loading_render = () => {
@@ -147,19 +146,19 @@ class Analytics extends Component {
         );
     }
 
-    data = {
-        table : [
-            {"category": "A", "amount": 28},
-            {"category": "B", "amount": 55},
-            {"category": "C", "amount": 43},
-            {"category": "D", "amount": 91},
-            {"category": "E", "amount": 81},
-            {"category": "F", "amount": 53},
-            {"category": "G", "amount": 19},
-            {"category": "H", "amount": 87},
-            {"category": "I", "amount": 23}
-        ]
-    }
+    // data = {
+    //     table : [
+    //         {"category": "A", "amount": 28},
+    //         {"category": "B", "amount": 55},
+    //         {"category": "C", "amount": 43},
+    //         {"category": "D", "amount": 91},
+    //         {"category": "E", "amount": 81},
+    //         {"category": "F", "amount": 53},
+    //         {"category": "G", "amount": 19},
+    //         {"category": "H", "amount": 87},
+    //         {"category": "I", "amount": 23}
+    //     ]
+    // }
 }
 
 const mapStateToProps = ({state}) => ({
