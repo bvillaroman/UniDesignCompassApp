@@ -53,9 +53,6 @@ class Analytics extends Component {
     }
 
     componentDidMount() {
-        // load data of user and set to state
-        const user = this.props.user;
-
         this.initProcessSelect();
     }
 

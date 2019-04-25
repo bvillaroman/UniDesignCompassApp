@@ -39,7 +39,7 @@ class BarChart extends Component {
     defaultSpec = {
         "$schema": "https://vega.github.io/schema/vega/v5.json",
         
-        "padding": "0",
+        "padding": "10",
         // "width": this.defaultSize.width,
         // "height": this.defaultSize.height,
         "autosize": {
