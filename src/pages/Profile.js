@@ -54,26 +54,37 @@ class Profile extends React.Component {
                     <form>
                       First Name: <input className="col input-text" type="text" name="firstName" defaultValue={first_name} />
                       Last Name: <input className="col input-text" type="text" name="lastName" defaultValue={last_name} />
+                    <input class="submit" value="Submit Changes" type="button"/>
+                    <input class="cancel" value="Cancel" type="button"/>
                     </form>
                   </div>
                   <div label="Username" change={username}>
                     <form>
                       Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
+                      <input class="submit" value="Submit Changes" type="button"/>
+                      <input class="cancel" value="Cancel" type="button"/>
                     </form>
                   </div>
                   <div label="E-Mail" change={email}>
                     <form>
                       E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
+                      <input class="submit" value="Submit Changes" type="button"/>
+                      <input class="cancel" value="Cancel" type="button"/>
                     </form>
                   </div>
                   <div label="Password" change="**********">
                     <form>
-                      Password: <input className="col input-text" type="text" name="password" defaultValue="**********" />
+                      Current Password: <input className="col input-text" type="text" name="password" defaultValue="" />
+                      New Password: <input className="col input-text" type="text" name="password" defaultValue="" />
+                      <input class="submit" value="Submit Changes" type="button"/>
+                      <input class="cancel" value="Cancel" type="button"/>
                     </form>
                   </div>
                   <div label="Phone Number" change={phone_number}>
                     <form>
                       Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
+                      <input class="submit" value="Submit Changes" type="button"/>
+                      <input class="cancel" value="Cancel" type="button"/>
                     </form>
                   </div>
                 </Accordion>
