@@ -43,10 +43,12 @@ export async function createUser(username,first_name,last_name,email,phone,passw
     const newUser = await API.graphql(graphqlOperation(mutations.createUser,{input:userinfo}));
     return newUser;
 }
-export async function createLogs(timestamp,text){
+export async function createLogs(PhaseId,timestamp,text){
     const loginfo={
         timestamp,
-        text
+        text,
+        logPhaseId:PhaseId,
+        
     }
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
@@ -85,11 +87,11 @@ export async function updateUser(id,first_name,last_name,email,password_hash,pro
     const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:userinfo}));
     return updatedUser;
 }
-export async function updateLogs(id,timestamp,phase_log_json){
+export async function updateLogs(id,timestamp,text){
     const loginfo={
         id:id,
-        timestamp:timestamp,
-        phase_log_json:phase_log_json
+        timestamp,
+        text
     }
     const updatedLog = await API.graphql(graphqlOperation(mutations.updateLog,{input:loginfo}));
     return updatedLog;
@@ -106,7 +108,6 @@ export async function updateProcess(id,name,timestamp){
 export async function updatePhase(id,logs,duration,title,description){
     const phaseInfo={
         id:id,
-        logs,
         duration,
         title,
         description
