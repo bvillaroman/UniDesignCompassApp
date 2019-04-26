@@ -14,15 +14,15 @@ const CustomOrPremade = (props) =>  (
 )
 const default_phases= [
   {title:"Research",
-   Description:"Phase for Research"},
+   description:"Phase for Research"},
    {title:"Design",
-   Description:"Phase for Design"},
+   description:"Phase for Design"},
    {title:"Build",
-   Description:"Phase for Build"},
+   description:"Phase for Build"},
    {title:"Brainstorm",
-   Description:"Phase for Brainstorm"},
+   description:"Phase for Brainstorm"},
    {title:"Laugh",
-   Description:"Phase for Laugh"}
+   description:"Phase for Laugh"}
 ]
 const PhaseNumber = (props) =>  (
   <Form.Group controlId="exampleForm.ControlSelect1">
