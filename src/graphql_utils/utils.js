@@ -56,17 +56,19 @@ async function createProcess(id,name,date_start,date_end,phases){
         phase_ids:phases,
         name:name,
         date_start,
-        date_end
+        date_end,
+        processUserId:id
     }
     const newProcess = await API.graphql(graphqlOperation(mutations.createProcess,{input:processInfo}));
     return newProcess;
 }
-async function createPhase(title,description){
+async function createPhase(processId,title,description){
     const phaseInfo={
         title:title,
         description:description,
         duration:"0000000",
-        logs:[]
+        logs:[],
+        phaseProcessId: processId
 
     }
     const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
