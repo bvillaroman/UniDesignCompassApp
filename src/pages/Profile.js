@@ -47,48 +47,40 @@ class Profile extends React.Component {
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
             <div id="account-settings" className="container">
-
-              <div>
-                <Accordion>
-                  <div label="Name" change={`${first_name} ${last_name}`}>
-                    <form>
-                      First Name: <input className="col input-text" type="text" name="firstName" defaultValue={first_name} />
-                      Last Name: <input className="col input-text" type="text" name="lastName" defaultValue={last_name} />
-                    <input class="submit" value="Submit Changes" type="button"/>
-                    <input class="cancel" value="Cancel" type="button"/>
-                    </form>
-                  </div>
-                  <div label="Username" change={username}>
-                    <form>
-                      Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
-                      <input class="submit" value="Submit Changes" type="button"/>
-                      <input class="cancel" value="Cancel" type="button"/>
-                    </form>
-                  </div>
-                  <div label="E-Mail" change={email}>
-                    <form>
-                      E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
-                      <input class="submit" value="Submit Changes" type="button"/>
-                      <input class="cancel" value="Cancel" type="button"/>
-                    </form>
-                  </div>
-                  <div label="Password" change="**********">
-                    <form>
-                      Current Password: <input className="col input-text" type="text" name="password" defaultValue="" />
-                      New Password: <input className="col input-text" type="text" name="password" defaultValue="" />
-                      <input class="submit" value="Submit Changes" type="button"/>
-                      <input class="cancel" value="Cancel" type="button"/>
-                    </form>
-                  </div>
-                  <div label="Phone Number" change={phone_number}>
-                    <form>
-                      Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
-                      <input class="submit" value="Submit Changes" type="button"/>
-                      <input class="cancel" value="Cancel" type="button"/>
-                    </form>
-                  </div>
-                </Accordion>
-              </div>
+              <Accordion>
+                <div label="Name" change={`${first_name} ${last_name}`}>
+                  <form>
+                    First Name: <input className="col input-text" type="text" name="firstName" defaultValue={first_name} />
+                    Last Name: <input className="col input-text" type="text" name="lastName" defaultValue={last_name} />
+                  </form>
+                  <input class="submit" value="Submit Changes" type="button"/>
+                </div>
+                <div label="Username" change={username}>
+                  <form>
+                    Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
+                  </form>
+                  <input class="submit" value="Submit Changes" type="button"/>
+                </div>
+                <div label="E-Mail" change={email}>
+                  <form>
+                    E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
+                  </form>
+                  <input class="submit" value="Submit Changes" type="button"/>
+                </div>
+                <div label="Password" change="**********">
+                  <form>
+                    Current Password: <input className="col input-text" type="text" name="password" defaultValue="" />
+                    New Password: <input className="col input-text" type="text" name="password" defaultValue="" />
+                  </form>
+                  <input class="submit" value="Submit Changes" type="button"/>
+                </div>
+                <div label="Phone Number" change={phone_number}>
+                  <form>
+                    Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
+                  </form>
+                  <input class="submit" value="Submit Changes" type="button"/>
+                </div>
+              </Accordion>
             </div>
           </Tab>
         </Tabs>
