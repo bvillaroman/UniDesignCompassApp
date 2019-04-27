@@ -29,7 +29,7 @@ class Compass extends Component {
             next: true,
             currentPhase: '0',
             emptyTime: "00:00:00",
-            currentTime: "00:00:01",
+            currentTime: "00:00:00",
             log: ""
         }
     }
@@ -150,17 +150,38 @@ class Compass extends Component {
                                                     variant={(this.state.currentPhase === phase.key) ? "success" : "outline-warning"}
                                                 >{phase.name}
                                                 </Button>
-                                                <Button
+                                                <Timer
+                                                    initialTime={0}
+                                                    startImmediately={false}
+                                                    start={() => console.log('Start')}
+                                                    resume={() => console.log('Resume')}
+                                                    pause={() => console.log('Pause')}
+                                                    stop={() => console.log('Stop')}
+                                                    reset={() => console.log('reset')}
+                                                >
+                                            {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                                        return (
+                                        <React.Fragment>
+                                        {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
+                                        <Button
                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
-                                                    onClick={() => this.timerHandler(phase)}
+                                                    // onClick={() => this.timerHandler(phase)}
+                                                    onClick={start}
                                                 >
                                                     {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
-                                                    <Timer>
-                                                        <Timer.Hours/>:
-                                                        <Timer.Minutes/>:
-                                                        <Timer.Seconds/>
-                                                    </Timer>
+                                                    {(this.state.currentPhase === phase.key) ? start : reset}
+
+                                                    
+                                                    <Timer.Hours />:
+                                                    <Timer.Minutes />:
+                                                    <Timer.Seconds />
                                                 </Button>
+
+                        </React.Fragment>);
+                      }}
+                                                
+
+                                                </Timer>
                                             </ButtonGroup>
                                             <div>
                                                 
