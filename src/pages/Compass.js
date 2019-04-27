@@ -77,8 +77,6 @@ class Compass extends Component {
         }
     }
 
-
-
     timerHandler = (phase) => {
         // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         if(phase.key===this.state.currentPhase){
