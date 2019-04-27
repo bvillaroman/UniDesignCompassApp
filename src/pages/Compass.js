@@ -169,7 +169,7 @@ class Compass extends Component {
                                                     onClick={start}
                                                 >
                                                     {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
-                                                    {(this.state.currentPhase === phase.key) ? start : reset}
+                                                    {(this.state.currentPhase === phase.key) ? start() : reset()}
 
                                                     
                                                     <Timer.Hours />:
