@@ -170,6 +170,17 @@ class Compass extends Component {
                                                 >
                                                     {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
                                                     {(this.state.currentPhase === phase.key) ? start() : reset()}
+                                                    {/* {
+                                                        if(this.state.currentPhase===phase.key){
+                                                            console.log(getTime());
+                                                            start();
+                                                        }
+                                                        else
+                                                        {
+                                                            reset();
+                                                        }
+
+                                                    } */}
 
                                                     
                                                     <Timer.Hours />:
