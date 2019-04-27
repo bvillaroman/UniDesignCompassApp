@@ -14,11 +14,12 @@ class Profile extends React.Component {
       last_name: "",
       email: "",
       phone_number: "",
-      processes: [],
+      processes: {
+        items: [],
+        nextToken: null
+      },
       username: "",
-      open: false
     }
-    this.toggle = this.toggle.bind(this);
   }
   componentDidMount() {
     // load data of user and set to state
@@ -26,19 +27,19 @@ class Profile extends React.Component {
     this.setState({first_name, last_name, email, phone_number, processes, username});
   }
 
-  toggle() {
-   this.setState({
-     open: !this.state.open
-   });
- }
-
   render() {
     const { first_name, last_name, email, phone_number, username } = this.state;
+    var displayTitle = this.state.processes.items.map(item => {
+      console.log(item.name)
+      return (
+        <li>{item.name}</li>
+      );
+    });
     var displayProcesses = (this.state.processes === null) ?
-      ( <span>There are no projects.</span> ) : ( <span>There are projects.</span> );
+      ( <span>There are no projects.</span> ) : ( <ul>{displayTitle}</ul> );
+
     return (
       <Layout>
-        {console.log(this.props)}
         <Tabs defailtActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
