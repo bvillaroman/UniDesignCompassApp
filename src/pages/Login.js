@@ -6,31 +6,18 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../state/actions';
 import { Auth } from "aws-amplify";
 import config from "../aws-exports";
-import NewPassword from "../components/newPassword";
 import SignIn from "../components/SignIn";
-import SignUp from "../components/SignUp";
-import Verification from "../components/Verification";
-import { createUser,getUserbyUsername } from "../graphql_utils/utils";
+import {getUserbyUsername } from "../graphql_utils/utils";
 Auth.configure(config);
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            first_name: " ", //Add firstname and Lastname to Sign Up page
-            last_name: " ",
-            email: "",
             password: "",
-            repeat_pass: "",
-            phone: "",
             username: "",
-            code: "",
             user: [],
         };
-        this.handleAuth = this.handleAuth.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this._comp = null;
-        this.Log_state = "SignIn";
     }
 
     handleChange = (e) => {
@@ -43,13 +30,9 @@ class Login extends Component {
             .then((res) => {
                 switch (res.challengeName) {
                     case "NEW_PASSWORD_REQUIRED":
-                        this.Log_state = "NEWPASS";
-                        this.setState({
-                            user: res
-                        })
+                        navigate("/newPassword",{state:{username:this.state.username}});
                         break;
                     case "SOFTWARE_TOKEN_MFA":
-                        this.Log_state = "OTP";
                         break;
                     case "MFA_SETUP":
                         break;
@@ -57,10 +40,9 @@ class Login extends Component {
                         break;
                     default:
                         console.log(res);
-                        this.Log_state = "LoggedIn";
                         getUserbyUsername(this.state.username)
                         .then((res) => {
-                            const user = res.data.listUsers.items[0]
+                            const user = res.data.getUser
                             this.props.authenticateUser(user);
                             navigate("/")
                         })
@@ -70,97 +52,11 @@ class Login extends Component {
                 alert(error.message);
             });
     };
-    handlePass = (e) => {
-        e.preventDefault();
-        console.log(this.state.user)
-        Auth.completeNewPassword(this.state.user, this.state.password)
-            .then((res) => {
-                console.log(res);
-                alert("Account verified Please Log In");
-                this.Log_state = "SignIn";
-                this.forceUpdate();
-            }, (error) => {
-                console.log(error);
-                alert(error.message);
-            })
-    }
     createAccount = (e) => {
-        e.preventDefault();
-        this.Log_state = "SIGNUP";
-        this.forceUpdate();
-    }
-    comparePasswords = () => {
-        if (this.state.password === this.state.repeat_pass) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    handleCreate = (e) => {
-        e.preventDefault();
-        if (!this.comparePasswords()) {
-            alert("Passwords do not match");
-            return;
-        }
-        let attributes = { username: this.state.username, password: this.state.password, attributes: { email: this.state.email, phone_number: this.state.phone } };
-        Auth.signUp(attributes)
-            .then((res) => {
-                this.Log_state = "Verify";
-                alert("Check your email for Verification code");
-                this.forceUpdate();
-            }, (error) => {
-                console.log(error);
-                alert(error.message);
-            })
-    }
-    handleVerify = (e) => {
-        e.preventDefault();
-        Auth.confirmSignUp(this.state.username, this.state.code)
-            .then((res) => {
-                console.log(res);
-                createUser(this.state.username,this.state.first_name,
-                    this.state.last_name,
-                    this.state.email,this.state.phone,
-                    1234).then( // CHange PAssword Hash.
-                        (result) => {
-                            alert("Account Confirmed");
-                            this.Log_state = "SignIn";
-                            navigate("/Login")
-                        }, (error) => {
-                            alert("Something went wrong");
-                            console.log(error);
-                        }
-                    );
-            }, (error) => {
-                console.log(error);
-                alert(error.message);
-            })
-    }
-    determineRender() {
-        switch (this.Log_state) {
-            case 'SignIn':
-                this._comp = <SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} />
-                break;
-            case 'NEWPASS':
-                this._comp = <NewPassword handlePass={this.handlePass} handleChange={this.handleChange} />
-                break;
-            case 'MFA_SETUP':
-                break;
-            case 'OTP':
-                break;
-            case 'Verify':
-                this._comp = <Verification handleChange={this.handleChange} handleVerify={this.handleVerify} />
-                break;
-            case 'SIGNUP':
-                this._comp = <SignUp handleChange={this.handleChange} handleCreate={this.handleCreate} />
-                break;
-            default:
-                this._comp = null;
-        }
+        navigate("/SignUp");
     }
     render() {
-        this.determineRender()
-        return (<Layout>{this._comp}</Layout>);
+        return (<Layout><SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} /></Layout>);
     }
 }
 
