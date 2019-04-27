@@ -7,6 +7,7 @@ import { Col } from "react-bootstrap";
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
+import Timer from "react-compound-timer";
 Amplify.configure(aws_exports);
 
 class Compass extends Component {
@@ -28,7 +29,7 @@ class Compass extends Component {
             next: true,
             currentPhase: '0',
             emptyTime: "00:00:00",
-            currentTime: "00:00:00",
+            currentTime: "00:00:01",
             log: ""
         }
     }
@@ -80,26 +81,26 @@ class Compass extends Component {
     timerHandler = (phase) => {
         // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         if(phase.key===this.state.currentPhase){
-            // var x = new Date()
-            // var minutes = x.getMinutes()
-            // var seconds = x.getSeconds();
-            // var milliseconds = x.getMilliseconds();
-            // var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-            // this.setState({ currentTime: temp })
+            var x = new Date()
+            var minutes = x.getMinutes()
+            var seconds = x.getSeconds();
+            var milliseconds = x.getMilliseconds();
+            var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
+            this.setState({ currentTime: temp })
             var tempTime= new Date()
             var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
 
             // while(phase.key===this.state.currentPhase){
-                setInterval(() => {
-                    this.secondDelay()
-                    start.setSeconds(start.getSeconds()+1) 
+                // setInterval(() => {
+                //     this.secondDelay()
+                //     start.setSeconds(start.getSeconds()+1) 
     
-                    var minutes = start.getMinutes()
-                    var seconds = start.getSeconds();
-                    // var milliseconds = start.getMilliseconds();
-                    var temp = minutes.toString() + ":" + seconds.toString()
-                    this.setState({ currentTime: temp })    
-                },1000);
+                //     var minutes = start.getMinutes()
+                //     var seconds = start.getSeconds();
+                //     // var milliseconds = start.getMilliseconds();
+                //     var temp = minutes.toString() + ":" + seconds.toString()
+                //     this.setState({ currentTime: temp })    
+                // },1000);
                 
 
             // } 
@@ -153,7 +154,12 @@ class Compass extends Component {
                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                     onClick={() => this.timerHandler(phase)}
                                                 >
-                                                    {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime}
+                                                    {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
+                                                    <Timer>
+                                                        <Timer.Hours/>:
+                                                        <Timer.Minutes/>:
+                                                        <Timer.Seconds/>
+                                                    </Timer>
                                                 </Button>
                                             </ButtonGroup>
                                             <div>
