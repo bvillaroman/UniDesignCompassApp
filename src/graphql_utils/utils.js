@@ -75,16 +75,8 @@ async function createPhase(processId,title,description){
     const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
     return newPhase;
 }
-export async function updateUser(id,first_name,last_name,email,password_hash,processes){
-    const userinfo ={
-        id:id,
-        first_name:first_name,
-        last_name:last_name,
-        email:email,
-        password_hash:password_hash,
-        processes:processes
-    }
-    const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:userinfo}));
+export async function updateUser(user_info){ //When Updating Users Info you need to make sure the attributes are correct. List: id,username,first_name,last_name,email,phone_number,password_hash
+    const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:user_info}));
     return updatedUser;
 }
 export async function updateLogs(id,timestamp,text){
