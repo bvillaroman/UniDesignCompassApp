@@ -10,7 +10,16 @@ export const getUser = `query GetUser($id: ID!) {
     email
     password_hash
     phone_number
-    processes
+    processes {
+      items {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -28,7 +37,9 @@ export const listUsers = `query ListUsers(
       email
       password_hash
       phone_number
-      processes
+      processes {
+        nextToken
+      }
     }
     nextToken
   }
@@ -37,8 +48,28 @@ export const listUsers = `query ListUsers(
 export const getProcess = `query GetProcess($id: ID!) {
   getProcess(id: $id) {
     id
-    phase_ids
+    phaseids {
+      items {
+        id
+        duration
+        title
+        description
+      }
+      nextToken
+    }
     user_id
+    user {
+      id
+      username
+      first_name
+      last_name
+      email
+      password_hash
+      phone_number
+      processes {
+        nextToken
+      }
+    }
     name
     date_start
     date_end
@@ -53,8 +84,19 @@ export const listProcesss = `query ListProcesss(
   listProcesss(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      phase_ids
+      phaseids {
+        nextToken
+      }
       user_id
+      user {
+        id
+        username
+        first_name
+        last_name
+        email
+        password_hash
+        phone_number
+      }
       name
       date_start
       date_end
@@ -66,10 +108,36 @@ export const listProcesss = `query ListProcesss(
 export const getPhase = `query GetPhase($id: ID!) {
   getPhase(id: $id) {
     id
-    logs
+    logs {
+      items {
+        id
+        timestamp
+        text
+      }
+      nextToken
+    }
     duration
     title
     description
+    process {
+      id
+      phaseids {
+        nextToken
+      }
+      user_id
+      user {
+        id
+        username
+        first_name
+        last_name
+        email
+        password_hash
+        phone_number
+      }
+      name
+      date_start
+      date_end
+    }
   }
 }
 `;
@@ -81,10 +149,19 @@ export const listPhases = `query ListPhases(
   listPhases(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      logs
+      logs {
+        nextToken
+      }
       duration
       title
       description
+      process {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
     }
     nextToken
   }
@@ -95,6 +172,22 @@ export const getLog = `query GetLog($id: ID!) {
     id
     timestamp
     text
+    phase {
+      id
+      logs {
+        nextToken
+      }
+      duration
+      title
+      description
+      process {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+    }
   }
 }
 `;
@@ -104,6 +197,12 @@ export const listLogs = `query ListLogs($filter: ModelLogFilterInput, $limit: In
       id
       timestamp
       text
+      phase {
+        id
+        duration
+        title
+        description
+      }
     }
     nextToken
   }

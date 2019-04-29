@@ -42,7 +42,7 @@ class Login extends Component {
                         console.log(res);
                         getUserbyUsername(this.state.username)
                         .then((res) => {
-                            const user = res.data.listUsers.items[0]
+                            const user = res.data.getUser
                             this.props.authenticateUser(user);
                             navigate("/")
                         })

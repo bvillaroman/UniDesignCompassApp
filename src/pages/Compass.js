@@ -7,6 +7,7 @@ import { Col } from "react-bootstrap";
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
+import Timer from "react-compound-timer";
 Amplify.configure(aws_exports);
 
 class Compass extends Component {
@@ -28,7 +29,7 @@ class Compass extends Component {
             next: true,
             currentPhase: '0',
             emptyTime: "00:00:00",
-            currentTime: " ",
+            currentTime: "00:00:00",
             log: ""
         }
     }
@@ -37,6 +38,7 @@ class Compass extends Component {
         // var temp=phase.key
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
         // console.log(this.state.currentPhase)
+        this.timerHandler(phase)
     }
 
     previousButtonHandler = () => {
@@ -58,7 +60,7 @@ class Compass extends Component {
         var x = new Date()
         var minutes = x.getMinutes();
         var seconds = x.getSeconds();
-        var milliseconds = x.getUTCMilliseconds();
+        var milliseconds = x.getMilliseconds();
         var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
         const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
         log_list.data.push(log); // Temporary
@@ -67,15 +69,55 @@ class Compass extends Component {
         //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
+
+    secondDelay = () => {
+        var startTime=new Date().getTime();
+        var endTime=startTime;
+        while (endTime<startTime+1000){
+            endTime= new Date().getTime();
+        }
+    }
+
     timerHandler = (phase) => {
-        (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        var x = new Date()
-        var minutes = x.getMinutes();
-        var seconds = x.getSeconds();
-        var milliseconds = x.getUTCMilliseconds();
-        var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-        console.log(minutes)
-        this.setState({ currentTime: temp })
+        // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
+        if(phase.key===this.state.currentPhase){
+            var x = new Date()
+            var minutes = x.getMinutes()
+            var seconds = x.getSeconds();
+            var milliseconds = x.getMilliseconds();
+            var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
+            this.setState({ currentTime: temp })
+            var tempTime= new Date()
+            var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
+
+            // while(phase.key===this.state.currentPhase){
+                // setInterval(() => {
+                //     this.secondDelay()
+                //     start.setSeconds(start.getSeconds()+1) 
+    
+                //     var minutes = start.getMinutes()
+                //     var seconds = start.getSeconds();
+                //     // var milliseconds = start.getMilliseconds();
+                //     var temp = minutes.toString() + ":" + seconds.toString()
+                //     this.setState({ currentTime: temp })    
+                // },1000);
+                
+
+            // } 
+        }
+        else{
+            console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
+        }
+        
+        
+            // while(0){//Set Condition for updating the time.
+        // var elapsed= new Date()
+        // var elapsedMinutes= elapsed.getMinutes();
+        // var elapsedSeconds= elapsed.getSeconds();
+        // var elapsedMilliseconds= elapsed.getMilliseconds();
+        // var temp = elapsedMinutes.toString()+":"+elapsedSeconds.toString()+":"+elapsedMilliseconds.toString()
+        // console.log(temp)
+        // 
     }
     generateList(phase){
         if(this.state.currentPhase===phase){
@@ -108,12 +150,49 @@ class Compass extends Component {
                                                     variant={(this.state.currentPhase === phase.key) ? "success" : "outline-warning"}
                                                 >{phase.name}
                                                 </Button>
-                                                <Button
-                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
-                                                    onClick={() => this.timerHandler(phase)}
+                                                <Timer
+                                                    initialTime={0}
+                                                    startImmediately={false}
+                                                    start={() => console.log('Start')}
+                                                    resume={() => console.log('Resume')}
+                                                    pause={() => console.log('Pause')}
+                                                    stop={() => console.log('Stop')}
+                                                    reset={() => console.log('reset')}
                                                 >
-                                                    {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime}
+                                            {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                                        return (
+                                        <React.Fragment>
+                                        {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
+                                        <Button
+                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
+                                                    // onClick={() => this.timerHandler(phase)}
+                                                    onClick={start}
+                                                >
+                                                    {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
+                                                    {(this.state.currentPhase === phase.key) ? start() : reset()}
+                                                    {/* {
+                                                        if(this.state.currentPhase===phase.key){
+                                                            console.log(getTime());
+                                                            start();
+                                                        }
+                                                        else
+                                                        {
+                                                            reset();
+                                                        }
+
+                                                    } */}
+
+                                                    
+                                                    <Timer.Hours />:
+                                                    <Timer.Minutes />:
+                                                    <Timer.Seconds />
                                                 </Button>
+
+                        </React.Fragment>);
+                      }}
+                                                
+
+                                                </Timer>
                                             </ButtonGroup>
                                             <div>
                                                 

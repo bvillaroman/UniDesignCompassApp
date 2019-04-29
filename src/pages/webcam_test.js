@@ -16,7 +16,6 @@ class Webby extends React.Component {
         this.setState({
             screenshot: this.state.cam.getScreenshot()
         })
-        console.log(this.state.screenshot);
     }
 
     setRef = cam => {

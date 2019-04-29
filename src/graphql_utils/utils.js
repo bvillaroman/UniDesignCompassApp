@@ -13,7 +13,9 @@ export async function getUser(id){
 export async function getUserbyUsername(username){
     const filter = { username : { eq : username } }
     const user = await API.graphql(graphqlOperation(queries.listUsers,{filter}));
-    return user;
+    console.log(user);
+    const userinfo = await getUser(user.data.listUsers.items[0].id);
+    return userinfo;
 }
 
 export async function getLogs(log_id){
@@ -37,36 +39,37 @@ export async function createUser(username,first_name,last_name,email,phone,passw
         email:email,
         password_hash:password_hash,
         phone_number:phone,
-        processes:[]
     }
     const newUser = await API.graphql(graphqlOperation(mutations.createUser,{input:userinfo}));
     return newUser;
 }
-export async function createLogs(timestamp,text){
+export async function createLogs(PhaseId,timestamp,text){
     const loginfo={
         timestamp,
-        text
+        text,
+        logPhaseId:PhaseId,
+        
     }
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
 }
-async function createProcess(id,name,date_start,date_end,phases){
+async function createProcess(id,name,date_start,date_end){
     const processInfo={
         user_id:id,
-        phase_ids:phases,
         name:name,
         date_start,
-        date_end
+        date_end,
+        processUserId:id
     }
     const newProcess = await API.graphql(graphqlOperation(mutations.createProcess,{input:processInfo}));
     return newProcess;
 }
-async function createPhase(title,description){
+async function createPhase(processId,title,description){
     const phaseInfo={
         title:title,
         description:description,
         duration:"0000000",
-        logs:[]
+        phaseProcessId: processId
 
     }
     const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
@@ -84,11 +87,11 @@ export async function updateUser(id,first_name,last_name,email,password_hash,pro
     const updatedUser= await API.graphql(graphqlOperation(mutations.updateUser,{input:userinfo}));
     return updatedUser;
 }
-export async function updateLogs(id,timestamp,phase_log_json){
+export async function updateLogs(id,timestamp,text){
     const loginfo={
         id:id,
-        timestamp:timestamp,
-        phase_log_json:phase_log_json
+        timestamp,
+        text
     }
     const updatedLog = await API.graphql(graphqlOperation(mutations.updateLog,{input:loginfo}));
     return updatedLog;
@@ -105,7 +108,6 @@ export async function updateProcess(id,name,timestamp){
 export async function updatePhase(id,logs,duration,title,description){
     const phaseInfo={
         id:id,
-        logs,
         duration,
         title,
         description
@@ -143,23 +145,30 @@ export async function deletePhase(id){
     return deletedPhase;
 }
 export async function createNewCompass(user,phases){
-    let newPhase=[];
-    for(let i= 0; i<phases.length;i++){
-        await createPhase(phases[i].title,phases[i].Description).then(
-            (res)=>{
-                newPhase.push(res.data.createPhase.id);
-            }
-        );
-    }
     let process_info;
-    await createProcess(user.id,"Blank Project","0000000","00000000",newPhase).then(
+    await createProcess(user.id,"Blank Project","0000000","00000000").then(
         (res)=>{
             process_info=res.data.createProcess;
+            console.log(process_info);
+        },(error)=>{
+            console.log(error);
         }
     )
+    console.log("Hello");
     
-    user.processes.push(process_info.id);
-    await updateUser(user.id,user.first_name,user.last_name,user.email,user.password_hash,user.processes)
+    for(let i =0 ;i < phases.length; i++){
+        await createPhase(process_info.id,phases[i].title,phases[i].description);
+    }
+    
+    await getUser(user.id).then(
+        (res)=>{
+            console.log(user)
+            user=res.data.getUser;
+            console.log(user)
+        },(error)=>{
+            console.log(error);
+        }
+    )
     
 }
 export async function appendNewLog(phaseId,log){
