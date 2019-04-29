@@ -1,5 +1,5 @@
 import React from "react";
-import { Tab, Tabs } from 'react-bootstrap';
+import { Tab, Tabs, CardColumns, Card } from 'react-bootstrap';
 import Layout from "../components/layout";
 import  {connect} from "react-redux";
 import {authenticateUser} from "../state/actions";
@@ -29,21 +29,33 @@ class Profile extends React.Component {
 
   render() {
     const { first_name, last_name, email, phone_number, username } = this.state;
+
     var displayTitle = this.state.processes.items.map(item => {
-      console.log(item.name)
       return (
-        <li>{item.name}</li>
+        <Card>
+          <Card.Body>
+            <Card.Title>{item.name}</Card.Title>
+              <a href="#" class="card-link">Compass Link</a>
+              <a href="#" class="card-link">Analytics Link</a>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated {item.date_end}</small>
+          </Card.Footer>
+        </Card>
       );
     });
+
     var displayProcesses = (this.state.processes === null) ?
-      ( <span>There are no projects.</span> ) : ( <ul>{displayTitle}</ul> );
+      ( <span>There are no projects.</span> ) : <CardColumns>{displayTitle}</CardColumns>;
 
     return (
       <Layout>
         <Tabs defailtActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
-            {displayProcesses}
+            <div id="processes" className="container">
+              {displayProcesses}
+            </div>
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
