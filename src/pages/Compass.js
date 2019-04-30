@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row, ButtonGroup, ButtonToolbar, ListGroup } from "react-bootstrap";
+import { Row, ButtonGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import Amplify, { API, graphqlOperation } from 'aws-amplify';
-import { createLog } from "../graphql/mutations"
+import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
 Amplify.configure(aws_exports);
@@ -69,7 +68,7 @@ class Compass extends Component {
     }
 
     timerHandler = (phase) => {
-        (phase.key == this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
+        (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         var x = new Date()
         var minutes = x.getMinutes();
         var seconds = x.getSeconds();
@@ -79,9 +78,9 @@ class Compass extends Component {
         this.setState({ currentTime: temp })
     }
     generateList(phase){
-        if(this.state.currentPhase==phase){
+        if(this.state.currentPhase===phase){
             const filtered= log_list.data.filter((entry)=>{
-                return (entry.id==phase);
+                return (entry.id===phase);
             })
             return (filtered.map((data)=>{
                 return(<h4>{data.text}</h4>);
@@ -106,14 +105,14 @@ class Compass extends Component {
                                                     bsSize='large'
                                                     block
                                                     className='text-left'
-                                                    variant={(this.state.currentPhase == phase.key) ? "success" : "outline-warning"}
+                                                    variant={(this.state.currentPhase === phase.key) ? "success" : "outline-warning"}
                                                 >{phase.name}
                                                 </Button>
                                                 <Button
-                                                    variant={(this.state.currentPhase == phase.key) ? "danger" : "outline-primary"}
+                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                     onClick={() => this.timerHandler(phase)}
                                                 >
-                                                    {(this.state.currentPhase == phase.key) ? this.state.currentTime : this.state.emptyTime}
+                                                    {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime}
                                                 </Button>
                                             </ButtonGroup>
                                             <div>

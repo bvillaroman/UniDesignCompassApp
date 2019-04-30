@@ -6,25 +6,28 @@ type User @model {
 	email: String!
 	password_hash: Int
 	phone_number: String
-	processes: [Process]
+	processes: [Process] @connection(name: "UserProcess")
 }
 type Process @model{
 	id: ID!
-	phase_ids: [Phase]
-	user_id: User!
+	phaseids: [Phase] @connection(name: "ProcessPhases")
+	user_id: String
+	user: User @connection(name : "UserProcess")
 	name: String!
 	date_start: String!
 	date_end: String
 }
 type Phase @model{
 	id: ID!
-	logs: [Log]
+	logs: [Log] @connection(name: "PhaseLogs")
 	duration: String
 	title: String!
 	description: String
+	process: Process @connection(name: "ProcessPhases")
 }
 type Log @model{
 	id: ID!
 	timestamp: String!
 	text: String!
+	phase : Phase @connection(name: "PhaseLogs")
 }

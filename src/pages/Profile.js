@@ -1,55 +1,83 @@
 import React from "react";
 import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
-import  {connect} from "react-redux"
-import {authenticateUser} from "../state/actions"
+import  {connect} from "react-redux";
+import {authenticateUser} from "../state/actions";
+import Accordion from '../components/Accordion/accordion';
 
 class Profile extends React.Component {
-  state = {
-    first_name: "", 
-    last_name: "",
-    email: "", 
-    phone_number: "", 
-    processes: [], 
-    username: ""
+  constructor() {
+    super();
+    //initial state
+    this.state = {
+      first_name: "",
+      last_name: "",
+      email: "",
+      phone_number: "",
+      processes: [],
+      username: "",
+      open: false
+    }
+    this.toggle = this.toggle.bind(this);
   }
-
   componentDidMount() {
     // load data of user and set to state
-    const { first_name, last_name, email, phone_number, username} = this.props.user;
-    this.setState({first_name, last_name, email, phone_number, username});
+    const { first_name, last_name, email, phone_number, processes, username } = this.props.user;
+    this.setState({first_name, last_name, email, phone_number, processes, username});
   }
+
+  toggle() {
+   this.setState({
+     open: !this.state.open
+   });
+ }
+
   render() {
-    const { first_name, last_name, email, phone_number, username} = this.state;
+    const { first_name, last_name, email, phone_number, username } = this.state;
+    var displayProcesses = (this.state.processes === null) ?
+      ( <span>There are no projects.</span> ) : ( <span>There are projects.</span> );
     return (
       <Layout>
+        {console.log(this.props)}
         <Tabs defailtActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
+            {displayProcesses}
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
-            <div className="container">
-              <a role="button">
-                <h3 className="label">Name: </h3>
-                <span>{`${first_name} ${last_name}`}</span>
-              </a>
-              <a>
-                <h3 className="label">Username</h3>
-                <span>{username}</span>
-              </a>
-              <a>
-                <h3 className="label">E-mail</h3>
-                <span>{email}</span>
-              </a>
-              <a>
-                <h3 className="label">Password</h3>
-                <span>**********</span>
-              </a>
-              <a>
-                <h3 className="label">Phone number</h3>
-                <span>{phone_number}</span>
-              </a>
+            <div id="account-settings" className="container">
+
+              <div>
+                <Accordion>
+                  <div label="Name" change={`${first_name} ${last_name}`}>
+                    <form>
+                      First Name: <input className="col input-text" type="text" name="firstName" defaultValue={first_name} />
+                      Last Name: <input className="col input-text" type="text" name="lastName" defaultValue={last_name} />
+                    </form>
+                  </div>
+                  <div label="Username" change={username}>
+                    <form>
+                      Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
+                    </form>
+                  </div>
+                  <div label="E-Mail" change={email}>
+                    <form>
+                      E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
+                    </form>
+                  </div>
+                  <div label="Password" change="**********">
+                    <form>
+                      Password: <input className="col input-text" type="text" name="password" defaultValue="**********" />
+                    </form>
+                  </div>
+                  <div label="Phone Number" change={phone_number}>
+                    <form>
+                      Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
+                    </form>
+                  </div>
+                </Accordion>
+              </div>
             </div>
           </Tab>
         </Tabs>
@@ -58,14 +86,12 @@ class Profile extends React.Component {
   }
 }
 
-const mapStateToProps = ({state}) => ({ 
-  isAuthenticated: state.isAuthenticated, 
-  user: state.user 
-}) 
+const mapStateToProps = ({state}) => ({
+  isAuthenticated: state.isAuthenticated,
+  user: state.user
+})
 const mapDispatchToProps = dispatch => ({
   authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
-
-

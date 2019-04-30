@@ -11,25 +11,14 @@ export const onCreateUser = `subscription OnCreateUser {
     password_hash
     phone_number
     processes {
-      id
-      phase_ids {
+      items {
         id
-        duration
-        title
-        description
+        user_id
+        name
+        date_start
+        date_end
       }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
+      nextToken
     }
   }
 }
@@ -44,25 +33,14 @@ export const onUpdateUser = `subscription OnUpdateUser {
     password_hash
     phone_number
     processes {
-      id
-      phase_ids {
+      items {
         id
-        duration
-        title
-        description
+        user_id
+        name
+        date_start
+        date_end
       }
-      user_id {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
+      nextToken
     }
   }
 }
@@ -77,14 +55,132 @@ export const onDeleteUser = `subscription OnDeleteUser {
     password_hash
     phone_number
     processes {
-      id
-      phase_ids {
+      items {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateProcess = `subscription OnCreateProcess {
+  onCreateProcess {
+    id
+    phaseids {
+      items {
         id
         duration
         title
         description
       }
-      user_id {
+      nextToken
+    }
+    user_id
+    user {
+      id
+      username
+      first_name
+      last_name
+      email
+      password_hash
+      phone_number
+      processes {
+        nextToken
+      }
+    }
+    name
+    date_start
+    date_end
+  }
+}
+`;
+export const onUpdateProcess = `subscription OnUpdateProcess {
+  onUpdateProcess {
+    id
+    phaseids {
+      items {
+        id
+        duration
+        title
+        description
+      }
+      nextToken
+    }
+    user_id
+    user {
+      id
+      username
+      first_name
+      last_name
+      email
+      password_hash
+      phone_number
+      processes {
+        nextToken
+      }
+    }
+    name
+    date_start
+    date_end
+  }
+}
+`;
+export const onDeleteProcess = `subscription OnDeleteProcess {
+  onDeleteProcess {
+    id
+    phaseids {
+      items {
+        id
+        duration
+        title
+        description
+      }
+      nextToken
+    }
+    user_id
+    user {
+      id
+      username
+      first_name
+      last_name
+      email
+      password_hash
+      phone_number
+      processes {
+        nextToken
+      }
+    }
+    name
+    date_start
+    date_end
+  }
+}
+`;
+export const onCreatePhase = `subscription OnCreatePhase {
+  onCreatePhase {
+    id
+    logs {
+      items {
+        id
+        timestamp
+        text
+      }
+      nextToken
+    }
+    duration
+    title
+    description
+    process {
+      id
+      phaseids {
+        nextToken
+      }
+      user_id
+      user {
         id
         username
         first_name
@@ -100,136 +196,39 @@ export const onDeleteUser = `subscription OnDeleteUser {
   }
 }
 `;
-export const onCreateProcess = `subscription OnCreateProcess {
-  onCreateProcess {
-    id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onUpdateProcess = `subscription OnUpdateProcess {
-  onUpdateProcess {
-    id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onDeleteProcess = `subscription OnDeleteProcess {
-  onDeleteProcess {
-    id
-    phase_ids {
-      id
-      logs {
-        id
-        timestamp
-        text
-      }
-      duration
-      title
-      description
-    }
-    user_id {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        id
-        name
-        date_start
-        date_end
-      }
-    }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onCreatePhase = `subscription OnCreatePhase {
-  onCreatePhase {
-    id
-    logs {
-      id
-      timestamp
-      text
-    }
-    duration
-    title
-    description
-  }
-}
-`;
 export const onUpdatePhase = `subscription OnUpdatePhase {
   onUpdatePhase {
     id
     logs {
-      id
-      timestamp
-      text
+      items {
+        id
+        timestamp
+        text
+      }
+      nextToken
     }
     duration
     title
     description
+    process {
+      id
+      phaseids {
+        nextToken
+      }
+      user_id
+      user {
+        id
+        username
+        first_name
+        last_name
+        email
+        password_hash
+        phone_number
+      }
+      name
+      date_start
+      date_end
+    }
   }
 }
 `;
@@ -237,13 +236,35 @@ export const onDeletePhase = `subscription OnDeletePhase {
   onDeletePhase {
     id
     logs {
-      id
-      timestamp
-      text
+      items {
+        id
+        timestamp
+        text
+      }
+      nextToken
     }
     duration
     title
     description
+    process {
+      id
+      phaseids {
+        nextToken
+      }
+      user_id
+      user {
+        id
+        username
+        first_name
+        last_name
+        email
+        password_hash
+        phone_number
+      }
+      name
+      date_start
+      date_end
+    }
   }
 }
 `;
@@ -252,6 +273,22 @@ export const onCreateLog = `subscription OnCreateLog {
     id
     timestamp
     text
+    phase {
+      id
+      logs {
+        nextToken
+      }
+      duration
+      title
+      description
+      process {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+    }
   }
 }
 `;
@@ -260,6 +297,22 @@ export const onUpdateLog = `subscription OnUpdateLog {
     id
     timestamp
     text
+    phase {
+      id
+      logs {
+        nextToken
+      }
+      duration
+      title
+      description
+      process {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+    }
   }
 }
 `;
@@ -268,6 +321,22 @@ export const onDeleteLog = `subscription OnDeleteLog {
     id
     timestamp
     text
+    phase {
+      id
+      logs {
+        nextToken
+      }
+      duration
+      title
+      description
+      process {
+        id
+        user_id
+        name
+        date_start
+        date_end
+      }
+    }
   }
 }
 `;
