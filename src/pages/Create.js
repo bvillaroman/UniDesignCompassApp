@@ -120,7 +120,14 @@ class CreatePage extends React.Component {
     const {compassTitle, phases} = this.state;
     createNewCompass(this.props.user,compassTitle,phases)
     .then((res) => {
-      // console.log(res)
+      const result = res.data.getProcess
+      const newProcess = {
+        compassID: result.id,
+        phases: result.phaseids.items,
+        compassTitle: result.name,
+        dateStart: result.date_start,
+      }
+      console.log(`new process: ${JSON.stringify(newProcess)}`)
     })
   }
 

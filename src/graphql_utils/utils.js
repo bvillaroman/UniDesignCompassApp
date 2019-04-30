@@ -145,15 +145,7 @@ export async function createNewCompass(user,name,phases){
     )
     
     for(let i =0 ;i < phases.length; i++){ await createPhase(process_info.id,phases[i].title,phases[i].description);}
-    
-    await getUser(user.id).then(
-        (res)=>{
-            return res.data.getUser;
-        },(error)=>{
-            console.log(error);
-        }
-    )
-    
+    return getProcess(process_info.id);    
 }
 export async function appendNewLog(phaseId,log){
     createLogs(log.timestamp,log.text).then(
