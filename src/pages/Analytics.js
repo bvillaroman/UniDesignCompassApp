@@ -68,8 +68,8 @@ class Analytics extends Component {
     }
 
     test_create_log(phase_id) {
-        Utils.createLogs(phase_id, Date.now(), 'what day is it?').then(res => {
-            console.log(res);
+        Utils.createLogs(phase_id, Date.now(), 'log in other phase').then(res => {
+            // console.log(res);
         });
     }
 
@@ -94,16 +94,41 @@ class Analytics extends Component {
                     };
                 })
             })).then(phase_logs => {
-                console.log(phase_logs)
+                // console.log(phase_logs)
                 this.setState({
                     selected_process_phase_logs: phase_logs
                 });
 
                 //testing creating a log
-                // const phase_id = phase_logs[0].phase_id;
+                // const phase_id = phase_logs[1].phase_id;
                 // this.test_create_log(phase_id);             
             });
         })
+    }
+
+    process_logs_render = () => {
+        const data = this.state.selected_process_phase_logs
+        ?
+            this.state.selected_process_phase_logs.reduce((arr, phase) => {
+                const logs = phase.log_ids.map(log => {
+                    return {
+                        timestamp: log.timestamp,
+                        text: log.text
+                    }
+                })  
+                arr.push(...logs);
+                return arr;
+            }, [])
+        :   
+            null;
+
+        return data
+            ? 
+                data.map((log, index) => {
+                    return<p key={index}>{log.text}</p>
+                })
+            : 
+                null;
     }
 
     process_select_render = () => {
@@ -153,6 +178,7 @@ class Analytics extends Component {
                     </div>
                         {this.process_select_render()}
                         {this.bar_chart_render()}
+                        {this.process_logs_render()}
                 </div>
             </Layout>
         );
