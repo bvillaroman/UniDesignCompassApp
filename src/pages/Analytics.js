@@ -108,8 +108,8 @@ class Analytics extends Component {
                 });
 
                 // testing creating a log
-                // const phase_id = phase_logs[1].phase_id;
-                // this.test_create_log(phase_id);             
+                const phase_id = phase_logs[1].phase_id;
+                this.test_create_log(phase_id);             
             });
         })
     }
@@ -123,10 +123,10 @@ class Analytics extends Component {
     }
 
     log_card_render = (log) => {
-        // console.log(log)
+        console.log(log.timestamp)
         return (
             <div classNAme={'card'}>
-                <h5 className={'card-header'}>{Date(log.timestamp)}</h5>
+                <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toUTCString()}</h5>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
                     <p className={'card-text'}>{log.text}</p>
