@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-sharp": "^2.1.17",
     "graphql": "^14.2.1",
+    "lodash": "^4.17.11",
     "npm-install-all": "^1.1.21",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

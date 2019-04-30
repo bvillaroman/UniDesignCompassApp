@@ -136,9 +136,9 @@ export async function deletePhase(id){
     const deletedPhase = await API.graphql(graphqlOperation(mutations.deletePhase,{input:phaseInfo}));
     return deletedPhase;
 }
-export async function createNewCompass(user,phases){
+export async function createNewCompass(user,name,phases){
     let process_info;
-    await createProcess(user.id,"Blank Project","0000000","00000000").then(
+    await createProcess(user.id,name,"0000000","00000000").then(
         (res)=>{
             process_info=res.data.createProcess;
             console.log(process_info);
