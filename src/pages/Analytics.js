@@ -71,6 +71,13 @@ class Analytics extends Component {
         Utils.createLogs(phase_id, Date.now(), 'log in other phase').then(res => {
             // console.log(res);
         });
+
+        Utils.updateUser({
+            id: this.props.user.id,
+            first_name: 'ramon'
+        }).then(res => {
+            console.log(res);
+        })
     }
 
     load_log_data(process_id) {
@@ -99,20 +106,32 @@ class Analytics extends Component {
                     selected_process_phase_logs: phase_logs
                 });
 
-                //testing creating a log
+                // testing creating a log
                 // const phase_id = phase_logs[1].phase_id;
                 // this.test_create_log(phase_id);             
             });
         })
     }
 
+    deleteLogHandler = (log_id) => {
+        console.log(log_id)
+    }
+
     log_card_render = (log) => {
+        console.log(log)
         return (
-            <div class="card">
-                <h5 class="card-header">{Date(log.timestamp)}</h5>
-                <div class="card-body">
+            <div classNAme={'card'}>
+                <h5 className={'card-header'}>{Date(log.timestamp)}</h5>
+                <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
-                    <p class="card-text">{log.text}</p>
+                    <p className={'card-text'}>{log.text}</p>
+                    <button
+                        className={'btn btn-danger'}
+                        onClick={() => this.deleteLogHandler(log.id)}
+                    > 
+                        Delete
+                    </button>
+                    <button className={'btn btn-warning'}>Edit</button>
                 </div>
             </div>
         );
@@ -124,6 +143,7 @@ class Analytics extends Component {
             this.state.selected_process_phase_logs.reduce((arr, phase) => {
                 const logs = phase.log_ids.map(log => {
                     return {
+                        id: log.id,
                         timestamp: log.timestamp,
                         text: log.text
                     }
@@ -136,10 +156,12 @@ class Analytics extends Component {
 
         return data
             ? 
-                data.map((log, index) => {
+                <div className={'accordion'} id={'accordionExample'}>
+                {data.map((log, index) => {
                     // return<p key={index}>{log.text}</p>
                     return this.log_card_render(log);
-                })
+                })}
+                </div>
             : 
                 null;
     }
