@@ -67,6 +67,12 @@ class Analytics extends Component {
         })
     }
 
+    test_create_log(phase_id) {
+        Utils.createLogs(phase_id, Date.now(), 'what day is it?').then(res => {
+            console.log(res);
+        });
+    }
+
     load_log_data(process_id) {
         this.setState({
             loading: true
@@ -89,6 +95,10 @@ class Analytics extends Component {
                 })
             })).then(phase_logs => {
                 console.log(phase_logs)
+
+                //testing creating a log
+                const phase_id = phase_logs[0].phase_id;
+                this.test_create_log(phase_id);             
             });
         })
 
