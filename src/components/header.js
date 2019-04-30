@@ -5,10 +5,38 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
 
-const signedIn=(props)=>{
-  if(props.isAuthenticated){
-    return(<NavItem><Link style={styles.link} activeStyle={styles.linkActive}  rel="profile" to="/Profile">Profile</Link></NavItem>)
-  }
+
+const signedIn = (props) => (
+  props.isAuthenticated && (
+    <NavItem>
+      <Link style={styles.link} activeStyle={styles.linkActive}  rel="profile" to="/Profile">
+        Profile
+      </Link>
+    </NavItem>
+  )
+)
+
+const logOut = (props) => {
+  const rel   = props.isAuthenticated ? "logout" : "login"
+  const to    = props.isAuthenticated ? "/" : "/Login"
+  const Label = props.isAuthenticated ? "Logout" : "Login"
+  return (
+    <NavItem>
+      <Link 
+        style={styles.link} 
+        rel={rel} 
+        to={to}
+        onClick={() => { 
+          if(props.isAuthenticated){
+            props.logOutUser(); 
+            navigate("/"); 
+          }
+        }}
+      >
+        {Label}
+      </Link>
+    </NavItem>
+  )
 }
 
 const Header = (props) => {
@@ -22,11 +50,7 @@ const Header = (props) => {
           <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="compass" to="/Compass">Compass</Link></NavItem>
           <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="analytics" to="/Analytics">Analytics</Link></NavItem>
           {signedIn(props)}
-          {
-            props.isAuthenticated ?
-              (<NavItem><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>)
-              : (<NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>)
-          }
+          {logOut(props)}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
