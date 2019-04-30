@@ -3,8 +3,9 @@ import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
 import CompassForm from '../components/compassForm'
-import {createNewCompass} from '../graphql_utils/utils';
+import {createNewCompass,getUser} from '../graphql_utils/utils';
 import { connect } from 'react-redux';
+import { updateUser } from '../state/actions'
 
 const SubmitCompass = (props) =>  (
   <Form.Group controlId="formBasicEmail">
@@ -127,7 +128,12 @@ class CreatePage extends React.Component {
         compassTitle: result.name,
         dateStart: result.date_start,
       }
-      console.log(`new process: ${JSON.stringify(newProcess)}`)
+      getUser(this.props.user.id)
+      .then((newUser) => {
+        const user = newUser.data.getUser
+        console.log(user)
+        this.props.updateUser(newUser.data.getUser);
+      })
     })
   }
 
@@ -177,4 +183,7 @@ class CreatePage extends React.Component {
 const mapStateToProps =({state})=>(
   {user: state.user}
 )
-export default connect(mapStateToProps,null)(CreatePage);
+const mapDispatchToProps = dispatch => ({
+  updateUser: (user) => dispatch(updateUser(user))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(CreatePage);
