@@ -67,6 +67,12 @@ class Analytics extends Component {
         })
     }
 
+    test_create_log(phase_id) {
+        Utils.createLogs(phase_id, Date.now(), 'log in other phase').then(res => {
+            // console.log(res);
+        });
+    }
+
     load_log_data(process_id) {
         this.setState({
             loading: true
@@ -75,7 +81,7 @@ class Analytics extends Component {
             const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
                 return phase.id
             });
-            console.log(phase_ids)
+            // console.log(phase_ids)
 
             Promise.all(phase_ids.map((phase_id, index) => {
                 return Utils.getPhase(phase_id).then(res => { 
@@ -88,39 +94,54 @@ class Analytics extends Component {
                     };
                 })
             })).then(phase_logs => {
-                console.log(phase_logs)
+                // console.log(phase_logs)
+                this.setState({
+                    selected_process_phase_logs: phase_logs
+                });
+
+                //testing creating a log
+                // const phase_id = phase_logs[1].phase_id;
+                // this.test_create_log(phase_id);             
             });
         })
+    }
 
-        // Utils.getProcess(process_id).then(res => {
-        //     const phase_ids = res.data.getProcess.phase_ids;
-        //     phase_ids.map((phase_id, index) => {
-        //         return (
-        //             Utils.getPhase(phase_id).then(res => {
-        //                 const phase = res.data.getPhase;
-        //                 const log_ids = phase.logs
-        //                 return (
-        //                     log_ids.map((log_id, index) => {
-        //                         return (
-        //                             Utils.getLog(log_id).then(res => {
-        //                                 const log = res.data.getLog;
-        //                                 return {
-        //                                     id: log.id,
-        //                                     timestamp: log.timestamp,
-        //                                     text: log.text
-        //                                 }
-        //                             })
-        //                         );
-        //                     })
-        //                 );
-                        
-        //                 //return a dictio
-        //             })
-        //         );
-        //     });
-        // }).then(res => {
-        //     console.log(res)
-        // })
+    log_card_render = (log) => {
+        return (
+            <div class="card">
+                <h5 class="card-header">{Date(log.timestamp)}</h5>
+                <div class="card-body">
+                    {/* <h5 class="card-title">Special title treatment</h5> */}
+                    <p class="card-text">{log.text}</p>
+                </div>
+            </div>
+        );
+    }
+
+    process_logs_render = () => {
+        const data = this.state.selected_process_phase_logs
+        ?
+            this.state.selected_process_phase_logs.reduce((arr, phase) => {
+                const logs = phase.log_ids.map(log => {
+                    return {
+                        timestamp: log.timestamp,
+                        text: log.text
+                    }
+                })  
+                arr.push(...logs);
+                return arr;
+            }, [])
+        :   
+            null;
+
+        return data
+            ? 
+                data.map((log, index) => {
+                    // return<p key={index}>{log.text}</p>
+                    return this.log_card_render(log);
+                })
+            : 
+                null;
     }
 
     process_select_render = () => {
@@ -170,6 +191,7 @@ class Analytics extends Component {
                     </div>
                         {this.process_select_render()}
                         {this.bar_chart_render()}
+                        {this.process_logs_render()}
                 </div>
             </Layout>
         );
