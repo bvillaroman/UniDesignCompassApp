@@ -104,36 +104,6 @@ class Analytics extends Component {
                 // this.test_create_log(phase_id);             
             });
         })
-
-        // Utils.getProcess(process_id).then(res => {
-        //     const phase_ids = res.data.getProcess.phase_ids;
-        //     phase_ids.map((phase_id, index) => {
-        //         return (
-        //             Utils.getPhase(phase_id).then(res => {
-        //                 const phase = res.data.getPhase;
-        //                 const log_ids = phase.logs
-        //                 return (
-        //                     log_ids.map((log_id, index) => {
-        //                         return (
-        //                             Utils.getLog(log_id).then(res => {
-        //                                 const log = res.data.getLog;
-        //                                 return {
-        //                                     id: log.id,
-        //                                     timestamp: log.timestamp,
-        //                                     text: log.text
-        //                                 }
-        //                             })
-        //                         );
-        //                     })
-        //                 );
-                        
-        //                 //return a dictio
-        //             })
-        //         );
-        //     });
-        // }).then(res => {
-        //     console.log(res)
-        // })
     }
 
     process_select_render = () => {
