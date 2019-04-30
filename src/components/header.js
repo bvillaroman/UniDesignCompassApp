@@ -5,11 +5,23 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
 
-const signedIn=(props)=>{
-  if(props.isAuthenticated){
-    return(<NavItem><Link style={styles.link} activeStyle={styles.linkActive}  rel="profile" to="/Profile">Profile</Link></NavItem>)
-  }
-}
+
+const signedIn = (props) =>  (
+  <React.Fragment>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="create" to="/Create">Create Compass</Link></NavItem>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="compass" to="/Compass">Compass</Link></NavItem>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="analytics" to="/Analytics">Analytics</Link></NavItem>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="profile" to="/Profile">Profile</Link></NavItem>
+    <NavItem><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>
+  </React.Fragment>
+)
+
+const signedOut = (props) => ( 
+  <React.Fragment>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About</Link></NavItem>
+    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>
+  </React.Fragment>
+)
 
 const Header = (props) => {
   return (
@@ -18,15 +30,7 @@ const Header = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
-          <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About Us</Link></NavItem>
-          <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="compass" to="/Compass">Compass</Link></NavItem>
-          <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="analytics" to="/Analytics">Analytics</Link></NavItem>
-          {signedIn(props)}
-          {
-            props.isAuthenticated ?
-              (<NavItem><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>)
-              : (<NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>)
-          }
+          {props.isAuthenticated ? signedIn(props) : signedOut(props)}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
