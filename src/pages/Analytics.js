@@ -17,39 +17,21 @@ class Analytics extends Component {
     }
 
     initProcessSelect() {
-        this.setState({
-            loading: true
-        });
         // load data of user and set to state
         const user = this.props.user;
-        // console.log(user);
 
-        Utils.getUser(user.id).then(res => {
-            const user = res.data.getUser;
-            const processes_ids = user.processes;
-            // retrieving the names of all the user's Processes
-            return Promise.all(
-                processes_ids.map((process_id, index) => {
-                    return (
-                        Utils.getProcess(process_id).then(res => {
-                            const process = res.data.getProcess;
-                            return {
-                                name: process.name,
-                                id: process.id
-                            }
-                        })
-                    )
-                })
-            );
-        }).then((processes) => {
-            const default_process = processes[0]
-            this.setState({
-                processes: processes,
-                selected_process_id: default_process ? default_process.id : -1,
-                loading: false
-            });
-            this.load_process_data(default_process.id)
-        });
+        const processes = user.processes.items;
+        const default_process = processes[0]
+        this.setState({
+            processes: processes,
+            selected_process_id: default_process ? default_process.id : -1
+        })
+        this.load_process_data(default_process.id);
+    }
+
+    load_process_data(process_id) {
+        this.load_chart_data(process_id);
+        this.load_log_data(process_id);
     }
 
     componentDidMount() {
@@ -64,34 +46,81 @@ class Analytics extends Component {
         this.load_process_data(process_id);
     }
 
-    load_process_data(process_id) {
+    load_chart_data(process_id) {
         this.setState({
             loading: true
         });
-
         Utils.getProcess(process_id).then(res => {
-            const phase_ids = res.data.getProcess.phase_ids;
-            return Promise.all(
-                phase_ids.map((phase_id, index) => {
-                    return (
-                        Utils.getPhase(phase_id).then(res => {
-                            const phase = res.data.getPhase;
-                            return {
-                                category: phase.title,
-                                amount: phase.duration
-                            }
-                        })
-                    );
-                })
-            );
-        }).then(phases => {
+            const phases = res.data.getProcess.phaseids.items;
+            const items = phases.map((phase, index) => {
+                return {
+                    category: phase.title,
+                    amount: phase.duration
+                }
+            })
             this.setState({
                 loading: false,
                 chartData: {
-                    table: phases
+                    table: items
                 }
+            })
+        })
+    }
+
+    load_log_data(process_id) {
+        this.setState({
+            loading: true
+        });
+        Utils.getProcess(process_id).then(res => {
+            const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
+                return phase.id
+            });
+            console.log(phase_ids)
+
+            Promise.all(phase_ids.map((phase_id, index) => {
+                return Utils.getPhase(phase_id).then(res => { 
+                    const phase = res.data.getPhase;
+                    const log_ids = phase.logs.items;
+                    // get the logs from the log_ids and return log object
+                    return {
+                        phase_id: phase.id,
+                        log_ids: log_ids
+                    };
+                })
+            })).then(phase_logs => {
+                console.log(phase_logs)
             });
         })
+
+        // Utils.getProcess(process_id).then(res => {
+        //     const phase_ids = res.data.getProcess.phase_ids;
+        //     phase_ids.map((phase_id, index) => {
+        //         return (
+        //             Utils.getPhase(phase_id).then(res => {
+        //                 const phase = res.data.getPhase;
+        //                 const log_ids = phase.logs
+        //                 return (
+        //                     log_ids.map((log_id, index) => {
+        //                         return (
+        //                             Utils.getLog(log_id).then(res => {
+        //                                 const log = res.data.getLog;
+        //                                 return {
+        //                                     id: log.id,
+        //                                     timestamp: log.timestamp,
+        //                                     text: log.text
+        //                                 }
+        //                             })
+        //                         );
+        //                     })
+        //                 );
+                        
+        //                 //return a dictio
+        //             })
+        //         );
+        //     });
+        // }).then(res => {
+        //     console.log(res)
+        // })
     }
 
     process_select_render = () => {
