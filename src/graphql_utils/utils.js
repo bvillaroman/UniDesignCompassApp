@@ -148,7 +148,7 @@ export async function createNewCompass(user,name,phases){
     
     await getUser(user.id).then(
         (res)=>{
-            return process_info;
+            return res.data.getUser;
         },(error)=>{
             console.log(error);
         }
