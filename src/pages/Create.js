@@ -1,4 +1,5 @@
 import React from "react";
+import {navigate} from "gatsby"
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
@@ -130,9 +131,8 @@ class CreatePage extends React.Component {
       }
       getUser(this.props.user.id)
       .then((newUser) => {
-        const user = newUser.data.getUser
-        console.log(user)
         this.props.updateUser(newUser.data.getUser);
+        navigate("/Compass")
       })
     })
   }
