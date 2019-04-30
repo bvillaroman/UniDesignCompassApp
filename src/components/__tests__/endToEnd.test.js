@@ -64,7 +64,7 @@ describe("Application rundown", () => {
     await page.$eval("a[rel=analytics]",res=>res.click());
     //Goes to Aboust Us
     await page.$eval("a[rel=about]",res=>res.click());
-
+    
   },160000)
   // unfinished
 
