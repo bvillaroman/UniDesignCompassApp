@@ -106,6 +106,18 @@ class Analytics extends Component {
         })
     }
 
+    log_card_render = (log) => {
+        return (
+            <div class="card">
+                <h5 class="card-header">{Date(log.timestamp)}</h5>
+                <div class="card-body">
+                    {/* <h5 class="card-title">Special title treatment</h5> */}
+                    <p class="card-text">{log.text}</p>
+                </div>
+            </div>
+        );
+    }
+
     process_logs_render = () => {
         const data = this.state.selected_process_phase_logs
         ?
@@ -125,7 +137,8 @@ class Analytics extends Component {
         return data
             ? 
                 data.map((log, index) => {
-                    return<p key={index}>{log.text}</p>
+                    // return<p key={index}>{log.text}</p>
+                    return this.log_card_render(log);
                 })
             : 
                 null;
