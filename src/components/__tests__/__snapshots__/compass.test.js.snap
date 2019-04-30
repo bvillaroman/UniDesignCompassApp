@@ -1,442 +1,1090 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check Compass Page render 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
+<Layout>
+  <div
+    className="container"
+  >
+    <h1
+      className="text-center"
     >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
+      Universal Design Compass
+    </h1>
+    <div>
+      <div
+        className="d-flex flex-column"
       >
-        <div
-          className="container"
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
         >
-          <div
-            className="Login"
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="1"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
           >
-            <form
-              onSubmit={[Function]}
+            A. Define Problem
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="2"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            B. Research
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="3"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            C. Brainstorm
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="4"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            D. Select
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="5"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            E. Construct
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="6"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            F. Evaluate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="7"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            G. Communicate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="8"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            H. Redisign
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <br />
+      <div>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-left"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
             >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+              Previous
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          >
+            <textarea
+              cols="20"
+              onChange={[Function]}
+              placeholder="Log Text"
+              rows="5"
+              value=""
+            />
+          </Col>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-right"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
+            >
+              Next
+            </Button>
+          </Col>
+        </Bootstrap(Row)>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          />
+          <Col
+            as="div"
+          >
+            <Button
+              active={false}
+              block={true}
+              disabled={false}
+              onClick={[Function]}
+              size="sm"
+              type="button"
+              variant="warning"
+            >
+              Update Log
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          />
+        </Bootstrap(Row)>
+      </div>
+    </div>
+  </div>
+</Layout>
 `;
 
 exports[`Check Log render 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
+<Layout>
+  <div
+    className="container"
+  >
+    <h1
+      className="text-center"
     >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
+      Universal Design Compass
+    </h1>
+    <div>
+      <div
+        className="d-flex flex-column"
       >
-        <div
-          className="container"
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
         >
-          <div
-            className="Login"
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="1"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
           >
-            <form
-              onSubmit={[Function]}
+            A. Define Problem
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="2"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            B. Research
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="3"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            C. Brainstorm
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="4"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            D. Select
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="5"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            E. Construct
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="6"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            F. Evaluate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="7"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            G. Communicate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="8"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            H. Redisign
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <br />
+      <div>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-left"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
             >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+              Previous
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          >
+            <textarea
+              cols="20"
+              onChange={[Function]}
+              placeholder="Log Text"
+              rows="5"
+              value=""
+            />
+          </Col>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-right"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
+            >
+              Next
+            </Button>
+          </Col>
+        </Bootstrap(Row)>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          />
+          <Col
+            as="div"
+          >
+            <Button
+              active={false}
+              block={true}
+              disabled={false}
+              onClick={[Function]}
+              size="sm"
+              type="button"
+              variant="warning"
+            >
+              Update Log
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          />
+        </Bootstrap(Row)>
+      </div>
+    </div>
+  </div>
+</Layout>
 `;
 
 exports[`Check Timer render 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
+<Layout>
+  <div
+    className="container"
+  >
+    <h1
+      className="text-center"
     >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
+      Universal Design Compass
+    </h1>
+    <div>
+      <div
+        className="d-flex flex-column"
       >
-        <div
-          className="container"
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
         >
-          <div
-            className="Login"
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="1"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
           >
-            <form
-              onSubmit={[Function]}
+            A. Define Problem
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="2"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            B. Research
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="3"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            C. Brainstorm
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="4"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            D. Select
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="5"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            E. Construct
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="6"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            F. Evaluate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="7"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            G. Communicate
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <div
+        className="d-flex flex-column"
+      >
+        <ButtonGroup
+          as="div"
+          role="group"
+          size="lg"
+          toggle={false}
+          vertical={false}
+        >
+          <Button
+            active={false}
+            block={true}
+            bsSize="large"
+            className="text-left"
+            disabled={false}
+            key="8"
+            onClick={[Function]}
+            type="button"
+            variant="outline-warning"
+          >
+            H. Redisign
+          </Button>
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+            variant="outline-primary"
+          >
+            00:00:00
+          </Button>
+        </ButtonGroup>
+        <div />
+      </div>
+      <br />
+      <div>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-left"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
             >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+              Previous
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          >
+            <textarea
+              cols="20"
+              onChange={[Function]}
+              placeholder="Log Text"
+              rows="5"
+              value=""
+            />
+          </Col>
+          <Col
+            as="div"
+          >
+            <Button
+              active={true}
+              className="float-right"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+              variant="primary"
+            >
+              Next
+            </Button>
+          </Col>
+        </Bootstrap(Row)>
+        <Bootstrap(Row)>
+          <Col
+            as="div"
+          />
+          <Col
+            as="div"
+          >
+            <Button
+              active={false}
+              block={true}
+              disabled={false}
+              onClick={[Function]}
+              size="sm"
+              type="button"
+              variant="warning"
+            >
+              Update Log
+            </Button>
+          </Col>
+          <Col
+            as="div"
+          />
+        </Bootstrap(Row)>
+      </div>
+    </div>
+  </div>
+</Layout>
 `;
