@@ -81,7 +81,7 @@ class Analytics extends Component {
             const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
                 return phase.id
             });
-            console.log(phase_ids)
+            // console.log(phase_ids)
 
             Promise.all(phase_ids.map((phase_id, index) => {
                 return Utils.getPhase(phase_id).then(res => { 
@@ -95,10 +95,13 @@ class Analytics extends Component {
                 })
             })).then(phase_logs => {
                 console.log(phase_logs)
+                this.setState({
+                    selected_process_phase_logs: phase_logs
+                });
 
                 //testing creating a log
-                const phase_id = phase_logs[0].phase_id;
-                this.test_create_log(phase_id);             
+                // const phase_id = phase_logs[0].phase_id;
+                // this.test_create_log(phase_id);             
             });
         })
 
