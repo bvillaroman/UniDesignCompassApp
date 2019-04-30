@@ -103,6 +103,7 @@ class Analytics extends Component {
             })).then(phase_logs => {
                 // console.log(phase_logs)
                 this.setState({
+                    loading: false,
                     selected_process_phase_logs: phase_logs
                 });
 
@@ -115,10 +116,14 @@ class Analytics extends Component {
 
     deleteLogHandler = (log_id) => {
         console.log(log_id)
+        Utils.deleteLogs(log_id).then(res => {
+            console.log(res);
+            this.load_log_data(this.state.selected_process_id)
+        })
     }
 
     log_card_render = (log) => {
-        console.log(log)
+        // console.log(log)
         return (
             <div classNAme={'card'}>
                 <h5 className={'card-header'}>{Date(log.timestamp)}</h5>
