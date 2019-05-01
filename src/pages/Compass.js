@@ -139,7 +139,8 @@ class Compass extends Component {
                                                 >{phase.name}
                                                 </Button>
                                                 <Timer
-                                                    initialTime={phase.time}
+                                                    // initialTime={this.state.compassPhases[index].time}
+                                                    initialTime={0}
                                                     startImmediately={false}
                                                     start={() => console.log('Start')}
                                                     resume={() => console.log('Resume')}
@@ -157,11 +158,20 @@ class Compass extends Component {
                                                                 >
                                                                     {(this.state.currentPhase === phase.key) ? start() : (
                                                                         pause()
+                                                                        
+                                                                        // console.log(this.state.compassPhases[index].time),
+                                                                        // this.state.compassPhases[index].time=parseInt(getTime(),10)
+                                                                        // this.state.setState(
+                                                                            // {
+                                                                                // compassPhases[index]
+                                                                            // }
+                                                                        // )
+                                                                        )
                                                                         // stop(),
                                                                         // this.state.currentTime=getTime(),
                                                                         // phase.time=this.state.currentTime,
                                                                         // console.log(getTime())//Need to change the time phase properly.                                                                        
-                                                                        )
+                                                                        // )
                                                                     }
 
                                                     <Timer.Hours />:
@@ -176,7 +186,6 @@ class Compass extends Component {
                                                 </Timer>
                                             </ButtonGroup>
                                             <div>
-
                                                 {this.generateList(phase.key)}
                                             </div>
                                             {(this.state.currentPhase === phase.key) ? (
