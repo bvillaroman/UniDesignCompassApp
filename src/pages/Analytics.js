@@ -68,16 +68,17 @@ class Analytics extends Component {
     }
 
     test_create_log(phase_id) {
-        Utils.createLogs(phase_id, Date.now(), 'log in other phase').then(res => {
+        const log_string = `log created on ${new Date().toString()}`;
+        Utils.createLogs(phase_id, Date.now(), log_string).then(res => {
             // console.log(res);
         });
 
-        Utils.updateUser({
-            id: this.props.user.id,
-            first_name: 'ramon'
-        }).then(res => {
-            console.log(res);
-        })
+        // Utils.updateUser({
+        //     id: this.props.user.id,
+        //     first_name: 'ramon'
+        // }).then(res => {
+        //     console.log(res);
+        // })
     }
 
     load_log_data(process_id) {
@@ -104,8 +105,8 @@ class Analytics extends Component {
                 });
 
                 // testing creating a log
-                // const phase_id = phase_logs[1].phase_id;
-                // this.test_create_log(phase_id);             
+                const phase_id = phase_logs[1].phase_id;
+                this.test_create_log(phase_id);             
             });
         })
     }
@@ -195,9 +196,13 @@ class Analytics extends Component {
     }
 
     loading_render = () => {
+        const style = {
+            position: 'fixed',
+            zIndex: '1020',
+        }
         return (this.state.loading
             ?
-                <div className={'spinner-border text-primary'}></div>
+                <div style={style} className={'spinner-border text-primary'}></div>
             :
                 null
         );
@@ -209,7 +214,7 @@ class Analytics extends Component {
             <Layout>
                 <div className='container'>
                     <div className={'page-header row'}>
-                        <div className={'col-1 align-self-center'}>
+                        <div className={'col-1'}>
                             {this.loading_render()}
                         </div>
                         <h1 className={'col-10 text-center'}>Analytics</h1>
