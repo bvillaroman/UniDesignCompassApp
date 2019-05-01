@@ -38,7 +38,8 @@ class Compass extends Component {
         // var temp=phase.key
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
         // console.log(this.state.currentPhase)
-        this.timerHandler(phase)
+        // this.timerHandler(phase)
+        // start()
     }
 
     previousButtonHandler = () => {
@@ -143,7 +144,8 @@ class Compass extends Component {
                                             <ButtonGroup size="lg">
                                                 <Button
                                                     key={phase.key}
-                                                    onClick={() => this.compassButtonHandler(phase)}
+                                                    onClick={()=>{this.compassButtonHandler(phase);console.log("success")}}
+                                                    // onClick={()=>console.log("Success")}
                                                     bsSize='large'
                                                     block
                                                     className='text-left'
@@ -166,7 +168,7 @@ class Compass extends Component {
                                         <Button
                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                     // onClick={() => this.timerHandler(phase)}
-                                                    onClick={start}
+                                                    onClick={()=>{this.compassButtonHandler(phase);start()}}
                                                 >
                                                     {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
                                                     {(this.state.currentPhase === phase.key) ? start() : reset()}
