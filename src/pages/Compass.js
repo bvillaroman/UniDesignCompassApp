@@ -6,7 +6,7 @@ import { Row, ButtonGroup } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
-import {log_list} from '../dummyData';
+import { log_list } from '../dummyData';
 import Timer from "react-compound-timer";
 Amplify.configure(aws_exports);
 
@@ -72,46 +72,46 @@ class Compass extends Component {
 
 
     secondDelay = () => {
-        var startTime=new Date().getTime();
-        var endTime=startTime;
-        while (endTime<startTime+1000){
-            endTime= new Date().getTime();
+        var startTime = new Date().getTime();
+        var endTime = startTime;
+        while (endTime < startTime + 1000) {
+            endTime = new Date().getTime();
         }
     }
 
     timerHandler = (phase) => {
         // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        if(phase.key===this.state.currentPhase){
+        if (phase.key === this.state.currentPhase) {
             var x = new Date()
             var minutes = x.getMinutes()
             var seconds = x.getSeconds();
             var milliseconds = x.getMilliseconds();
             var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
             this.setState({ currentTime: temp })
-            var tempTime= new Date()
-            var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
+            var tempTime = new Date()
+            var start = new Date(tempTime.getFullYear(), tempTime.getMonth(), tempTime.getDate(), 0, 0, 0)
 
             // while(phase.key===this.state.currentPhase){
-                // setInterval(() => {
-                //     this.secondDelay()
-                //     start.setSeconds(start.getSeconds()+1) 
-    
-                //     var minutes = start.getMinutes()
-                //     var seconds = start.getSeconds();
-                //     // var milliseconds = start.getMilliseconds();
-                //     var temp = minutes.toString() + ":" + seconds.toString()
-                //     this.setState({ currentTime: temp })    
-                // },1000);
-                
+            // setInterval(() => {
+            //     this.secondDelay()
+            //     start.setSeconds(start.getSeconds()+1) 
+
+            //     var minutes = start.getMinutes()
+            //     var seconds = start.getSeconds();
+            //     // var milliseconds = start.getMilliseconds();
+            //     var temp = minutes.toString() + ":" + seconds.toString()
+            //     this.setState({ currentTime: temp })    
+            // },1000);
+
 
             // } 
         }
-        else{
+        else {
             console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         }
-        
-        
-            // while(0){//Set Condition for updating the time.
+
+
+        // while(0){//Set Condition for updating the time.
         // var elapsed= new Date()
         // var elapsedMinutes= elapsed.getMinutes();
         // var elapsedSeconds= elapsed.getSeconds();
@@ -120,13 +120,13 @@ class Compass extends Component {
         // console.log(temp)
         // 
     }
-    generateList(phase){
-        if(this.state.currentPhase===phase){
-            const filtered= log_list.data.filter((entry)=>{
-                return (entry.id===phase);
+    generateList(phase) {
+        if (this.state.currentPhase === phase) {
+            const filtered = log_list.data.filter((entry) => {
+                return (entry.id === phase);
             })
-            return (filtered.map((data)=>{
-                return(<h4>{data.text}</h4>);
+            return (filtered.map((data) => {
+                return (<h4>{data.text}</h4>);
             }));
         }
     }
@@ -144,7 +144,7 @@ class Compass extends Component {
                                             <ButtonGroup size="lg">
                                                 <Button
                                                     key={phase.key}
-                                                    onClick={()=>{this.compassButtonHandler(phase);console.log("success")}}
+                                                    onClick={() => { this.compassButtonHandler(phase); console.log("success") }}
                                                     // onClick={()=>console.log("Success")}
                                                     bsSize='large'
                                                     block
@@ -161,18 +161,18 @@ class Compass extends Component {
                                                     stop={() => console.log('Stop')}
                                                     reset={() => console.log('reset')}
                                                 >
-                                            {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                                        return (
-                                        <React.Fragment>
-                                        {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
-                                        <Button
-                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
-                                                    // onClick={() => this.timerHandler(phase)}
-                                                    onClick={()=>{this.compassButtonHandler(phase);start()}}
-                                                >
-                                                    {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
-                                                    {(this.state.currentPhase === phase.key) ? start() : reset()}
-                                                    {/* {
+                                                    {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                                                        return (
+                                                            <React.Fragment>
+                                                                {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
+                                                                <Button
+                                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
+                                                                    // onClick={() => this.timerHandler(phase)}
+                                                                    onClick={() => { this.compassButtonHandler(phase); start() }}
+                                                                >
+                                                                    {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
+                                                                    {(this.state.currentPhase === phase.key) ? start() : reset()}
+                                                                    {/* {
                                                         if(this.state.currentPhase===phase.key){
                                                             console.log(getTime());
                                                             start();
@@ -184,27 +184,81 @@ class Compass extends Component {
 
                                                     } */}
 
-                                                    
-                                                    <Timer.Hours />:
+
+                                                                    <Timer.Hours />:
                                                     <Timer.Minutes />:
                                                     <Timer.Seconds />
-                                                </Button>
+                                                                </Button>
 
-                        </React.Fragment>);
-                      }}
-                                                
+                                                            </React.Fragment>);
+                                                    }}
+
 
                                                 </Timer>
                                             </ButtonGroup>
                                             <div>
-                                                
+
                                                 {this.generateList(phase.key)}
                                             </div>
+                                            {(this.state.currentPhase === phase.key) ? (
+
+
+                                                <div>
+                                                    <br></br>
+                                                    <Row>
+                                                        <Col>
+                                                            <Button
+                                                                className='float-left'
+                                                                variant={this.state.previous ? "primary" : "secondary"}
+                                                                onClick={() => this.previousButtonHandler()}
+                                                                active>Previous
+                        </Button>
+                                                        </Col>
+                                                        <Col>
+                                                            <textarea
+                                                                placeholder="Log Text"
+                                                                rows="5"
+                                                                cols="20"
+                                                                value={this.state.log}
+                                                                onChange={this.handleTextArea}
+                                                            >
+
+                                                            </textarea>
+                                                        </Col>
+                                                        <Col>
+                                                            <Button
+                                                                className='float-right'
+                                                                variant={this.state.next ? "primary" : "secondary"}
+                                                                onClick={(e) => this.nextButtonHandler()}
+                                                                active>
+                                                                Next
+                        </Button>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col></Col>
+                                                        <Col>
+                                                            <Button
+                                                                block
+                                                                size="sm"
+                                                                variant="warning"
+                                                                onClick={(e) => this.updateLogHandler()}
+                                                            >Update Log
+                           </Button>
+                                                        </Col>
+                                                        <Col></Col>
+                                                    </Row>
+                                                </div>
+
+
+                                            ) : (
+                                                    console.log("xx")
+                                                )}
                                         </div>
                                     );
                                 })
                         }
-                        <br></br>
+                        {/* <br></br>
                         <div>
                             <Row>
                                 <Col>
@@ -249,7 +303,7 @@ class Compass extends Component {
                                 </Col>
                                 <Col></Col>
                             </Row>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
