@@ -30,7 +30,7 @@ class Analytics extends Component {
     }
 
     load_process_data(process_id) {
-        this.load_chart_data(process_id);
+        // this.load_chart_data(process_id);
         this.load_log_data(process_id);
     }
 
@@ -109,23 +109,28 @@ class Analytics extends Component {
 
                 // testing creating a log
                 const phase_id = phase_logs[1].phase_id;
-                this.test_create_log(phase_id);             
+                // this.test_create_log(phase_id);             
             });
         })
     }
 
     deleteLogHandler = (log_id) => {
-        console.log(log_id)
+        this.setState({
+            loading: true
+        });
         Utils.deleteLogs(log_id).then(res => {
-            console.log(res);
+            // console.log(res);
+            this.setState({
+                loading: false
+            });
             this.load_log_data(this.state.selected_process_id)
         })
     }
 
     log_card_render = (log) => {
-        console.log(log.timestamp)
+        // console.log(log.timestamp)
         return (
-            <div classNAme={'card'}>
+            <div className={'card'} key={log.id}>
                 <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toUTCString()}</h5>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
@@ -146,8 +151,9 @@ class Analytics extends Component {
         const data = this.state.selected_process_phase_logs
         ?
             this.state.selected_process_phase_logs.reduce((arr, phase) => {
-                const logs = phase.log_ids.map(log => {
+                const logs = phase.log_ids.map((log, index) => {
                     return {
+                        key: index,
                         id: log.id,
                         timestamp: log.timestamp,
                         text: log.text
@@ -216,8 +222,8 @@ class Analytics extends Component {
                         </div>
                         <h1 className={'col-10 text-center'}>Anlytics</h1>
                     </div>
-                        {this.process_select_render()}
-                        {this.bar_chart_render()}
+                        {/* {this.process_select_render()} */}
+                        {/* {this.bar_chart_render()} */}
                         {this.process_logs_render()}
                 </div>
             </Layout>
