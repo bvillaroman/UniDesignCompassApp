@@ -1,0 +1,53 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "unidesigncompassapp-20190426110650-authRole",
+			"UnauthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190426110650-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::754786653450:role/unidesigncompassapp-20190426110650-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "unidesigncompassapp-20190426110650-deployment",
+			"UnauthRoleName": "unidesigncompassapp-20190426110650-unauthRole",
+			"StackName": "unidesigncompassapp-20190426110650",
+			"StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-20190426110650/eb6cb970-6834-11e9-a13e-12d7c29d9238"
+		}
+	},
+	"api": {
+		"unidesigncompassapp": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "az3zkeybwzcd7gg64vgbrmxt6y",
+				"GraphQLAPIEndpointOutput": "https://tlpgdp57nbdkxd56oozfo5ilve.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-5d2jinp73vdnlhogy3pcffpvbu"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiunidesigncompassapp"
+			},
+			"lastPushTimeStamp": "2019-04-26T15:25:05.126Z",
+			"lastPushDirHash": "HZGDYLx8p76ZOKcMZX8/1Uf+FuI="
+		}
+	},
+	"auth": {
+		"cognito1a4df832": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/auth/cognito1a4df832-cloudformation-template.yml",
+				"logicalId": "authcognito1a4df832"
+			},
+			"lastPushTimeStamp": "2019-04-26T15:25:05.126Z",
+			"output": {
+				"AppClientSecret": "edep4btmjqn8f4bklnmscuggmovp6sho4g8vdhdo1gsvunkjg47",
+				"UserPoolId": "us-east-1_YTLNM43zQ",
+				"AppClientIDWeb": "6jjcu7qj7co9fjhu89cogi7tad",
+				"AppClientID": "7h733bta18vslu6v85dsj8amde",
+				"IdentityPoolId": "us-east-1:081859b3-b4f7-4f0b-832c-2d199686e884",
+				"IdentityPoolName": "cognito1a4df832_identitypool_1a4df832__dev",
+				"UserPoolName": "cognito1a4df832_userpool_1a4df832"
+			},
+			"lastPushDirHash": "A+IabcNxByzInQTPWr//mK67+UA="
+		}
+	}
+}
