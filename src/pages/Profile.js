@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import  {connect} from "react-redux";
 import {authenticateUser} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
+import {updateUser} from '../graphql_utils/utils';
 
 class Profile extends React.Component {
   constructor() {
@@ -19,24 +20,46 @@ class Profile extends React.Component {
         nextToken: null
       },
       username: "",
+      update: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        username: ""
+      }
     }
+    this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
     // load data of user and set to state
     const { first_name, last_name, email, phone_number, processes, username } = this.props.user;
     this.setState({first_name, last_name, email, phone_number, processes, username});
+    this.setState({
+      update: {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        phone_number: phone_number,
+        username: username
+      }
+    })
+  }
+
+  handleChange = (event) => {
+    let update = Object.assign({}, this.state.update);
+    update[event.target.name] = event.target.value;
+    this.setState({ update });
   }
 
   render() {
-    const { first_name, last_name, email, phone_number, username } = this.state;
-
+    const { first_name, last_name, email, phone_number, username } = this.props.user;
     var displayTitle = this.state.processes.items.map(item => {
       return (
         <Card>
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
-              <a href="#" class="card-link">Compass Link</a>
-              <a href="#" class="card-link">Analytics Link</a>
+              <a href="#" className="card-link">Compass Link</a>
+              <a href="#" className="card-link">Analytics Link</a>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Last updated {item.date_end}</small>
@@ -50,7 +73,7 @@ class Profile extends React.Component {
 
     return (
       <Layout>
-        <Tabs defailtActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
+        <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
             <div id="processes" className="container">
@@ -63,33 +86,40 @@ class Profile extends React.Component {
               <Accordion>
                 <div label="Name" change={`${first_name} ${last_name}`}>
                   <form>
-                    First Name: <input className="col input-text" type="text" name="firstName" defaultValue={first_name} />
-                    Last Name: <input className="col input-text" type="text" name="lastName" defaultValue={last_name} />
+                    First Name:
+                    <input className="col input-text" type="text" name="first_name" defaultValue={first_name} onChange={this.handleChange}/>
+                    Last Name:
+                    <input className="col input-text" type="text" name="last_name" defaultValue={last_name} onChange={this.handleChange}/>
                   </form>
-                  <input class="submit" value="Submit Changes" type="button"/>
+                  <input class="submit" value="Submit Changes" type="button" onClick={this.submitName}/>
                 </div>
                 <div label="Username" change={username}>
                   <form>
-                    Username: <input className="col input-text" type="text" name="username" defaultValue={username} />
+                    Username:
+                    <input className="col input-text" type="text" name="username" defaultValue={username} onChange={this.handleChange} />
                   </form>
                   <input class="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="E-Mail" change={email}>
                   <form>
-                    E-Mail: <input className="col input-text" type="text" name="email" defaultValue={email} />
+                    E-Mail:
+                    <input className="col input-text" type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
                   <input class="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="Password" change="**********">
                   <form>
-                    Current Password: <input className="col input-text" type="text" name="password" defaultValue="" />
-                    New Password: <input className="col input-text" type="text" name="password" defaultValue="" />
+                    Current Password:
+                    <input className="col input-text" type="text" name="password" defaultValue="" />
+                    New Password:
+                    <input className="col input-text" type="text" name="password" defaultValue="" />
                   </form>
                   <input class="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="Phone Number" change={phone_number}>
                   <form>
-                    Phone Number: <input className="col input-text" type="text" name="email" defaultValue={phone_number} />
+                    Phone Number:
+                    <input className="col input-text" type="text" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
                   </form>
                   <input class="submit" value="Submit Changes" type="button"/>
                 </div>
