@@ -55,6 +55,7 @@ class Profile extends React.Component {
   }
 
   submitName = () => {
+<<<<<<< 5ce175ac6a63d79cf2de64da030ba33bfd814751
     if ((this.state.update.first_name !== this.state.first_name) ||
         (this.state.update.last_name !== this.state.last_name)) {
       updateUser({
@@ -64,11 +65,18 @@ class Profile extends React.Component {
         last_name: this.state.update.last_name
       });
     }
+=======
+    updateUser({
+      id: this.props.user.id,
+      first_name: this.state.update.firstName
+    });
+>>>>>>> modify name
     // .then(res => {
     //   console.log(res);
     // });
   }
 
+<<<<<<< 5ce175ac6a63d79cf2de64da030ba33bfd814751
   // when modifying username, email, phone_number, need to do it via amplify & dynamodb
   submitUsername = () => {
     if (this.state.update.username !== this.state.username) {
@@ -81,6 +89,8 @@ class Profile extends React.Component {
     }
   }
 
+=======
+>>>>>>> modify name
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
     var displayTitle = this.state.processes.items.map(item => {
