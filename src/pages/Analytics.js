@@ -212,7 +212,7 @@ class Analytics extends Component {
                         <div className={'col-1 align-self-center'}>
                             {this.loading_render()}
                         </div>
-                        <h1 className={'col-10 text-center'}>Anlytics</h1>
+                        <h1 className={'col-10 text-center'}>Analytics</h1>
                     </div>
                         {this.process_select_render()}
                         {this.bar_chart_render()}
