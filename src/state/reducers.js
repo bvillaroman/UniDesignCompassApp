@@ -1,5 +1,5 @@
 import {initialState} from "./intialState"
-import {AUTH_USER, LOGOUT_USER} from "./constants"
+import {AUTH_USER, LOGOUT_USER,UPDATE_USER} from "./constants"
 
 
 export default (state = initialState, action) => {
@@ -10,6 +10,11 @@ export default (state = initialState, action) => {
         user: action.payload,
         isAuthenticated: true
       };
+    case UPDATE_USER :
+      return {
+        ...state,
+        user: action.payload
+    };
     case LOGOUT_USER :
       return {
         ...state,
