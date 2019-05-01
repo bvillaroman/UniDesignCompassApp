@@ -51,6 +51,16 @@ class Profile extends React.Component {
     this.setState({ update });
   }
 
+  submitName = () => {
+    updateUser({
+      id: this.props.user.id,
+      first_name: this.state.update.firstName
+    });
+    // .then(res => {
+    //   console.log(res);
+    // });
+  }
+
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
     var displayTitle = this.state.processes.items.map(item => {
