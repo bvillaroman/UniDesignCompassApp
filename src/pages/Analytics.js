@@ -88,8 +88,6 @@ class Analytics extends Component {
             const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
                 return phase.id
             });
-            // console.log(phase_ids)
-
             Promise.all(phase_ids.map((phase_id, index) => {
                 return Utils.getPhase(phase_id).then(res => { 
                     const phase = res.data.getPhase;
@@ -124,10 +122,10 @@ class Analytics extends Component {
         })
     }
 
-    log_card_render = (log) => {
+    log_card_render = (log, index) => {
         return (
-            <div className={'card'} key={log.id}>
-                <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toUTCString()}</h5>
+            <div className={'card'} key={index}>
+                <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toString()}</h5>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
                     <p className={'card-text'}>{log.text}</p>
@@ -149,7 +147,6 @@ class Analytics extends Component {
             this.state.selected_process_phase_logs.reduce((arr, phase) => {
                 const logs = phase.log_ids.map((log, index) => {
                     return {
-                        key: index,
                         id: log.id,
                         timestamp: log.timestamp,
                         text: log.text
@@ -165,7 +162,7 @@ class Analytics extends Component {
             ? 
                 <div className={'accordion'} id={'accordionExample'}>
                     {data.map((log, index) => {
-                        return this.log_card_render(log);
+                        return this.log_card_render(log, index);
                     })}
                 </div>
             : 
