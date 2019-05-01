@@ -10,7 +10,7 @@ export const getUser = `query GetUser($id: ID!) {
     email
     password_hash
     phone_number
-    processes {
+    processes(limit: 100) {
       items {
         id
         user_id

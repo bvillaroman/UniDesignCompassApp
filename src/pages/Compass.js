@@ -16,14 +16,14 @@ class Compass extends Component {
         this.state = {
             compassName: "Universal Design Compass",
             compassPhases: [
-                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#' },
-                { key: '2', name: 'B. Research', icon: '', description: '', link: '#' },
-                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#' },
-                { key: '4', name: 'D. Select', icon: '', description: '', link: '#' },
-                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#' },
-                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#' },
-                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#' },
-                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#' },
+                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#',time:0 },
+                { key: '2', name: 'B. Research', icon: '', description: '', link: '#',time:0 },
+                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#',time:0 },
+                { key: '4', name: 'D. Select', icon: '', description: '', link: '#',time:0 },
+                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#',time:0 },
+                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#',time:0 },
+                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#',time:0 },
+                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#',time:0 },
             ],
             previous: true,
             next: true,
@@ -119,13 +119,13 @@ class Compass extends Component {
         // console.log(temp)
         // 
     }
-    generateList(phase){
-        if(this.state.currentPhase===phase){
-            const filtered= log_list.data.filter((entry)=>{
-                return (entry.id===phase);
+    generateList(phase) {
+        if (this.state.currentPhase === phase) {
+            const filtered = log_list.data.filter((entry) => {
+                return (entry.id === phase);
             })
-            return (filtered.map((data)=>{
-                return(<h4>{data.text}</h4>);
+            return (filtered.map((data) => {
+                return (<h4>{data.text}</h4>);
             }));
         }
     }
@@ -143,7 +143,7 @@ class Compass extends Component {
                                             <ButtonGroup size="lg">
                                                 <Button
                                                     key={phase.key}
-                                                    onClick={() => this.compassButtonHandler(phase)}
+                                                    onClick={() => { this.compassButtonHandler(phase); }}
                                                     bsSize='large'
                                                     block
                                                     className='text-left'
@@ -191,63 +191,66 @@ class Compass extends Component {
                         </React.Fragment>);
                       }}
                                                 
-
                                                 </Timer>
                                             </ButtonGroup>
                                             <div>
-                                                
                                                 {this.generateList(phase.key)}
                                             </div>
+                                            {(this.state.currentPhase === phase.key) ? (
+                                                <div>
+                                                    <br></br>
+                                                    <Row>
+                                                        <Col>
+                                                            <Button
+                                                                className='float-left'
+                                                                variant={this.state.previous ? "primary" : "secondary"}
+                                                                onClick={() => this.previousButtonHandler()}
+                                                                active>Previous
+                                                            </Button>
+                                                        </Col>
+                                                        <Col>
+                                                            <textarea
+                                                                placeholder="Log Text"
+                                                                rows="5"
+                                                                cols="20"
+                                                                value={this.state.log}
+                                                                onChange={this.handleTextArea}
+                                                            >
+                                                            </textarea>
+                                                        </Col>
+                                                        <Col>
+                                                            <Button
+                                                                className='float-right'
+                                                                variant={this.state.next ? "primary" : "secondary"}
+                                                                onClick={(e) => this.nextButtonHandler()}
+                                                                active>
+                                                                Next
+                                                            </Button>
+                                                        </Col>
+                                                    </Row>
+                                                    <Row>
+                                                        <Col></Col>
+                                                        <Col>
+                                                            <Button
+                                                                block
+                                                                size="sm"
+                                                                variant="warning"
+                                                                onClick={(e) => this.updateLogHandler()}
+                                                            >Update Log
+                                                            </Button>
+                                                        </Col>
+                                                        <Col></Col>
+                                                    </Row>
+                                                    <br></br>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                </div>
+                                                )}
                                         </div>
                                     );
                                 })
                         }
-                        <br></br>
-                        <div>
-                            <Row>
-                                <Col>
-                                    <Button
-                                        className='float-left'
-                                        variant={this.state.previous ? "primary" : "secondary"}
-                                        onClick={() => this.previousButtonHandler()}
-                                        active>Previous
-                        </Button>
-                                </Col>
-                                <Col>
-                                    <textarea
-                                        placeholder="Log Text"
-                                        rows="5"
-                                        cols="20"
-                                        value={this.state.log}
-                                        onChange={this.handleTextArea}
-                                    >
-
-                                    </textarea>
-                                </Col>
-                                <Col>
-                                    <Button
-                                        className='float-right'
-                                        variant={this.state.next ? "primary" : "secondary"}
-                                        onClick={(e) => this.nextButtonHandler()}
-                                        active>
-                                        Next
-                        </Button>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col></Col>
-                                <Col>
-                                    <Button
-                                        block
-                                        size="sm"
-                                        variant="warning"
-                                        onClick={(e) => this.updateLogHandler()}
-                                    >Update Log
-                           </Button>
-                                </Col>
-                                <Col></Col>
-                            </Row>
-                        </div>
                     </div>
                 </div>
 
