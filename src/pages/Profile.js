@@ -52,10 +52,14 @@ class Profile extends React.Component {
   }
 
   submitName = () => {
-    updateUser({
-      id: this.props.user.id,
-      first_name: this.state.update.firstName
-    });
+    if ((this.state.update.first_name !== this.state.first_name) ||
+        (this.state.update.last_name !== this.state.last_name)) {
+      updateUser({
+        id: this.props.user.id,
+        first_name: this.state.update.first_name,
+        last_name: this.state.update.last_name
+      });
+    }
     // .then(res => {
     //   console.log(res);
     // });
