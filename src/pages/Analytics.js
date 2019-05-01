@@ -30,7 +30,7 @@ class Analytics extends Component {
     }
 
     load_process_data(process_id) {
-        // this.load_chart_data(process_id);
+        this.load_chart_data(process_id);
         this.load_log_data(process_id);
     }
 
@@ -94,21 +94,19 @@ class Analytics extends Component {
                 return Utils.getPhase(phase_id).then(res => { 
                     const phase = res.data.getPhase;
                     const log_ids = phase.logs.items;
-                    // get the logs from the log_ids and return log object
                     return {
                         phase_id: phase.id,
                         log_ids: log_ids
                     };
                 })
             })).then(phase_logs => {
-                // console.log(phase_logs)
                 this.setState({
                     loading: false,
                     selected_process_phase_logs: phase_logs
                 });
 
                 // testing creating a log
-                const phase_id = phase_logs[1].phase_id;
+                // const phase_id = phase_logs[1].phase_id;
                 // this.test_create_log(phase_id);             
             });
         })
@@ -119,7 +117,6 @@ class Analytics extends Component {
             loading: true
         });
         Utils.deleteLogs(log_id).then(res => {
-            // console.log(res);
             this.setState({
                 loading: false
             });
@@ -128,7 +125,6 @@ class Analytics extends Component {
     }
 
     log_card_render = (log) => {
-        // console.log(log.timestamp)
         return (
             <div className={'card'} key={log.id}>
                 <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toUTCString()}</h5>
@@ -168,10 +164,9 @@ class Analytics extends Component {
         return data
             ? 
                 <div className={'accordion'} id={'accordionExample'}>
-                {data.map((log, index) => {
-                    // return<p key={index}>{log.text}</p>
-                    return this.log_card_render(log);
-                })}
+                    {data.map((log, index) => {
+                        return this.log_card_render(log);
+                    })}
                 </div>
             : 
                 null;
@@ -222,8 +217,8 @@ class Analytics extends Component {
                         </div>
                         <h1 className={'col-10 text-center'}>Anlytics</h1>
                     </div>
-                        {/* {this.process_select_render()} */}
-                        {/* {this.bar_chart_render()} */}
+                        {this.process_select_render()}
+                        {this.bar_chart_render()}
                         {this.process_logs_render()}
                 </div>
             </Layout>
