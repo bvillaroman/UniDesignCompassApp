@@ -5,27 +5,14 @@ import { store } from "../../state/store";
 import { Provider } from 'react-redux';
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {mount} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import {shallow} from 'enzyme';
+import {shallowToJson} from 'enzyme-to-json';
+import Compass from '../../pages/Compass';
 configure({adapter:new Adapter()});
 
-const tree = mount(<Provider store={store} ><Login /></Provider>);
+const tree = shallow(<Compass />);
 
-describe("Check Timer", () => {
-    it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
-    })
-})
-describe("Check Log", () => {
-    it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
-    })
-})
-describe("Check Compass Page", () => {
-    it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
-    })
-})
+
 
 
 // describe("SignIn exceptions",() =>{

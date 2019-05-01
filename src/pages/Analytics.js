@@ -17,39 +17,21 @@ class Analytics extends Component {
     }
 
     initProcessSelect() {
-        this.setState({
-            loading: true
-        });
         // load data of user and set to state
         const user = this.props.user;
-        // console.log(user);
 
-        Utils.getUser(user.id).then(res => {
-            const user = res.data.getUser;
-            const processes_ids = user.processes;
-            // retrieving the names of all the user's Processes
-            return Promise.all(
-                processes_ids.map((process_id, index) => {
-                    return (
-                        Utils.getProcess(process_id).then(res => {
-                            const process = res.data.getProcess;
-                            return {
-                                name: process.name,
-                                id: process.id
-                            }
-                        })
-                    )
-                })
-            );
-        }).then((processes) => {
-            const default_process = processes[0]
-            this.setState({
-                processes: processes,
-                selected_process_id: default_process ? default_process.id : -1,
-                loading: false
-            });
-            this.load_process_data(default_process.id)
-        });
+        const processes = user.processes.items;
+        const default_process = processes[0]
+        this.setState({
+            processes: processes,
+            selected_process_id: default_process ? default_process.id : -1
+        })
+        this.load_process_data(default_process.id);
+    }
+
+    load_process_data(process_id) {
+        // this.load_chart_data(process_id);
+        this.load_log_data(process_id);
     }
 
     componentDidMount() {
@@ -64,34 +46,135 @@ class Analytics extends Component {
         this.load_process_data(process_id);
     }
 
-    load_process_data(process_id) {
+    load_chart_data(process_id) {
         this.setState({
             loading: true
         });
-
         Utils.getProcess(process_id).then(res => {
-            const phase_ids = res.data.getProcess.phase_ids;
-            return Promise.all(
-                phase_ids.map((phase_id, index) => {
-                    return (
-                        Utils.getPhase(phase_id).then(res => {
-                            const phase = res.data.getPhase;
-                            return {
-                                category: phase.title,
-                                amount: phase.duration
-                            }
-                        })
-                    );
-                })
-            );
-        }).then(phases => {
+            const phases = res.data.getProcess.phaseids.items;
+            const items = phases.map((phase, index) => {
+                return {
+                    category: phase.title,
+                    amount: phase.duration
+                }
+            })
             this.setState({
                 loading: false,
                 chartData: {
-                    table: phases
+                    table: items
                 }
+            })
+        })
+    }
+
+    test_create_log(phase_id) {
+        Utils.createLogs(phase_id, Date.now(), 'log in other phase').then(res => {
+            // console.log(res);
+        });
+
+        Utils.updateUser({
+            id: this.props.user.id,
+            first_name: 'ramon'
+        }).then(res => {
+            console.log(res);
+        })
+    }
+
+    load_log_data(process_id) {
+        this.setState({
+            loading: true
+        });
+        Utils.getProcess(process_id).then(res => {
+            const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
+                return phase.id
+            });
+            // console.log(phase_ids)
+
+            Promise.all(phase_ids.map((phase_id, index) => {
+                return Utils.getPhase(phase_id).then(res => { 
+                    const phase = res.data.getPhase;
+                    const log_ids = phase.logs.items;
+                    // get the logs from the log_ids and return log object
+                    return {
+                        phase_id: phase.id,
+                        log_ids: log_ids
+                    };
+                })
+            })).then(phase_logs => {
+                // console.log(phase_logs)
+                this.setState({
+                    loading: false,
+                    selected_process_phase_logs: phase_logs
+                });
+
+                // testing creating a log
+                const phase_id = phase_logs[1].phase_id;
+                // this.test_create_log(phase_id);             
             });
         })
+    }
+
+    deleteLogHandler = (log_id) => {
+        this.setState({
+            loading: true
+        });
+        Utils.deleteLogs(log_id).then(res => {
+            // console.log(res);
+            this.setState({
+                loading: false
+            });
+            this.load_log_data(this.state.selected_process_id)
+        })
+    }
+
+    log_card_render = (log) => {
+        // console.log(log.timestamp)
+        return (
+            <div className={'card'} key={log.id}>
+                <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toUTCString()}</h5>
+                <div className={'card-body'}>
+                    {/* <h5 class="card-title">Special title treatment</h5> */}
+                    <p className={'card-text'}>{log.text}</p>
+                    <button
+                        className={'btn btn-danger'}
+                        onClick={() => this.deleteLogHandler(log.id)}
+                    > 
+                        Delete
+                    </button>
+                    <button className={'btn btn-warning'}>Edit</button>
+                </div>
+            </div>
+        );
+    }
+
+    process_logs_render = () => {
+        const data = this.state.selected_process_phase_logs
+        ?
+            this.state.selected_process_phase_logs.reduce((arr, phase) => {
+                const logs = phase.log_ids.map((log, index) => {
+                    return {
+                        key: index,
+                        id: log.id,
+                        timestamp: log.timestamp,
+                        text: log.text
+                    }
+                })  
+                arr.push(...logs);
+                return arr;
+            }, [])
+        :   
+            null;
+
+        return data
+            ? 
+                <div className={'accordion'} id={'accordionExample'}>
+                {data.map((log, index) => {
+                    // return<p key={index}>{log.text}</p>
+                    return this.log_card_render(log);
+                })}
+                </div>
+            : 
+                null;
     }
 
     process_select_render = () => {
@@ -139,8 +222,9 @@ class Analytics extends Component {
                         </div>
                         <h1 className={'col-10 text-center'}>Anlytics</h1>
                     </div>
-                        {this.process_select_render()}
-                        {this.bar_chart_render()}
+                        {/* {this.process_select_render()} */}
+                        {/* {this.bar_chart_render()} */}
+                        {this.process_logs_render()}
                 </div>
             </Layout>
         );

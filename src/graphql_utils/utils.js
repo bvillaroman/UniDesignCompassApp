@@ -13,7 +13,6 @@ export async function getUser(id){
 export async function getUserbyUsername(username){
     const filter = { username : { eq : username } }
     const user = await API.graphql(graphqlOperation(queries.listUsers,{filter}));
-    console.log(user);
     const userinfo = await getUser(user.data.listUsers.items[0].id);
     return userinfo;
 }
@@ -70,7 +69,6 @@ async function createPhase(processId,title,description){
         description:description,
         duration:"0000000",
         phaseProcessId: processId
-
     }
     const newPhase = await API.graphql(graphqlOperation(mutations.createPhase,{input:phaseInfo}));
     return newPhase;
@@ -136,32 +134,18 @@ export async function deletePhase(id){
     const deletedPhase = await API.graphql(graphqlOperation(mutations.deletePhase,{input:phaseInfo}));
     return deletedPhase;
 }
-export async function createNewCompass(user,phases){
+export async function createNewCompass(user,name,phases){
     let process_info;
-    await createProcess(user.id,"Blank Project","0000000","00000000").then(
+    await createProcess(user.id,name,"0000000","00000000").then(
         (res)=>{
             process_info=res.data.createProcess;
-            console.log(process_info);
-        },(error)=>{
-            console.log(error);
-        }
-    )
-    console.log("Hello");
-    
-    for(let i =0 ;i < phases.length; i++){
-        await createPhase(process_info.id,phases[i].title,phases[i].description);
-    }
-    
-    await getUser(user.id).then(
-        (res)=>{
-            console.log(user)
-            user=res.data.getUser;
-            console.log(user)
         },(error)=>{
             console.log(error);
         }
     )
     
+    for(let i =0 ;i < phases.length; i++){ await createPhase(process_info.id,phases[i].title,phases[i].description);}
+    return getProcess(process_info.id);    
 }
 export async function appendNewLog(phaseId,log){
     createLogs(log.timestamp,log.text).then(
