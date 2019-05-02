@@ -27,11 +27,16 @@ class Profile extends React.Component {
         email: "",
         phone_number: "",
         username: ""
-      }
+      },
+      oldPass: "",
+      newPass: "",
+      repPass: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitName = this.submitName.bind(this);
-    this.submitUsername = this.submitUsername.bind(this);
+    // this.submitUsername = this.submitUsername.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.submitPassword = this.submitPassword.bind(this);
   }
   componentDidMount() {
     // load data of user and set to state
@@ -54,6 +59,27 @@ class Profile extends React.Component {
     this.setState({ update });
   }
 
+  handlePassword = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  submitPassword = () => {
+    if(this.state.newPass === this.state.repPass) {
+      Auth.currentAuthenticatedUser()
+        .then(user => {
+          return Auth.changePassword(user, this.state.oldPass, this.state.newPass);
+        })
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+    }
+    else {
+      alert("Passwords dont match");
+      return;
+    }
+  }
+
   submitName = () => {
     if ((this.state.update.first_name !== this.state.first_name) ||
         (this.state.update.last_name !== this.state.last_name)) {
@@ -64,22 +90,34 @@ class Profile extends React.Component {
         last_name: this.state.update.last_name
       });
     }
-    // .then(res => {
-    //   console.log(res);
-    // });
   }
 
+
   // when modifying username, email, phone_number, need to do it via amplify & dynamodb
-  submitUsername = () => {
-    if (this.state.update.username !== this.state.username) {
-      updateUser({
-        id: this.props.user.id,
-        username: this.state.update.username
-      }).then(res => {
-        console.log(res);
-      });
-    }
-  }
+  // submitUsername = () => {
+  //   if (this.state.update.username !== this.state.username) {
+  //     Auth.currentAuthenticatedUser().then(user => {
+  //       return Auth.updateUserAttributes(user, {
+  //         username: this.state.update.username
+  //       }).then(res => {
+  //         console.log(res);
+  //       });
+  //     });
+  //     let user = Auth.currentAuthenticatedUser();
+  //     let result = Auth.updateUserAttributes(user,
+  //       {
+  //         'username': this.state.update.username
+  //       }
+  //     );
+  //     console.log(result);
+  //     updateUser({
+  //       id: this.props.user.id,
+  //       username: this.state.update.username
+  //     }).then(res => {
+  //       console.log(res);
+  //     });
+  //   }
+  // }
 
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
@@ -128,7 +166,7 @@ class Profile extends React.Component {
                     Username:
                     <input className="col input-text" type="text" name="username" defaultValue={username} onChange={this.handleChange} />
                   </form>
-                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitUsername}/>
+                  <input className="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="E-Mail" change={email}>
                   <form>
@@ -140,11 +178,13 @@ class Profile extends React.Component {
                 <div label="Password" change="**********">
                   <form>
                     Current Password:
-                    <input className="col input-text" type="text" name="password" defaultValue="" />
+                    <input className="col input-text" type="password" name="oldPass" defaultValue="" onChange={this.handlePassword}/>
                     New Password:
-                    <input className="col input-text" type="text" name="password" defaultValue="" />
+                    <input className="col input-text" type="password" name="newPass" defaultValue="" onChange={this.handlePassword}/>
+                    Confirm Password:
+                    <input className="col input-text" type="password" name="repPass" defaultValue="" onChange={this.handlePassword}/>
                   </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitPassword}/>
                 </div>
                 <div label="Phone Number" change={phone_number}>
                   <form>
