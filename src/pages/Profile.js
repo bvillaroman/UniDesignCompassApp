@@ -5,6 +5,7 @@ import  {connect} from "react-redux";
 import {authenticateUser} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
 import {updateUser} from '../graphql_utils/utils';
+import { Auth } from 'aws-amplify';
 
 class Profile extends React.Component {
   constructor() {
@@ -29,6 +30,8 @@ class Profile extends React.Component {
       }
     }
     this.handleChange = this.handleChange.bind(this);
+    this.submitName = this.submitName.bind(this);
+    this.submitUsername = this.submitUsername.bind(this);
   }
   componentDidMount() {
     // load data of user and set to state
@@ -55,6 +58,7 @@ class Profile extends React.Component {
     if ((this.state.update.first_name !== this.state.first_name) ||
         (this.state.update.last_name !== this.state.last_name)) {
       updateUser({
+        // data saved in dynamodb
         id: this.props.user.id,
         first_name: this.state.update.first_name,
         last_name: this.state.update.last_name
@@ -63,6 +67,18 @@ class Profile extends React.Component {
     // .then(res => {
     //   console.log(res);
     // });
+  }
+
+  // when modifying username, email, phone_number, need to do it via amplify & dynamodb
+  submitUsername = () => {
+    if (this.state.update.username !== this.state.username) {
+      updateUser({
+        id: this.props.user.id,
+        username: this.state.update.username
+      }).then(res => {
+        console.log(res);
+      });
+    }
   }
 
   render() {
@@ -105,21 +121,21 @@ class Profile extends React.Component {
                     Last Name:
                     <input className="col input-text" type="text" name="last_name" defaultValue={last_name} onChange={this.handleChange}/>
                   </form>
-                  <input class="submit" value="Submit Changes" type="button" onClick={this.submitName}/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitName}/>
                 </div>
                 <div label="Username" change={username}>
                   <form>
                     Username:
                     <input className="col input-text" type="text" name="username" defaultValue={username} onChange={this.handleChange} />
                   </form>
-                  <input class="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitUsername}/>
                 </div>
                 <div label="E-Mail" change={email}>
                   <form>
                     E-Mail:
                     <input className="col input-text" type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
-                  <input class="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="Password" change="**********">
                   <form>
@@ -128,14 +144,14 @@ class Profile extends React.Component {
                     New Password:
                     <input className="col input-text" type="text" name="password" defaultValue="" />
                   </form>
-                  <input class="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button"/>
                 </div>
                 <div label="Phone Number" change={phone_number}>
                   <form>
                     Phone Number:
                     <input className="col input-text" type="text" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
                   </form>
-                  <input class="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button"/>
                 </div>
               </Accordion>
             </div>
