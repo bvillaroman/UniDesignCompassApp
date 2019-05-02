@@ -14,6 +14,19 @@ class Compass extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            compassName: "",
+            compassPhases: [],
+            previous: true,
+            next: true,
+            currentPhase: '',
+            emptyTime: "",
+            currentTime: "",
+            log: ""
+        }
+    }
+
+    componentDidMount(){
+        this.setState({
             compassName: "Universal Design Compass",
             compassPhases: [
                 { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#',time:0 },
@@ -31,7 +44,7 @@ class Compass extends Component {
             emptyTime: "00:00:00",
             currentTime: "00:00:00",
             log: ""
-        }
+        })
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
