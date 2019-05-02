@@ -9,6 +9,7 @@ import aws_exports from '../aws-exports'; // specify the location of aws-exports
 import {log_list} from '../dummyData';
 import Timer from "react-compound-timer";
 import {updateUser} from '../state/actions'
+import {getProcess} from "../graphql_utils/utils"
 import {connect} from 'react-redux';
 
 Amplify.configure(aws_exports);
@@ -29,24 +30,31 @@ class Compass extends Component {
     }
 
     componentDidMount(){
-        this.setState({
-            compassName: "Universal Design Compass",
-            compassPhases: [
-                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#',time:0 },
-                { key: '2', name: 'B. Research', icon: '', description: '', link: '#',time:0 },
-                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#',time:0 },
-                { key: '4', name: 'D. Select', icon: '', description: '', link: '#',time:0 },
-                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#',time:0 },
-                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#',time:0 },
-                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#',time:0 },
-                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#',time:0 },
-            ],
-            previous: true,
-            next: true,
-            currentPhase: '0',
-            emptyTime: "00:00:00",
-            currentTime: "00:00:00",
-            log: ""
+        const compassPhases = this.props.user.processes.items[0].id;
+        getProcess(compassPhases)
+        .then((res) => {
+            const compass = res.data.getProcess;
+            const compassName = compass.name;
+            const compassPhases = res.data.getProcess.phaseids.items.map((phase,index) => {
+                return { 
+                    key: index + 1,  
+                    name: phase.title, 
+                    icon: '', 
+                    description: phase.description, 
+                    link: '#',
+                    time: phase.duration
+                }
+            })
+            this.setState({
+                compassName,
+                compassPhases,
+                previous: true,
+                next: true,
+                currentPhase: '0',
+                emptyTime: "00:00:00",
+                currentTime: "00:00:00",
+                log: ""
+            })
         })
     }
 
