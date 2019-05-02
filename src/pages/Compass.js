@@ -8,6 +8,9 @@ import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
 import Timer from "react-compound-timer";
+import {updateUser} from '../state/actions'
+import {connect} from 'react-redux';
+
 Amplify.configure(aws_exports);
 
 class Compass extends Component {
@@ -273,4 +276,12 @@ class Compass extends Component {
     }
 }
 
-export default Compass;
+const mapStateToProps = ({state}) => ({
+    user: state.user
+})
+const mapDispatchToProps = dispatch => ({
+    updateUser: (user) => dispatch(updateUser(user))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Compass);
+
