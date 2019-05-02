@@ -8,37 +8,61 @@ import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
 import Timer from "react-compound-timer";
+import {updateUser} from '../state/actions'
+import {getProcess} from "../graphql_utils/utils"
+import {connect} from 'react-redux';
+
 Amplify.configure(aws_exports);
 
 class Compass extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            compassName: "Universal Design Compass",
-            compassPhases: [
-                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#',time:0 },
-                { key: '2', name: 'B. Research', icon: '', description: '', link: '#',time:0 },
-                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#',time:0 },
-                { key: '4', name: 'D. Select', icon: '', description: '', link: '#',time:0 },
-                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#',time:0 },
-                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#',time:0 },
-                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#',time:0 },
-                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#',time:0 },
-            ],
+            compassName: "",
+            compassPhases: [],
             previous: true,
             next: true,
-            currentPhase: '0',
-            emptyTime: "00:00:00",
-            currentTime: "00:00:00",
+            currentPhase: '',
+            emptyTime: "",
+            currentTime: "",
             log: ""
         }
+    }
+
+    componentDidMount(){
+        const compassPhases = this.props.user.processes.items[0].id;
+        getProcess(compassPhases)
+        .then((res) => {
+            const compass = res.data.getProcess;
+            const compassName = compass.name;
+            const compassPhases = res.data.getProcess.phaseids.items.map((phase,index) => {
+                return { 
+                    key: index + 1,  
+                    name: phase.title, 
+                    icon: '', 
+                    description: phase.description, 
+                    link: '#',
+                    time: phase.duration
+                }
+            })
+            this.setState({
+                compassName,
+                compassPhases,
+                previous: true,
+                next: true,
+                currentPhase: '0',
+                emptyTime: "00:00:00",
+                currentTime: "00:00:00",
+                log: ""
+            })
+        })
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
         // var temp=phase.key
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
         // console.log(this.state.currentPhase)
-        this.timerHandler(phase)
+        // this.timerHandler(phase)
     }
 
     previousButtonHandler = () => {
@@ -80,44 +104,30 @@ class Compass extends Component {
 
     timerHandler = (phase) => {
         // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        if(phase.key===this.state.currentPhase){
+        if (phase.key === this.state.currentPhase) {
             var x = new Date()
             var minutes = x.getMinutes()
             var seconds = x.getSeconds();
             var milliseconds = x.getMilliseconds();
             var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
             this.setState({ currentTime: temp })
-            var tempTime= new Date()
-            var start= new Date(tempTime.getFullYear(),tempTime.getMonth(),tempTime.getDate(),0,0,0)
-
+            var tempTime = new Date()
+            var start = new Date(tempTime.getFullYear(), tempTime.getMonth(), tempTime.getDate(), 0, 0, 0)
             // while(phase.key===this.state.currentPhase){
-                // setInterval(() => {
-                //     this.secondDelay()
-                //     start.setSeconds(start.getSeconds()+1) 
-    
-                //     var minutes = start.getMinutes()
-                //     var seconds = start.getSeconds();
-                //     // var milliseconds = start.getMilliseconds();
-                //     var temp = minutes.toString() + ":" + seconds.toString()
-                //     this.setState({ currentTime: temp })    
-                // },1000);
-                
-
+            // setInterval(() => {
+            //     this.secondDelay()
+            //     start.setSeconds(start.getSeconds()+1) 
+            //     var minutes = start.getMinutes()
+            //     var seconds = start.getSeconds();
+            //     // var milliseconds = start.getMilliseconds();
+            //     var temp = minutes.toString() + ":" + seconds.toString()
+            //     this.setState({ currentTime: temp })    
+            // },1000);
             // } 
         }
-        else{
+        else {
             console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         }
-        
-        
-            // while(0){//Set Condition for updating the time.
-        // var elapsed= new Date()
-        // var elapsedMinutes= elapsed.getMinutes();
-        // var elapsedSeconds= elapsed.getSeconds();
-        // var elapsedMilliseconds= elapsed.getMilliseconds();
-        // var temp = elapsedMinutes.toString()+":"+elapsedSeconds.toString()+":"+elapsedMilliseconds.toString()
-        // console.log(temp)
-        // 
     }
     generateList(phase) {
         if (this.state.currentPhase === phase) {
@@ -151,46 +161,50 @@ class Compass extends Component {
                                                 >{phase.name}
                                                 </Button>
                                                 <Timer
+                                                    // initialTime={this.state.compassPhases[index].time}
                                                     initialTime={0}
                                                     startImmediately={false}
                                                     start={() => console.log('Start')}
                                                     resume={() => console.log('Resume')}
                                                     pause={() => console.log('Pause')}
                                                     stop={() => console.log('Stop')}
-                                                    reset={() => console.log('reset')}
+                                                    reset={() => console.log('Reset')}
                                                 >
-                                            {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                                        return (
-                                        <React.Fragment>
-                                        {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
-                                        <Button
-                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
-                                                    // onClick={() => this.timerHandler(phase)}
-                                                    onClick={start}
-                                                >
-                                                    {/* {(this.state.currentPhase === phase.key) ? this.state.currentTime : this.state.emptyTime} */}
-                                                    {(this.state.currentPhase === phase.key) ? start() : reset()}
-                                                    {/* {
-                                                        if(this.state.currentPhase===phase.key){
-                                                            console.log(getTime());
-                                                            start();
-                                                        }
-                                                        else
-                                                        {
-                                                            reset();
-                                                        }
+                                                    {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                                                        return (
+                                                            <React.Fragment>
+                                                                {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
+                                                                <Button
+                                                                    variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
+                                                                    onClick={() => { this.compassButtonHandler(phase); start() }}
+                                                                >
+                                                                    {(this.state.currentPhase === phase.key) ? start() : (
+                                                                        pause()
+                                                                        
+                                                                        // console.log(this.state.compassPhases[index].time),
+                                                                        // this.state.compassPhases[index].time=parseInt(getTime(),10)
+                                                                        // this.state.setState(
+                                                                            // {
+                                                                                // compassPhases[index]
+                                                                            // }
+                                                                        // )
+                                                                        )
+                                                                        // stop(),
+                                                                        // this.state.currentTime=getTime(),
+                                                                        // phase.time=this.state.currentTime,
+                                                                        // console.log(getTime())//Need to change the time phase properly.                                                                        
+                                                                        // )
+                                                                    }
 
-                                                    } */}
-
-                                                    
                                                     <Timer.Hours />:
                                                     <Timer.Minutes />:
                                                     <Timer.Seconds />
-                                                </Button>
+                                                                </Button>
 
-                        </React.Fragment>);
-                      }}
-                                                
+                                                            </React.Fragment>);
+                                                    }}
+
+
                                                 </Timer>
                                             </ButtonGroup>
                                             <div>
@@ -255,9 +269,16 @@ class Compass extends Component {
                 </div>
 
             </Layout>
-
         );
     }
 }
 
-export default Compass;
+const mapStateToProps = ({state}) => ({
+    user: state.user
+})
+const mapDispatchToProps = dispatch => ({
+    updateUser: (user) => dispatch(updateUser(user))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(Compass);
+
