@@ -6,13 +6,18 @@ import { Provider } from 'react-redux';
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallow} from 'enzyme';
-import {shallowToJson} from 'enzyme-to-json';
+import {mountToJson} from 'enzyme-to-json';
 import Compass from '../../pages/Compass';
 configure({adapter:new Adapter()});
 
 const tree = shallow(<Compass />);
 
-
+describe("Check Auto Generation of Compass", () => {
+    it("Auto Generate", () => {
+        tree.setState({compassName:"The Best Compass"});
+        expect(tree.find('h1')).to.have.lengthOf(1);
+    })
+})
 
 
 // describe("SignIn exceptions",() =>{

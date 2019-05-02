@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home Page Check Render 1`] = `
+<Layout>
+  <div
+    className="presentation"
+  >
+    <img
+      alt="inter"
+      id="homeImg"
+      role="presentation"
+      src="test-file-stub"
+    />
+    <h1
+      className="presentation-description"
+    >
+      DESIGN COMPASS
+    </h1>
+    <h3
+      className="presentation-description1"
+    >
+      to facililate
+    </h3>
+    <h1
+      className="presentation-description2"
+    >
+      Creation
+    </h1>
+    <Button
+      active={false}
+      className="presentation-button"
+      disabled={false}
+      onClick={[Function]}
+      size="lg"
+      type="button"
+      variant="info"
+    >
+      Begin
+    </Button>
+  </div>
+  <CardDeck>
+    <Card
+      as="div"
+      bg="danger"
+      body={false}
+      text="white"
+    >
+      <CardHeader>
+        Objective
+      </CardHeader>
+      <CardBody>
+        <CardText>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </CardText>
+      </CardBody>
+    </Card>
+    <Card
+      as="div"
+      bg="warning"
+      body={false}
+      text="dark"
+    >
+      <CardHeader>
+        Features
+      </CardHeader>
+      <CardBody>
+        <CardText>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </CardText>
+      </CardBody>
+    </Card>
+  </CardDeck>
+</Layout>
+`;

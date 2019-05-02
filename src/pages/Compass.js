@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row, ButtonGroup } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Row, ButtonGroup } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import {log_list} from '../dummyData';
-import Timer from "react-compound-timer";
+import Timer from 'react-compound-timer';
 import {updateUser} from '../state/actions'
 import {getProcess} from "../graphql_utils/utils"
 import {connect} from 'react-redux';
