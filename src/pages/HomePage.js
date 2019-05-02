@@ -1,4 +1,5 @@
 import React from "react";
+import {navigate} from "gatsby"
 import inter from "../images/home-image-min.jpg";
 import Layout from '../components/layout';
 import { CardDeck, Card, Button } from 'react-bootstrap';
@@ -11,7 +12,7 @@ const HomePage = (props) => (
       <h3 className="presentation-description1">to facililate</h3>
       <h1 className="presentation-description2">Creation</h1>
 
-      <Button className="presentation-button" variant="info" size="lg" href="/Compass">Begin</Button>
+      <Button className="presentation-button" variant="info" size="lg" onClick={() => {navigate("/Create")}}>Begin</Button>
     </div>
     <CardDeck>
       <Card bg="danger" text="white">
