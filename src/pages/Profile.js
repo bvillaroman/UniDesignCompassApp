@@ -6,6 +6,8 @@ import {authenticateUser} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
 import {updateUser} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
+import config from "../aws-exports";
+Auth.configure(config);
 
 class Profile extends React.Component {
   constructor() {
