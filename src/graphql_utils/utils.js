@@ -161,3 +161,8 @@ export async function appendNewLog(phaseId,log){
         }
     )
 }
+
+export async function listCompasses(){
+    const processes = await API.graphql(graphqlOperation(queries.listProcesss,{limit : 100}));
+    return processes;
+}
