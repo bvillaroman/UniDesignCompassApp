@@ -126,17 +126,21 @@ class Analytics extends Component {
     log_card_render = (log, index) => {
         return (
             <div className={'card'} key={index}>
-                <h5 className={'card-header'}>{new Date(parseInt(log.timestamp)).toString()}</h5>
+                <h5 className={'card-header d-flex justify-content-between'}>
+                    {new Date(parseInt(log.timestamp)).toString()}
+                    <span className={''}>
+                        <button
+                            className={'btn btn-danger'}
+                            onClick={() => this.deleteLogHandler(log.id)}
+                        > 
+                            Delete
+                        </button>
+                        <button className={'btn btn-warning'}>Edit</button>
+                    </span>
+                </h5>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
                     <p className={'card-text'}>{log.text}</p>
-                    <button
-                        className={'btn btn-danger'}
-                        onClick={() => this.deleteLogHandler(log.id)}
-                    > 
-                        Delete
-                    </button>
-                    <button className={'btn btn-warning'}>Edit</button>
                 </div>
             </div>
         );
