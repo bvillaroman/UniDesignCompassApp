@@ -36,6 +36,7 @@ class Profile extends React.Component {
     this.submitName = this.submitName.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
     this.submitPassword = this.submitPassword.bind(this);
+    this.submitEmail = this.submitEmail.bind(this);
   }
 
   componentDidMount() {
@@ -107,6 +108,39 @@ class Profile extends React.Component {
     }
   }
 
+  submitEmail = () => {
+    if (this.state.update.email !== this.state.email) {
+      //update amplify
+      Auth.currentAuthenticatedUser().then(user => {
+        Auth.updateUserAttributes(user, {
+          email: this.state.update.email
+        }).then(res => {
+          alert("Check your email for Verification code");
+          // navigate("/Verification",{state:{username:this.state.username,first_name:this.state.first_name,last_name:this.state.last_name,email:this.state.update.email,phone:this.state.phone}});
+        });
+      });
+      // update data saved in dynamodb
+      updateUser({
+        id: this.props.user.id,
+        email: this.state.update.email
+      });
+      // update data in cognito
+      this.props.updateUser({
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.update.email,
+        phone_number: this.state.phone_number,
+        processes: this.state.processes,
+        username: this.state.username
+      });
+      getUserbyUsername(this.state.username).then(res => {
+        console.log(res);
+        const user = res.data.getUser;
+        this.props.authenticateUser(user);
+      });
+    }
+  }
+
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
     var displayTitle = this.state.processes.items.map(item => {
@@ -154,7 +188,7 @@ class Profile extends React.Component {
                     E-Mail:
                     <input className="col input-text" type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitEmail}/>
                 </div>
                 <div label="Password" change="**********">
                   <form>
