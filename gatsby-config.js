@@ -42,7 +42,7 @@ module.exports = {
         headers: {
             "x-api-key": `${process.env.AWS_APPSYNC_API_KEY}`
         },
-        refetchInterval: 10,
+        refetchInterval: 3,
       },
     },
   ],
