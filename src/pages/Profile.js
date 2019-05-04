@@ -37,6 +37,7 @@ class Profile extends React.Component {
     this.handlePassword = this.handlePassword.bind(this);
     this.submitPassword = this.submitPassword.bind(this);
     this.submitEmail = this.submitEmail.bind(this);
+    this.submitPhoneNumber = this.submitPhoneNumber.bind(this);
   }
 
   componentDidMount() {
@@ -141,6 +142,38 @@ class Profile extends React.Component {
     }
   }
 
+  submitPhoneNumber = () => {
+    if (this.state.update.phone_numberl !== this.state.phone_number) {
+      //update amplify
+      Auth.currentAuthenticatedUser().then(user => {
+        Auth.updateUserAttributes(user, {
+          phone_number: this.state.update.phone_number
+        }).then(res => {
+          console.log(res);
+        });
+      });
+      // update data saved in dynamodb
+      updateUser({
+        id: this.props.user.id,
+        phone_number: this.state.update.phone_number
+      });
+      // update data in cognito
+      this.props.updateUser({
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.email,
+        phone_number: this.state.update.phone_number,
+        processes: this.state.processes,
+        username: this.state.username
+      });
+      getUserbyUsername(this.state.username).then(res => {
+        console.log(res);
+        const user = res.data.getUser;
+        this.props.authenticateUser(user);
+      });
+    }
+  }
+
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
     var displayTitle = this.state.processes.items.map(item => {
@@ -186,7 +219,7 @@ class Profile extends React.Component {
                 <div label="E-Mail" change={email}>
                   <form>
                     E-Mail:
-                    <input className="col input-text" type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
+                    <input className="col input-text" type="email" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
                   <input className="submit" value="Submit Changes" type="button" onClick={this.submitEmail}/>
                 </div>
@@ -204,9 +237,9 @@ class Profile extends React.Component {
                 <div label="Phone Number" change={phone_number}>
                   <form>
                     Phone Number:
-                    <input className="col input-text" type="text" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
+                    <input className="col input-text" type="tel" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
                   </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitPhoneNumber}/>
                 </div>
               </Accordion>
             </div>
