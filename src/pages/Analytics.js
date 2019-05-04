@@ -161,15 +161,20 @@ class Analytics extends Component {
                 })  
                 arr.push(...logs);
                 return arr;
-            }, [])
+            }, []).sort((a, b) => {
+                return a.timestamp - b.timestamp;
+            })
         :   
             null;
+
+        console.log(data);
 
         return data
             ? 
                 <div className={'accordion'} id={'accordionExample'}>
                     {data.map((log, index) => {
-                        return this.log_card_render(log, index);
+                        // return this.log_card_render(log, index);
+                        return <LogCard key={index} logData={log} deleteHandler={this.deleteLogHandler}/>
                     })}
                 </div>
             : 
@@ -215,7 +220,7 @@ class Analytics extends Component {
     }
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <Layout>
                 <div className='container'>
