@@ -1,5 +1,5 @@
 import React from "react";
-import {navigate} from "gatsby"
+import { navigate, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
@@ -95,6 +95,19 @@ class CreatePage extends React.Component {
     status: "chooseStructure"
   }
 
+  goToCompass = (id,count = 0) => {
+    const existingIDS = this.props.data.allSitePage.nodes.map(element => (element.path.replace('/Compass/',"") ));
+    if (existingIDS.includes(id)){
+      console.log("found")
+      setTimeout(() => {
+        navigate(`/Compass/${id}`)
+      },3000)
+    } else if (count > 2) console.log("failed")
+    else setTimeout(() => {
+      this.goToCompass(id, count + 1)
+    },5000)
+  }
+
   handleCompassTitle = (e) => {
     this.setState({compassTitle: e.target.value})
   }
@@ -123,16 +136,11 @@ class CreatePage extends React.Component {
     createNewCompass(this.props.user,compassTitle,phases)
     .then((res) => {
       const result = res.data.getProcess
-      const newProcess = {
-        compassID: result.id,
-        phases: result.phaseids.items,
-        compassTitle: result.name,
-        dateStart: result.date_start,
-      }
       getUser(this.props.user.id)
       .then((newUser) => {
         this.props.updateUser(newUser.data.getUser);
-        navigate("/Compass")
+        navigate('/Profile')
+        // this.goToCompass(result.id);
       })
     })
   }
@@ -187,3 +195,14 @@ const mapDispatchToProps = dispatch => ({
   updateUser: (user) => dispatch(updateUser(user))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(CreatePage);
+
+export const query = graphql`
+ # query will go here
+  query GetAllCreateCompassPaths {
+    allSitePage(filter: {componentPath : {in : "/Users/bruce/class_stuff/WebDesign/UniDesignCompassApp/src/pages/Compass.js"}}) {
+      nodes {
+        path
+      }
+    }
+  }
+`
