@@ -5,3 +5,24 @@
  */
 
 // You can delete this file if you're not using it
+exports.createPages = async function({ actions, graphql }) {
+  const { data } = await graphql(`
+    query {
+      events {
+        listProcesss (limit: 1000){
+          items {
+            id
+          }
+        }
+      }
+    }
+  `)
+  data.events.listProcesss.items.forEach(process => {
+    const id = process.id
+    actions.createPage({
+      path: `Compass/${id}`,
+      component: require.resolve(`./src/pages/Compass.js`),
+      context: { id: id },
+    })
+  })
+}
