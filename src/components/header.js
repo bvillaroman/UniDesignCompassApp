@@ -9,7 +9,6 @@ import { logOutUser } from '../state/actions';
 const signedIn = (props) =>  (
   <React.Fragment>
     <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="create" to="/Create">Create Compass</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="compass" to="/Compass">Compass</Link></NavItem>
     <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="analytics" to="/Analytics">Analytics</Link></NavItem>
     <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="profile" to="/Profile">Profile</Link></NavItem>
     <NavItem><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>
