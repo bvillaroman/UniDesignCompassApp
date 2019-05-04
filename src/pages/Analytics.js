@@ -4,6 +4,7 @@ import ResponsiveBarChart from '../components/ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
+import LogCard from "../components/LogCard";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Analytics extends Component {
@@ -106,7 +107,7 @@ class Analytics extends Component {
 
                 // testing creating a log
                 const phase_id = phase_logs[1].phase_id;
-                this.test_create_log(phase_id);             
+                // this.test_create_log(phase_id);             
             });
         })
     }
@@ -124,26 +125,27 @@ class Analytics extends Component {
     }
 
     log_card_render = (log, index) => {
-        return (
-            <div className={'card'} key={index}>
-                <h5 className={'card-header d-flex justify-content-between'}>
-                    {new Date(parseInt(log.timestamp)).toString()}
-                    <span className={''}>
-                        <button
-                            className={'btn btn-danger'}
-                            onClick={() => this.deleteLogHandler(log.id)}
-                        >
-                            Delete
-                        </button>
-                        <button className={'btn btn-warning'}>Edit</button>
-                    </span>
-                </h5>
-                <div className={'card-body'}>
-                    {/* <h5 class="card-title">Special title treatment</h5> */}
-                    <p className={'card-text'}>{log.text}</p>
-                </div>
-            </div>
-        );
+        // return (
+        //     <div className={'card'} key={index}>
+        //         <h5 className={'card-header d-flex justify-content-between'}>
+        //             {new Date(parseInt(log.timestamp)).toString()}
+        //             <span className={''}>
+        //                 <button
+        //                     className={'btn btn-danger'}
+        //                     onClick={() => this.deleteLogHandler(log.id)}
+        //                 >
+        //                     Delete
+        //                 </button>
+        //                 <button className={'btn btn-warning'}>Edit</button>
+        //             </span>
+        //         </h5>
+        //         <div className={'card-body'}>
+        //             {/* <h5 class="card-title">Special title treatment</h5> */}
+        //             <p className={'card-text'}>{log.text}</p>
+        //         </div>
+        //     </div>
+        // );
+        return <LogCard key={index} logData={log} deleteHandler={this.deleteLogHandler}/>
     }
 
     process_logs_render = () => {
