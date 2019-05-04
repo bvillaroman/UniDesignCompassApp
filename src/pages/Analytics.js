@@ -150,7 +150,7 @@ class Analytics extends Component {
         //         </div>
         //     </div>
         // );
-        return <LogCard key={index} logData={log} deleteHandler={this.deleteLogHandler}/>
+        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler}/>
     }
 
     process_logs_render = () => {
@@ -177,7 +177,7 @@ class Analytics extends Component {
                 <div className={'accordion'} id={'accordionExample'}>
                     {data.map((log, index) => {
                         // return this.log_card_render(log, index);
-                        return <LogCard key={index} logData={log} deleteHandler={this.deleteLogHandler}/>
+                        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler}/>
                     })}
                 </div>
             : 
