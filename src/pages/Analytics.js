@@ -94,12 +94,17 @@ class Analytics extends Component {
                 return Utils.getPhase(phase_id).then(res => { 
                     const phase = res.data.getPhase;
                     const log_ids = phase.logs.items;
+                    log_ids.sort((a, b) => {
+                        return a.timestamp - b.timestamp;
+                    })
                     return {
                         phase_id: phase.id,
                         log_ids: log_ids
                     };
                 })
             })).then(phase_logs => {
+                console.log('ps')
+                console.log(phase_logs)
                 this.setState({
                     loading: false,
                     selected_process_phase_logs: phase_logs
@@ -161,9 +166,7 @@ class Analytics extends Component {
                 })  
                 arr.push(...logs);
                 return arr;
-            }, []).sort((a, b) => {
-                return a.timestamp - b.timestamp;
-            })
+            }, [])
         :   
             null;
 
