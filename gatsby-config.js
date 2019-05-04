@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Universal Design Compass`,
@@ -27,9 +30,22 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain the remote schema Query type
+        typeName: "AWSAppSync",
+        // This is the field under which it's accessible
+        fieldName: "events",
+        // URL to query from
+        url: `${process.env.AWS_APPSYNC_API_URL}`,
+        headers: {
+            "x-api-key": `${process.env.AWS_APPSYNC_API_KEY}`
+        },
+        refetchInterval: 10,
+      },
+    },
   ],
-  pathPrefix: "/UniDesignCompassApp"
+  pathPrefix: "/UniDesignCompassApp",
+  
 }
