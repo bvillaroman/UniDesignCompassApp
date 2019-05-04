@@ -132,7 +132,7 @@ class Analytics extends Component {
                         <button
                             className={'btn btn-danger'}
                             onClick={() => this.deleteLogHandler(log.id)}
-                        > 
+                        >
                             Delete
                         </button>
                         <button className={'btn btn-warning'}>Edit</button>
@@ -203,12 +203,12 @@ class Analytics extends Component {
         const style = {
             position: 'fixed',
             zIndex: '1020',
+            top: '50%',
+            left: '50%',
         }
         return (this.state.loading
-            ?
-                <div style={style} className={'spinner-border text-primary'}></div>
-            :
-                null
+            ? <div style={style} className={'spinner-border text-primary'}></div>
+            : null
         );
     }
 
@@ -217,10 +217,8 @@ class Analytics extends Component {
         return (
             <Layout>
                 <div className='container'>
+                    {this.loading_render()}
                     <div className={'page-header row'}>
-                        <div className={'col-1'}>
-                            {this.loading_render()}
-                        </div>
                         <h1 className={'col-10 text-center'}>Analytics</h1>
                     </div>
                         {this.process_select_render()}
