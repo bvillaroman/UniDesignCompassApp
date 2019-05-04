@@ -53,7 +53,7 @@ class Analytics extends Component {
         });
         Utils.getProcess(process_id).then(res => {
             const phases = res.data.getProcess.phaseids.items;
-            const items = phases.map((phase, index) => {
+            const items = phases.map(phase => {
                 return {
                     category: phase.title,
                     amount: phase.duration
@@ -69,17 +69,20 @@ class Analytics extends Component {
     }
 
     test_create_log(phase_id) {
-        const log_string = `log created on ${new Date().toString()}`;
-        Utils.createLogs(phase_id, Date.now(), log_string).then(res => {
-            // console.log(res);
-        });
-
-        // Utils.updateUser({
-        //     id: this.props.user.id,
-        //     first_name: 'ramon'
-        // }).then(res => {
-        //     console.log(res);
-        // })
+        const enabled = !true;
+        if(enabled) {
+            const log_string = `log created on ${new Date().toString()}`;
+            Utils.createLogs(phase_id, Date.now(), log_string).then(res => {
+                // console.log(res);
+            });
+    
+            // Utils.updateUser({
+            //     id: this.props.user.id,
+            //     first_name: 'ramon'
+            // }).then(res => {
+            //     console.log(res);
+            // })
+        }
     }
 
     load_log_data(process_id) {
@@ -90,7 +93,7 @@ class Analytics extends Component {
             const phase_ids = res.data.getProcess.phaseids.items.map(phase => {
                 return phase.id
             });
-            Promise.all(phase_ids.map((phase_id, index) => {
+            Promise.all(phase_ids.map(phase_id => {
                 return Utils.getPhase(phase_id).then(res => { 
                     const phase = res.data.getPhase;
                     const log_ids = phase.logs.items;
@@ -103,8 +106,6 @@ class Analytics extends Component {
                     };
                 })
             })).then(phase_logs => {
-                console.log('ps')
-                console.log(phase_logs)
                 this.setState({
                     loading: false,
                     selected_process_phase_logs: phase_logs
@@ -112,7 +113,7 @@ class Analytics extends Component {
 
                 // testing creating a log
                 const phase_id = phase_logs[1].phase_id;
-                // this.test_create_log(phase_id);             
+                this.test_create_log(phase_id);             
             });
         })
     }
@@ -129,35 +130,12 @@ class Analytics extends Component {
         })
     }
 
-    log_card_render = (log, index) => {
-        // return (
-        //     <div className={'card'} key={index}>
-        //         <h5 className={'card-header d-flex justify-content-between'}>
-        //             {new Date(parseInt(log.timestamp)).toString()}
-        //             <span className={''}>
-        //                 <button
-        //                     className={'btn btn-danger'}
-        //                     onClick={() => this.deleteLogHandler(log.id)}
-        //                 >
-        //                     Delete
-        //                 </button>
-        //                 <button className={'btn btn-warning'}>Edit</button>
-        //             </span>
-        //         </h5>
-        //         <div className={'card-body'}>
-        //             {/* <h5 class="card-title">Special title treatment</h5> */}
-        //             <p className={'card-text'}>{log.text}</p>
-        //         </div>
-        //     </div>
-        // );
-        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler}/>
-    }
-
     process_logs_render = () => {
+        // combine all logs from all phases
         const data = this.state.selected_process_phase_logs
         ?
             this.state.selected_process_phase_logs.reduce((arr, phase) => {
-                const logs = phase.log_ids.map((log, index) => {
+                const logs = phase.log_ids.map(log => {
                     return {
                         id: log.id,
                         timestamp: log.timestamp,
@@ -169,14 +147,10 @@ class Analytics extends Component {
             }, [])
         :   
             null;
-
-        console.log(data);
-
         return data
             ? 
                 <div className={'accordion'} id={'accordionExample'}>
-                    {data.map((log, index) => {
-                        // return this.log_card_render(log, index);
+                    {data.map(log => {
                         return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler}/>
                     })}
                 </div>
@@ -187,13 +161,15 @@ class Analytics extends Component {
     process_select_render = () => {
         return(
             <div className="d-flex flex-column" >
-                <select className={'custom-select'} value={this.state.selected_process_id} onChange={e => this.process_select_handler(e)}>
+                <select 
+                    className={'custom-select'} 
+                    value={this.state.selected_process_id} 
+                    onChange={e => this.process_select_handler(e)}
+                >
                     {this.state.processes
                         ?
-                            this.state.processes.map((process, index) => {
-                                return (
-                                    <option value={process.id} key={index}>{process.name}</option>
-                                )
+                            this.state.processes.map(process => {
+                                return <option value={process.id} key={process.id}>{process.name}</option>
                             })
                         :
                             <option disabled value={-1}>This user has no Processes</option>
