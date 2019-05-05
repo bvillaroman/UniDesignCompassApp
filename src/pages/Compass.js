@@ -71,12 +71,10 @@ class Compass extends Component {
     }
 
 
-    secondDelay = () => {
-        var startTime = new Date().getTime();
-        var endTime = startTime;
-        while (endTime < startTime + 1000) {
-            endTime = new Date().getTime();
-        }
+    adjustTime = (index,time) => {
+        let compassPhase = this.state.compassPhases
+        compassPhase[index].time =  time
+        this.setState({ compassPhase })
     }
 
     timerHandler = (phase) => {
@@ -140,7 +138,7 @@ class Compass extends Component {
                                                 </Button>
                                                 <Timer
                                                     // initialTime={this.state.compassPhases[index].time}
-                                                    initialTime={0}
+                                                    initialTime={phase.time}
                                                     startImmediately={false}
                                                     start={() => console.log('Start')}
                                                     resume={() => console.log('Resume')}
@@ -155,25 +153,12 @@ class Compass extends Component {
                                                                 <Button
                                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                                     onClick={() => { this.compassButtonHandler(phase); start() }}
+                                                                    
                                                                 >
-                                                                    {(this.state.currentPhase === phase.key) ? start() : (
-                                                                        pause()
-                                                                        
-                                                                        // console.log(this.state.compassPhases[index].time),
-                                                                        // this.state.compassPhases[index].time=parseInt(getTime(),10)
-                                                                        // this.state.setState(
-                                                                            // {
-                                                                                // compassPhases[index]
-                                                                            // }
-                                                                        // )
-                                                                        )
-                                                                        // stop(),
-                                                                        // this.state.currentTime=getTime(),
-                                                                        // phase.time=this.state.currentTime,
-                                                                        // console.log(getTime())//Need to change the time phase properly.                                                                        
-                                                                        // )
-                                                                    }
-
+                                                                    {(this.state.currentPhase === phase.key) ? start() : (pause())}
+                                                                    {/* //    ()=>{ pause() */}
+                                                                        {/* // this.adjustTime(index,parseInt(getTime()))})} */}
+                                                                            
                                                     <Timer.Hours />:
                                                     <Timer.Minutes />:
                                                     <Timer.Seconds />
