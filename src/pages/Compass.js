@@ -35,11 +35,7 @@ class Compass extends Component {
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
-        // var temp=phase.key
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
-        // console.log(this.state.currentPhase)
-        // this.timerHandler(phase)
-        // start()
     }
 
     previousButtonHandler = () => {
@@ -70,7 +66,6 @@ class Compass extends Component {
         //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
-
     adjustTime = (index,time) => {
         let compassPhase = this.state.compassPhases
         compassPhase[index].time =  time
@@ -78,7 +73,6 @@ class Compass extends Component {
     }
 
     timerHandler = (phase) => {
-        // (phase.key === this.state.currentPhase) ? console.log("Timer " + phase.key) : console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
         if (phase.key === this.state.currentPhase) {
             var x = new Date()
             var minutes = x.getMinutes()
@@ -86,19 +80,6 @@ class Compass extends Component {
             var milliseconds = x.getMilliseconds();
             var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
             this.setState({ currentTime: temp })
-            var tempTime = new Date()
-            var start = new Date(tempTime.getFullYear(), tempTime.getMonth(), tempTime.getDate(), 0, 0, 0)
-            // while(phase.key===this.state.currentPhase){
-            // setInterval(() => {
-            //     this.secondDelay()
-            //     start.setSeconds(start.getSeconds()+1) 
-            //     var minutes = start.getMinutes()
-            //     var seconds = start.getSeconds();
-            //     // var milliseconds = start.getMilliseconds();
-            //     var temp = minutes.toString() + ":" + seconds.toString()
-            //     this.setState({ currentTime: temp })    
-            // },1000);
-            // } 
         }
         else {
             console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
@@ -115,6 +96,13 @@ class Compass extends Component {
             }));
         }
     }
+
+    Start = (start) => () => {
+        console.log('My own function');
+        start()
+     }
+
+
     render() {
         return (
             <Layout>
@@ -149,20 +137,15 @@ class Compass extends Component {
                                                     {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
                                                         return (
                                                             <React.Fragment>
-                                                                {/* <div>{getTimerState()} {console.log(getTime())}</div> */}
                                                                 <Button
                                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                                     onClick={() => { this.compassButtonHandler(phase); 
-                                                                        (getTimerState()=="PLAYING")?pause():start() 
+                                                                        (getTimerState()==="PLAYING")?stop():start() 
                                                                     }}
-                                                                        // onClick= {(this.state.currentPhase === phase.key) ? start() : (pause())}
+                                                                    // onClick={()=>(this.state.currentPhase === phase.key) ? start() : (pause())}
                                                                     
                                                                 >
                                                                     {/* {(this.state.currentPhase === phase.key) ? start() : (pause())} */}
-                                                                    {/* {console.log(getTimerState())} */}
-                                                                    {/* //    ()=>{ pause() */}
-                                                                        {/* // this.adjustTime(index,parseInt(getTime()))})} */}
-                                                                            
                                                     <Timer.Hours />:
                                                     <Timer.Minutes />:
                                                     <Timer.Seconds />
