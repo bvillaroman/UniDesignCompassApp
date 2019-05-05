@@ -30,8 +30,8 @@ class Compass extends Component {
     }
 
     componentDidMount(){
-        const compassPhases = this.props.pageContext.id;
-        getProcess(compassPhases)
+        
+        getProcess(this.props.user.processes.items[0].id)
         .then((res) => {
             const compass = res.data.getProcess;
             const compassName = compass.name;
