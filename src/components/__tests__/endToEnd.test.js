@@ -10,8 +10,7 @@ const height = 1000;
 beforeAll(async () => {
   browser = await puppeteer.launch({
     args:['--no-sandbox','--disable-setuid-sandbox'],
-    headless: false,
-    slowMo: 80
+    headless: true,
   });
   page = await browser.newPage();
   await page.setViewport({ width, height });
@@ -39,7 +38,7 @@ describe("Application rundown", () => {
   // }, 16000);
 
   test("Load Profile Page", async ()=>{
-    await page.setViewport({ width, height });
+    //await page.setViewport({ width, height });
     await page.goto('http://localhost:8000/');
     //const logout = await page.$eval("a[rel=logout]", res=>res.click());
   
@@ -56,14 +55,15 @@ describe("Application rundown", () => {
 
     //GOes into the profile page 
     await page.$eval("a[rel=profile]",res=>res.click());
-    await page.$eval("a[data-rb-event-key=settings]",res=>res.click());
+    await page.waitForNavigation();
+    await page.$eval("a[data-rb-event-key=Settings]",res=>res.click());
 
     //Goes to the Compass Page
     await page.$eval("a[rel=compass]",res=>res.click());
     //Goes to Analytics page
     await page.$eval("a[rel=analytics]",res=>res.click());
     //Goes to Aboust Us
-    await page.$eval("a[rel=about]",res=>res.click());
+    //await page.$eval("a[rel=about]",res=>res.click());
     
   },160000)
   // unfinished

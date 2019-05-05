@@ -5,35 +5,35 @@ import { store } from "../../state/store";
 import { Provider } from 'react-redux';
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {mount} from 'enzyme';
-import {mountToJson} from 'enzyme-to-json';
+import {shallow} from 'enzyme';
+import {shallowToJson} from 'enzyme-to-json';
 configure({adapter:new Adapter()});
 
-const tree = mount(<Provider store={store} ><Login /></Provider>);
+const tree = shallow(<Provider store={store} ><Login /></Provider>);
 
 describe("Check Login_Page", () => {
     it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
+        expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
 describe("Check Password", () => {
     it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
+        expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
 describe("Check verification page loads", () => {
     it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
+        expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
 describe("Check user signup page ", () => {
     it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
+        expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
 describe("", () => {
     it("render", () => {
-        expect(mountToJson(tree)).toMatchSnapshot()
+        expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
 

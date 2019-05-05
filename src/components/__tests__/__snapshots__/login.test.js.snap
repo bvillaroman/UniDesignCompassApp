@@ -1,736 +1,141 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check Login_Page render 1`] = `
-<Provider
-  store={
+<ContextProvider
+  value={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeState": Object {
+        "_persist": Object {
+          "rehydrated": true,
+          "version": -1,
+        },
+        "state": Object {
+          "isAuthenticated": false,
+          "user": Object {},
+        },
+      },
     }
   }
 >
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
-    >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
-      >
-        <div
-          className="container"
-        >
-          <div
-            className="Login"
-          >
-            <form
-              onSubmit={[Function]}
-            >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+  <Connect(Login) />
+</ContextProvider>
 `;
 
 exports[`Check Password render 1`] = `
-<Provider
-  store={
+<ContextProvider
+  value={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeState": Object {
+        "_persist": Object {
+          "rehydrated": true,
+          "version": -1,
+        },
+        "state": Object {
+          "isAuthenticated": false,
+          "user": Object {},
+        },
+      },
     }
   }
 >
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
-    >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
-      >
-        <div
-          className="container"
-        >
-          <div
-            className="Login"
-          >
-            <form
-              onSubmit={[Function]}
-            >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+  <Connect(Login) />
+</ContextProvider>
 `;
 
 exports[`Check user signup page  render 1`] = `
-<Provider
-  store={
+<ContextProvider
+  value={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeState": Object {
+        "_persist": Object {
+          "rehydrated": true,
+          "version": -1,
+        },
+        "state": Object {
+          "isAuthenticated": false,
+          "user": Object {},
+        },
+      },
     }
   }
 >
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
-    >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
-      >
-        <div
-          className="container"
-        >
-          <div
-            className="Login"
-          >
-            <form
-              onSubmit={[Function]}
-            >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+  <Connect(Login) />
+</ContextProvider>
 `;
 
 exports[`Check verification page loads render 1`] = `
-<Provider
-  store={
+<ContextProvider
+  value={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeState": Object {
+        "_persist": Object {
+          "rehydrated": true,
+          "version": -1,
+        },
+        "state": Object {
+          "isAuthenticated": false,
+          "user": Object {},
+        },
+      },
     }
   }
 >
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
-    >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
-      >
-        <div
-          className="container"
-        >
-          <div
-            className="Login"
-          >
-            <form
-              onSubmit={[Function]}
-            >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+  <Connect(Login) />
+</ContextProvider>
 `;
 
 exports[`render 1`] = `
-<Provider
-  store={
+<ContextProvider
+  value={
     Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      },
+      "storeState": Object {
+        "_persist": Object {
+          "rehydrated": true,
+          "version": -1,
+        },
+        "state": Object {
+          "isAuthenticated": false,
+          "user": Object {},
+        },
+      },
     }
   }
 >
-  <Connect(Login)>
-    <Login
-      authenticateUser={[Function]}
-      isAuthenticated="false"
-    >
-      <SignIn
-        handleAccount={[Function]}
-        handleAuth={[Function]}
-        handleChange={[Function]}
-      >
-        <div
-          className="container"
-        >
-          <div
-            className="Login"
-          >
-            <form
-              onSubmit={[Function]}
-            >
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="username"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="username"
-                    >
-                      Username
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    autoFocus={true}
-                    onChange={[Function]}
-                    placeholder="Username"
-                    type="text"
-                  >
-                    <input
-                      autoFocus={true}
-                      className="form-control"
-                      id="username"
-                      onChange={[Function]}
-                      placeholder="Username"
-                      type="text"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <FormGroup
-                as="div"
-                bssize="large"
-                controlId="password"
-              >
-                <div
-                  bssize="large"
-                  className="form-group"
-                >
-                  <FormLabel
-                    column={false}
-                    srOnly={false}
-                  >
-                    <label
-                      className="form-label"
-                      htmlFor="password"
-                    >
-                      Password
-                    </label>
-                  </FormLabel>
-                  <FormControl
-                    as="input"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                  >
-                    <input
-                      className="form-control"
-                      id="password"
-                      onChange={[Function]}
-                      placeholder="Password"
-                      type="password"
-                    />
-                  </FormControl>
-                </div>
-              </FormGroup>
-              <Button
-                active={false}
-                bssize="large"
-                disabled={false}
-                type="submit"
-                variant="primary"
-              >
-                <button
-                  bssize="large"
-                  className="btn btn-primary"
-                  disabled={false}
-                  type="submit"
-                >
-                  Login
-                </button>
-              </Button>
-              <Button
-                active={false}
-                className="float-right"
-                disabled={false}
-                onClick={[Function]}
-                type="button"
-                variant="primary"
-              >
-                <button
-                  className="float-right btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Create New Account
-                </button>
-              </Button>
-            </form>
-          </div>
-        </div>
-      </SignIn>
-    </Login>
-  </Connect(Login)>
-</Provider>
+  <Connect(Login) />
+</ContextProvider>
 `;
