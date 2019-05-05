@@ -56,7 +56,9 @@ class Login extends Component {
         navigate("/SignUp");
     }
     render() {
-        return (<Layout><SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} /></Layout>);
+        return (
+        <Layout><SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} /></Layout>
+        );
     }
 }
 
