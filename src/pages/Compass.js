@@ -113,30 +113,35 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
+                                        
+                                        <div>
+                                         <Timer
+                                                    // initialTime={this.state.compassPhases[index].time}
+                                                    initialTime={phase.time}
+                                                    startImmediately={false}
+                                                    OnStart={() => console.log('Start')}
+                                                    OnResume={() => console.log('Resume')}
+                                                    OnPause={() => console.log('Pause')}
+                                                    OnStop={() => console.log('Stop')}
+                                                    OnReset={() => console.log('Reset')}
+                                                >
+                                                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                                                        return (
+                                                            <React.Fragment>
                                         <div className="d-flex flex-column" >
+
                                             <ButtonGroup size="lg">
                                                 <Button
                                                     key={phase.key}
-                                                    onClick={() => { this.compassButtonHandler(phase); }}
+                                                    onClick={() => { this.compassButtonHandler(phase);start() }}
                                                     bsSize='large'
                                                     block
                                                     className='text-left'
                                                     variant={(this.state.currentPhase === phase.key) ? "success" : "outline-warning"}
                                                 >{phase.name}
                                                 </Button>
-                                                <Timer
-                                                    // initialTime={this.state.compassPhases[index].time}
-                                                    initialTime={phase.time}
-                                                    startImmediately={false}
-                                                    start={() => console.log('Start')}
-                                                    resume={() => console.log('Resume')}
-                                                    pause={() => console.log('Pause')}
-                                                    stop={() => console.log('Stop')}
-                                                    reset={() => console.log('Reset')}
-                                                >
-                                                    {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                                                        return (
-                                                            <React.Fragment>
+                                               
+                                                    
                                                                 <Button
                                                                     variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
                                                                     onClick={() => { this.compassButtonHandler(phase); 
@@ -151,11 +156,9 @@ class Compass extends Component {
                                                     <Timer.Seconds />
                                                                 </Button>
 
-                                                            </React.Fragment>);
-                                                    }}
+                                                     
 
-
-                                                </Timer>
+                                                {/* </Timer> */}
                                             </ButtonGroup>
                                             <div>
                                                 {this.generateList(phase.key)}
@@ -211,6 +214,11 @@ class Compass extends Component {
                                                 <div>
                                                 </div>
                                                 )}
+                                                </div>
+                                                </React.Fragment>);
+                                                    }}
+
+                                        </Timer>                                                
                                         </div>
                                     );
                                 })
