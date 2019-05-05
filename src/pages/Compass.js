@@ -149,9 +149,8 @@ class Compass extends Component {
                                                                             this.compassButtonHandler(phase);
                                                                             (getTimerState() === "PLAYING") ? pause() : start()
                                                                         }}
-                                                                    // onClick={()=>(this.state.currentPhase === phase.key) ? start() : (pause())}
                                                                     >
-                                                                        {/* {(this.state.currentPhase === phase.key) ? start() : (pause())} */}
+                                                                        {(this.state.currentPhase === phase.key) ? console.log() : (pause())}
                                                                         <Timer.Hours />:
                                                                         <Timer.Minutes />:
                                                                         <Timer.Seconds />
