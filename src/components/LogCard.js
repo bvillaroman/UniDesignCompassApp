@@ -9,7 +9,7 @@ class LogCard extends Component {
             deleteHandler: this.props.deleteHandler,
             updateHandler: this.props.updateHandler,
             editText: null,
-            editing: true
+            editing: false
         }
     }
 
@@ -18,13 +18,13 @@ class LogCard extends Component {
             this.setState({logData: this.props.logData})
     }
 
-    edit_button_handler = () => {
-        // this.state.editeHandler(this.state.logData.id, this.state.editText)
-        console.log('edit')
+    edit_toggle_handler = () => {
+        this.setState({editing: !this.state.editing})
     }
 
     update_button_handler = () => {
         this.state.updateHandler(this.state.logData.id, Date.now(), this.state.editText);
+        this.setState({editing: false})
     }
 
     textarea_handler = (e) => {
@@ -35,27 +35,39 @@ class LogCard extends Component {
         return (
             <div className={'card'}>
                 <h5 className={'row card-header d-flex justify-content-between'}>
-                    <div className={'col-sm-9'}>
+                    <div className={'col-lg-8'}>
                         {new Date(parseInt(this.state.logData.timestamp)).toString()}
                     </div>
-                    <div className={'col-sm-3'}>
-                        <div className={'row'}>
-                            <button
-                                className={'btn btn-danger col-4'}
-                                onClick={() => this.state.deleteHandler(this.state.logData.id)}
-                            >Delete
-                            </button>
-                            <button 
-                                className={'btn btn-warning col-4'}
-                                onClick={this.edit_button_handler}
-                            >Edit
-                            </button>
-                            <button 
-                                className={'btn btn-warning col-4'}
-                                onClick={this.update_button_handler}
-                            >Update
-                            </button>
-                        </div>
+                    <div className={'col-lg-4 d-flex justify-content-end'}>
+                        {this.state.editing
+                            ?
+                                <button 
+                                    className={'btn btn-warning'}
+                                    onClick={this.edit_toggle_handler}
+                                >Cancel
+                                </button>
+                            :   
+                                <button 
+                                    className={'btn btn-warning'}
+                                    onClick={this.edit_toggle_handler}
+                                >Edit
+                                </button>
+                        }
+                        {this.state.editing
+                            ?
+                                <button 
+                                    className={'btn btn-warning'}
+                                    onClick={this.update_button_handler}
+                                >Update
+                                </button>
+                            : 
+                                null
+                        }
+                        <button
+                            className={'btn btn-danger'}
+                            onClick={() => this.state.deleteHandler(this.state.logData.id)}
+                        >Delete
+                        </button>
                     </div>
                 </h5>
                 <div className={'card-body'}>
