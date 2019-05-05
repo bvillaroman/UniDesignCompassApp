@@ -7,7 +7,8 @@ class LogCard extends Component {
             logData: this.props.logData,
             deleteHandler: this.props.deleteHandler,
             editHandler: this.props.editHandler,
-            editText: null
+            editText: null,
+            editing: true
         }
     }
 
@@ -37,6 +38,10 @@ class LogCard extends Component {
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
                     <p className={'card-text'}>{this.state.logData.text}</p>
+                    {this.state.editing
+                        ? <textarea className={'form-control'} rows={3} defaultValue={this.state.logData.text} />
+                        : null
+                    }
                 </div>
             </div>
         )
