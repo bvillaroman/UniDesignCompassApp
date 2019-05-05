@@ -129,8 +129,8 @@ class Profile extends React.Component {
         <Card>
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
-              <Link to={`/Compass/${item.id}`} className="card-link">Compass Link</Link>
-              <a href="#" className="card-link">Analytics Link</a>
+              <Link to={`/Compass/`} className="card-link">Compass Link</Link>
+              <Link to={`/Analaytics/`} className="card-link">Compass Link</Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Last updated {item.date_end}</small>
