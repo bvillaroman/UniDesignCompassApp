@@ -12,6 +12,11 @@ class LogCard extends Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.logData !== this.state.logData)
+            this.setState({logData: this.props.logData})
+    }
+
     edit_button_handler = () => {
         // this.state.editeHandler(this.state.logData.id, this.state.editText)
         console.log('edit')
