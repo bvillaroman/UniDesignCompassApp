@@ -22,6 +22,9 @@ class Analytics extends Component {
         const user = this.props.user;
 
         const processes = user.processes.items;
+        processes.sort((a, b) => {
+            return a.date_start - b.date_start;
+        })
         const default_process = processes[0]
         this.setState({
             processes: processes,

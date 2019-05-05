@@ -10,6 +10,11 @@ class LogCard extends Component {
             editText: null
         }
     }
+
+    edit_button_handler = () => {
+        // this.state.editeHandler(this.state.logData.id, this.state.editText)
+        console.log('edit')
+    }
         
     render() {
         return (
@@ -20,13 +25,13 @@ class LogCard extends Component {
                         <button
                             className={'btn btn-danger'}
                             onClick={() => this.state.deleteHandler(this.state.logData.id)}
-                        >
-                            Delete
+                        >Delete
                         </button>
                         <button 
                             className={'btn btn-warning'}
-                            onClick={() => this.state.editeHandler(this.state.logData.id, this.state.editText)}
-                        >Edit</button>
+                            onClick={this.edit_button_handler}
+                        >Edit
+                        </button>
                     </span>
                 </h5>
                 <div className={'card-body'}>
