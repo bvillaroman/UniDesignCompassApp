@@ -133,6 +133,10 @@ class Analytics extends Component {
         })
     }
 
+    updateLogHandler = (log_id, timestamp, text) => {
+        console.log(log_id, timestamp, text)
+    }
+
     process_logs_render = () => {
         // combine all logs from all phases
         const data = this.state.selected_process_phase_logs
@@ -154,7 +158,7 @@ class Analytics extends Component {
             ? 
                 <div className={'accordion'} id={'accordionExample'}>
                     {data.map(log => {
-                        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler}/>
+                        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler} updateHandler={this.updateLogHandler}/>
                     })}
                 </div>
             : 
