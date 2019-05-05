@@ -47,7 +47,7 @@ export async function createLogs(PhaseId,timestamp,text){
         timestamp,
         text,
         logPhaseId:PhaseId,
-        
+
     }
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
@@ -78,6 +78,9 @@ export async function updateUser(user_info){ //When Updating Users Info you need
     return updatedUser;
 }
 export async function updateLogs(id,timestamp,text){
+    if(text == ""){
+        return null;
+    }
     const loginfo={
         id:id,
         timestamp,
@@ -101,7 +104,7 @@ export async function updatePhase(id,logs,duration,title,description){
         duration,
         title,
         description
-    }  
+    }
     const updatedPhase = await API.graphql(graphqlOperation(mutations.updatePhase,{input:phaseInfo}));
     return updatedPhase;
 }
@@ -143,11 +146,14 @@ export async function createNewCompass(user,name,phases){
             console.log(error);
         }
     )
-    
+
     for(let i =0 ;i < phases.length; i++){ await createPhase(process_info.id,phases[i].title,phases[i].description);}
-    return getProcess(process_info.id);    
+    return getProcess(process_info.id);
 }
 export async function appendNewLog(phaseId,log){
+    if(log.text == ""){
+        alert("Empty log text");
+    }else{
     createLogs(log.timestamp,log.text).then(
         (logres)=>{
             getPhase(phaseId).then(
