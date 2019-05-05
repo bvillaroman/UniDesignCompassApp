@@ -99,13 +99,33 @@ class Analytics extends Component {
             Promise.all(phase_ids.map(phase_id => {
                 return Utils.getPhase(phase_id).then(res => { 
                     const phase = res.data.getPhase;
-                    const log_ids = phase.logs.items;
-                    log_ids.sort((a, b) => {
+                    const logs = phase.logs.items;
+                    logs.sort((a, b) => {
                         return a.timestamp - b.timestamp;
                     })
                     return {
                         phase_id: phase.id,
-                        log_ids: log_ids
+                        log_ids: logs
+                    };
+                })
+                .catch(res => {
+                    // handle error when somehome a log has null for text
+                    const phase = res.data.getPhase;
+                    let logs = phase.logs.items;
+
+                    console.log('erorr')
+                    console.log(phase_id)
+                    console.log(logs)
+                    
+                    //filter out null entries
+                    logs = logs.filter(item => item)
+                    
+                    logs.sort((a, b) => {
+                        return a.timestamp - b.timestamp;
+                    })
+                    return {
+                        phase_id: phase.id,
+                        log_ids: logs
                     };
                 })
             })).then(phase_logs => {
@@ -137,8 +157,9 @@ class Analytics extends Component {
         this.setState({
             loading: true
         })
+        // don't send empty strings
+        text = text ? text : '(blank entry)';
         Utils.updateLogs(log_id, timestamp, text).then(res => {
-            console.log(res);
             this.setState({loading: false})
             this.load_log_data(this.state.selected_process_id)
         })
