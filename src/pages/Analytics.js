@@ -134,7 +134,9 @@ class Analytics extends Component {
     }
 
     updateLogHandler = (log_id, timestamp, text) => {
-        console.log(log_id, timestamp, text)
+        Utils.updateLogs(log_id, timestamp, text).then(res => {
+            console.log(res);
+        })
     }
 
     process_logs_render = () => {
