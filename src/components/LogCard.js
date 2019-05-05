@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 class LogCard extends Component {
     constructor(props) {
@@ -76,5 +77,11 @@ class LogCard extends Component {
         )
     }
 }
+
+LogCard.propTypes = {
+    logData: PropTypes.object.isRequired,
+    deleteHandler: PropTypes.func.isRequired,
+    updateHandler: PropTypes.func.isRequired,
+ };
 
 export default LogCard;
