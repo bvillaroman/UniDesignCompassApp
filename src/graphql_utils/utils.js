@@ -78,6 +78,9 @@ export async function updateUser(user_info){ //When Updating Users Info you need
     return updatedUser;
 }
 export async function updateLogs(id,timestamp,text){
+    if(text == ""){
+        return null;
+    }
     const loginfo={
         id:id,
         timestamp,
@@ -148,6 +151,9 @@ export async function createNewCompass(user,name,phases){
     return getProcess(process_info.id);    
 }
 export async function appendNewLog(phaseId,log){
+    if(log.text == ""){
+        alert("Empty log text");
+    }else{
     createLogs(log.timestamp,log.text).then(
         (logres)=>{
             getPhase(phaseId).then(
@@ -160,4 +166,5 @@ export async function appendNewLog(phaseId,log){
             )
         }
     )
+}
 }
