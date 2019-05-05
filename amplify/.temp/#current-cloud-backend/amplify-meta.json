@@ -9,6 +9,11 @@
 			"UnauthRoleName": "unidesigncompassapp-20190426110650-unauthRole",
 			"StackName": "unidesigncompassapp-20190426110650",
 			"StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-20190426110650/eb6cb970-6834-11e9-a13e-12d7c29d9238"
+		},
+		"categories": {
+			"auth": {
+				"cognito1a4df832": {}
+			}
 		}
 	},
 	"api": {
@@ -21,23 +26,18 @@
 				"GraphQLAPIEndpointOutput": "https://tlpgdp57nbdkxd56oozfo5ilve.appsync-api.us-east-1.amazonaws.com/graphql",
 				"GraphQLAPIKeyOutput": "da2-5d2jinp73vdnlhogy3pcffpvbu"
 			},
+			"lastPushTimeStamp": "2019-05-01T23:03:37.413Z",
 			"providerMetadata": {
 				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiunidesigncompassapp"
 			},
-			"lastPushTimeStamp": "2019-04-26T15:25:05.126Z",
-			"lastPushDirHash": "HZGDYLx8p76ZOKcMZX8/1Uf+FuI="
+			"lastPushDirHash": "hhlOXWqxBBoJJRYdUUSTdell/sc="
 		}
 	},
 	"auth": {
 		"cognito1a4df832": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/auth/cognito1a4df832-cloudformation-template.yml",
-				"logicalId": "authcognito1a4df832"
-			},
-			"lastPushTimeStamp": "2019-04-26T15:25:05.126Z",
 			"output": {
 				"AppClientSecret": "edep4btmjqn8f4bklnmscuggmovp6sho4g8vdhdo1gsvunkjg47",
 				"UserPoolId": "us-east-1_YTLNM43zQ",
@@ -47,7 +47,32 @@
 				"IdentityPoolName": "cognito1a4df832_identitypool_1a4df832__dev",
 				"UserPoolName": "cognito1a4df832_userpool_1a4df832"
 			},
-			"lastPushDirHash": "A+IabcNxByzInQTPWr//mK67+UA="
+			"lastPushTimeStamp": "2019-05-01T23:03:35.351Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/auth/cognito1a4df832-cloudformation-template.yml",
+				"logicalId": "authcognito1a4df832"
+			}
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/unidesigncompassapp-20190426110650-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2019-05-01T23:03:37.413Z",
+			"output": {
+				"CloudFrontSecureURL": "https://dwgjvy2m8ou08.cloudfront.net",
+				"S3BucketSecureURL": "https://niesignompasspp-20190501181012-hostingbucket-dev.s3.amazonaws.com",
+				"WebsiteURL": "http://niesignompasspp-20190501181012-hostingbucket-dev.s3-website-us-east-1.amazonaws.com",
+				"CloudFrontDistributionID": "E2N9E5JHXAP4A3",
+				"Region": "us-east-1",
+				"HostingBucketName": "niesignompasspp-20190501181012-hostingbucket-dev",
+				"CloudFrontDomainName": "dwgjvy2m8ou08.cloudfront.net"
+			},
+			"lastPushDirHash": "CvAsh6Veyiy3GClnVaAR6WHPVG0="
 		}
 	}
 }
