@@ -1,12 +1,13 @@
 import React from "react";
-import { Tab, Tabs, CardColumns, Card } from 'react-bootstrap';
+import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
-import  {connect} from "react-redux";
+import { connect } from "react-redux";
 import {authenticateUser, updateUser as updateUserRedux} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
+import ListProjects from '../components/ListProjects/listProjects';
 import {updateUser, getUserbyUsername} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 
 class Profile extends React.Component {
   constructor() {
@@ -118,26 +119,26 @@ class Profile extends React.Component {
         }).then(res => {
           alert("Check your email for Verification code");
           // navigate("/Verification",{state:{username:this.state.username,first_name:this.state.first_name,last_name:this.state.last_name,email:this.state.update.email,phone:this.state.phone}});
+          // update data saved in dynamodb
+          updateUser({
+            id: this.props.user.id,
+            email: this.state.update.email
+          });
+          // update data in cognito
+          this.props.updateUser({
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.update.email,
+            phone_number: this.state.phone_number,
+            processes: this.state.processes,
+            username: this.state.username
+          });
+          getUserbyUsername(this.state.username).then(res => {
+            console.log(res);
+            const user = res.data.getUser;
+            this.props.authenticateUser(user);
+          });
         });
-      });
-      // update data saved in dynamodb
-      updateUser({
-        id: this.props.user.id,
-        email: this.state.update.email
-      });
-      // update data in cognito
-      this.props.updateUser({
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        email: this.state.update.email,
-        phone_number: this.state.phone_number,
-        processes: this.state.processes,
-        username: this.state.username
-      });
-      getUserbyUsername(this.state.username).then(res => {
-        console.log(res);
-        const user = res.data.getUser;
-        this.props.authenticateUser(user);
       });
     }
   }
@@ -149,59 +150,39 @@ class Profile extends React.Component {
         Auth.updateUserAttributes(user, {
           phone_number: this.state.update.phone_number
         }).then(res => {
-          console.log(res);
-        });
-      });
-      // update data saved in dynamodb
-      updateUser({
-        id: this.props.user.id,
-        phone_number: this.state.update.phone_number
-      });
-      // update data in cognito
-      this.props.updateUser({
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        email: this.state.email,
-        phone_number: this.state.update.phone_number,
-        processes: this.state.processes,
-        username: this.state.username
-      });
-      getUserbyUsername(this.state.username).then(res => {
-        console.log(res);
-        const user = res.data.getUser;
-        this.props.authenticateUser(user);
+          // update data saved in dynamodb
+          console.log(res)
+          updateUser({
+            id: this.props.user.id,
+            phone_number: this.state.update.phone_number
+          });
+          // update data in cognito
+          this.props.updateUser({
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            phone_number: this.state.update.phone_number,
+            processes: this.state.processes,
+            username: this.state.username
+          });
+          getUserbyUsername(this.state.username).then(res => {
+            console.log(res);
+            const user = res.data.getUser;
+            this.props.authenticateUser(user);
+          });
+        }).catch(err => alert("phone number is not in the correct format"));
       });
     }
   }
 
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
-    var displayTitle = this.state.processes.items.map(item => {
-      return (
-        <Card>
-          <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-              <a href="#" className="card-link">Compass Link</a>
-              <a href="#" className="card-link">Analytics Link</a>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated {item.date_end}</small>
-          </Card.Footer>
-        </Card>
-      );
-    });
-
-    var displayProcesses = (this.state.processes === null) ?
-      ( <span>There are no projects.</span> ) : <CardColumns>{displayTitle}</CardColumns>;
-
     return (
       <Layout>
         <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
-            <div id="processes" className="container">
-              {displayProcesses}
-            </div>
+            <ListProjects />
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
