@@ -260,6 +260,7 @@ class Compass extends Component {
 
 
     render() {
+        var tempPhase={}
         return (
             <Layout>
                 <div className='container'>
@@ -270,7 +271,7 @@ class Compass extends Component {
                                 (phase, index) => {
                                     return (
                                         this.PhaseTimer (phase,index)
-                                        // <PhaseTimer>{phase}</PhaseTimer>
+                                        // <PhaseTimer {...phase}{...this.state.currentPhase}/>
                                     );
                                 })
                         }

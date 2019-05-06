@@ -5,7 +5,19 @@ import { Row, ButtonGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import Compass from '../pages/Compass';
-import {generateList} from '../pages/Compass'
+import { log_list } from '../dummyData';
+
+
+ const generateList=(phase)=> {
+        if (Compass.currentPhase === phase) {
+            const filtered = log_list.data.filter((entry) => {
+                return (entry.id === phase);
+            })
+            return (filtered.map((data) => {
+                return (<h4>{data.text}</h4>);
+            }));
+        }
+    }
 
 const PhaseTimer=(props)=> {
 
@@ -55,9 +67,9 @@ const PhaseTimer=(props)=> {
                                  </Button>
                              </ButtonGroup>
                              <div>
-                                 {Compass.generateList(props.key)}
+                                 {generateList(props.key)}
                              </div>
-                             {(Compass.currentPhase === props.key) ? (
+                             {(props.state.currentPhase === props.key) ? (
                                  <div>
                                      <br></br>
                                      <Row>
