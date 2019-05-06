@@ -42,7 +42,7 @@ class AccordionSection extends Component {
               padding: '10px 20px',
             }}>
             {this.props.children}
-            <input class="cancel" value="Cancel" type="button" onClick={onClick}/>
+            <input className="cancel" value="Cancel" type="button" onClick={onClick}/>
           </div>
         )}
       </div>
