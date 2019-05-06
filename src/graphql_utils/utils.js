@@ -78,6 +78,9 @@ export async function updateUser(user_info){ //When Updating Users Info you need
     return updatedUser;
 }
 export async function updateLogs(id,timestamp,text){
+    if(text == ""){
+        return null;
+    }
     const loginfo={
         id:id,
         timestamp,
@@ -148,16 +151,25 @@ export async function createNewCompass(user,name,phases){
     return getProcess(process_info.id);    
 }
 export async function appendNewLog(phaseId,log){
-    createLogs(log.timestamp,log.text).then(
-        (logres)=>{
-            getPhase(phaseId).then(
-                (res)=>{
-                    let phase_info= res.data.getPhase;
-                    console.log(res);
-                    console.log(logres);
-                    //updatePhase(phase_info.id,phase_info.logs.push(logres.data.createLog),phase_info.duration,phase_info.title,phase_info.description);
-                }
-            )
-        }
-    )
+    if(log.text == ""){
+        alert("Empty log text");
+    }else{
+        createLogs(log.timestamp,log.text).then(
+            (logres)=>{
+                getPhase(phaseId).then(
+                    (res)=>{
+                        let phase_info= res.data.getPhase;
+                        console.log(res);
+                        console.log(logres);
+                        //updatePhase(phase_info.id,phase_info.logs.push(logres.data.createLog),phase_info.duration,phase_info.title,phase_info.description);
+                    }
+                )
+            }
+        )
+    }
+}
+
+export async function listCompasses(){
+    const processes = await API.graphql(graphqlOperation(queries.listProcesss,{limit : 100}));
+    return processes;
 }
