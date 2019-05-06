@@ -11,6 +11,7 @@ import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { getProcess } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
+import CompassFeed from '../components/ListCompasses/CompassFeed'
 import PhaseTimer from '../components/phasetimer';
 
 Amplify.configure(aws_exports);
@@ -277,6 +278,7 @@ class Compass extends Component {
             <Layout>
                 <div className='container'>
                     <h1 className='text-center'>{this.state.compassName}</h1>
+                    <CompassFeed processes={this.props.user.processes} selectedProcess={""}/>
                     <div>
                         {
                             this.state.compassPhases.map(
