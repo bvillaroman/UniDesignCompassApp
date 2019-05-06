@@ -51,12 +51,12 @@ class LogCard extends Component {
                             ?
                                 <span className={'d-flex row justify-content-end'}>
                                     <button 
-                                        className={'btn btn-outline-primary col-lg-3 col-sm-6'}
+                                        className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-primary col-lg-3'}
                                         onClick={this.edit_toggle_handler}
                                     >Cancel
                                     </button>
                                     <button 
-                                        className={'btn btn-outline-success col-lg-3 col-sm-6'}
+                                        className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-success col-lg-3'}
                                         onClick={this.update_button_handler}
                                     >Update
                                     </button>
@@ -64,12 +64,12 @@ class LogCard extends Component {
                             :   
                                 <span className={'d-flex row row justify-content-end'}>
                                     <button 
-                                        className={'btn btn-outline-secondary col-lg-3 col-sm-6'}
+                                        className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-secondary col-lg-3'}
                                         onClick={this.edit_toggle_handler}
                                     >Edit
                                     </button>
                                     <button
-                                        className={'btn btn-outline-danger col-lg-3 col-sm-6'}
+                                        className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-danger col-lg-3'}
                                         onClick={() => this.state.deleteHandler(this.state.logData.id)}
                                     >Delete
                                     </button>
