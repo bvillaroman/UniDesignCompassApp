@@ -188,7 +188,7 @@ class Analytics extends Component {
             null;
         return data
             ? 
-                <div className={'accordion'} id={'accordionExample'}>
+                <div className={''}>
                     {data.map(log => {
                         return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler} updateHandler={this.updateLogHandler}/>
                     })}
@@ -243,8 +243,8 @@ class Analytics extends Component {
             <Layout>
                 <div className='container'>
                     {this.loading_render()}
-                    <div className={'page-header row'}>
-                        <h1 className={'col-10 text-center'}>Analytics</h1>
+                    <div className={'page-header'}>
+                        <h1 className={'text-center'}>Analytics</h1>
                     </div>
                         {this.process_select_render()}
                         {this.bar_chart_render()}
