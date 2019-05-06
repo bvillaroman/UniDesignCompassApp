@@ -4,9 +4,9 @@ import { authenticateUser } from "../../state/actions";
 import { CardColumns, Card } from 'react-bootstrap';
 
 const ProjectCard = (props) => {
-  var displayTitle = props.processes.items.map(item => {
+  var displayTitle = props.items.map(item => {
     return (
-      <Card>
+      <Card  key={item.id}>
         <Card.Body>
           <Card.Title>{item.name}</Card.Title>
             <a href="#" className="card-link">Compass Link</a>
@@ -18,7 +18,6 @@ const ProjectCard = (props) => {
       </Card>
     );
   });
-
   return displayTitle;
 }
 
@@ -27,7 +26,7 @@ const ListProjects = (props) => {
     <div id="processes" className="container">
       { props.processes === null ?
         ( <span>There are no projects.</span> ) :
-        ( <CardColumns><ProjectCard /></CardColumns> )
+        ( <CardColumns>{ ProjectCard(props.user.processes) }</CardColumns> )
       }
     </div>
   );
