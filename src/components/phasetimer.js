@@ -6,6 +6,7 @@ import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import Compass from '../pages/Compass';
 import { log_list } from '../dummyData';
+import { render } from 'react-testing-library';
 
 
  const generateList=(phase)=> {
@@ -20,9 +21,10 @@ import { log_list } from '../dummyData';
     }
 
 const PhaseTimer=(props)=> {
-
-    return ( <div>
-         <Timer
+    console.log(props)
+    return ( 
+    <div>
+          <Timer
              initialTime={props.time}
              startImmediately={false}
              OnStart={() => console.log('Start')}
@@ -31,45 +33,48 @@ const PhaseTimer=(props)=> {
              OnStop={() => console.log('Stop')}
              OnReset={() => console.log('Reset')}
          >
-             {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                 return (
+
+      
+              {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                  return (
                      <React.Fragment>
-                         <div className="d-flex flex-column" >
-                             <ButtonGroup size="lg">
-                                 <Button
-                                     key={props.key}
+                          <div className="d-flex flex-column" >
+                              <ButtonGroup size="lg">
+                                  <Button
+                                     key={props.keys}
+                                     onClick={() => {
+                                          Compass.compassButtonHandler(props);
+                                          (getTimerState() === "PLAYING") ? pause() : start()
+                                      }}
+                                      bsSize='large'
+                                      block
+                                      className='text-left col-10'
+                                     //  variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
+                                     variant={(props.currentPhase === props.keys) ? "success" : "outline-warning"}
+
+                                  >
+                                      {props.name}
+                                  </Button>
+
+
+                                  <Button
+                                      className='col-2'
+                                     variant={(props.currentPhase === props.keys) ? "danger" : "outline-primary"}
                                      onClick={() => {
                                          Compass.compassButtonHandler(props);
                                          (getTimerState() === "PLAYING") ? pause() : start()
                                      }}
-                                     bsSize='large'
-                                     block
-                                     className='text-left col-10'
-                                    //  variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
-                                    variant={(Compass.currentPhase === props.key) ? "success" : "outline-warning"}
-
                                  >
-                                     {props.name}
-                                 </Button>
-
-                                 <Button
-                                     className='col-2'
-                                     variant={(Compass.currentPhase === props.key) ? "danger" : "outline-primary"}
-                                     onClick={() => {
-                                         Compass.compassButtonHandler(props);
-                                         (getTimerState() === "PLAYING") ? pause() : start()
-                                     }}
-                                 >
-                                     {(Compass.currentPhase === props.key) ? console.log() : (pause())}
+                                     {(props.currentPhase === props.keys) ? console.log() : (pause())}
                                      <Timer.Hours />:
                                      <Timer.Minutes />:
                                      <Timer.Seconds />
                                  </Button>
                              </ButtonGroup>
                              <div>
-                                 {generateList(props.key)}
+                                 {/* {generateList(props.key)} */}
                              </div>
-                             {(props.state.currentPhase === props.key) ? (
+                             {(props.currentPhase === props.keys) ? (
                                  <div>
                                      <br></br>
                                      <Row>
@@ -123,10 +128,15 @@ const PhaseTimer=(props)=> {
                          </div>
                      </React.Fragment>);
              }}
+    
 
-         </Timer>
-     </div>);
+          </Timer>
+     </div>
+    
+    // <div></div>
+    );
 
- }
+
+}
 
  export default PhaseTimer

@@ -145,13 +145,9 @@ class Compass extends Component {
         }
     }
 
-    Start = (start) => () => {
-        console.log('My own function');
-        start()
-    }
 
     PhaseTimer=(props)=> {
-
+        // console.log(props)
        return ( <div>
             <Timer
                 initialTime={props.time}
@@ -271,7 +267,7 @@ class Compass extends Component {
                                 (phase, index) => {
                                     return (
                                         this.PhaseTimer (phase,index)
-                                        // <PhaseTimer {...phase}{...this.state.currentPhase}/>
+                                        // <PhaseTimer {...phase}keys={phase.key}currentphase={this.state.currentPhase}/>
                                     );
                                 })
                         }
