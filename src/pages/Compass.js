@@ -6,11 +6,11 @@ import { Row, ButtonGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
-import {log_list} from '../dummyData';
+import { log_list } from '../dummyData';
 import Timer from 'react-compound-timer';
-import {updateUser} from '../state/actions'
-import {getProcess} from "../graphql_utils/utils"
-import {connect} from 'react-redux';
+import { updateUser } from '../state/actions'
+import { getProcess } from "../graphql_utils/utils"
+import { connect } from 'react-redux';
 
 Amplify.configure(aws_exports);
 // //Comment while not using dynamic
@@ -20,14 +20,14 @@ class Compass extends Component {
         this.state = {
             compassName: "Universal Design Compass",
             compassPhases: [
-                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#',time:0 },
-                { key: '2', name: 'B. Research', icon: '', description: '', link: '#',time:0 },
-                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#',time:0 },
-                { key: '4', name: 'D. Select', icon: '', description: '', link: '#',time:0 },
-                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#',time:0 },
-                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#',time:0 },
-                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#',time:0 },
-                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#',time:0 },
+                { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
+                { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
+                { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
+                { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
+                { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
+                { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
+                { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
+                { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
             ],
             previous: true,
             next: true,
@@ -38,21 +38,21 @@ class Compass extends Component {
         }
     }
 
-// //Comment while testing in local environment 
-// class Compass extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             compassName: "",
-//             compassPhases: [],
-//             previous: true,
-//             next: true,
-//             currentPhase: '',
-//             emptyTime: "",
-//             currentTime: "",
-//             log: ""
-//         }
-//     }
+    // //Comment while testing in local environment 
+    // class Compass extends Component {
+    //     constructor(props) {
+    //         super(props)
+    //         this.state = {
+    //             compassName: "",
+    //             compassPhases: [],
+    //             previous: true,
+    //             next: true,
+    //             currentPhase: '',
+    //             emptyTime: "",
+    //             currentTime: "",
+    //             log: ""
+    //         }
+    //     }
     // componentDidMount(){
     //     const compassPhases = this.props.user.processes.items[0].id;
     //     getProcess(compassPhases)
@@ -149,6 +149,114 @@ class Compass extends Component {
         start()
     }
 
+    PhaseTimer=(props)=> {
+
+       return ( <div>
+            <Timer
+                initialTime={props.time}
+                startImmediately={false}
+                OnStart={() => console.log('Start')}
+                OnResume={() => console.log('Resume')}
+                OnPause={() => console.log('Pause')}
+                OnStop={() => console.log('Stop')}
+                OnReset={() => console.log('Reset')}
+            >
+                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
+                    return (
+                        <React.Fragment>
+                            <div className="d-flex flex-column" >
+                                <ButtonGroup size="lg">
+                                    <Button
+                                        key={props.key}
+                                        onClick={() => {
+                                            this.compassButtonHandler(props);
+                                            (getTimerState() === "PLAYING") ? pause() : start()
+                                        }}
+                                        bsSize='large'
+                                        block
+                                        className='text-left col-10'
+                                        variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
+                                    >
+                                        {props.name}
+                                    </Button>
+
+                                    <Button
+                                        className='col-2'
+                                        variant={(this.state.currentPhase === props.key) ? "danger" : "outline-primary"}
+                                        onClick={() => {
+                                            this.compassButtonHandler(props);
+                                            (getTimerState() === "PLAYING") ? pause() : start()
+                                        }}
+                                    >
+                                        {(this.state.currentPhase === props.key) ? console.log() : (pause())}
+                                        <Timer.Hours />:
+                                        <Timer.Minutes />:
+                                        <Timer.Seconds />
+                                    </Button>
+                                </ButtonGroup>
+                                <div>
+                                    {this.generateList(props.key)}
+                                </div>
+                                {(this.state.currentPhase === props.key) ? (
+                                    <div>
+                                        <br></br>
+                                        <Row>
+                                            <Col>
+                                                <Button
+                                                    className='float-left'
+                                                    variant={this.state.previous ? "primary" : "secondary"}
+                                                    onClick={() => this.previousButtonHandler()}
+                                                    active>Previous
+                                                </Button>
+                                            </Col>
+                                            <Col>
+                                                <textarea
+                                                    placeholder="Log Text"
+                                                    rows="5"
+                                                    cols="20"
+                                                    value={this.state.log}
+                                                    onChange={this.handleTextArea}
+                                                >
+                                                </textarea>
+                                            </Col>
+                                            <Col>
+                                                <Button
+                                                    className='float-right'
+                                                    variant={this.state.next ? "primary" : "secondary"}
+                                                    onClick={(e) => this.nextButtonHandler()}
+                                                    active>
+                                                    Next
+                                                                                </Button>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col></Col>
+                                            <Col>
+                                                <Button
+                                                    block
+                                                    size="sm"
+                                                    variant="warning"
+                                                    onClick={(e) => this.updateLogHandler()}
+                                                >Update Log
+                                                </Button>
+                                            </Col>
+                                            <Col></Col>
+                                        </Row>
+                                        <br></br>
+                                    </div>
+                                ) : (
+                                        <div>
+                                        </div>
+                                    )}
+                            </div>
+                        </React.Fragment>);
+                }}
+
+            </Timer>
+        </div>);
+
+    }
+
 
     render() {
         return (
@@ -160,110 +268,7 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
-                                        <div>
-                                            <Timer
-                                                // initialTime={this.state.compassPhases[index].time}
-                                                initialTime={phase.time}
-                                                startImmediately={false}
-                                                OnStart={() => console.log('Start')}
-                                                OnResume={() => console.log('Resume')}
-                                                OnPause={() => console.log('Pause')}
-                                                OnStop={() => console.log('Stop')}
-                                                OnReset={() => console.log('Reset')}
-                                            >
-                                                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                                                    return (
-                                                        <React.Fragment>
-                                                            <div className="d-flex flex-column" >
-                                                                <ButtonGroup size="lg">
-                                                                    <Button
-                                                                        key={phase.key}
-                                                                        onClick={() => 
-                                                                            {this.compassButtonHandler(phase);
-                                                                            (getTimerState() === "PLAYING") ? pause() : start()
-                                                                        }}
-                                                                        bsSize='large'
-                                                                        block
-                                                                        className='text-left col-10'
-                                                                        variant={(this.state.currentPhase === phase.key) ? "success" : "outline-warning"}
-                                                                    >
-                                                                        {phase.name}
-                                                                    </Button>
-
-                                                                    <Button
-                                                                        className='col-2'
-                                                                        variant={(this.state.currentPhase === phase.key) ? "danger" : "outline-primary"}
-                                                                        onClick={() => {
-                                                                            this.compassButtonHandler(phase);
-                                                                            (getTimerState() === "PLAYING") ? pause() : start()
-                                                                        }}
-                                                                    >
-                                                                        {(this.state.currentPhase === phase.key) ? console.log() : (pause())}
-                                                                        <Timer.Hours />:
-                                                                        <Timer.Minutes />:
-                                                                        <Timer.Seconds />
-                                                                    </Button>
-                                                                </ButtonGroup>
-                                                                <div>
-                                                                    {this.generateList(phase.key)}
-                                                                </div>
-                                                                {(this.state.currentPhase === phase.key) ? (
-                                                                    <div>
-                                                                        <br></br>
-                                                                        <Row>
-                                                                            <Col>
-                                                                                <Button
-                                                                                    className='float-left'
-                                                                                    variant={this.state.previous ? "primary" : "secondary"}
-                                                                                    onClick={() => this.previousButtonHandler()}
-                                                                                    active>Previous
-                                                                                 </Button>
-                                                                            </Col>
-                                                                            <Col>
-                                                                                <textarea
-                                                                                    placeholder="Log Text"
-                                                                                    rows="5"
-                                                                                    cols="20"
-                                                                                    value={this.state.log}
-                                                                                    onChange={this.handleTextArea}
-                                                                                >
-                                                                                </textarea>
-                                                                            </Col>
-                                                                            <Col>
-                                                                                <Button
-                                                                                    className='float-right'
-                                                                                    variant={this.state.next ? "primary" : "secondary"}
-                                                                                    onClick={(e) => this.nextButtonHandler()}
-                                                                                    active>
-                                                                                    Next
-                                                                                </Button>
-                                                                            </Col>
-                                                                        </Row>
-                                                                        <Row>
-                                                                            <Col></Col>
-                                                                            <Col>
-                                                                                <Button
-                                                                                    block
-                                                                                    size="sm"
-                                                                                    variant="warning"
-                                                                                    onClick={(e) => this.updateLogHandler()}
-                                                                                >Update Log
-                                                                                </Button>
-                                                                            </Col>
-                                                                            <Col></Col>
-                                                                        </Row>
-                                                                        <br></br>
-                                                                    </div>
-                                                                ) : (
-                                                                        <div>
-                                                                        </div>
-                                                                    )}
-                                                            </div>
-                                                        </React.Fragment>);
-                                                }}
-
-                                            </Timer>
-                                        </div>
+                                        this.PhaseTimer (phase,index)
                                     );
                                 })
                         }
@@ -275,12 +280,12 @@ class Compass extends Component {
     }
 }
 
-const mapStateToProps = ({state}) => ({
+const mapStateToProps = ({ state }) => ({
     user: state.user
 })
 const mapDispatchToProps = dispatch => ({
     updateUser: (user) => dispatch(updateUser(user))
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(Compass);
+export default connect(mapStateToProps, mapDispatchToProps)(Compass);
 
