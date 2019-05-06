@@ -182,7 +182,7 @@ class Profile extends React.Component {
         <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
-            <ListProjects />
+            {this.props.user.processes ? <ListProjects user={this.props.user}/> : null}
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
