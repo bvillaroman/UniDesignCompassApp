@@ -154,18 +154,19 @@ export async function appendNewLog(phaseId,log){
     if(log.text == ""){
         alert("Empty log text");
     }else{
-    createLogs(log.timestamp,log.text).then(
-        (logres)=>{
-            getPhase(phaseId).then(
-                (res)=>{
-                    let phase_info= res.data.getPhase;
-                    console.log(res);
-                    console.log(logres);
-                    //updatePhase(phase_info.id,phase_info.logs.push(logres.data.createLog),phase_info.duration,phase_info.title,phase_info.description);
-                }
-            )
-        }
-    )
+        createLogs(log.timestamp,log.text).then(
+            (logres)=>{
+                getPhase(phaseId).then(
+                    (res)=>{
+                        let phase_info= res.data.getPhase;
+                        console.log(res);
+                        console.log(logres);
+                        //updatePhase(phase_info.id,phase_info.logs.push(logres.data.createLog),phase_info.duration,phase_info.title,phase_info.description);
+                    }
+                )
+            }
+        )
+    }
 }
 
 export async function listCompasses(){
