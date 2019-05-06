@@ -28,6 +28,7 @@ class Login extends Component {
 
         Auth.signIn(this.state.username, this.state.password)
             .then((res) => {
+                console.log(res)
                 switch (res.challengeName) {
                     case "NEW_PASSWORD_REQUIRED":
                         navigate("/newPassword",{state:{username:this.state.username}});
@@ -39,7 +40,6 @@ class Login extends Component {
                     case "SMS_MFA":
                         break;
                     default:
-                        console.log(res);
                         getUserbyUsername(this.state.username)
                         .then((res) => {
                             const user = res.data.getUser

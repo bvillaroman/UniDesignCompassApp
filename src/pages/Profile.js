@@ -177,6 +177,7 @@ class Profile extends React.Component {
 
   render() {
     const { first_name, last_name, email, phone_number, username } = this.props.user;
+
     return (
       <Layout>
         <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>

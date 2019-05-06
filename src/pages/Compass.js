@@ -30,8 +30,8 @@ class Compass extends Component {
     }
 
     componentDidMount(){
-        const compassPhases = this.props.user.processes.items[0].id;
-        getProcess(compassPhases)
+        
+        getProcess(this.props.user.processes.items[0].id)
         .then((res) => {
             const compass = res.data.getProcess;
             const compassName = compass.name;
@@ -134,8 +134,8 @@ class Compass extends Component {
             const filtered = log_list.data.filter((entry) => {
                 return (entry.id === phase);
             })
-            return (filtered.map((data) => {
-                return (<h4>{data.text}</h4>);
+            return (filtered.map((data,index) => {
+                return (<h4 key={index}>{data.text}</h4>);
             }));
         }
     }
@@ -149,7 +149,7 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
-                                        <div className="d-flex flex-column" >
+                                        <div className="d-flex flex-column" key={index}>
                                             <ButtonGroup size="lg">
                                                 <Button
                                                     key={phase.key}
