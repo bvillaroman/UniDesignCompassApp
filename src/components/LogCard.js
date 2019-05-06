@@ -34,7 +34,7 @@ class LogCard extends Component {
     render() {
         // console.log(this.state.logData)
         return (
-            <div className={'card mb-3 bg-light'}>
+            <div className={'card mb-3 shadow-sm'}>
                 <div className={'card-header'}>
                     <div className={'row'}>
                         <div className={'col-lg-8 col-sm-12'}>
