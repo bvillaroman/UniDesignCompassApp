@@ -11,6 +11,7 @@ import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { getProcess } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
+import PhaseTimer from '../components/phasetimer';
 
 Amplify.configure(aws_exports);
 // //Comment while not using dynamic
@@ -269,6 +270,7 @@ class Compass extends Component {
                                 (phase, index) => {
                                     return (
                                         this.PhaseTimer (phase,index)
+                                        // <PhaseTimer>{phase}</PhaseTimer>
                                     );
                                 })
                         }
