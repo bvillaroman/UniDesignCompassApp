@@ -32,11 +32,12 @@ class LogCard extends Component {
     }
         
     render() {
+        console.log(this.state.logData)
         return (
             <div className={'card'}>
                 <h5 className={'row card-header d-flex justify-content-between'}>
                     <div className={'col-lg-8'}>
-                        {new Date(parseInt(this.state.logData.timestamp)).toString()}
+                        {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
                     </div>
                     <div className={'col-lg-4 d-flex justify-content-end'}>
                         {this.state.editing
