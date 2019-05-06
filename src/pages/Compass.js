@@ -276,7 +276,7 @@ class Compass extends Component {
                         }
                     </div>
                 </div>
-
+                        
             </Layout>
         );
     }

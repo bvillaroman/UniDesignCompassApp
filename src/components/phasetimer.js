@@ -4,9 +4,8 @@ import "../components/bootstrap.css"
 import { Row, ButtonGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
-import Compass from '../pages/Compass'
-
-
+import Compass from '../pages/Compass';
+import {generateList} from '../pages/Compass'
 
 const PhaseTimer=(props)=> {
 
@@ -28,43 +27,45 @@ const PhaseTimer=(props)=> {
                                  <Button
                                      key={props.key}
                                      onClick={() => {
-                                         this.compassButtonHandler(props);
+                                         Compass.compassButtonHandler(props);
                                          (getTimerState() === "PLAYING") ? pause() : start()
                                      }}
                                      bsSize='large'
                                      block
                                      className='text-left col-10'
-                                     variant={(Compass.state.currentPhase === props.key) ? "success" : "outline-warning"}
+                                    //  variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
+                                    variant={(Compass.currentPhase === props.key) ? "success" : "outline-warning"}
+
                                  >
                                      {props.name}
                                  </Button>
 
                                  <Button
                                      className='col-2'
-                                     variant={(this.state.currentPhase === props.key) ? "danger" : "outline-primary"}
+                                     variant={(Compass.currentPhase === props.key) ? "danger" : "outline-primary"}
                                      onClick={() => {
-                                         this.compassButtonHandler(props);
+                                         Compass.compassButtonHandler(props);
                                          (getTimerState() === "PLAYING") ? pause() : start()
                                      }}
                                  >
-                                     {(this.state.currentPhase === props.key) ? console.log() : (pause())}
+                                     {(Compass.currentPhase === props.key) ? console.log() : (pause())}
                                      <Timer.Hours />:
                                      <Timer.Minutes />:
                                      <Timer.Seconds />
                                  </Button>
                              </ButtonGroup>
                              <div>
-                                 {this.generateList(props.key)}
+                                 {Compass.generateList(props.key)}
                              </div>
-                             {(this.state.currentPhase === props.key) ? (
+                             {(Compass.currentPhase === props.key) ? (
                                  <div>
                                      <br></br>
                                      <Row>
                                          <Col>
                                              <Button
                                                  className='float-left'
-                                                 variant={this.state.previous ? "primary" : "secondary"}
-                                                 onClick={() => this.previousButtonHandler()}
+                                                 variant={Compass.previous ? "primary" : "secondary"}
+                                                 onClick={() => Compass.previousButtonHandler()}
                                                  active>Previous
                                              </Button>
                                          </Col>
@@ -73,16 +74,16 @@ const PhaseTimer=(props)=> {
                                                  placeholder="Log Text"
                                                  rows="5"
                                                  cols="20"
-                                                 value={this.state.log}
-                                                 onChange={this.handleTextArea}
+                                                 value={Compass.log}
+                                                 onChange={Compass.handleTextArea}
                                              >
                                              </textarea>
                                          </Col>
                                          <Col>
                                              <Button
                                                  className='float-right'
-                                                 variant={this.state.next ? "primary" : "secondary"}
-                                                 onClick={(e) => this.nextButtonHandler()}
+                                                 variant={Compass.next ? "primary" : "secondary"}
+                                                 onClick={(e) => Compass.nextButtonHandler()}
                                                  active>
                                                  Next
                                                                              </Button>
@@ -95,7 +96,7 @@ const PhaseTimer=(props)=> {
                                                  block
                                                  size="sm"
                                                  variant="warning"
-                                                 onClick={(e) => this.updateLogHandler()}
+                                                 onClick={(e) => Compass.updateLogHandler()}
                                              >Update Log
                                              </Button>
                                          </Col>
