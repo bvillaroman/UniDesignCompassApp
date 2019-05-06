@@ -34,47 +34,49 @@ class LogCard extends Component {
     render() {
         // console.log(this.state.logData)
         return (
-            <div className={'card'}>
-                <div className={'row card-header d-flex justify-content-between'}>
-                    <div className={'col-lg-8 col-sm-12'}>
-                        <span className={'row'}>
-                            <span className={'col-lg-6 col-8'}>
-                                {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
-                            </span>
-                            <span className={'col-lg-6 col-4 text-lg-center text-right'}>
-                                {this.state.logData.phase_title}
-                            </span>
-                        </span>
-                    </div>
-                    <div className={'col-lg-4 col-sm-12 justify-content-end'}>
-                        {this.state.editing
-                            ?
-                                <span className={'d-flex row justify-content-end'}>
-                                    <button 
-                                        className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-primary col-lg-3'}
-                                        onClick={this.edit_toggle_handler}
-                                    >Cancel
-                                    </button>
-                                    <button 
-                                        className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-success col-lg-3'}
-                                        onClick={this.update_button_handler}
-                                    >Update
-                                    </button>
+            <div className={'card mb-3 bg-light'}>
+                <div className={'card-header'}>
+                    <div className={'row'}>
+                        <div className={'col-lg-8 col-sm-12'}>
+                            <span className={'row'}>
+                                <span className={'col-lg-6 col-8'}>
+                                    {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
                                 </span>
-                            :   
-                                <span className={'d-flex row row justify-content-end'}>
-                                    <button 
-                                        className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-secondary col-lg-3'}
-                                        onClick={this.edit_toggle_handler}
-                                    >Edit
-                                    </button>
-                                    <button
-                                        className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-danger col-lg-3'}
-                                        onClick={() => this.state.deleteHandler(this.state.logData.id)}
-                                    >Delete
-                                    </button>
+                                <span className={'col-lg-6 col-4 text-lg-center text-right'}>
+                                    {this.state.logData.phase_title}
                                 </span>
-                        }
+                            </span>
+                        </div>
+                        <div className={'col-lg-4 col-sm-12 justify-content-end'}>
+                            {this.state.editing
+                                ?
+                                    <span className={'d-flex row justify-content-end'}>
+                                        <button 
+                                            className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-primary col-lg-3'}
+                                            onClick={this.edit_toggle_handler}
+                                        >Cancel
+                                        </button>
+                                        <button 
+                                            className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-success col-lg-3'}
+                                            onClick={this.update_button_handler}
+                                        >Update
+                                        </button>
+                                    </span>
+                                :   
+                                    <span className={'d-flex row row justify-content-end'}>
+                                        <button 
+                                            className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-secondary col-lg-3'}
+                                            onClick={this.edit_toggle_handler}
+                                        >Edit
+                                        </button>
+                                        <button
+                                            className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-danger col-lg-3'}
+                                            onClick={() => this.state.deleteHandler(this.state.logData.id)}
+                                        >Delete
+                                        </button>
+                                    </span>
+                            }
+                        </div>
                     </div>
                 </div>
                 <div className={'card-body'}>
