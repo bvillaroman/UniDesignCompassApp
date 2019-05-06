@@ -9,7 +9,7 @@ class ListProjects extends Component {
   }
 
   render(){
-    var displayTitle = this.props.user.processes.items.map(item => {
+    var displayTitle = this.props.processes.items.map(item => {
       return (
         <Card key={ item.id }>
           <Card.Body>
@@ -24,7 +24,7 @@ class ListProjects extends Component {
       );
     });
 
-    var displayProcesses = (this.props.user.processes === null) ?
+    var displayProcesses = (this.props.processes === null) ?
     ( <span>There are no projects.</span> ) : <CardColumns>{ displayTitle }</CardColumns>;
 
     return (
