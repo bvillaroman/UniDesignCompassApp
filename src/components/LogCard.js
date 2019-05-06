@@ -32,45 +32,51 @@ class LogCard extends Component {
     }
         
     render() {
-        console.log(this.state.logData)
+        // console.log(this.state.logData)
         return (
             <div className={'card'}>
-                <h5 className={'row card-header d-flex justify-content-between'}>
-                    <div className={'col-lg-8'}>
-                        {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
+                <div className={'row card-header d-flex justify-content-between'}>
+                    <div className={'col-lg-8 col-sm-12'}>
+                        <span className={'row'}>
+                            <span className={'col-lg-6 col-8'}>
+                                {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
+                            </span>
+                            <span className={'col-lg-6 col-4 text-lg-center text-right'}>
+                                {this.state.logData.phase_title}
+                            </span>
+                        </span>
                     </div>
-                    <div className={'col-lg-4 d-flex justify-content-end'}>
+                    <div className={'col-lg-4 col-sm-12 justify-content-end'}>
                         {this.state.editing
                             ?
-                                <button 
-                                    className={'btn btn-warning'}
-                                    onClick={this.edit_toggle_handler}
-                                >Cancel
-                                </button>
+                                <span className={'d-flex row justify-content-end'}>
+                                    <button 
+                                        className={'btn btn-outline-primary col-lg-3 col-sm-6'}
+                                        onClick={this.edit_toggle_handler}
+                                    >Cancel
+                                    </button>
+                                    <button 
+                                        className={'btn btn-outline-success col-lg-3 col-sm-6'}
+                                        onClick={this.update_button_handler}
+                                    >Update
+                                    </button>
+                                </span>
                             :   
-                                <button 
-                                    className={'btn btn-warning'}
-                                    onClick={this.edit_toggle_handler}
-                                >Edit
-                                </button>
+                                <span className={'d-flex row row justify-content-end'}>
+                                    <button 
+                                        className={'btn btn-outline-secondary col-lg-3 col-sm-6'}
+                                        onClick={this.edit_toggle_handler}
+                                    >Edit
+                                    </button>
+                                    <button
+                                        className={'btn btn-outline-danger col-lg-3 col-sm-6'}
+                                        onClick={() => this.state.deleteHandler(this.state.logData.id)}
+                                    >Delete
+                                    </button>
+                                </span>
                         }
-                        {this.state.editing
-                            ?
-                                <button 
-                                    className={'btn btn-warning'}
-                                    onClick={this.update_button_handler}
-                                >Update
-                                </button>
-                            : 
-                                null
-                        }
-                        <button
-                            className={'btn btn-danger'}
-                            onClick={() => this.state.deleteHandler(this.state.logData.id)}
-                        >Delete
-                        </button>
                     </div>
-                </h5>
+                </div>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
                     <p className={'card-text'}>{this.state.logData.text}</p>

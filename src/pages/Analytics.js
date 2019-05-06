@@ -105,6 +105,7 @@ class Analytics extends Component {
                     })
                     return {
                         phase_id: phase.id,
+                        title: phase.title,
                         log_ids: logs
                     };
                 })
@@ -119,11 +120,13 @@ class Analytics extends Component {
                     
                     //filter out null entries
                     logs = logs.filter(item => item)
+
                     
                     logs.sort((a, b) => {
                         return a.timestamp - b.timestamp;
                     })
                     return {
+                        title: phase.title,
                         phase_id: phase.id,
                         log_ids: logs
                     };
@@ -133,7 +136,6 @@ class Analytics extends Component {
                     loading: false,
                     selected_process_phase_logs: phase_logs
                 });
-
                 // testing creating a log
                 const phase_id = phase_logs[1].phase_id;
                 this.test_create_log(phase_id);             
@@ -170,8 +172,10 @@ class Analytics extends Component {
         const data = this.state.selected_process_phase_logs
         ?
             this.state.selected_process_phase_logs.reduce((arr, phase) => {
+                // console.log(phase)
                 const logs = phase.log_ids.map(log => {
                     return {
+                        phase_title: phase.title,
                         id: log.id,
                         timestamp: log.timestamp,
                         text: log.text
