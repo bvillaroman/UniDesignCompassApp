@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "gatsby";
 import { Tab, Tabs, CardColumns, Card } from 'react-bootstrap';
 import Layout from "../components/layout";
 import  {connect} from "react-redux";
@@ -128,8 +129,8 @@ class Profile extends React.Component {
         <Card>
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
-              <a href="#" className="card-link">Compass Link</a>
-              <a href="#" className="card-link">Analytics Link</a>
+              <Link to={`/Compass/`} className="card-link">Compass Link</Link>
+              <Link to={`/Analaytics/`} className="card-link">Compass Link</Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Last updated {item.date_end}</small>
