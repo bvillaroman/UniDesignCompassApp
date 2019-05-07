@@ -41,7 +41,7 @@ class Dashboard extends Component {
 
   viewHandler = () => {
     const {processes,currentProcess} = this.state;
-    const currentView = (processes.length > 0 && currentProcess.length > 0) ? (<Compass />)
+    const currentView = (processes.length > 0 && currentProcess.length > 0) ? (<Compass id={currentProcess}/>)
                       : (processes.length > 0 && currentProcess.length === 0) ? (<ProcessFeed processes={processes} selectProcess={this.selectProcess}/>)
                       : (<span>You have not created any Processes!</span>)
     return currentView

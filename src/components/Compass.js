@@ -9,6 +9,7 @@ import { log_list } from '../dummyData';
 import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { connect } from 'react-redux';
+import { getProcess } from "../graphql_utils/utils"
 // import PhaseTimer from './phasetimer';
 
 Amplify.configure(aws_exports);
@@ -34,77 +35,78 @@ class Compass extends Component {
         log: ""
     }
 
-    // componentDidMount(){
-    //     if (this.props.user.processes){
-    //         getProcess(this.props.user.processes.items[0].id)
-    //         .then((res) => {
-    //             const compass = res.data.getProcess;
-    //             const compassName = compass.name;
-    //             const compassPhases = res.data.getProcess.phaseids.items.map((phase,index) => {
-    //                 return { 
-    //                     key: index + 1,  
-    //                     name: phase.title, 
-    //                     icon: '', 
-    //                     description: phase.description, 
-    //                     link: '#',
-    //                     time: phase.duration
-    //                 }
-    //             })
-    //             this.setState({
-    //                 compassName,
-    //                 compassPhases,
-    //                 previous: true,
-    //                 next: true,
-    //                 currentPhase: '0',
-    //                 emptyTime: "00:00:00",
-    //                 currentTime: "00:00:00",
-    //                 log: ""
-    //             })
-    //         })
-    //         .catch( err => {
-    //             alert("there was an error with fetching your compass, we are showing you a default compass template")
-    //             this.setState({
-    //                 compassName: "Universal Design Compass",
-    //                 compassPhases: [
-    //                     { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
-    //                     { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
-    //                 ],
-    //                 previous: true,
-    //                 next: true,
-    //                 currentPhase: '0',
-    //                 emptyTime: "00:00:00",
-    //                 currentTime: "00:00:00",
-    //                 log: ""
-    //             })
-    //         })
-    //     } else {
-    //         this.setState({
-    //             compassName: "Universal Design Compass",
-    //             compassPhases: [
-    //                 { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
-    //                 { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
-    //             ],
-    //             previous: true,
-    //             next: true,
-    //             currentPhase: '0',
-    //             emptyTime: "00:00:00",
-    //             currentTime: "00:00:00",
-    //             log: ""
-    //         })
-    //     }
-    // }
+    componentDidMount(){
+        // console.log(this.props.id)
+        if (this.props.id){
+            getProcess(this.props.id)
+            .then((res) => {
+                const compass = res.data.getProcess;
+                const compassName = compass.name;
+                // const compassPhases = compass.phaseids.items.map((phase,index) => {
+                //     return { 
+                //         key: index + 1,  
+                //         name: phase.title, 
+                //         icon: '', 
+                //         description: phase.description, 
+                //         link: '#',
+                //         time: phase.duration
+                //     }
+                // })
+                this.setState({
+                    compassName,
+                    // compassPhases,
+                    // previous: true,
+                    // next: true,
+                    // currentPhase: '0',
+                    // emptyTime: "00:00:00",
+                    // currentTime: "00:00:00",
+                    // log: ""
+                })
+            })
+            .catch( err => {
+                alert("there was an error with fetching your compass, we are showing you a default compass template")
+                this.setState({
+                    compassName: "Universal Design Compass",
+                    compassPhases: [
+                        { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
+                        { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
+                        { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
+                        { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
+                        { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
+                        { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
+                        { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
+                        { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
+                    ],
+                    previous: true,
+                    next: true,
+                    currentPhase: '0',
+                    emptyTime: "00:00:00",
+                    currentTime: "00:00:00",
+                    log: ""
+                })
+            })
+        } else {
+            this.setState({
+                compassName: "Universal Design Compass",
+                compassPhases: [
+                    { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
+                    { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
+                    { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
+                    { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
+                    { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
+                    { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
+                    { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
+                    { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
+                ],
+                previous: true,
+                next: true,
+                currentPhase: '0',
+                emptyTime: "00:00:00",
+                currentTime: "00:00:00",
+                log: ""
+            })
+        }
+    }
 
     compassButtonHandler = (phase) => {//handle current phase too.
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
