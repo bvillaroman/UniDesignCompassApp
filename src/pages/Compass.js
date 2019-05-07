@@ -116,9 +116,11 @@ class Compass extends Component {
     }
 
     adjustTime = (index, time) => {
-        let compassPhase = this.state.compassPhases
-        compassPhase[index].time = time
-        this.setState({ compassPhase })
+        console.log(this.state.compassPhases[index].time)
+        let compassPhases = this.state.compassPhases
+        compassPhases[index].time = time
+        this.setState({ compassPhases })
+        console.log(this.state.compassPhases[index].time)
     }
 
     timerHandler = (phase) => {
@@ -146,7 +148,7 @@ class Compass extends Component {
     }
 
 
-    PhaseTimer=(props)=> {
+    PhaseTimer=(props,index)=> {
         // console.log(props)
        return ( <div>
             <Timer
@@ -185,7 +187,9 @@ class Compass extends Component {
                                             (getTimerState() === "PLAYING") ? pause() : start()
                                         }}
                                     >
-                                        {(this.state.currentPhase === props.key) ? console.log() : (pause())}
+                                        {/* {(this.state.currentPhase === props.key) ? console.log() : (pause())} */}
+                                        {time=getTime()}
+                                        {(this.state.currentPhase === props.key) ? console.log() : (pause(), this.adjustTime(index,time))}
                                         <Timer.Hours />:
                                         <Timer.Minutes />:
                                         <Timer.Seconds />
