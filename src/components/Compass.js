@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
-import Layout from "../components/layout"
-import "../components/bootstrap.css"
+import "./bootstrap.css"
 import { Row, ButtonGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Amplify from 'aws-amplify';
@@ -10,7 +9,7 @@ import { log_list } from '../dummyData';
 import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { connect } from 'react-redux';
-import PhaseTimer from '../components/phasetimer';
+import PhaseTimer from './phasetimer';
 
 Amplify.configure(aws_exports);
 //Comment while not using dynamic
@@ -170,7 +169,7 @@ class Compass extends Component {
     }
 
     PhaseTimer= (props) => {
-       return ( <div>
+       return ( 
             <Timer
                 initialTime={props.time}
                 startImmediately={false}
@@ -271,22 +270,19 @@ class Compass extends Component {
                         </React.Fragment>);
                 }}
             </Timer>
-        </div>);
+        );
     }
 
     render() {
-        var tempPhase={}
         return (
-            <Layout>
-                <div className='container'>
-                    <h1 className='text-center'>{this.state.compassName}</h1>
-                    <div>
-                        {
-                            this.state.compassPhases.map( (phase, index) => (this.PhaseTimer(phase,index)))
-                        }
-                    </div>
-                </div> 
-            </Layout>
+            <div className='container'>
+                <h1 className='text-center'>{this.state.compassName}</h1>
+                <div>
+                    {
+                        this.state.compassPhases.map( (phase, index) => (this.PhaseTimer(phase,index)))
+                    }
+                </div>
+            </div> 
         );
     }
 }

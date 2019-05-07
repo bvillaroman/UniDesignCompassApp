@@ -95,19 +95,6 @@ class CreatePage extends React.Component {
     status: "chooseStructure"
   }
 
-  // goToCompass = (id,count = 0) => {
-  //   const existingIDS = this.props.data.allSitePage.nodes.map(element => (element.path.replace('/Compass/',"") ));
-  //   if (existingIDS.includes(id)){
-  //     console.log("found")
-  //     setTimeout(() => {
-  //       navigate(`/Compass/${id}`)
-  //     },3000)
-  //   } else if (count > 2) console.log("failed")
-  //   else setTimeout(() => {
-  //     this.goToCompass(id, count + 1)
-  //   },5000)
-  // }
-
   handleCompassTitle = (e) => {
     this.setState({compassTitle: e.target.value})
   }
@@ -139,7 +126,7 @@ class CreatePage extends React.Component {
       getUser(this.props.user.id)
       .then((newUser) => {
         this.props.updateUser(newUser.data.getUser);
-        navigate('/Compass')
+        navigate('/Dashboard')
       })
     })
   }
