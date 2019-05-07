@@ -5,7 +5,7 @@ import FormGroup from "react-bootstrap/FormGroup";
 import ControlLabel from "react-bootstrap/FormLabel";
 import config from "../aws-exports";
 import { Auth } from "aws-amplify";
-import { createUser,getUserbyUsername } from "../graphql_utils/utils";
+import { createUser } from "../graphql_utils/utils";
 import {navigate} from "gatsby"
 Auth.configure(config);
 

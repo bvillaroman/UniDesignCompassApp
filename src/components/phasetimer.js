@@ -6,7 +6,7 @@ import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import Compass from './Compass';
 import { log_list } from '../dummyData';
-import { render } from 'react-testing-library';
+// import { render } from 'react-testing-library';
 
  const generateList=(phase)=> {
         if (Compass.currentPhase === phase) {
