@@ -1,19 +1,15 @@
 import React from "react";
 import puppeteer from "puppeteer";
 
-const APP = "localhost:8000";
-let page;
-let browser;
-const width = 1000;
-const height = 1000;
+
 
 beforeAll(async () => {
-  browser = await puppeteer.launch({
-    args:['--no-sandbox','--disable-setuid-sandbox'],
-    headless: true,
-  });
-  page = await browser.newPage();
-  await page.setViewport({ width, height });
+  // browser = await puppeteer.launch({
+  //   args:['--no-sandbox','--disable-setuid-sandbox'],
+  //   headless: false,
+  // });
+  // page = await browser.newPage();
+  // await page.setViewport({ width, height });
 });
 // const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
 //   const page = await browser.newPage();
@@ -38,34 +34,45 @@ describe("Application rundown", () => {
   // }, 16000);
 
   test("Load Profile Page", async ()=>{
+   let browser = await puppeteer.launch({
+      args:['--no-sandbox','--disable-setuid-sandbox'],
+      headless: false,
+    });
+    let page = await browser.newPage();
+    let width=1000
+    let height = 1000
+    await page.setViewport({width,height} );
     //await page.setViewport({ width, height });
     await page.goto('http://localhost:8000/');
     //const logout = await page.$eval("a[rel=logout]", res=>res.click());
   
 
     //Logs Into Rdiaz01 profile 
+    await page.waitForSelector("a[rel=login]");
     await page.$eval("a[rel=login]", res=>res.click());
+    await page.waitForSelector("input[id=username]");
     await page.click("input[id=username]");
     await page.type("input[id=username]", "rdiaz01");
     await page.click("input[id=password]");
     await page.type("input[id=password]", "Holder1423!@#$");
     await page.$eval("button[type=submit]",res=>res.click());
-    await page.waitForNavigation();
-
+    await page.waitForSelector("a[rel=profile]")
 
     //GOes into the profile page 
     await page.$eval("a[rel=profile]",res=>res.click());
-    await page.waitForNavigation();
-    await page.$eval("a[data-rb-event-key=Settings]",res=>res.click());
 
-    //Goes to the Compass Page
+    await page.waitForSelector("a[data-rb-event-key=settings]")
+    await page.$eval("a[data-rb-event-key=settings]",res=>res.click());
+
+    await page.waitForSelector("a[rel=compass]")
     await page.$eval("a[rel=compass]",res=>res.click());
-    //Goes to Analytics page
+
+    await page.$eval("a[rel=create]",res=>res.click());
+
     await page.$eval("a[rel=analytics]",res=>res.click());
-    //Goes to Aboust Us
-    //await page.$eval("a[rel=about]",res=>res.click());
+
+    await page.$eval("a[rel=logout]",res=>res.click());
     
   },160000)
-  // unfinished
-
+ 
 });
