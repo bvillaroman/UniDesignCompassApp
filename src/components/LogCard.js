@@ -14,7 +14,11 @@ class LogCard extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.logData !== this.state.logData)
+        const p = ['id', 'phase_title', 'text', 'timestamp'];
+        const log_is_updated = p.some(item => {
+            return prevProps.logData[item] !== this.state.logData[item];
+        });
+        if(log_is_updated)
             this.setState({logData: this.props.logData})
     }
 
@@ -34,16 +38,16 @@ class LogCard extends Component {
     render() {
         // console.log(this.state.logData)
         return (
-            <div className={'card mb-3 bg-light'}>
+            <div className={'card mb-3 shadow-sm'}>
                 <div className={'card-header'}>
                     <div className={'row'}>
                         <div className={'col-lg-8 col-sm-12'}>
                             <span className={'row'}>
-                                <span className={'col-lg-6 col-8'}>
-                                    {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
-                                </span>
-                                <span className={'col-lg-6 col-4 text-lg-center text-right'}>
+                                <span className={'col-lg-6 col-4'}>
                                     {this.state.logData.phase_title}
+                                </span>
+                                <span className={'col-lg-6 col-8 text-lg-center text-right'}>
+                                    {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
                                 </span>
                             </span>
                         </div>
