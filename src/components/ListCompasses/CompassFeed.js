@@ -2,19 +2,19 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
 const CompassFeed = (props) => {
-  const processes = props.processes.items.map(item => (
+  const compasses = props.compasses.map(item => (
     <React.Fragment>
       <Dropdown.Item eventKey="4">{ item.name }</Dropdown.Item>
     </React.Fragment>
   ));
   
-  const displayProcesses = (props.processes === null) ? (<span>There are no projects.</span> ) 
-                         : (<Dropdown.Menu  id="dropdown-item-button"  title="Projects">{ processes }</Dropdown.Menu>);
+  const displayCompasses = (props.compasses === null) ? (<span>There are no projects.</span> ) 
+                         : (<Dropdown.Menu id="dropdown-item-button" title="Compasses">{ compasses }</Dropdown.Menu>);
 
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic"> Compasses </Dropdown.Toggle>
-      { displayProcesses }
+      { displayCompasses }
     </Dropdown>
   )
 }

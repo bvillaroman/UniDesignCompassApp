@@ -4,6 +4,8 @@ import "../components/bootstrap.css"
 import { updateUser } from '../state/actions'
 import { getUser } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
+import Compass from "../components/Compass"
+import CompassFeed from "../components/ListCompasses/CompassFeed"
 
 class Dashboard extends Component {
   state = {
@@ -34,11 +36,20 @@ class Dashboard extends Component {
       }
   }
 
+  loadCompass = (compass) => {
+    const { name, phaseids, id } = compass;
+    
+    return (<Compass compassName={name} phases={phaseids} id={id}/>)
+
+  }
+
   render() {
+    const { currentCompass,compasses } = this.state;
     return (
       <Layout>
         <div className='container'>
-          {this.state.currentCompass.name}
+          <CompassFeed compasses={compasses} />
+          {this.loadCompass(currentCompass)}
         </div>         
       </Layout>
     );
