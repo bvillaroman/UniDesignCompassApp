@@ -170,31 +170,29 @@ class Analytics extends Component {
     process_logs_render = () => {
         // combine all logs from all phases
         const data = this.state.selected_process_phase_logs
-        ?
-            this.state.selected_process_phase_logs.reduce((arr, phase) => {
-                // console.log(phase)
-                const logs = phase.log_ids.map(log => {
-                    return {
-                        phase_title: phase.title,
-                        id: log.id,
-                        timestamp: log.timestamp,
-                        text: log.text
-                    }
-                })  
-                arr.push(...logs);
-                return arr;
-            }, [])
-        :   
-            null;
+            ?   this.state.selected_process_phase_logs.reduce((arr, phase) => {
+                    // console.log(phase)
+                    const logs = phase.log_ids.map(log => {
+                        return {
+                            phase_title: phase.title,
+                            id: log.id,
+                            timestamp: log.timestamp,
+                            text: log.text
+                        }
+                    })  
+                    arr.push(...logs);
+                    return arr;
+                }, []).sort((a, b) => {
+                    return a.timestamp - b.timestamp;
+                })
+            :   null;
         return data
-            ? 
-                <div className={''}>
+            ?   <div className={''}>
                     {data.map(log => {
                         return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler} updateHandler={this.updateLogHandler}/>
                     })}
                 </div>
-            : 
-                null;
+            :   null;
     }
 
     process_select_render = () => {
@@ -206,12 +204,10 @@ class Analytics extends Component {
                     onChange={e => this.process_select_handler(e)}
                 >
                     {this.state.processes
-                        ?
-                            this.state.processes.map(process => {
+                        ?   this.state.processes.map(process => {
                                 return <option value={process.id} key={process.id}>{process.name}</option>
                             })
-                        :
-                            <option disabled value={-1}>This user has no Processes</option>
+                        :   <option disabled value={-1}>This user has no Processes</option>
                     }
                 </select>
             </div>

@@ -14,7 +14,13 @@ class LogCard extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.logData !== this.state.logData)
+        const p = ['id', 'phase_title', 'text', 'timestamp'];
+        const log_is_updated = p.some(item => {
+            return prevProps.logData[item] !== this.state.logData[item];
+        });
+        if(log_is_updated)
+            console.log('new logdata')
+        if(log_is_updated)
             this.setState({logData: this.props.logData})
     }
 
