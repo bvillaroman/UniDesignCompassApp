@@ -9,7 +9,7 @@ import { log_list } from '../dummyData';
 import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { connect } from 'react-redux';
-import PhaseTimer from './phasetimer';
+// import PhaseTimer from './phasetimer';
 
 Amplify.configure(aws_exports);
 //Comment while not using dynamic
