@@ -19,8 +19,6 @@ class LogCard extends Component {
             return prevProps.logData[item] !== this.state.logData[item];
         });
         if(log_is_updated)
-            console.log('new logdata')
-        if(log_is_updated)
             this.setState({logData: this.props.logData})
     }
 
@@ -45,11 +43,11 @@ class LogCard extends Component {
                     <div className={'row'}>
                         <div className={'col-lg-8 col-sm-12'}>
                             <span className={'row'}>
-                                <span className={'col-lg-6 col-8'}>
-                                    {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
-                                </span>
-                                <span className={'col-lg-6 col-4 text-lg-center text-right'}>
+                                <span className={'col-lg-6 col-4'}>
                                     {this.state.logData.phase_title}
+                                </span>
+                                <span className={'col-lg-6 col-8 text-lg-center text-right'}>
+                                    {new Date(parseInt(this.state.logData.timestamp)).toLocaleString()}
                                 </span>
                             </span>
                         </div>
