@@ -1,13 +1,13 @@
 import React from 'react';
 import { CardColumns } from 'react-bootstrap';
 import ProcessCard from "./ProcessCard"
+import Compass from "../Compass"
 
 class ProcessFeed extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      processes : [],
-      currentProcess : {}
+      processes : []
     };
   }
 
@@ -15,15 +15,16 @@ class ProcessFeed extends React.Component {
     const processes      = this.props.processes ? this.createProcesses(this.props.processes)
                          : [];
                          
-    const currentProcess = this.props.currentProcess ? <ProcessCard process={this.props.currentProcess} />
-                         : (processes.length > 0) ? processes[0]
-                         : {};
+    const currentProcess = this.props.currentProcess ? this
+                         : "";
     this.setState({ processes,currentProcess })
   }
   
-  createProcesses = (processes) => (processes.map((process) => (<ProcessCard process={process} />)))
+  createProcesses = (processes) => (processes.map((process,index) => (this.createCard(process,index))))
 
-  showProcesses = () => {
+  createCard = (process,index) => <ProcessCard process={process} selectProcess={this.props.selectProcess} key={index}/>
+
+  showProcessCards = () => {
     const {processes} = this.state;
     if(processes.length < 1) {
       return (<span>You have not created any Processes!</span>)
@@ -32,10 +33,12 @@ class ProcessFeed extends React.Component {
     }
   }
 
+  showProcess = (id) => (<Compass id={id}/>) 
+
   render() {
     return (
       <React.Fragment>
-        { this.showProcesses() }
+        {this.showProcessCards()}
       </React.Fragment>
     )
   }
