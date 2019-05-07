@@ -19,8 +19,8 @@ const SubmitCompass = (props) =>  (
 const ChooseStructure = (props) =>  (
     <Form.Group controlId="formBasicEmail">
       <Form.Label>Do you want a custom Compass or a prebuilt Compass?</Form.Label>
-      <Button variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
-      <Button variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
+      <Button id="Custom" variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
+      <Button id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
     </Form.Group>
 )
 const default_phases= [
