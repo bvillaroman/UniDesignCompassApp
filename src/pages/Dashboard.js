@@ -42,6 +42,7 @@ class Dashboard extends Component {
     return (
       <Layout>
         <div className='container'>
+          <h2 className="text-center">Processes</h2>
           { 
             processes.length > 0 ? <ProcessFeed processes={processes} />
             :(<span>You have not created any Processes!</span>)
