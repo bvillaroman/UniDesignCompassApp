@@ -4,8 +4,8 @@ import "../components/bootstrap.css"
 import { updateUser } from '../state/actions'
 import { getUser } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
-import Compass from "../components/Compass"
-import CompassFeed from "../components/ListCompasses/CompassFeed"
+// import Compass from "../components/Compass"
+import ProcessFeed from "../components/ListProcesses/ProcessFeed"
 
 class Dashboard extends Component {
   state = {
@@ -22,7 +22,7 @@ class Dashboard extends Component {
               this.setState({ compasses, currentCompass })
           })
           .catch( err => {
-              alert("there was an error with fetching your compass, we are showing you a default compass template")
+              alert(`there was an error with fetching your compass, we are showing you a default compass template: ${err}`)
               this.setState({
                 compasses: [],
                 currentCompass: {},
@@ -36,20 +36,16 @@ class Dashboard extends Component {
       }
   }
 
-  loadCompass = (compass) => {
-    const { name, phaseids, id } = compass;
-    
-    return (<Compass compassName={name} phases={phaseids} id={id}/>)
-
-  }
-
   render() {
-    const { currentCompass,compasses } = this.state;
+    // const { compasses } = this.state;
+    const processes = this.state.compasses;
     return (
       <Layout>
         <div className='container'>
-          <CompassFeed compasses={compasses} />
-          {this.loadCompass(currentCompass)}
+          { 
+            processes.length > 0 ? <ProcessFeed processes={processes} />
+            :(<span>You have not created any Processes!</span>)
+          }
         </div>         
       </Layout>
     );

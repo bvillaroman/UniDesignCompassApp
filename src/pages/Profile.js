@@ -4,10 +4,9 @@ import Layout from "../components/layout";
 import { connect } from "react-redux";
 import {authenticateUser, updateUser as updateUserRedux} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
-import CompassCards from '../components/ListCompasses/CompassCards';
+import ProcessFeed from '../components/ListProcesses/ProcessFeed';
 import {updateUser, getUserbyUsername} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
-// import { navigate } from 'gatsby';
 
 class Profile extends React.Component {
   constructor() {
@@ -176,14 +175,14 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { first_name, last_name, email, phone_number, username } = this.props.user;
+    const { first_name, last_name, email, phone_number } = this.props.user;
 
     return (
       <Layout>
         <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
             <h2 className="text-center">Projects</h2>
-            {this.props.user.processes ? <CompassCards processes={this.props.user.processes}/> : null}
+            {this.props.user.processes ? <ProcessFeed processes={this.props.user.processes}/> : null}
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
