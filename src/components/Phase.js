@@ -9,27 +9,7 @@ import { ConsoleLogger } from '@aws-amplify/core';
 
 class Phase extends Component {
 
-    // getTime = (props) => () => {
-        // props.getTime()
-    // }
-
-
-    // start = (props) => () => {
-        // props.start()
-    // }
-
-    // pause = (pause) => ()=>{
-    //     pause()
-    // }
-
-    // reset = (props) => () =>{
-    //     props.reset()
-    // }
-
     handleTime = (props) =>{
-        // this.pause(props)
-        // console.log(props)
-        // props.pause()
     }
     render() {
         return (
@@ -50,9 +30,7 @@ class Phase extends Component {
                                     key={this.props.phase.key}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? this.pause(pause(),this.props.adjustTime(this.props.index,getTime())) : start()
-
-
+                                        (getTimerState() === "PLAYING") ? this.handleTime(pause(),this.props.adjustTime(this.props.index,getTime())) : start()
                                     }}
                                     block
                                     className='text-left col-10'
@@ -66,7 +44,7 @@ class Phase extends Component {
                                     variant={(this.props.currentPhase === this.props.phase.key) ? "danger" : "outline-primary"}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? (pause()
+                                        (getTimerState() === "PLAYING") ? (this.handleTime(pause(),this.props.adjustTime(this.props.index,getTime()))
                                         ) : start()
                                     }}
                                 >
