@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row, ButtonGroup } from 'react-bootstrap';
+import { Row, ButtonGroup, Table } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
@@ -119,16 +119,24 @@ class Compass extends Component {
         let compassPhases = this.state.compassPhases
         compassPhases[index].time = time
         this.setState({ compassPhases })
-        // console.log(compassPhases)//Testing
     }
 
-    generateList(phase,currentPhase) {
+    generateList(phase, currentPhase) {
         if (currentPhase === phase) {
             const filtered = log_list.data.filter((entry) => {
                 return (entry.id === phase);
             })
             return (filtered.map((data) => {
-                return (<h4>{data.text}</h4>);
+                return (
+                    <tbody>
+                    <tr>
+                    <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
+                    <td >{data.text}</td>
+                    <td>{data.timestamp}</td>
+                    </tr>
+                    </tbody>
+
+                );
             }));
         }
     }
@@ -159,7 +167,7 @@ class Compass extends Component {
                                             generateList={this.generateList}
                                             state={this.state}
                                         />
-                                        
+
                                     );
                                 })
                         }

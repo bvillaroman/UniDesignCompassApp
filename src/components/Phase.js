@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
-import { Row, ButtonGroup } from 'react-bootstrap';
+import { Row, ButtonGroup, Table, Container } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
-import Compass from '../pages/Compass';
 import "../components/bootstrap.css"
 import { ConsoleLogger } from '@aws-amplify/core';
 
 class Phase extends Component {
 
-    handleTime = (props) =>{
+    handleTime = (props) => {//Helper function
     }
     render() {
         return (
@@ -18,7 +17,7 @@ class Phase extends Component {
                 startImmediately={false}
                 onStart={() => console.log('Start')}
                 onResume={() => console.log('Resume')}
-                onPause={() => {console.log("Pause")}}
+                onPause={() => { console.log("Pause") }}
                 onStop={() => console.log('Stop')}
                 onReset={() => console.log('Reset')}
             >
@@ -30,7 +29,7 @@ class Phase extends Component {
                                     key={this.props.phase.key}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? this.handleTime(pause(),this.props.adjustTime(this.props.index,getTime())) : start()
+                                        (getTimerState() === "PLAYING") ? this.handleTime(pause(), this.props.adjustTime(this.props.index, getTime())) : start()
                                     }}
                                     block
                                     className='text-left col-10'
@@ -44,7 +43,7 @@ class Phase extends Component {
                                     variant={(this.props.currentPhase === this.props.phase.key) ? "danger" : "outline-primary"}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? (this.handleTime(pause(),this.props.adjustTime(this.props.index,getTime()))
+                                        (getTimerState() === "PLAYING") ? (this.handleTime(pause(), this.props.adjustTime(this.props.index, getTime()))
                                         ) : start()
                                     }}
                                 >
@@ -54,12 +53,12 @@ class Phase extends Component {
                                      <Timer.Seconds />
                                 </Button>
                             </ButtonGroup>
-                            <div>
-                                {this.props.generateList(this.props.phase.key, this.props.currentPhase)}
-                            </div>
+
                             {(this.props.currentPhase === this.props.phase.key) ? (
                                 <div>
-                                    <br></br>
+                                    <Table bordered>
+                                        {this.props.generateList(this.props.phase.key, this.props.currentPhase)}
+                                    </Table>
                                     <Row>
                                         <Col>
                                             <Button
