@@ -1847,6 +1847,38 @@ pre code {
   border: 0;
 }
 
+.form-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: black;
+  width: 100%;
+}
+.form-sub-title {
+  font-size: 1.5rem;
+  text-align: left;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  color: black;
+  margin-left: 0.25rem;
+  width: 100%;
+}
+
+.form-container {
+  margin: 3rem auto;
+  max-width: 600px;
+  height: 80%;
+  box-sizing: border-box;
+  padding: 1rem 12px;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  background-color: white;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,0.20);
+  color: white;
+  text-align: center;
+}
+
 .form-control {
   display: block;
   width: 100%;
@@ -3145,6 +3177,14 @@ tbody.collapse.show {
   pointer-events: none;
 }
 
+.input-area {
+  width: 80%;
+  margin: 0 auto;
+}
+.input-button {
+  margin: 2rem 1rem;
+}
+
 .input-group {
   position: relative;
   display: -ms-flexbox;
@@ -3162,6 +3202,7 @@ tbody.collapse.show {
   width: 1%;
   margin-bottom: 0;
 }
+
 
 .input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
   z-index: 3;
