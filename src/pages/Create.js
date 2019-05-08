@@ -3,24 +3,28 @@ import { navigate } from 'gatsby';
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
-import CompassForm from '../components/compassForm'
 import {createNewCompass,getUser} from '../graphql_utils/utils';
 import { connect } from 'react-redux';
 import { updateUser } from '../state/actions'
 
 const SubmitCompass = (props) =>  (
   <Form.Group controlId="formBasicEmail">
-    <Form.Label>Title of your Design Compass</Form.Label>
-    <Form.Control name="title" type="text" placeholder="Title" onChange={props.onChange} value={props.title} />
-    <Button variant="primary" onClick={props.createCompass}> Submit Compass </Button>
+    <Form.Label className="form-title">Title of your Design Compass</Form.Label>
+    <div className="input-area">
+      <Form.Control name="title" type="text" placeholder="Title" onChange={props.onChange} value={props.title} />
+      <Button className="input-button" variant="primary" onClick={props.createCompass}> Submit Compass </Button>
+    </div>
   </Form.Group>
 )
 
 const ChooseStructure = (props) =>  (
     <Form.Group controlId="formBasicEmail">
-      <Form.Label>Do you want a custom Compass or a prebuilt Compass?</Form.Label>
-      <Button id="Custom" variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
-      <Button id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
+      <Form.Label className="form-title">Choose a Compass Style:</Form.Label>
+      <div className="input-area">
+        <Button className="input-button" id="Custom"  variant="primary" className="" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
+        <Button className="input-button" id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
+      </div>
+      
     </Form.Group>
 )
 const default_phases= [
@@ -35,23 +39,26 @@ const default_phases= [
    {title:"Laugh",
    description:"Phase for Laugh"}
 ]
+
 const PhaseNumber = (props) =>  (
   <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Label>How many phases are in your design process</Form.Label>
-    <Form.Control as="select" onChange={props.handlePhaseAmount}>
-      <option value="0">-</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12">12</option>
-    </Form.Control>
+    <Form.Label className="form-title">How many phases are in your design process</Form.Label>
+    <div className="input-area">
+      <Form.Control as="select" onChange={props.handlePhaseAmount}>
+        <option value="0">-</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </Form.Control>
+    </div>
   </Form.Group>
 )
 
@@ -64,22 +71,20 @@ class DescribePhase extends React.Component{
   onChange = (e) => {
     this.setState({
       [e.target.name] : e.target.value 
+    },() => {
+      this.props.createPhase(this.state.title, this.state.description,this.props.id + 1)
     })
-  }
 
-  handleSubmit = (e) => {
-    this.props.createPhase(this.state.title, this.state.description,this.props.id + 1)
   }
 
   render(){
     const {title,description} = this.state;
     return (
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label>Title of Phase</Form.Label>
+        <Form.Label className="form-sub-title">Phase {this.props.id + 1}</Form.Label>
         <Form.Control name="title" type="text" placeholder="Title" onChange={this.onChange} value={title} />
         <Form.Label>Description of your Phase</Form.Label>
         <Form.Control name="description" as="textarea" placeholder="Description" onChange={this.onChange} value={description} rows="3" />
-        <Button variant="primary" type="submit" onClick={this.handleSubmit}>Create</Button>
       </Form.Group>
     )
   }
@@ -123,11 +128,15 @@ class CreatePage extends React.Component {
     createNewCompass(this.props.user,compassTitle,phases)
     .then((res) => {
       // const result = res.data.getProcess
-      getUser(this.props.user.id)
-      .then((newUser) => {
-        this.props.updateUser(newUser.data.getUser);
-        navigate('/Dashboard')
-      })
+      alert("Succes")
+      // getUser(this.props.user.id)
+      // .then((newUser) => {
+      //   this.props.updateUser(newUser.data.getUser);
+      //   navigate('/Dashboard')
+      // })
+    })
+    .catch((err) => {
+      alert(err)
     })
   }
 
@@ -148,7 +157,7 @@ class CreatePage extends React.Component {
         )
         return (
           <div>
-            <Form.Label>Describe each phase in your design process</Form.Label>
+            <Form.Label className="form-title">Describe each phase in your design process</Form.Label>
               {Phases}
             <Button onClick={this.submitPhases}>Submit Phases</Button>
           </div>
@@ -167,9 +176,10 @@ class CreatePage extends React.Component {
   render(){
     return (
       <Layout>
-        <CompassForm>
-          {this.handleForms()}
-        </CompassForm>
+          <h2> Create Your Compass </h2>
+          <div className="form-container">
+            {this.handleForms()}
+          </div>
       </Layout>
     )
   }
