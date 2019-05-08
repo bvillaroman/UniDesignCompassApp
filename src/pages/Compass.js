@@ -124,21 +124,8 @@ class Compass extends Component {
         // this.state.compassPhases[index].time=time
     }
 
-    timerHandler = (phase) => {
-        if (phase.key === this.state.currentPhase) {
-            var x = new Date()
-            var minutes = x.getMinutes()
-            var seconds = x.getSeconds();
-            var milliseconds = x.getMilliseconds();
-            var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-            this.setState({ currentTime: temp })
-        }
-        else {
-            console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        }
-    }
-    generateList(phase) {
-        if (this.state.currentPhase === phase) {
+    generateList(phase,currentPhase) {
+        if (currentPhase === phase) {
             const filtered = log_list.data.filter((entry) => {
                 return (entry.id === phase);
             })
@@ -149,15 +136,15 @@ class Compass extends Component {
     }
 
 
-    PhaseTimer=(props)=> {
+    PhaseTimer = (props) => {
         // console.log(props)
-       return ( <div>
+        return (<div>
             <Timer
                 initialTime={props.time}
                 startImmediately={false}
                 OnStart={() => console.log('Start')}
                 OnResume={() => console.log('Resume')}
-                OnPause={(index,time) => this.adjustTime(index,time)}
+                OnPause={(index, time) => this.adjustTime(index, time)}
                 OnStop={() => console.log('Stop')}
                 OnReset={() => console.log('Reset')}
             >
@@ -190,13 +177,13 @@ class Compass extends Component {
                                     >
                                         {/* {(this.state.currentPhase === props.key) ? console.log() : (pause())} */}
                                         {/* {time=getTime()} */}
-                                        {(this.state.currentPhase === props.key) ? console.log() : 
+                                        {(this.state.currentPhase === props.key) ? console.log() :
                                             (
-                                                pause(props.index,Number(getTime()))
+                                                pause(props.index, Number(getTime()))
                                                 // ,this.adjustTime(index,parseInt(Number(getTime())))
                                             )
-                                            
-                                            }
+
+                                        }
                                         <Timer.Hours />:
                                         <Timer.Minutes />:
                                         <Timer.Seconds />
@@ -267,7 +254,6 @@ class Compass extends Component {
 
 
     render() {
-        var tempPhase={}
         return (
             <Layout>
                 <div className='container'>
@@ -278,25 +264,28 @@ class Compass extends Component {
                                 (phase, index) => {
                                     return (
                                         //  this.PhaseTimer (phase,index)
-                                        <Phase 
-                                            currentPhase={this.state.currentPhase} 
-                                            phase={phase} 
-                                            compassButtonHandler={this.compassButtonHandler} 
-                                            index={index} 
+                                        <Phase
+                                            currentPhase={this.state.currentPhase}
+                                            phase={phase}
+                                            compassButtonHandler={this.compassButtonHandler}
+                                            index={index}
                                             updateLogHandler={this.updateLogHandler}
-                                            previous={this.previous}
-                                            next={this.next}
+                                            previous={this.state.previous}
+                                            next={this.state.next}
                                             nextButtonHandler={this.nextButtonHandler}
                                             previousButtonHandler={this.previousButtonHandler}
                                             handleTextArea={this.handleTextArea}
-                                            log={this.log}
-                                            />
+                                            log={this.state.log}
+                                            adjustTime={this.adjustTime}
+                                            generateList={this.generateList}
+                                            state={this.state}
+                                        />
                                     );
                                 })
                         }
                     </div>
                 </div>
-                        
+
             </Layout>
         );
     }
