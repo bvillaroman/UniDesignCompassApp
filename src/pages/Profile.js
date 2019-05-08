@@ -31,14 +31,17 @@ class Profile extends React.Component {
       },
       oldPass: "",
       newPass: "",
-      repPass: ""
+      repPass: "",
+      verification_code: ""
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitName = this.submitName.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
+    this.handlePasswordCode = this.handlePasswordCode.bind(this);
     this.submitPassword = this.submitPassword.bind(this);
     this.submitEmail = this.submitEmail.bind(this);
     this.submitPhoneNumber = this.submitPhoneNumber.bind(this);
+    this.showVerification = this.showVerification.bind(this);
+    this.submitVerify = this.submitVerify.bind(this);
   }
 
   componentDidMount() {
@@ -62,7 +65,7 @@ class Profile extends React.Component {
     this.setState({ update });
   }
 
-  handlePassword = (event) => {
+  handlePasswordCode = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -110,6 +113,41 @@ class Profile extends React.Component {
     }
   }
 
+  showVerification = () => {
+    var x = document.getElementById("verify");
+    x.style.display = "block";
+  }
+
+  submitVerify = () => {
+    // To verify attribute with the code
+    Auth.verifyCurrentUserAttributeSubmit("email", this.state.verification_code)
+    .then(() => {
+         console.log('email verified');
+         //update data saved in dynamodb
+         updateUser({
+           id: this.props.user.id,
+           email: this.state.update.email
+         });
+         // update data in cognito
+         this.props.updateUser({
+           first_name: this.state.first_name,
+           last_name: this.state.last_name,
+           email: this.state.update.email,
+           phone_number: this.state.phone_number,
+           processes: this.state.processes,
+           username: this.state.username
+         });
+         // update data in redux
+         getUserbyUsername(this.state.username).then(res => {
+           console.log(res);
+           const user = res.data.getUser;
+           this.props.authenticateUser(user);
+         });
+    }).catch(e => {
+         console.log('failed with error', e);
+    });
+  }
+
   submitEmail = () => {
     if (this.state.update.email !== this.state.email) {
       //update amplify
@@ -117,27 +155,8 @@ class Profile extends React.Component {
         Auth.updateUserAttributes(user, {
           email: this.state.update.email
         }).then(res => {
-          alert("Check your email for Verification code");
-          // navigate("/Verification",{state:{username:this.state.username,first_name:this.state.first_name,last_name:this.state.last_name,email:this.state.update.email,phone:this.state.phone}});
-          // update data saved in dynamodb
-          updateUser({
-            id: this.props.user.id,
-            email: this.state.update.email
-          });
-          // update data in cognito
-          this.props.updateUser({
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
-            email: this.state.update.email,
-            phone_number: this.state.phone_number,
-            processes: this.state.processes,
-            username: this.state.username
-          });
-          getUserbyUsername(this.state.username).then(res => {
-            console.log(res);
-            const user = res.data.getUser;
-            this.props.authenticateUser(user);
-          });
+          // alert("Check your email for Verification code");
+          this.showVerification();
         });
       });
     }
@@ -203,15 +222,22 @@ class Profile extends React.Component {
                     <input className="col input-text" type="email" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
                   <input className="submit" value="Submit Changes" type="button" onClick={this.submitEmail}/>
+                  <div id="verify" style={{display: "none"}}>
+                    <form>
+                      Enter Code:
+                      <input className="col input-text" type="text" name="verification_code" onChange={this.handlePasswordCode}></input>
+                    </form>
+                    <input className="submit" value="Submit" type="button" onClick={this.submitVerify}></input>
+                  </div>
                 </div>
                 <div label="Password" change="**********">
                   <form>
                     Current Password:
-                    <input className="col input-text" type="password" name="oldPass" defaultValue="" onChange={this.handlePassword}/>
+                    <input className="col input-text" type="password" name="oldPass" defaultValue="" onChange={this.handlePasswordCode}/>
                     New Password:
-                    <input className="col input-text" type="password" name="newPass" defaultValue="" onChange={this.handlePassword}/>
+                    <input className="col input-text" type="password" name="newPass" defaultValue="" onChange={this.handlePasswordCode}/>
                     Confirm Password:
-                    <input className="col input-text" type="password" name="repPass" defaultValue="" onChange={this.handlePassword}/>
+                    <input className="col input-text" type="password" name="repPass" defaultValue="" onChange={this.handlePasswordCode}/>
                   </form>
                   <input className="submit" value="Submit Changes" type="button" onClick={this.submitPassword}/>
                 </div>
