@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Button from "react-bootstrap/Button";
 import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row, ButtonGroup } from 'react-bootstrap';
+import { Row, ButtonGroup, Table } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
@@ -11,7 +11,7 @@ import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { getProcess } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
-import PhaseTimer from '../components/phasetimer';
+import Phase from '../components/Phase';
 
 Amplify.configure(aws_exports);
 // //Comment while not using dynamic
@@ -95,153 +95,37 @@ class Compass extends Component {
         var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
         const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
         log_list.data.push(log); // Temporary
-        console.log(log_list.data); //Temporary
+        // console.log(log_list.data); //Temporary
         this.forceUpdate();
         //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
     adjustTime = (index, time) => {
-        let compassPhase = this.state.compassPhases
-        compassPhase[index].time = time
-        this.setState({ compassPhase })
+        let compassPhases = this.state.compassPhases
+        compassPhases[index].time = time
+        this.setState({ compassPhases })
     }
 
-    timerHandler = (phase) => {
-        if (phase.key === this.state.currentPhase) {
-            var x = new Date()
-            var minutes = x.getMinutes()
-            var seconds = x.getSeconds();
-            var milliseconds = x.getMilliseconds();
-            var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-            this.setState({ currentTime: temp })
-        }
-        else {
-            console.log("Current Phase: " + this.state.currentPhase + " Not Phase (Clicked) " + phase.key)
-        }
-    }
-    generateList(phase) {
-        if (this.state.currentPhase === phase) {
+    generateList(phase, currentPhase) {
+        if (currentPhase === phase) {
             const filtered = log_list.data.filter((entry) => {
                 return (entry.id === phase);
             })
-            return (filtered.map((data,index) => {
-                return (<h4 key={index}>{data.text}</h4>);
+            return (filtered.map((data) => {
+                return (
+                    <tbody>
+                    <tr>
+                    <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
+                    <td >{data.text}</td>
+                    <td>{data.timestamp}</td>
+                    </tr>
+                    </tbody>
+                );
             }));
         }
     }
 
-
-    PhaseTimer=(props)=> {
-        // console.log(props)
-       return ( <div>
-            <Timer
-                initialTime={props.time}
-                startImmediately={false}
-                OnStart={() => console.log('Start')}
-                OnResume={() => console.log('Resume')}
-                OnPause={() => console.log('Pause')}
-                OnStop={() => console.log('Stop')}
-                OnReset={() => console.log('Reset')}
-            >
-                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
-                    return (
-                        <React.Fragment>
-                            <div className="d-flex flex-column" >
-                                <ButtonGroup size="lg">
-                                    <Button
-                                        key={props.key}
-                                        onClick={() => {
-                                            this.compassButtonHandler(props);
-                                            (getTimerState() === "PLAYING") ? pause() : start()
-                                        }}
-                                        bsSize='large'
-                                        block
-                                        className='text-left col-10'
-                                        variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
-                                    >
-                                        {props.name}
-                                    </Button>
-
-                                    <Button
-                                        className='col-2'
-                                        variant={(this.state.currentPhase === props.key) ? "danger" : "outline-primary"}
-                                        onClick={() => {
-                                            this.compassButtonHandler(props);
-                                            (getTimerState() === "PLAYING") ? pause() : start()
-                                        }}
-                                    >
-                                        {(this.state.currentPhase === props.key) ? console.log() : (pause())}
-                                        <Timer.Hours />:
-                                        <Timer.Minutes />:
-                                        <Timer.Seconds />
-                                    </Button>
-                                </ButtonGroup>
-                                <div>
-                                    {this.generateList(props.key)}
-                                </div>
-                                {(this.state.currentPhase === props.key) ? (
-                                    <div>
-                                        <br></br>
-                                        <Row>
-                                            <Col>
-                                                <Button
-                                                    className='float-left'
-                                                    variant={this.state.previous ? "primary" : "secondary"}
-                                                    onClick={() => this.previousButtonHandler()}
-                                                    active>Previous
-                                                </Button>
-                                            </Col>
-                                            <Col>
-                                                <textarea
-                                                    placeholder="Log Text"
-                                                    rows="5"
-                                                    cols="20"
-                                                    value={this.state.log}
-                                                    onChange={this.handleTextArea}
-                                                >
-                                                </textarea>
-                                            </Col>
-                                            <Col>
-                                                <Button
-                                                    className='float-right'
-                                                    variant={this.state.next ? "primary" : "secondary"}
-                                                    onClick={(e) => this.nextButtonHandler()}
-                                                    active>
-                                                    Next
-                                                                                </Button>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col></Col>
-                                            <Col>
-                                                <Button
-                                                    block
-                                                    size="sm"
-                                                    variant="warning"
-                                                    onClick={(e) => this.updateLogHandler()}
-                                                >Update Log
-                                                </Button>
-                                            </Col>
-                                            <Col></Col>
-                                        </Row>
-                                        <br></br>
-                                    </div>
-                                ) : (
-                                        <div>
-                                        </div>
-                                    )}
-                            </div>
-                        </React.Fragment>);
-                }}
-
-            </Timer>
-        </div>);
-
-    }
-
-
     render() {
-        var tempPhase={}
         return (
             <Layout>
                 <div className='container'>
@@ -251,14 +135,29 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
-                                        this.PhaseTimer (phase,index)
-                                        // <PhaseTimer {...phase}keys={phase.key}currentphase={this.state.currentPhase}/>
+                                        <Phase
+                                            currentPhase={this.state.currentPhase}
+                                            phase={phase}
+                                            compassButtonHandler={this.compassButtonHandler}
+                                            index={index}
+                                            updateLogHandler={this.updateLogHandler}
+                                            previous={this.state.previous}
+                                            next={this.state.next}
+                                            nextButtonHandler={this.nextButtonHandler}
+                                            previousButtonHandler={this.previousButtonHandler}
+                                            handleTextArea={this.handleTextArea}
+                                            log={this.state.log}
+                                            adjustTime={this.adjustTime}
+                                            generateList={this.generateList}
+                                            state={this.state}
+                                        />
+
                                     );
                                 })
                         }
                     </div>
                 </div>
-                        
+
             </Layout>
         );
     }

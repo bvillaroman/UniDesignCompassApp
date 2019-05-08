@@ -1,16 +1,16 @@
 export const log_list ={
 data:[
     {id:'1',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"},
+    text:"1"},
     {id:'1',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"},
+    text:"2"},
     {id:'2',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"},
+    text:"#"},
     {id:'4',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"},
+    text:"2332"},
     {id:'1',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"},
+    text:"3232"},
     {id:'2',
-    text:"Hello MY lady Hello My lovely Hello MY Rag TIme Gal"}
+    text:"233"}
     ]
 }
