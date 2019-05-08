@@ -3585,13 +3585,25 @@ tbody.collapse.show {
       flex-grow: 1;
   text-align: center;
 }
+.process-tabs {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.process-tabs .tab {
+  margin: 0 5%;
+}
 
 .tab-content > .tab-pane {
   display: none;
+  width: 100%;
+  height: 100%;
 }
 
 .tab-content > .active {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .navbar {

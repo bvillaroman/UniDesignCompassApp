@@ -5,7 +5,6 @@ import { updateUser } from '../state/actions'
 import { getUser } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
 import Compass from "../components/Compass"
-// import Process from "../components/Process"
 import ProcessFeed from "../components/ListProcesses/ProcessFeed"
 
 class Dashboard extends Component {

@@ -197,11 +197,8 @@ class Graph extends Component {
         return (
             <div className='container'>
                 {this.loading_render()}
-                <div className={'page-header'}>
-                    <h1 className={'text-center'}>Analytics</h1>
-                </div>
-                    {this.bar_chart_render()}
-                    {this.process_logs_render()}
+                {this.bar_chart_render()}
+                {this.process_logs_render()}
             </div>
         );
     }
