@@ -4,26 +4,27 @@ import { log_list } from '../../dummyData';
 import { updateUser } from '../../state/actions'
 import { connect } from 'react-redux';
 import Phase from './Phase';
+import * as Utils from '../../graphql_utils/utils'
 
 class Compass extends Component {
     state = {
-        compassName: "Universal Design Compass",
-        compassPhases: [
-            { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
-            { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
-            { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
-            { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
-            { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
-            { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
-            { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
-            { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
-        ],
-        previous: true,
-        next: true,
-        currentPhase: '0',
-        emptyTime: "00:00:00",
-        currentTime: "00:00:00",
-        log: ""
+    //     compassName: "Universal Design Compass",
+    //     compassPhases: [
+    //         { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
+    //         { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
+    //     ],
+    //     previous: true,
+    //     next: true,
+    //     currentPhase: '0',
+    //     emptyTime: "00:00:00",
+    //     currentTime: "00:00:00",
+    //     log: ""
     }
 
     componentDidMount(){
@@ -76,25 +77,62 @@ class Compass extends Component {
         //         })
         //     })
         // } else {
-            this.setState({
-                compassName: "Universal Design Compass",
-                compassPhases: [
-                    { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
-                    { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
-                    { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
-                    { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
-                    { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
-                    { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
-                    { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
-                    { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
-                ],
-                previous: true,
-                next: true,
-                currentPhase: '0',
-                emptyTime: "00:00:00",
-                currentTime: "00:00:00",
-                log: ""
+
+            // getting the phase_id from the url path
+            const path = window.location.pathname;
+            const process_id = path.split('/').find(sub => {
+                return sub != '' && sub != 'Process'
             })
+            console.log(process_id)
+            Utils.getProcess(process_id).then(res => {
+                console.log(res)
+                const process = res.data.getProcess;
+                const process_name = process.name
+                const phases = process.phaseids.items
+                console.log(process_name)
+                console.log(process)
+                console.log(phases)
+                const compassPhases = phases.map(phase => {
+                    return {
+                        key: phase.id,
+                        name: phase.title,
+                        icon: '',
+                        description: phase.description,
+                        link: '#',
+                        time: phase.durtion
+                    }
+                })
+                this.setState({
+                    compassName: process_name,
+                    compassPhases: compassPhases,
+                    previous: true,
+                    next: true,
+                    currentPhase: '0',
+                    emptyTime: "00:00:00",
+                    currentTime: "00:00:00",
+                    log: ""
+                })
+
+            })
+            // this.setState({
+            //     compassName: "Universal Design Compass",
+            //     compassPhases: [
+            //         { key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '2', name: 'B. Research', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '3', name: 'C. Brainstorm', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '4', name: 'D. Select', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '5', name: 'E. Construct', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '6', name: 'F. Evaluate', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '7', name: 'G. Communicate', icon: '', description: '', link: '#', time: 0 },
+            //         { key: '8', name: 'H. Redisign', icon: '', description: '', link: '#', time: 0 },
+            //     ],
+            //     previous: true,
+            //     next: true,
+            //     currentPhase: '0',
+            //     emptyTime: "00:00:00",
+            //     currentTime: "00:00:00",
+            //     log: ""
+            // })
         // }
     }
 
@@ -154,6 +192,8 @@ class Compass extends Component {
 
     generatePhase = (phase,index) => (
         <Phase
+            key={phase.key}
+
             currentPhase={this.state.currentPhase}
             phase={phase}
             compassButtonHandler={this.compassButtonHandler}
@@ -176,7 +216,11 @@ class Compass extends Component {
             <div className='container'>
                 <h1 className='text-center'>{compassName}</h1>
                 <div>
-                    {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))}
+                    {compassPhases
+                        ? compassPhases.map((phase, index) => (this.generatePhase(phase,index)))
+                        : <div>This Process has no Phases</div>
+                    }
+                    {/* {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))} */}
                 </div>
             </div>
         );
