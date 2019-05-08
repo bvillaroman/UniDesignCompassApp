@@ -117,12 +117,12 @@ class Compass extends Component {
 
     adjustTime = (index, time) => {
         // console.log(this.props.state.compassPhases)
-        console.log(time)
-        console.log(index)
-        // let compassPhases = this.state.compassPhases
-        // compassPhases[index].time = time
-        // this.setState({ compassPhases })
-        // console.log(this.state.compassPhases[index].time)
+        // console.log(time)
+        // console.log(index)
+        let compassPhases = this.state.compassPhases
+        compassPhases[index].time = time
+        this.setState({ compassPhases })
+        console.log(this.state.compassPhases[index])
         // this.state.compassPhases[index].time=time
     }
 

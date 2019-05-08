@@ -5,24 +5,44 @@ import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import Compass from '../pages/Compass';
 import "../components/bootstrap.css"
+import { ConsoleLogger } from '@aws-amplify/core';
 
-class Phase extends Component{
-time=0
-render() {
-    return (
-        <Timer
-            initialTime={this.props.phase.time}
-            startImmediately={false}
-            onStart={() => console.log('Start')}
-            onResume={() => console.log('Resume')}
-            onPause={(time) => {console.log("pause")
-                            this.props.adjustTime(this.props.index,time)
-                        }}
-            onStop={() => console.log('Stop')}
-            onReset={() => console.log('Reset')}
-        >
-        {({ start, resume, pause, stop, reset, getTimerState, getTime }) => (
-                // return (
+class Phase extends Component {
+
+    // getTime = (props) => () => {
+        // props.getTime()
+    // }
+
+
+    // start = (props) => () => {
+        // props.start()
+    // }
+
+    // pause = (pause) => ()=>{
+    //     pause()
+    // }
+
+    // reset = (props) => () =>{
+    //     props.reset()
+    // }
+
+    handleTime = (props) =>{
+        // this.pause(props)
+        // console.log(props)
+        // props.pause()
+    }
+    render() {
+        return (
+            <Timer
+                initialTime={this.props.phase.time}
+                startImmediately={false}
+                onStart={() => console.log('Start')}
+                onResume={() => console.log('Resume')}
+                onPause={() => {console.log("Pause")}}
+                onStop={() => console.log('Stop')}
+                onReset={() => console.log('Reset')}
+            >
+                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => (
                     <React.Fragment>
                         <div className="d-flex flex-column" >
                             <ButtonGroup size="lg">
@@ -30,7 +50,9 @@ render() {
                                     key={this.props.phase.key}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? pause(this.props.index,Number(getTime())) : start()
+                                        (getTimerState() === "PLAYING") ? this.pause(pause(),this.props.adjustTime(this.props.index,getTime())) : start()
+
+
                                     }}
                                     block
                                     className='text-left col-10'
@@ -43,7 +65,6 @@ render() {
                                     className='col-2'
                                     variant={(this.props.currentPhase === this.props.phase.key) ? "danger" : "outline-primary"}
                                     onClick={() => {
-                                        console.log(this.props.index)
                                         this.props.compassButtonHandler(this.props.phase);
                                         (getTimerState() === "PLAYING") ? (pause()
                                         ) : start()
@@ -111,11 +132,11 @@ render() {
                                 )}
                         </div>
                     </React.Fragment>
-        )}
-        </Timer>
-    );
-        }
-        
+                )}
+            </Timer>
+        );
     }
+
+}
 
 export default Phase;
