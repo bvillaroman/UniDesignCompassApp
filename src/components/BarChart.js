@@ -1,24 +1,20 @@
 import React, { Component } from "react";
-import Vega from './vega/Vega';
+import Vega from 'react-vega';
 import sizeMe from 'react-sizeme'
 import { Handler } from 'vega-tooltip';
 
 class BarChart extends Component {      
     render() {
-        const spec = this.props.spec
-          ? this.props.spec
-          : this.defaultSpec;
-        spec.width = this.props.width
-          ? this.props.width
-          : this.defaultSpec.width;
-        spec.height = this.props.height
-          ? this. props.height
-          : this.defaultSize.height
-        return (
-            <div>
-              <Vega spec={spec} data={this.props.data} />
-            </div>
-        );
+      const spec = this.props.spec
+        ? this.props.spec
+        : this.defaultSpec;
+      spec.width = this.props.width
+        ? this.props.width
+        : this.defaultSpec.width;
+      spec.height = this.props.height
+        ? this. props.height
+        : this.defaultSize.height
+      return <Vega spec={spec} width={spec.width} height={spec.height} data={this.props.data} />
     }
 
     defaultSize = {
