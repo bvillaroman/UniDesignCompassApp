@@ -7,7 +7,7 @@ import Compass from '../pages/Compass';
 import "../components/bootstrap.css"
 
 class Phase extends Component{
-
+time=0
 render() {
     return (
         <Timer
@@ -15,8 +15,8 @@ render() {
             startImmediately={false}
             onStart={() => console.log('Start')}
             onResume={() => console.log('Resume')}
-            onPause={(index,time) => {console.log("pause")
-                            this.props.adjustTime(index,time)
+            onPause={(time) => {console.log("pause")
+                            this.props.adjustTime(this.props.index,time)
                         }}
             onStop={() => console.log('Stop')}
             onReset={() => console.log('Reset')}
@@ -43,8 +43,10 @@ render() {
                                     className='col-2'
                                     variant={(this.props.currentPhase === this.props.phase.key) ? "danger" : "outline-primary"}
                                     onClick={() => {
+                                        console.log(this.props.index)
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? pause(this.props.index,Number(getTime())) : start()
+                                        (getTimerState() === "PLAYING") ? (pause()
+                                        ) : start()
                                     }}
                                 >
                                     {(this.props.currentPhase === this.props.phase.key) ? null : (stop())}
