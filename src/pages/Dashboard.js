@@ -37,7 +37,7 @@ class Dashboard extends Component {
       }
   }
 
-  selectProcess = (currentProcess) => { this.setState({currentProcess})}
+  selectProcess = (currentProcess) => { this.setState({currentProcess}); console.log(currentProcess)}
 
   viewHandler = () => {
     const {processes,currentProcess} = this.state;
