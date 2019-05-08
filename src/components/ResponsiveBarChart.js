@@ -1,42 +1,15 @@
 import React, { Component } from "react";
 import BarChart from "./BarChart";
+import { SizeMe } from 'react-sizeme'
 
 class ResponsiveBarChart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            spec: props.spec ? props.spec : null,
-            data: props.data
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            data: nextProps.data ? nextProps.data : this.state.data
-        })
-    }
-
-    onSize = size => {
-        this.setState({
-            width: size.width,
-            height: size.height ? size.height : size.width*2/3
-        })
-    }
-        
-    render() {
-        const spec = this.state.spec ? this.state.spec : null;
-        return (
+    render() { return (
+        <SizeMe render={({ size }) => 
             <div>
-                <BarChart
-                    onSize={this.onSize} 
-                    spec={spec} 
-                    width={this.state.width} 
-                    height={this.state.height} 
-                    data={this.state.data}
-                />
+                <BarChart width={size.width} height={size.width*2/3} data={this.props.data}/>
             </div>
-        );
-    }
+        }/>
+    )}
 }
 
 export default ResponsiveBarChart;

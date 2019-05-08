@@ -79,3 +79,5 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
+.env.development
+.env.production
