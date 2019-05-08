@@ -278,7 +278,19 @@ class Compass extends Component {
                                 (phase, index) => {
                                     return (
                                         //  this.PhaseTimer (phase,index)
-                                        <Phase currentPhase={this.state.currentPhase} {...phase} compassButtonHandler={this.compassButtonHandler} index updateLogHandler={this.updateLogHandler}/>
+                                        <Phase 
+                                            currentPhase={this.state.currentPhase} 
+                                            phase={phase} 
+                                            compassButtonHandler={this.compassButtonHandler} 
+                                            index={index} 
+                                            updateLogHandler={this.updateLogHandler}
+                                            previous={this.previous}
+                                            next={this.next}
+                                            nextButtonHandler={this.nextButtonHandler}
+                                            previousButtonHandler={this.previousButtonHandler}
+                                            handleTextArea={this.handleTextArea}
+                                            log={this.log}
+                                            />
                                     );
                                 })
                         }

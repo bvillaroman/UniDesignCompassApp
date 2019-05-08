@@ -41,31 +41,31 @@ const Phase=(props)=> {
                           <div className="d-flex flex-column" >
                               <ButtonGroup size="lg">
                                   <Button
-                                     key={props.keys}
+                                     key={props.phase.key}
                                      onClick={() => {
-                                          props.compassButtonHandler(props);
+                                          props.compassButtonHandler(props.phase);
                                           (getTimerState() === "PLAYING") ? pause() : start()
                                       }}
                                       bsSize='large'
                                       block
                                       className='text-left col-10'
                                      //  variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
-                                     variant={(props.currentPhase === props.key) ? "success" : "outline-warning"}
+                                     variant={(props.currentPhase === props.phase.key) ? "success" : "outline-warning"}
 
                                   >
-                                      {props.name}
+                                      {props.phase.name}
                                   </Button>
 
 
                                   <Button
                                       className='col-2'
-                                     variant={(props.currentPhase === props.keys) ? "danger" : "outline-primary"}
+                                     variant={(props.currentPhase === props.phase.key) ? "danger" : "outline-primary"}
                                      onClick={() => {
-                                         Compass.compassButtonHandler(props);
+                                         props.compassButtonHandler(props.phase);
                                          (getTimerState() === "PLAYING") ? pause() : start()
                                      }}
                                  >
-                                     {(props.currentPhase === props.keys) ? console.log() : (pause())}
+                                     {(props.currentPhase === props.phase.key) ? console.log() : (pause())}
                                      <Timer.Hours />:
                                      <Timer.Minutes />:
                                      <Timer.Seconds />
@@ -74,15 +74,15 @@ const Phase=(props)=> {
                              <div>
                                  {/* {generateList(props.key)} */}
                              </div>
-                             {(props.currentPhase === props.keys) ? (
+                             {(props.currentPhase === props.phase.key) ? (
                                  <div>
                                      <br></br>
                                      <Row>
                                          <Col>
                                              <Button
                                                  className='float-left'
-                                                 variant={Compass.previous ? "primary" : "secondary"}
-                                                 onClick={() => Compass.previousButtonHandler()}
+                                                 variant={props.previous ? "primary" : "secondary"}
+                                                 onClick={() => props.previousButtonHandler()}
                                                  active>Previous
                                              </Button>
                                          </Col>
@@ -91,16 +91,16 @@ const Phase=(props)=> {
                                                  placeholder="Log Text"
                                                  rows="5"
                                                  cols="20"
-                                                 value={Compass.log}
-                                                 onChange={Compass.handleTextArea}
+                                                 value={props.log}
+                                                 onChange={props.handleTextArea}
                                              >
                                              </textarea>
                                          </Col>
                                          <Col>
                                              <Button
                                                  className='float-right'
-                                                 variant={Compass.next ? "primary" : "secondary"}
-                                                 onClick={(e) => Compass.nextButtonHandler()}
+                                                 variant={props.next ? "primary" : "secondary"}
+                                                 onClick={(e) => props.nextButtonHandler()}
                                                  active>
                                                  Next
                                                                              </Button>
@@ -113,7 +113,7 @@ const Phase=(props)=> {
                                                  block
                                                  size="sm"
                                                  variant="warning"
-                                                 onClick={(e) => Compass.updateLogHandler()}
+                                                 onClick={(e) => props.updateLogHandler()}
                                              >Update Log
                                              </Button>
                                          </Col>
