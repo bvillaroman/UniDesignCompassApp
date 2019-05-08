@@ -2,6 +2,9 @@ import React from "react";
 import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
 import {getProcess} from "../graphql_utils/utils" 
+import Graph from "../components/Graph";
+import Compass from "../components/Compass"
+import "../components/bootstrap.css"
 
 class Profile extends React.Component {
 
@@ -30,17 +33,16 @@ class Profile extends React.Component {
   }
 
   render() {
-
+    const { name,id } = this.state;
     return (
       <Layout>
-        <Tabs defaultActiveKey="projects" transitions="true" style={{width:100 + "%"}}>
+        <Tabs defaultActiveKey="projects" transitions="true" >
           <Tab eventKey="projects" title="Compass">
-            <h2 className="text-center">{this.state.name}</h2>
-
+            <h2 className="text-center">{name}</h2>
           </Tab>
           <Tab eventKey="settings" title="Analytics">
-            <h2 className="text-center">{this.state.name}</h2>
-            
+            <h2 className="text-center">{name}</h2>
+            {id && <Graph processId={id} />}
           </Tab>
         </Tabs>
       </Layout>
