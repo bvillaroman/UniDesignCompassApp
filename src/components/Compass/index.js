@@ -26,6 +26,7 @@ class Compass extends Component {
                 const compassName = compass.name;
                 const compassPhases = compass.phaseids.items.map((phase,index) => {
                     return { 
+                        id: phase.id,
                         key: index + 1,  
                         name: phase.title, 
                         logs: phase.logs, 
@@ -136,6 +137,7 @@ class Compass extends Component {
         <Phase
             currentPhase={this.state.currentPhase}
             phase={phase}
+            phaseid={phase.id}
             compassButtonHandler={this.compassButtonHandler}
             index={index}
             updateLogHandler={this.updateLogHandler}
