@@ -29,14 +29,12 @@ class Compass extends Component {
                         id: phase.id,
                         key: index + 1,  
                         name: phase.title, 
-                        logs: phase.logs, 
                         description: phase.description, 
                         // time: phase.duration
                         time: 0
                     }
                 })
 
-                console.log(compassPhases.logs)
                 this.setState({
                     compassName,
                     compassPhases,
@@ -114,25 +112,6 @@ class Compass extends Component {
         this.setState({ compassPhases })
     }
 
-    generateLogs(phase, currentPhase) {
-        if (currentPhase === phase) {
-            const filtered = log_list.data.filter((entry) => {
-                return (entry.id === phase);
-            })
-            return (filtered.map((data,index) => {
-                return (
-                    <tbody key={index}>
-                        <tr>
-                            <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
-                            <td >{data.text}</td>
-                            <td>{data.timestamp}</td>
-                        </tr>
-                    </tbody>
-                );
-            }));
-        }
-    }
-
     generatePhase = (phase,index) => (
         <Phase
             currentPhase={this.state.currentPhase}
@@ -148,7 +127,6 @@ class Compass extends Component {
             handleTextArea={this.handleTextArea}
             log={this.state.log}
             adjustTime={this.adjustTime}
-            generateLogs={this.generateLogs}
         />
     )
 

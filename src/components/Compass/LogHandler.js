@@ -9,7 +9,7 @@ const LogHandler = (props) => {
   return (
     <div>
         <Table bordered>
-            {props.generateLogs(props.phase.key, props.currentPhase)}
+          {props.logs}
         </Table>
         <Row>
             <Col>
@@ -47,9 +47,9 @@ const LogHandler = (props) => {
               block
               size="sm"
               variant="warning"
-              onClick={(e) => props.updateLogHandler()}
+              onClick={(e) => props.submitLog(e)}
             >
-              Update Log
+              Submit Log
             </Button>
           </Col>
         </Row>
@@ -60,7 +60,7 @@ const LogHandler = (props) => {
 export default LogHandler;
 
 LogHandler.propTypes = {
-    currentPhase :  PropTypes.string,
+    currentPhase :  PropTypes.number,
     phase : PropTypes.object,
     updateLogHandler: PropTypes.func,
     previous: PropTypes.bool,
@@ -69,5 +69,5 @@ LogHandler.propTypes = {
     previousButtonHandler: PropTypes.func,
     handleTextArea: PropTypes.func,
     log: PropTypes.string,
-    generateLogs: PropTypes.func
+    logs: PropTypes.array,
 }

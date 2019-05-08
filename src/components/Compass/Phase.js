@@ -5,15 +5,17 @@ import Timer from 'react-compound-timer';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
-import {getPhase} from "../../graphql_utils/utils"
+import {getPhase, createLogs} from "../../graphql_utils/utils"
 
 class Phase extends Component {
 
     state = {
         logs: [],
+        newLog : "",
         time: "",
         title: "",
         description: "",
+        generateLogs:[]
     }
 
     componentDidMount(){
@@ -27,6 +29,7 @@ class Phase extends Component {
             })
         })
     }
+
     timeHandler = (timerState,pause,newTime,start) => {
         const {props} = this;
 
@@ -37,6 +40,45 @@ class Phase extends Component {
         } else {
             start()
         }
+    }
+
+    handleTextArea = (e) => {
+        this.setState({newLog : e.target.value})
+    }
+
+    submitLog = (e) => {
+        const {newLog} = this.state
+        const now = new Date();
+        const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
+        createLogs(this.props.phaseid,timestamp,newLog)
+        .then((res) => {
+            const logs = this.state.logs
+            logs.push(res.data.createLog)
+            this.setState({newLog: "", logs})
+        })
+
+    }
+
+    translateTime = (time) => {
+
+    }
+
+    generateLog = (log) => (
+        <tbody key={log.id}>
+            <tr>
+                <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
+                <td >{log.text}</td>
+                <td>{log.timestamp}</td>
+            </tr>
+        </tbody>
+    )
+
+    generateLogs = () => {
+        const logs = this.state.logs
+        logs.sort((a, b) => {
+            return a.timestamp - b.timestamp;
+        })
+        return logs.map(log => this.generateLog(log))
     }
 
     render() {
@@ -84,14 +126,14 @@ class Phase extends Component {
                                 <LogHandler
                                     currentPhase={props.currentPhase}
                                     phase={props.phase}
-                                    updateLogHandler={props.updateLogHandler}
                                     previous={props.previous}
                                     next={props.next}
                                     nextButtonHandler={props.nextButtonHandler}
                                     previousButtonHandler={props.previousButtonHandler}
-                                    handleTextArea={props.handleTextArea}
-                                    log={props.log}
-                                    generateLogs={props.generateLogs}
+                                    handleTextArea={this.handleTextArea}
+                                    submitLog={this.submitLog}
+                                    log={this.state.newLog}
+                                    logs={this.generateLogs()}
                                 />
 
                             ) : ( <div> </div> )
@@ -107,7 +149,7 @@ class Phase extends Component {
 export default Phase;
 
 Phase.propTypes = {
-    currentPhase :  PropTypes.string,
+    currentPhase :  PropTypes.number,
     phase : PropTypes.object,
     index: PropTypes.string,
     log: PropTypes.string,
@@ -119,5 +161,4 @@ Phase.propTypes = {
     previousButtonHandler: PropTypes.func,
     handleTextArea: PropTypes.func,
     adjustTime: PropTypes.func,
-    generateLogs: PropTypes.func
 }
