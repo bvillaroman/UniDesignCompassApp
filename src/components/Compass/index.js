@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import "../components/bootstrap.css"
-// import Amplify from 'aws-amplify';
-// import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
-import { log_list } from '../dummyData';
-import { updateUser } from '../state/actions'
+import "../bootstrap.css"
+import { log_list } from '../../dummyData';
+import { updateUser } from '../../state/actions'
 import { connect } from 'react-redux';
-import Phase from '../components/Phase';
+import Phase from './Phase';
 
-// Amplify.configure(aws_exports);
-//Comment while not using dynamic
 class Compass extends Component {
     state = {
         compassName: "Universal Design Compass",
@@ -106,10 +102,6 @@ class Compass extends Component {
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
     }
 
-    parseLogs = (logs) => {
-
-    }
-
     previousButtonHandler = () => {
         var temp = !this.state.previous//need to handle active and disabled booleans too
         this.setState({ previous: temp });
@@ -132,9 +124,7 @@ class Compass extends Component {
         var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
         const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
         log_list.data.push(log); // Temporary
-        // console.log(log_list.data); //Temporary
         this.forceUpdate();
-        //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
     }
 
     adjustTime = (index, time) => {
@@ -148,14 +138,14 @@ class Compass extends Component {
             const filtered = log_list.data.filter((entry) => {
                 return (entry.id === phase);
             })
-            return (filtered.map((data) => {
+            return (filtered.map((data,index) => {
                 return (
-                    <tbody>
-                    <tr>
-                    <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
-                    <td >{data.text}</td>
-                    <td>{data.timestamp}</td>
-                    </tr>
+                    <tbody key={index}>
+                        <tr>
+                            <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
+                            <td >{data.text}</td>
+                            <td>{data.timestamp}</td>
+                        </tr>
                     </tbody>
                 );
             }));
@@ -177,7 +167,6 @@ class Compass extends Component {
             log={this.state.log}
             adjustTime={this.adjustTime}
             generateList={this.generateList}
-            state={this.state}
         />
     )
 

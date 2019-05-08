@@ -191,14 +191,3 @@ const mapDispatchToProps = dispatch => ({
   updateUser: (user) => dispatch(updateUser(user))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(CreatePage);
-
-// export const query = graphql`
-//  # query will go here
-//   query GetAllCreateCompassPaths {
-//     allSitePage(filter: {componentPath : {in : "/Users/bruce/class_stuff/WebDesign/UniDesignCompassApp/src/pages/Compass.js"}}) {
-//       nodes {
-//         path
-//       }
-//     }
-//   }
-// `
