@@ -34,6 +34,7 @@ class Process extends React.Component {
 
   render() {
     const { name,id } = this.state;
+    // console.log(id)
     return (
       <Layout>
         <h2 className="text-center">{name}</h2>
@@ -48,7 +49,7 @@ class Process extends React.Component {
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="compass">
-              <Compass/>
+              {id && <Compass id={id} />}
             </Tab.Pane>
             <Tab.Pane eventKey="analytics">
               {id && <Graph processId={id} />}

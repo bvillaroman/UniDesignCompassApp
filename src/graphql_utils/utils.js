@@ -47,7 +47,6 @@ export async function createLogs(PhaseId,timestamp,text){
         timestamp,
         text,
         logPhaseId:PhaseId,
-        
     }
     const newLog = await API.graphql(graphqlOperation(mutations.createLog,{input:loginfo}));
     return newLog;
