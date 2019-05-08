@@ -1,33 +1,23 @@
 import React, { Component } from "react";
-import Vega from 'react-vega';
+import Vega from './vega/Vega';
 import sizeMe from 'react-sizeme'
 import { Handler } from 'vega-tooltip';
 
-class BarChart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            spec: props.spec ? props.spec : this.defaultSpec,
-            width: props.width ? props.width : this.defaultSize.width,
-            height: props.height ? props.height : this.defaultSize.height,
-            data: props.data,
-        }
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            spec: {
-                ...this.state.spec,
-                'width': nextProps.width ? nextProps.width : this.state.width,
-                'height': nextProps.height ? nextProps.height : this.state.height,
-            },
-            data: nextProps.data ? nextProps.data : this.state.data,
-        });  
-    }
-        
+class BarChart extends Component {      
     render() {
+        const spec = this.props.spec
+          ? this.props.spec
+          : this.defaultSpec;
+        spec.width = this.props.width
+          ? this.props.width
+          : this.defaultSpec.width;
+        spec.height = this.props.height
+          ? this. props.height
+          : this.defaultSize.height
         return (
-            <Vega spec={this.state.spec} data={this.state.data} tooltip={new Handler().call} />
+            <div>
+              <Vega spec={spec} data={this.props.data} />
+            </div>
         );
     }
 
@@ -40,8 +30,8 @@ class BarChart extends Component {
         "$schema": "https://vega.github.io/schema/vega/v5.json",
         
         "padding": "10",
-        // "width": this.defaultSize.width,
-        // "height": this.defaultSize.height,
+        "width": this.defaultSize.width,
+        "height": this.defaultSize.height,
         "autosize": {
             "type": "fit",
             "contains": "padding",
