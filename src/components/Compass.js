@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import Button from "react-bootstrap/Button";
-import Layout from "../components/layout"
 import "../components/bootstrap.css"
-import { Row, ButtonGroup, Table } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import Amplify from 'aws-amplify';
-import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
+// import Amplify from 'aws-amplify';
+// import aws_exports from '../aws-exports'; // specify the location of aws-exports.js file on your project
 import { log_list } from '../dummyData';
-import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { connect } from 'react-redux';
 import Phase from '../components/Phase';
 
-Amplify.configure(aws_exports);
+// Amplify.configure(aws_exports);
 //Comment while not using dynamic
 class Compass extends Component {
     state = {
@@ -167,35 +162,32 @@ class Compass extends Component {
         }
     }
 
+    generatePhase = (phase,index) => (
+        <Phase
+            currentPhase={this.state.currentPhase}
+            phase={phase}
+            compassButtonHandler={this.compassButtonHandler}
+            index={index}
+            updateLogHandler={this.updateLogHandler}
+            previous={this.state.previous}
+            next={this.state.next}
+            nextButtonHandler={this.nextButtonHandler}
+            previousButtonHandler={this.previousButtonHandler}
+            handleTextArea={this.handleTextArea}
+            log={this.state.log}
+            adjustTime={this.adjustTime}
+            generateList={this.generateList}
+            state={this.state}
+        />
+    )
+
     render() {
+        const {compassName,compassPhases} = this.state
         return (
             <div className='container'>
-                <h1 className='text-center'>{this.state.compassName}</h1>
+                <h1 className='text-center'>{compassName}</h1>
                 <div>
-                    {
-                        this.state.compassPhases.map(
-                            (phase, index) => {
-                                return (
-                                    <Phase
-                                        currentPhase={this.state.currentPhase}
-                                        phase={phase}
-                                        compassButtonHandler={this.compassButtonHandler}
-                                        index={index}
-                                        updateLogHandler={this.updateLogHandler}
-                                        previous={this.state.previous}
-                                        next={this.state.next}
-                                        nextButtonHandler={this.nextButtonHandler}
-                                        previousButtonHandler={this.previousButtonHandler}
-                                        handleTextArea={this.handleTextArea}
-                                        log={this.state.log}
-                                        adjustTime={this.adjustTime}
-                                        generateList={this.generateList}
-                                        state={this.state}
-                                    />
-
-                                );
-                            })
-                    }
+                    {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))}
                 </div>
             </div>
         );
