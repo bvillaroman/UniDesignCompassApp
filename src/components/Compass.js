@@ -42,16 +42,15 @@ class Compass extends Component {
             .then((res) => {
                 const compass = res.data.getProcess;
                 const compassName = compass.name;
-                // const compassPhases = compass.phaseids.items.map((phase,index) => {
-                //     return { 
-                //         key: index + 1,  
-                //         name: phase.title, 
-                //         icon: '', 
-                //         description: phase.description, 
-                //         link: '#',
-                //         time: phase.duration
-                //     }
-                // })
+                const compassPhases = compass.phaseids.items.map((phase,index) => {
+                    return { 
+                        key: index + 1,  
+                        name: phase.title, 
+                        logs: phase.logs, 
+                        description: phase.description, 
+                        duration: phase.duration
+                    }
+                })
                 this.setState({
                     compassName,
                     // compassPhases,
@@ -112,11 +111,14 @@ class Compass extends Component {
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
     }
 
+    parseLogs = (logs) => {
+
+    }
+
     previousButtonHandler = () => {
         var temp = !this.state.previous//need to handle active and disabled booleans too
         this.setState({ previous: temp });
     }
-
 
     nextButtonHandler = (e) => {
         var temp = !this.state.next//need to handle active and disabled booleans too
