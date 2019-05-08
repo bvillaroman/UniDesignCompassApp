@@ -1,5 +1,5 @@
 import React from "react";
-import { Tab, Tabs, Nav } from 'react-bootstrap';
+import { Tab, Nav } from 'react-bootstrap';
 import Layout from "../components/layout";
 import {getProcess} from "../graphql_utils/utils" 
 import Graph from "../components/Graph";
@@ -48,7 +48,7 @@ class Process extends React.Component {
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="compass">
-              Compass
+              <Compass/>
             </Tab.Pane>
             <Tab.Pane eventKey="analytics">
               {id && <Graph processId={id} />}

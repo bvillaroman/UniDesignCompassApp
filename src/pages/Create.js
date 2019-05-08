@@ -1,9 +1,9 @@
 import React from "react";
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
-import {createNewCompass,getUser} from '../graphql_utils/utils';
+import {createNewCompass} from '../graphql_utils/utils';
 import { connect } from 'react-redux';
 import { updateUser } from '../state/actions'
 

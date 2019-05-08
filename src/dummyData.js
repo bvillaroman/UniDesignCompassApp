@@ -1,16 +1,16 @@
 export const log_list ={
 data:[
     {id:'1',
-    text:"Where is a chair folded?"},
+    text:"1"},
     {id:'1',
-    text:"Do chairs need folding?"},
+    text:"2"},
     {id:'2',
-    text:"Found a list of all possible chairs"},
+    text:"#"},
     {id:'4',
-    text:"Selected My chair material"},
+    text:"2332"},
     {id:'1',
-    text:"How do we fold a chair in half?"},
+    text:"3232"},
     {id:'2',
-    text:"Found Folding Patterns"}
+    text:"233"}
     ]
 }
