@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import Layout from "../components/layout"
-import ResponsiveBarChart from '../components/ResponsiveBarChart';
+import ResponsiveBarChart from './ResponsiveBarChart';
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
-import LogCard from "../components/LogCard";
+import LogCard from "./LogCard";
 import PropTypes from 'prop-types';
 
-class Analytics extends Component {
+class Graph extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -222,9 +221,9 @@ class Analytics extends Component {
     // }
 }
 
-LogCard.propTypes = {
-    processId: PropTypes.isRequired,
- };
+Graph.propTypes = {
+    processId: PropTypes.string.isRequired,
+};
 
 const mapStateToProps = ({state}) => ({
     isAuthenticated: state.isAuthenticated,
@@ -234,4 +233,4 @@ const mapDispatchToProps = dispatch => ({
     authenticateUser: (auth) => dispatch(authenticateUser(auth))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Analytics);
+export default connect(mapStateToProps, mapDispatchToProps)(Graph);

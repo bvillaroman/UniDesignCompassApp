@@ -4,7 +4,7 @@ import Compass from "../components/Compass"
 import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
-import Graph from "./Graph";
+import Graph from "../components/Graph";
 
 class Dashboard2 extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class Dashboard2 extends Component {
                     <span className={'col-1'} />
                     <button className={'btn btn-outline-primary col-4'}>Graph</button>
                 </div>
-                <Graph processID={'51d61999-a815-49eb-9ea2-597096bdd452'} />
+                <Graph processId={'85ddcaa4-e54b-4694-af62-8147e9e086a0'} />
             </Layout>
         )
     }
