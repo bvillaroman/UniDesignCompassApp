@@ -3514,7 +3514,8 @@ tbody.collapse.show {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
+  padding-left: .25rem;
+  padding-right: .25rem;
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -3658,7 +3659,7 @@ tbody.collapse.show {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  width: 23rem;
+  width: 95%;
   justify-content: space-between;
   margin: 0 auto;
 }
@@ -3703,6 +3704,7 @@ tbody.collapse.show {
   background: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .navbar-toggler:focus, .navbar-toggler:hover {
