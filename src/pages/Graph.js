@@ -5,7 +5,7 @@ import  {connect} from "react-redux"
 import {authenticateUser} from "../state/actions"
 import * as Utils from '../graphql_utils/utils'
 import LogCard from "../components/LogCard";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import PropTypes from 'prop-types';
 
 class Analytics extends Component {
     constructor(props) {
@@ -13,24 +13,7 @@ class Analytics extends Component {
         this.state = {
             spec: this.spec,
             // chartData: this.data,
-            selected_process_id: -1
         };
-    }
-
-    initProcessSelect() {
-        // load data of user and set to state
-        const user = this.props.user;
-
-        const processes = user.processes.items;
-        processes.sort((a, b) => {
-            return a.date_start - b.date_start;
-        })
-        const default_process = processes[0]
-        this.setState({
-            processes: processes,
-            selected_process_id: default_process ? default_process.id : -1
-        })
-        this.load_process_data(default_process.id);
     }
 
     load_process_data(process_id) {
@@ -39,15 +22,7 @@ class Analytics extends Component {
     }
 
     componentDidMount() {
-        this.initProcessSelect();
-    }
-
-    process_select_handler = (event) => {
-        const process_id = event.target.value;
-        this.setState({
-            selected_process_id: process_id
-        })
-        this.load_process_data(process_id);
+        this.load_process_data(this.props.processId);
     }
 
     load_chart_data(process_id) {
@@ -151,7 +126,7 @@ class Analytics extends Component {
             this.setState({
                 loading: false
             });
-            this.load_log_data(this.state.selected_process_id)
+            this.load_log_data(this.props.processId)
         })
     }
 
@@ -163,7 +138,7 @@ class Analytics extends Component {
         text = text ? text : '(blank entry)';
         Utils.updateLogs(log_id, timestamp, text).then(res => {
             this.setState({loading: false})
-            this.load_log_data(this.state.selected_process_id)
+            this.load_log_data(this.props.processId)
         })
     }
 
@@ -195,25 +170,6 @@ class Analytics extends Component {
             :   null;
     }
 
-    process_select_render = () => {
-        return(
-            <div className="d-flex flex-column" >
-                <select 
-                    className={'custom-select'} 
-                    value={this.state.selected_process_id} 
-                    onChange={e => this.process_select_handler(e)}
-                >
-                    {this.state.processes
-                        ?   this.state.processes.map(process => {
-                                return <option value={process.id} key={process.id}>{process.name}</option>
-                            })
-                        :   <option disabled value={-1}>This user has no Processes</option>
-                    }
-                </select>
-            </div>
-        );
-    }
-
     bar_chart_render = () => {
         return this.state.chartData
             ? <ResponsiveBarChart data={this.state.chartData} />
@@ -240,17 +196,14 @@ class Analytics extends Component {
     render() {
         // console.log(this.state)
         return (
-            <Layout>
-                <div className='container'>
-                    {this.loading_render()}
-                    <div className={'page-header'}>
-                        <h1 className={'text-center'}>Analytics</h1>
-                    </div>
-                        {this.process_select_render()}
-                        {this.bar_chart_render()}
-                        {this.process_logs_render()}
+            <div className='container'>
+                {this.loading_render()}
+                <div className={'page-header'}>
+                    <h1 className={'text-center'}>Analytics</h1>
                 </div>
-            </Layout>
+                    {this.bar_chart_render()}
+                    {this.process_logs_render()}
+            </div>
         );
     }
 
@@ -268,6 +221,10 @@ class Analytics extends Component {
     //     ]
     // }
 }
+
+LogCard.propTypes = {
+    processId: PropTypes.isRequired,
+ };
 
 const mapStateToProps = ({state}) => ({
     isAuthenticated: state.isAuthenticated,
