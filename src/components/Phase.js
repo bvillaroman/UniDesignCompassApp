@@ -5,18 +5,6 @@ import { Row, ButtonGroup } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import Compass from '../pages/Compass';
-// import { log_list } from '../dummyData';
-
-// const generateList = (phase) => {
-//     if (Compass.currentPhase === phase) {
-//         const filtered = log_list.data.filter((entry) => {
-//             return (entry.id === phase);
-//         })
-//         return (filtered.map((data) => {
-//             return (<h4>{data.text}</h4>);
-//         }));
-//     }
-// }
 
 const Phase = (props) => {
     return (
@@ -25,12 +13,10 @@ const Phase = (props) => {
             startImmediately={false}
             OnStart={() => console.log('Start')}
             OnResume={() => console.log('Resume')}
-            OnPause={() => console.log('Pause')}
+            OnPause={() => console.log("pause")}
             OnStop={() => console.log('Stop')}
             OnReset={() => console.log('Reset')}
         >
-
-
             {({ start, resume, pause, stop, reset, getTimerState, getTime }) => {
                 return (
                     <React.Fragment>
@@ -40,7 +26,7 @@ const Phase = (props) => {
                                     key={props.phase.key}
                                     onClick={() => {
                                         props.compassButtonHandler(props.phase);
-                                        (getTimerState() === "PLAYING") ? pause() : start()
+                                        (getTimerState() === "PLAYING") ? pause():start()
                                     }}
                                     block
                                     className='text-left col-10'
