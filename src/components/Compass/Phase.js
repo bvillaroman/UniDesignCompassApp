@@ -70,7 +70,7 @@ const Phase = (props) => {
                                 previousButtonHandler={props.previousButtonHandler}
                                 handleTextArea={props.handleTextArea}
                                 log={props.log}
-                                generateList={props.generateList}
+                                generateLogs={props.generateLogs}
                             />
 
                         ) : ( <div> </div> )
@@ -87,15 +87,15 @@ export default Phase;
 Phase.propTypes = {
     currentPhase :  PropTypes.string,
     phase : PropTypes.object,
-    compassButtonHandler: PropTypes.func,
     index: PropTypes.string,
-    updateLogHandler: PropTypes.func,
+    log: PropTypes.string,
     previous: PropTypes.bool,
     next: PropTypes.bool,
+    compassButtonHandler: PropTypes.func,
+    updateLogHandler: PropTypes.func,
     nextButtonHandler: PropTypes.func,
     previousButtonHandler: PropTypes.func,
     handleTextArea: PropTypes.func,
-    log: PropTypes.string,
     adjustTime: PropTypes.func,
-    generateList: PropTypes.func
+    generateLogs: PropTypes.func
 }

@@ -9,7 +9,7 @@ const LogHandler = (props) => {
   return (
     <div>
         <Table bordered>
-            {props.generateList(props.phase.key, props.currentPhase)}
+            {props.generateLogs(props.phase.key, props.currentPhase)}
         </Table>
         <Row>
             <Col>
@@ -69,5 +69,5 @@ LogHandler.propTypes = {
     previousButtonHandler: PropTypes.func,
     handleTextArea: PropTypes.func,
     log: PropTypes.string,
-    generateList: PropTypes.func
+    generateLogs: PropTypes.func
 }
