@@ -20,7 +20,7 @@ import { render } from 'react-testing-library';
         }
     }
 
-const PhaseTimer=(props)=> {
+const Phase=(props)=> {
     console.log(props)
     return ( 
     <div>
@@ -43,14 +43,14 @@ const PhaseTimer=(props)=> {
                                   <Button
                                      key={props.keys}
                                      onClick={() => {
-                                          Compass.compassButtonHandler(props);
+                                          props.compassButtonHandler(props);
                                           (getTimerState() === "PLAYING") ? pause() : start()
                                       }}
                                       bsSize='large'
                                       block
                                       className='text-left col-10'
                                      //  variant={(this.state.currentPhase === props.key) ? "success" : "outline-warning"}
-                                     variant={(props.currentPhase === props.keys) ? "success" : "outline-warning"}
+                                     variant={(props.currentPhase === props.key) ? "success" : "outline-warning"}
 
                                   >
                                       {props.name}
@@ -139,4 +139,4 @@ const PhaseTimer=(props)=> {
 
 }
 
- export default PhaseTimer
+ export default Phase

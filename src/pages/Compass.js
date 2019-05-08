@@ -11,7 +11,7 @@ import Timer from 'react-compound-timer';
 import { updateUser } from '../state/actions'
 import { getProcess } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
-import PhaseTimer from '../components/phasetimer';
+import Phase from '../components/Phase';
 
 Amplify.configure(aws_exports);
 // //Comment while not using dynamic
@@ -116,11 +116,12 @@ class Compass extends Component {
     }
 
     adjustTime = (index, time) => {
-        console.log(this.state.compassPhases[index].time)
+        console.log(time)
         let compassPhases = this.state.compassPhases
         compassPhases[index].time = time
         this.setState({ compassPhases })
-        console.log(this.state.compassPhases[index].time)
+        // console.log(this.state.compassPhases[index].time)
+        // this.state.compassPhases[index].time=time
     }
 
     timerHandler = (phase) => {
@@ -148,7 +149,7 @@ class Compass extends Component {
     }
 
 
-    PhaseTimer=(props,index)=> {
+    PhaseTimer=(props)=> {
         // console.log(props)
        return ( <div>
             <Timer
@@ -156,7 +157,7 @@ class Compass extends Component {
                 startImmediately={false}
                 OnStart={() => console.log('Start')}
                 OnResume={() => console.log('Resume')}
-                OnPause={() => console.log('Pause')}
+                OnPause={(index,time) => this.adjustTime(index,time)}
                 OnStop={() => console.log('Stop')}
                 OnReset={() => console.log('Reset')}
             >
@@ -188,8 +189,14 @@ class Compass extends Component {
                                         }}
                                     >
                                         {/* {(this.state.currentPhase === props.key) ? console.log() : (pause())} */}
-                                        {time=getTime()}
-                                        {(this.state.currentPhase === props.key) ? console.log() : (pause(), this.adjustTime(index,time))}
+                                        {/* {time=getTime()} */}
+                                        {(this.state.currentPhase === props.key) ? console.log() : 
+                                            (
+                                                pause(props.index,Number(getTime()))
+                                                // ,this.adjustTime(index,parseInt(Number(getTime())))
+                                            )
+                                            
+                                            }
                                         <Timer.Hours />:
                                         <Timer.Minutes />:
                                         <Timer.Seconds />
@@ -270,8 +277,8 @@ class Compass extends Component {
                             this.state.compassPhases.map(
                                 (phase, index) => {
                                     return (
-                                        this.PhaseTimer (phase,index)
-                                        // <PhaseTimer {...phase}keys={phase.key}currentphase={this.state.currentPhase}/>
+                                        //  this.PhaseTimer (phase,index)
+                                        <Phase currentPhase={this.state.currentPhase} {...phase} compassButtonHandler={this.compassButtonHandler} index updateLogHandler={this.updateLogHandler}/>
                                     );
                                 })
                         }
