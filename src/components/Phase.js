@@ -15,7 +15,9 @@ render() {
             startImmediately={false}
             onStart={() => console.log('Start')}
             onResume={() => console.log('Resume')}
-            onPause={() => console.log("pause")}
+            onPause={(index,time) => {console.log("pause")
+                            this.props.adjustTime(index,time)
+                        }}
             onStop={() => console.log('Stop')}
             onReset={() => console.log('Reset')}
         >
@@ -28,7 +30,7 @@ render() {
                                     key={this.props.phase.key}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? pause() : start()
+                                        (getTimerState() === "PLAYING") ? pause(this.props.index,Number(getTime())) : start()
                                     }}
                                     block
                                     className='text-left col-10'
@@ -42,10 +44,10 @@ render() {
                                     variant={(this.props.currentPhase === this.props.phase.key) ? "danger" : "outline-primary"}
                                     onClick={() => {
                                         this.props.compassButtonHandler(this.props.phase);
-                                        (getTimerState() === "PLAYING") ? pause() : start()
+                                        (getTimerState() === "PLAYING") ? pause(this.props.index,Number(getTime())) : start()
                                     }}
                                 >
-                                    {(this.props.currentPhase === this.props.phase.key) ? null : (pause())}
+                                    {(this.props.currentPhase === this.props.phase.key) ? null : (stop())}
                                     <Timer.Hours />:
                                      <Timer.Minutes />:
                                      <Timer.Seconds />
