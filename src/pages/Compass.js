@@ -278,6 +278,7 @@ class Compass extends Component {
                                             generateList={this.generateList}
                                             state={this.state}
                                         />
+                                        
                                     );
                                 })
                         }
