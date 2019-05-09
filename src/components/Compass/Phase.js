@@ -73,14 +73,16 @@ class Phase extends Component {
     }
 
     generateLog = (log) => {
-        // console.log(Date(log.timestamp))
-        console.log(log.timestamp)
+        const newTime = new Date(parseInt(log.timestamp))
+        const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours()
+        const M = newTime.getHours() > 12 ? 'PM' : 'AM'
+        const parsedTime = `${hour}:${newTime.getMinutes()} ${M}`
         return (
         <tbody key={log.id}>
             <tr>
                 <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
                 <td >{log.text}</td>
-                <td>{log.timestamp}</td>
+                <td>{parsedTime}</td>
             </tr>
         </tbody>
         )
