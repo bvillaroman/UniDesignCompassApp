@@ -61,7 +61,8 @@ class Phase extends Component {
     submitLog = (e) => {
         const {newLog} = this.state
         const now = new Date();
-        const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
+        // const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
+        const timestamp = Date.now();
         createLogs(this.props.phaseid,timestamp,newLog)
         .then((res) => {
             const logs = this.state.logs
