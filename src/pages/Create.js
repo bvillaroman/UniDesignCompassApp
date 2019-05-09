@@ -1,11 +1,12 @@
 import React from "react";
-// import { navigate } from 'gatsby';
+import { navigate } from '@reach/router';
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
 import {createNewCompass} from '../graphql_utils/utils';
 import { connect } from 'react-redux';
 import { updateUser } from '../state/actions'
+import SpinningWheel from "../components/SpinningWheel"
 
 const SubmitCompass = (props) =>  (
   <Form.Group controlId="formBasicEmail">
@@ -65,7 +66,7 @@ const PhaseNumber = (props) =>  (
 class DescribePhase extends React.Component{
   state = {
     title: "",
-    description: ""
+    description: "",
   }
 
   onChange = (e) => {
@@ -97,7 +98,8 @@ class CreatePage extends React.Component {
     defaultCompass: true,
     numberOfPhases: 0,
     phases: [],
-    status: "chooseStructure"
+    status: "chooseStructure",
+    loading: false
   }
 
   handleCompassTitle = (e) => {
@@ -123,20 +125,16 @@ class CreatePage extends React.Component {
     this.setState({phases})
   }
 
-  createCompass = () =>{
+  createCompass = () => {
     const {compassTitle, phases} = this.state;
-    createNewCompass(this.props.user,compassTitle,phases)
-    .then((res) => {
-      // const result = res.data.getProcess
-      alert("Succes")
-      // getUser(this.props.user.id)
-      // .then((newUser) => {
-      //   this.props.updateUser(newUser.data.getUser);
-      //   navigate('/Dashboard')
-      // })
-    })
-    .catch((err) => {
-      alert(err)
+    this.setState({ loading: true }, () => {
+      createNewCompass(this.props.user,compassTitle,phases)
+      .then((res) => {
+          navigate(`/Process/${res.data.getProcess.id}`)
+      })
+      .catch((err) => {
+        alert(err)
+      })
     })
   }
 
@@ -179,6 +177,7 @@ class CreatePage extends React.Component {
           <h2> Create Your Compass </h2>
           <div className="form-container">
             {this.handleForms()}
+            { this.state.loading && <SpinningWheel/>}
           </div>
       </Layout>
     )

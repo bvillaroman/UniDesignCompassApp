@@ -8,6 +8,7 @@ import { Auth } from "aws-amplify";
 import config from "../aws-exports";
 import SignIn from "../components/SignIn";
 import {getUserbyUsername } from "../graphql_utils/utils";
+import SpinningWheel from "../components/SpinningWheel"
 Auth.configure(config);
 
 class Login extends Component {
@@ -17,6 +18,7 @@ class Login extends Component {
             password: "",
             username: "",
             user: [],
+            loading: false
         };
     }
 
@@ -25,8 +27,8 @@ class Login extends Component {
     }
     handleAuth = (e) => {
         e.preventDefault();
-
-        Auth.signIn(this.state.username, this.state.password)
+        this.setState({loading: true}, () => {
+            Auth.signIn(this.state.username, this.state.password)
             .then((res) => {
                 console.log(res)
                 switch (res.challengeName) {
@@ -50,14 +52,23 @@ class Login extends Component {
             }, (error) => {
                 console.log(error);
                 alert(error.message);
+                this.setState({loading: false})
             });
+        })
     };
     createAccount = (e) => {
         navigate("/SignUp");
     }
     render() {
         return (
-        <Layout><SignIn handleAuth={this.handleAuth} handleChange={this.handleChange} handleAccount={this.createAccount} /></Layout>
+        <Layout>
+            <SignIn 
+                handleAuth={this.handleAuth} 
+                handleChange={this.handleChange} 
+                handleAccount={this.createAccount} 
+            />
+            {this.state.loading && <SpinningWheel />}
+        </Layout>
         );
     }
 }

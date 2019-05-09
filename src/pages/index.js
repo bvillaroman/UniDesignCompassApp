@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const IndexPage = (props) => (
   <Provider store={store}>
     <Router>
-      <HomePage />
+      <HomePage path="/" />
       <Process path="Process/:processID"/>
     </Router>
 

@@ -16,8 +16,8 @@ const signedIn = (props) =>  (
 
 const signedOut = (props) => ( 
   <React.Fragment>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>
   </React.Fragment>
 )
 
