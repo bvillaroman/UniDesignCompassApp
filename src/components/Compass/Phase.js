@@ -5,7 +5,7 @@ import Timer from 'react-compound-timer';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
-import {getPhase, createLogs} from "../../graphql_utils/utils"
+import {getPhase, createLogs,updatePhase} from "../../graphql_utils/utils"
 
 class Phase extends Component {
 
@@ -15,32 +15,40 @@ class Phase extends Component {
         time: 0,
         title: "",
         description: "",
-        generateLogs:[]
+        generateLogs:[],
+        dataLoaded: false
     }
 
     componentDidMount(){
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
             this.setState({
-                time : Phase.duration,
+                time: parseInt(Phase.duration),
                 logs : Phase.logs.items,
                 title: Phase.title,
-                description: Phase.description
+                description: Phase.description,
+                dataLoaded: true
             })
         })
     }
 
-    adjustTime = (time) => {
-        this.setState({ time })
+    updateTime = (newTime) => {
+        const {title, description} = this.state
+        const {phaseid } = this.props;
+
+        updatePhase(phaseid,newTime,title,description).then((res) => {
+            const time = parseInt(res.data.updatePhase.duration) > 0 ? parseInt(res.data.updatePhase.duration) : 0;
+            this.setState({time})
+        })
     }
 
     timeHandler = (timerState,pause,newTime,start) => {
-        const {props} = this;
+        const {compassButtonHandler, phase} = this.props;
 
-        props.compassButtonHandler(props.phase);
+        compassButtonHandler(phase);
         if(timerState === "PLAYING") {
             pause(); 
-            // this.setState({newTime})
+            this.updateTime(newTime)
         } else {
             start()
         }
@@ -60,7 +68,6 @@ class Phase extends Component {
             logs.push(res.data.createLog)
             this.setState({newLog: "", logs})
         })
-
     }
 
     generateLog = (log) => (
@@ -84,16 +91,12 @@ class Phase extends Component {
     render() {
         const { props } = this;
         return (
-            <Timer
+            <div>
+            { this.state.dataLoaded && (<Timer
                 initialTime={this.state.time}
                 startImmediately={false}
-                // onStart={() => console.log('Start')}
-                // onResume={() => console.log('Resume')}
-                // onPause={() => { console.log("Pause") }}
-                // onStop={() => console.log('Stop')}
-                // onReset={() => console.log('Reset')}
             >
-                {({ start, resume, pause, stop, reset, getTimerState, getTime }) => (
+                {({ start, pause, stop, getTimerState, getTime }) => (
                     <div className="d-flex flex-column" >
                         <ButtonGroup size="lg">
                             <Button
@@ -140,7 +143,8 @@ class Phase extends Component {
                         }
                     </div>
                 )}
-            </Timer>
+            </Timer>)}
+            </div>
         )
     }
 }

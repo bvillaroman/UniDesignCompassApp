@@ -97,7 +97,7 @@ export async function updateProcess(id,name,timestamp){
     const updatedProcess = await API.graphql(graphqlOperation(mutations.updateProcess,{input:processInfo}));
     return updatedProcess;
 }
-export async function updatePhase(id,logs,duration,title,description){
+export async function updatePhase(id,duration,title,description){
     const phaseInfo={
         id:id,
         duration,
