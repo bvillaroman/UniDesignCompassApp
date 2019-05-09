@@ -53,23 +53,6 @@ class Graph extends Component {
         })
     }
 
-    test_create_log(phase_id) {
-        const enabled = !true;
-        if(enabled) {
-            const log_string = `log created on ${new Date().toString()}`;
-            Utils.createLogs(phase_id, Date.now(), log_string).then(res => {
-                // console.log(res);
-            });
-    
-            // Utils.updateUser({
-            //     id: this.props.user.id,
-            //     first_name: 'ramon'
-            // }).then(res => {
-            //     console.log(res);
-            // })
-        }
-    }
-
     load_log_data(process_id) {
         this.setState({
             loading: true
@@ -85,43 +68,17 @@ class Graph extends Component {
                     logs.sort((a, b) => {
                         return a.timestamp - b.timestamp;
                     })
-                    console.log(logs)
                     return {
                         phase_id: phase.id,
                         title: phase.title,
                         log_ids: logs
                     };
-                })
-                .catch(res => {
-                    // handle error when somehome a log has null for text
-                    const phase = res.data.getPhase;
-                    let logs = phase.logs.items;
-
-                    console.log('erorr')
-                    console.log(phase_id)
-                    console.log(logs)
-                    
-                    //filter out null entries
-                    logs = logs.filter(item => item)
-
-                    
-                    logs.sort((a, b) => {
-                        return a.timestamp - b.timestamp;
-                    })
-                    return {
-                        title: phase.title,
-                        phase_id: phase.id,
-                        log_ids: logs
-                    };
-                })
+                });
             })).then(phase_logs => {
                 this.setState({
                     loading: false,
                     selected_process_phase_logs: phase_logs
-                });
-                // testing creating a log
-                const phase_id = phase_logs[1].phase_id;
-                this.test_create_log(phase_id);             
+                });         
             });
         })
     }
@@ -172,7 +129,17 @@ class Graph extends Component {
         return data
             ?   <div className={''}>
                     {data.map(log => {
-                        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler} updateHandler={this.updateLogHandler}/>
+                        return( 
+                            <LogCard 
+                                key={log.id} 
+                                logId={log.id}
+                                phaseTitle={log.phase_title}
+                                timestamp={log.timestamp}
+                                text={log.text}
+                                deleteHandler={this.deleteLogHandler} 
+                                updateHandler={this.updateLogHandler}
+                            />
+                        )
                     })}
                 </div>
             :   null;
@@ -202,7 +169,6 @@ class Graph extends Component {
     }
 
     render() {
-        // console.log(this.state)
         return (
             <div className='container'>
                 {this.loading_render()}
