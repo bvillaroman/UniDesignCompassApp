@@ -15,16 +15,16 @@ class Phase extends Component {
         time: 0,
         title: "",
         description: "",
-        generateLogs:[],
         dataLoaded: false
     }
 
     componentDidMount(){
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
+            const logs = this.generateLogs(Phase.logs.items)
             this.setState({
                 time: parseInt(Phase.duration),
-                logs : Phase.logs.items,
+                logs,
                 title: Phase.title,
                 description: Phase.description,
                 dataLoaded: true
@@ -58,20 +58,24 @@ class Phase extends Component {
         this.setState({newLog : e.target.value})
     }
 
-    submitLog = (e) => {
+    submitLog = (e,time) => {
         const {newLog} = this.state
-        const now = new Date();
+        // const now = new Date();
         // const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
         const timestamp = Date.now();
+        this.updateTime(time);
         createLogs(this.props.phaseid,timestamp,newLog)
         .then((res) => {
             const logs = this.state.logs
-            logs.push(res.data.createLog)
+            logs.push(this.generateLog(res.data.createLog))
             this.setState({newLog: "", logs})
         })
     }
 
-    generateLog = (log) => (
+    generateLog = (log) => {
+        // console.log(Date(log.timestamp))
+        console.log(log.timestamp)
+        return (
         <tbody key={log.id}>
             <tr>
                 <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
@@ -79,10 +83,10 @@ class Phase extends Component {
                 <td>{log.timestamp}</td>
             </tr>
         </tbody>
-    )
+        )
+    }
 
-    generateLogs = () => {
-        const logs = this.state.logs
+    generateLogs = (logs) => {
         logs.sort((a, b) => {
             return a.timestamp - b.timestamp;
         })
@@ -137,7 +141,8 @@ class Phase extends Component {
                                     handleTextArea={this.handleTextArea}
                                     submitLog={this.submitLog}
                                     log={this.state.newLog}
-                                    logs={this.generateLogs()}
+                                    logs={this.state.logs}
+                                    currentTime={getTime()}
                                 />
 
                             ) : ( <div> </div> )
@@ -161,5 +166,5 @@ Phase.propTypes = {
     next: PropTypes.bool,
     compassButtonHandler: PropTypes.func,
     nextButtonHandler: PropTypes.func,
-    previousButtonHandler: PropTypes.func,
+    previousButtonHandler: PropTypes.func 
 }

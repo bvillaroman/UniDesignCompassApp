@@ -47,7 +47,7 @@ const LogHandler = (props) => {
               block
               size="sm"
               variant="warning"
-              onClick={(e) => props.submitLog(e)}
+              onClick={(e) => props.submitLog(e,props.currentTime)}
             >
               Submit Log
             </Button>
