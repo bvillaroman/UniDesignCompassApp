@@ -6,11 +6,13 @@ import { getUser } from "../graphql_utils/utils"
 import { connect } from 'react-redux';
 import Compass from "../components/Compass"
 import ProcessFeed from "../components/ListProcesses/ProcessFeed"
+import SpinningWheel from "../components/SpinningWheel"
 
 class Dashboard extends Component {
   state = {
     processes: [],
     currentProcess: "",
+    loading: true
   }
 
   componentDidMount(){
@@ -19,13 +21,14 @@ class Dashboard extends Component {
           .then((res) => {
               const processes = res.data.getUser.processes.items;
               const currentProcess = ""
-              this.setState({ processes, currentProcess })
+              this.setState({ processes, currentProcess,loading: false })
           })
           .catch( err => {
               alert(`there was an error with fetching your processes, we are showing you a default Process template: ${err}`)
               this.setState({
                 processes: [],
                 currentProcess: "",
+                loading: false 
               })
           })
       } else {
@@ -52,6 +55,7 @@ class Dashboard extends Component {
         <div className='container'>
           <h2 className="text-center">Processes</h2>
           {this.viewHandler()}
+          {this.state.loading && <SpinningWheel/>}
         </div>         
       </Layout>
     );
