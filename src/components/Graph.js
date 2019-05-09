@@ -24,6 +24,13 @@ class Graph extends Component {
         this.load_process_data(this.props.processId);
     }
 
+    msToHours(t) {
+       const s = t/1000;
+       const m = s/60;
+       const h = m/60
+       return h;
+    }
+
     load_chart_data(process_id) {
         this.setState({
             loading: true
@@ -33,7 +40,8 @@ class Graph extends Component {
             const items = phases.map(phase => {
                 return {
                     category: phase.title,
-                    amount: phase.duration
+                    amount: this.msToHours(phase.duration).toFixed(2)
+                    // amount: phase.duration
                 }
             })
             this.setState({
@@ -77,6 +85,7 @@ class Graph extends Component {
                     logs.sort((a, b) => {
                         return a.timestamp - b.timestamp;
                     })
+                    console.log(logs)
                     return {
                         phase_id: phase.id,
                         title: phase.title,
