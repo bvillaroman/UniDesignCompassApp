@@ -1,10 +1,9 @@
-import { Link, navigate } from "gatsby"
+import { Link, navigate } from "@reach/router"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
-
 
 const signedIn = (props) =>  (
   <React.Fragment>
@@ -17,8 +16,8 @@ const signedIn = (props) =>  (
 
 const signedOut = (props) => ( 
   <React.Fragment>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="about" to="/About">About</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="login" to="/Login">Login</Link></NavItem>
   </React.Fragment>
 )
 
