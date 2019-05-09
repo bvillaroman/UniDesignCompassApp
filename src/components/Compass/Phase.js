@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Button from "react-bootstrap/Button";
-import {  ButtonGroup } from 'react-bootstrap';
+import {  ButtonGroup, Row, Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
@@ -15,16 +15,16 @@ class Phase extends Component {
         time: 0,
         title: "",
         description: "",
-        generateLogs:[],
         dataLoaded: false
     }
 
     componentDidMount(){
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
+            const logs = this.generateLogs(Phase.logs.items)
             this.setState({
                 time: parseInt(Phase.duration),
-                logs : Phase.logs.items,
+                logs,
                 title: Phase.title,
                 description: Phase.description,
                 dataLoaded: true
@@ -58,30 +58,35 @@ class Phase extends Component {
         this.setState({newLog : e.target.value})
     }
 
-    submitLog = (e) => {
+    submitLog = (e,time) => {
         const {newLog} = this.state
-        const now = new Date();
-        const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
+        // const now = new Date();
+        // const timestamp = now.getTime() + (now.getTimezoneOffset() * 60000)
+        const timestamp = Date.now();
+        this.updateTime(time);
         createLogs(this.props.phaseid,timestamp,newLog)
         .then((res) => {
             const logs = this.state.logs
-            logs.push(res.data.createLog)
+            logs.push(this.generateLog(res.data.createLog))
             this.setState({newLog: "", logs})
         })
     }
 
-    generateLog = (log) => (
-        <tbody key={log.id}>
-            <tr>
-                <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
-                <td >{log.text}</td>
-                <td>{log.timestamp}</td>
-            </tr>
-        </tbody>
-    )
 
-    generateLogs = () => {
-        const logs = this.state.logs
+    generateLog = (log) => {
+        const newTime = new Date(parseInt(log.timestamp))
+        const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours()
+        const M = newTime.getHours() > 12 ? 'PM' : 'AM'
+        const parsedTime = `${hour}:${newTime.getMinutes()} ${M}`
+        return (
+        <Row key={log.id} className="log-cell">
+            <Col xs={8} className="log-text">{log.text}</Col>
+            <Col className="log-timeStamp">{parsedTime}</Col>
+        </Row>
+        )
+    }
+
+    generateLogs = (logs) => {
         logs.sort((a, b) => {
             return a.timestamp - b.timestamp;
         })
@@ -136,7 +141,8 @@ class Phase extends Component {
                                     handleTextArea={this.handleTextArea}
                                     submitLog={this.submitLog}
                                     log={this.state.newLog}
-                                    logs={this.generateLogs()}
+                                    logs={this.state.logs}
+                                    currentTime={getTime()}
                                 />
 
                             ) : ( <div> </div> )
@@ -160,5 +166,5 @@ Phase.propTypes = {
     next: PropTypes.bool,
     compassButtonHandler: PropTypes.func,
     nextButtonHandler: PropTypes.func,
-    previousButtonHandler: PropTypes.func,
+    previousButtonHandler: PropTypes.func 
 }

@@ -65,9 +65,22 @@ class BarChart extends Component {
         ],
       
         "axes": [
-          { "orient": "bottom", "scale": "xscale" },
-          { "orient": "left", "scale": "yscale" }
+          { 
+            "orient": "bottom",
+            "scale": "xscale",
+            "title": "Phase"
+          },
+          { 
+            "orient": "left",
+            "scale": "yscale",
+            "title": "Duration (hours)"
+         }
         ],
+
+        "encoding": {
+          "x": {"field": "a", "type": "ordinal"},
+          "y": {"field": "b", "type": "quantitative"}
+        },
       
         "marks": [
           {
@@ -84,7 +97,7 @@ class BarChart extends Component {
                 "fill": {"value": "steelblue"}
               },
               "hover": {
-                "fill": {"value": "red"}
+                "fill": {"value": "#dc3545"}
               }
             }
           },

@@ -98,10 +98,7 @@ class Compass extends Component {
         const {compassName,compassPhases} = this.state
         return (
             <div className='container'>
-                <h1 className='text-center'>{compassName}</h1>
-                <div>
-                    {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))}
-                </div>
+                {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))}
             </div>
         );
     }
