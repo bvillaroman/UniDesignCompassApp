@@ -8,11 +8,10 @@ import { logOutUser } from '../state/actions';
 
 const signedIn = (props) =>  (
   <React.Fragment>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="create" to="/Create">Create Compass</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="compass" to="/Compass">Compass</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="analytics" to="/Analytics">Analytics</Link></NavItem>
-    <NavItem><Link style={styles.link} activeStyle={styles.linkActive} rel="profile" to="/Profile">Profile</Link></NavItem>
-    <NavItem><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="create" to="/Create">Create Compass</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="dashboard" to="/Dashboard">Dashboard</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} activeStyle={styles.linkActive} rel="profile" to="/Profile">Profile</Link></NavItem>
+    <NavItem className="nav-link"><Link style={styles.link} rel="logout" to="/" onClick={() => { props.logOutUser(); navigate("/"); }}>Logout</Link></NavItem>
   </React.Fragment>
 )
 
@@ -26,10 +25,12 @@ const signedOut = (props) => (
 const Header = (props) => {
   return (
     <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
-      <Navbar.Brand variant="light"> <Link to="/" style={styles.link}> {props.siteTitle}</Link> </Navbar.Brand>
+      <Navbar.Brand variant="light"> 
+        <Link to={props.isAuthenticated ? "/Dashboard" : "/"} style={styles.link}> {props.siteTitle}</Link> 
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav>
+        <Nav className="justify-content-end">
           {props.isAuthenticated ? signedIn(props) : signedOut(props)}
         </Nav>
       </Navbar.Collapse>

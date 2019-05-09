@@ -10,7 +10,7 @@ import {shallowToJson} from 'enzyme-to-json';
 import CreatePage from '../../pages/Create';
 configure({adapter:new Adapter()});
 
-const tree = shallow(<CreatePage />);
+const tree = shallow(<Provider store={store}><CreatePage /></Provider>).dive().dive();
 
 describe("Testing Create Page",()=>{
     it("Check Render",()=>{

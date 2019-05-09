@@ -1,13 +1,12 @@
 import React from "react";
-import { Tab, Tabs, CardColumns, Card } from 'react-bootstrap';
+import { Tab, Tabs } from 'react-bootstrap';
 import Layout from "../components/layout";
-import  {connect} from "react-redux";
-import {authenticateUser} from "../state/actions";
+import { connect } from "react-redux";
+import {authenticateUser, updateUser as updateUserRedux} from "../state/actions";
 import Accordion from '../components/Accordion/accordion';
-import {updateUser} from '../graphql_utils/utils';
+import ProcessFeed from '../components/ListProcesses/ProcessFeed';
+import {updateUser, getUserbyUsername} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
-import config from "../aws-exports";
-Auth.configure(config);
 
 class Profile extends React.Component {
   constructor() {
@@ -28,7 +27,6 @@ class Profile extends React.Component {
         last_name: "",
         email: "",
         phone_number: "",
-        username: ""
       },
       oldPass: "",
       newPass: "",
@@ -36,10 +34,12 @@ class Profile extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitName = this.submitName.bind(this);
-    // this.submitUsername = this.submitUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
     this.submitPassword = this.submitPassword.bind(this);
+    this.submitEmail = this.submitEmail.bind(this);
+    this.submitPhoneNumber = this.submitPhoneNumber.bind(this);
   }
+
   componentDidMount() {
     // load data of user and set to state
     const { first_name, last_name, email, phone_number, processes, username } = this.props.user;
@@ -67,6 +67,7 @@ class Profile extends React.Component {
     });
   }
 
+  // amplify to change password
   submitPassword = () => {
     if(this.state.newPass === this.state.repPass) {
       Auth.currentAuthenticatedUser()
@@ -86,69 +87,102 @@ class Profile extends React.Component {
     if ((this.state.update.first_name !== this.state.first_name) ||
         (this.state.update.last_name !== this.state.last_name)) {
       updateUser({
-        // data saved in dynamodb
+        // update data saved in dynamodb
         id: this.props.user.id,
         first_name: this.state.update.first_name,
         last_name: this.state.update.last_name
       });
+      // update data in cognito
+      this.props.updateUser({
+        first_name: this.state.update.first_name,
+        last_name: this.state.update.last_name,
+        email: this.state.email,
+        phone_number: this.state.phone_number,
+        processes: this.state.processes,
+        username: this.state.username
+      });
+      getUserbyUsername(this.state.username).then(res => {
+        console.log(res);
+        const user = res.data.getUser;
+        this.props.authenticateUser(user);
+      });
     }
   }
 
+  submitEmail = () => {
+    if (this.state.update.email !== this.state.email) {
+      //update amplify
+      Auth.currentAuthenticatedUser().then(user => {
+        Auth.updateUserAttributes(user, {
+          email: this.state.update.email
+        }).then(res => {
+          alert("Check your email for Verification code");
+          // navigate("/Verification",{state:{username:this.state.username,first_name:this.state.first_name,last_name:this.state.last_name,email:this.state.update.email,phone:this.state.phone}});
+          // update data saved in dynamodb
+          updateUser({
+            id: this.props.user.id,
+            email: this.state.update.email
+          });
+          // update data in cognito
+          this.props.updateUser({
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.update.email,
+            phone_number: this.state.phone_number,
+            processes: this.state.processes,
+            username: this.state.username
+          });
+          getUserbyUsername(this.state.username).then(res => {
+            console.log(res);
+            const user = res.data.getUser;
+            this.props.authenticateUser(user);
+          });
+        });
+      });
+    }
+  }
 
-  // when modifying username, email, phone_number, need to do it via amplify & dynamodb
-  // submitUsername = () => {
-  //   if (this.state.update.username !== this.state.username) {
-  //     Auth.currentAuthenticatedUser().then(user => {
-  //       return Auth.updateUserAttributes(user, {
-  //         username: this.state.update.username
-  //       }).then(res => {
-  //         console.log(res);
-  //       });
-  //     });
-  //     let user = Auth.currentAuthenticatedUser();
-  //     let result = Auth.updateUserAttributes(user,
-  //       {
-  //         'username': this.state.update.username
-  //       }
-  //     );
-  //     console.log(result);
-  //     updateUser({
-  //       id: this.props.user.id,
-  //       username: this.state.update.username
-  //     }).then(res => {
-  //       console.log(res);
-  //     });
-  //   }
-  // }
+  submitPhoneNumber = () => {
+    if (this.state.update.phone_numberl !== this.state.phone_number) {
+      //update amplify
+      Auth.currentAuthenticatedUser().then(user => {
+        Auth.updateUserAttributes(user, {
+          phone_number: this.state.update.phone_number
+        }).then(res => {
+          // update data saved in dynamodb
+          console.log(res)
+          updateUser({
+            id: this.props.user.id,
+            phone_number: this.state.update.phone_number
+          });
+          // update data in cognito
+          this.props.updateUser({
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            phone_number: this.state.update.phone_number,
+            processes: this.state.processes,
+            username: this.state.username
+          });
+          getUserbyUsername(this.state.username).then(res => {
+            console.log(res);
+            const user = res.data.getUser;
+            this.props.authenticateUser(user);
+          });
+        }).catch(err => alert("phone number is not in the correct format"));
+      });
+    }
+  }
 
   render() {
-    const { first_name, last_name, email, phone_number, username } = this.props.user;
-    var displayTitle = this.state.processes.items.map(item => {
-      return (
-        <Card>
-          <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-              <a href="#" className="card-link">Compass Link</a>
-              <a href="#" className="card-link">Analytics Link</a>
-          </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated {item.date_end}</small>
-          </Card.Footer>
-        </Card>
-      );
-    });
-
-    var displayProcesses = (this.state.processes === null) ?
-      ( <span>There are no projects.</span> ) : <CardColumns>{displayTitle}</CardColumns>;
+    const { first_name, last_name, email, phone_number } = this.props.user;
 
     return (
       <Layout>
         <Tabs defaultActiveKey="projects" transitions={false} style={{width:100 + "%"}}>
           <Tab eventKey="projects" title="Projects">
-            <h2 className="text-center">Projects</h2>
-            <div id="processes" className="container">
-              {displayProcesses}
-            </div>
+            <h2 className="text-center">Processes</h2>
+            {this.props.user.processes ? <ProcessFeed processes={this.props.user.processes.items}/> : null}
           </Tab>
           <Tab eventKey="settings" title="Settings">
             <h2 className="text-center">General Account Settings</h2>
@@ -163,19 +197,12 @@ class Profile extends React.Component {
                   </form>
                   <input className="submit" value="Submit Changes" type="button" onClick={this.submitName}/>
                 </div>
-                <div label="Username" change={username}>
-                  <form>
-                    Username:
-                    <input className="col input-text" type="text" name="username" defaultValue={username} onChange={this.handleChange} />
-                  </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
-                </div>
                 <div label="E-Mail" change={email}>
                   <form>
                     E-Mail:
-                    <input className="col input-text" type="text" name="email" defaultValue={email} onChange={this.handleChange}/>
+                    <input className="col input-text" type="email" name="email" defaultValue={email} onChange={this.handleChange}/>
                   </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitEmail}/>
                 </div>
                 <div label="Password" change="**********">
                   <form>
@@ -191,9 +218,9 @@ class Profile extends React.Component {
                 <div label="Phone Number" change={phone_number}>
                   <form>
                     Phone Number:
-                    <input className="col input-text" type="text" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
+                    <input className="col input-text" type="tel" name="phone_number" defaultValue={phone_number} onChange={this.handleChange}/>
                   </form>
-                  <input className="submit" value="Submit Changes" type="button"/>
+                  <input className="submit" value="Submit Changes" type="button" onClick={this.submitPhoneNumber}/>
                 </div>
               </Accordion>
             </div>
@@ -209,7 +236,8 @@ const mapStateToProps = ({state}) => ({
   user: state.user
 })
 const mapDispatchToProps = dispatch => ({
-  authenticateUser: (auth) => dispatch(authenticateUser(auth))
+  authenticateUser: (auth) => dispatch(authenticateUser(auth)),
+  updateUser: (user) => dispatch(updateUserRedux(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
