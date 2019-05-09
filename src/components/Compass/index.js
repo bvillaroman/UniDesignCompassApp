@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "../bootstrap.css"
-import { log_list } from '../../dummyData';
 import { updateUser } from '../../state/actions'
 import { connect } from 'react-redux';
 import Phase from './Phase';
@@ -15,7 +14,6 @@ class Compass extends Component {
         currentPhase: '0',
         emptyTime: "00:00:00",
         currentTime: "00:00:00",
-        log: ""
     }
 
     componentDidMount(){
@@ -59,7 +57,6 @@ class Compass extends Component {
                     currentPhase: '0',
                     emptyTime: "00:00:00",
                     currentTime: "00:00:00",
-                    log: ""
                 })
             })
         } else {
@@ -68,12 +65,6 @@ class Compass extends Component {
             })
         }
     }
-
-    parsePhases = () => {
-
-    }
-
-    parseTime
 
     compassButtonHandler = (phase) => {//handle current phase too.
         this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
@@ -89,29 +80,6 @@ class Compass extends Component {
         this.setState({ next: temp });
     }
 
-    handleTextArea = (e) => {
-        this.setState({ log: e.target.value })
-    }
-
-    updateLogHandler = (event) => {
-        var x = new Date()
-        var minutes = x.getMinutes();
-        var seconds = x.getSeconds();
-        var milliseconds = x.getMilliseconds();
-        var temp = minutes.toString() + ":" + seconds.toString() + ":" + milliseconds.toString()
-        const log = { id: this.state.currentPhase, timestamp: temp, text: this.state.log };
-        log_list.data.push(log); // Temporary
-        // console.log(log_list.data); //Temporary
-        this.forceUpdate();
-        //API.graphql(graphqlOperation(createLog, { input: log })); //taken out temporarily!
-    }
-
-    adjustTime = (index, time) => {
-        let compassPhases = this.state.compassPhases
-        compassPhases[index].time = time
-        this.setState({ compassPhases })
-    }
-
     generatePhase = (phase,index) => (
         <Phase
             currentPhase={this.state.currentPhase}
@@ -119,14 +87,10 @@ class Compass extends Component {
             phaseid={phase.id}
             compassButtonHandler={this.compassButtonHandler}
             index={index}
-            updateLogHandler={this.updateLogHandler}
             previous={this.state.previous}
             next={this.state.next}
             nextButtonHandler={this.nextButtonHandler}
             previousButtonHandler={this.previousButtonHandler}
-            handleTextArea={this.handleTextArea}
-            log={this.state.log}
-            adjustTime={this.adjustTime}
         />
     )
 
