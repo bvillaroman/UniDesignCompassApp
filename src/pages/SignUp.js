@@ -102,7 +102,6 @@ class SignUp extends Component {
             </Layout>
         )
     }
-
 }
 
 export default SignUp;
