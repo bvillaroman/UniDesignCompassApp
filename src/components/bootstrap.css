@@ -1569,9 +1569,12 @@ pre code {
 .log-container {
   margin: 0.5rem auto;
   background-color: white;
+  height: 300px;
 }
 .log-feed {
   background-color: white;
+  overflow: scroll;
+  max-height: 250px;
 }
 .log-cell {
   width: 95%;

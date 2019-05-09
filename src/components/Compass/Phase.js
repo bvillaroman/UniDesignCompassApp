@@ -72,6 +72,7 @@ class Phase extends Component {
         })
     }
 
+
     generateLog = (log) => {
         const newTime = new Date(parseInt(log.timestamp))
         const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours()
