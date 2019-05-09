@@ -12,7 +12,7 @@ class Phase extends Component {
     state = {
         logs: [],
         newLog : "",
-        time: "",
+        time: 0,
         title: "",
         description: "",
         generateLogs:[]
@@ -30,13 +30,17 @@ class Phase extends Component {
         })
     }
 
+    adjustTime = (time) => {
+        this.setState({ time })
+    }
+
     timeHandler = (timerState,pause,newTime,start) => {
         const {props} = this;
 
         props.compassButtonHandler(props.phase);
-        if(timerState=== "PLAYING") {
+        if(timerState === "PLAYING") {
             pause(); 
-            props.adjustTime(props.index, newTime);
+            // this.setState({newTime})
         } else {
             start()
         }
@@ -56,10 +60,6 @@ class Phase extends Component {
             logs.push(res.data.createLog)
             this.setState({newLog: "", logs})
         })
-
-    }
-
-    translateTime = (time) => {
 
     }
 
@@ -85,13 +85,13 @@ class Phase extends Component {
         const { props } = this;
         return (
             <Timer
-                initialTime={props.phase.time}
+                initialTime={this.state.time}
                 startImmediately={false}
-                onStart={() => console.log('Start')}
-                onResume={() => console.log('Resume')}
-                onPause={() => { console.log("Pause") }}
-                onStop={() => console.log('Stop')}
-                onReset={() => console.log('Reset')}
+                // onStart={() => console.log('Start')}
+                // onResume={() => console.log('Resume')}
+                // onPause={() => { console.log("Pause") }}
+                // onStop={() => console.log('Stop')}
+                // onReset={() => console.log('Reset')}
             >
                 {({ start, resume, pause, stop, reset, getTimerState, getTime }) => (
                     <div className="d-flex flex-column" >
@@ -152,13 +152,9 @@ Phase.propTypes = {
     currentPhase :  PropTypes.number,
     phase : PropTypes.object,
     index: PropTypes.string,
-    log: PropTypes.string,
     previous: PropTypes.bool,
     next: PropTypes.bool,
     compassButtonHandler: PropTypes.func,
-    updateLogHandler: PropTypes.func,
     nextButtonHandler: PropTypes.func,
     previousButtonHandler: PropTypes.func,
-    handleTextArea: PropTypes.func,
-    adjustTime: PropTypes.func,
 }
