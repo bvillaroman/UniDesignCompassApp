@@ -1566,6 +1566,29 @@ pre code {
   background-color: transparent;
 }
 
+.log-container {
+  margin: 0.5rem auto;
+  background-color: white;
+}
+.log-feed {
+  background-color: white;
+}
+.log-cell {
+  width: 95%;
+  border-bottom:1px solid rgba(0,0,0,.1);
+  margin: 0.25rem auto!important;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden
+}
+
+.log-text {
+  float: left;
+  list-style:none;
+}
+.log-timestamp {
+  float:right;
+  text-align: right;
+}
 .table th,
 .table td {
   padding: 0.75rem;
@@ -2075,6 +2098,19 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .form-check-inline .form-check-label {
   vertical-align: middle;
+}
+
+.log-editor {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.log-editor .text-area{
+  margin: 1rem auto;
+}
+
+.log-editor .submit-button{
+  margin: 1rem auto;
 }
 
 .valid-feedback {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Button from "react-bootstrap/Button";
-import {  ButtonGroup } from 'react-bootstrap';
+import {  ButtonGroup, Row, Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
@@ -78,13 +78,10 @@ class Phase extends Component {
         const M = newTime.getHours() > 12 ? 'PM' : 'AM'
         const parsedTime = `${hour}:${newTime.getMinutes()} ${M}`
         return (
-        <tbody key={log.id}>
-            <tr>
-                <style>{'td{background-color:rgba(50,115,220,0.3);color:grey}'}</style>
-                <td >{log.text}</td>
-                <td>{parsedTime}</td>
-            </tr>
-        </tbody>
+        <Row key={log.id} className="log-cell">
+            <Col xs={8} className="log-text">{log.text}</Col>
+            <Col className="log-timeStamp">{parsedTime}</Col>
+        </Row>
         )
     }
 
