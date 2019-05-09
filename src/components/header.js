@@ -1,10 +1,9 @@
-import { Link, navigate } from "gatsby"
+import { Link, navigate } from "@reach/router"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { logOutUser } from '../state/actions';
-
 
 const signedIn = (props) =>  (
   <React.Fragment>
