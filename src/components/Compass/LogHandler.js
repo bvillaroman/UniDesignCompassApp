@@ -7,13 +7,11 @@ import PropTypes from "prop-types"
 const LogHandler = (props) => {
   return (
     <Container>
-      <Row>
+      <Row className="log-container">
         <Col sm={8}>
-          <Container className="log-container">
             <div className="log-feed">
               {props.logs}
             </div>
-          </Container>
         </Col>
         <Col sm={4}>
           <Form.Group className="log-editor">
@@ -34,7 +32,6 @@ const LogHandler = (props) => {
               </Button>
           </Form.Group>
         </Col>
-        
       </Row>
     </Container>
     // <div>
