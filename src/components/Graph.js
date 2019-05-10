@@ -24,6 +24,14 @@ class Graph extends Component {
         this.load_process_data(this.props.processId);
     }
 
+    componentDidUpdate(prevProps) {
+        console.log('graph update')
+        // if(prevProps !== this.props) {
+        //     console.log('update')
+        //     this.setState(this.props.processId)
+        // }
+    }
+
     msToHours(t) {
        const s = t/1000;
        const m = s/60;
@@ -93,6 +101,7 @@ class Graph extends Component {
             });
             this.load_log_data(this.props.processId)
         })
+        this.props.onUpdate();
     }
 
     updateLogHandler = (log_id, timestamp, text) => {
@@ -105,6 +114,7 @@ class Graph extends Component {
             this.setState({loading: false})
             this.load_log_data(this.props.processId)
         })
+        this.props.onUpdate();
     }
 
     process_logs_render = () => {
@@ -169,6 +179,7 @@ class Graph extends Component {
     }
 
     render() {
+        console.log('graph render')
         return (
             <div className='container'>
                 {this.loading_render()}
