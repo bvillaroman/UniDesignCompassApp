@@ -17,7 +17,7 @@ class Process extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.location.pathname.replace("/Process/","")
+    const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"")
     getProcess(id)
     .then((res) => {
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
