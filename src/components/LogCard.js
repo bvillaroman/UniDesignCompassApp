@@ -81,11 +81,12 @@ class LogCard extends Component {
                 </div>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
-                    <p className={'card-text'}>{this.props.text}</p>
+                    <div style={{whiteSpace: 'pre-line'}} className={'card-text'}>{this.props.text}</div>
                     {this.state.editing
                         ?   <textarea 
                                 className={'form-control'} 
-                                rows={3} 
+                                rows={4} 
+                                autoFocus={true}
                                 defaultValue={this.props.text} 
                                 onChange={this.textarea_handler}
                             />
