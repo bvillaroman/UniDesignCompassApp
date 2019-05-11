@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { updateUser } from '../state/actions'
 import SpinningWheel from "../components/SpinningWheel"
 
-const SubmitCompass = (props) =>  (
+export const SubmitCompass = (props) =>  (
   <Form.Group controlId="formBasicEmail">
     <Form.Label className="form-title">Title of your Design Compass</Form.Label>
     <div className="input-area">
@@ -18,7 +18,7 @@ const SubmitCompass = (props) =>  (
   </Form.Group>
 )
 
-const ChooseStructure = (props) =>  (
+export const ChooseStructure = (props) =>  (
     <Form.Group controlId="formBasicEmail">
       <Form.Label className="form-title">Choose a Compass Style:</Form.Label>
       <div className="input-area">
@@ -41,7 +41,7 @@ const default_phases= [
    description:"Phase for Laugh"}
 ]
 
-const PhaseNumber = (props) =>  (
+export const PhaseNumber = (props) =>  (
   <Form.Group controlId="exampleForm.ControlSelect1">
     <Form.Label className="form-title">How many phases are in your design process</Form.Label>
     <div className="input-area">
@@ -63,7 +63,7 @@ const PhaseNumber = (props) =>  (
   </Form.Group>
 )
 
-class DescribePhase extends React.Component{
+export class DescribePhase extends React.Component{
   state = {
     title: "",
     description: "",
@@ -91,7 +91,7 @@ class DescribePhase extends React.Component{
   }
 } 
 
-class CreatePage extends React.Component {
+export class CreatePage extends React.Component {
   state = {
     compassTitle: "",
     canSubmit: false,

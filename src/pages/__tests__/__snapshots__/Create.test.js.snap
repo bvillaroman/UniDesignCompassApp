@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Create Page Check ChooseStructure Render 1`] = `
+<FormGroup
+  as="div"
+  controlId="formBasicEmail"
+>
+  <FormLabel
+    className="form-title"
+    column={false}
+    srOnly={false}
+  >
+    Choose a Compass Style:
+  </FormLabel>
+  <div
+    className="input-area"
+  >
+    <Button
+      active={false}
+      className=""
+      disabled={false}
+      id="Custom"
+      onClick={[Function]}
+      type="button"
+      variant="primary"
+    >
+       Custom 
+    </Button>
+    <Button
+      active={false}
+      className="input-button"
+      disabled={false}
+      id="Default"
+      onClick={[Function]}
+      type="button"
+      variant="primary"
+    >
+       Default 
+    </Button>
+  </div>
+</FormGroup>
+`;
+
+exports[`Testing Create Page Check DescribePhase Render 1`] = `
+<FormGroup
+  as="div"
+  controlId="exampleForm.ControlSelect1"
+>
+  <FormLabel
+    className="form-sub-title"
+    column={false}
+    srOnly={false}
+  >
+    Phase 
+    NaN
+  </FormLabel>
+  <FormControl
+    as="input"
+    name="title"
+    onChange={[Function]}
+    placeholder="Title"
+    type="text"
+    value=""
+  />
+  <FormLabel
+    column={false}
+    srOnly={false}
+  >
+    Description of your Phase
+  </FormLabel>
+  <FormControl
+    as="textarea"
+    name="description"
+    onChange={[Function]}
+    placeholder="Description"
+    rows="3"
+    value=""
+  />
+</FormGroup>
+`;
+
+exports[`Testing Create Page Check DescribePhase Render 2`] = `
+<Layout>
+  <h2>
+     Create Your Compass 
+  </h2>
+  <div
+    className="form-container"
+  >
+    <ChooseStructure
+      handleCompassType={[Function]}
+    />
+  </div>
+</Layout>
+`;
+
+exports[`Testing Create Page Check PhaseNumber Render 1`] = `
+<FormGroup
+  as="div"
+  controlId="exampleForm.ControlSelect1"
+>
+  <FormLabel
+    className="form-title"
+    column={false}
+    srOnly={false}
+  >
+    How many phases are in your design process
+  </FormLabel>
+  <div
+    className="input-area"
+  >
+    <FormControl
+      as="select"
+    >
+      <option
+        value="0"
+      >
+        -
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+      <option
+        value="5"
+      >
+        5
+      </option>
+      <option
+        value="6"
+      >
+        6
+      </option>
+      <option
+        value="7"
+      >
+        7
+      </option>
+      <option
+        value="8"
+      >
+        8
+      </option>
+      <option
+        value="9"
+      >
+        9
+      </option>
+      <option
+        value="10"
+      >
+        10
+      </option>
+      <option
+        value="11"
+      >
+        11
+      </option>
+      <option
+        value="12"
+      >
+        12
+      </option>
+    </FormControl>
+  </div>
+</FormGroup>
+`;
+
+exports[`Testing Create Page Check SubmitCompass Render 1`] = `
+<FormGroup
+  as="div"
+  controlId="formBasicEmail"
+>
+  <FormLabel
+    className="form-title"
+    column={false}
+    srOnly={false}
+  >
+    Title of your Design Compass
+  </FormLabel>
+  <div
+    className="input-area"
+  >
+    <FormControl
+      as="input"
+      name="title"
+      placeholder="Title"
+      type="text"
+    />
+    <Button
+      active={false}
+      className="input-button"
+      disabled={false}
+      type="button"
+      variant="primary"
+    >
+       Submit Compass 
+    </Button>
+  </div>
+</FormGroup>
+`;
