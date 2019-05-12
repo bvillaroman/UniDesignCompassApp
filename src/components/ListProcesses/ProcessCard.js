@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
-import {Link} from '@reach/router'
+import {Link} from 'gatsby'
 
 const ProcessCard = ({process: {id,name,date_end}, selectProcess  }) => (
   <Card key={ id }>

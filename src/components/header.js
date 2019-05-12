@@ -1,4 +1,4 @@
-import { Link, navigate } from "@reach/router"
+import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { Navbar, Nav, NavItem } from 'react-bootstrap';

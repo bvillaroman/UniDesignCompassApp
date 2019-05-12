@@ -1,5 +1,5 @@
 import React from "react";
-import { navigate } from '@reach/router';
+import { navigate } from 'gatsby';
 import Layout from '../components/layout';
 import { Button, Form } from 'react-bootstrap';
 import _ from "lodash";
