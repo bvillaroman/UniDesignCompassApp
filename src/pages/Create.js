@@ -82,9 +82,8 @@ export class DescribePhase extends React.Component{
     const {title,description} = this.state;
     return (
       <Form.Group >
-        <Form.Label className="form-sub-title">Phase {this.props.id + 1}</Form.Label>
+        <Form.Label className="form-sub-title">{`Phase ${this.props.id + 1}`}</Form.Label>
         <Form.Control id="phaseTitle" name="title" type="text" placeholder="Title" onChange={this.onChange} value={title} />
-        <Form.Label>Description of your Phase</Form.Label>
         <Form.Control id="phaseDescription" name="description" as="textarea" placeholder="Description" onChange={this.onChange} value={description} rows="3" />
       </Form.Group>
     )

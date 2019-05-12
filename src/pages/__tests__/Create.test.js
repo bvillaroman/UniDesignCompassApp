@@ -2,7 +2,6 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { store } from "../../state/store";
 import { Provider } from 'react-redux';
-
 import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallowToJson} from 'enzyme-to-json';
@@ -99,24 +98,24 @@ describe("DescribePhase",()=>{
     
     })
 
-    // describe("When DescribePhase is rendered with defined state/props",()=>{
-    //     beforeEach(() => {
-    //         props.createPhase= jest.fn()
-    //     });
+    describe("When DescribePhase is  passed an id and a key",()=>{
+        beforeEach(() => {
+            props = {
+                id: 0,
+                key: 1
+            };
+
+        });
+
+        it("renders a `Form`", () => {
+            expect(describePhase().find(Form.Label).length).toBe(1);
+        });
     
-    //     it("Check DescribePhase createPhase is a function",()=>{
-    //         const DescribePhaseComponent = describePhase()
-    //         expect(DescribePhaseComponent.props().createPhase).toEqual(props.createPhase);
-    //     });
+        it("Check DescribePhase createPhase is a function",()=>{
+            const DescribePhaseComponent = describePhase().find(Form.Label)
+            expect(DescribePhaseComponent.props().children).toEqual("Phase 1");
+        });
     
-    // })
+    })
 
 })
-
-
-// it('Should have a description in the description prop in the ', () => {
-//     const description = "a description"
-//     DescribePhaseComponent.
-//     console.log(DescribePhaseComponent.find('#phaseDescription'))
-//     expect(true).toBe(true)
-//    })
