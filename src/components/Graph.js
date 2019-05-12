@@ -208,12 +208,13 @@ Graph.propTypes = {
     processId: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({state}) => ({
-    isAuthenticated: state.isAuthenticated,
-    user: state.user
-})
-const mapDispatchToProps = dispatch => ({
-    authenticateUser: (auth) => dispatch(authenticateUser(auth))
-})
+// const mapStateToProps = ({state}) => ({
+//     isAuthenticated: state.isAuthenticated,
+//     user: state.user
+// })
+// const mapDispatchToProps = dispatch => ({
+//     authenticateUser: (auth) => dispatch(authenticateUser(auth))
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Graph);
+// export default connect(mapStateToProps, mapDispatchToProps)(Graph);
+export default Graph;
