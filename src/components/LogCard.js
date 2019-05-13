@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
+/**
+ * Componenet for displaying the information inside a Log, and controls for updating
+ * or deleting a Log
+ */
 class LogCard extends Component {
     constructor(props) {
         super(props);
@@ -12,19 +16,32 @@ class LogCard extends Component {
         }
     }
 
+    /**
+     * Handler for toggling the editing state, which will 
+     * display a textarea to enter changes to a Log.
+     */
     edit_toggle_handler = () => {
         this.setState({editing: !this.state.editing});
     }
 
+    /**
+     * Handler to send Log changes, with the current timestamp
+     */
     update_button_handler = () => {
         this.props.updateHandler(this.props.logId, Date.now(), this.state.editText);
         this.setState({editing: false});
     }
 
+    /**
+     * Handler to delete a Log.
+     */
     delete_button_handler = () => {
         this.props.deleteHandler(this.props.logId);
     }
 
+    /**
+     * Handler to update the textarea changes to state
+     */
     textarea_handler = (e) => {
         this.setState({editText: e.target.value});
     }
@@ -51,12 +68,14 @@ class LogCard extends Component {
                             {this.state.editing
                                 ?   <span className={'d-flex row justify-content-end'}>
                                         <button 
+                                            id={'cancel'}
                                             className={'btn btn-outline-primary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Cancel
                                         </button>
                                         <span className={'m-1'} />
                                         <button 
+                                            id={'update'}
                                             className={'btn btn-outline-success col-lg-3'}
                                             onClick={this.update_button_handler}
                                         >Update
@@ -64,12 +83,14 @@ class LogCard extends Component {
                                     </span>
                                 :   <span className={'d-flex row row justify-content-end'}>
                                         <button 
+                                            id={'edit'}
                                             className={'btn btn-outline-secondary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Edit
                                         </button>
                                         <span className={'m-1'} />
                                         <button
+                                            id={'delete'}
                                             className={'btn btn-outline-danger col-lg-3'}
                                             onClick={this.delete_button_handler}
                                         >Delete
@@ -81,11 +102,13 @@ class LogCard extends Component {
                 </div>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
-                    <p className={'card-text'}>{this.props.text}</p>
+                    <div style={{whiteSpace: 'pre-line'}} className={'card-text'}>{this.props.text}</div>
                     {this.state.editing
                         ?   <textarea 
+                                id={'textarea'}
                                 className={'form-control'} 
-                                rows={3} 
+                                rows={4} 
+                                autoFocus={true}
                                 defaultValue={this.props.text} 
                                 onChange={this.textarea_handler}
                             />
