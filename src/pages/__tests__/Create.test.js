@@ -257,3 +257,71 @@ describe("ChooseStructure",()=>{
     })
 
 })
+
+describe("SubmitCompass",()=>{
+
+    let mountedSubmitCompass;
+    let props;
+
+    const submitCompass = () => {
+        if (!mountedSubmitCompass) mountedSubmitCompass = mount(<SubmitCompass {...props} />)
+        return mountedSubmitCompass;
+    }
+
+    beforeEach(() => {
+        props = {
+            createCompass: undefined,
+            title: undefined,
+            onChange: undefined
+        };
+        mountedSubmitCompass = undefined;
+    });
+
+    describe("When SubmitCompass is rendered with empty props",()=>{
+        beforeEach(() => {
+            props = {
+                createCompass: undefined,
+                title: undefined,
+                onChange: undefined
+            };
+        });
+
+        it("Check submitCompass Renders with blank props",()=>{
+            const SubmitCompassComponent = submitCompass()
+            expect(SubmitCompassComponent.props()).toEqual(props);
+        });
+    
+    })
+
+    describe("When props are being passed to SubmitCompass",()=>{
+        beforeEach(() => {
+            props = {
+                createCompass: jest.fn(),
+                title: "",
+                onChange: jest.fn()
+            };
+        });
+
+        it("renders submit button and input", () => {
+            const SubmitCompassComponent = submitCompass()
+            expect(SubmitCompassComponent.find('input[name="title"]').length).toBe(1);
+            expect(SubmitCompassComponent.find('button[className="input-button btn btn-primary"]').length).toBe(1);
+        });
+
+        it("Check SubmitCompassComponent's createCompass and onChange are being called",()=>{
+            const SubmitCompassComponent = submitCompass()
+            const TitleEvent = {target: {value: "Testing Title"}}
+            const TitleInput   = SubmitCompassComponent.find('input[name="title"]')
+            const SubmitButton = SubmitCompassComponent.find('button[className="input-button btn btn-primary"]')
+
+            TitleInput.simulate('change',TitleEvent);
+            expect(props.onChange).toBeCalled();
+        
+            SubmitButton.simulate('click');
+            expect(props.createCompass).toBeCalled();
+
+        });
+    
+    })
+
+})
