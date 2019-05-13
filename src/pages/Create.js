@@ -22,7 +22,7 @@ export const ChooseStructure = (props) =>  (
     <Form.Group controlId="formBasicEmail">
       <Form.Label className="form-title">Choose a Compass Style:</Form.Label>
       <div className="input-area">
-        <Button className="input-button" id="Custom"  variant="primary" className="" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
+        <Button className="input-button" id="Custom"  variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
         <Button className="input-button" id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
       </div>
       

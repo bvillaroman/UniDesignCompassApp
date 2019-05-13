@@ -1,10 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import { store } from "../../state/store";
-import { Provider } from 'react-redux';
 import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {shallowToJson} from 'enzyme-to-json';
 import {CreatePage, DescribePhase, PhaseNumber, ChooseStructure, SubmitCompass } from '../Create';
 import { Button, Form } from 'react-bootstrap';
 
@@ -185,7 +182,7 @@ describe("PhaseNumber",()=>{
             expect(NumberForm.props().children.length).toEqual(12);
         });
 
-        it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+        it("Check PhaseNumber is calling handlePhaseAmount when a selection has been made",()=>{
             const selectEvent = { target: { value: '2'} };
 
             const PhaseNumber = phaseNumber();
@@ -235,7 +232,7 @@ describe("ChooseStructure",()=>{
     describe("When props are being passed to ChooseStructure",()=>{
         beforeEach(() => {
             props = {
-                handleCompassType: jest.fn((e) => {return e} ),
+                handleCompassType: jest.fn(),
             };
         });
 
@@ -243,36 +240,19 @@ describe("ChooseStructure",()=>{
             expect(chooseStructure().find('button[id="Default"]').length).toBe(1);
             expect(chooseStructure().find('button[id="Custom"]').length).toBe(1);
         });
-    
-        // it("Check ChooseStructure chilrden is correctly rendered with the handler",()=>{
-        //     const CustomButton  = chooseStructure().find('button[id="Custom"]')
-        //     const DefaultButton = chooseStructure().find('button[id="Default"]')
-            
-        //     expect(CustomButton.props().onClick).toEqual(props.handleCompassType);
-        //     expect(DefaultButton.props().onClick).toEqual(props.handleCompassType);
 
-        // });
+        it("Check chooseStructure's handleCompassType is being called",()=>{
+            const ChooseStructure = chooseStructure();
+            const CustomButton    = ChooseStructure.find('button[id="Custom"]')
+            const DefaultButton   = ChooseStructure.find('button[id="Default"]')
 
-        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
-        //     const onChangeMock = jest.fn();
-        //     const titleEvent = {
-        //         target: { name:"title", value: 'this is a title' }
-        //     };
-        //     const descriptionEvent = {
-        //         target: { name:"description", value: 'this is a description' }
-        //     };
-        //     const DescribePhase = describePhase();
+            CustomButton.simulate('click');
+            expect(props.handleCompassType).toBeCalledWith(false);
 
-        //     const instance = DescribePhase.instance();
-        //     jest.spyOn(instance, 'onChange');
+            DefaultButton.simulate('click');
+            expect(props.handleCompassType).toBeCalledWith(true);
 
-        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
-        //     // PhaseTitle.simulate('change', titleEvent);
-        //     // DescribePhase.setState({title: state.title, description: state.description})
-        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
-        //     expect(instance.onChange).toHaveBeenCalled();
-
-        // });
+        });
     
     })
 
