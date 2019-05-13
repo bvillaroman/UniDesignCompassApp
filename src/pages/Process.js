@@ -14,10 +14,11 @@ class Process extends React.Component {
     id: "",
     name: "",
     phases: [],
+    updateComponent: ""
   }
 
   componentDidMount() {
-    const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"")
+    const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"").replace("/","")
     getProcess(id)
     .then((res) => {
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
@@ -34,32 +35,30 @@ class Process extends React.Component {
     })
   }
 
-  updateHandler = () => {
-    console.log('updatehandler')
-    this.setState({updateCount : this.state.updateCount+1})
+  updateHandler = (updateComponent) => {
+    this.setState({updateComponent})
   }
 
   render() {
     const { name,id } = this.state;
-    console.log(id)
     return (
       <Layout>
         <h2 className="text-center">{name}</h2>
         <Tab.Container id="left-tabs-example" defaultActiveKey="compass">
           <Nav variant="pills" defaultActiveKey="compass" className="process-tabs">
             <Nav.Item className="tab">
-              <Nav.Link eventKey="compass">Compass</Nav.Link>
+              <Nav.Link eventKey="compass" onClick={()=>{ this.updateHandler("Compass")}}>Compass</Nav.Link>
             </Nav.Item>
             <Nav.Item className="tab">
-              <Nav.Link eventKey="analytics">Analytics</Nav.Link>
+              <Nav.Link eventKey="analytics" onClick={()=>{ this.updateHandler("Graph")}}>Analytics</Nav.Link>
             </Nav.Item>
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="compass">
-              {id && <Compass key={this.state.updateCount} id={id} onUpdate={this.updateHandler}/>}
+              {id && <Compass id={id} updateHandler={this.updateHandler} updateComponent={this.state.updateComponent === "Compass"}/>}
             </Tab.Pane>
             <Tab.Pane eventKey="analytics">
-              {id && <Graph key={this.state.updateCount} processId={id} onUpdate={this.updateHandler}/>}
+              {id && <Graph processId={id} updateHandler={this.updateHandler} updateComponent={this.state.updateComponent === "Graph"}/>}
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>

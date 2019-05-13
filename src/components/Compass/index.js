@@ -4,6 +4,7 @@ import { updateUser } from '../../state/actions'
 import { connect } from 'react-redux';
 import Phase from './Phase';
 import {getProcess} from '../../graphql_utils/utils'
+import SpinningWheel from "../SpinningWheel"
 
 class Compass extends Component {
     state = {
@@ -14,11 +15,32 @@ class Compass extends Component {
         currentPhase: '0',
         emptyTime: "00:00:00",
         currentTime: "00:00:00",
+        loading: false
     }
 
     componentDidMount(){
-        if (this.props.id){
-            getProcess(this.props.id)
+        if (this.props.id) {
+            this.setState({loading: true}, () => {
+                this.setProcess(this.props.id)
+                this.props.updateHandler("")
+            })
+        }
+        else {
+            this.setState({ compassName: "There is no compass here" })
+        }
+    }
+
+    componentDidUpdate(){
+        if (this.props.updateComponent) {
+            this.setState({loading: true}, () => {
+                this.setProcess(this.props.id)
+                this.props.updateHandler("")
+            })
+        }
+    }
+
+    setProcess = (id) => {
+        getProcess(id)
             .then((res) => {
                 const compass = res.data.getProcess;
                 const compassName = compass.name;
@@ -28,7 +50,6 @@ class Compass extends Component {
                         key: index + 1,  
                         name: phase.title, 
                         description: phase.description, 
-                        // time: phase.duration
                         time: 0
                     }
                 })
@@ -36,6 +57,7 @@ class Compass extends Component {
                 this.setState({
                     compassName,
                     compassPhases,
+                    loading: false
                 })
             })
             .catch( err => {
@@ -57,13 +79,9 @@ class Compass extends Component {
                     currentPhase: '0',
                     emptyTime: "00:00:00",
                     currentTime: "00:00:00",
+                    loading: false
                 })
             })
-        } else {
-            this.setState({
-                compassName: "There is no compass here",
-            })
-        }
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
@@ -91,8 +109,6 @@ class Compass extends Component {
             next={this.state.next}
             nextButtonHandler={this.nextButtonHandler}
             previousButtonHandler={this.previousButtonHandler}
-
-            onUpdate={this.props.onUpdate}
         />
     )
 
@@ -100,7 +116,10 @@ class Compass extends Component {
         const {compassName,compassPhases} = this.state
         return (
             <div className='container'>
-                {compassPhases.map((phase, index) => (this.generatePhase(phase,index)))}
+                { 
+                    this.state.loading ? <SpinningWheel/> 
+                    : compassPhases.map((phase, index) => (this.generatePhase(phase,index)))
+                }
             </div>
         );
     }

@@ -29,13 +29,16 @@ class Graph extends Component {
         this.load_chart_data(process_id);
         this.load_log_data(process_id);
     }
-
     componentDidMount() {
-        this.load_process_data(this.props.processId);
+        if (this.props.processId) this.load_process_data(this.props.processId)
     }
 
     componentDidUpdate(prevProps) {
-        console.log('graph update')
+        if (this.props.updateComponent) {
+            this.load_process_data(this.props.processId)
+            this.props.updateHandler("")
+        }
+        // console.log('graph update')
         // if(prevProps !== this.props) {
         //     console.log('update')
         //     this.setState(this.props.processId)
@@ -131,7 +134,6 @@ class Graph extends Component {
             });
             this.load_log_data(this.props.processId)
         })
-        this.props.onUpdate();
     }
 
     /**
@@ -150,7 +152,6 @@ class Graph extends Component {
             this.setState({loading: false})
             this.load_log_data(this.props.processId)
         })
-        this.props.onUpdate();
     }
 
     /**
@@ -223,7 +224,6 @@ class Graph extends Component {
     }
 
     render() {
-        console.log('graph render')
         return (
             <div className='container'>
                 {this.loading_render()}
