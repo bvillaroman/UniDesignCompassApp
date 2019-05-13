@@ -14,11 +14,6 @@ configure({adapter:new Adapter()});
 
 // describe("Render Testing for Creat Page",()=>{
 
-//     const DescribePhaseComponent = shallow(<DescribePhase debug/>)
-//     it("Check DescribePhase Render",()=>{
-//         expect(shallowToJson(DescribePhaseComponent)).toMatchSnapshot();
-//     });
-
 //     const PhaseNumberComponent = shallow(<PhaseNumber debug/>)
 //     it("Check PhaseNumber Render",()=>{
 //         expect(shallowToJson(PhaseNumberComponent)).toMatchSnapshot();
@@ -98,11 +93,18 @@ describe("DescribePhase",()=>{
     
     })
 
-    describe("When DescribePhase is  passed an id and a key",()=>{
+    describe("When props are being passed to DescribePhase",()=>{
         beforeEach(() => {
+            state = {
+                title: "",
+                description: ""
+            };
             props = {
                 id: 0,
-                key: 1
+                createPhase: jest.fn( (title,description) => {
+                    state.title = title;
+                    state.description = description
+                }),
             };
 
         });
@@ -111,10 +113,181 @@ describe("DescribePhase",()=>{
             expect(describePhase().find(Form.Label).length).toBe(1);
         });
     
-        it("Check DescribePhase createPhase is a function",()=>{
-            const DescribePhaseComponent = describePhase().find(Form.Label)
-            expect(DescribePhaseComponent.props().children).toEqual("Phase 1");
+        it("Check DescribePhase Phase Label is correctly rendered with the right data",()=>{
+            const PhaseLabel = describePhase().find(Form.Label)
+            expect(PhaseLabel.props().children).toEqual("Phase 1");
         });
+
+        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+        //     const onChangeMock = jest.fn();
+        //     const titleEvent = {
+        //         target: { name:"title", value: 'this is a title' }
+        //     };
+        //     const descriptionEvent = {
+        //         target: { name:"description", value: 'this is a description' }
+        //     };
+        //     const DescribePhase = describePhase();
+
+        //     const instance = DescribePhase.instance();
+        //     jest.spyOn(instance, 'onChange');
+
+        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
+        //     // PhaseTitle.simulate('change', titleEvent);
+        //     // DescribePhase.setState({title: state.title, description: state.description})
+        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
+        //     expect(instance.onChange).toHaveBeenCalled();
+
+        // });
+    
+    })
+
+})
+
+describe("PhaseNumber",()=>{
+
+    let mountedPhaseNumber;
+    let props;
+
+    const phaseNumber = () => {
+        if (!mountedPhaseNumber) mountedPhaseNumber = mount(<PhaseNumber {...props} />)
+        return mountedPhaseNumber;
+    }
+
+    beforeEach(() => {
+        props = {
+            handlePhaseAmount: undefined,
+        };
+        mountedPhaseNumber = undefined;
+    });
+
+    describe("When PhaseNumber is rendered with empty props",()=>{
+        beforeEach(() => {
+            props = {
+                handlePhaseAmount: undefined,
+            };
+        });
+
+
+        it("Check PhaseNumber Render with a blank prop",()=>{
+            const PhaseNumberComponent = phaseNumber()
+            expect(PhaseNumberComponent.props()).toEqual(props);
+        });
+    
+    })
+
+    describe("When props are being passed to PhaseNumber",()=>{
+        beforeEach(() => {
+            props = {
+                handlePhaseAmount: jest.fn( ),
+            };
+        });
+
+        it("renders a `Form`", () => {
+            expect(phaseNumber().find(Form.Control).length).toBe(1);
+        });
+    
+        it("Check DescribePhase Phase Label is correctly rendered with the right amount of options",()=>{
+            const NumberForm = phaseNumber().find(Form.Control)
+            expect(NumberForm.props().children.length).toEqual(12);
+        });
+
+        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+        //     const onChangeMock = jest.fn();
+        //     const titleEvent = {
+        //         target: { name:"title", value: 'this is a title' }
+        //     };
+        //     const descriptionEvent = {
+        //         target: { name:"description", value: 'this is a description' }
+        //     };
+        //     const DescribePhase = describePhase();
+
+        //     const instance = DescribePhase.instance();
+        //     jest.spyOn(instance, 'onChange');
+
+        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
+        //     // PhaseTitle.simulate('change', titleEvent);
+        //     // DescribePhase.setState({title: state.title, description: state.description})
+        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
+        //     expect(instance.onChange).toHaveBeenCalled();
+
+        // });
+    
+    })
+
+})
+
+describe("ChooseStructure",()=>{
+
+    let mountedChooseStructure;
+    let props;
+
+    const chooseStructure = () => {
+        if (!mountedChooseStructure) mountedChooseStructure = mount(<ChooseStructure {...props} />)
+        return mountedChooseStructure;
+    }
+
+    beforeEach(() => {
+        props = {
+            handleCompassType: undefined,
+        };
+        mountedChooseStructure = undefined;
+    });
+
+    describe("When ChooseStructure is rendered with empty props",()=>{
+        beforeEach(() => {
+            props = {
+                handleCompassType: undefined,
+            };
+        });
+
+        it("Check ChooseStructure Renders with blank props",()=>{
+            const ChooseStructureComponent = chooseStructure()
+            expect(ChooseStructureComponent.props()).toEqual(props);
+        });
+    
+    })
+
+    describe("When props are being passed to ChooseStructure",()=>{
+        beforeEach(() => {
+            props = {
+                handleCompassType: jest.fn((e) => {return e} ),
+            };
+        });
+
+        it("renders two Buttons with the correct props", () => {
+            expect(chooseStructure().find('button[id="Default"]').length).toBe(1);
+            expect(chooseStructure().find('button[id="Custom"]').length).toBe(1);
+        });
+    
+        // it("Check ChooseStructure chilrden is correctly rendered with the handler",()=>{
+        //     const CustomButton  = chooseStructure().find('button[id="Custom"]')
+        //     const DefaultButton = chooseStructure().find('button[id="Default"]')
+            
+        //     expect(CustomButton.props().onClick).toEqual(props.handleCompassType);
+        //     expect(DefaultButton.props().onClick).toEqual(props.handleCompassType);
+
+        // });
+
+        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+        //     const onChangeMock = jest.fn();
+        //     const titleEvent = {
+        //         target: { name:"title", value: 'this is a title' }
+        //     };
+        //     const descriptionEvent = {
+        //         target: { name:"description", value: 'this is a description' }
+        //     };
+        //     const DescribePhase = describePhase();
+
+        //     const instance = DescribePhase.instance();
+        //     jest.spyOn(instance, 'onChange');
+
+        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
+        //     // PhaseTitle.simulate('change', titleEvent);
+        //     // DescribePhase.setState({title: state.title, description: state.description})
+        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
+        //     expect(instance.onChange).toHaveBeenCalled();
+
+        // });
     
     })
 
