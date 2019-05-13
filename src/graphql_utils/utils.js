@@ -103,7 +103,7 @@ export async function updatePhase(id,duration,title,description){
         duration,
         title,
         description
-    }  
+    }
     const updatedPhase = await API.graphql(graphqlOperation(mutations.updatePhase,{input:phaseInfo}));
     return updatedPhase;
 }
@@ -145,9 +145,9 @@ export async function createNewCompass(user,name,phases){
             console.log(error);
         }
     )
-    
+
     for(let i =0 ;i < phases.length; i++){ await createPhase(process_info.id,phases[i].title,phases[i].description);}
-    return getProcess(process_info.id);    
+    return getProcess(process_info.id);
 }
 export async function appendNewLog(phaseId,log){
     if(log.text === ""){

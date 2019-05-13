@@ -34,53 +34,6 @@ const LogHandler = (props) => {
         </Col>
       </Row>
     </Container>
-    // <div>
-    //     <Table bordered responsive>
-    //       {props.logs}
-    //     </Table>
-    //     <Row>
-    //         {/* <Col>
-    //             <Button
-    //                 className='float-left'
-    //                 variant={props.previous ? "primary" : "secondary"}
-    //                 onClick={() => props.previousButtonHandler()}
-    //                 active>
-    //                 Previous
-    //             </Button>
-    //         </Col> */}
-    //         <Col>
-    //             <textarea
-    //               placeholder="Log Text"
-    //               rows="5"
-    //               cols="20"
-    //               value={props.log}
-    //               onChange={props.handleTextArea}
-    //             />
-    //         </Col>
-    //         {/* <Col>
-    //           <Button
-    //               className='float-right'
-    //               variant={props.next ? "primary" : "secondary"}
-    //               onClick={(e) => props.nextButtonHandler()}
-    //               active
-    //             >
-    //               Next
-    //             </Button>
-    //         </Col> */}
-    //     </Row>
-    //     <Row>
-    //       <Col>
-    //         <Button
-    //           block
-    //           size="sm"
-    //           variant="warning"
-    //           onClick={(e) => props.submitLog(e,props.currentTime)}
-    //         >
-    //           Submit Log
-    //         </Button>
-    //       </Col>
-    //     </Row>
-    // </div>
   );
 }
 
