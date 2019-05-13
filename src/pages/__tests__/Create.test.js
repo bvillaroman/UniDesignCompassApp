@@ -14,11 +14,6 @@ configure({adapter:new Adapter()});
 
 // describe("Render Testing for Creat Page",()=>{
 
-//     const PhaseNumberComponent = shallow(<PhaseNumber debug/>)
-//     it("Check PhaseNumber Render",()=>{
-//         expect(shallowToJson(PhaseNumberComponent)).toMatchSnapshot();
-//     });
-
 //     const ChooseStructureComponent = shallow(<ChooseStructure debug/>)
 //     it("Check ChooseStructure Render",()=>{
 //         expect(shallowToJson(ChooseStructureComponent)).toMatchSnapshot();
@@ -115,7 +110,7 @@ describe("DescribePhase",()=>{
             expect(PhaseLabel.props().children).toEqual("Phase 1");
         });
 
-        it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+        it("Check DescribePhase is calling onChange correctly",()=>{
             const titleEvent = {
                 target: { name:"title", value: 'this is a title' }
             };
@@ -137,8 +132,7 @@ describe("DescribePhase",()=>{
 
             expect(spy.mock.calls.length).toBe(2);
 
-            // spy.mockRestore();
-
+            spy.mockRestore();
         });
     
     })
@@ -169,12 +163,10 @@ describe("PhaseNumber",()=>{
             };
         });
 
-
         it("Check PhaseNumber Render with a blank prop",()=>{
             const PhaseNumberComponent = phaseNumber()
             expect(PhaseNumberComponent.props()).toEqual(props);
         });
-    
     })
 
     describe("When props are being passed to PhaseNumber",()=>{
@@ -188,34 +180,25 @@ describe("PhaseNumber",()=>{
             expect(phaseNumber().find(Form.Control).length).toBe(1);
         });
     
-        it("Check DescribePhase Phase Label is correctly rendered with the right amount of options",()=>{
+        it("Check PhaseNumber Phase Label is correctly rendered with the right amount of options",()=>{
             const NumberForm = phaseNumber().find(Form.Control)
             expect(NumberForm.props().children.length).toEqual(12);
         });
 
-        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
-        //     const onChangeMock = jest.fn();
-        //     const titleEvent = {
-        //         target: { name:"title", value: 'this is a title' }
-        //     };
-        //     const descriptionEvent = {
-        //         target: { name:"description", value: 'this is a description' }
-        //     };
-        //     const DescribePhase = describePhase();
+        it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+            const selectEvent = { target: { value: '2'} };
 
-        //     const instance = DescribePhase.instance();
-        //     jest.spyOn(instance, 'onChange');
+            const PhaseNumber = phaseNumber();
 
-        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
-        //     // PhaseTitle.simulate('change', titleEvent);
-        //     // DescribePhase.setState({title: state.title, description: state.description})
-        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
-        //     expect(instance.onChange).toHaveBeenCalled();
+            const PhaseSelector = PhaseNumber.find("select");
 
-        // });
-    
+            expect(props.handlePhaseAmount.mock.calls.length).toBe(0);
+
+            PhaseSelector.simulate('change', selectEvent);
+
+            expect(props.handlePhaseAmount.mock.calls.length).toBe(1);
+        })
     })
-
 })
 
 describe("ChooseStructure",()=>{
