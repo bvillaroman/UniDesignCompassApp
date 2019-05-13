@@ -3,29 +3,8 @@ import renderer from "react-test-renderer"
 import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {CreatePage, DescribePhase, PhaseNumber, ChooseStructure, SubmitCompass } from '../Create';
-import { Button, Form } from 'react-bootstrap';
-
+import { Form } from 'react-bootstrap';
 configure({adapter:new Adapter()});
-
-// const tree = shallow(<Provider store={store}><CreatePage /></Provider>).dive().dive();
-
-// describe("Render Testing for Creat Page",()=>{
-
-//     const ChooseStructureComponent = shallow(<ChooseStructure debug/>)
-//     it("Check ChooseStructure Render",()=>{
-//         expect(shallowToJson(ChooseStructureComponent)).toMatchSnapshot();
-//     });
-
-//     const SubmitCompassComponent = shallow(<SubmitCompass debug/>)
-//     it("Check SubmitCompass Render",()=>{
-//         expect(shallowToJson(SubmitCompassComponent)).toMatchSnapshot();
-//     });
-
-//     const CreatePageComponent = shallow(<CreatePage debug/>)
-//     it("Check CreatePage Render",()=>{
-//         expect(shallowToJson(CreatePageComponent)).toMatchSnapshot();
-//     });
-// })
 
 describe("DescribePhase",()=>{
 
@@ -37,7 +16,6 @@ describe("DescribePhase",()=>{
         if (!mountedDescribePhase) mountedDescribePhase = mount(<DescribePhase {...props} />)
         return mountedDescribePhase;
     }
-
 
     beforeEach(() => {
         state = {
@@ -324,4 +302,78 @@ describe("SubmitCompass",()=>{
     
     })
 
+})
+
+describe("CreatePage",()=>{
+
+    let mountedCreatePage;
+    let props;
+    let state;
+
+    const createPage = () => {
+        if (!mountedCreatePage) mountedCreatePage = shallow(<CreatePage {...props} />)
+        return mountedCreatePage;
+    }
+
+    beforeEach(() => {
+        state = {
+            compassTitle: "",
+            canSubmit: false,
+            defaultCompass: true,
+            numberOfPhases: 0,
+            phases: [],
+            status: "chooseStructure",
+            loading: false
+          };
+        props = {
+            user: undefined,
+        };
+        mountedCreatePage = undefined;
+    });
+
+    describe("When CreatePage is first rendered ",()=>{
+
+        it("Check CreatePage Renders with a default state and loads Choose Structure first",()=>{
+            const CreatePageComponent = createPage()
+
+            expect(CreatePageComponent.state()).toEqual(state);
+            expect(CreatePageComponent.find(ChooseStructure).length).toBe(1)
+        });
+
+        it("Check setting the state loads different phases through handleForms",()=>{
+            const CreatePageComponent = createPage()
+            const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
+
+            CreatePageComponent.setState({status: "numOfPhases",numberOfPhases:1})
+            expect(CreatePageComponent.find(PhaseNumber).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(1)
+
+            CreatePageComponent.setState({status: "createPhases"})
+            expect(CreatePageComponent.find(DescribePhase).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(2)
+
+            CreatePageComponent.setState({status: "submitCompass"})
+            expect(CreatePageComponent.find(SubmitCompass).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(3)
+
+        });
+
+        it("Check setting the state loads different phases through handleForms",()=>{
+            const CreatePageComponent = createPage()
+            const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
+
+            CreatePageComponent.setState({status: "numOfPhases",numberOfPhases:1})
+            expect(CreatePageComponent.find(PhaseNumber).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(1)
+
+            CreatePageComponent.setState({status: "createPhases"})
+            expect(CreatePageComponent.find(DescribePhase).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(2)
+
+            CreatePageComponent.setState({status: "submitCompass"})
+            expect(CreatePageComponent.find(SubmitCompass).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(3)
+
+        });
+    })
 })
