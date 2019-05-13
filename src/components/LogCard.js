@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
+/**
+ * Componenet for displaying the information inside a Log, and controls for updating
+ * or deleting a Log
+ */
 class LogCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // logData: this.props.logData,
             deleteHandler: this.props.deleteHandler,
             updateHandler: this.props.updateHandler,
             editText: null,
@@ -13,30 +16,37 @@ class LogCard extends Component {
         }
     }
 
-    // componentDidUpdate(prevProps) {
-    //     const p = ['id', 'phase_title', 'text', 'timestamp'];
-    //     const log_is_updated = p.some(item => {
-    //         return prevProps.logData[item] !== this.state.logData[item];
-    //     });
-    //     if(log_is_updated)
-    //         this.setState({logData: this.props.logData})
-    // }
-
+    /**
+     * Handler for toggling the editing state, which will 
+     * display a textarea to enter changes to a Log.
+     */
     edit_toggle_handler = () => {
-        this.setState({editing: !this.state.editing})
+        this.setState({editing: !this.state.editing});
     }
 
+    /**
+     * Handler to send Log changes, with the current timestamp
+     */
     update_button_handler = () => {
-        this.state.updateHandler(this.props.logData.id, Date.now(), this.state.editText);
-        this.setState({editing: false})
+        this.props.updateHandler(this.props.logId, Date.now(), this.state.editText);
+        this.setState({editing: false});
     }
 
+    /**
+     * Handler to delete a Log.
+     */
+    delete_button_handler = () => {
+        this.props.deleteHandler(this.props.logId);
+    }
+
+    /**
+     * Handler to update the textarea changes to state
+     */
     textarea_handler = (e) => {
         this.setState({editText: e.target.value});
     }
         
     render() {
-        // console.log(this.props.logData)
         return (
             <div className={'card mb-3 shadow-sm'}>
                 <div className={'card-header'}>
@@ -44,38 +54,45 @@ class LogCard extends Component {
                         <div className={'col-lg-8 col-sm-12'}>
                             <span className={'row'}>
                                 <span className={'col-lg-6 col-4'}>
-                                    {this.props.logData.phase_title}
+                                    {this.props.phaseTitle}
                                 </span>
                                 <span className={'col-lg-6 col-8 text-lg-center text-right'}>
-                                    {new Date(parseInt(this.props.logData.timestamp)).toLocaleString()}
+                                    {this.props.timestamp
+                                        ? new Date(parseInt(this.props.timestamp)).toLocaleString()
+                                        : null
+                                    }
                                 </span>
                             </span>
                         </div>
                         <div className={'col-lg-4 col-sm-12 justify-content-end'}>
                             {this.state.editing
-                                ?
-                                    <span className={'d-flex row justify-content-end'}>
+                                ?   <span className={'d-flex row justify-content-end'}>
                                         <button 
-                                            className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-primary col-lg-3'}
+                                            id={'cancel'}
+                                            className={'btn btn-outline-primary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Cancel
                                         </button>
+                                        <span className={'m-1'} />
                                         <button 
-                                            className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-success col-lg-3'}
+                                            id={'update'}
+                                            className={'btn btn-outline-success col-lg-3'}
                                             onClick={this.update_button_handler}
                                         >Update
                                         </button>
                                     </span>
-                                :   
-                                    <span className={'d-flex row row justify-content-end'}>
+                                :   <span className={'d-flex row row justify-content-end'}>
                                         <button 
-                                            className={'btn mr-lg-3 ml-lg-0 mr-3 ml-3 btn-outline-secondary col-lg-3'}
+                                            id={'edit'}
+                                            className={'btn btn-outline-secondary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Edit
                                         </button>
+                                        <span className={'m-1'} />
                                         <button
-                                            className={'btn mr-lg-0 ml-lg-1 mr-3 ml-3 btn-outline-danger col-lg-3'}
-                                            onClick={() => this.state.deleteHandler(this.props.logData.id)}
+                                            id={'delete'}
+                                            className={'btn btn-outline-danger col-lg-3'}
+                                            onClick={this.delete_button_handler}
                                         >Delete
                                         </button>
                                     </span>
@@ -85,17 +102,17 @@ class LogCard extends Component {
                 </div>
                 <div className={'card-body'}>
                     {/* <h5 class="card-title">Special title treatment</h5> */}
-                    <p className={'card-text'}>{this.props.logData.text}</p>
+                    <div style={{whiteSpace: 'pre-line'}} className={'card-text'}>{this.props.text}</div>
                     {this.state.editing
-                        ? 
-                            <textarea 
+                        ?   <textarea 
+                                id={'textarea'}
                                 className={'form-control'} 
-                                rows={3} 
-                                defaultValue={this.props.logData.text} 
+                                rows={4} 
+                                autoFocus={true}
+                                defaultValue={this.props.text} 
                                 onChange={this.textarea_handler}
                             />
-                        : 
-                            null
+                        :   null
                     }
                 </div>
             </div>
@@ -104,7 +121,10 @@ class LogCard extends Component {
 }
 
 LogCard.propTypes = {
-    logData: PropTypes.object.isRequired,
+    logId: PropTypes.object.isRequired,
+    phaseTitle: PropTypes.string.isRequired,
+    timestamp: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
     deleteHandler: PropTypes.func.isRequired,
     updateHandler: PropTypes.func.isRequired,
  };

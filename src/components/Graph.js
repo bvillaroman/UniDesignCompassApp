@@ -6,6 +6,11 @@ import * as Utils from '../graphql_utils/utils'
 import LogCard from "./LogCard";
 import PropTypes from 'prop-types';
 
+
+/**
+ * Component that accepts a processId, fetches its data and displays its information
+ *  
+ */
 class Graph extends Component {
     constructor(props) {
         super(props);
@@ -15,15 +20,36 @@ class Graph extends Component {
         };
     }
 
+    /**
+     * Loads the data related to the BarChart and data related to the Logs in a Process
+     * 
+     * @param {string} process_id The id of the Process
+     */
     load_process_data(process_id) {
         this.load_chart_data(process_id);
         this.load_log_data(process_id);
     }
-
     componentDidMount() {
-        this.load_process_data(this.props.processId);
+        if (this.props.processId) this.load_process_data(this.props.processId)
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.updateComponent) {
+            this.load_process_data(this.props.processId)
+            this.props.updateHandler("")
+        }
+        // console.log('graph update')
+        // if(prevProps !== this.props) {
+        //     console.log('update')
+        //     this.setState(this.props.processId)
+        // }
+    }
+    /**
+     * Converts a number in milliseconds to hours
+     * 
+     * @param {number} t The number of milliseconds
+     * @return {number} The milliseconds converted to hours
+     */
     msToHours(t) {
        const s = t/1000;
        const m = s/60;
@@ -31,6 +57,11 @@ class Graph extends Component {
        return h;
     }
 
+    /**
+     * Loads the Phase duration data for the BarChart and saves to state
+     * 
+     * @param {string} process_id The id of the Process
+     */
     load_chart_data(process_id) {
         this.setState({
             loading: true
@@ -53,23 +84,11 @@ class Graph extends Component {
         })
     }
 
-    test_create_log(phase_id) {
-        const enabled = !true;
-        if(enabled) {
-            const log_string = `log created on ${new Date().toString()}`;
-            Utils.createLogs(phase_id, Date.now(), log_string).then(res => {
-                // console.log(res);
-            });
-    
-            // Utils.updateUser({
-            //     id: this.props.user.id,
-            //     first_name: 'ramon'
-            // }).then(res => {
-            //     console.log(res);
-            // })
-        }
-    }
-
+    /**
+     * Loads the Phase Logs data and saves to state
+     * 
+     * @param {string} process_id The id of the Process
+     */
     load_log_data(process_id) {
         this.setState({
             loading: true
@@ -85,47 +104,26 @@ class Graph extends Component {
                     logs.sort((a, b) => {
                         return a.timestamp - b.timestamp;
                     })
-                    console.log(logs)
                     return {
                         phase_id: phase.id,
                         title: phase.title,
                         log_ids: logs
                     };
-                })
-                .catch(res => {
-                    // handle error when somehome a log has null for text
-                    const phase = res.data.getPhase;
-                    let logs = phase.logs.items;
-
-                    console.log('erorr')
-                    console.log(phase_id)
-                    console.log(logs)
-                    
-                    //filter out null entries
-                    logs = logs.filter(item => item)
-
-                    
-                    logs.sort((a, b) => {
-                        return a.timestamp - b.timestamp;
-                    })
-                    return {
-                        title: phase.title,
-                        phase_id: phase.id,
-                        log_ids: logs
-                    };
-                })
+                });
             })).then(phase_logs => {
                 this.setState({
                     loading: false,
                     selected_process_phase_logs: phase_logs
-                });
-                // testing creating a log
-                const phase_id = phase_logs[1].phase_id;
-                this.test_create_log(phase_id);             
+                });         
             });
         })
     }
-
+    /**
+     * Sends a request to delete a Log, using Utils.deleteLogs()
+     * Reloads all Logs again
+     * 
+     * @param {string} log_id The id of the Log
+     */
     deleteLogHandler = (log_id) => {
         this.setState({
             loading: true
@@ -138,6 +136,12 @@ class Graph extends Component {
         })
     }
 
+    /**
+     * Sends a request to update a Log, using Utils.updateLogs()
+     * Reloads all Logs again.
+     * 
+     * @param {string} log_id The id of the Log
+     */
     updateLogHandler = (log_id, timestamp, text) => {
         this.setState({
             loading: true
@@ -150,6 +154,9 @@ class Graph extends Component {
         })
     }
 
+    /**
+     * Renders a LogCard for each of the Logs loaded into state
+     */
     process_logs_render = () => {
         // combine all logs from all phases
         const data = this.state.selected_process_phase_logs
@@ -172,18 +179,33 @@ class Graph extends Component {
         return data
             ?   <div className={''}>
                     {data.map(log => {
-                        return <LogCard key={log.id} logData={log} deleteHandler={this.deleteLogHandler} updateHandler={this.updateLogHandler}/>
+                        return( 
+                            <LogCard 
+                                key={log.id} 
+                                logId={log.id}
+                                phaseTitle={log.phase_title}
+                                timestamp={log.timestamp}
+                                text={log.text}
+                                deleteHandler={this.deleteLogHandler} 
+                                updateHandler={this.updateLogHandler}
+                            />
+                        )
                     })}
                 </div>
             :   null;
     }
 
+    /**
+     * Renders the ResponsiveBarChart for the loaded chart data in state
+     */
     bar_chart_render = () => {
         return this.state.chartData
             ? <ResponsiveBarChart data={this.state.chartData} />
             : null;
     }
-
+    /**
+     * Displays a spinner in the middle of the screen, while the loading key in state is true
+     */
     loading_render = () => {
         const style = {
             position: 'fixed',
@@ -202,7 +224,6 @@ class Graph extends Component {
     }
 
     render() {
-        // console.log(this.state)
         return (
             <div className='container'>
                 {this.loading_render()}
@@ -231,12 +252,13 @@ Graph.propTypes = {
     processId: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({state}) => ({
-    isAuthenticated: state.isAuthenticated,
-    user: state.user
-})
-const mapDispatchToProps = dispatch => ({
-    authenticateUser: (auth) => dispatch(authenticateUser(auth))
-})
+// const mapStateToProps = ({state}) => ({
+//     isAuthenticated: state.isAuthenticated,
+//     user: state.user
+// })
+// const mapDispatchToProps = dispatch => ({
+//     authenticateUser: (auth) => dispatch(authenticateUser(auth))
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Graph);
+// export default connect(mapStateToProps, mapDispatchToProps)(Graph);
+export default Graph;
