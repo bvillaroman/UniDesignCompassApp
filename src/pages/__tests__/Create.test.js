@@ -60,13 +60,13 @@ describe("DescribePhase",()=>{
         mountedDescribePhase = undefined;
     });
 
-
-    // describe("When DescribePhase is rendered correctly by snapshot",()=>{
-    //     it("Check DescribePhase Render with a blank state",()=>{
-    //         expect(shallowToJson(DescribePhase())).toMatchSnapshot();
-    //     });
+    describe("When DescribePhase is rendered correctly by snapshot",()=>{
+        const DescribePhaseRendered = renderer.create(<DescribePhase />).toJSON();
+        it("SnapShot matching",()=>{
+            expect(DescribePhaseRendered).toMatchSnapshot();
+        });
     
-    // })
+    })
 
     describe("When DescribePhase is rendered with empty state/props",()=>{
         beforeEach(() => {
@@ -101,10 +101,7 @@ describe("DescribePhase",()=>{
             };
             props = {
                 id: 0,
-                createPhase: jest.fn( (title,description) => {
-                    state.title = title;
-                    state.description = description
-                }),
+                createPhase: jest.fn(),
             };
 
         });
@@ -118,26 +115,31 @@ describe("DescribePhase",()=>{
             expect(PhaseLabel.props().children).toEqual("Phase 1");
         });
 
-        // it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
-        //     const onChangeMock = jest.fn();
-        //     const titleEvent = {
-        //         target: { name:"title", value: 'this is a title' }
-        //     };
-        //     const descriptionEvent = {
-        //         target: { name:"description", value: 'this is a description' }
-        //     };
-        //     const DescribePhase = describePhase();
+        it("Check DescribePhase Phase Label is correctly rendered with the write data",()=>{
+            const titleEvent = {
+                target: { name:"title", value: 'this is a title' }
+            };
+            const descriptionEvent = {
+                target: { name:"description", value: 'this is a description' }
+            };
 
-        //     const instance = DescribePhase.instance();
-        //     jest.spyOn(instance, 'onChange');
+            const DescribePhase = describePhase();
+            const spy = jest.spyOn(DescribePhase.instance(), "onChange");
+            
+            DescribePhase.instance().forceUpdate()
+            DescribePhase.update();
 
-        //     DescribePhase.find("input[name='title']").prop('onChange')(titleEvent)
-        //     // PhaseTitle.simulate('change', titleEvent);
-        //     // DescribePhase.setState({title: state.title, description: state.description})
-        //     // expect(PhaseTitle.props().value).toEqual("this is a title");
-        //     expect(instance.onChange).toHaveBeenCalled();
+            const TitleInput = DescribePhase.find("input[name='title']");
+            const DescriptionInput = DescribePhase.find("textarea[name='description']");
 
-        // });
+            TitleInput.simulate('change', titleEvent);
+            DescriptionInput.simulate('change', descriptionEvent);
+
+            expect(spy.mock.calls.length).toBe(2);
+
+            // spy.mockRestore();
+
+        });
     
     })
 
