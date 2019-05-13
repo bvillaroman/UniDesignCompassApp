@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
+/**
+ * Componenet for displaying the information inside a Log, and controls for updating
+ * or deleting a Log
+ */
 class LogCard extends Component {
     constructor(props) {
         super(props);
@@ -12,19 +16,32 @@ class LogCard extends Component {
         }
     }
 
+    /**
+     * Handler for toggling the editing state, which will 
+     * display a textarea to enter changes to a Log.
+     */
     edit_toggle_handler = () => {
         this.setState({editing: !this.state.editing});
     }
 
+    /**
+     * Handler to send Log changes, with the current timestamp
+     */
     update_button_handler = () => {
         this.props.updateHandler(this.props.logId, Date.now(), this.state.editText);
         this.setState({editing: false});
     }
 
+    /**
+     * Handler to delete a Log.
+     */
     delete_button_handler = () => {
         this.props.deleteHandler(this.props.logId);
     }
 
+    /**
+     * Handler to update the textarea changes to state
+     */
     textarea_handler = (e) => {
         this.setState({editText: e.target.value});
     }
