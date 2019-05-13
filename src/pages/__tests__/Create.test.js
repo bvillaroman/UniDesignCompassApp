@@ -51,12 +51,12 @@ describe("DescribePhase",()=>{
             };
         });
     
-        it("Check DescribePhase Render with a blank state",()=>{
+        it("Check DescribePhase Render with a blank state (UT)",()=>{
             const DescribePhaseComponent = describePhase()
             expect(DescribePhaseComponent.state()).toEqual(state);
         });
 
-        it("Check DescribePhase Render with a blank prop",()=>{
+        it("Check DescribePhase Render with a blank prop (UT)",()=>{
             const DescribePhaseComponent = describePhase()
             expect(DescribePhaseComponent.props()).toEqual(props);
         });
@@ -76,16 +76,16 @@ describe("DescribePhase",()=>{
 
         });
 
-        it("renders a `Form`", () => {
+        it("renders a `Form` (UT)", () => {
             expect(describePhase().find(Form.Label).length).toBe(1);
         });
     
-        it("Check DescribePhase Phase Label is correctly rendered with the right data",()=>{
+        it("Check DescribePhase Phase Label is correctly rendered with the right data (UT)",()=>{
             const PhaseLabel = describePhase().find(Form.Label)
             expect(PhaseLabel.props().children).toEqual("Phase 1");
         });
 
-        it("Check DescribePhase is calling onChange correctly",()=>{
+        it("Check DescribePhase is calling onChange correctly (IT)",()=>{
             const titleEvent = {
                 target: { name:"title", value: 'this is a title' }
             };
@@ -138,7 +138,7 @@ describe("PhaseNumber",()=>{
             };
         });
 
-        it("Check PhaseNumber Render with a blank prop",()=>{
+        it("Check PhaseNumber Render with a blank prop (UT)",()=>{
             const PhaseNumberComponent = phaseNumber()
             expect(PhaseNumberComponent.props()).toEqual(props);
         });
@@ -151,16 +151,16 @@ describe("PhaseNumber",()=>{
             };
         });
 
-        it("renders a `Form`", () => {
+        it("renders a `Form` (UT)", () => {
             expect(phaseNumber().find(Form.Control).length).toBe(1);
         });
     
-        it("Check PhaseNumber Phase Label is correctly rendered with the right amount of options",()=>{
+        it("Check PhaseNumber Phase Label is correctly rendered with the right amount of options (UT)",()=>{
             const NumberForm = phaseNumber().find(Form.Control)
             expect(NumberForm.props().children.length).toEqual(12);
         });
 
-        it("Check PhaseNumber is calling handlePhaseAmount when a selection has been made",()=>{
+        it("Check PhaseNumber is calling handlePhaseAmount when a selection has been made (IT)",()=>{
             const selectEvent = { target: { value: '2'} };
 
             const PhaseNumber = phaseNumber();
@@ -200,7 +200,7 @@ describe("ChooseStructure",()=>{
             };
         });
 
-        it("Check ChooseStructure Renders with blank props",()=>{
+        it("Check ChooseStructure Renders with blank props (UT)",()=>{
             const ChooseStructureComponent = chooseStructure()
             expect(ChooseStructureComponent.props()).toEqual(props);
         });
@@ -214,12 +214,12 @@ describe("ChooseStructure",()=>{
             };
         });
 
-        it("renders two Buttons with the correct props", () => {
+        it("renders two Buttons with the correct props (UT)", () => {
             expect(chooseStructure().find('button[id="Default"]').length).toBe(1);
             expect(chooseStructure().find('button[id="Custom"]').length).toBe(1);
         });
 
-        it("Check chooseStructure's handleCompassType is being called",()=>{
+        it("Check chooseStructure's handleCompassType is being called (IT)",()=>{
             const ChooseStructure = chooseStructure();
             const CustomButton    = ChooseStructure.find('button[id="Custom"]')
             const DefaultButton   = ChooseStructure.find('button[id="Default"]')
@@ -233,7 +233,6 @@ describe("ChooseStructure",()=>{
         });
     
     })
-
 })
 
 describe("SubmitCompass",()=>{
@@ -264,14 +263,14 @@ describe("SubmitCompass",()=>{
             };
         });
 
-        it("Check submitCompass Renders with blank props",()=>{
+        it("Check submitCompass Renders with blank props (UT)",()=>{
             const SubmitCompassComponent = submitCompass()
             expect(SubmitCompassComponent.props()).toEqual(props);
         });
     
     })
 
-    describe("When props are being passed to SubmitCompass",()=>{
+    describe("When props are being passed to SubmitCompass ",()=>{
         beforeEach(() => {
             props = {
                 createCompass: jest.fn(),
@@ -280,13 +279,13 @@ describe("SubmitCompass",()=>{
             };
         });
 
-        it("renders submit button and input", () => {
+        it("renders submit button and input (UT)", () => {
             const SubmitCompassComponent = submitCompass()
             expect(SubmitCompassComponent.find('input[name="title"]').length).toBe(1);
             expect(SubmitCompassComponent.find('button[className="input-button btn btn-primary"]').length).toBe(1);
         });
 
-        it("Check SubmitCompassComponent's createCompass and onChange are being called",()=>{
+        it("Check SubmitCompassComponent's createCompass and onChange are being called (IT)",()=>{
             const SubmitCompassComponent = submitCompass()
             const TitleEvent = {target: {value: "Testing Title"}}
             const TitleInput   = SubmitCompassComponent.find('input[name="title"]')
@@ -333,32 +332,14 @@ describe("CreatePage",()=>{
 
     describe("When CreatePage is first rendered ",()=>{
 
-        it("Check CreatePage Renders with a default state and loads Choose Structure first",()=>{
+        it("Check CreatePage Renders with a default state and loads Choose Structure first (UT)",()=>{
             const CreatePageComponent = createPage()
 
             expect(CreatePageComponent.state()).toEqual(state);
             expect(CreatePageComponent.find(ChooseStructure).length).toBe(1)
         });
 
-        it("Check setting the state loads different phases through handleForms",()=>{
-            const CreatePageComponent = createPage()
-            const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
-
-            CreatePageComponent.setState({status: "numOfPhases",numberOfPhases:1})
-            expect(CreatePageComponent.find(PhaseNumber).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(1)
-
-            CreatePageComponent.setState({status: "createPhases"})
-            expect(CreatePageComponent.find(DescribePhase).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(2)
-
-            CreatePageComponent.setState({status: "submitCompass"})
-            expect(CreatePageComponent.find(SubmitCompass).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(3)
-
-        });
-
-        it("Check setting the state loads different phases through handleForms",()=>{
+        it("Check setting the state loads different phases through handleForms (IT)",()=>{
             const CreatePageComponent = createPage()
             const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
 
