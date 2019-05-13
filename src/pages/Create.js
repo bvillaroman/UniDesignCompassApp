@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { updateUser } from '../state/actions'
 import SpinningWheel from "../components/SpinningWheel"
 
-const SubmitCompass = (props) =>  (
+export const SubmitCompass = (props) =>  (
   <Form.Group controlId="formBasicEmail">
     <Form.Label className="form-title">Title of your Design Compass</Form.Label>
     <div className="input-area">
@@ -18,11 +18,11 @@ const SubmitCompass = (props) =>  (
   </Form.Group>
 )
 
-const ChooseStructure = (props) =>  (
+export const ChooseStructure = (props) =>  (
     <Form.Group controlId="formBasicEmail">
       <Form.Label className="form-title">Choose a Compass Style:</Form.Label>
       <div className="input-area">
-        <Button className="input-button" id="Custom"  variant="primary" className="" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
+        <Button className="input-button" id="Custom"  variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom </Button>
         <Button className="input-button" id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default </Button>
       </div>
       
@@ -41,7 +41,7 @@ const default_phases= [
    description:"Phase for Laugh"}
 ]
 
-const PhaseNumber = (props) =>  (
+export const PhaseNumber = (props) =>  (
   <Form.Group controlId="exampleForm.ControlSelect1">
     <Form.Label className="form-title">How many phases are in your design process</Form.Label>
     <div className="input-area">
@@ -63,7 +63,7 @@ const PhaseNumber = (props) =>  (
   </Form.Group>
 )
 
-class DescribePhase extends React.Component{
+export class DescribePhase extends React.Component{
   state = {
     title: "",
     description: "",
@@ -81,17 +81,16 @@ class DescribePhase extends React.Component{
   render(){
     const {title,description} = this.state;
     return (
-      <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label className="form-sub-title">Phase {this.props.id + 1}</Form.Label>
-        <Form.Control name="title" type="text" placeholder="Title" onChange={this.onChange} value={title} />
-        <Form.Label>Description of your Phase</Form.Label>
-        <Form.Control name="description" as="textarea" placeholder="Description" onChange={this.onChange} value={description} rows="3" />
+      <Form.Group >
+        <Form.Label className="form-sub-title">{`Phase ${this.props.id + 1}`}</Form.Label>
+        <Form.Control id="phaseTitle" name="title" type="text" placeholder="Title" onChange={this.onChange} value={title} />
+        <Form.Control id="phaseDescription" name="description" as="textarea" placeholder="Description" onChange={this.onChange} value={description} rows="3" />
       </Form.Group>
     )
   }
 } 
 
-class CreatePage extends React.Component {
+export class CreatePage extends React.Component {
   state = {
     compassTitle: "",
     canSubmit: false,
