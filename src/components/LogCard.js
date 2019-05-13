@@ -51,12 +51,14 @@ class LogCard extends Component {
                             {this.state.editing
                                 ?   <span className={'d-flex row justify-content-end'}>
                                         <button 
+                                            id={'cancel'}
                                             className={'btn btn-outline-primary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Cancel
                                         </button>
                                         <span className={'m-1'} />
                                         <button 
+                                            id={'update'}
                                             className={'btn btn-outline-success col-lg-3'}
                                             onClick={this.update_button_handler}
                                         >Update
@@ -64,12 +66,14 @@ class LogCard extends Component {
                                     </span>
                                 :   <span className={'d-flex row row justify-content-end'}>
                                         <button 
+                                            id={'edit'}
                                             className={'btn btn-outline-secondary col-lg-3'}
                                             onClick={this.edit_toggle_handler}
                                         >Edit
                                         </button>
                                         <span className={'m-1'} />
                                         <button
+                                            id={'delete'}
                                             className={'btn btn-outline-danger col-lg-3'}
                                             onClick={this.delete_button_handler}
                                         >Delete
@@ -84,6 +88,7 @@ class LogCard extends Component {
                     <div style={{whiteSpace: 'pre-line'}} className={'card-text'}>{this.props.text}</div>
                     {this.state.editing
                         ?   <textarea 
+                                id={'textarea'}
                                 className={'form-control'} 
                                 rows={4} 
                                 autoFocus={true}

@@ -36,6 +36,7 @@ exports[`Log Card it matches the snapshot 1`] = `
         >
           <button
             className="btn btn-outline-secondary col-lg-3"
+            id="edit"
             onClick={[Function]}
           >
             Edit
@@ -45,6 +46,7 @@ exports[`Log Card it matches the snapshot 1`] = `
           />
           <button
             className="btn btn-outline-danger col-lg-3"
+            id="delete"
             onClick={[Function]}
           >
             Delete
