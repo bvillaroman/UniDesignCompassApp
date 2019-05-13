@@ -11,7 +11,7 @@ describe( "Create Tests",()=>{
     let width = 1000
     let height = 1000
     await page.setViewport({width,height} );
-    await page.goto('http://localhost:8000/');
+    await page.goto('http://http://www.bvillaroman.com/UniDesignCompassApp/');
     await page.waitForSelector("a[rel=login]");
     await page.$eval("a[rel=login]", res=>res.click());
     await page.waitForSelector("input[id=username]");

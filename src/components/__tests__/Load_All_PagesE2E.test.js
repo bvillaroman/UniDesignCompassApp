@@ -43,7 +43,7 @@ describe("Application rundown", () => {
     let height = 1000
     await page.setViewport({width,height} );
     //await page.setViewport({ width, height });
-    await page.goto('http://localhost:8000/');
+    await page.goto('http://http://www.bvillaroman.com/UniDesignCompassApp/');
     //const logout = await page.$eval("a[rel=logout]", res=>res.click());
   
 
