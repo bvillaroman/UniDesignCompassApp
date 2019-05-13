@@ -27,14 +27,21 @@ class Process extends React.Component {
         date_start, 
         id, 
         name, 
-        phases: items
+        phases: items,
+
+        updateCount: 0
       })
     })
   }
 
+  updateHandler = () => {
+    console.log('updatehandler')
+    this.setState({updateCount : this.state.updateCount+1})
+  }
+
   render() {
     const { name,id } = this.state;
-    // console.log(id)
+    console.log(id)
     return (
       <Layout>
         <h2 className="text-center">{name}</h2>
@@ -49,10 +56,10 @@ class Process extends React.Component {
           </Nav>
           <Tab.Content>
             <Tab.Pane eventKey="compass">
-              {id && <Compass id={id} />}
+              {id && <Compass key={this.state.updateCount} id={id} onUpdate={this.updateHandler}/>}
             </Tab.Pane>
             <Tab.Pane eventKey="analytics">
-              {id && <Graph processId={id} />}
+              {id && <Graph key={this.state.updateCount} processId={id} onUpdate={this.updateHandler}/>}
             </Tab.Pane>
           </Tab.Content>
         </Tab.Container>

@@ -70,6 +70,8 @@ class Phase extends Component {
             logs.push(this.generateLog(res.data.createLog))
             this.setState({newLog: "", logs})
         })
+
+        this.props.onUpdate()
     }
 
 
@@ -94,6 +96,7 @@ class Phase extends Component {
     }
 
     render() {
+        console.log('phase render')
         const { props } = this;
         return (
             <div>

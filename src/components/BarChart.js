@@ -68,12 +68,14 @@ class BarChart extends Component {
           { 
             "orient": "bottom",
             "scale": "xscale",
-            "title": "Phase"
+            "title": "Phase",
+            "titleFontSize": 18
           },
           { 
             "orient": "left",
             "scale": "yscale",
-            "title": "Duration (hours)"
+            "title": "Duration (hours)",
+            "titleFontSize": 18
          }
         ],
 

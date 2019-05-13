@@ -91,6 +91,8 @@ class Compass extends Component {
             next={this.state.next}
             nextButtonHandler={this.nextButtonHandler}
             previousButtonHandler={this.previousButtonHandler}
+
+            onUpdate={this.props.onUpdate}
         />
     )
 
