@@ -1,3 +1,4 @@
+## Classes
 
 <dl>
 <dt><a href="#SubmitCompass">SubmitCompass</a></dt>
