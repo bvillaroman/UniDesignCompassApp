@@ -16,21 +16,8 @@ class Dashboard extends Component {
   }
 
   componentDidMount(){
-      if (this.props.user.id){
-        getUser(this.props.user.id)
-          .then((res) => {
-              const processes = res.data.getUser.processes.items;
-              const currentProcess = ""
-              this.setState({ processes, currentProcess,loading: false })
-          })
-          .catch( err => {
-              alert(`there was an error with fetching your processes, we are showing you a default Process template: ${err}`)
-              this.setState({
-                processes: [],
-                currentProcess: "",
-                loading: false 
-              })
-          })
+      if (this.props.user.id){ 
+        this.getProcesses(this.props.user.id)
       } else {
         this.setState({
           processes: [],
@@ -39,7 +26,26 @@ class Dashboard extends Component {
       }
   }
 
-  selectProcess = (currentProcess) => { this.setState({currentProcess}); console.log(currentProcess)}
+  getProcesses = (id) => {
+    this.setState({loading: true}, () => {
+      getUser(id)
+      .then((res) => {
+          const processes = res.data.getUser.processes.items;
+          const currentProcess = ""
+          this.setState({ processes, currentProcess,loading: false })
+      })
+      .catch( err => {
+          alert(`there was an error with fetching your processes, Please refresh the page`)
+          this.setState({
+            processes: [],
+            currentProcess: "",
+            loading: false 
+          })
+      })
+    })
+  }
+
+  selectProcess = (currentProcess) => { this.setState({currentProcess});}
 
   viewHandler = () => {
     const {processes,currentProcess} = this.state;
