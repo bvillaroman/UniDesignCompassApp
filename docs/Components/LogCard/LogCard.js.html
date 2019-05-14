@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: LogCard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: LogCard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { Component } from "react";
+import PropTypes from 'prop-types';
+
+/**
+ * Componenet for displaying the information inside a Log, and controls for updating
+ * or deleting a Log
+ */
+class LogCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            deleteHandler: this.props.deleteHandler,
+            updateHandler: this.props.updateHandler,
+            editText: null,
+            editing: false
+        }
+    }
+
+    /**
+     * Handler for toggling the editing state, which will 
+     * display a textarea to enter changes to a Log.
+     */
+    edit_toggle_handler = () => {
+        this.setState({editing: !this.state.editing});
+    }
+
+    /**
+     * Handler to send Log changes, with the current timestamp
+     */
+    update_button_handler = () => {
+        this.props.updateHandler(this.props.logId, Date.now(), this.state.editText);
+        this.setState({editing: false});
+    }
+
+    /**
+     * Handler to delete a Log.
+     */
+    delete_button_handler = () => {
+        this.props.deleteHandler(this.props.logId);
+    }
+
+    /**
+     * Handler to update the textarea changes to state
+     */
+    textarea_handler = (e) => {
+        this.setState({editText: e.target.value});
+    }
+        
+    render() {
+        return (
+            &lt;div className={'card mb-3 shadow-sm'}>
+                &lt;div className={'card-header'}>
+                    &lt;div className={'row'}>
+                        &lt;div className={'col-lg-8 col-sm-12'}>
+                            &lt;span className={'row'}>
+                                &lt;span className={'col-lg-6 col-4'}>
+                                    {this.props.phaseTitle}
+                                &lt;/span>
+                                &lt;span className={'col-lg-6 col-8 text-lg-center text-right'}>
+                                    {this.props.timestamp
+                                        ? new Date(parseInt(this.props.timestamp)).toLocaleString()
+                                        : null
+                                    }
+                                &lt;/span>
+                            &lt;/span>
+                        &lt;/div>
+                        &lt;div className={'col-lg-4 col-sm-12 justify-content-end'}>
+                            {this.state.editing
+                                ?   &lt;span className={'d-flex row justify-content-end'}>
+                                        &lt;button 
+                                            id={'cancel'}
+                                            className={'btn btn-outline-primary col-lg-3'}
+                                            onClick={this.edit_toggle_handler}
+                                        >Cancel
+                                        &lt;/button>
+                                        &lt;span className={'m-1'} />
+                                        &lt;button 
+                                            id={'update'}
+                                            className={'btn btn-outline-success col-lg-3'}
+                                            onClick={this.update_button_handler}
+                                        >Update
+                                        &lt;/button>
+                                    &lt;/span>
+                                :   &lt;span className={'d-flex row row justify-content-end'}>
+                                        &lt;button 
+                                            id={'edit'}
+                                            className={'btn btn-outline-secondary col-lg-3'}
+                                            onClick={this.edit_toggle_handler}
+                                        >Edit
+                                        &lt;/button>
+                                        &lt;span className={'m-1'} />
+                                        &lt;button
+                                            id={'delete'}
+                                            className={'btn btn-outline-danger col-lg-3'}
+                                            onClick={this.delete_button_handler}
+                                        >Delete
+                                        &lt;/button>
+                                    &lt;/span>
+                            }
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div className={'card-body'}>
+                    {/* &lt;h5 class="card-title">Special title treatment&lt;/h5> */}
+                    &lt;div style={{whiteSpace: 'pre-line'}} className={'card-text'}>{this.props.text}&lt;/div>
+                    {this.state.editing
+                        ?   &lt;textarea 
+                                id={'textarea'}
+                                className={'form-control'} 
+                                rows={4} 
+                                autoFocus={true}
+                                defaultValue={this.props.text} 
+                                onChange={this.textarea_handler}
+                            />
+                        :   null
+                    }
+                &lt;/div>
+            &lt;/div>
+        )
+    }
+}
+
+LogCard.propTypes = {
+    logId: PropTypes.object.isRequired,
+    phaseTitle: PropTypes.string.isRequired,
+    timestamp: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    deleteHandler: PropTypes.func.isRequired,
+    updateHandler: PropTypes.func.isRequired,
+ };
+
+export default LogCard;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LogCard.html">LogCard</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue May 14 2019 11:27:23 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
