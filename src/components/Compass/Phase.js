@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React from 'react'
+import {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import {  ButtonGroup, Row, Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
