@@ -9,10 +9,11 @@ import {shallow} from 'enzyme';
 import {shallowToJson} from 'enzyme-to-json';
 configure({adapter:new Adapter()});
 
-const tree = shallow(<Provider store={store} ><Login /></Provider>);
+const tree = shallow(<Login store={store} />).dive().dive();
 
 describe("Check Login_Page", () => {
     it("render", () => {
+        console.log(tree.instance());
         expect(shallowToJson(tree)).toMatchSnapshot()
     })
 })
