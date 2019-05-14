@@ -17,6 +17,7 @@ Auth.configure(config);
  * Component that renders the New Password GUI for updating an outdate password
  */
 class NewPassword extends Component{
+    /**@constructor */
     constructor(props){
         super(props);
         this.state={
@@ -24,6 +25,9 @@ class NewPassword extends Component{
             repeat_pass:"",
         }
     }
+    /**
+     * Changes state information dependent on the input information from front end
+     */
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
@@ -50,7 +54,7 @@ class NewPassword extends Component{
     /**
      * Asserts whether the new password matches the confirmed new password.
      * 
-     * @return {boolean} whether the passwords match
+     * @returns {Boolean} whether the passwords match
      */
     comparePasswords = () => {
         if (this.state.new_pass === this.state.repeat_pass) {

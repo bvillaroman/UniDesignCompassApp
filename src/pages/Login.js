@@ -17,7 +17,7 @@ import SpinningWheel from "../components/SpinningWheel"
 Auth.configure(config);
 
 /**
- * Component that handels User login and displays Login GUI
+ * Component that handles User login and displays Login GUI
  */
 class Login extends Component {
     constructor(props) {
