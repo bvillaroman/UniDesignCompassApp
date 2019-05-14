@@ -1,3 +1,8 @@
+/**
+ * @fileoverview The login file responsible for display the login page and handeling login functionality
+ * @author <a href="">Ronuel Diaz</a>
+ * @version 1.0.0
+ */
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
@@ -8,7 +13,9 @@ import config from "../aws-exports";
 import { Auth } from "aws-amplify";
 import Layout from "../components/layout"
 Auth.configure(config);
-
+/**
+ * Component that renders the Sign Up page and handles account creation.
+ */
 class SignUp extends Component {
     constructor(props){
         super(props)
@@ -25,6 +32,9 @@ class SignUp extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
+    /**
+     * Sends users information to the backend and creates the new user account.
+     */
     handleCreate = (e) => {
         e.preventDefault();
         if (!this.comparePasswords()) {
@@ -41,6 +51,11 @@ class SignUp extends Component {
                 alert(error.message);
             })
     }
+    /**
+     * Asserts whether the password matches the confirmed password field.
+     * 
+     * @return {boolean} whether the passwords match
+     */
     comparePasswords = () => {
         if (this.state.password === this.state.repeat_pass) {
             return true;
