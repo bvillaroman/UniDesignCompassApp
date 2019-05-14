@@ -1,3 +1,8 @@
+/**
+ * @fileoverview The login file responsible for display the login page and handeling login functionality
+ * @author <a href="">Ronuel Diaz</a>
+ * @version 1.0.0
+ */
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
@@ -8,7 +13,9 @@ import { Auth } from "aws-amplify";
 import { createUser } from "../graphql_utils/utils";
 import {navigate} from "gatsby"
 Auth.configure(config);
-
+/**
+ * Component that displays the Verification page and handles user verification
+ */
 class Verification extends Component {
     constructor(props){
         super(props);
@@ -19,6 +26,9 @@ class Verification extends Component {
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
+    /**
+     * Confirms the users email address by sending the authentication code to the backend.
+     */
     handleVerify = (e) => {
         e.preventDefault();
         Auth.confirmSignUp(this.props.location.state.username, this.state.code)

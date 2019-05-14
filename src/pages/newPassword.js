@@ -1,3 +1,8 @@
+/**
+ * @fileoverview The login file responsible for display the login page and handeling login functionality
+ * @author <a href="">Ronuel Diaz</a>
+ * @version 1.0.0
+ */
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
 import FormControl from "react-bootstrap/FormControl";
@@ -8,8 +13,11 @@ import config from "../aws-exports";
 import { Auth } from "aws-amplify";
 import Layout from "../components/layout"
 Auth.configure(config);
-
+/**
+ * Component that renders the New Password GUI for updating an outdate password
+ */
 class NewPassword extends Component{
+    /**@constructor */
     constructor(props){
         super(props);
         this.state={
@@ -17,9 +25,15 @@ class NewPassword extends Component{
             repeat_pass:"",
         }
     }
+    /**
+     * Changes state information dependent on the input information from front end
+     */
     handleChange = (e) => {
         this.setState({ [e.target.id]: e.target.value });
     }
+    /**
+     * Communicates with backend to update the old password
+     */
     handlePass = (e) => {
         e.preventDefault();
         console.log(this.props.location.state.username)
@@ -37,6 +51,11 @@ class NewPassword extends Component{
                 alert(error.message);
             })
     }
+    /**
+     * Asserts whether the new password matches the confirmed new password.
+     * 
+     * @returns {Boolean} whether the passwords match
+     */
     comparePasswords = () => {
         if (this.state.new_pass === this.state.repeat_pass) {
             return true;

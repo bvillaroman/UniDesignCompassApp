@@ -57,6 +57,7 @@
     "jest": "^24.7.1",
     "prettier": "^1.16.4",
     "puppeteer": "^1.14.0",
+    "react-social-icons": "^4.1.0",
     "react-test-renderer": "^16.8.6"
   },
   "keywords": [
