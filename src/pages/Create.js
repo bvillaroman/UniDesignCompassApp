@@ -15,6 +15,7 @@ import { updateUser } from '../state/actions'
 import SpinningWheel from "../components/SpinningWheel"
 
 /**
+ * @class SubmitCompass
  * Form that handles submission of the design process
  * takes in the title of the desired compass and fires the createCompass handler
  */
@@ -29,6 +30,7 @@ export const SubmitCompass = (props) =>  (
 )
 
 /**
+ * @class Choose Structure
  * Form that handles Structure of the design process
  * prompts the user to either pick the default structure or a custom structure
  */
@@ -56,6 +58,7 @@ const default_phases= [
 ]
 
 /**
+ * @class PhaseNumber
  * Form that handles Structure of the design process
  * prompts the user to choose the number phases they want in their process
  */

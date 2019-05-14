@@ -1,6 +1,20 @@
-## Classes
 
 <dl>
+<dt><a href="#SubmitCompass">SubmitCompass</a></dt>
+<dd><p>SubmitCompass
+Form that handles submission of the design process
+takes in the title of the desired compass and fires the createCompass handler</p>
+</dd>
+<dt><a href="#ChooseStructure">ChooseStructure</a></dt>
+<dd><p>Choose Structure
+Form that handles Structure of the design process
+prompts the user to either pick the default structure or a custom structure</p>
+</dd>
+<dt><a href="#PhaseNumber">PhaseNumber</a></dt>
+<dd><p>PhaseNumber
+Form that handles Structure of the design process
+prompts the user to choose the number phases they want in their process</p>
+</dd>
 <dt><a href="#DescribePhase">DescribePhase</a></dt>
 <dd><p>Form that handles creation of a phase in their design process
 prompts the user to name their phase and it&#39;s description</p>
@@ -11,23 +25,30 @@ holds all the logic in changing and storing the form data, then submits the data
 </dd>
 </dl>
 
-## Constants
+<a name="SubmitCompass"></a>
 
-<dl>
-<dt><a href="#SubmitCompass">SubmitCompass</a></dt>
-<dd><p>Form that handles submission of the design process
-takes in the title of the desired compass and fires the createCompass handler</p>
-</dd>
-<dt><a href="#ChooseStructure">ChooseStructure</a></dt>
-<dd><p>Form that handles Structure of the design process
-prompts the user to either pick the default structure or a custom structure</p>
-</dd>
-<dt><a href="#PhaseNumber">PhaseNumber</a></dt>
-<dd><p>Form that handles Structure of the design process
-prompts the user to choose the number phases they want in their process</p>
-</dd>
-</dl>
+## SubmitCompass
+SubmitCompass
+Form that handles submission of the design process
+takes in the title of the desired compass and fires the createCompass handler
 
+**Kind**: global class
+<a name="ChooseStructure"></a>
+
+## ChooseStructure
+Choose Structure
+Form that handles Structure of the design process
+prompts the user to either pick the default structure or a custom structure
+
+**Kind**: global class
+<a name="PhaseNumber"></a>
+
+## PhaseNumber
+PhaseNumber
+Form that handles Structure of the design process
+prompts the user to choose the number phases they want in their process
+
+**Kind**: global class
 <a name="DescribePhase"></a>
 
 ## DescribePhase
@@ -122,24 +143,3 @@ when the user is done with all the phases, change the form to the submitCompass 
 handles the displaying of forms for the user to operate with to create their design process
 
 **Kind**: instance property of [<code>CreatePage</code>](#CreatePage)
-<a name="SubmitCompass"></a>
-
-## SubmitCompass
-Form that handles submission of the design process
-takes in the title of the desired compass and fires the createCompass handler
-
-**Kind**: global constant
-<a name="ChooseStructure"></a>
-
-## ChooseStructure
-Form that handles Structure of the design process
-prompts the user to either pick the default structure or a custom structure
-
-**Kind**: global constant
-<a name="PhaseNumber"></a>
-
-## PhaseNumber
-Form that handles Structure of the design process
-prompts the user to choose the number phases they want in their process
-
-**Kind**: global constant
