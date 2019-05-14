@@ -1,3 +1,8 @@
+/**
+ * @fileoverview The Process page that shows the compass and the anayltics of a process
+ * @author Abraham Villaroman
+ * @version 1.0.0
+*/
 import React from "react";
 import { Tab, Nav } from 'react-bootstrap';
 import Layout from "../components/layout";
@@ -6,6 +11,10 @@ import Graph from "../components/Graph";
 import Compass from "../components/Compass"
 import "../components/bootstrap.css"
 
+/**
+ * The Component that handles the display/tabbing between Compass and AnalyticsPage
+ * holds all the logic in retrieving the process according to proces id stored in the url
+*/
 class Process extends React.Component {
 
   state = {        
@@ -19,22 +28,33 @@ class Process extends React.Component {
 
   componentDidMount() {
     const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"").replace("/","")
+    this.getProcessItems(id);
+  }
+
+  /**
+   * @param {string} id of the process
+   * makes an api request to retrieve all of the data of the process from the process ID
+   * once the data is retrieved, change the state of the component
+  */
+  getProcessItems = (id) => {
     getProcess(id)
     .then((res) => {
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
-
       this.setState({
         date_end, 
         date_start, 
         id, 
         name, 
         phases: items,
-
         updateCount: 0
       })
     })
   }
 
+  /**
+   * @param {string} either "Compass" or "Graph", the components to refresh
+   *  change the state of the component to refresh, when the person chooses a tab, the child component will make a new request to the api for the latest data
+  */
   updateHandler = (updateComponent) => {
     this.setState({updateComponent})
   }
