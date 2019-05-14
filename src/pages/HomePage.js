@@ -1,6 +1,8 @@
 import React from "react";
 import {navigate} from "gatsby"
 import inter from "../images/home-image-min.jpg";
+import obj from "../images/group-working-together.jpg";
+import feat from "../images/eie-designprocessmodel-elem.png";
 import Layout from '../components/layout';
 import { CardDeck, Card, Button } from 'react-bootstrap';
 
@@ -26,6 +28,7 @@ const HomePage = (props) => (
             and discussed with instructors or coworkers.
           </Card.Text>
         </Card.Body>
+        <Card.Img variant="top" src={obj} style={{paddingLeft: "1em", paddingRight: "1em"}} />
       </Card>
       <Card bg="warning" text="dark">
         <Card.Header>Features</Card.Header>
@@ -38,6 +41,7 @@ const HomePage = (props) => (
             on steps they have taken during a single design session or an entire design project.
           </Card.Text>
         </Card.Body>
+        <Card.Img variant="top" src={feat} style={{paddingLeft: "1em", paddingRight: "1em"}}/>
       </Card>
     </CardDeck>
   </Layout>
