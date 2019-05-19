@@ -45,8 +45,6 @@ describe("Login page tests", () => {
         })
         it("Check loading wheel",()=>{
             tree.setState({loading:false});
-            console.log(tree.instance().render())
-            console.log(spyOn(tree.instance,'render').returnValue());
             expect(tree.instance())
         })
     })

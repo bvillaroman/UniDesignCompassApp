@@ -77,7 +77,7 @@ export class Login extends Component {
     createAccount = (e) => {
         navigate("/SignUp");
     }
-    render = () => {
+    render(){
         return (
             <Layout>
                 <div className='container'>
