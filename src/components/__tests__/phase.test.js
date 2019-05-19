@@ -2,8 +2,13 @@
 import React from 'react'
 import Phase from '../Compass/Phase';
 import LogHandler from '../Compass/LogHandler'
-// configure({adapter:new Adapter()});
-jest.mock('../Compass/LogHandler')
-test('should print', () => {
-  expect()
-})
+jest.mock('../Compass/Phase')
+// beforeEach(() => {
+  // Clear all instances and calls to constructor and all methods:
+  // Phase.mockClear();
+// });
+
+it('If the constructor for the phaseclass is called once we pass.', () => {
+  const Phase1 = new Phase();//Checks if the constructor class for the Phase is called properly.
+  expect(Phase).toHaveBeenCalledTimes(1);
+});
