@@ -44,6 +44,15 @@ it('generateLog clean',() =>{
   expect(spy).toHaveBeenCalledTimes(0);
 });
 
+it('generateLog test',() =>{
+  let spy=jest.spyOn(phaseWrapper.instance(),"generateLog")
+  expect(spy).toHaveBeenCalledTimes(0);
+  //log.timestamp,log.id,log.text
+  spy({id:"1",timestamp:"1",text:"This is a test"})
+  expect(spy).toHaveBeenCalledTimes(1);
+});
+
+
 it('generateLogs clean',() =>{
   let spy=jest.spyOn(phaseWrapper.instance(),"generateLogs")
   expect(spy).toHaveBeenCalledTimes(0);
