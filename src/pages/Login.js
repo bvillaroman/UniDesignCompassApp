@@ -19,16 +19,15 @@ Auth.configure(config);
 /**
  * Component that handles User login and displays Login GUI
  */
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            password: "",
-            username: "",
-            user: [],
-            loading: false
-        };
-    }
+export class Login extends Component {
+
+    state = {
+        password: "",
+        username: "",
+        user: [],
+        loading: false
+    };
+
     /**
      * Changes state information dependent on the input information from front end
      */
