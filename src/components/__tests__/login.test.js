@@ -1,46 +1,52 @@
 import React from "react"
-import renderer from "react-test-renderer"
-import Login from "../../pages/Login";
-import { store } from "../../state/store";
-import { Provider } from 'react-redux';
-import {configure} from 'enzyme';
+import { Login } from "../../pages/Login";
+import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import {shallowToJson} from 'enzyme-to-json';
-configure({adapter:new Adapter()});
+import { ConsoleLogger } from "@aws-amplify/core";
+configure({ adapter: new Adapter() });
 
-const tree = shallow(<Login store={store} />).dive().dive();
+describe("Login page tests", () => {
+    const tree = shallow(<Login />)
+    let state
+    beforeEach(() => {
 
-describe("Check Login_Page", () => {
-    it("render", () => {
-        console.log(tree.instance());
-        expect(shallowToJson(tree)).toMatchSnapshot()
+        state = {
+            password: "",
+            username: "",
+            user: [],
+            loading: false
+        };
+
+    });
+    describe("Render Tests",()=>{
+        it("Snapshot Test",()=>{
+            expect(shallowToJson(tree)).toMatchSnapshot();
+        });
+        it("Check Form controls",()=>{
+            expect(tree.find('FormControl').length).toEqual(2);
+
+        })
+        it("Check Buttons",()=>{
+            expect(tree.find('Button').length).toEqual(2);
+        })
     })
-})
-describe("Check Password", () => {
-    it("render", () => {
-        expect(shallowToJson(tree)).toMatchSnapshot()
-    })
-})
-describe("Check verification page loads", () => {
-    it("render", () => {
-        expect(shallowToJson(tree)).toMatchSnapshot()
-    })
-})
-describe("Check user signup page ", () => {
-    it("render", () => {
-        expect(shallowToJson(tree)).toMatchSnapshot()
-    })
-})
-describe("", () => {
-    it("render", () => {
-        expect(shallowToJson(tree)).toMatchSnapshot()
+    describe("state tests", () => {
+        it("Check Page with Blank State", () => {
+            expect(tree.state()).toEqual(state)
+        })
+        
+        it("Check input update with non blank State", () => {
+            tree.find('FormControl').first().simulate('change',{target:{id:'username',value:'rdiaz002'}});
+            tree.find('FormControl').last().simulate('change',{target:{id:'password',value:'rdiaz002'}});
+            expect(tree.state().username).toEqual('rdiaz002');
+            expect(tree.state().password).toEqual('rdiaz002');
+        })
+        it("Check loading wheel",()=>{
+            tree.setState({loading:false});
+            expect(tree.instance())
+        })
     })
 })
 
-// describe("SignIn exceptions",() =>{
-//      it("failed Log in",()=>{
-//          console.log();
-//         tree.find('[type="submit"]');
-//      })
-// })

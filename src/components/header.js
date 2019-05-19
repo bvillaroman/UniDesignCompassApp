@@ -24,8 +24,8 @@ const signedOut = (props) => (
 const Header = (props) => {
   return (
     <Navbar collapseOnSelect sticky="top" expand="md" bg="dark" variant="dark">
-      <Navbar.Brand variant="light"> 
-        <Link to={props.isAuthenticated ? "/Dashboard" : "/"} style={styles.link}> {props.siteTitle}</Link> 
+      <Navbar.Brand variant="light">
+        <Link id="brand-link" to={props.isAuthenticated ? "/Dashboard" : "/"} style={styles.link}> {props.siteTitle}</Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
