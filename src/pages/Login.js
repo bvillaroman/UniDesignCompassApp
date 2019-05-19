@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../state/actions';
 import { Auth } from "aws-amplify";
 import config from "../aws-exports";
-import SignIn from "../components/SignIn";
 import { getUserbyUsername } from "../graphql_utils/utils";
 import SpinningWheel from "../components/SpinningWheel";
 import Button from "react-bootstrap/Button";

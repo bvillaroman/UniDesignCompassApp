@@ -8,4 +8,76 @@ exports[`Check user signup page  render 1`] = `<Connect(Login) />`;
 
 exports[`Check verification page loads render 1`] = `<Connect(Login) />`;
 
+exports[`Login page tests Render Tests Snapshot Test 1`] = `
+<Layout>
+  <div
+    className="container"
+  >
+    <div
+      className="Login"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <FormGroup
+          as="div"
+          bssize="large"
+          controlId="username"
+        >
+          <FormLabel
+            column={false}
+            srOnly={false}
+          >
+            Username
+          </FormLabel>
+          <FormControl
+            as="input"
+            autoFocus={true}
+            onChange={[Function]}
+            placeholder="Username"
+            type="text"
+          />
+        </FormGroup>
+        <FormGroup
+          as="div"
+          bssize="large"
+          controlId="password"
+        >
+          <FormLabel
+            column={false}
+            srOnly={false}
+          >
+            Password
+          </FormLabel>
+          <FormControl
+            as="input"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+          />
+        </FormGroup>
+        <Button
+          active={false}
+          bssize="large"
+          disabled={false}
+          type="submit"
+          variant="primary"
+        >
+          Login
+        </Button>
+        <Button
+          active={false}
+          className="float-right"
+          disabled={false}
+          type="button"
+          variant="primary"
+        >
+          Create New Account
+        </Button>
+      </form>
+    </div>
+  </div>
+</Layout>
+`;
+
 exports[`render 1`] = `<Connect(Login) />`;
