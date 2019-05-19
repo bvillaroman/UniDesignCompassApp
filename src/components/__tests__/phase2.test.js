@@ -9,7 +9,7 @@ const Phase1= shallow(<Phase/>)
 
 it('Check Time State', () => {
     expect(Phase1.state().time).toEqual(0)
-    console.log(Phase1.state())
+    console.log(Phase1.render())
   });
 
 it('Check New Log State', () => {
@@ -26,4 +26,5 @@ it('Check Description State', () => {
 it('Check DataLoaded State', ()=> {
 expect(Phase1.state().dataLoaded).toEqual(false)
 })    
+
         

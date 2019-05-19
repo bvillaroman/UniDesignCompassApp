@@ -9,8 +9,9 @@ import LogHandler from "./LogHandler"
 import {getPhase, createLogs,updatePhase} from "../../graphql_utils/utils"
 
 class Phase extends Component {
-
-    state = {
+constructor(props){
+    super(props)
+    this.state = {
         logs: [],
         newLog : "",
         time: 0,
@@ -18,7 +19,7 @@ class Phase extends Component {
         description: "",
         dataLoaded: false
     }
-
+}
     componentDidMount(){
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
