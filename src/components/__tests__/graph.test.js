@@ -65,5 +65,11 @@ it('componentDidUpdate test.', () => {
     let spy=jest.spyOn(GraphWrapper.instance(),"load_chart_data")
     expect(spy).toHaveBeenCalledTimes(0);
     });  
-
+  
+  it('load_chart_data test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"load_chart_data")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().load_chart_data()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });  
 });
