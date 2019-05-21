@@ -11,6 +11,13 @@ it('Graph Constructor called properly.', () => {
   });
 
 
+it('Graph componentDidMount clean.', () => {
+  let spy=jest.spyOn(GraphWrapper.instance(),"componentDidMount")
+  expect(spy).toHaveBeenCalledTimes(0);
+  });
+
+
+  
 
 
 describe("Graph", () => {
