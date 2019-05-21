@@ -85,7 +85,7 @@ class Compass extends Component {
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
-        this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
+        this.setState({ currentPhase: phase.key })
     }
     
     previousButtonHandler = () => {
