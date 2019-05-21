@@ -146,4 +146,17 @@ it('componentDidUpdate test.', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     });
 
+  it('render ', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"render")
+    expect(spy).toHaveBeenCalledTimes(0);
+  });
+      
+  it('render test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"render")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().render()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });
+  
+
 });
