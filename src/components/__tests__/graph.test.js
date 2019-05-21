@@ -40,3 +40,11 @@ let spy=jest.spyOn(GraphWrapper.instance(),"componentDidUpdate")
 expect(spy).toHaveBeenCalledTimes(0);
 });  
 
+it('Graph componentDidUpdate test.', () => {
+  let spy=jest.spyOn(GraphWrapper.instance(),"componentDidUpdate")
+  expect(spy).toHaveBeenCalledTimes(0);
+  let prevProps
+  GraphWrapper.instance().componentDidUpdate(prevProps)
+  expect(spy).toHaveBeenCalledTimes(1);
+  });
+
