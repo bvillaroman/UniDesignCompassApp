@@ -17,35 +17,41 @@ describe("Graph", () => {
   });
 
 
-it('Graph Constructor called properly.', () => {
+it('Constructor called properly.', () => {
   let spy=jest.spyOn(GraphWrapper.instance(),"constructor")
   expect(spy).toHaveBeenCalledTimes(0);
   });
 
 
-it('Graph componentDidMount clean.', () => {
+it('componentDidMount clean.', () => {
   let spy=jest.spyOn(GraphWrapper.instance(),"componentDidMount")
   expect(spy).toHaveBeenCalledTimes(0);
   });
 
-it('Graph componentDidMount test.', () => {
+it('componentDidMount test.', () => {
   let spy=jest.spyOn(GraphWrapper.instance(),"componentDidMount")
   expect(spy).toHaveBeenCalledTimes(0);
   GraphWrapper.instance().componentDidMount()
   expect(spy).toHaveBeenCalledTimes(1);
   });
 
-it('Graph componentDidUpdate clean',()=>{
+it('componentDidUpdate clean',()=>{
 let spy=jest.spyOn(GraphWrapper.instance(),"componentDidUpdate")
 expect(spy).toHaveBeenCalledTimes(0);
 });  
 
-it('Graph componentDidUpdate test.', () => {
+it('componentDidUpdate test.', () => {
   let spy=jest.spyOn(GraphWrapper.instance(),"componentDidUpdate")
   expect(spy).toHaveBeenCalledTimes(0);
   let prevProps
   GraphWrapper.instance().componentDidUpdate(prevProps)
   expect(spy).toHaveBeenCalledTimes(1);
   });
+
+  it('msToHours test.', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"msToHours")
+    expect(spy).toHaveBeenCalledTimes(0);
+    });
+  
 
 });
