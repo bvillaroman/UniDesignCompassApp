@@ -122,11 +122,17 @@ it('componentDidUpdate test.', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     });
 
-    it('bar_chart_render ', () => {
+  it('bar_chart_render ', () => {
     let spy=jest.spyOn(GraphWrapper.instance(),"bar_chart_render")
     expect(spy).toHaveBeenCalledTimes(0);
-    });
+  });
       
+  it('bar_chart_render test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"bar_chart_render")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().bar_chart_render()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });
   
 
 });
