@@ -34,6 +34,17 @@ it('handleTextArea clean',() =>{
   expect(spy).toHaveBeenCalledTimes(0);
 });
 
+it('handleTextArea test',()=>{
+  let spy=jest.spyOn(phaseWrapper.instance(),"handleTextArea")
+  expect(spy).toHaveBeenCalledTimes(0);
+  let e={target:{value:"testing"}}
+  spy(e)
+  expect(spy).toHaveBeenCalledTimes(1);
+  expect(phaseWrapper.state().newLog).toEqual("testing")
+});
+
+
+
 it('submitLog clean',() =>{
   let spy=jest.spyOn(phaseWrapper.instance(),"submitLog")
   expect(spy).toHaveBeenCalledTimes(0);
@@ -44,9 +55,7 @@ it('submitlog test',()=>{
   expect(spy).toHaveBeenCalledTimes(0);
   spy({time:"300"})
   expect(spy).toHaveBeenCalledTimes(1);
-}
-
-)
+});
 
 it('generateLog clean',() =>{
   let spy=jest.spyOn(phaseWrapper.instance(),"generateLog")
