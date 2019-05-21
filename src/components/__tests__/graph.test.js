@@ -108,4 +108,10 @@ it('componentDidUpdate test.', () => {
     GraphWrapper.instance().updateLogHandler()
     expect(spy).toHaveBeenCalledTimes(1);
     });
+
+  it('process_logs_render ', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"process_logs_render")
+    expect(spy).toHaveBeenCalledTimes(0);
+    });
+    
 });
