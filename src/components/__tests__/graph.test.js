@@ -16,7 +16,13 @@ it('Graph componentDidMount clean.', () => {
   expect(spy).toHaveBeenCalledTimes(0);
   });
 
-
+it('Graph componentDidMount test.', () => {
+  let spy=jest.spyOn(GraphWrapper.instance(),"componentDidMount")
+  expect(spy).toHaveBeenCalledTimes(0);
+  GraphWrapper.instance().componentDidMount()
+  expect(spy).toHaveBeenCalledTimes(1);
+  });
+  
   
 
 
