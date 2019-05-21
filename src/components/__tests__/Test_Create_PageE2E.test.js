@@ -24,6 +24,6 @@ describe( "Create Tests",()=>{
     await page.$eval("a[rel=create]",res=>res.click());
     await page.waitForSelector("button[id=Default]");
     await page.$eval("button[id=Default]",res=>res.click());
-    //browser.close();
+    browser.close();
   },160000)
 })

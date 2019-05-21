@@ -49,9 +49,9 @@ describe("Application rundown", () => {
     await page.goto('https://www.bvillaroman.com/UniDesignCompassApp/');
 >>>>>>> load_all_pages test correction
     //const logout = await page.$eval("a[rel=logout]", res=>res.click());
-  
 
-    //Logs Into Rdiaz01 profile 
+
+    //Logs Into Rdiaz01 profile
     await page.waitForSelector("a[rel=login]");
     await page.$eval("a[rel=login]", res=>res.click());
     await page.waitForSelector("input[id=username]");
@@ -62,21 +62,21 @@ describe("Application rundown", () => {
     await page.$eval("button[type=submit]",res=>res.click());
     await page.waitForSelector("a[rel=profile]")
 
-    //GOes into the profile page 
+    //GOes into the profile page
     await page.$eval("a[rel=profile]",res=>res.click());
 
-    await page.waitForSelector("a[data-rb-event-key=settings]")
-    await page.$eval("a[data-rb-event-key=settings]",res=>res.click());
-
-    await page.waitForSelector("a[rel=compass]")
-    await page.$eval("a[rel=compass]",res=>res.click());
-
-    await page.$eval("a[rel=create]",res=>res.click());
-
-    await page.$eval("a[rel=analytics]",res=>res.click());
+    // await page.waitForSelector("a[data-rb-event-key=settings]")
+    // await page.$eval("a[data-rb-event-key=settings]",res=>res.click());
+    //
+    // await page.waitForSelector("a[rel=compass]")
+    // await page.$eval("a[rel=compass]",res=>res.click());
+    //
+    // await page.$eval("a[rel=create]",res=>res.click());
+    //
+    // await page.$eval("a[rel=analytics]",res=>res.click());
 
     await page.$eval("a[rel=logout]",res=>res.click());
-    
+    browser.close();
   },160000)
- 
+
 });
