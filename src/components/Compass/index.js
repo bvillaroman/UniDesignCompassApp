@@ -6,7 +6,7 @@ import Phase from './Phase';
 import {getProcess} from '../../graphql_utils/utils'
 import SpinningWheel from "../SpinningWheel"
 
-class Compass extends Component {
+export class Compass extends Component {
     state = {
         compassName: "",
         compassPhases: [],
