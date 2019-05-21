@@ -5,6 +5,7 @@ import LogHandler from '../Compass/LogHandler'
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from "react-test-renderer"
 import Compass from "../Compass/index"
+
 configure({adapter:new Adapter()});
 // jest.mock('../Compass/Phase')
 let phaseWrapper=shallow(<Phase/>)
@@ -40,8 +41,9 @@ it('TimeHandler clean',() =>{
 //   expect(spy).toHaveBeenCalledTimes(0);
 //   let phase={ key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 }
 //   let props={phase,compassButtonHandler:jest.fn()}
-//   spy(props)
-//   expect(spy).toHaveBeenCalledTimes(0);
+//   // spy(props)
+// phaseWrapper.instance().timeHandler(compassButtonHandler,phase)
+//   expect(spy).toHaveBeenCalledTimes(1);
 // });
 
 
