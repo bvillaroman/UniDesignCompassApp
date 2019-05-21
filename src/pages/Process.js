@@ -15,7 +15,7 @@ import "../components/bootstrap.css"
  * The Component that handles the display/tabbing between Compass and AnalyticsPage
  * holds all the logic in retrieving the process according to proces id stored in the url
 */
-class Process extends React.Component {
+export class Process extends React.Component {
 
   state = {        
     date_end: "",
