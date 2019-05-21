@@ -11,24 +11,26 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../state/actions';
 import { Auth } from "aws-amplify";
 import config from "../aws-exports";
-import SignIn from "../components/SignIn";
 import { getUserbyUsername } from "../graphql_utils/utils";
-import SpinningWheel from "../components/SpinningWheel"
+import SpinningWheel from "../components/SpinningWheel";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
+import FormGroup from "react-bootstrap/FormGroup";
+import ControlLabel from "react-bootstrap/FormLabel";
 Auth.configure(config);
 
 /**
  * Component that handles User login and displays Login GUI
  */
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            password: "",
-            username: "",
-            user: [],
-            loading: false
-        };
-    }
+export class Login extends Component {
+
+    state = {
+        password: "",
+        username: "",
+        user: [],
+        loading: false
+    };
+
     /**
      * Changes state information dependent on the input information from front end
      */
@@ -75,14 +77,39 @@ class Login extends Component {
     createAccount = (e) => {
         navigate("/SignUp");
     }
-    render = () => {
+    render(){
         return (
             <Layout>
-                <SignIn
-                    handleAuth={this.handleAuth}
-                    handleChange={this.handleChange}
-                    handleAccount={this.createAccount}
-                />
+                <div className='container'>
+                    <div className="Login">
+                        <form onSubmit={this.handleAuth}>
+                            <FormGroup controlId="username" bssize="large">
+                                <ControlLabel>Username</ControlLabel>
+                                <FormControl
+                                    placeholder="Username"
+                                    autoFocus
+                                    type="text"
+                                    onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="password" bssize="large">
+                                <ControlLabel>Password</ControlLabel>
+                                <FormControl
+                                    placeholder="Password"
+                                    onChange={this.handleChange}
+                                    type="password"
+                                />
+                            </FormGroup>
+                            <Button 
+                                bssize="large"
+                                type="submit"
+                            >
+                                Login
+                            </Button>
+                            <Button className="float-right" onClick={this.handleAccount}>Create New Account</Button>
+                        </form>
+                    </div>
+                </div>
                 {this.state.loading && <SpinningWheel />}</Layout>
         )
     }
