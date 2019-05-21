@@ -23,7 +23,7 @@ it('Constructor called properly.', () => {
   });
 
 
-it('componentDidMount clean.', () => {
+it('componentDidMount ', () => {
   let spy=jest.spyOn(GraphWrapper.instance(),"componentDidMount")
   expect(spy).toHaveBeenCalledTimes(0);
   });
@@ -35,7 +35,7 @@ it('componentDidMount test.', () => {
   expect(spy).toHaveBeenCalledTimes(1);
   });
 
-it('componentDidUpdate clean',()=>{
+it('componentDidUpdate ',()=>{
 let spy=jest.spyOn(GraphWrapper.instance(),"componentDidUpdate")
 expect(spy).toHaveBeenCalledTimes(0);
 });  
@@ -48,10 +48,18 @@ it('componentDidUpdate test.', () => {
   expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it('msToHours test.', () => {
+  it('msToHours ', () => {
     let spy=jest.spyOn(GraphWrapper.instance(),"msToHours")
     expect(spy).toHaveBeenCalledTimes(0);
     });
   
+  it('msToHours test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"msToHours")
+    expect(spy).toHaveBeenCalledTimes(0);
+    spy(10000)
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(Math.floor(spy(1000))).toEqual(0);
+    });
+    
 
 });
