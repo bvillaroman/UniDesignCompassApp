@@ -4,9 +4,11 @@ import Phase from '../Compass/Phase';
 import LogHandler from '../Compass/LogHandler'
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from "react-test-renderer"
+import Compass from "../Compass/index"
 configure({adapter:new Adapter()});
 // jest.mock('../Compass/Phase')
 let phaseWrapper=shallow(<Phase/>)
+let CompassWrapper=shallow(<Compass/>)
 
 
 it('Phase Constructor called properly.', () => {
@@ -28,6 +30,18 @@ it('TimeHandler clean',() =>{
   let spy=jest.spyOn(phaseWrapper.instance(),"timeHandler")
   expect(spy).toHaveBeenCalledTimes(0);
 });
+
+// it('TimeHandler test',()=>{
+//   let spy=jest.spyOn(phaseWrapper.instance(),"timeHandler")
+//   // function compassButtonHandler (x) {//handle current phase too.
+//     // this.setState({ currentPhase: x.key })}// 
+// let compassButtonHandler=jest.spyOn(CompassWrapper.instance(),"compassButtonHandler")
+//   expect(spy).toHaveBeenCalledTimes(0);
+//   let phase={ key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 }
+//   spy(compassButtonHandler,phase)
+//   expect(spy).toHaveBeenCalledTimes(0);
+// });
+
 
 it('handleTextArea clean',() =>{
   let spy=jest.spyOn(phaseWrapper.instance(),"handleTextArea")
