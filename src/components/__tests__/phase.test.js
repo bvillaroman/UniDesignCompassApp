@@ -41,8 +41,9 @@ it('TimeHandler clean',() =>{
 //   expect(spy).toHaveBeenCalledTimes(0);
 //   let phase={ key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 }
 //   let props={phase,compassButtonHandler:jest.fn()}
-//   spy(props)
-//   expect(spy).toHaveBeenCalledTimes(0);
+//   // spy(props)
+// phaseWrapper.instance().timeHandler(compassButtonHandler,phase)
+//   expect(spy).toHaveBeenCalledTimes(1);
 // });
 
 
