@@ -33,9 +33,9 @@ it('TimeHandler clean',() =>{
 
 // it('TimeHandler test',()=>{
 //   let spy=jest.spyOn(phaseWrapper.instance(),"timeHandler")
-//   // function compassButtonHandler (x) {//handle current phase too.
-//     // this.setState({ currentPhase: x.key })}// 
-// let compassButtonHandler=jest.spyOn(CompassWrapper.instance(),"compassButtonHandler")
+//   function compassButtonHandler (x) {//handle current phase too.
+//     this.setState({ currentPhase: x.key })}// 
+// // let compassButtonHandler=jest.spyOn(CompassWrapper.instance(),"compassButtonHandler")
 //   expect(spy).toHaveBeenCalledTimes(0);
 //   let phase={ key: '1', name: 'A. Define Problem', icon: '', description: '', link: '#', time: 0 }
 //   spy(compassButtonHandler,phase)
