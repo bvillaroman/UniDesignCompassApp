@@ -330,7 +330,7 @@ describe("CreatePage",()=>{
         mountedCreatePage = undefined;
     });
 
-    describe("When CreatePage is first rendered ",()=>{
+    describe("When CreatePage is rendered ",()=>{
 
         it("Check CreatePage Renders with a default state and loads Choose Structure first (UT)",()=>{
             const CreatePageComponent = createPage()
@@ -343,17 +343,33 @@ describe("CreatePage",()=>{
             const CreatePageComponent = createPage()
             const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
 
+            expect(CreatePageComponent.find(ChooseStructure).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(0)
+
+        });
+    })
+
+    describe("When CreatePage changes forms ",()=>{
+
+        it("Check setting the state loads different phases through handleForms (IT)",()=>{
+            const CreatePageComponent = createPage()
+            const spy = jest.spyOn(CreatePageComponent.instance(), "handleForms");
+
+            CreatePageComponent.setState({status: "chooseStructure"})
+            expect(CreatePageComponent.find(ChooseStructure).length).toBe(1)
+            expect(spy.mock.calls.length).toBe(1)
+
             CreatePageComponent.setState({status: "numOfPhases",numberOfPhases:1})
             expect(CreatePageComponent.find(PhaseNumber).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(1)
+            expect(spy.mock.calls.length).toBe(2)
 
             CreatePageComponent.setState({status: "createPhases"})
             expect(CreatePageComponent.find(DescribePhase).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(2)
+            expect(spy.mock.calls.length).toBe(3)
 
             CreatePageComponent.setState({status: "submitCompass"})
             expect(CreatePageComponent.find(SubmitCompass).length).toBe(1)
-            expect(spy.mock.calls.length).toBe(3)
+            expect(spy.mock.calls.length).toBe(4)
 
         });
     })
