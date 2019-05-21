@@ -114,4 +114,11 @@ it('componentDidUpdate test.', () => {
     expect(spy).toHaveBeenCalledTimes(0);
     });
     
+
+  it('process_logs_render test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"process_logs_render")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().process_logs_render()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });
 });
