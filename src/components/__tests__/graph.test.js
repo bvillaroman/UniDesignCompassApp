@@ -134,5 +134,16 @@ it('componentDidUpdate test.', () => {
     expect(spy).toHaveBeenCalledTimes(1);
     });
   
+  it('loading_render ', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"loading_render")
+    expect(spy).toHaveBeenCalledTimes(0);
+  });
+      
+  it('loading_render test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"loading_render")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().loading_render()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });
 
 });
