@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Create.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Create.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @fileoverview The Create Page that allows logged in users to create their Compasses
+ * @author Abraham Villaroman
+ * @version 1.0.0
+*/
+
+import React from "react";
+import { navigate } from 'gatsby';
+import Layout from '../components/layout';
+import { Button, Form } from 'react-bootstrap';
+import _ from "lodash";
+import {createNewCompass} from '../graphql_utils/utils';
+import { connect } from 'react-redux';
+import { updateUser } from '../state/actions'
+import SpinningWheel from "../components/SpinningWheel"
+
+/**
+ * @class SubmitCompass
+ * Form that handles submission of the design process
+ * takes in the title of the desired compass and fires the createCompass handler
+ */
+export const SubmitCompass = (props) =>  (
+  &lt;Form.Group controlId="formBasicEmail">
+    &lt;Form.Label className="form-title">Title of your Design Compass&lt;/Form.Label>
+    &lt;div className="input-area">
+      &lt;Form.Control name="title" type="text" placeholder="Title" onChange={props.onChange} value={props.title} />
+      &lt;Button className="input-button" variant="primary" onClick={props.createCompass}> Submit Compass &lt;/Button>
+    &lt;/div>
+  &lt;/Form.Group>
+)
+
+/**
+ * @class Choose Structure
+ * Form that handles Structure of the design process
+ * prompts the user to either pick the default structure or a custom structure
+ */
+export const ChooseStructure = (props) =>  (
+    &lt;Form.Group controlId="formBasicEmail">
+      &lt;Form.Label className="form-title">Choose a Compass Style:&lt;/Form.Label>
+      &lt;div className="input-area">
+        &lt;Button className="input-button" id="Custom"  variant="primary" onClick={e => {props.handleCompassType(false)}}> Custom &lt;/Button>
+        &lt;Button className="input-button" id="Default" variant="primary" onClick={e => {props.handleCompassType(true)}}> Default &lt;/Button>
+      &lt;/div>
+      
+    &lt;/Form.Group>
+)
+const default_phases= [
+  {title:"Research",
+   description:"Phase for Research"},
+   {title:"Design",
+   description:"Phase for Design"},
+   {title:"Build",
+   description:"Phase for Build"},
+   {title:"Brainstorm",
+   description:"Phase for Brainstorm"},
+   {title:"Laugh",
+   description:"Phase for Laugh"}
+]
+
+/**
+ * @class PhaseNumber
+ * Form that handles Structure of the design process
+ * prompts the user to choose the number phases they want in their process
+ */
+export const PhaseNumber = (props) =>  (
+  &lt;Form.Group controlId="exampleForm.ControlSelect1">
+    &lt;Form.Label className="form-title">How many phases are in your design process&lt;/Form.Label>
+    &lt;div className="input-area">
+      &lt;Form.Control as="select" onChange={props.handlePhaseAmount}>
+        &lt;option value="0">-&lt;/option>
+        &lt;option value="2">2&lt;/option>
+        &lt;option value="3">3&lt;/option>
+        &lt;option value="4">4&lt;/option>
+        &lt;option value="5">5&lt;/option>
+        &lt;option value="6">6&lt;/option>
+        &lt;option value="7">7&lt;/option>
+        &lt;option value="8">8&lt;/option>
+        &lt;option value="9">9&lt;/option>
+        &lt;option value="10">10&lt;/option>
+        &lt;option value="11">11&lt;/option>
+        &lt;option value="12">12&lt;/option>
+      &lt;/Form.Control>
+    &lt;/div>
+  &lt;/Form.Group>
+)
+
+/**
+ * Form that handles creation of a phase in their design process
+ * prompts the user to name their phase and it's description
+ */
+export class DescribePhase extends React.Component{
+  state = {
+    title: "",
+    description: "",
+  }
+
+  onChange = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value 
+    },() => {
+      this.props.createPhase(this.state.title, this.state.description,this.props.id + 1)
+    })
+
+  }
+
+  render(){
+    const {title,description} = this.state;
+    return (
+      &lt;Form.Group >
+        &lt;Form.Label className="form-sub-title">{`Phase ${this.props.id + 1}`}&lt;/Form.Label>
+        &lt;Form.Control id="phaseTitle" name="title" type="text" placeholder="Title" onChange={this.onChange} value={title} />
+        &lt;Form.Control id="phaseDescription" name="description" as="textarea" placeholder="Description" onChange={this.onChange} value={description} rows="3" />
+      &lt;/Form.Group>
+    )
+  }
+} 
+
+/**
+ * The page that handles creation of a a design process
+ * holds all the logic in changing and storing the form data, then submits the data to the server
+ */
+export class CreatePage extends React.Component {
+  state = {
+    compassTitle: "",
+    canSubmit: false,
+    defaultCompass: true,
+    numberOfPhases: 0,
+    phases: [],
+    status: "chooseStructure",
+    loading: false
+  }
+
+/**
+ * event handler for the Process title
+ * changes the value of this.state.compassTitle
+ * @param {Object} event object that holds the value of the Process Title
+*/
+  handleCompassTitle = (e) => {
+    this.setState({compassTitle: e.target.value})
+  }
+
+/**
+ * event handler for the Process Structure
+ * changes the value of this.state.defaultCompass
+ * when the user submits the structure, switch to the submitCompass form
+ * @param {bool} boolean that holds the structure type of our Process (true === default structure, false === custom structure)
+*/
+  handleCompassType = (isDefaultCompass) => {
+    if (isDefaultCompass){
+      this.setState({defaultCompass: isDefaultCompass, phases: default_phases,status: "submitCompass"})
+    } else {
+      this.setState({defaultCompass: isDefaultCompass, status: "numOfPhases"})
+    }
+  }
+
+/**
+ * event handler for the Phase amount 
+ * changes the value of this.state.phaseAmount
+ * when the user submits the number of phases, switch to the createPhases form
+ * @param {Object} event object that holds the value of the Phase Amount
+*/
+  handlePhaseAmount = (e) => {
+    this.setState({numberOfPhases: e.target.value,status:"createPhases"})
+  }
+
+/**
+ * event handler that creates the phases
+ * changes the value of this.state.phases with an array of phases with their title and descriptions
+ * @param {Object} event object that holds the Phase objects
+*/
+  createPhase = (title,description,phaseNumber) => {
+    let phases = this.state.phases
+    phases.push({title,description,phaseNumber});
+    phases = _.uniqBy(phases.reverse(), 'phaseNumber')
+    this.setState({phases})
+  }
+  
+/**
+ * makes the api request to submit a new compass with: Process Title and the defined phases in the Process
+ * if the server request is succesful, the user is redirected to the process screen
+ * otherwise, there was an error
+*/
+  createCompass = () => {
+    const {compassTitle, phases} = this.state;
+    this.setState({ loading: true }, () => {
+      createNewCompass(this.props.user,compassTitle,phases)
+      .then((res) => {
+          navigate(`/Process/${res.data.getProcess.id}`)
+      })
+      .catch((err) => {
+        alert(err)
+        this.forceUpdate();
+      })
+    })
+  }
+  /**
+   * when the user is done with all the phases, change the form to the submitCompass Form
+   */
+  submitPhases = (e) => {
+    this.setState({status: "submitCompass"})
+  }
+
+  /**
+   * handles the displaying of forms for the user to operate with to create their design process
+   */
+  handleForms = () => {
+    switch(this.state.status) { 
+      case "chooseStructure":
+        return &lt;ChooseStructure handleCompassType={this.handleCompassType}/>   
+      case "numOfPhases":
+        return &lt;PhaseNumber handlePhaseAmount={this.handlePhaseAmount}/>
+      case "createPhases":
+        const Phases = Array.from({length: this.state.numberOfPhases}, (_, id) => ( 
+            &lt;DescribePhase createPhase={this.createPhase} id={id} key={id}/> 
+          )
+        )
+        return (
+          &lt;div>
+            &lt;Form.Label className="form-title">Describe each phase in your design process&lt;/Form.Label>
+              {Phases}
+            &lt;Button onClick={this.submitPhases}>Submit Phases&lt;/Button>
+          &lt;/div>
+        )
+      case "submitCompass":
+        return &lt;SubmitCompass 
+                  createCompass={this.createCompass} 
+                  title={this.state.compassTitle} 
+                  onChange={this.handleCompassTitle}
+                />
+      default: 
+        return &lt;ChooseStructure handleCompassType={this.handleCompassType}/>   
+    }
+  }
+
+  render(){
+    return (
+      &lt;Layout>
+          &lt;h2> Create Your Compass &lt;/h2>
+          &lt;div className="form-container">
+            {this.handleForms()}
+            { this.state.loading &amp;&amp; &lt;SpinningWheel/>}
+          &lt;/div>
+      &lt;/Layout>
+    )
+  }
+}
+const mapStateToProps =({state})=>(
+  {user: state.user}
+)
+const mapDispatchToProps = dispatch => ({
+  updateUser: (user) => dispatch(updateUser(user))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(CreatePage);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChooseStructure.html">ChooseStructure</a></li><li><a href="CreatePage.html">CreatePage</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="DescribePhase.html">DescribePhase</a></li><li><a href="Graph.html">Graph</a></li><li><a href="LogCard.html">LogCard</a></li><li><a href="Login.html">Login</a></li><li><a href="NewPassword.html">NewPassword</a></li><li><a href="PhaseNumber.html">PhaseNumber</a></li><li><a href="Process.html">Process</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SubmitCompass.html">SubmitCompass</a></li><li><a href="Verification.html">Verification</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue May 14 2019 12:23:52 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
