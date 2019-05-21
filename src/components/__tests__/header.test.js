@@ -15,4 +15,8 @@ describe("Header", () => {
   it("Check Render",()=>{
       expect(shallowToJson(tree)).toMatchSnapshot();
   });
+  it("Check Constructor Function",()=>{
+    let func=jest.spyOn(tree.instance(),"constructor")
+    expect(func).toHaveBeenCalledTimes(0);
+})
 });
