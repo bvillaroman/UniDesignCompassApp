@@ -162,7 +162,7 @@ class Profile extends React.Component {
   }
 
   submitPhoneNumber = () => {
-    if (this.state.update.phone_numberl !== this.state.phone_number) {
+    if (this.state.update.phone_number !== this.state.phone_number) {
       //update amplify
       Auth.currentAuthenticatedUser().then(user => {
         Auth.updateUserAttributes(user, {
