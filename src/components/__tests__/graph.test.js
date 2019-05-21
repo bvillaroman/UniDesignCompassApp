@@ -90,5 +90,11 @@ it('componentDidUpdate test.', () => {
     expect(spy).toHaveBeenCalledTimes(0);
     }); 
 
+  it('deleteLogHandler test', () => {
+    let spy=jest.spyOn(GraphWrapper.instance(),"deleteLogHandler")
+    expect(spy).toHaveBeenCalledTimes(0);
+    GraphWrapper.instance().deleteLogHandler()
+    expect(spy).toHaveBeenCalledTimes(1);
+    });
     
 });
