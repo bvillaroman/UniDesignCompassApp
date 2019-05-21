@@ -5,6 +5,7 @@ import LogHandler from '../Compass/LogHandler'
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from "react-test-renderer"
 import Compass from "../Compass/index"
+
 configure({adapter:new Adapter()});
 // jest.mock('../Compass/Phase')
 let phaseWrapper=shallow(<Phase/>)

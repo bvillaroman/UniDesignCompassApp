@@ -1,6 +1,17 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import Graph from "../Graph";
+import Adapter from 'enzyme-adapter-react-16';
+import {configure, mount, shallow} from 'enzyme';
+configure({adapter:new Adapter()});
+let GraphWrapper=shallow(<Graph/>)
+it('Graph Constructor called properly.', () => {
+  let spy=jest.spyOn(GraphWrapper.instance(),"constructor")
+  expect(spy).toHaveBeenCalledTimes(0);
+  });
+
+
+
 
 describe("Graph", () => {
   test("it matches the snapshot", () => {
