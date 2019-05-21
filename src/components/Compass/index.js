@@ -6,7 +6,7 @@ import Phase from './Phase';
 import {getProcess} from '../../graphql_utils/utils'
 import SpinningWheel from "../SpinningWheel"
 
-class Compass extends Component {
+export class Compass extends Component {
     state = {
         compassName: "",
         compassPhases: [],
@@ -85,7 +85,7 @@ class Compass extends Component {
     }
 
     compassButtonHandler = (phase) => {//handle current phase too.
-        this.setState({ currentPhase: phase.key })// Some sort of delay when logging maybe also delay in updating?
+        this.setState({ currentPhase: phase.key })
     }
     
     previousButtonHandler = () => {
