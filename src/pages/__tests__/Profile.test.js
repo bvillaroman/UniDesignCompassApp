@@ -112,3 +112,8 @@ it('Profile showVerification clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"showVerification")
     expect(spy).toHaveBeenCalledTimes(0);
 });
+
+it('Profile submitEmail clean',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"submitEmail")
+    expect(spy).toHaveBeenCalledTimes(0);
+});
