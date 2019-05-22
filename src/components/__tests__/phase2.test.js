@@ -9,7 +9,6 @@ const Phase1= shallow(<Phase/>)
 
 it('Check Time State', () => {
     expect(Phase1.state().time).toEqual(0)
-    // console.log(Phase1.render().children())
   });
 
 it('Check New Log State', () => {
