@@ -36,7 +36,7 @@ describe("Application rundown", () => {
   test("Load Profile Page", async ()=>{
    let browser = await puppeteer.launch({
       args:['--no-sandbox','--disable-setuid-sandbox'],
-      headless: false,
+      headless: true,
     });
     let page = await browser.newPage();
     let width=1000
