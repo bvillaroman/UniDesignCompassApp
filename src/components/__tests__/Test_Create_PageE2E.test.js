@@ -24,6 +24,10 @@ describe( "Create Tests",()=>{
     await page.$eval("a[rel=create]",res=>res.click());
     await page.waitForSelector("button[id=Default]");
     await page.$eval("button[id=Default]",res=>res.click());
+    await page.$eval("input[id=formBasicEmail]",res=>res.click());
+    await page.type("input[id=formBasicEmail]","Example Compass");
+    await page.$eval("button[id=create-button]",res=>res.click());
+    await page.waitForSelector("h2[class=text-center]");
     browser.close();
   },160000)
 })
