@@ -7,7 +7,7 @@ import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {shallow} from 'enzyme';
 import {mountToJson} from 'enzyme-to-json';
-import Compass from '../../components/Compass';
+import {Compass} from '../../components/Compass/index';
 configure({adapter:new Adapter()});
 
 const tree = shallow(<Compass />);
