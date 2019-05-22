@@ -40,3 +40,8 @@ it('Profile componentDidMount test',() =>{
     profileWrapper.instance().componentDidMount()
     expect(spy).toHaveBeenCalledTimes(1);
 });
+
+it('Profile handleChange clean',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"handleChange")
+    expect(spy).toHaveBeenCalledTimes(0);
+});
