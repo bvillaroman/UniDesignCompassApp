@@ -131,3 +131,12 @@ it('Profile submitPhoneNumber clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
     expect(spy).toHaveBeenCalledTimes(1);
 });
+
+
+it('Profile submitPhoneNumber test',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
+    expect(spy).toHaveBeenCalledTimes(1);
+    let e={target:{value:"testing"}}
+    profileWrapper.instance().submitPhoneNumber(e)
+    expect(spy).toHaveBeenCalledTimes(2);
+});
