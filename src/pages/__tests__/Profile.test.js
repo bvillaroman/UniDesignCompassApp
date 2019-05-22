@@ -33,3 +33,10 @@ it('Profile componentDidMount clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"componentDidMount")
     expect(spy).toHaveBeenCalledTimes(0);
 });
+
+it('Profile componentDidMount test',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"componentDidMount")
+    expect(spy).toHaveBeenCalledTimes(0);
+    profileWrapper.instance().componentDidMount()
+    expect(spy).toHaveBeenCalledTimes(1);
+});
