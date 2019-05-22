@@ -9,8 +9,8 @@ import {updateUser, getUserbyUsername} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
 
 class Profile extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     //initial state
     this.state = {
       first_name: "",
