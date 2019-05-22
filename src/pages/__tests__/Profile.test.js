@@ -117,3 +117,11 @@ it('Profile submitEmail clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitEmail")
     expect(spy).toHaveBeenCalledTimes(0);
 });
+
+it('Profile submitEmail test',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"submitEmail")
+    expect(spy).toHaveBeenCalledTimes(0);
+    let e={target:{value:"testing"}}
+    profileWrapper.instance().submitEmail(e)
+    expect(spy).toHaveBeenCalledTimes(1);
+});
