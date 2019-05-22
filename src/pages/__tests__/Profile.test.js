@@ -7,46 +7,48 @@ configure({adapter:new Adapter()});
 let props={user: {first_name:"test",last_name:"user",email:"email@email.com",phone_number:"000000000"}}
 let profileWrapper=shallow(<Profile {...props}/>)
 
-it("Profile Constructor",()=>{
+describe("Profile", () => {
+
+it("Constructor",()=>{
     let constructor=jest.spyOn(profileWrapper.instance(),"constructor")
     expect(constructor).toHaveBeenCalledTimes(0);
 });
 
-it('Profile render clean',() =>{
+it('render clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"render")
     expect(spy).toHaveBeenCalledTimes(0);
   });
 
-it('Profile submitPhoneNumber clean',() =>{
+it('submitPhoneNumber clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile submitPhoneNumber test',() =>{
+it('submitPhoneNumber test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
     expect(spy).toHaveBeenCalledTimes(0);
     spy()
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile componentDidMount clean',() =>{
+it('componentDidMount clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"componentDidMount")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile componentDidMount test',() =>{
+it('componentDidMount test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"componentDidMount")
     expect(spy).toHaveBeenCalledTimes(0);
     profileWrapper.instance().componentDidMount()
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile handleChange clean',() =>{
+it('handleChange clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"handleChange")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile handleChange test',() =>{
+it('handleChange test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"handleChange")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -54,12 +56,12 @@ it('Profile handleChange test',() =>{
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile handlePasswordCode clean',() =>{
+it('handlePasswordCode clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"handlePasswordCode")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile handlePasswordCode test',() =>{
+it('handlePasswordCode test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"handlePasswordCode")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -67,12 +69,12 @@ it('Profile handlePasswordCode test',() =>{
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile submitPassword clean',() =>{
+it('submitPassword clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitPassword")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile submitPassword test',() =>{
+it('submitPassword test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitPassword")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -81,13 +83,13 @@ it('Profile submitPassword test',() =>{
 });
 
 
-it('Profile submitName clean',() =>{
+it('submitName clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitName")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
 
-it('Profile submitName test',() =>{
+it('submitName test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitName")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -95,12 +97,12 @@ it('Profile submitName test',() =>{
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile submitVerify clean',() =>{
+it('submitVerify clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitVerify")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile submitVerify test',() =>{
+it('submitVerify test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitVerify")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -108,17 +110,17 @@ it('Profile submitVerify test',() =>{
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-it('Profile showVerification clean',() =>{
+it('showVerification clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"showVerification")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile submitEmail clean',() =>{
+it('submitEmail clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitEmail")
     expect(spy).toHaveBeenCalledTimes(0);
 });
 
-it('Profile submitEmail test',() =>{
+it('submitEmail test',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"submitEmail")
     expect(spy).toHaveBeenCalledTimes(0);
     let e={target:{value:"testing"}}
@@ -126,17 +128,4 @@ it('Profile submitEmail test',() =>{
     expect(spy).toHaveBeenCalledTimes(1);
 });
 
-
-it('Profile submitPhoneNumber clean',() =>{
-    let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
-    expect(spy).toHaveBeenCalledTimes(1);
-});
-
-
-it('Profile submitPhoneNumber test',() =>{
-    let spy=jest.spyOn(profileWrapper.instance(),"submitPhoneNumber")
-    expect(spy).toHaveBeenCalledTimes(1);
-    let e={target:{value:"testing"}}
-    profileWrapper.instance().submitPhoneNumber(e)
-    expect(spy).toHaveBeenCalledTimes(2);
 });
