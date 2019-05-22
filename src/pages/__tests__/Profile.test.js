@@ -28,3 +28,8 @@ it('Profile submitPhoneNumber test',() =>{
     spy()
     expect(spy).toHaveBeenCalledTimes(1);
 });
+
+it('Profile componentDidMount clean',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"componentDidMount")
+    expect(spy).toHaveBeenCalledTimes(0);
+});
