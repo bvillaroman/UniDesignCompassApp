@@ -45,3 +45,11 @@ it('Profile handleChange clean',() =>{
     let spy=jest.spyOn(profileWrapper.instance(),"handleChange")
     expect(spy).toHaveBeenCalledTimes(0);
 });
+
+it('Profile handleChange test',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"handleChange")
+    expect(spy).toHaveBeenCalledTimes(0);
+    let e={target:{value:"testing"}}
+    profileWrapper.instance().handleChange(e)
+    expect(spy).toHaveBeenCalledTimes(1);
+});
