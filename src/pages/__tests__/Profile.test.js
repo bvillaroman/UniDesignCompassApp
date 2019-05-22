@@ -53,3 +53,9 @@ it('Profile handleChange test',() =>{
     profileWrapper.instance().handleChange(e)
     expect(spy).toHaveBeenCalledTimes(1);
 });
+
+it('Profile handlePasswordCode clean',() =>{
+    let spy=jest.spyOn(profileWrapper.instance(),"handlePasswordCode")
+    expect(spy).toHaveBeenCalledTimes(0);
+});
+
