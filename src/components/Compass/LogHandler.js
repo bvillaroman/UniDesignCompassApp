@@ -1,9 +1,17 @@
+/**
+ * @fileoverview Thise Files handles how a Log is structured
+ * @author <a href="">Jeter Gutierrez</a>
+ * @version 1.0.0
+ */
 import React from 'react';
 import Button from "react-bootstrap/Button";
 import { Row, Table,Col, Container, Form } from 'react-bootstrap';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 
+/**
+ * Component that handles a Log and structures it and renders it.
+ */
 const LogHandler = (props) => {
   return (
     <Container>
