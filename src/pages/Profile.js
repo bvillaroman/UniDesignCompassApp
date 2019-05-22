@@ -8,7 +8,7 @@ import ProcessFeed from '../components/ListProcesses/ProcessFeed';
 import {updateUser, getUserbyUsername} from '../graphql_utils/utils';
 import { Auth } from 'aws-amplify';
 
-class Profile extends React.Component {
+export class Profile extends React.Component {
   constructor(props) {
     super(props);
     //initial state
