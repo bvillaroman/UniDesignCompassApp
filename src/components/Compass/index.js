@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Thise Files handles what happens in a compass
+ * @author <a href="">Jeter Gutierrez</a>
+ * @version 1.0.0
+ */
+
 import React, { Component } from 'react';
 import "../bootstrap.css"
 import { updateUser } from '../../state/actions'
@@ -5,7 +11,9 @@ import { connect } from 'react-redux';
 import Phase from './Phase';
 import {getProcess} from '../../graphql_utils/utils'
 import SpinningWheel from "../SpinningWheel"
-
+/**
+ * Component that handles the compass design and functionality
+ */
 export class Compass extends Component {
     state = {
         compassName: "",
@@ -38,7 +46,9 @@ export class Compass extends Component {
             })
         }
     }
-
+/**
+ * Change the process that is being used
+ */
     setProcess = (id) => {
         getProcess(id)
             .then((res) => {
@@ -83,20 +93,32 @@ export class Compass extends Component {
                 })
             })
     }
-
+/**
+ * Handler for what happens when a button is pressed in order to change the current phase.
+ */
     compassButtonHandler = (phase) => {//handle current phase too.
         this.setState({ currentPhase: phase.key })
     }
     
+/**
+ * Component that handles which log is the previous log.
+ */
     previousButtonHandler = () => {
         var temp = !this.state.previous//need to handle active and disabled booleans too
         this.setState({ previous: temp });
     }
 
+/**
+ * Component that handles which log is the next log.
+ */
     nextButtonHandler = (e) => {
-        var temp = !this.state.next//need to handle active and disabled booleans too
+        var temp = !this.state.next//need to handle active and disabled booleans too.
         this.setState({ next: temp });
     }
+
+/**
+ * Component that call the Phase class to generate the phase structure for the compass.
+ */    
 
     generatePhase = (phase,index) => (
         <Phase

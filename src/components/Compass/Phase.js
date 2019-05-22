@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Thise Files handles how a phase functions.
+ * @author <a href="">Jeter Gutierrez</a>
+ * @version 1.0.0
+ */
+
+
+
 import React from 'react'
 import {Component} from 'react';
 import Button from "react-bootstrap/Button";
@@ -7,6 +15,10 @@ import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
 import {getPhase, createLogs,updatePhase} from "../../graphql_utils/utils"
+
+/**
+ * Component that handles the phase design and functionality
+ */
 
 class Phase extends Component {
 constructor(props){
@@ -33,7 +45,9 @@ constructor(props){
             })
         })
     }
-
+/**
+ * Component that handles updating the previously used time.
+ */
     updateTime = (newTime) => {
         const {title, description} = this.state
         const {phaseid } = this.props;
@@ -43,7 +57,9 @@ constructor(props){
             this.setState({time})
         })
     }
-
+/**
+ * Component that handles the Timer.
+ */
     timeHandler = (timerState,pause,newTime,start) => {
         const {compassButtonHandler, phase} = this.props;
 
@@ -56,10 +72,15 @@ constructor(props){
         }
     }
 
+/**
+ * Component that handles the text read from the user input for a log.
+ */
     handleTextArea = (e) => {
         this.setState({newLog : e.target.value})
     }
-
+/**
+ * Component that handles submiting a new log entry for a given log.
+ */
     submitLog = (e,time) => {
         const {newLog} = this.state
         // const now = new Date();
@@ -73,7 +94,9 @@ constructor(props){
             this.setState({newLog: "", logs})
         })
     }
-
+/**
+ * Component that handles generating the new Log entry.
+ */
 //log.timestamp,log.id,log.text
     generateLog = (log) => {
         const newTime = new Date(parseInt(log.timestamp))
@@ -87,7 +110,9 @@ constructor(props){
         </Row>
         )
     }
-
+/**
+ * Component that handles the generating all of the log entries up to the most current one.
+ */
     generateLogs = (logs) => {
         logs.sort((a, b) => {
             return a.timestamp - b.timestamp;
