@@ -1,6 +1,6 @@
 import {configure, mount, shallow} from 'enzyme';
 import React from "react"
-import Phase from '../Compass/Phase';
+import Phase from '../Compass/Phase2';
 import LogHandler from '../Compass/LogHandler'
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from "react-test-renderer"

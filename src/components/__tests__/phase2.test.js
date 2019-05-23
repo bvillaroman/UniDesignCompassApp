@@ -1,5 +1,5 @@
 import React from 'react'
-import Phase from '../Compass/Phase';
+import Phase from '../Compass/Phase2';
 import LogHandler from '../Compass/LogHandler'
 import {shallow} from 'enzyme'
 import {configure} from 'enzyme';

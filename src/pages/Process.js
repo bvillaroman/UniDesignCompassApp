@@ -37,7 +37,7 @@ export class Process extends React.Component {
    * once the data is retrieved, change the state of the component
   */
   getProcessItems = (id) => {
-    getProcess(id)
+    getProcess(id.split("/")[1])
     .then((res) => {
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
       this.setState({

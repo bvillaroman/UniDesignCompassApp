@@ -5,7 +5,7 @@ describe( "Create Tests",()=>{
     test("Create New Compass", async ()=>{
     let browser = await puppeteer.launch({
       args:['--no-sandbox','--disable-setuid-sandbox'],
-      headless: false,
+      headless: true,
     });
     let page = await browser.newPage();
     let width = 1000
@@ -16,7 +16,7 @@ describe( "Create Tests",()=>{
     await page.$eval("a[rel=login]", res=>res.click());
     await page.waitForSelector("input[id=username]");
     await page.click("input[id=username]");
-    await page.type("input[id=username]", "rdiaz01");
+    await page.type("input[id=username]", "rdiaz001");
     await page.click("input[id=password]");
     await page.type("input[id=password]", "Holder1423!@#$");
     await page.$eval("button[type=submit]",res=>res.click());
