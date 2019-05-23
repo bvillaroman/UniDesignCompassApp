@@ -39,24 +39,26 @@ import { connect } from 'react-redux';
 import { authenticateUser } from '../state/actions';
 import { Auth } from "aws-amplify";
 import config from "../aws-exports";
-import SignIn from "../components/SignIn";
 import { getUserbyUsername } from "../graphql_utils/utils";
-import SpinningWheel from "../components/SpinningWheel"
+import SpinningWheel from "../components/SpinningWheel";
+import Button from "react-bootstrap/Button";
+import FormControl from "react-bootstrap/FormControl";
+import FormGroup from "react-bootstrap/FormGroup";
+import ControlLabel from "react-bootstrap/FormLabel";
 Auth.configure(config);
 
 /**
  * Component that handles User login and displays Login GUI
  */
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            password: "",
-            username: "",
-            user: [],
-            loading: false
-        };
-    }
+export class Login extends Component {
+
+    state = {
+        password: "",
+        username: "",
+        user: [],
+        loading: false
+    };
+
     /**
      * Changes state information dependent on the input information from front end
      */
@@ -103,14 +105,39 @@ class Login extends Component {
     createAccount = (e) => {
         navigate("/SignUp");
     }
-    render = () => {
+    render(){
         return (
             &lt;Layout>
-                &lt;SignIn
-                    handleAuth={this.handleAuth}
-                    handleChange={this.handleChange}
-                    handleAccount={this.createAccount}
-                />
+                &lt;div className='container'>
+                    &lt;div className="Login">
+                        &lt;form onSubmit={this.handleAuth}>
+                            &lt;FormGroup controlId="username" bssize="large">
+                                &lt;ControlLabel>Username&lt;/ControlLabel>
+                                &lt;FormControl
+                                    placeholder="Username"
+                                    autoFocus
+                                    type="text"
+                                    onChange={this.handleChange}
+                                />
+                            &lt;/FormGroup>
+                            &lt;FormGroup controlId="password" bssize="large">
+                                &lt;ControlLabel>Password&lt;/ControlLabel>
+                                &lt;FormControl
+                                    placeholder="Password"
+                                    onChange={this.handleChange}
+                                    type="password"
+                                />
+                            &lt;/FormGroup>
+                            &lt;Button 
+                                bssize="large"
+                                type="submit"
+                            >
+                                Login
+                            &lt;/Button>
+                            &lt;Button className="float-right" onClick={this.createAccount}>Create New Account&lt;/Button>
+                        &lt;/form>
+                    &lt;/div>
+                &lt;/div>
                 {this.state.loading &amp;&amp; &lt;SpinningWheel />}&lt;/Layout>
         )
     }
@@ -132,13 +159,13 @@ export default connect(mapStateToProps, mapDispatchToProps)(Login);
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChooseStructure.html">ChooseStructure</a></li><li><a href="CreatePage.html">CreatePage</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="DescribePhase.html">DescribePhase</a></li><li><a href="Graph.html">Graph</a></li><li><a href="LogCard.html">LogCard</a></li><li><a href="Login.html">Login</a></li><li><a href="NewPassword.html">NewPassword</a></li><li><a href="PhaseNumber.html">PhaseNumber</a></li><li><a href="Process.html">Process</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SubmitCompass.html">SubmitCompass</a></li><li><a href="Verification.html">Verification</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChooseStructure.html">ChooseStructure</a></li><li><a href="Compass.html">Compass</a></li><li><a href="CreatePage.html">CreatePage</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="DescribePhase.html">DescribePhase</a></li><li><a href="Graph.html">Graph</a></li><li><a href="LogCard.html">LogCard</a></li><li><a href="Login.html">Login</a></li><li><a href="NewPassword.html">NewPassword</a></li><li><a href="Phase.html">Phase</a></li><li><a href="PhaseNumber.html">PhaseNumber</a></li><li><a href="Process.html">Process</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SubmitCompass.html">SubmitCompass</a></li><li><a href="Verification.html">Verification</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LogHandler">LogHandler</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Tue May 14 2019 12:23:52 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 19:50:50 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
