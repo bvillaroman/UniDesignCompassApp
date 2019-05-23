@@ -10,8 +10,12 @@ import React from 'react'
 import {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import {  ButtonGroup, Row, Col } from 'react-bootstrap';
+<<<<<<< HEAD
 import Timer from '../../react-compound-timer'
 //import Timer from 'react-compound-timer'
+=======
+import {Timer} from '../../react-compound-timer/build/components/Timer/Timer';
+>>>>>>> upstream/master
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
@@ -34,9 +38,12 @@ constructor(props){
     }
 }
     componentDidMount(){
+<<<<<<< HEAD
         this.update_state_phase();
     }
     update_state_phase=async()=>{
+=======
+>>>>>>> upstream/master
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
             const logs = this.generateLogs(Phase.logs.items)

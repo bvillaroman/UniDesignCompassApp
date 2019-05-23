@@ -36,8 +36,12 @@ export class Process extends React.Component {
    * makes an api request to retrieve all of the data of the process from the process ID
    * once the data is retrieved, change the state of the component
   */
+<<<<<<< HEAD
   getProcessItems = async (id) => {
     console.log(id.split("/")[1]);
+=======
+  getProcessItems = (id) => {
+>>>>>>> upstream/master
     getProcess(id.split("/")[1])
     .then((res) => {
       console.log(res);
