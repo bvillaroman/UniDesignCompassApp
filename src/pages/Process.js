@@ -32,7 +32,7 @@ export class Process extends React.Component {
     let index_p = id.indexOf("Process/")+8;
     id = id.slice(index_p);
     }
-    this.getProcessItems();
+    this.getProcessItems(id);
   }
 
   /**
