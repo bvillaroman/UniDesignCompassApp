@@ -36,18 +36,24 @@ export class Process extends React.Component {
    * makes an api request to retrieve all of the data of the process from the process ID
    * once the data is retrieved, change the state of the component
   */
-  getProcessItems = (id) => {
-    getProcess(id)
+  getProcessItems = async (id) => {
+    console.log(id.split("/")[1]);
+    getProcess(id.split("/")[1])
     .then((res) => {
+      console.log(res);
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
-      this.setState({
-        date_end, 
-        date_start, 
-        id, 
-        name, 
-        phases: items,
-        updateCount: 0
-      })
+      this.update_process_state(date_end, date_start, id, name, items);
+    })
+  }
+
+  update_process_state = (date_end, date_start, id, name, phaseids)=>{
+    this.setState({
+      date_end, 
+      date_start, 
+      id, 
+      name, 
+      phases: phaseids,
+      updateCount: 0
     })
   }
 

@@ -10,7 +10,8 @@ import React from 'react'
 import {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import {  ButtonGroup, Row, Col } from 'react-bootstrap';
-import Timer from 'react-compound-timer'
+import Timer from '../../react-compound-timer'
+//import Timer from 'react-compound-timer'
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
