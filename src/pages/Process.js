@@ -28,11 +28,12 @@ export class Process extends React.Component {
 
   componentDidMount() {
     const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"").replace("/","")
-    if(id.indexOf("Process/")!=-1){
-    let index_p = id.indexOf("Process/")+8;
-    id = id.slice(index_p);
+    let temp_id = id;
+    if(temp_id.indexOf("Process/")!=-1){
+    let index_p = temp_id.indexOf("Process/")+8;
+    temp_id = temp_id.slice(index_p);
     }
-    this.getProcessItems(id);
+    this.getProcessItems(temp_id);
   }
 
   /**
