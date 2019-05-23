@@ -1,6 +1,34 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Compass/Phase2.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Compass/Phase2.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @fileoverview Thise Files handles how a phase functions.
- * @author <a href="">Jeter Gutierrez</a>
+ * @author &lt;a href="">Jeter Gutierrez&lt;/a>
  * @version 1.0.0
  */
 
@@ -10,7 +38,7 @@ import React from 'react'
 import {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import {  ButtonGroup, Row, Col } from 'react-bootstrap';
-import Timer from 'react-compound-timer';
+import {Timer} from '../../react-compound-timer/build/components/Timer/Timer';
 import "../bootstrap.css"
 import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
@@ -33,9 +61,6 @@ constructor(props){
     }
 }
     componentDidMount(){
-        this.update_state_phase();
-    }
-    update_state_phase=async()=>{
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
             const logs = this.generateLogs(Phase.logs.items)
@@ -107,10 +132,10 @@ constructor(props){
         const M = newTime.getHours() > 12 ? 'PM' : 'AM'
         const parsedTime = `${hour}:${newTime.getMinutes()} ${M}`
         return (
-        <Row key={log.id} className="log-cell">
-            <Col xs={8} className="log-text">{log.text}</Col>
-            <Col className="log-timeStamp">{parsedTime}</Col>
-        </Row>
+        &lt;Row key={log.id} className="log-cell">
+            &lt;Col xs={8} className="log-text">{log.text}&lt;/Col>
+            &lt;Col className="log-timeStamp">{parsedTime}&lt;/Col>
+        &lt;/Row>
         )
     }
 /**
@@ -126,15 +151,15 @@ constructor(props){
     render() {
         const { props } = this;
         return (
-            <div>
-            { this.state.dataLoaded && (<Timer
+            &lt;div>
+            { this.state.dataLoaded &amp;&amp; (&lt;Timer
                 initialTime={this.state.time}
                 startImmediately={false}
             >
                 {({ start, pause, stop, getTimerState, getTime }) => (
-                    <div className="d-flex flex-column" >
-                        <ButtonGroup size="lg">
-                            <Button
+                    &lt;div className="d-flex flex-column" >
+                        &lt;ButtonGroup size="lg">
+                            &lt;Button
                                 key={props.phase.key}
                                 onClick={() => {
                                     this.timeHandler(getTimerState(), () => {pause()}, getTime(),() => {start()});
@@ -145,8 +170,8 @@ constructor(props){
 
                             >
                                 {props.phase.name}
-                            </Button>
-                            <Button
+                            &lt;/Button>
+                            &lt;Button
                                 className='col-2'
                                 variant={(props.currentPhase === props.phase.key) ? "danger" : "outline-primary"}
                                 onClick={() => {
@@ -154,14 +179,14 @@ constructor(props){
                                 }}
                             >
                                 {(props.currentPhase === props.phase.key) ? null : (stop())}
-                                <Timer.Hours />:
-                                <Timer.Minutes />:
-                                <Timer.Seconds />
-                            </Button>
-                        </ButtonGroup>
+                                &lt;Timer.Hours />:
+                                &lt;Timer.Minutes />:
+                                &lt;Timer.Seconds />
+                            &lt;/Button>
+                        &lt;/ButtonGroup>
                         {
                             (props.currentPhase === props.phase.key) ? (
-                                <LogHandler
+                                &lt;LogHandler
                                     currentPhase={props.currentPhase}
                                     phase={props.phase}
                                     previous={props.previous}
@@ -175,12 +200,12 @@ constructor(props){
                                     currentTime={getTime()}
                                 />
 
-                            ) : ( <div> </div> )
+                            ) : ( &lt;div> &lt;/div> )
                         }
-                    </div>
+                    &lt;/div>
                 )}
-            </Timer>)}
-            </div>
+            &lt;/Timer>)}
+            &lt;/div>
         )
     }
 }
@@ -197,4 +222,26 @@ Phase.propTypes = {
     compassButtonHandler: PropTypes.func,
     nextButtonHandler: PropTypes.func,
     previousButtonHandler: PropTypes.func 
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ChooseStructure.html">ChooseStructure</a></li><li><a href="Compass.html">Compass</a></li><li><a href="CreatePage.html">CreatePage</a></li><li><a href="Dashboard.html">Dashboard</a></li><li><a href="DescribePhase.html">DescribePhase</a></li><li><a href="Graph.html">Graph</a></li><li><a href="LogCard.html">LogCard</a></li><li><a href="Login.html">Login</a></li><li><a href="NewPassword.html">NewPassword</a></li><li><a href="Phase.html">Phase</a></li><li><a href="PhaseNumber.html">PhaseNumber</a></li><li><a href="Process.html">Process</a></li><li><a href="SignUp.html">SignUp</a></li><li><a href="SubmitCompass.html">SubmitCompass</a></li><li><a href="Verification.html">Verification</a></li></ul><h3>Global</h3><ul><li><a href="global.html#LogHandler">LogHandler</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 18:36:30 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
