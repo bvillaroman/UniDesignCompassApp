@@ -28,7 +28,11 @@ export class Process extends React.Component {
 
   componentDidMount() {
     const id = this.props.location.pathname.replace(process.env.PROCESS_LINK,"").replace("/","")
-    this.getProcessItems(id);
+    if(id.indexOf("Process/")!=-1){
+    let index_p = id.indexOf("Process/")+8;
+    id = id.slice(index_p);
+    }
+    this.getProcessItems();
   }
 
   /**
@@ -37,7 +41,7 @@ export class Process extends React.Component {
    * once the data is retrieved, change the state of the component
   */
   getProcessItems = (id) => {
-    getProcess(id.split("/")[1])
+    getProcess(id)
     .then((res) => {
       console.log(res);
       const {date_end, date_start, id, name, phaseids : { items }} = res.data.getProcess
