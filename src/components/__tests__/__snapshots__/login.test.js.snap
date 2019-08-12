@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check Login_Page render 1`] = `<Connect(Login) />`;
-
-exports[`Check Password render 1`] = `<Connect(Login) />`;
-
-exports[`Check user signup page  render 1`] = `<Connect(Login) />`;
-
-exports[`Check verification page loads render 1`] = `<Connect(Login) />`;
-
 exports[`Login page tests Render Tests Snapshot Test 1`] = `
 <Layout>
   <div
@@ -79,5 +71,3 @@ exports[`Login page tests Render Tests Snapshot Test 1`] = `
   </div>
 </Layout>
 `;
-
-exports[`render 1`] = `<Connect(Login) />`;

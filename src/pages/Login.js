@@ -106,7 +106,7 @@ export class Login extends Component {
                             >
                                 Login
                             </Button>
-                            <Button className="float-right" onClick={this.handleAccount}>Create New Account</Button>
+                            <Button className="float-right" onClick={this.createAccount}>Create New Account</Button>
                         </form>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ export const SubmitCompass = (props) =>  (
     <Form.Label className="form-title">Title of your Design Compass</Form.Label>
     <div className="input-area">
       <Form.Control name="title" type="text" placeholder="Title" onChange={props.onChange} value={props.title} />
-      <Button className="input-button" variant="primary" onClick={props.createCompass}> Submit Compass </Button>
+      <Button id="create-button" className="input-button" variant="primary" onClick={props.createCompass}> Submit Compass </Button>
     </div>
   </Form.Group>
 )

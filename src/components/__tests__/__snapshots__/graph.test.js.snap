@@ -21,3 +21,25 @@ exports[`Graph it matches the snapshot 1`] = `
   />
 </div>
 `;
+
+exports[`it matches the snapshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="spinner-grow text-info"
+    style={
+      Object {
+        "height": "5em",
+        "left": "50%",
+        "marginLeft": "-2.5em",
+        "marginTop": "-2.5em",
+        "position": "fixed",
+        "top": "50%",
+        "width": "5em",
+        "zIndex": "1020",
+      }
+    }
+  />
+</div>
+`;

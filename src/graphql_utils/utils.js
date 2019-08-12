@@ -1,9 +1,9 @@
-import Amplify, {API,graphqlOperation} from 'aws-amplify';
+import {API,graphqlOperation} from 'aws-amplify';
 import * as queries from '../graphql/queries';
 import * as mutations from '../graphql/mutations';
-import aws_config from '../aws-exports';
+import config from '../aws-exports';
 
-Amplify.configure(aws_config);
+API.configure(config);
 
 export async function getUser(id){
     const user=  await API.graphql(graphqlOperation(queries.getUser,{id}));

@@ -1,4 +1,13 @@
-import React, {Component} from 'react';
+/**
+ * @fileoverview Thise Files handles how a phase functions.
+ * @author <a href="">Jeter Gutierrez</a>
+ * @version 1.0.0
+ */
+
+
+
+import React from 'react'
+import {Component} from 'react';
 import Button from "react-bootstrap/Button";
 import {  ButtonGroup, Row, Col } from 'react-bootstrap';
 import Timer from 'react-compound-timer';
@@ -7,9 +16,14 @@ import PropTypes from "prop-types"
 import LogHandler from "./LogHandler"
 import {getPhase, createLogs,updatePhase} from "../../graphql_utils/utils"
 
-class Phase extends Component {
+/**
+ * Component that handles the phase design and functionality
+ */
 
-    state = {
+class Phase extends Component {
+constructor(props){
+    super(props)
+    this.state = {
         logs: [],
         newLog : "",
         time: 0,
@@ -17,8 +31,11 @@ class Phase extends Component {
         description: "",
         dataLoaded: false
     }
-
+}
     componentDidMount(){
+        this.update_state_phase();
+    }
+    update_state_phase=async()=>{
         getPhase(this.props.phaseid).then((res) => {
             const Phase = res.data.getPhase
             const logs = this.generateLogs(Phase.logs.items)
@@ -31,7 +48,9 @@ class Phase extends Component {
             })
         })
     }
-
+/**
+ * Component that handles updating the previously used time.
+ */
     updateTime = (newTime) => {
         const {title, description} = this.state
         const {phaseid } = this.props;
@@ -41,7 +60,9 @@ class Phase extends Component {
             this.setState({time})
         })
     }
-
+/**
+ * Component that handles the Timer.
+ */
     timeHandler = (timerState,pause,newTime,start) => {
         const {compassButtonHandler, phase} = this.props;
 
@@ -54,10 +75,15 @@ class Phase extends Component {
         }
     }
 
+/**
+ * Component that handles the text read from the user input for a log.
+ */
     handleTextArea = (e) => {
         this.setState({newLog : e.target.value})
     }
-
+/**
+ * Component that handles submiting a new log entry for a given log.
+ */
     submitLog = (e,time) => {
         const {newLog} = this.state
         // const now = new Date();
@@ -71,8 +97,10 @@ class Phase extends Component {
             this.setState({newLog: "", logs})
         })
     }
-
-
+/**
+ * Component that handles generating the new Log entry.
+ */
+//log.timestamp,log.id,log.text
     generateLog = (log) => {
         const newTime = new Date(parseInt(log.timestamp))
         const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours()
@@ -85,7 +113,9 @@ class Phase extends Component {
         </Row>
         )
     }
-
+/**
+ * Component that handles the generating all of the log entries up to the most current one.
+ */
     generateLogs = (logs) => {
         logs.sort((a, b) => {
             return a.timestamp - b.timestamp;
