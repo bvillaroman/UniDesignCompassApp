@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/ListProcesses/ProcessCard.js</title>
+    <title>JSDoc: Source: components/Compass/LogHandler.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/ListProcesses/ProcessCard.js</h1>
+    <h1 class="page-title">Source: components/Compass/LogHandler.js</h1>
 
     
 
@@ -27,30 +27,66 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview The Process card that links to a specific process, given the process ID
- * @author Abraham Villaroman, Kelly Lu
+ * @fileoverview Thise Files handles how a Log is structured
+ * @author &lt;a href="">Jeter Gutierrez&lt;/a>
  * @version 1.0.0
-*/
-
+ */
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import {Link} from 'gatsby'
+import Button from "react-bootstrap/Button";
+import { Row, Table,Col, Container, Form } from 'react-bootstrap';
+import "../bootstrap.css"
+import PropTypes from "prop-types"
 
-const ProcessCard = ({process: {id,name,date_end}, selectProcess  }) => (
-  &lt;Card key={ id }>
-    &lt;Card.Body>
-      &lt;Card.Title>{ name }&lt;/Card.Title>
-        &lt;Link to={`/Process/${id}`}>View Process&lt;/Link>
-        {/* &lt;button onClick={() => {selectProcess(id)}}>View Compass&lt;/button>
-        &lt;button onClick={() => {selectProcess(id)}}>View Analyctics&lt;/button> */}
-    &lt;/Card.Body>
-    &lt;Card.Footer>
-      &lt;small className="text-muted">Last updated { date_end }&lt;/small>
-    &lt;/Card.Footer>
-  &lt;/Card>
-)
+/**
+ * Component that handles a Log and structures it and renders it.
+ */
+const LogHandler = (props) => {
+  return (
+    &lt;Container>
+      &lt;Row className="log-container">
+        &lt;Col sm={8}>
+            &lt;div className="log-feed">
+              {props.logs}
+            &lt;/div>
+        &lt;/Col>
+        &lt;Col sm={4}>
+          &lt;Form.Group className="log-editor">
+              &lt;Form.Control 
+                as="textarea" 
+                className="text-area"
+                onChange={props.handleTextArea} 
+                value={props.log}
+              />
+              &lt;Button
+                block
+                size="sm"
+                variant="warning"
+                className="submit-button"
+                onClick={(e) => props.submitLog(e,props.currentTime)}
+              >
+                Submit Log
+              &lt;/Button>
+          &lt;/Form.Group>
+        &lt;/Col>
+      &lt;/Row>
+    &lt;/Container>
+  );
+}
 
-export default ProcessCard;</code></pre>
+export default LogHandler;
+
+LogHandler.propTypes = {
+    currentPhase :  PropTypes.number,
+    phase : PropTypes.object,
+    updateLogHandler: PropTypes.func,
+    previous: PropTypes.bool,
+    next: PropTypes.bool,
+    nextButtonHandler: PropTypes.func,
+    previousButtonHandler: PropTypes.func,
+    handleTextArea: PropTypes.func,
+    log: PropTypes.string,
+    logs: PropTypes.array,
+}</code></pre>
         </article>
     </section>
 

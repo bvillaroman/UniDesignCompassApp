@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Class: CreatePage</title>
+    <title>JSDoc: Class: Phase</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Class: CreatePage</h1>
+    <h1 class="page-title">Class: Phase</h1>
 
     
 
@@ -28,10 +28,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>CreatePage<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>Phase<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">The page that handles creation of a a design process
-holds all the logic in changing and storing the form data, then submits the data to the server</div>
+            <div class="class-description">Component that handles the phase design and functionality</div>
         
     
 </header>
@@ -46,7 +45,7 @@ holds all the logic in changing and storing the form data, then submits the data
     
 
     
-    <h4 class="name" id="CreatePage"><span class="type-signature"></span>new CreatePage<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Phase"><span class="type-signature"></span>new Phase<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -94,7 +93,7 @@ holds all the logic in changing and storing the form data, then submits the data
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line128">line 128</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -144,15 +143,13 @@ holds all the logic in changing and storing the form data, then submits the data
 
         
             
-<h4 class="name" id="createCompass"><span class="type-signature"></span>createCompass<span class="type-signature"></span></h4>
+<h4 class="name" id="generateLog"><span class="type-signature"></span>generateLog<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    makes the api request to submit a new compass with: Process Title and the defined phases in the Process
-if the server request is succesful, the user is redirected to the process screen
-otherwise, there was an error
+    Component that handles generating the new Log entry.
 </div>
 
 
@@ -190,7 +187,7 @@ otherwise, there was an error
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line189">line 189</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line104">line 104</a>
     </li></ul></dd>
     
 
@@ -208,14 +205,13 @@ otherwise, there was an error
 
         
             
-<h4 class="name" id="createPhase"><span class="type-signature"></span>createPhase<span class="type-signature"></span></h4>
+<h4 class="name" id="generateLogs"><span class="type-signature"></span>generateLogs<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    event handler that creates the phases
-changes the value of this.state.phases with an array of phases with their title and descriptions
+    Component that handles the generating all of the log entries up to the most current one.
 </div>
 
 
@@ -253,7 +249,7 @@ changes the value of this.state.phases with an array of phases with their title 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line177">line 177</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -271,14 +267,13 @@ changes the value of this.state.phases with an array of phases with their title 
 
         
             
-<h4 class="name" id="handleCompassTitle"><span class="type-signature"></span>handleCompassTitle<span class="type-signature"></span></h4>
+<h4 class="name" id="handleTextArea"><span class="type-signature"></span>handleTextArea<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    event handler for the Process title
-changes the value of this.state.compassTitle
+    Component that handles the text read from the user input for a log.
 </div>
 
 
@@ -316,7 +311,7 @@ changes the value of this.state.compassTitle
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line144">line 144</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line81">line 81</a>
     </li></ul></dd>
     
 
@@ -334,15 +329,13 @@ changes the value of this.state.compassTitle
 
         
             
-<h4 class="name" id="handleCompassType"><span class="type-signature"></span>handleCompassType<span class="type-signature"></span></h4>
+<h4 class="name" id="submitLog"><span class="type-signature"></span>submitLog<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    event handler for the Process Structure
-changes the value of this.state.defaultCompass
-when the user submits the structure, switch to the submitCompass form
+    Component that handles submiting a new log entry for a given log.
 </div>
 
 
@@ -380,7 +373,7 @@ when the user submits the structure, switch to the submitCompass form
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line154">line 154</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -398,13 +391,13 @@ when the user submits the structure, switch to the submitCompass form
 
         
             
-<h4 class="name" id="handleForms"><span class="type-signature"></span>handleForms<span class="type-signature"></span></h4>
+<h4 class="name" id="timeHandler"><span class="type-signature"></span>timeHandler<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    handles the displaying of forms for the user to operate with to create their design process
+    Component that handles the Timer.
 </div>
 
 
@@ -442,7 +435,7 @@ when the user submits the structure, switch to the submitCompass form
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line212">line 212</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line66">line 66</a>
     </li></ul></dd>
     
 
@@ -460,15 +453,13 @@ when the user submits the structure, switch to the submitCompass form
 
         
             
-<h4 class="name" id="handlePhaseAmount"><span class="type-signature"></span>handlePhaseAmount<span class="type-signature"></span></h4>
+<h4 class="name" id="updateTime"><span class="type-signature"></span>updateTime<span class="type-signature"></span></h4>
 
 
 
 
 <div class="description">
-    event handler for the Phase amount 
-changes the value of this.state.phaseAmount
-when the user submits the number of phases, switch to the createPhases form
+    Component that handles updating the previously used time.
 </div>
 
 
@@ -506,69 +497,7 @@ when the user submits the number of phases, switch to the createPhases form
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line168">line 168</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="submitPhases"><span class="type-signature"></span>submitPhases<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    when the user is done with all the phases, change the form to the submitCompass Form
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="pages_Create.js.html">pages/Create.js</a>, <a href="pages_Create.js.html#line205">line 205</a>
+        <a href="components_Compass_Phase.js.html">components/Compass/Phase.js</a>, <a href="components_Compass_Phase.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -608,7 +537,7 @@ when the user submits the number of phases, switch to the createPhases form
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 18:37:53 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.2</a> on Thu May 23 2019 19:50:50 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
