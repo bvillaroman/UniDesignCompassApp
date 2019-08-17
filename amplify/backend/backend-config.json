@@ -1,23 +1,21 @@
 {
-	"api": {
-		"unidesigncompassapp": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "API_KEY"
-			}
-		}
-	},
-	"auth": {
-		"cognito1a4df832": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation"
-		}
-	},
-	"hosting": {
-		"S3AndCloudFront": {
-			"service": "S3AndCloudFront",
-			"providerPlugin": "awscloudformation"
-		}
-	}
+    "api": {
+        "unidesigncompassapp": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "securityType": "API_KEY"
+            }
+        }
+    },
+    "auth": {
+        "udcompass": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        },
+        "unidesigncompassapp196e8768": {
+            "dependsOn": []
+        }
+    }
 }
