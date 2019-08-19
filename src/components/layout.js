@@ -8,11 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+// import { Grommet } from 'grommet';
+
 
 const Layout = ({ children }) => (
-  <div>
+  <>
     <main>{children}</main>
-  </div>
+  </>
   // <StaticQuery
   //   query={graphql`
   //     query SiteTitleQuery {
@@ -25,6 +27,7 @@ const Layout = ({ children }) => (
   //   `}
   //   render={data => (
   //     <>
+  //      <main>{children}</main>
   //     </>
   //   )}
   // />
