@@ -11,6 +11,12 @@ Parameters:
   
 
     
+  identityPoolName:
+    Type: String
+                
+  allowUnauthenticatedIdentities:
+    Type: String
+            
   resourceNameTruncated:
     Type: String
               
@@ -76,7 +82,10 @@ Parameters:
                                       
   useDefault:
     Type: String
-              
+                      
+  usernameAttributes:
+    Type: CommaDelimitedList
+      
   triggers:
     Type: String
                     
@@ -89,6 +98,9 @@ Parameters:
   dependsOn:
     Type: CommaDelimitedList
         
+  thirdPartyAuth:
+    Type: String
+              
   hostedUI:
     Type: String
           
@@ -103,7 +115,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'unides196e8768_sns-role', !Join ['',['unides196e8768_sns-role', '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'unides155c42e4_sns-role', !Join ['',['unides155c42e4_sns-role', '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -115,10 +127,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: unides196e8768_role_external_id
+                sts:ExternalId: unides155c42e4_role_external_id
       Policies: 
         - 
-          PolicyName: unides196e8768-sns-policy
+          PolicyName: unides155c42e4-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -143,6 +155,11 @@ Resources:
           Required: true
           Mutable: true
         
+        -
+          Name: name
+          Required: true
+          Mutable: true
+        
       
       
       
@@ -155,16 +172,18 @@ Resources:
       Policies:
         PasswordPolicy:
           MinimumLength: !Ref passwordPolicyMinLength
-          RequireLowercase: true
-          RequireNumbers: true
+          RequireLowercase: false
+          RequireNumbers: false
           RequireSymbols: false
-          RequireUppercase: true
+          RequireUppercase: false
+      
+      UsernameAttributes: !Ref usernameAttributes
           
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: unides196e8768_role_external_id
+        ExternalId: unides155c42e4_role_external_id
     
   
     
@@ -183,7 +202,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: unides196e8768_app_clientWeb
+      ClientName: unides155c42e4_app_clientWeb
       
       ReadAttributes: !Ref userpoolClientReadAttributes
       WriteAttributes: !Ref userpoolClientWriteAttributes
@@ -196,7 +215,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: unides196e8768_app_client
+      ClientName: unides155c42e4_app_client
       
       ReadAttributes: !Ref userpoolClientReadAttributes
       WriteAttributes: !Ref userpoolClientWriteAttributes
@@ -264,7 +283,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: unides196e8768_userpoolclient_lambda_iam_policy
+      PolicyName: unides155c42e4_userpoolclient_lambda_iam_policy
       Roles: 
         - !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',[!Ref userpoolClientLambdaRole, '-', !Ref env]]]
       PolicyDocument:
@@ -281,7 +300,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: unides196e8768_userpoolclient_lambda_log_policy
+      PolicyName: unides155c42e4_userpoolclient_lambda_log_policy
       Roles: 
         - !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',[!Ref userpoolClientLambdaRole, '-', !Ref env]]]
       PolicyDocument:
@@ -314,8 +333,50 @@ Resources:
 
   
     
+  # BEGIN IDENTITY POOL RESOURCES
+  
+ 
+  IdentityPool:
+  # Always created
+    Type: AWS::Cognito::IdentityPool
+    Properties: 
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'unidesigncompassapp155c42e4_identitypool_155c42e4', !Join ['',['unidesigncompassapp155c42e4_identitypool_155c42e4', '__', !Ref env]]]
+      
+      CognitoIdentityProviders:
+        - ClientId:  !Ref UserPoolClient
+          ProviderName: !Sub
+            - cognito-idp.${region}.amazonaws.com/${client}
+            - { region: !Ref "AWS::Region",  client: !Ref UserPool}
+        - ClientId:  !Ref UserPoolClientWeb
+          ProviderName: !Sub
+            - cognito-idp.${region}.amazonaws.com/${client}
+            - { region: !Ref "AWS::Region",  client: !Ref UserPool}
+            
+      AllowUnauthenticatedIdentities: !Ref allowUnauthenticatedIdentities
+       
+       
+    DependsOn: UserPoolClientInputs 
+    
+  
+  IdentityPoolRoleMap:
+  # Created to map Auth and Unauth roles to the identity pool
+  # Depends on Identity Pool for ID ref
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties: 
+      IdentityPoolId: !Ref IdentityPool
+      Roles:
+          unauthenticated: !Ref unauthRoleArn
+          authenticated: !Ref authRoleArn
+    DependsOn: IdentityPool
+  
 
 Outputs :
+  
+  IdentityPoolId:
+    Value: !Ref 'IdentityPool'
+    Description:  Id for the identity pool
+  IdentityPoolName:
+    Value: !GetAtt IdentityPool.Name 
   
   
   

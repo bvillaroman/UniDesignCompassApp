@@ -1,6 +1,8 @@
 {
-    "resourceNameTruncated": "unides196e8768",
-    "userPoolName": "unidesigncompassapp196e8768_userpool_196e8768",
+    "identityPoolName": "unidesigncompassapp155c42e4_identitypool_155c42e4",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "unides155c42e4",
+    "userPoolName": "unidesigncompassapp155c42e4_userpool_155c42e4",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -12,33 +14,27 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": true,
+    "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-        "Requires Lowercase",
-        "Requires Uppercase",
-        "Requires Numbers"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
-        "email"
+        "email",
+        "name"
     ],
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": "365",
     "userpoolClientWriteAttributes": [
-        "address",
-        "name",
-        "phone_number",
-        "email"
+        "email",
+        "name"
     ],
     "userpoolClientReadAttributes": [
         "email",
-        "name",
-        "phone_number"
+        "email_verified"
     ],
-    "userpoolClientLambdaRole": "unides196e8768_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "unides155c42e4_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "resourceName": "unidesigncompassapp196e8768",
-    "authSelections": "userPoolOnly",
+    "resourceName": "unidesigncompassapp155c42e4",
+    "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -52,11 +48,15 @@
         ]
     },
     "useDefault": "manual",
+    "usernameAttributes": [
+        "email"
+    ],
     "triggers": "{}",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
     "dependsOn": [],
+    "thirdPartyAuth": false,
     "hostedUI": false
 }
