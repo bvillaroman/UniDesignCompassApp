@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from '../components/Layout';
-import Logger from "../components/Logger"
+import Layout from '../../components/Layout';
+import Logger from "../../components/Logger"
 
 const HomePage = (props) => (
   <Layout>
