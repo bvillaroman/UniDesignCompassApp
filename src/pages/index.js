@@ -1,9 +1,9 @@
 import React from "react";
-import HomePage from "./HomePage"
+import HomePage from "./Home"
 
 const IndexPage = (props) => (
-  <div>
+  <>
     <HomePage path="/" />
-  </div>
+  </>
 );
 export default IndexPage;
