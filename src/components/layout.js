@@ -7,14 +7,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
 // import { Grommet } from 'grommet';
 
 
 const Layout = ({ children }) => (
-  <>
+  <Grommet plain>
     <main>{children}</main>
-  </>
+  </Grommet>
   // <StaticQuery
   //   query={graphql`
   //     query SiteTitleQuery {
