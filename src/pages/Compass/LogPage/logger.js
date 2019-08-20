@@ -1,5 +1,5 @@
 import React,{ useState, useEffect} from "react";
-import {LoggerInputs, SendButton, LoggerInput} from "../../../styles/CompassPage/logger"
+import {LoggerInputs, SendButton, LoggerInput} from "../../../styles/CompassPage"
 import {userLogger} from "../context"
 
 const Logger = (props) => {
