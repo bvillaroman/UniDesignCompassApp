@@ -9,12 +9,30 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
+
+import { LayoutContainer } from "../styles/layout"
 // import { Grommet } from 'grommet';
 
 
 const Layout = ({ children }) => (
-  <Grommet plain>
-    <main>{children}</main>
+  <Grommet 
+    theme={
+      {
+        global: { 
+          colors: { primary: '#5361FF', back: '#F2F2F2',fore: '#FEFFFE',  } 
+        } ,
+        button: {
+          color: 'white', 
+          primary : {color: '#5361FF'},
+          border : {color: '#5361FF'}
+        },
+        
+      }
+    }
+  >
+    <LayoutContainer>
+      <main>{children}</main>
+    </LayoutContainer>
   </Grommet>
   // <StaticQuery
   //   query={graphql`

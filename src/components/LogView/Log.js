@@ -5,7 +5,7 @@ const Log = ({log}) => (
   <Box
     flex={false}
     pad="medium"
-    background={`grey`}
+    background={`#F1F2F1`}
   >
     <Text>{log}</Text>
   </Box>
