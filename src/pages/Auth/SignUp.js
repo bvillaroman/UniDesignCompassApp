@@ -5,9 +5,9 @@ import {
   Form,
   Text
 } from "grommet";
-import {AuthSwitchButton, Input, AuthSwitchContainer, AuthFormContainer, AuthFormTitle,AuthSwitchLabel } from "../../styles/AuthPage"
+import {AuthSwitchButton, InputContainer, AuthSwitchContainer, AuthFormContainer, AuthFormTitle,AuthSwitchLabel, InputField } from "../../styles/AuthPage"
 
-const SignUp = ({SignInButton}) => {
+const SignUp = ({switchToSignIn}) => {
   return (
     <AuthFormContainer>
       <AuthFormTitle> Sign Up</AuthFormTitle>
@@ -15,17 +15,29 @@ const SignUp = ({SignInButton}) => {
         onReset={event => console.log(event)}
         onSubmit={({ value }) => console.log("Submit", value)}
       >
-        <Input label="Email" name="email" type="email" required />
-        <Input label="Username" name="username" type="text" required />
-        <Input label="Name" name="name" type="text" required />
-        <Input label="Phone Number" name="number" type="text" required />
-        <Input label="Password" name="password" required />
-        <Input label="Retype Password" name="password2" required />
+        <InputContainer name="email" type="email" required>
+          <InputField placeholder="Email" />
+        </InputContainer>
+        <InputContainer name="username" type="text" required>
+          <InputField placeholder="Username" />
+        </InputContainer>
+        <InputContainer name="name" type="text" required >
+          <InputField placeholder="Name" />
+        </InputContainer>
+        <InputContainer name="number" type="text" required >
+          <InputField placeholder="Phone number" />
+        </InputContainer>
+        <InputContainer name="password" required >
+          <InputField placeholder="Password" />
+        </InputContainer>
+        <InputContainer name="password2" required >
+          <InputField placeholder="Retype Password" />
+        </InputContainer>
         <Box direction="column" justify="between" margin={{ top: "medium" }}>
           <Button type="submit" label="Sign Up" primary />
           <AuthSwitchContainer direction="row">
             <AuthSwitchLabel truncate>Have an account?</AuthSwitchLabel>
-            <AuthSwitchButton > Sign In </AuthSwitchButton>
+            <AuthSwitchButton onClick={e => switchToSignIn()}> Sign In </AuthSwitchButton>
           </AuthSwitchContainer>
         </Box>
       </Form>
