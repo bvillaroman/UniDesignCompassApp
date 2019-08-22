@@ -10,7 +10,7 @@ const logoutUser = (currentUser, state) => {
   return state
 }
 
-const authReducer = (state,{type,payload}) => {
+const GlobalReducer = (state,{type,payload}) => {
   switch(type){
     case SIGN_IN:
       return loginUser(payload, state);
@@ -20,4 +20,4 @@ const authReducer = (state,{type,payload}) => {
       return state;
   }
 }
-export default authReducer;
+export default GlobalReducer;

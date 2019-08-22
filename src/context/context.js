@@ -1,28 +1,28 @@
 import React, { useReducer, createContext, useContext} from "react";
-import AuthReducer, { SIGN_IN, SIGN_OUT} from "./reducers"
+import GlobalReducer, { SIGN_IN, SIGN_OUT} from "./reducers"
 
 // CONTEXT
-export const AuthContext = createContext();
+export const GlobalContext = createContext();
 
-export const AuthProvider = ({children}) => {
-  const [AuthState,dispatch] = useReducer(AuthReducer, {
+export const GlobalProvider = ({children}) => {
+  const [globalState,dispatch] = useReducer(GlobalReducer, {
     user: {},
   })
   return (
-    <AuthContext.Provider 
+    <GlobalContext.Provider 
       value={{
         loginUser: (email) => dispatch({type: SIGN_IN, payload: email}),
         logoutUser: () => dispatch({type: SIGN_OUT, payload: {}}),
-        ...AuthState
+        ...globalState
       }}
     >
       {children}
-    </AuthContext.Provider>
+    </GlobalContext.Provider>
   )
 }
 
-export const userAuth = () => {
-  const contextValue = useContext(AuthContext);
+export const globalStore = () => {
+  const contextValue = useContext(GlobalContext);
   return contextValue;
 };
 
