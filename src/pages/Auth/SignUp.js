@@ -64,7 +64,6 @@ const SignUp = ({switchToSignIn}) => {
         onActive(1);
       })
       .catch(err => console.log(err));
-
   }
 
   return (

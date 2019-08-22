@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
+import { Box, Button, Form } from "grommet";
 import {
-  Box,
-  Button,
-  Form,
-  Text
-} from "grommet";
-import {AuthSwitchButton, InputContainer, AuthSwitchContainer, AuthFormContainer, AuthFormTitle,AuthSwitchLabel, InputField } from "../../styles/AuthPage"
+  AuthSwitchButton, 
+  InputContainer, 
+  AuthSwitchContainer, 
+  AuthFormContainer, 
+  AuthFormTitle,
+  AuthSwitchLabel, 
+  InputField 
+} from "../../styles/AuthPage"
+import { Auth } from 'aws-amplify';
 
 const SignIn = ({switchToSignUp})=> {
   const [form,setValues] = useState({
@@ -26,8 +30,14 @@ const SignIn = ({switchToSignUp})=> {
     })
   };
 
-  const submitForm = (event) => {
-    console.log(event)
+  const submitForm = ({value}) => {
+    const { email, password } = value
+    Auth.signIn({
+      username: email, // Required, the username
+      password, // Optional, the password
+    })
+    .then(user => console.log(user))
+    .catch(err => console.log(err));
   }
 
   return (

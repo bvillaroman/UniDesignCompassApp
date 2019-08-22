@@ -10,12 +10,9 @@ import {
   AuthSwitchButton, 
   InputContainer, 
   AuthSwitchContainer, 
-  AuthFormContainer, 
-  AuthFormTitle,
   AuthSwitchLabel, 
   InputField 
 } from "../../styles/AuthPage"
-
 
 const Verify = ({email, switchToSignUp}) => {
 
@@ -32,6 +29,14 @@ const Verify = ({email, switchToSignUp}) => {
       .catch(err => console.log(err));
   }
 
+  const resendCCode = (e) => {
+    Auth.resendSignUp(email).then(() => {
+        console.log('code resent successfully');
+    }).catch(e => {
+        console.log(e);
+    });
+  }
+
   return (
     <Form
       onSubmit={sendConfirmationCode}
@@ -44,7 +49,7 @@ const Verify = ({email, switchToSignUp}) => {
       </InputContainer>
       <Box direction="column" justify="between" margin={{ top: "medium" }}>
         <AuthSwitchContainer fill="horizontal" justify="between" direction="row">
-          <Button label="Resend Code" primary />
+          <Button label="Resend Code" onClick={resendCCode} primary />
           <Button type="submit" label="Verify Account" primary />
         </AuthSwitchContainer>
         <AuthSwitchContainer direction="row">
