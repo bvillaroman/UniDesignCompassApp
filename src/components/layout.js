@@ -11,6 +11,7 @@ import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
 
 import { LayoutContainer } from "../styles/layout"
+import {AuthProvider} from "../context/context"
 // import { Grommet } from 'grommet';
 
 
@@ -31,7 +32,9 @@ const Layout = ({ children }) => (
     }
   >
     <LayoutContainer>
-      <main>{children}</main>
+      <AuthProvider>
+        <main>{children}</main>
+      </AuthProvider>
     </LayoutContainer>
   </Grommet>
   // <StaticQuery
