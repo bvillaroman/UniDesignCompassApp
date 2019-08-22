@@ -8,30 +8,65 @@ import {
 import {AuthSwitchButton, InputContainer, AuthSwitchContainer, AuthFormContainer, AuthFormTitle,AuthSwitchLabel, InputField } from "../../styles/AuthPage"
 
 const SignUp = ({switchToSignIn}) => {
+
+  const [form,setValues] = useState({
+    email: '',
+    username: '',
+    name: '',
+    number: '',
+    password: '',
+    password2: '',
+  });
+
+  const [error,setErrors] = useState({  
+    email: '',
+    username: '',
+    name: '',
+    number: '',
+    password: '',
+    password2: '',
+  })
+
+  const onChange = event => {
+    const { target: { value,name } } = event;
+    setValues({
+      ...form,
+      [name]: value
+    })
+  };
+
+  const submitForm = (event) => {
+    console.log(event)
+  }
+
+
   return (
     <AuthFormContainer>
       <AuthFormTitle> Sign Up</AuthFormTitle>
       <Form
         onReset={event => console.log(event)}
-        onSubmit={({ value }) => console.log("Submit", value)}
+        onSubmit={submitForm}
+        onChange={onChange}
+        value={form}
+        errors={{...error}}
       >
-        <InputContainer name="email" type="email" required>
-          <InputField placeholder="Email" />
+        <InputContainer name="email" required>
+          <InputField name="email"  type="email" placeholder="Email" />
         </InputContainer>
-        <InputContainer name="username" type="text" required>
-          <InputField placeholder="Username" />
+        <InputContainer name="username" required>
+          <InputField name="username" type="text" placeholder="Username" />
         </InputContainer>
-        <InputContainer name="name" type="text" required >
-          <InputField placeholder="Name" />
+        <InputContainer name="name" required >
+          <InputField name="name" placeholder="Name" />
         </InputContainer>
-        <InputContainer name="number" type="text" required >
-          <InputField placeholder="Phone number" />
+        <InputContainer name="number" required >
+          <InputField name="number" type="text" placeholder="Phone number" />
         </InputContainer>
         <InputContainer name="password" required >
-          <InputField placeholder="Password" />
+          <InputField name="password" type="password" placeholder="Password" />
         </InputContainer>
-        <InputContainer name="password2" required >
-          <InputField placeholder="Retype Password" />
+        <InputContainer name="password2" required>
+          <InputField name="password2" type="password" placeholder="Retype Password" />
         </InputContainer>
         <Box direction="column" justify="between" margin={{ top: "medium" }}>
           <Button type="submit" label="Sign Up" primary />
