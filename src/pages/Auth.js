@@ -1,10 +1,10 @@
 import React,{useState} from "react";
-import Layout from '../../components/Layout';
-import SignIn from './SignIn'
-import SignUp from './SignUp'
-import {AuthCard} from "../../styles/AuthPage"
+import Layout from '../components/Layout';
+import SignIn from '../components/AuthComponents/SignIn'
+import SignUp from '../components/AuthComponents/SignUp'
+import {AuthCard} from "../styles/AuthPage"
 import { Tab,Tabs } from "grommet";
-import {AuthProvider} from "./context/context"
+import {AuthProvider} from "../components/AuthComponents/context/context"
 
 const AuthenticationPage = (props) => {
   const [tab,setTab] = useState(0);

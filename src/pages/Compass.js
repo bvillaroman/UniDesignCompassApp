@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from '../../components/Layout';
-import LogPage from "./LogPage"
-import {LoggerProvider} from "./context"
+import Layout from '../components/Layout';
+import LogPage from "../components/CompassComponents/LogPage"
+import {LoggerProvider} from "../components/CompassComponents/context"
 
 const CompassPage = (props) => (
   <Layout>
