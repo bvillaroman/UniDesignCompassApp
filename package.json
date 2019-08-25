@@ -27,6 +27,7 @@
     "gatsby-transformer-sharp": "^2.1.17",
     "graphql": "^14.4.2",
     "grommet": "^2.7.6",
+    "grommet-icons": "^4.3.0",
     "lodash": "^4.17.15",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
