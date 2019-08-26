@@ -1,15 +1,26 @@
 import React from "react";
-// import Logger from "./logger"
-// import {userLogger} from "../context"
 import { StepContainer, StepRow } from "../../../styles/CompassPage"
-import { userCardPage } from "../../../context/CardPage/context"
+import { userCompassPage } from "../../../context/CompassPage/context"
 
-const Step = ({title}) => {
-  const {changeView} = userCardPage()
-  
+const Step = ({activeStep = {}}) => {
+  const {changeView,changeStep} = userCompassPage()
+
+  const {
+    title = '',
+    description = '',
+    duration = '' 
+  } = activeStep; 
+
+  const goToLog = (e) => {
+    changeStep(activeStep)
+    changeView(2);
+  }
+  // console.log(activeStep)
+
   return (
-    <StepContainer onClick={e => changeView(2)}>
+    <StepContainer onClick={goToLog}>
       {title}
+      {duration}
     </StepContainer> 
 )};
 export default Step;

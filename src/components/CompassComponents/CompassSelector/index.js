@@ -1,33 +1,30 @@
 import React ,{ useState } from "react";
-// import Logger from "./logger"
-// import {userLogger} from "../context"
 import Step from "./Step"
 import { StepRow } from "../../../styles/CompassPage"
+import { userCompassPage } from "../../../context/CompassPage/context"
 
 const CompassSelector = (props) => {
-  const steps = ["Step 1", "Step 2","Step 3","Step 4","Step 5","Step 6","Step 7"]
-
-  // const {logs} = userLogger()
+  const {steps} = userCompassPage()
   return (
     <>
       <StepRow>
-        <Step title={steps[0]} />
-        <Step title={steps[1]} />
+        <Step activeStep={steps[0]} />
+        <Step activeStep={steps[1]}/>
         {/* {steps.map((step,key) => <Step title={step} />)} */}
       </StepRow> 
 
       <StepRow>
 
-        <Step title={steps[2]} />
-        <Step  />
-        <Step title={steps[4]} />
+        <Step activeStep={steps[2]}/>
+        <Step />
+        <Step activeStep={steps[3]}/>
         {/* {steps.map((step,key) => <Step title={step} />)} */}
       </StepRow> 
 
       <StepRow>
 
-        <Step title={steps[5]} />
-        <Step title={steps[6]} />
+        <Step activeStep={steps[4]}/>
+        <Step activeStep={steps[5]}/>
         {/* {steps.map((step,key) => <Step title={step} />)} */}
       </StepRow> 
     </>

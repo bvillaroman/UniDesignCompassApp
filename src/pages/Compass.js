@@ -4,13 +4,13 @@ import LogPage from "../components/CompassComponents/LogPage"
 import {Tabs, Tab} from "grommet"
 import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
-import {CardPageProvider, CardPageContext} from "../context/CardPage/context"
+import {CompassPageProvider, CompassPageContext} from "../context/CompassPage/context"
 import { MainView } from "../styles/CompassPage"
 
 const CompassPage = (props) => (
   <Layout>
-    <CardPageProvider>
-      <CardPageContext.Consumer>
+    <CompassPageProvider>
+      <CompassPageContext.Consumer>
         {
           ( {view,changeView}) => (
             <MainView>
@@ -22,8 +22,8 @@ const CompassPage = (props) => (
             </MainView>
           )
         }
-      </CardPageContext.Consumer>
-    </CardPageProvider>
+      </CompassPageContext.Consumer>
+    </CompassPageProvider>
   </Layout>
 )
 export default CompassPage;

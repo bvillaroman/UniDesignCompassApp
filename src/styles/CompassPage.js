@@ -32,7 +32,6 @@ export const AttachmentButton = ({onClick}) =>(
     
 )
 
-
 // Logger
 export const CompassButtons = styled(Button)`
   border: 0.15rem solid white;

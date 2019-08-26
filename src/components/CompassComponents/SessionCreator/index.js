@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { userCardPage } from "../../../context/CardPage/context"
+import { userCompassPage } from "../../../context/CompassPage/context"
 
 import {
   InputContainer, 
@@ -15,12 +15,11 @@ import {
 const SessionCreator = ({email}) => {  
   const [form,setForm] = useState({ title: '', description: '' });
   const [error,setErrors] = useState({ title: '', description: ''})
-  const {changeView} = userCardPage();
+  const {changeView} = userCompassPage();
 
   const onChange = ({ target: { value,name } }) => { setForm({...form, [name]: value})  };
 
   const sendForm = (e) => {
-    console.log(form)
     changeView(1);
   }
 

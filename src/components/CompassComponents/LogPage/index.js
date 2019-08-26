@@ -7,12 +7,16 @@ import {
   LoggerInnerNav,
   CompassButton,
 } from "../../../styles/CompassPage"
-import {userCardPage} from "../../../context/CardPage/context"
+import {userCompassPage} from "../../../context/CompassPage/context"
 
 
-const Logger = ({stepTitle}) => {
-  const {changeView} = userCardPage()
+const Logger = () => {
+  const {changeView, currentStep } = userCompassPage()
   const [value, setValue] = useState('');
+
+  const {
+    stepTitle
+  } = currentStep;
 
   const changeToCompass = (e) => changeView(1)
 
@@ -21,8 +25,7 @@ const Logger = ({stepTitle}) => {
       <LoggerNav gridArea="header" >
         <LoggerInnerNav>
           <CompassButton onClick={changeToCompass}/>
-          <StepName> Step Title </StepName>
-          
+          <StepName> {stepTitle} </StepName>
         </LoggerInnerNav>
       </LoggerNav>
       <LoggerTA gridArea="main" >
