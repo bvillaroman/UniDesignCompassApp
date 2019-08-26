@@ -7,7 +7,7 @@ import {
   StepName,
   LoggerInnerNav,
   CompassButton,
-  AttachmentButton 
+  // AttachmentButton 
 } from "../../../styles/CompassPage"
 import {userLogger} from "../context"
 
