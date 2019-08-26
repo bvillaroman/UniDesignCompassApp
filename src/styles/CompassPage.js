@@ -33,6 +33,8 @@ export const AttachmentButton = ({onClick}) =>(
     
 )
 
+
+// Logger
 export const CompassButtons = styled(Button)`
   border: 0.15rem solid white;
   border-radius: 2rem;
@@ -140,6 +142,18 @@ export const DescriptionForm = styled(TextArea)`
   resize: none;
   border: none;
 `;
+// Compass Selector
+
+export const StepRow = styled.div`
+  margin: 4rem;
+  text-align:center;
+`
+export const StepContainer = styled(CompassButtons)`
+  display: inline-block;
+  margin: 0 3rem;
+  padding: 2rem;
+  border: 0.15rem solid #5567FD;
+`
 // Compass Page Containers
 
 export const MainView = styled(Box)`
