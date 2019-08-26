@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Button, Box, FormField, Text, TextInput} from "grommet"
+import { Box, FormField, Text, TextInput} from "grommet"
 
 export const AuthSwitchButton = styled(Text)`
   color: #2A3664;;

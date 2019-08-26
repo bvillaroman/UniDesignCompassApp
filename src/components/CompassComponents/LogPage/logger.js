@@ -9,17 +9,19 @@ import {
   CompassButton,
   // AttachmentButton 
 } from "../../../styles/CompassPage"
-import {userLogger} from "../context"
+import {userCardPage} from "../../../context/CardPage/context"
 
 
 const Logger = (props) => {
-  const {setLog} = userLogger()
+  const {changeView} = userCardPage()
   const [value, setValue] = useState('');
+
+  const changeToCompass = (e) => changeView(1)
 
   return (
     <LoggerGrid
       fill="vertical"
-      rows={['8%', '95%']}
+      rows={['40%', '100%']}
       columns={['fill']}
       gap="small"
       areas={[
@@ -29,7 +31,7 @@ const Logger = (props) => {
     >
       <LoggerNav gridArea="header" >
         <LoggerInnerNav>
-          <CompassButton />
+          <CompassButton onClick={changeToCompass}/>
           <StepName> Step Title </StepName>
           {/* <AttachmentButton/> */}
           

@@ -17,7 +17,7 @@ import {
   AuthSwitchLabel, 
   InputField 
 } from "../../styles/AuthPage"
-import {userAuth} from "./context/context"
+import {userAuth} from "../../context/AuthPage/context"
 import Verify from "./Verify"
 
 const SignUp = ({switchToSignIn}) => {
@@ -68,7 +68,7 @@ const SignUp = ({switchToSignIn}) => {
 
   return (
     <AuthFormContainer>
-      <AuthFormTitle> { tab == 0 ? 'Sign Up' : 'Verifcation'} </AuthFormTitle>
+      <AuthFormTitle> { tab === 0 ? 'Sign Up' : 'Verifcation'} </AuthFormTitle>
       <Tabs activeIndex={tab} onActive={onActive}>
         <Tab>
           <Form

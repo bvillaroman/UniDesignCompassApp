@@ -8,15 +8,15 @@ import {
   FormField, 
   TextInput,
   Form,
-  Tab,
-  Tabs
+  // Tab,
+  // Tabs
 } from "grommet"
 import { Compass, FormPrevious, Attachment } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
   <CompassButtons     
-    onClick={onClick} 
+    onClick={e => onClick()} 
     icon={(
       <div>
         <FormPrevious color='#5567FD' /> 
