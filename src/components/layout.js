@@ -9,8 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
+import Amplify from 'aws-amplify';
 
 import { LayoutContainer } from "../styles/layout"
+import {GlobalProvider} from "../context/context"
+
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
 // import { Grommet } from 'grommet';
 
 
@@ -31,7 +36,9 @@ const Layout = ({ children }) => (
     }
   >
     <LayoutContainer>
-      <main>{children}</main>
+      <GlobalProvider>
+        <main>{children}</main>
+      </GlobalProvider>
     </LayoutContainer>
   </Grommet>
   // <StaticQuery
