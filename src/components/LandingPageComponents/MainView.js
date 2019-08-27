@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BoxWrapper,
+  MainViewContainer,
   BoxA,
   BoxB,
   BoxC,
@@ -9,11 +9,11 @@ import {
 } from '../../styles/LandingPage'
 
 const MainView = (props) => (
-  <BoxWrapper>
+  <MainViewContainer>
     <BoxA><BoxAText>BoxA</BoxAText></BoxA>
     <BoxB><BoxBText>BoxB</BoxBText></BoxB>
     <BoxC><p>BoxC/Logo</p></BoxC>
-  </BoxWrapper>
+  </MainViewContainer>
 )
 
 export default MainView;

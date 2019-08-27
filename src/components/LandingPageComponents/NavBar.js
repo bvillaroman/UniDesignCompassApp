@@ -1,25 +1,24 @@
 import React from 'react';
+import { Button } from 'grommet';
 import {
-  BoxNav,
-  BoxNavText,
-  GatsbyLinks,
+  NavContainer,
+  GatsbyLink,
   LinkContainer,
   LogoBox
 } from '../../styles/LandingPage'
+ 
 
 const NavBar = (props) => (
-  <BoxNav>
-    <BoxNavText>
+  <NavContainer>
       <LogoBox>
-        UniCompass Design
+        UDCompass 
       </LogoBox>
       <LinkContainer>
-        <GatsbyLinks to="/about">About</GatsbyLinks>
-        <GatsbyLinks to="/contact">Contact</GatsbyLinks>
-        <GatsbyLinks to="/SignUp">SignUp</GatsbyLinks>
+        <GatsbyLink to="/About" label="About" />
+        <GatsbyLink to="/Contact" label="Contact"/>
+        <GatsbyLink to="/Auth" label="Sign up" primary/>
       </LinkContainer>
-    </ BoxNavText>
-  </BoxNav>
+  </NavContainer>
 )
 
 export default NavBar;
