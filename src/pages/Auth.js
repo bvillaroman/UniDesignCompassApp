@@ -4,7 +4,7 @@ import SignIn from '../components/AuthComponents/SignIn'
 import SignUp from '../components/AuthComponents/SignUp'
 import {AuthCard} from "../styles/AuthPage"
 import { Tab,Tabs } from "grommet";
-import {AuthProvider} from "../components/AuthComponents/context/context"
+import {AuthProvider} from "../context/AuthPage/context"
 
 const AuthenticationPage = (props) => {
   const [tab,setTab] = useState(0);
