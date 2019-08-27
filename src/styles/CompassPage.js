@@ -3,20 +3,19 @@ import {
   Button, 
   TextArea, 
   Box, 
-  Grid, 
   Text, 
   FormField, 
   TextInput,
   Form,
-  Tab,
-  Tabs
+  // Tab,
+  // Tabs
 } from "grommet"
 import { Compass, FormPrevious, Attachment } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
   <CompassButtons     
-    onClick={onClick} 
+    onClick={e => onClick()} 
     icon={(
       <div>
         <FormPrevious color='#5567FD' /> 
@@ -32,7 +31,6 @@ export const AttachmentButton = ({onClick}) =>(
   />
     
 )
-
 
 // Logger
 export const CompassButtons = styled(Button)`
@@ -62,14 +60,13 @@ export const LoggerInput = styled(TextArea)`
   resize: none;
   height: 100%;
 `;
-export const LoggerGrid = styled(Grid)`
-
-`;
 export const StepName = styled(Text)`
   font-size: 2rem;
 `;
 export const LoggerNav = styled(Box)`
   justify-content: center;
+  height: 8vh;
+  min-height: 3rem;
 `;
 export const LoggerInnerNav = styled(Box)`
   verticle-align: middle;
@@ -77,7 +74,9 @@ export const LoggerInnerNav = styled(Box)`
   
 `;
 export const LoggerTA = styled(Box)`
-
+  margin: 1rem auto;
+  height: 80vh;
+  min-height: 5rem;
 `;
 
 // Sessions Creator

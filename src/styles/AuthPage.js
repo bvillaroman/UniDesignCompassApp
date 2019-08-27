@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Button, Box, FormField, Text, TextInput} from "grommet"
+import { Box, FormField, Text, TextInput} from "grommet"
 
 export const AuthSwitchButton = styled(Text)`
   color: #2A3664;;
@@ -31,8 +31,8 @@ export const InputField = styled(TextInput)`
 
 export const AuthCard = styled(Box)`
   color: white;
-  background-color: transparent;
   margin: 0 auto;
+  min-height: 30rem;
   width: 70%;
 `;
 export const AuthFormContainer = styled(Box)`

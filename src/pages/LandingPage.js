@@ -1,10 +1,14 @@
 import React from 'react';
-import LandingPageComponent from '../components/LandingPageComponents/LandingPageComponent'
+import Layout from '../components/Layout'
+import {NavBar, MainView} from '../components/LandingPageComponents'
 
 class LandingPage extends React.Component {
   render() {
     return (
-      <LandingPageComponent />
+      <Layout>
+        <NavBar/>
+        <MainView/>
+      </Layout>
     )
   }
 }
