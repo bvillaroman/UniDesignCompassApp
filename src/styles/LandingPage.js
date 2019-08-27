@@ -57,16 +57,18 @@ export const MainContent = styled(Box)`
   display: flex;
   align-self: center;
   text-align: left;
-
 `
-export const MainLogo = styled(Box)`
+export const AuthContainer = styled(Box)`
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 3.5rem;
   display: flex;
   align-self: center;
   text-align: left;
-
+  max-height: 100%;
+  overflow: scroll;
+  text-align: center;
+  border-left: 0.1rem solid rgba(0,0,0,0.1);
 `
 
 export const AboutContainer = styled(Box)`

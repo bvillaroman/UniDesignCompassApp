@@ -15,7 +15,6 @@ const NavBar = (props) => (
       <LinkContainer>
         <GatsbyLink to="/About" label="About" />
         <GatsbyLink to="/Contact" label="Contact"/>
-        <GatsbyLink to="/Auth" label="Sign up" primary/>
       </LinkContainer>
   </NavContainer>
 )

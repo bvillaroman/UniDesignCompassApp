@@ -31,8 +31,8 @@ export const InputField = styled(TextInput)`
 
 export const AuthCard = styled(Box)`
   color: white;
-  background-color: transparent;
   margin: 0 auto;
+  min-height: 30rem;
   width: 70%;
 `;
 export const AuthFormContainer = styled(Box)`
