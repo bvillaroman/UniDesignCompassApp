@@ -6,13 +6,14 @@ export const BoxWrapper = styled(Box)`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 100vh;
+  height: 90vh;
   list-style-type: none;
 `
 
 export const BoxNav = styled(Box)`
   background: yellow;
   width: 100%;
+  height: 10vh;
   margin: 0;
 `
 
