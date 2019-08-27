@@ -1,21 +1,13 @@
 import React from "react"
 import styled from 'styled-components';
-import { Box, Text, Button } from 'grommet';
+import { Box, Text, Button, Grid } from 'grommet';
 import { Link } from 'gatsby';
 
-export const MainViewContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
-  list-style-type: none;
-`
 export const NavContainer = styled(Box)`
   width: 90%;
   height: 20%;
   min-height: 6rem;
   margin: 0 auto;
-  border-bottom: 0.1rem solid rgba(0,0,0,.2);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -53,36 +45,33 @@ export const GatsbyLink = ({to,label,primary}) => (
   </GatsbyLinkContainer>
 )
 
-export const BoxA = styled(Box)`
-  background: red;
-  flex: 0 0 50%;
-  width: 50%;
+export const MainViewContainer = styled(Grid)`
+  width: 90%;
+  margin: 0 auto;  
 `
 
-export const BoxB = styled(Box)`
-  background: orange;
-  flex: 0 0 50%;
-  width: 50%;
-`
-
-export const BoxC = styled(Box)`
-  background: lightgreen;
-  flex: 0 0 100%;
-  width: 50%;
-`
-
-export const BoxAText = styled(Text)`
-  margin: 0 auto;
-  padding: 2rem 0 3rem 0;
-  font-size: 3rem;
+export const MainContent = styled(Box)`
+  font-size: 3.5rem;
   font-weight: 900;
-  color: #5361FE;
+  line-height: 3.5rem;
+  display: flex;
+  align-self: center;
+  text-align: left;
+
+`
+export const MainLogo = styled(Box)`
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 3.5rem;
+  display: flex;
+  align-self: center;
+  text-align: left;
+
 `
 
-export const BoxBText = styled(Text)`
-  margin: 0 auto;
-  padding: 2rem 0 3rem 0;
-  font-size: 3rem;
-  font-weight: 900;
-  color: #5361FE;
+export const AboutContainer = styled(Box)`
+`
+
+export const ContactContainer = styled(Box)`
+  
 `

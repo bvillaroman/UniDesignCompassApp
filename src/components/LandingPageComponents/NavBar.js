@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'grommet';
 import {
   NavContainer,
   GatsbyLink,
@@ -11,7 +10,7 @@ import {
 const NavBar = (props) => (
   <NavContainer>
       <LogoBox>
-        UDCompass 
+      <GatsbyLink to="/" label="UDCompass" />
       </LogoBox>
       <LinkContainer>
         <GatsbyLink to="/About" label="About" />
