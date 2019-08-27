@@ -5,16 +5,15 @@ export const onCreateUser = `subscription OnCreateUser {
   onCreateUser {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -27,16 +26,15 @@ export const onUpdateUser = `subscription OnUpdateUser {
   onUpdateUser {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -49,16 +47,15 @@ export const onDeleteUser = `subscription OnDeleteUser {
   onDeleteUser {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -67,226 +64,358 @@ export const onDeleteUser = `subscription OnDeleteUser {
   }
 }
 `;
-export const onCreateProcess = `subscription OnCreateProcess {
-  onCreateProcess {
+export const onCreateCompass = `subscription OnCreateCompass {
+  onCreateCompass {
     id
-    phaseids {
-      items {
-        id
-        duration
-        title
-        description
-      }
-      nextToken
-    }
-    user_id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onUpdateProcess = `subscription OnUpdateProcess {
-  onUpdateProcess {
-    id
-    phaseids {
+    sessions {
       items {
         id
-        duration
-        title
-        description
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
     }
-    user_id
+  }
+}
+`;
+export const onUpdateCompass = `subscription OnUpdateCompass {
+  onUpdateCompass {
+    id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onDeleteProcess = `subscription OnDeleteProcess {
-  onDeleteProcess {
-    id
-    phaseids {
+    sessions {
       items {
         id
-        duration
-        title
-        description
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
     }
-    user_id
+  }
+}
+`;
+export const onDeleteCompass = `subscription OnDeleteCompass {
+  onDeleteCompass {
+    id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const onCreatePhase = `subscription OnCreatePhase {
-  onCreatePhase {
-    id
-    logs {
+    sessions {
       items {
         id
-        timestamp
-        text
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
-    }
-    duration
-    title
-    description
-    process {
-      id
-      phaseids {
-        nextToken
-      }
-      user_id
-      user {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
     }
   }
 }
 `;
-export const onUpdatePhase = `subscription OnUpdatePhase {
-  onUpdatePhase {
+export const onCreateSession = `subscription OnCreateSession {
+  onCreateSession {
     id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
+    total_time
+    name_of_session
+    description_of_session
+    compass {
       id
-      phaseids {
-        nextToken
-      }
-      user_id
+      title
+      description_of_compass
+      date_start
+      date_end
       user {
         id
         username
-        first_name
-        last_name
+        name
         email
-        password_hash
+        password
         phone_number
       }
-      name
-      date_start
-      date_end
+      sessions {
+        nextToken
+      }
+    }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
     }
   }
 }
 `;
-export const onDeletePhase = `subscription OnDeletePhase {
-  onDeletePhase {
+export const onUpdateSession = `subscription OnUpdateSession {
+  onUpdateSession {
     id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
+    total_time
+    name_of_session
+    description_of_session
+    compass {
       id
-      phaseids {
-        nextToken
-      }
-      user_id
+      title
+      description_of_compass
+      date_start
+      date_end
       user {
         id
         username
-        first_name
-        last_name
+        name
         email
-        password_hash
+        password
         phone_number
       }
-      name
+      sessions {
+        nextToken
+      }
+    }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onDeleteSession = `subscription OnDeleteSession {
+  onDeleteSession {
+    id
+    total_time
+    name_of_session
+    description_of_session
+    compass {
+      id
+      title
+      description_of_compass
       date_start
       date_end
+      user {
+        id
+        username
+        name
+        email
+        password
+        phone_number
+      }
+      sessions {
+        nextToken
+      }
     }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateInteraction = `subscription OnCreateInteraction {
+  onCreateInteraction {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const onUpdateInteraction = `subscription OnUpdateInteraction {
+  onUpdateInteraction {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const onDeleteInteraction = `subscription OnDeleteInteraction {
+  onDeleteInteraction {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const onCreateStep = `subscription OnCreateStep {
+  onCreateStep {
+    id
+    title
+    description
+  }
+}
+`;
+export const onUpdateStep = `subscription OnUpdateStep {
+  onUpdateStep {
+    id
+    title
+    description
+  }
+}
+`;
+export const onDeleteStep = `subscription OnDeleteStep {
+  onDeleteStep {
+    id
+    title
+    description
   }
 }
 `;
 export const onCreateLog = `subscription OnCreateLog {
   onCreateLog {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }
@@ -295,22 +424,25 @@ export const onCreateLog = `subscription OnCreateLog {
 export const onUpdateLog = `subscription OnUpdateLog {
   onUpdateLog {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }
@@ -319,22 +451,25 @@ export const onUpdateLog = `subscription OnUpdateLog {
 export const onDeleteLog = `subscription OnDeleteLog {
   onDeleteLog {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }

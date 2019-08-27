@@ -7,30 +7,56 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
-import Footer from './footer';
-import Header from "./header"
-import "./layout.css"
+import Amplify from 'aws-amplify';
+
+import { LayoutContainer } from "../styles/layout"
+import {GlobalProvider} from "../context/context"
+
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
+// import { Grommet } from 'grommet';
+
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+  <Grommet 
+    theme={
+      {
+        global: { 
+          colors: { primary: '#5361FF', back: '#F2F2F2',fore: '#FEFFFE',  } 
+        } ,
+        button: {
+          color: 'white', 
+          primary : {color: '#5361FF'},
+          border : {color: '#5361FF'}
+        },
+        
       }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+    }
+  >
+    <LayoutContainer>
+      <GlobalProvider>
         <main>{children}</main>
-        <Footer />
-      </>
-    )}
-  />
+      </GlobalProvider>
+    </LayoutContainer>
+  </Grommet>
+  // <StaticQuery
+  //   query={graphql`
+  //     query SiteTitleQuery {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //         }
+  //       }
+  //     }
+  //   `}
+  //   render={data => (
+  //     <>
+  //      <main>{children}</main>
+  //     </>
+  //   )}
+  // />
 )
 
 Layout.propTypes = {

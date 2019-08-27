@@ -1,4 +1,11 @@
 {
+    "auth": {
+        "unidesigncompassapp155c42e4": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
     "api": {
         "unidesigncompassapp": {
             "service": "AppSync",
@@ -6,16 +13,6 @@
             "output": {
                 "securityType": "API_KEY"
             }
-        }
-    },
-    "auth": {
-        "udcompass": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": []
-        },
-        "unidesigncompassapp196e8768": {
-            "dependsOn": []
         }
     }
 }

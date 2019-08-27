@@ -5,16 +5,15 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -27,16 +26,15 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
   updateUser(input: $input) {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -49,16 +47,15 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
     id
     username
-    first_name
-    last_name
+    name
     email
-    password_hash
+    password
     phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        title
+        description_of_compass
         date_start
         date_end
       }
@@ -67,226 +64,358 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
   }
 }
 `;
-export const createProcess = `mutation CreateProcess($input: CreateProcessInput!) {
-  createProcess(input: $input) {
+export const createCompass = `mutation CreateCompass($input: CreateCompassInput!) {
+  createCompass(input: $input) {
     id
-    phaseids {
-      items {
-        id
-        duration
-        title
-        description
-      }
-      nextToken
-    }
-    user_id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const updateProcess = `mutation UpdateProcess($input: UpdateProcessInput!) {
-  updateProcess(input: $input) {
-    id
-    phaseids {
+    sessions {
       items {
         id
-        duration
-        title
-        description
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
     }
-    user_id
+  }
+}
+`;
+export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!) {
+  updateCompass(input: $input) {
+    id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const deleteProcess = `mutation DeleteProcess($input: DeleteProcessInput!) {
-  deleteProcess(input: $input) {
-    id
-    phaseids {
+    sessions {
       items {
         id
-        duration
-        title
-        description
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
     }
-    user_id
+  }
+}
+`;
+export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!) {
+  deleteCompass(input: $input) {
+    id
+    title
+    description_of_compass
+    date_start
+    date_end
     user {
       id
       username
-      first_name
-      last_name
+      name
       email
-      password_hash
+      password
       phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
-    name
-    date_start
-    date_end
-  }
-}
-`;
-export const createPhase = `mutation CreatePhase($input: CreatePhaseInput!) {
-  createPhase(input: $input) {
-    id
-    logs {
+    sessions {
       items {
         id
-        timestamp
-        text
+        total_time
+        name_of_session
+        description_of_session
       }
       nextToken
-    }
-    duration
-    title
-    description
-    process {
-      id
-      phaseids {
-        nextToken
-      }
-      user_id
-      user {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
     }
   }
 }
 `;
-export const updatePhase = `mutation UpdatePhase($input: UpdatePhaseInput!) {
-  updatePhase(input: $input) {
+export const createSession = `mutation CreateSession($input: CreateSessionInput!) {
+  createSession(input: $input) {
     id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
+    total_time
+    name_of_session
+    description_of_session
+    compass {
       id
-      phaseids {
-        nextToken
-      }
-      user_id
+      title
+      description_of_compass
+      date_start
+      date_end
       user {
         id
         username
-        first_name
-        last_name
+        name
         email
-        password_hash
+        password
         phone_number
       }
-      name
-      date_start
-      date_end
+      sessions {
+        nextToken
+      }
+    }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
     }
   }
 }
 `;
-export const deletePhase = `mutation DeletePhase($input: DeletePhaseInput!) {
-  deletePhase(input: $input) {
+export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!) {
+  updateSession(input: $input) {
     id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
+    total_time
+    name_of_session
+    description_of_session
+    compass {
       id
-      phaseids {
-        nextToken
-      }
-      user_id
+      title
+      description_of_compass
+      date_start
+      date_end
       user {
         id
         username
-        first_name
-        last_name
+        name
         email
-        password_hash
+        password
         phone_number
       }
-      name
+      sessions {
+        nextToken
+      }
+    }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!) {
+  deleteSession(input: $input) {
+    id
+    total_time
+    name_of_session
+    description_of_session
+    compass {
+      id
+      title
+      description_of_compass
       date_start
       date_end
+      user {
+        id
+        username
+        name
+        email
+        password
+        phone_number
+      }
+      sessions {
+        nextToken
+      }
     }
+    interactions {
+      items {
+        id
+        interaction_start_time
+        interaction_end_time
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const createInteraction = `mutation CreateInteraction($input: CreateInteractionInput!) {
+  createInteraction(input: $input) {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const updateInteraction = `mutation UpdateInteraction($input: UpdateInteractionInput!) {
+  updateInteraction(input: $input) {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInteractionInput!) {
+  deleteInteraction(input: $input) {
+    id
+    interaction_start_time
+    interaction_end_time
+    step {
+      id
+      title
+      description
+    }
+    logs {
+      items {
+        id
+        content
+        timestamp
+      }
+      nextToken
+    }
+    session {
+      id
+      total_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        title
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const createStep = `mutation CreateStep($input: CreateStepInput!) {
+  createStep(input: $input) {
+    id
+    title
+    description
+  }
+}
+`;
+export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
+  updateStep(input: $input) {
+    id
+    title
+    description
+  }
+}
+`;
+export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
+  deleteStep(input: $input) {
+    id
+    title
+    description
   }
 }
 `;
 export const createLog = `mutation CreateLog($input: CreateLogInput!) {
   createLog(input: $input) {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }
@@ -295,22 +424,25 @@ export const createLog = `mutation CreateLog($input: CreateLogInput!) {
 export const updateLog = `mutation UpdateLog($input: UpdateLogInput!) {
   updateLog(input: $input) {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }
@@ -319,22 +451,25 @@ export const updateLog = `mutation UpdateLog($input: UpdateLogInput!) {
 export const deleteLog = `mutation DeleteLog($input: DeleteLogInput!) {
   deleteLog(input: $input) {
     id
+    content
     timestamp
-    text
-    phase {
+    interaction {
       id
+      interaction_start_time
+      interaction_end_time
+      step {
+        id
+        title
+        description
+      }
       logs {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      session {
         id
-        user_id
-        name
-        date_start
-        date_end
+        total_time
+        name_of_session
+        description_of_session
       }
     }
   }

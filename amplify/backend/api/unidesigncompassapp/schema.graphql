@@ -20,8 +20,7 @@ type Compass @model{
 
 type Session @model{
     id: ID!
-    session_start_time: Int
-    session_end_time: Int
+    total_time: Int
     name_of_session: String
     description_of_session: String
     compass: Compass @connection(name: "CompassSessions")
@@ -30,7 +29,8 @@ type Session @model{
 
 type Interaction @model{
     id: ID!
-    time: Int
+    interaction_start_time: Int
+    interaction_end_time: Int
     step: Step @connection
     logs: [Log] @connection(name: "InteractionLogs")
     session: Session @connection(name: "SessionInteractions")
@@ -38,8 +38,6 @@ type Interaction @model{
 
 type Step @model{
     id:ID!
-    step_start_time: Int
-    step_end_time: Int
     title: String!
     description: String
 }
