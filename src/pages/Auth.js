@@ -6,7 +6,7 @@ import {AuthCard} from "../styles/AuthPage"
 import { Tab,Tabs } from "grommet";
 import {AuthProvider} from "../components/AuthComponents/context/context"
 
-const AuthenticationPage = (props) => {
+export const AuthenticationPage = (props) => {
   const [tab,setTab] = useState(0);
 
   const onActive = (index) => setTab(index)
@@ -28,4 +28,3 @@ const AuthenticationPage = (props) => {
     </Layout>
   );
 }
-export default AuthenticationPage;
