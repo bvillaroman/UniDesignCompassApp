@@ -44,7 +44,6 @@ export const GatsbyLink = ({to,label,primary}) => (
     {primary ? <LinkButton label={label}/> : label}
   </GatsbyLinkContainer>
 )
-
 export const MainViewContainer = styled(Grid)`
   width: 90%;
   margin: 0 auto;  
