@@ -39,12 +39,11 @@ export const LinkButton = styled(Button)`
   background-color:#5567FD;
   color: white; 
 `;
-export const GatsbyLink = ({ to, label, primary }) => (
+export const GatsbyLink = ({to,label,primary}) => (
   <GatsbyLinkContainer to={to}>
-    {primary ? <LinkButton label={label} /> : label}
+    {primary ? <LinkButton label={label}/> : label}
   </GatsbyLinkContainer>
 )
-
 export const MainViewContainer = styled(Grid)`
   width: 90%;
   margin: 0 auto;  
