@@ -11,6 +11,7 @@ import { Grommet } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
 import Amplify from 'aws-amplify';
 
+import CompassNavigationBar from "./SideBarComponents/CompassNavigationBar"
 import { LayoutContainer } from "../styles/layout"
 import {GlobalProvider} from "../context/context"
 
@@ -37,6 +38,7 @@ const Layout = ({ children }) => (
   >
     <LayoutContainer>
       <GlobalProvider>
+        <CompassNavigationBar />
         <main>{children}</main>
       </GlobalProvider>
     </LayoutContainer>
