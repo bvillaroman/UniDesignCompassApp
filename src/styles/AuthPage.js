@@ -16,39 +16,38 @@ export const AuthSwitchLabel = styled(Text)`
 `;
 
 export const InputContainer = styled(FormField)`
-  // font-weight: 500;
   color: #5361FE;
   background-color: transparent;
-  // margin: 1rem auto;
 `;
 
 export const InputField = styled(TextInput)`
   font-weight: 550;
   font-size: 1rem;
-  padding-top: 1.2rem;
+  padding-top: 1rem;
   color: black;
 `;
 
 export const AuthCard = styled(Box)`
+  display: flex;
+  flex-direction: column;
   color: white;
   margin: 0 auto;
-  min-height: 30rem;
-  width: 70%;
+  width: 90%;
+  min-width: 22rem;
 `;
 export const AuthFormContainer = styled(Box)`
   width: 80%;
-  margin: 1.5rem auto;
+  margin: 0 auto;
 `;
 export const AuthFormTitle = styled(Text)`
   margin: 0 auto;
-  padding: 2rem 0 3rem 0;
-  font-size: 3rem;
+  padding: 0;
+  font-size: 2rem;
   font-weight: 900;
   color: #5361FE;
 `;
 export const AuthSwitchContainer = styled(Box)`
   color: white;
-  // background-color: #2A3664;
   margin: 0 auto;
   padding: 2rem 0 1rem;
   text-align: center;

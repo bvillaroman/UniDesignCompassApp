@@ -11,8 +11,8 @@ import Auth from "../../components/AuthComponent"
 
 const MainView = (props) => (
   <MainViewContainer
-    rows={['80vh', 'xsmall', 'xsmall']}
-    columns={['1/2', '1/2']}
+    rows={['85%', 'xsmall', 'xsmall']}
+    columns={['60%', '40%']}
     fill
     areas={[
       { name: 'mainContent', start: [0, 0], end: [0, 0] },

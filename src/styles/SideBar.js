@@ -2,13 +2,6 @@ import styled from 'styled-components';
 import { Box, Text,Grid } from 'grommet'
 import { Link } from 'gatsby';
 
-export const SidebarContainer = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  width: 20%;
-  height: 100vh;
-`;
-
 export const NavigationContainer = styled(Box)`
   text-align: center;
   width: 30%;

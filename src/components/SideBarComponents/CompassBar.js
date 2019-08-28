@@ -11,11 +11,11 @@ const CompassBar = (props) => (
   <CompassSideBar>
     <CompassText>Compass Title</CompassText>
     <LinkContainer>
-      <CompassLink to="/"> <Compass/> Compass </CompassLink>
-      <CompassLink to="/"> <DocumentText/> Summary </CompassLink>
-      <CompassLink to="/"> <BarChart/> Analytics </CompassLink>
+      <CompassLink to="/"><Compass/> Compass</CompassLink>
+      <CompassLink to="/"><DocumentText/> Summary</CompassLink>
+      <CompassLink to="/"><BarChart/> Analytics</CompassLink>
     </LinkContainer>
-</CompassSideBar>
+  </CompassSideBar>
 )
 
 export default CompassBar;

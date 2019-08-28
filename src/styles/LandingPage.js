@@ -5,8 +5,8 @@ import { Link } from 'gatsby';
 
 export const NavContainer = styled(Box)`
   width: 90%;
-  height: 20%;
-  min-height: 6rem;
+  height: 10%;
+  min-height: 4rem;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -15,12 +15,11 @@ export const NavContainer = styled(Box)`
 `
 export const LogoBox = styled(Box)`
   width: 20%;
-  height: 100%;
   font-size: 2.8rem;
   font-weight: 550;
 `
 export const LinkContainer = styled(Box)`
-  width: 40%;
+  width: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,32 +46,26 @@ export const GatsbyLink = ({to,label,primary}) => (
 export const MainViewContainer = styled(Grid)`
   width: 90%;
   margin: 0 auto;  
+  margin-top: 1rem;
 `
-
 export const MainContent = styled(Box)`
   font-size: 3.5rem;
   font-weight: 900;
   line-height: 3.5rem;
   display: flex;
-  align-self: center;
+  align-self: start;
   text-align: left;
 `
 export const AuthContainer = styled(Box)`
   font-size: 3.5rem;
   font-weight: 900;
-  line-height: 3.5rem;
   display: flex;
-  align-self: center;
-  text-align: left;
-  max-height: 100%;
-  overflow: scroll;
+  align-self: start;
   text-align: center;
   border-left: 0.1rem solid rgba(0,0,0,0.1);
 `
-
 export const AboutContainer = styled(Box)`
 `
-
 export const ContactContainer = styled(Box)`
   
 `

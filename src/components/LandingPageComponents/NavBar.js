@@ -5,7 +5,6 @@ import {
   LinkContainer,
   LogoBox
 } from '../../styles/LandingPage'
- 
 
 const NavBar = (props) => (
   <NavContainer>
@@ -13,8 +12,8 @@ const NavBar = (props) => (
       <GatsbyLink to="/" label="UDCompass" />
       </LogoBox>
       <LinkContainer>
-        <GatsbyLink to="/About" label="About" />
-        <GatsbyLink to="/Contact" label="Contact"/>
+        <GatsbyLink to="/" label="About" />
+        <GatsbyLink to="/" label="Contact"/>
       </LinkContainer>
   </NavContainer>
 )

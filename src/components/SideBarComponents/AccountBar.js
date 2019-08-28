@@ -5,11 +5,11 @@ import {
 } from '../../styles/SideBar';
 import {Home, User} from 'grommet-icons'
 
-const NavigationBar = props => (
+const AccountBar = props => (
   <NavigationContainer>
     <NavLink to="/"><Home /></NavLink>
     <NavLink to="/"><User /></NavLink>
   </NavigationContainer>
 )
 
-export default NavigationBar;
+export default AccountBar;

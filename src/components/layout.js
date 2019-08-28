@@ -7,12 +7,12 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Grommet } from 'grommet';
+import { Grommet, Box } from 'grommet';
 import { StaticQuery, graphql } from "gatsby"
 import Amplify from 'aws-amplify';
 
-import CompassNavigationBar from "./SideBarComponents/CompassNavigationBar"
-import { LayoutContainer } from "../styles/layout"
+import {AccountBar, CompassBar} from "./SideBarComponents"
+import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
 import {GlobalProvider} from "../context/context"
 
 import awsconfig from '../aws-exports';
@@ -36,12 +36,17 @@ const Layout = ({ children }) => (
       }
     }
   >
-    <LayoutContainer>
-      <GlobalProvider>
-        <CompassNavigationBar />
-        <main>{children}</main>
-      </GlobalProvider>
-    </LayoutContainer>
+    <GlobalProvider>
+      <LayoutContainer >
+        <SidebarContainer>
+          {/* <AccountBar /> */}
+          {/* <CompassBar/> */}
+        </SidebarContainer>
+        <MainViewContainer>
+          <main>{children}</main>
+        </MainViewContainer>
+      </LayoutContainer>
+    </GlobalProvider>
   </Grommet>
   // <StaticQuery
   //   query={graphql`
