@@ -9,19 +9,20 @@ import {
   AuthSwitchLabel, 
   InputField 
 } from "../../styles/AuthPage"
+import {globalStore} from "../../context/context"
 import { Auth } from 'aws-amplify';
 
 const SignIn = ({switchToSignUp})=> {
+  const {loginUser} = globalStore();
   const [form,setValues] = useState({
     email: '',
     password: '',
   });
-
   const [error,setErrors] = useState({  
     email: '',
     password: '',
   })
-
+  
   const onChange = event => {
     const { target: { value,name } } = event;
     setValues({
@@ -36,7 +37,15 @@ const SignIn = ({switchToSignUp})=> {
       username: email, // Required, the username
       password, // Optional, the password
     })
-    .then(user => console.log(user))
+    .then(user => {
+      const {email} = user.attributes;
+      
+      // loginUser({
+      //   email: user.email
+      // })
+      console.log(user)
+      // globalStore
+    })
     .catch(err => console.log(err));
   }
 

@@ -11,7 +11,7 @@ export const GlobalProvider = ({children}) => {
   return (
     <GlobalContext.Provider 
       value={{
-        loginUser: (email) => dispatch({type: SIGN_IN, payload: email}),
+        loginUser: (user) => dispatch({type: SIGN_IN, payload: user}),
         logoutUser: () => dispatch({type: SIGN_OUT, payload: {}}),
         ...globalState
       }}

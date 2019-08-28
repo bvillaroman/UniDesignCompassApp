@@ -99,7 +99,7 @@ const SignUp = ({switchToSignIn}) => {
           </Form>
         </Tab>
         <Tab>
-          <Verify email={form.email} switchToSignUp={e => onActive(0)}/>
+          <Verify email={form.email} name={form.name} switchToSignUp={e => onActive(0)}/>
         </Tab>
       </Tabs>
     </AuthFormContainer>

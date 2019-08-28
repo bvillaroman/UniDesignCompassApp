@@ -5,6 +5,8 @@ import {
   Form,
 } from "grommet";
 import { Auth } from 'aws-amplify';
+import { createUser } from '../../utils/mutations'
+import {globalStore} from "../../context/context"
 
 import {
   AuthSwitchButton, 
@@ -14,10 +16,10 @@ import {
   InputField 
 } from "../../styles/AuthPage"
 
-const Verify = ({email, switchToSignUp}) => {
+const Verify = ({email, name, switchToSignUp}) => {
+  const {loginUser} = globalStore();
 
   const [form,setForm] = useState({ code: '' });
-
   const [error,setErrors] = useState({ code: ''})
 
   const onChange = ({ target: { value } }) => { setForm({code: value})  };
@@ -25,13 +27,23 @@ const Verify = ({email, switchToSignUp}) => {
   const sendConfirmationCode = (e) => {
     // After retrieving the confirmation code from the user
     Auth.confirmSignUp(email, form.code)
-      .then(data => console.log(data))
+      .then(data => {
+        createUser(email,name)
+          .then((res) => {
+            loginUser({
+              email: res.data.createUser.email,
+              id: res.data.createUser.id,
+              compasses: res.data.createUser.compasses,
+            })
+          })
+      })
       .catch(err => console.log(err));
   }
 
   const resendCCode = (e) => {
-    Auth.resendSignUp(email).then(() => {
-        console.log('code resent successfully');
+    Auth.resendSignUp(email)
+    .then((user) => {
+        
     }).catch(e => {
         console.log(e);
     });
