@@ -1,50 +1,56 @@
 type User @model{
-    id: ID!
-    username: String!
-    name: String!
-    email: String!
-    password: String!
-    phone_number: String!
-    compasses: [Compass] @connection(name: "UserCompasses")
+  id: ID!
+  username: String!
+  name: String!
+  email: String!
+  password: String!
+  phone_number: String!
+  compasses: [Compass] @connection(name: "UserCompasses")
 }
 
 type Compass @model{
-    id: ID!
-    title: String
-    description_of_compass: String
-    date_start: String
-    date_end: String
-    user: User @connection(name: "UserCompasses")
-    sessions: [Session] @connection(name: "CompassSessions")
+  id: ID!
+  title: String
+  description_of_compass: String
+  date_start: String
+  date_end: String
+  user: User @connection(name: "UserCompasses")
+  sessions: [Session] @connection(name: "CompassSessions")
 }
 
 type Session @model{
-    id: ID!
-    total_time: Int
-    name_of_session: String
-    description_of_session: String
-    compass: Compass @connection(name: "CompassSessions")
-    interactions: [Interaction] @connection(name: "SessionInteractions")
+  id: ID!
+  session_start_time: Int
+  session_end_time: Int
+  name_of_session: String
+  description_of_session: String
+  compass: Compass @connection(name: "CompassSessions")
+  interactions: [Interaction] @connection(name: "SessionInteractions")
 }
 
 type Interaction @model{
-    id: ID!
-    interaction_start_time: Int
-    interaction_end_time: Int
-    step: Step @connection
-    logs: [Log] @connection(name: "InteractionLogs")
-    session: Session @connection(name: "SessionInteractions")
+  id: ID!
+  interaction_start_time: Int
+  interaction_start_end: Int
+  content: String
+  step: Step @connection
+  attachments: Attachment
+  session: Session @connection(name: "SessionInteractions")
 }
 
 type Step @model{
-    id:ID!
-    title: String!
-    description: String
+  id:ID!
+  step_start_time: Int
+  step_end_time: Int
+  title: String!
+  description: String
 }
 
-type Log @model{
-    id: ID!
-    content: String
-    timestamp: Int
-    interaction: Interaction @connection(name: "InteractionLogs")
+type Attachment @model{
+  id: ID!
+  content: String
+  timestamp: Int
+  bucket: String!
+  region: String!
+  key: String!
 }
