@@ -8,7 +8,6 @@ export const getUser = `query GetUser($id: ID!) {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -34,7 +33,6 @@ export const listUsers = `query ListUsers(
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -56,7 +54,6 @@ export const getCompass = `query GetCompass($id: ID!) {
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -64,7 +61,8 @@ export const getCompass = `query GetCompass($id: ID!) {
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -91,7 +89,6 @@ export const listCompasss = `query ListCompasss(
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -104,7 +101,8 @@ export const listCompasss = `query ListCompasss(
 export const getSession = `query GetSession($id: ID!) {
   getSession(id: $id) {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -119,7 +117,6 @@ export const getSession = `query GetSession($id: ID!) {
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -129,7 +126,8 @@ export const getSession = `query GetSession($id: ID!) {
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -144,7 +142,8 @@ export const listSessions = `query ListSessions(
   listSessions(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -166,23 +165,27 @@ export const getInteraction = `query GetInteraction($id: ID!) {
   getInteraction(id: $id) {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -208,18 +211,27 @@ export const listInteractions = `query ListInteractions(
     items {
       id
       interaction_start_time
-      interaction_end_time
+      interaction_start_end
+      content
       step {
         id
+        step_start_time
+        step_end_time
         title
         description
       }
-      logs {
-        nextToken
+      attachments {
+        id
+        content
+        timestamp
+        bucket
+        region
+        key
       }
       session {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -231,6 +243,8 @@ export const listInteractions = `query ListInteractions(
 export const getStep = `query GetStep($id: ID!) {
   getStep(id: $id) {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
@@ -244,6 +258,8 @@ export const listSteps = `query ListSteps(
   listSteps(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
@@ -251,44 +267,30 @@ export const listSteps = `query ListSteps(
   }
 }
 `;
-export const getLog = `query GetLog($id: ID!) {
-  getLog(id: $id) {
+export const getAttachment = `query GetAttachment($id: ID!) {
+  getAttachment(id: $id) {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
-export const listLogs = `query ListLogs($filter: ModelLogFilterInput, $limit: Int, $nextToken: String) {
-  listLogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+export const listAttachments = `query ListAttachments(
+  $filter: ModelAttachmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAttachments(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       content
       timestamp
-      interaction {
-        id
-        interaction_start_time
-        interaction_end_time
-      }
+      bucket
+      region
+      key
     }
     nextToken
   }

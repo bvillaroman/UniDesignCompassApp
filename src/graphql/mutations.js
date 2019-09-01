@@ -8,7 +8,6 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -29,7 +28,6 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -50,7 +48,6 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -77,7 +74,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -85,7 +81,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -107,7 +104,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -115,7 +111,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -137,7 +134,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -145,7 +141,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -157,7 +154,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
 export const createSession = `mutation CreateSession($input: CreateSessionInput!) {
   createSession(input: $input) {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -172,7 +170,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -182,7 +179,8 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -192,7 +190,8 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
 export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!) {
   updateSession(input: $input) {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -207,7 +206,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -217,7 +215,8 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -227,7 +226,8 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
 export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!) {
   deleteSession(input: $input) {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -242,7 +242,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -252,7 +251,8 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -263,23 +263,27 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
   createInteraction(input: $input) {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -300,23 +304,27 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
   updateInteraction(input: $input) {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -337,23 +345,27 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
   deleteInteraction(input: $input) {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -373,6 +385,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
 export const createStep = `mutation CreateStep($input: CreateStepInput!) {
   createStep(input: $input) {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
@@ -381,6 +395,8 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
 export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
   updateStep(input: $input) {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
@@ -389,89 +405,43 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
 export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
   deleteStep(input: $input) {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
 }
 `;
-export const createLog = `mutation CreateLog($input: CreateLogInput!) {
-  createLog(input: $input) {
+export const createAttachment = `mutation CreateAttachment($input: CreateAttachmentInput!) {
+  createAttachment(input: $input) {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
-export const updateLog = `mutation UpdateLog($input: UpdateLogInput!) {
-  updateLog(input: $input) {
+export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachmentInput!) {
+  updateAttachment(input: $input) {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
-export const deleteLog = `mutation DeleteLog($input: DeleteLogInput!) {
-  deleteLog(input: $input) {
+export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachmentInput!) {
+  deleteAttachment(input: $input) {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;

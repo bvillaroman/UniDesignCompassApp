@@ -4,7 +4,6 @@ type User @model{
   name: String!
   email: String!
   password: String!
-  phone_number: String!
   compasses: [Compass] @connection(name: "UserCompasses")
 }
 

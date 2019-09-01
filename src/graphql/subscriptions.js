@@ -8,7 +8,6 @@ export const onCreateUser = `subscription OnCreateUser {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -29,7 +28,6 @@ export const onUpdateUser = `subscription OnUpdateUser {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -50,7 +48,6 @@ export const onDeleteUser = `subscription OnDeleteUser {
     name
     email
     password
-    phone_number
     compasses {
       items {
         id
@@ -77,7 +74,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -85,7 +81,8 @@ export const onCreateCompass = `subscription OnCreateCompass {
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -107,7 +104,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -115,7 +111,8 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -137,7 +134,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
       name
       email
       password
-      phone_number
       compasses {
         nextToken
       }
@@ -145,7 +141,8 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
     sessions {
       items {
         id
-        total_time
+        session_start_time
+        session_end_time
         name_of_session
         description_of_session
       }
@@ -157,7 +154,8 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
 export const onCreateSession = `subscription OnCreateSession {
   onCreateSession {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -172,7 +170,6 @@ export const onCreateSession = `subscription OnCreateSession {
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -182,7 +179,8 @@ export const onCreateSession = `subscription OnCreateSession {
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -192,7 +190,8 @@ export const onCreateSession = `subscription OnCreateSession {
 export const onUpdateSession = `subscription OnUpdateSession {
   onUpdateSession {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -207,7 +206,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -217,7 +215,8 @@ export const onUpdateSession = `subscription OnUpdateSession {
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -227,7 +226,8 @@ export const onUpdateSession = `subscription OnUpdateSession {
 export const onDeleteSession = `subscription OnDeleteSession {
   onDeleteSession {
     id
-    total_time
+    session_start_time
+    session_end_time
     name_of_session
     description_of_session
     compass {
@@ -242,7 +242,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
         name
         email
         password
-        phone_number
       }
       sessions {
         nextToken
@@ -252,7 +251,8 @@ export const onDeleteSession = `subscription OnDeleteSession {
       items {
         id
         interaction_start_time
-        interaction_end_time
+        interaction_start_end
+        content
       }
       nextToken
     }
@@ -263,23 +263,27 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
   onCreateInteraction {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -300,23 +304,27 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
   onUpdateInteraction {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -337,23 +345,27 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
   onDeleteInteraction {
     id
     interaction_start_time
-    interaction_end_time
+    interaction_start_end
+    content
     step {
       id
+      step_start_time
+      step_end_time
       title
       description
     }
-    logs {
-      items {
-        id
-        content
-        timestamp
-      }
-      nextToken
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
     session {
       id
-      total_time
+      session_start_time
+      session_end_time
       name_of_session
       description_of_session
       compass {
@@ -373,6 +385,8 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
 export const onCreateStep = `subscription OnCreateStep {
   onCreateStep {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
@@ -381,6 +395,8 @@ export const onCreateStep = `subscription OnCreateStep {
 export const onUpdateStep = `subscription OnUpdateStep {
   onUpdateStep {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
@@ -389,89 +405,43 @@ export const onUpdateStep = `subscription OnUpdateStep {
 export const onDeleteStep = `subscription OnDeleteStep {
   onDeleteStep {
     id
+    step_start_time
+    step_end_time
     title
     description
   }
 }
 `;
-export const onCreateLog = `subscription OnCreateLog {
-  onCreateLog {
+export const onCreateAttachment = `subscription OnCreateAttachment {
+  onCreateAttachment {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
-export const onUpdateLog = `subscription OnUpdateLog {
-  onUpdateLog {
+export const onUpdateAttachment = `subscription OnUpdateAttachment {
+  onUpdateAttachment {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
-export const onDeleteLog = `subscription OnDeleteLog {
-  onDeleteLog {
+export const onDeleteAttachment = `subscription OnDeleteAttachment {
+  onDeleteAttachment {
     id
     content
     timestamp
-    interaction {
-      id
-      interaction_start_time
-      interaction_end_time
-      step {
-        id
-        title
-        description
-      }
-      logs {
-        nextToken
-      }
-      session {
-        id
-        total_time
-        name_of_session
-        description_of_session
-      }
-    }
+    bucket
+    region
+    key
   }
 }
 `;
