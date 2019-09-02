@@ -13,12 +13,10 @@ import Amplify from 'aws-amplify';
 
 import {AccountBar, CompassBar} from "./SideBarComponents"
 import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
-import {GlobalProvider} from "../context/context"
+import {GlobalProvider,GlobalContext} from "../context/context"
 
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
-// import { Grommet } from 'grommet';
-
 
 const Layout = ({ children }) => (
   <Grommet 
@@ -37,34 +35,25 @@ const Layout = ({ children }) => (
     }
   >
     <GlobalProvider>
-      <LayoutContainer >
-        <SidebarContainer>
-          {/* <AccountBar /> */}
-          {/* <CompassBar/> */}
-        </SidebarContainer>
-        <MainViewContainer>
-          <main>{children}</main>
-        </MainViewContainer>
-      </LayoutContainer>
+      <GlobalContext.Consumer>
+        { 
+          ({user,compass}) => (
+            <LayoutContainer >
+              <SidebarContainer>
+              { user.hasOwnProperty("email") && <AccountBar />}
+              { (user.hasOwnProperty("email") && compass.hasOwnProperty("id")) && <CompassBar/> }
+              </SidebarContainer>
+              <MainViewContainer>
+                <main>{children}</main>
+              </MainViewContainer>
+            </LayoutContainer>
+          )
+        }
+      </GlobalContext.Consumer>
     </GlobalProvider>
   </Grommet>
-  // <StaticQuery
-  //   query={graphql`
-  //     query SiteTitleQuery {
-  //       site {
-  //         siteMetadata {
-  //           title
-  //         }
-  //       }
-  //     }
-  //   `}
-  //   render={data => (
-  //     <>
-  //      <main>{children}</main>
-  //     </>
-  //   )}
-  // />
 )
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
