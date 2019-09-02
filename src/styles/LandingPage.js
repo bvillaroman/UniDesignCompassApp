@@ -1,6 +1,6 @@
 import React from "react"
 import styled from 'styled-components';
-import { Box, Text, Button, Grid } from 'grommet';
+import { Box, Button, Grid } from 'grommet';
 import { Link } from 'gatsby';
 
 export const NavContainer = styled(Box)`

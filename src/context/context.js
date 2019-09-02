@@ -23,8 +23,4 @@ export const GlobalProvider = ({children}) => {
   )
 }
 
-export const globalStore = () => {
-  const contextValue = useContext(GlobalContext);
-  return contextValue;
-};
-
+export const globalStore = () => (useContext(GlobalContext));

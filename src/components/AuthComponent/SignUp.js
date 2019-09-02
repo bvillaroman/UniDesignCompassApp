@@ -39,7 +39,7 @@ const SignUp = ({switchToSignIn}) => {
 
   const [tab,setTab] = useState(0);
 
-  const { signupUser, changeStatus} = userAuth();
+  const { signupUser} = userAuth();
 
   const onChange = event => {
     const { target: { value,name } } = event;

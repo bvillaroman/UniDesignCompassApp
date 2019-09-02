@@ -5,3 +5,29 @@
  */
 import "./src/styles/global.css"
 // You can delete this file if you're not using it
+import React from "react"
+import { GlobalProvider } from "./src/context/context"
+import { Grommet, Box } from 'grommet';
+
+export const wrapRootElement = ({ element }) => (
+  <Grommet 
+    theme={
+      {
+        global: { 
+          colors: { primary: '#5361FF', back: '#F2F2F2',fore: '#FEFFFE',  } 
+        } ,
+        button: {
+          color: 'white', 
+          primary : {color: '#5361FF'},
+          border : {color: '#5361FF'}
+        },
+        
+      }
+    }
+  >
+    <GlobalProvider>
+      {element}
+    </GlobalProvider>
+  </Grommet>
+  
+)

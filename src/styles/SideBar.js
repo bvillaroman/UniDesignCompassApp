@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, Text,Grid } from 'grommet'
+import { Box, Text } from 'grommet'
 import { Link } from 'gatsby';
 
 export const NavigationContainer = styled(Box)`

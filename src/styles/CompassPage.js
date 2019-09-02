@@ -7,8 +7,6 @@ import {
   FormField, 
   TextInput,
   Form,
-  // Tab,
-  // Tabs
 } from "grommet"
 import { Compass, FormPrevious, Attachment } from 'grommet-icons';
 import React from "react";

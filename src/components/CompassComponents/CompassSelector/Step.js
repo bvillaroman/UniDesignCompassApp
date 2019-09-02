@@ -1,5 +1,5 @@
 import React from "react";
-import { StepContainer, StepRow } from "../../../styles/CompassPage"
+import { StepContainer } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"
 
 const Step = ({activeStep = {}}) => {
