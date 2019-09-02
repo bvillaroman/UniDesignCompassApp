@@ -1,51 +1,43 @@
-type User @model{
+type Compass @model @auth(rules: [{ allow: owner, queries: null }]) {
   id: ID!
-  username: String!
-  name: String!
-  email: String!
-  password: String!
-  compasses: [Compass] @connection(name: "UserCompasses")
-}
-
-type Compass @model{
-  id: ID!
-  title: String
+  name_of_compass: String
   description_of_compass: String
   date_start: String
   date_end: String
-  user: User @connection(name: "UserCompasses")
   sessions: [Session] @connection(name: "CompassSessions")
+  steps: [Step] @connection(name: "CompassSteps")
 }
 
-type Session @model{
+type Session @model @auth(rules: [{ allow: owner, queries: null }]) {
   id: ID!
   session_start_time: Int
   session_end_time: Int
   name_of_session: String
   description_of_session: String
   compass: Compass @connection(name: "CompassSessions")
-  interactions: [Interaction] @connection(name: "SessionInteractions")
+  steps: [Step] @connection(name: "SessionSteps")
 }
 
-type Interaction @model{
-  id: ID!
-  interaction_start_time: Int
-  interaction_start_end: Int
-  content: String
-  step: Step @connection
-  attachments: Attachment
-  session: Session @connection(name: "SessionInteractions")
-}
-
-type Step @model{
+type Step @model @auth(rules: [{ allow: owner, queries: null }]) {
   id:ID!
   step_start_time: Int
   step_end_time: Int
-  title: String!
-  description: String
+  name_of_step: String!
+  description_of_step: String
+  session: Session @connection(name: "SessionSteps")
+  compass: Compass @connection(name: "CompassSteps")
+  interaction: Interaction @connection
 }
 
-type Attachment @model{
+type Interaction @model @auth(rules: [{ allow: owner, queries: null }]) {
+  id: ID!
+  interaction_start_time: Int
+  interaction_start_end: Int
+  log_content: String
+  attachments: Attachment
+}
+
+type Attachment @model @auth(rules: [{ allow: owner, queries: null }]) {
   id: ID!
   content: String
   timestamp: Int
@@ -53,3 +45,4 @@ type Attachment @model{
   region: String!
   key: String!
 }
+
