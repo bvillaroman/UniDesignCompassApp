@@ -15,14 +15,11 @@ import {
 
 const Review = ({backToDashboard}) => {
 
-  const { submitForm, form, switchTab } = userDashboard();
+  const { form } = userDashboard();
   const { addCompass } = globalStore();
 
   const submitCompass = event => {
-    // switchTab(0);
-    // backToDashboard()
     addCompass(form);
-    // console.log(backToDashboard)
     backToDashboard()
   };
 

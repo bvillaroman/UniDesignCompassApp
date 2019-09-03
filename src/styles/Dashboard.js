@@ -123,3 +123,32 @@ export const SubmitCompassButton = styled(Button)`
   align-self: center;
   margin: 0 auto;
 `
+export const CompassCard = styled(Box)`
+  margin: 0 auto;
+  padding: 2rem;
+  width: 20rem;
+  background-color: #5567FD;
+  border-radius: 1rem;
+  color: white;
+`;
+export const CompassTitle= styled(Text)`
+  color: black;
+  font-weight: 600;
+  font-size: 2rem;
+`
+export const CompassDescription= styled(Text)`
+  color: black;
+  padding: 2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  overflow: scroll;
+`
+export const GoToCompassButton = styled(Button)`
+  background-color: white;
+  border: 0.1rem solid #5567FD;
+  border-radius: 1rem;
+  color: black;
+  padding: 0.1rem 1rem;
+  align-self: center;
+  margin: 0 auto;
+`

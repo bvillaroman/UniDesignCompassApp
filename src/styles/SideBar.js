@@ -36,6 +36,7 @@ export const CompassText = styled(Text)`
 export const LinkContainer = styled(Box)`
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const CompassLink = styled(Link)`

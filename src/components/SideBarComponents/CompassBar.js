@@ -7,9 +7,9 @@ import {
 } from '../../styles/SideBar'
 import {Compass, DocumentText, BarChart} from 'grommet-icons'
 
-const CompassBar = (props) => (
+const CompassBar = ({compass}) => (
   <CompassSideBar>
-    <CompassText>Compass Title</CompassText>
+    <CompassText>{compass.title}</CompassText>
     <LinkContainer>
       <CompassLink to="/"><Compass/> Compass</CompassLink>
       <CompassLink to="/"><DocumentText/> Summary</CompassLink>
