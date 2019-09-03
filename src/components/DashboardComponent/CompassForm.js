@@ -44,7 +44,7 @@ const Form = ({backToDashboard}) => {
             <Tab><Info/></Tab>
             <Tab><Type/></Tab>
             <Tab><Steps/></Tab>
-            <Tab><Review /></Tab>
+            <Tab><Review backToDashboard={e=>backToDashboard()}/></Tab>
           </Tabs>
         </FormContainer>
       </Feed>

@@ -2,6 +2,8 @@ import React from 'react'
 import {Box, Accordion, AccordionPanel, Text} from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
+import { globalStore } from "../../context/context"
+
 import { FormSwitchContainer } from "../../styles/Form"
 import { 
   ReviewCard, 
@@ -11,12 +13,17 @@ import {
   ReviewStepsView,
   ReviewStepPanel } from "../../styles/Dashboard"
 
-const Review = (props) => {
+const Review = ({backToDashboard}) => {
 
-  const { submitForm, form } = userDashboard();
+  const { submitForm, form, switchTab } = userDashboard();
+  const { addCompass } = globalStore();
 
-  const submit = event => {
-    submitForm();
+  const submitCompass = event => {
+    // switchTab(0);
+    // backToDashboard()
+    addCompass(form);
+    // console.log(backToDashboard)
+    backToDashboard()
   };
 
   return (
@@ -24,6 +31,7 @@ const Review = (props) => {
       rows={['20%', '60%', '20%']}
       columns={['50%', '50%']}
       fill
+      gap={'1rem'}
       areas={[
         { name: 'header', start: [0, 0], end: [0, 0] },
         { name: 'description', start: [0, 1], end: [0, 1]},
@@ -46,7 +54,7 @@ const Review = (props) => {
           ))
         }
       </ReviewStepsView>
-      <SubmitCompassButton gridArea="submit" onClick={submitForm} label="Create Compass"/>
+      <SubmitCompassButton gridArea="submit" onClick={submitCompass} label="Create Compass"/>
     </ReviewCard>
   )
 }

@@ -81,7 +81,7 @@ export const BackButton = ({onClick}) =>(
 export const ReviewCard = styled(Grid)`
   margin: 0 auto;
   padding: 2rem;
-  width: 90%;
+  width: 100%;
   background-color: #5567FD;
   border-radius: 1rem;
   color: white;
@@ -90,7 +90,7 @@ export const ReviewCard = styled(Grid)`
 export const ReviewTitle= styled(Text)`
   color: black;
   font-weight: 600;
-  font-size: 3rem;
+  font-size: 2rem;
 `
 export const ReviewDescription= styled(Text)`
   color: black;
@@ -98,7 +98,7 @@ export const ReviewDescription= styled(Text)`
   font-weight: 400;
   font-size: 1.2rem;
   overflow: scroll;
-  height: 100%;
+  // height: 100%;
 `
 export const ReviewStepsView = styled(Accordion)`
   overflow: scroll;
@@ -115,10 +115,11 @@ export const ReviewStepPanel = styled(AccordionPanel)`
   margin: 0.1rem auto;
 `
 export const SubmitCompassButton = styled(Button)`
-  width: 10rem;
   background-color: white;
   border: 0.1rem solid #5567FD;
   border-radius: 1rem;
-  color:black;
-  text-align: center;
+  color: black;
+  padding: 0.1rem 1rem;
+  align-self: center;
+  margin: 0 auto;
 `
