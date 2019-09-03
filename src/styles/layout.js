@@ -15,6 +15,6 @@ export const SidebarContainer = styled(Box)`
 export const MainViewContainer = styled(Box)`
   display: flex;
   flex-direction: row;
-  width: ${props => props.Compass ? '80%' : '95%'}
+  width: ${props => props.Compass ? '80%' : '100%'};
   height: 100vh;
 `;

@@ -9,12 +9,12 @@ import { createUser } from '../../utils/mutations'
 import {globalStore} from "../../context/context"
 
 import {
-  AuthSwitchButton, 
+  FormSwitchButton, 
   InputContainer, 
-  AuthSwitchContainer, 
-  AuthSwitchLabel, 
+  FormSwitchContainer, 
+  FormSwitchLabel, 
   InputField 
-} from "../../styles/AuthPage"
+} from "../../styles/Form"
 
 const Verify = ({email, name, switchToSignUp}) => {
   const {loginUser} = globalStore();
@@ -60,14 +60,14 @@ const Verify = ({email, name, switchToSignUp}) => {
         <InputField name="code" type="text" placeholder="Confirmation Code" />
       </InputContainer>
       <Box direction="column" justify="between" margin={{ top: "medium" }}>
-        <AuthSwitchContainer fill="horizontal" justify="between" direction="row">
+        <FormSwitchContainer fill="horizontal" justify="between" direction="row">
           <Button label="Resend Code" onClick={resendCCode} primary />
           <Button type="submit" label="Verify Account" primary />
-        </AuthSwitchContainer>
-        <AuthSwitchContainer direction="row">
-          <AuthSwitchLabel truncate>Want to create a new account?</AuthSwitchLabel>
-          <AuthSwitchButton onClick={e => switchToSignUp()}> Sign Up </AuthSwitchButton>
-        </AuthSwitchContainer>
+        </FormSwitchContainer>
+        <FormSwitchContainer direction="row">
+          <FormSwitchLabel truncate>Want to create a new account?</FormSwitchLabel>
+          <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
+        </FormSwitchContainer>
       </Box>
     </Form>
   )

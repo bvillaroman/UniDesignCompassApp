@@ -1,14 +1,15 @@
 import React from "react";
-import Landing from "./Landing"
+import Landing from "../components/LandingPageComponents"
+import Dashboard from "../components/DashboardComponent"
 import Layout from '../components/Layout';
 import {globalStore} from "../context/context"
-
+import {DashboardProvider} from "../context/DashboardPage/context"
 const IndexPage = (props) => {
-  const {user,compass} = globalStore()
+  const {user} = globalStore()
   return (
     <Layout>
       {
-        user.hasOwnProperty("email") ? <p>user is signed in</p>: <Landing path="/" />
+        user.hasOwnProperty("email") ? <DashboardProvider><Dashboard/></DashboardProvider>: <Landing path="/" />
       }
     </Layout>
   )
