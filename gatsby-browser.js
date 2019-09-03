@@ -14,13 +14,22 @@ export const wrapRootElement = ({ element }) => (
     theme={
       {
         global: { 
-          colors: { primary: '#5361FF', back: '#F2F2F2',fore: '#FEFFFE',  } 
+          colors: { primary: '#5361FF', secondary: '#F2F2F2',fore: '#FEFFFE'  } 
         } ,
         button: {
           color: 'white', 
           primary : {color: '#5361FF'},
           border : {color: '#5361FF'}
         },
+        accordion: {
+          border: {
+            color: "transparent"
+          },
+          icons: {
+            color: '#5361FF'
+          }
+        }
+
         
       }
     }

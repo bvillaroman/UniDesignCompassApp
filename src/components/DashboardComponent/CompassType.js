@@ -36,15 +36,15 @@ const Type = (props) => {
         description: "Created and test new solutions"
       },
       {
-        title:  "Choose/ Make Prototype",
+        title:  "Choose/Make Prototype",
         description: "Choosing the best solution and implementing it"
       },
       {
-        title:  "Troubleshoot/ Revise",
+        title:  "Troubleshoot/Revise",
         description: "Edit/revise current implementation of solution"
       },
       {
-        title:  "Communicate/Refelct",
+        title:  "Communicate/Reflect",
         description: "Discuss the overall reflection of the process"
       },
     ]})

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, Grid, Tabs,Text} from "grommet"
+import { Box, Button, Grid, Accordion, AccordionPanel, Text} from "grommet"
 import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
 export const DashboardContainer = styled(Box)`
@@ -78,17 +78,47 @@ export const BackButton = ({onClick}) =>(
     // label="Add Compass"
   />
 )
-
-export const CompassCard = styled(Box)`
+export const ReviewCard = styled(Grid)`
   margin: 0 auto;
   padding: 2rem;
-  width: 80%;
+  width: 90%;
   background-color: #5567FD;
+  border-radius: 1rem;
   color: white;
 `;
 
-export const CompassLabel = styled(Text)`
+export const ReviewTitle= styled(Text)`
   color: black;
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 3rem;
+`
+export const ReviewDescription= styled(Text)`
+  color: black;
+  padding: 2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  overflow: scroll;
+  height: 100%;
+`
+export const ReviewStepsView = styled(Accordion)`
+  overflow: scroll;
+  height: 100%;
+`
+
+export const ReviewStepPanel = styled(AccordionPanel)`
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  background-color: white;
+  color: black;
+  border-radius: 1rem;
+  // border: 0.01rem solid black;
+  margin: 0.1rem auto;
+`
+export const SubmitCompassButton = styled(Button)`
+  width: 10rem;
+  background-color: white;
+  border: 0.1rem solid #5567FD;
+  border-radius: 1rem;
+  color:black;
+  text-align: center;
 `
