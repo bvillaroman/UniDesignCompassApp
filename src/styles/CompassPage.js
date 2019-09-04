@@ -7,6 +7,7 @@ import {
   FormField, 
   TextInput,
   Form,
+  Grid
 } from "grommet"
 import { Compass, FormPrevious, Attachment } from 'grommet-icons';
 import React from "react";
@@ -83,6 +84,7 @@ export const SCCard = styled(Box)`
   color: white;
   background-color: transparent;
   margin: 0 auto;
+  padding: 2rem;
   width: 100%;
 `;
 export const SCButton = styled(Button)`
@@ -153,9 +155,13 @@ export const StepContainer = styled(CompassButtons)`
 `
 // Compass Page Containers
 
-export const MainView = styled(Box)`
-  width: 60%;
+export const ComponentContainer = styled(Grid)`
   margin: 0 auto;
-  padding-top: 1%;
-  height: 90vh;
+`
+export const MainView = styled(Box)`
+  justify-content: center;
+`
+export const SessionView = styled(Box)`
+  text-align: center;
+  background: #e5e5e5;
 `

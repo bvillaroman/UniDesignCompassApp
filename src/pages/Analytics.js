@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 const AnalyticsPage = (props) => (
   <Layout>
-    Home Page
+    Analytics Page
   </Layout>
 );
 export default AnalyticsPage;

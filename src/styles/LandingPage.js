@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { Box, Button, Grid } from 'grommet';
 import { Link } from 'gatsby';
 
+export const LandingPageContainer = styled(Grid)`
+  width: 100%;
+`
 export const NavContainer = styled(Box)`
   width: 90%;
   height: 10%;

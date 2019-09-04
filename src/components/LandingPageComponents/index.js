@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from '../Layout';
 import NavBar from "./NavBar"
 import MainView from "./MainView"
+import { LandingPageContainer } from "../../styles/LandingPage"
 
 const LandingPage = (props) => (
-  <Layout>
+  <LandingPageContainer>
     <NavBar />
     <MainView />
-  </Layout>
+  </LandingPageContainer>
 );
 export default LandingPage;

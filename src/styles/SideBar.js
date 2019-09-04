@@ -1,42 +1,38 @@
 import styled from 'styled-components';
-import { Box, Text } from 'grommet'
+import { Box, Text, Button } from 'grommet'
 import { Link } from 'gatsby';
 
 export const NavigationContainer = styled(Box)`
   text-align: center;
-  width: 30%;
   min-width: 3rem;
   background: #e5e5e5;
   margin: 0;
 `;
 
-export const NavLink = styled(Link)`
+export const NavLink = styled(Button)`
   margin-top: 2rem;
   width: 100%;
   align-self: center;
 `;
 
 export const CompassSideBar = styled(Box)`
-  width: 70%;
   background: #5361FE;
   display: flex;
   flex-direction: column;
 `
-
 export const CompassText = styled(Text)`
   margin: 0 auto;
-  padding: 1em;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 900;
   color: white;
   text-align: center;
 `
-
 export const LinkContainer = styled(Box)`
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  padding: 0 1rem;
+  width: 0 12rem;
 `;
 
 export const CompassLink = styled(Link)`

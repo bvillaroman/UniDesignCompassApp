@@ -16,7 +16,6 @@ const selectCompass = (newCompass, state) => {
   return state
 }
 const addCompass = (newCompass, state) => {
-  console.log(newCompass);
   if (newCompass !== {}) {
     const compasses = (state.user.compasses) ? [...state.user.compasses,newCompass] : [newCompass]
     const newState = { 

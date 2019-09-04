@@ -11,7 +11,6 @@ const verifyUser = (code, state) => {
   return state
 }
 const changeStatus = (status, state) => {
-  console.log("status change:")
   if (status !== '') return { ...state,status}
   return state
 }

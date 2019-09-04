@@ -2,15 +2,11 @@ import React, { useState } from 'react'
 import { userCompassPage } from "../../../context/CompassPage/context"
 
 import {
-  InputContainer, 
   SCButtonContainer,
   SCButton,
-  SCCard,
   SCFormContainer,
-  TitleForm,
-  DescriptionForm,
-  SCFormTitle 
 } from "../../../styles/CompassPage"
+import { FormCard, FormTitle, InputContainer,  InputField, InputTextArea } from "../../../styles/Form"
 
 const SessionCreator = ({email}) => {  
   const [form,setForm] = useState({ title: '', description: '' });
@@ -24,8 +20,8 @@ const SessionCreator = ({email}) => {
   }
 
   return (    
-    <SCCard alignSelf="center" elevation="medium">
-      <SCFormTitle> Create a Session </SCFormTitle>
+    <FormCard alignSelf="center" elevation="medium">
+      <FormTitle> Create a Session </FormTitle>
       <SCFormContainer
         onSubmit={sendForm}
         onChange={onChange}
@@ -33,16 +29,16 @@ const SessionCreator = ({email}) => {
         value={form}
       >
         <InputContainer  name="title"  required>
-          <TitleForm name="title" type="text" placeholder="Session Title" />
+          <InputField name="title" type="text" placeholder="Session Title" />
         </InputContainer>
         <InputContainer  name="description" >
-          <DescriptionForm name="description" type="text" placeholder="Session Description" />
+          <InputTextArea name="description" placeholder="Session Description" />
         </InputContainer>
         <SCButtonContainer>
           <SCButton type="submit" label="Create Session" />
         </SCButtonContainer>
       </SCFormContainer>
-    </SCCard>
+    </FormCard>
   )
 }
 

@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 const SummaryPage = (props) => (
   <Layout>
-    Home Page
+    Summary Page
   </Layout>
 );
 export default SummaryPage;

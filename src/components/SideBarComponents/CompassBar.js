@@ -11,9 +11,9 @@ const CompassBar = ({compass}) => (
   <CompassSideBar>
     <CompassText>{compass.title}</CompassText>
     <LinkContainer>
-      <CompassLink to="/"><Compass/> Compass</CompassLink>
-      <CompassLink to="/"><DocumentText/> Summary</CompassLink>
-      <CompassLink to="/"><BarChart/> Analytics</CompassLink>
+      <CompassLink to="/Compass"><Compass/> Compass</CompassLink>
+      <CompassLink to="/Summary"><DocumentText/> Summary</CompassLink>
+      <CompassLink to="/Analytics"><BarChart/> Analytics</CompassLink>
     </LinkContainer>
   </CompassSideBar>
 )

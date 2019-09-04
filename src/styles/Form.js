@@ -5,8 +5,11 @@ export const FormCard = styled(Box)`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 90%;
-  min-width: 22rem;
+  width: auto;
+  // min-width: 22rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 80%;
   color: black;
 `;
 export const FormContainer = styled(Box)`
@@ -15,7 +18,7 @@ export const FormContainer = styled(Box)`
 `;
 export const FormTitle = styled(Text)`
   margin: 0 auto;
-  padding: 0;
+  padding-bottom: 2rem;;
   font-size: 2rem;
   font-weight: 900;
   color: #5361FE;
@@ -43,11 +46,14 @@ export const InputTextArea = styled(TextArea)`
   font-size: 1rem;
   resize: none;
   height: 100%;
+  min-height: 15rem;
   color: black;
+  border: 0.01rem solid grey;
 `;
 export const InputContainer = styled(FormField)`
-  color: #5361FE;
-  background-color: transparent;
+  border-bottom: none;
+  color: black;
+  background-color: #E5E5E5;
 `;
 export const InputField = styled(TextInput)`
   font-weight: 550;

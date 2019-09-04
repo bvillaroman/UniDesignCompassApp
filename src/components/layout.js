@@ -27,7 +27,9 @@ const Layout = ({ children }) => {
       { (user.hasOwnProperty("email") && compass.hasOwnProperty("title")) && <CompassBar compass={compass}/> }
       </SidebarContainer>
       <MainViewContainer>
-        <main>{children}</main>
+        {/* <main> */}
+        {children}
+        {/* </main> */}
       </MainViewContainer>
     </LayoutContainer>
   )
