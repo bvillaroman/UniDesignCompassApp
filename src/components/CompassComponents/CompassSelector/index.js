@@ -1,4 +1,4 @@
-import React ,{ useState } from "react";
+import React  from "react";
 import Step from "./Step"
 import { StepRow } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"

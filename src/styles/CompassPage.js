@@ -62,10 +62,14 @@ export const LoggerInput = styled(TextArea)`
 export const StepName = styled(Text)`
   font-size: 2rem;
 `;
+export const LoggerGrid = styled(Grid)`
+  // justify-content: center;
+  // min-height: 3rem;
+`;
 export const LoggerNav = styled(Box)`
-  justify-content: center;
-  height: 8vh;
-  min-height: 3rem;
+  // justify-content: center;
+  // height: 8vh;
+  // min-height: 3rem;
 `;
 export const LoggerInnerNav = styled(Box)`
   verticle-align: middle;
@@ -73,9 +77,9 @@ export const LoggerInnerNav = styled(Box)`
   
 `;
 export const LoggerTA = styled(Box)`
-  margin: 1rem auto;
-  height: 80vh;
-  min-height: 5rem;
+  // margin: 1rem auto;
+  // height: 80vh;
+  // min-height: 5rem;
 `;
 
 // Sessions Creator

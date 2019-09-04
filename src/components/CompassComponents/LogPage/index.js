@@ -1,5 +1,6 @@
-import React,{ useState, useEffect} from "react";
+import React,{ useState} from "react";
 import { 
+  LoggerGrid,
   LoggerInput, 
   LoggerTA, 
   LoggerNav, 
@@ -21,7 +22,15 @@ const Logger = () => {
   const changeToCompass = (e) => changeView(1)
 
   return (
-    <>
+    <LoggerGrid
+      rows={['auto', 'fill']}
+      columns={['flex']}
+      fill
+      areas={[
+        { name: 'header', start: [0, 0], end: [1, 0] },
+        { name: 'main', start: [1, 0], end: [1, 1] },
+      ]}
+    >
       <LoggerNav gridArea="header" >
         <LoggerInnerNav>
           <CompassButton onClick={changeToCompass}/>
@@ -35,7 +44,7 @@ const Logger = () => {
           onChange={event => setValue(event.target.value)}
         />
       </LoggerTA>
-    </>
+    </LoggerGrid>
   );
 }
 export default Logger;

@@ -10,7 +10,7 @@ import { FormCard, FormTitle, InputContainer,  InputField, InputTextArea } from 
 
 const SessionCreator = ({email}) => {  
   const [form,setForm] = useState({ title: '', description: '' });
-  const [error,setErrors] = useState({ title: '', description: ''})
+  const [error] = useState({ title: '', description: ''})
   const {changeView} = userCompassPage();
 
   const onChange = ({ target: { value,name } }) => { setForm({...form, [name]: value})  };

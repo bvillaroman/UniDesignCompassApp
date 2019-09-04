@@ -18,7 +18,7 @@ const SignIn = ({switchToSignUp})=> {
     email: '',
     password: '',
   });
-  const [error,setErrors] = useState({  
+  const [error] = useState({  
     email: '',
     password: '',
   })

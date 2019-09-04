@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   Box,
   Button,
@@ -10,7 +10,7 @@ import { InputContainer,  InputField, InputTextArea } from "../../styles/Form"
 
 const Info = (props) => {
 
-  const { form, tab, errors, updateForm, updateError, switchTab } = userDashboard();
+  const { form,  errors, updateForm, switchTab } = userDashboard();
 
   const onChange = event => {
     const { target: { value,name } } = event;

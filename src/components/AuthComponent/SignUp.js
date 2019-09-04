@@ -29,7 +29,7 @@ const SignUp = ({switchToSignIn}) => {
     password2: '',
   });
 
-  const [error,setErrors] = useState({  
+  const [error] = useState({  
     email: '',
     name: '',
     password: '',

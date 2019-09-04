@@ -7,14 +7,14 @@ import "./src/styles/global.css"
 // You can delete this file if you're not using it
 import React from "react"
 import { GlobalProvider } from "./src/context/context"
-import { Grommet, Box } from 'grommet';
+import { Grommet } from 'grommet';
 
 export const wrapRootElement = ({ element }) => (
   <Grommet 
     theme={
       {
         global: { 
-          colors: { primary: '#5361FF', secondary: '#F2F2F2',fore: '#FEFFFE'  } 
+          colors: { primary: '#5361FF', secondary: '#F2F2F2',fore: '#FEFFFE', focus: "transparent"  } 
         } ,
         button: {
           color: 'white', 
@@ -28,9 +28,12 @@ export const wrapRootElement = ({ element }) => (
           icons: {
             color: '#5361FF'
           }
+        },
+        formField: {
+          border: {
+            color: "transparent"
+          }
         }
-
-        
       }
     }
   >

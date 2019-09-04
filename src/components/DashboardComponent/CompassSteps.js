@@ -1,16 +1,11 @@
 import React from 'react'
-import {
-  Box,
-  Button,
-  Form,
-  Tab,
-} from "grommet";
+import { Button } from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
 import { FormSwitchContainer } from "../../styles/Form"
 
 const Steps = (props) => {
-  const { updateForm, switchTab } = userDashboard();
+  const { switchTab } = userDashboard();
 
   const goToReview = event => {
     switchTab(3);

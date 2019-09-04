@@ -1,33 +1,20 @@
 import React, {useState} from 'react'
 import { Tabs, Tab } from "grommet";
-import {navigate} from "gatsby"
 import { 
   DashboardContainer,
-  Header, 
-  Feed,
+  Header,
   Title, 
   AddCompass,
   Divider,
-  DashboardGrid,
-  CompassTitle,
-  CompassCard,
-  CompassDescription,
-  GoToCompassButton
+  DashboardGrid
 } from "../../styles/Dashboard"
-import {globalStore} from "../../context/context"
 
+import Feed from "./CompassFeed"
 import CompassForm from "./CompassForm"
 
 const Dashboard = (props) => {
   const [tab, setTab] = useState(0)
-  const { user,chooseCompass } = globalStore()
-
   const onActive = (index) => setTab(index)
-
-  const goToCompass = (compass) => {
-    chooseCompass(compass)
-    navigate("/Compass")
-  }
 
   return (
     <DashboardContainer>
@@ -51,15 +38,7 @@ const Dashboard = (props) => {
               <AddCompass onClick={e => setTab(1)}/>
             </Header>
             <Divider gridArea="divider"/>
-            <Feed gridArea="feed">
-              { user.compasses ? user.compasses.map((compass) => (
-                  <CompassCard>
-                    <CompassTitle>{compass.title}</CompassTitle>
-                    <CompassDescription>{compass.description}</CompassDescription>
-                    <GoToCompassButton label="Go To Compass" onClick={e => goToCompass(compass)} />
-                  </CompassCard>
-              )) :<p>you have no compasses</p> }
-            </Feed>
+              <Feed/>
             </DashboardGrid>
         </Tab>
         <Tab>

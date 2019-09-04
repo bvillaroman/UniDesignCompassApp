@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Tab, Button } from "grommet";
+import { Tabs, Tab } from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
 import { FormContainer } from "../../styles/Form"

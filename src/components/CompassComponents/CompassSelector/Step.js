@@ -7,7 +7,7 @@ const Step = ({activeStep = {}}) => {
 
   const {
     title = '',
-    description = '',
+    // description = '',
     duration = '' 
   } = activeStep; 
 

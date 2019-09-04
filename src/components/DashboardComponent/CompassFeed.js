@@ -1,29 +1,33 @@
 import React from 'react'
-import {
-  Box,
-  Button,
-  Form,
-  Tab,
-} from "grommet";
+import { 
+  Feed,
+  CompassTitle,
+  CompassCard,
+  CompassDescription,
+  GoToCompassButton
+} from "../../styles/Dashboard"
+import {globalStore} from "../../context/context"
+import {navigate} from "gatsby"
 
-import { userDashboard } from "../../context/DashboardPage/context"
-import { FormSwitchContainer } from "../../styles/Form"
+const CompassFeed = (props) => {
+  const { user,chooseCompass } = globalStore();
 
-const Feed = (props) => {
-
-  const { submitForm, form } = userDashboard();
-
-  const
-
-  const submit = event => {
-    submitForm();
-  };
+  const goToCompass = (compass) => {
+    chooseCompass(compass)
+    navigate("/Compass")
+  }
 
   return (
-    <FormSwitchContainer fill="horizontal" justify="between" direction="row">
-     
-    </FormSwitchContainer>
+    <Feed gridArea="feed">
+      { user.compasses ? user.compasses.map((compass) => (
+          <CompassCard>
+            <CompassTitle>{compass.title}</CompassTitle>
+            <CompassDescription>{compass.description}</CompassDescription>
+            <GoToCompassButton label="Go To Compass" onClick={e => goToCompass(compass)} />
+          </CompassCard>
+      )) :<p>you have no compasses</p> }
+    </Feed>
   )
 }
 
-export default Feed; 
+export default CompassFeed; 

@@ -1,17 +1,16 @@
 import React from 'react'
-import {Box, Accordion, AccordionPanel, Text} from "grommet";
+import {Box, Text} from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
 import { globalStore } from "../../context/context"
-
-import { FormSwitchContainer } from "../../styles/Form"
 import { 
   ReviewCard, 
   ReviewTitle,
   ReviewDescription, 
   SubmitCompassButton, 
   ReviewStepsView,
-  ReviewStepPanel } from "../../styles/Dashboard"
+  ReviewStepPanel 
+} from "../../styles/Dashboard"
 
 const Review = ({backToDashboard}) => {
 

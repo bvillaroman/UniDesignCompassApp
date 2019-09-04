@@ -20,7 +20,7 @@ const Verify = ({email, name, switchToSignUp}) => {
   const {loginUser} = globalStore();
 
   const [form,setForm] = useState({ code: '' });
-  const [error,setErrors] = useState({ code: ''})
+  const [error] = useState({ code: ''})
 
   const onChange = ({ target: { value } }) => { setForm({code: value})  };
 
