@@ -10,44 +10,6 @@ const defaultState = {
     duration:'',
     log: ''
   },
-  steps: [
-    {
-      title:'Step 1',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    {
-      title:'Step 2',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    {
-      title:'Step 3',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    {
-      title:'Step 4',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    {
-      title:'Step 5',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    {
-      title:'Step 6',
-      description:'',
-      duration:'',
-      log: ''
-    }
-  ],
   attachments: []
 }
 const changeView = (newView, state) => {

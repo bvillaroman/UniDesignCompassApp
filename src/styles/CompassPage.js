@@ -63,8 +63,9 @@ export const StepName = styled(Text)`
   font-size: 2rem;
 `;
 export const LoggerGrid = styled(Grid)`
-  // justify-content: center;
-  // min-height: 3rem;
+  height: 90vh;
+  width: 95%;
+  margin: 0 auto;
 `;
 export const LoggerNav = styled(Box)`
   // justify-content: center;
@@ -74,7 +75,6 @@ export const LoggerNav = styled(Box)`
 export const LoggerInnerNav = styled(Box)`
   verticle-align: middle;
   display: inline;
-  
 `;
 export const LoggerTA = styled(Box)`
   // margin: 1rem auto;

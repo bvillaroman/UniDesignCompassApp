@@ -3,7 +3,6 @@ import {
   LoggerGrid,
   LoggerInput, 
   LoggerTA, 
-  LoggerNav, 
   StepName,
   LoggerInnerNav,
   CompassButton,
@@ -15,28 +14,24 @@ const Logger = () => {
   const {changeView, currentStep } = userCompassPage()
   const [value, setValue] = useState('');
 
-  const {
-    stepTitle
-  } = currentStep;
+  const {title} = currentStep;
 
   const changeToCompass = (e) => changeView(1)
 
   return (
     <LoggerGrid
-      rows={['auto', 'fill']}
-      columns={['flex']}
-      fill
+      rows={['15%', '85%']}
+      columns={['fill']}
+      fill="vertical"
       areas={[
-        { name: 'header', start: [0, 0], end: [1, 0] },
-        { name: 'main', start: [1, 0], end: [1, 1] },
+        { name: 'header', start: [0, 0], end: [0, 0] },
+        { name: 'main', start: [0, 1], end: [0, 1] },
       ]}
     >
-      <LoggerNav gridArea="header" >
-        <LoggerInnerNav>
-          <CompassButton onClick={changeToCompass}/>
-          <StepName> {stepTitle} </StepName>
-        </LoggerInnerNav>
-      </LoggerNav>
+      <LoggerInnerNav gridArea="header" >
+        <CompassButton onClick={changeToCompass}/>
+        <StepName> {title} </StepName>
+      </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput
           placeholder="Enter Log"

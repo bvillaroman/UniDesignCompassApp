@@ -30,7 +30,7 @@ const CompassPage = (props) => (
                 </Tabs>
               </MainView>
               <SessionView gridArea="session">
-                sessionComponent
+                session component
               </SessionView>
             </ComponentContainer>
           )
