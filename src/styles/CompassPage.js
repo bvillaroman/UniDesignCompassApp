@@ -7,8 +7,7 @@ import {
   FormField, 
   TextInput,
   Form,
-  // Tab,
-  // Tabs
+  Grid
 } from "grommet"
 import { Compass, FormPrevious, Attachment } from 'grommet-icons';
 import React from "react";
@@ -63,20 +62,24 @@ export const LoggerInput = styled(TextArea)`
 export const StepName = styled(Text)`
   font-size: 2rem;
 `;
+export const LoggerGrid = styled(Grid)`
+  height: 90vh;
+  width: 95%;
+  margin: 0 auto;
+`;
 export const LoggerNav = styled(Box)`
-  justify-content: center;
-  height: 8vh;
-  min-height: 3rem;
+  // justify-content: center;
+  // height: 8vh;
+  // min-height: 3rem;
 `;
 export const LoggerInnerNav = styled(Box)`
   verticle-align: middle;
   display: inline;
-  
 `;
 export const LoggerTA = styled(Box)`
-  margin: 1rem auto;
-  height: 80vh;
-  min-height: 5rem;
+  // margin: 1rem auto;
+  // height: 80vh;
+  // min-height: 5rem;
 `;
 
 // Sessions Creator
@@ -85,6 +88,7 @@ export const SCCard = styled(Box)`
   color: white;
   background-color: transparent;
   margin: 0 auto;
+  padding: 2rem;
   width: 100%;
 `;
 export const SCButton = styled(Button)`
@@ -155,9 +159,13 @@ export const StepContainer = styled(CompassButtons)`
 `
 // Compass Page Containers
 
-export const MainView = styled(Box)`
-  width: 60%;
+export const ComponentContainer = styled(Grid)`
   margin: 0 auto;
-  padding-top: 1%;
-  height: 90vh;
+`
+export const MainView = styled(Box)`
+  justify-content: center;
+`
+export const SessionView = styled(Box)`
+  text-align: center;
+  background: #e5e5e5;
 `

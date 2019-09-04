@@ -1,63 +1,18 @@
 import React, { useReducer, createContext, useContext} from "react";
-import CompassPageReducer, {CHANGE_VIEW,CHANGE_ACTIVE_STEP} from "./reducers"
+import CompassPageReducer, {defaultState, CHANGE_VIEW,CHANGE_ACTIVE_STEP, CREATE_SESSION, CREATE_INTERACTION} from "./reducers"
 
 // CONTEXT
 export const CompassPageContext = createContext();
 
 export const CompassPageProvider = ({children}) => {
-  const [CompassPageState,dispatch] = useReducer(CompassPageReducer, {
-    view: 0,
-    currentStep:{
-      title:'',
-      description:'',
-      duration:'',
-      log: ''
-    },
-    steps: [
-      {
-        title:'Step 1',
-        description:'',
-        duration:'',
-        log: ''
-      },
-      {
-        title:'Step 2',
-        description:'',
-        duration:'',
-        log: ''
-      },
-      {
-        title:'Step 3',
-        description:'',
-        duration:'',
-        log: ''
-      },
-      {
-        title:'Step 4',
-        description:'',
-        duration:'',
-        log: ''
-      },
-      {
-        title:'Step 5',
-        description:'',
-        duration:'',
-        log: ''
-      },
-      {
-        title:'Step 6',
-        description:'',
-        duration:'',
-        log: ''
-      }
-    ],
-    attachments: []
-  })
+  const [CompassPageState,dispatch] = useReducer(CompassPageReducer, defaultState)
   return (
     <CompassPageContext.Provider 
       value={{
-        changeView:(VIEW) => dispatch({type: CHANGE_VIEW, payload: VIEW}),
-        changeStep:(STEP) => dispatch({type: CHANGE_ACTIVE_STEP, payload: STEP}),
+        changeView:(view) => dispatch({type: CHANGE_VIEW, payload: view}),
+        createSession:(session) => dispatch({type: CREATE_SESSION, payload: session}),
+        createInteraction:(interaction) => dispatch({type: CREATE_INTERACTION, payload: interaction}),
+        changeStep:(step) => dispatch({type: CHANGE_ACTIVE_STEP, payload: step}),
         ...CompassPageState
       }}
     >

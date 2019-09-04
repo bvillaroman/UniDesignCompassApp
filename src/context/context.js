@@ -1,12 +1,14 @@
 import React, { useReducer, createContext, useContext} from "react";
-import GlobalReducer, { SIGN_IN, SIGN_OUT, SELECT_COMPASS} from "./reducers"
+import GlobalReducer, { SIGN_IN, SIGN_OUT, SELECT_COMPASS, ADD_COMPASS} from "./reducers"
 
 // CONTEXT
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({children}) => {
   const [globalState,dispatch] = useReducer(GlobalReducer, {
-    user: {},
+    user: {
+      compasses: [],
+    },
     compass: {}
   })
   return (
@@ -15,6 +17,7 @@ export const GlobalProvider = ({children}) => {
         loginUser: (user) => dispatch({type: SIGN_IN, payload: user}),
         chooseCompass: (compass) => dispatch({type: SELECT_COMPASS, payload: compass}),
         logoutUser: () => dispatch({type: SIGN_OUT, payload: {}}),
+        addCompass: (compass) => dispatch({type: ADD_COMPASS, payload: compass}),
         ...globalState
       }}
     >
@@ -23,8 +26,4 @@ export const GlobalProvider = ({children}) => {
   )
 }
 
-export const globalStore = () => {
-  const contextValue = useContext(GlobalContext);
-  return contextValue;
-};
-
+export const globalStore = () => (useContext(GlobalContext));

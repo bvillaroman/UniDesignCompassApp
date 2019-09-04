@@ -1,5 +1,5 @@
 import React from "react";
-import { StepContainer, StepRow } from "../../../styles/CompassPage"
+import { StepContainer } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"
 
 const Step = ({activeStep = {}}) => {
@@ -7,20 +7,19 @@ const Step = ({activeStep = {}}) => {
 
   const {
     title = '',
-    description = '',
-    duration = '' 
+    duration = 'T00:00:00' 
   } = activeStep; 
 
   const goToLog = (e) => {
     changeStep(activeStep)
-    changeView(2);
+    changeView(1);
   }
   // console.log(activeStep)
 
   return (
     <StepContainer onClick={goToLog}>
       {title}
-      {duration}
+      {/* {duration} */}
     </StepContainer> 
 )};
 export default Step;

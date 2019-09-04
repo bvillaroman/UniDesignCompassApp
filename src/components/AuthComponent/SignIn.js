@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Box, Button, Form } from "grommet";
 import {
-  AuthSwitchButton, 
+  FormSwitchButton, 
   InputContainer, 
-  AuthSwitchContainer, 
-  AuthFormContainer, 
-  AuthFormTitle,
-  AuthSwitchLabel, 
+  FormSwitchContainer, 
+  FormContainer, 
+  FormTitle,
+  FormSwitchLabel, 
   InputField 
-} from "../../styles/AuthPage"
+} from "../../styles/Form"
 import {globalStore} from "../../context/context"
 import { Auth } from 'aws-amplify';
 
@@ -18,7 +18,7 @@ const SignIn = ({switchToSignUp})=> {
     email: '',
     password: '',
   });
-  const [error,setErrors] = useState({  
+  const [error] = useState({  
     email: '',
     password: '',
   })
@@ -48,8 +48,8 @@ const SignIn = ({switchToSignUp})=> {
   }
 
   return (
-    <AuthFormContainer>
-      <AuthFormTitle> Sign In</AuthFormTitle>
+    <FormContainer>
+      <FormTitle> Sign In</FormTitle>
       <Form
         onReset={event => console.log(event)}
         onSubmit={submitForm}
@@ -65,13 +65,13 @@ const SignIn = ({switchToSignUp})=> {
         </InputContainer>
         <Box direction="column" justify="between" margin={{ top: "medium" }}>
           <Button type="submit" label="Sign In" primary />
-          <AuthSwitchContainer direction="row">
-            <AuthSwitchLabel truncate>Don't have an account?</AuthSwitchLabel>
-            <AuthSwitchButton onClick={e => switchToSignUp()}> Sign Up </AuthSwitchButton>
-          </AuthSwitchContainer>
+          <FormSwitchContainer direction="row">
+            <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
+            <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
+          </FormSwitchContainer>
         </Box>
       </Form>
-    </AuthFormContainer>
+    </FormContainer>
   )
 }
 

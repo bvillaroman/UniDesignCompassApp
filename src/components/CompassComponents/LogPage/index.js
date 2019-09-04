@@ -1,8 +1,8 @@
-import React,{ useState, useEffect} from "react";
+import React,{ useState} from "react";
 import { 
+  LoggerGrid,
   LoggerInput, 
   LoggerTA, 
-  LoggerNav, 
   StepName,
   LoggerInnerNav,
   CompassButton,
@@ -11,23 +11,31 @@ import {userCompassPage} from "../../../context/CompassPage/context"
 
 
 const Logger = () => {
-  const {changeView, currentStep } = userCompassPage()
+  const {changeView, currentStep, changeStep, createInteraction } = userCompassPage()
   const [value, setValue] = useState('');
 
-  const {
-    stepTitle
-  } = currentStep;
+  const {title} = currentStep;
 
-  const changeToCompass = (e) => changeView(1)
+  const changeToCompass = (e) => {
+    changeView(0)
+    if (currentStep.duration) createInteraction({step: currentStep, duration: currentStep.duration})
+    changeStep({})
+  }
 
   return (
-    <>
-      <LoggerNav gridArea="header" >
-        <LoggerInnerNav>
-          <CompassButton onClick={changeToCompass}/>
-          <StepName> {stepTitle} </StepName>
-        </LoggerInnerNav>
-      </LoggerNav>
+    <LoggerGrid
+      rows={['15%', '85%']}
+      columns={['fill']}
+      fill="vertical"
+      areas={[
+        { name: 'header', start: [0, 0], end: [0, 0] },
+        { name: 'main', start: [0, 1], end: [0, 1] },
+      ]}
+    >
+      <LoggerInnerNav gridArea="header" >
+        <CompassButton onClick={changeToCompass}/>
+        <StepName> {title} </StepName>
+      </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput
           placeholder="Enter Log"
@@ -35,7 +43,7 @@ const Logger = () => {
           onChange={event => setValue(event.target.value)}
         />
       </LoggerTA>
-    </>
+    </LoggerGrid>
   );
 }
 export default Logger;

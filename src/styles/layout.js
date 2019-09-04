@@ -1,7 +1,5 @@
 import styled from "styled-components"
-import {
-  Box,
-} from "grommet";
+import { Box, } from "grommet";
 
 export const LayoutContainer = styled(Box)` 
   height: 100%;
@@ -17,6 +15,6 @@ export const SidebarContainer = styled(Box)`
 export const MainViewContainer = styled(Box)`
   display: flex;
   flex-direction: row;
-  width: ${props => props.Compass ? '80%' : '95%'}
+  width: ${props => props.Compass ? '80%' : '100%'};
   height: 100vh;
 `;

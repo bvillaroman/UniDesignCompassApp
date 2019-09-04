@@ -9,14 +9,14 @@ import {
 import { Auth } from 'aws-amplify';
 
 import {
-  AuthSwitchButton, 
+  FormSwitchButton, 
   InputContainer, 
-  AuthSwitchContainer, 
-  AuthFormContainer, 
-  AuthFormTitle,
-  AuthSwitchLabel, 
+  FormSwitchContainer, 
+  FormContainer, 
+  FormTitle,
+  FormSwitchLabel, 
   InputField 
-} from "../../styles/AuthPage"
+} from "../../styles/Form"
 import {userAuth} from "../../context/AuthPage/context"
 import Verify from "./Verify"
 
@@ -29,7 +29,7 @@ const SignUp = ({switchToSignIn}) => {
     password2: '',
   });
 
-  const [error,setErrors] = useState({  
+  const [error] = useState({  
     email: '',
     name: '',
     password: '',
@@ -39,7 +39,7 @@ const SignUp = ({switchToSignIn}) => {
 
   const [tab,setTab] = useState(0);
 
-  const { signupUser, changeStatus} = userAuth();
+  const { signupUser} = userAuth();
 
   const onChange = event => {
     const { target: { value,name } } = event;
@@ -67,8 +67,8 @@ const SignUp = ({switchToSignIn}) => {
   }
 
   return (
-    <AuthFormContainer>
-      <AuthFormTitle> { tab === 0 ? 'Sign Up' : 'Verifcation'} </AuthFormTitle>
+    <FormContainer>
+      <FormTitle> { tab === 0 ? 'Sign Up' : 'Verifcation'} </FormTitle>
       <Tabs activeIndex={tab} onActive={onActive}>
         <Tab>
           <Form
@@ -91,10 +91,10 @@ const SignUp = ({switchToSignIn}) => {
             </InputContainer>
             <Box direction="column" justify="between" margin={{ top: "medium" }}>
               <Button type="submit" label="Sign Up" primary />
-              <AuthSwitchContainer direction="row">
-                <AuthSwitchLabel truncate>Have an account?</AuthSwitchLabel>
-                <AuthSwitchButton onClick={e => switchToSignIn()}> Sign In </AuthSwitchButton>
-              </AuthSwitchContainer>
+              <FormSwitchContainer direction="row">
+                <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
+                <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
+              </FormSwitchContainer>
             </Box>
           </Form>
         </Tab>
@@ -102,7 +102,7 @@ const SignUp = ({switchToSignIn}) => {
           <Verify email={form.email} name={form.name} switchToSignUp={e => onActive(0)}/>
         </Tab>
       </Tabs>
-    </AuthFormContainer>
+    </FormContainer>
   )
 }
 
