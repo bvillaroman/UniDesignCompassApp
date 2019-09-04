@@ -1,83 +1,13 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUser = `subscription OnCreateUser {
-  onCreateUser {
-    id
-    username
-    name
-    email
-    password
-    compasses {
-      items {
-        id
-        title
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const onUpdateUser = `subscription OnUpdateUser {
-  onUpdateUser {
-    id
-    username
-    name
-    email
-    password
-    compasses {
-      items {
-        id
-        title
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const onDeleteUser = `subscription OnDeleteUser {
-  onDeleteUser {
-    id
-    username
-    name
-    email
-    password
-    compasses {
-      items {
-        id
-        title
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
 export const onCreateCompass = `subscription OnCreateCompass {
   onCreateCompass {
     id
-    title
+    name_of_compass
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      username
-      name
-      email
-      password
-      compasses {
-        nextToken
-      }
-    }
     sessions {
       items {
         id
@@ -85,6 +15,16 @@ export const onCreateCompass = `subscription OnCreateCompass {
         session_end_time
         name_of_session
         description_of_session
+      }
+      nextToken
+    }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
       }
       nextToken
     }
@@ -94,20 +34,10 @@ export const onCreateCompass = `subscription OnCreateCompass {
 export const onUpdateCompass = `subscription OnUpdateCompass {
   onUpdateCompass {
     id
-    title
+    name_of_compass
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      username
-      name
-      email
-      password
-      compasses {
-        nextToken
-      }
-    }
     sessions {
       items {
         id
@@ -118,26 +48,26 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
       }
       nextToken
     }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      nextToken
+    }
   }
 }
 `;
 export const onDeleteCompass = `subscription OnDeleteCompass {
   onDeleteCompass {
     id
-    title
+    name_of_compass
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      username
-      name
-      email
-      password
-      compasses {
-        nextToken
-      }
-    }
     sessions {
       items {
         id
@@ -145,6 +75,16 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         session_end_time
         name_of_session
         description_of_session
+      }
+      nextToken
+    }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
       }
       nextToken
     }
@@ -160,18 +100,14 @@ export const onCreateSession = `subscription OnCreateSession {
     description_of_session
     compass {
       id
-      title
+      name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        username
-        name
-        email
-        password
-      }
       sessions {
+        nextToken
+      }
+      steps {
         nextToken
       }
     }
@@ -180,7 +116,7 @@ export const onCreateSession = `subscription OnCreateSession {
         id
         interaction_start_time
         interaction_start_end
-        content
+        log_content
       }
       nextToken
     }
@@ -196,18 +132,14 @@ export const onUpdateSession = `subscription OnUpdateSession {
     description_of_session
     compass {
       id
-      title
+      name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        username
-        name
-        email
-        password
-      }
       sessions {
+        nextToken
+      }
+      steps {
         nextToken
       }
     }
@@ -216,7 +148,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
         id
         interaction_start_time
         interaction_start_end
-        content
+        log_content
       }
       nextToken
     }
@@ -232,18 +164,14 @@ export const onDeleteSession = `subscription OnDeleteSession {
     description_of_session
     compass {
       id
-      title
+      name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        username
-        name
-        email
-        password
-      }
       sessions {
+        nextToken
+      }
+      steps {
         nextToken
       }
     }
@@ -252,7 +180,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
         id
         interaction_start_time
         interaction_start_end
-        content
+        log_content
       }
       nextToken
     }
@@ -264,22 +192,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
     id
     interaction_start_time
     interaction_start_end
-    content
-    step {
-      id
-      step_start_time
-      step_end_time
-      title
-      description
-    }
-    attachments {
-      id
-      content
-      timestamp
-      bucket
-      region
-      key
-    }
+    log_content
     session {
       id
       session_start_time
@@ -288,7 +201,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       description_of_session
       compass {
         id
-        title
+        name_of_compass
         description_of_compass
         date_start
         date_end
@@ -296,6 +209,28 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       interactions {
         nextToken
       }
+    }
+    step {
+      id
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+    }
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
   }
 }
@@ -305,22 +240,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
     id
     interaction_start_time
     interaction_start_end
-    content
-    step {
-      id
-      step_start_time
-      step_end_time
-      title
-      description
-    }
-    attachments {
-      id
-      content
-      timestamp
-      bucket
-      region
-      key
-    }
+    log_content
     session {
       id
       session_start_time
@@ -329,7 +249,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       description_of_session
       compass {
         id
-        title
+        name_of_compass
         description_of_compass
         date_start
         date_end
@@ -337,6 +257,28 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       interactions {
         nextToken
       }
+    }
+    step {
+      id
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+    }
+    attachments {
+      id
+      content
+      timestamp
+      bucket
+      region
+      key
     }
   }
 }
@@ -346,13 +288,37 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
     id
     interaction_start_time
     interaction_start_end
-    content
+    log_content
+    session {
+      id
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
     step {
       id
       step_start_time
       step_end_time
-      title
-      description
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
     }
     attachments {
       id
@@ -362,23 +328,6 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       region
       key
     }
-    session {
-      id
-      session_start_time
-      session_end_time
-      name_of_session
-      description_of_session
-      compass {
-        id
-        title
-        description_of_compass
-        date_start
-        date_end
-      }
-      interactions {
-        nextToken
-      }
-    }
   }
 }
 `;
@@ -387,8 +336,21 @@ export const onCreateStep = `subscription OnCreateStep {
     id
     step_start_time
     step_end_time
-    title
-    description
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -397,8 +359,21 @@ export const onUpdateStep = `subscription OnUpdateStep {
     id
     step_start_time
     step_end_time
-    title
-    description
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -407,41 +382,21 @@ export const onDeleteStep = `subscription OnDeleteStep {
     id
     step_start_time
     step_end_time
-    title
-    description
-  }
-}
-`;
-export const onCreateAttachment = `subscription OnCreateAttachment {
-  onCreateAttachment {
-    id
-    content
-    timestamp
-    bucket
-    region
-    key
-  }
-}
-`;
-export const onUpdateAttachment = `subscription OnUpdateAttachment {
-  onUpdateAttachment {
-    id
-    content
-    timestamp
-    bucket
-    region
-    key
-  }
-}
-`;
-export const onDeleteAttachment = `subscription OnDeleteAttachment {
-  onDeleteAttachment {
-    id
-    content
-    timestamp
-    bucket
-    region
-    key
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
   }
 }
 `;
