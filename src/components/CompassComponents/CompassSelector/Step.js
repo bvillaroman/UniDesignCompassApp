@@ -7,8 +7,7 @@ const Step = ({activeStep = {}}) => {
 
   const {
     title = '',
-    // description = '',
-    duration = '' 
+    duration = 'T00:00:00' 
   } = activeStep; 
 
   const goToLog = (e) => {
@@ -20,7 +19,7 @@ const Step = ({activeStep = {}}) => {
   return (
     <StepContainer onClick={goToLog}>
       {title}
-      {duration}
+      {/* {duration} */}
     </StepContainer> 
 )};
 export default Step;

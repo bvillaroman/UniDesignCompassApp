@@ -35,7 +35,7 @@ const createSession = (newSession, state) => {
 }
 const createInteraction = (newInteraction, state) => {
   if (newInteraction !== '') {
-    if (state.interactions) return { ...state, interactions: [ ...state.interactions, newInteraction] }
+    if (state.interactions) return { ...state, interactions: [newInteraction, ...state.interactions ] }
     return { ...state, interactions: [newInteraction] }
   }
   return state

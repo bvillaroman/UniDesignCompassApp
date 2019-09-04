@@ -11,12 +11,16 @@ import {userCompassPage} from "../../../context/CompassPage/context"
 
 
 const Logger = () => {
-  const {changeView, currentStep } = userCompassPage()
+  const {changeView, currentStep, changeStep, createInteraction } = userCompassPage()
   const [value, setValue] = useState('');
 
   const {title} = currentStep;
 
-  const changeToCompass = (e) => changeView(0)
+  const changeToCompass = (e) => {
+    changeView(0)
+    if (currentStep.duration) createInteraction({step: currentStep, duration: currentStep.duration})
+    changeStep({})
+  }
 
   return (
     <LoggerGrid
