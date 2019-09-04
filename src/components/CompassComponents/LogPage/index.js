@@ -16,7 +16,7 @@ const Logger = () => {
 
   const {title} = currentStep;
 
-  const changeToCompass = (e) => changeView(1)
+  const changeToCompass = (e) => changeView(0)
 
   return (
     <LoggerGrid

@@ -13,7 +13,7 @@ const Step = ({activeStep = {}}) => {
 
   const goToLog = (e) => {
     changeStep(activeStep)
-    changeView(2);
+    changeView(1);
   }
   // console.log(activeStep)
 

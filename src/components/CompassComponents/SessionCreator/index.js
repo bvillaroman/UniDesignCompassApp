@@ -11,12 +11,12 @@ import { FormCard, FormTitle, InputContainer,  InputField, InputTextArea } from 
 const SessionCreator = ({email}) => {  
   const [form,setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: ''})
-  const {changeView} = userCompassPage();
+  const {createSession} = userCompassPage();
 
   const onChange = ({ target: { value,name } }) => { setForm({...form, [name]: value})  };
 
   const sendForm = (e) => {
-    changeView(1);
+    createSession(form)
   }
 
   return (    
