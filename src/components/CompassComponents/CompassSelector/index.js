@@ -11,7 +11,6 @@ import {
   SessionDescription 
 } from "../../../styles/CompassPage"
 import { globalStore } from "../../../context/context"
-import { userCompassPage } from "../../../context/CompassPage/context"
 
 
 const CompassSelector = (props) => {

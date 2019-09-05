@@ -209,7 +209,15 @@ export const SessionDescription = styled(Box)`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
-export const MainView = styled(Box)`
+export const MainView = styled(Tabs)`
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  button div {
+    border-color: transparent;
+  }
+`
+export const MainContent = styled(Tab)`
   justify-content: center;
   width: 100%;
   height: 100%;
