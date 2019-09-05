@@ -1,36 +1,47 @@
-import React,{useState} from "react";
-import {Clock, Button} from "grommet"
+import React,{useState,useEffect} from "react";
+import {Button} from "grommet"
 import { SessionView } from "../../../styles/CompassPage"
 import {userCompassPage} from "../../../context/CompassPage/context"
 
 const SessionSideBar = (props) => {
-  const { currentSession, currentStep,changeStep } = userCompassPage();
-  const [clock,setClock] = useState({time: "T00:00:00",start: true})
-
-  const changeTime = (nextTime) => {
-    setClock({...clock, time: nextTime })
-    changeStep({...currentStep, duration: nextTime})
-  }
+  const { currentSession, createInteraction, currentInteraction } = userCompassPage();
+  const [time,setTime] = useState(currentInteraction.duration)
+  const [start,setStart] = useState(true)
 
   const pause = (e) => {
-    console.log(clock.time)
-    setClock({...clock, start: !clock.start})
-    changeStep({...currentStep, duration: clock.time})
+    setStart(!start)
   }
+  
+  useEffect(() => {
+    let interval = null;
+    // setStart(true)
+    if (currentInteraction.duration === 0) {
+      setTime(0)
+    } 
+    if (start) {
+      interval = setInterval(() => setTime(time+1), 1000)
+      createInteraction({...currentInteraction, duration: time+1})
+
+    } else if (!start && time !== 0) {
+      clearInterval(interval)
+      createInteraction({...currentInteraction, duration: time})
+    }
+    return () => clearInterval(interval);
+  }, [start,time])
+
 
   return (
     <SessionView gridArea="session">
       {currentSession.title}
-      <Clock type="digital" />
       {
-        currentStep.title ? (
+        currentInteraction.step.title ? (
           <>
-            {currentStep.title}
-            <Clock type="digital" run={clock.start} time={clock.time} onChange={changeTime}/>
+            {currentInteraction.step.title}
+            {time}
             <Button label="Pause" onClick={pause}/>
             <br/>
             <br/>  
-            {currentStep.description}
+            {currentInteraction.step.description}
             <br/>
             <br/>
             <p>Attachments</p>

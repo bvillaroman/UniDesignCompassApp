@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 
 export const LandingPageContainer = styled(Grid)`
   width: 100%;
+  background: white;
 `
 export const NavContainer = styled(Box)`
   width: 90%;
