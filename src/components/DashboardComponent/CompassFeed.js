@@ -19,7 +19,7 @@ const CompassFeed = (props) => {
 
   return (
     <Feed gridArea="feed">
-      {user.compasses ? user.compasses.map((compass) => (
+      { user.compasses ? user.compasses.map((compass, key) => (
         <CompassCard>
           <CompassTitle>{compass.title}</CompassTitle>
           <CompassDescription>{compass.description}</CompassDescription>

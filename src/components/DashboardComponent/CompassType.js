@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
-import { FormSwitchContainer } from "../../styles/Form"
+import { FormSwitchContainer, FormCard, FormTitle } from "../../styles/Form"
 
 const Type = (props) => {
 
@@ -47,10 +47,13 @@ const Type = (props) => {
   };
 
   return (
-    <FormSwitchContainer fill="horizontal" justify="between" direction="row">
-      <Button label="Custom Steps" onClick={goToCustom} primary />
-      <Button label="Default Steps" onClick={goToReview} primary />
-    </FormSwitchContainer> 
+    <FormCard>
+      <FormTitle>Compass Type</FormTitle>
+      <FormSwitchContainer fill="horizontal" justify="between" direction="row">
+        <Button label="Custom Steps" onClick={goToCustom} primary />
+        <Button label="Default Steps" onClick={goToReview} primary />
+      </FormSwitchContainer> 
+    </FormCard>
   )
 }
 

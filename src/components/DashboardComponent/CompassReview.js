@@ -26,8 +26,8 @@ const Review = ({backToDashboard}) => {
     <ReviewCard 
       rows={['20%', '60%', '20%']}
       columns={['50%', '50%']}
-      fill
-      gap={'1rem'}
+      
+      gap='1rem'
       areas={[
         { name: 'header', start: [0, 0], end: [0, 0] },
         { name: 'description', start: [0, 1], end: [0, 1]},
