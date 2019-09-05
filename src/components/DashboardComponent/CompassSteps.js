@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
-import { FormSwitchContainer } from "../../styles/Form"
+import { FormSwitchContainer, FormTitle } from "../../styles/Form"
 
 const Steps = (props) => {
   const { switchTab } = userDashboard();
@@ -13,6 +13,7 @@ const Steps = (props) => {
 
   return (
     <FormSwitchContainer fill="horizontal" justify="between" direction="row">
+      <FormTitle>Compass Steps</FormTitle>
       <Button label="Go To Review" onClick={goToReview} primary />
     </FormSwitchContainer>
   )

@@ -5,10 +5,8 @@ import { userDashboard } from "../../context/DashboardPage/context"
 import { FormContainer } from "../../styles/Form"
 import { 
   FormHeader, 
-  Feed,
   Title, 
   BackButton,
-  Divider,
   DashboardGrid
 } from "../../styles/Dashboard"
 
@@ -24,30 +22,28 @@ const Form = ({backToDashboard}) => {
 
   return (
     <DashboardGrid
-      rows={['3rem', '1rem', 'medium']}
+      rows={['20%', '80%',]}
+      gap="1rem"
       columns={['full']}
       fill
       areas={[
         { name: 'header', start: [0, 0], end: [0, 0] },
-        { name: 'divider', start: [0, 1], end: [0, 1] },
-        { name: 'feed', start: [0, 2], end: [0, 2] }, 
+        { name: 'feed', start: [0, 1], end: [0, 1] },
       ]}  
     >
       <FormHeader gridArea="header" direction="row">
         <BackButton onClick={e=> {backToDashboard()}}></BackButton>
         <Title>Create Compass</Title>
+        <Title/>
       </FormHeader>
-      <Divider gridArea="divider"/>
-      <Feed gridArea="feed">
-        <FormContainer>
-          <Tabs activeIndex={tab} onActive={onActive}>
-            <Tab><Info/></Tab>
-            <Tab><Type/></Tab>
-            <Tab><Steps/></Tab>
-            <Tab><Review backToDashboard={e=>backToDashboard()}/></Tab>
-          </Tabs>
-        </FormContainer>
-      </Feed>
+      <FormContainer gridArea="feed">
+        <Tabs activeIndex={tab} onActive={onActive}>
+          <Tab><Info/></Tab>
+          <Tab><Type/></Tab>
+          <Tab><Steps/></Tab>
+          <Tab><Review backToDashboard={e=>backToDashboard()}/></Tab>
+        </Tabs>
+      </FormContainer>
     </DashboardGrid>
   )
 }

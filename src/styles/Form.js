@@ -11,6 +11,7 @@ export const FormCard = styled(Box)`
   border-radius: 2rem;
   width: 80%;
   color: black;
+  background: white;
 `;
 export const FormContainer = styled(Box)`
   width: 80%;
@@ -53,7 +54,7 @@ export const InputTextArea = styled(TextArea)`
 export const InputContainer = styled(FormField)`
   border-bottom: none;
   color: black;
-  background-color: #E5E5E5;
+  background-color: #F0F0F0;
 `;
 export const InputField = styled(TextInput)`
   font-weight: 550;

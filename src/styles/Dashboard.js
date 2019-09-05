@@ -1,47 +1,66 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, Grid, Accordion, AccordionPanel, Text} from "grommet"
+import { Box, Button, Grid, Accordion, AccordionPanel, Text, Tabs, Tab } from "grommet"
 import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
 export const DashboardContainer = styled(Box)`
-  width: 90vw;
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
 `;
 export const DashboardGrid = styled(Grid)`
-  padding: 1rem;
   width: 100%;
-  min-width: 95vw;
+  height: 100%;
+`;
+export const DashboardTabs= styled(Tabs)`
+  width: 100%;
+  height: 100%;
+  button div {
+    border-color: transparent;
+  }
+`;
+export const DashboardTab= styled(Tab)`
+  width: 100%;
+  height: 100%;
 `;
 export const Header = styled(Box)`
+  padding: 0 2rem;
   color: black;
   min-height: 5rem;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
-  flex-direction: column;
-  justify-self: ${props => props.End ? 'end' : 'auto'}
-`;
-export const Divider = styled(Box)`
-  min-height: 1rem;
-  border-top: 0.1rem solid rgba(0,0,0,0.1);
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(0,0,0,0.1);
 `;
 export const Title = styled.p`
-  color: #5567FD;
+  color: black;
   font-weight: 500;
   font-size: 3rem;
   margin: 0;
 `;
 export const Feed = styled(Box)`
-  min-height: 10rem;
   color: black;
+  height: 100%;
+  overflow: scroll;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-rows: repeat(100,minmax(14rem,1fr));
+  grid-gap: 1rem;
+  align-items:center;
 `;
 
 export const DashboardButton = styled(Button)`
   transition: all 0.3s;
   max-width: 11rem;
-  padding: 0.2rem;
+  padding: 0.5rem;
   border: 0.1rem solid #5567FD;
   border-radius: 2rem;
   background-color: #5567FD;
   color: white;
+  align-self: auto;
   svg { 
     stroke: white;
     background: transparent;
@@ -62,12 +81,15 @@ export const AddCompass = ({onClick}) =>(
     onClick={e => onClick()} 
     icon={(<AddCircle color="#5567FD"/>)}
     label="Add Compass"
+    alignSelf="end"
   />
 )
 export const FormHeader = styled(Box)`
-  display: inline;
+  display: flex;
   color: black;
-  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const BackButton = ({onClick}) =>(
@@ -124,10 +146,11 @@ export const SubmitCompassButton = styled(Button)`
   margin: 0 auto;
 `
 export const CompassCard = styled(Box)`
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 2rem;
   width: 20rem;
-  background-color: #5567FD;
+  height: auto;
+  background-color: white;
   border-radius: 1rem;
   color: white;
 `;

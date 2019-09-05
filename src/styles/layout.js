@@ -17,4 +17,5 @@ export const MainViewContainer = styled(Box)`
   flex-direction: row;
   width: ${props => props.Compass ? '80%' : '100%'};
   height: 100vh;
+  background: #F4F6F9;
 `;
