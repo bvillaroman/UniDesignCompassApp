@@ -20,12 +20,12 @@ const CompassFeed = (props) => {
   return (
     <Feed gridArea="feed">
       { user.compasses ? user.compasses.map((compass, key) => (
-        <CompassCard>
-          <CompassTitle>{compass.title}</CompassTitle>
-          <CompassDescription>{compass.description}</CompassDescription>
-          <GoToCompassButton label="Go To Compass" onClick={e => goToCompass(compass)} />
-        </CompassCard>
-      )) : <p>you have no compasses</p>}
+          <CompassCard key={key} elevation="xsmall">
+            <CompassTitle>{compass.title}</CompassTitle>
+            <CompassDescription>{compass.description}</CompassDescription>
+            <GoToCompassButton label="Go To Compass" onClick={e => goToCompass(compass)} />
+          </CompassCard>
+      )) :<p>you have no compasses</p> }
     </Feed>
   )
 }

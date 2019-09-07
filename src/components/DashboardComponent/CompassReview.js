@@ -39,8 +39,9 @@ const Review = ({backToDashboard}) => {
       <ReviewDescription gridArea="description">{form.description}</ReviewDescription>
       <ReviewStepsView gridArea="compass" multiple>
         { 
-          form.steps.map((step) => (        
+          form.steps.map((step,key) => (        
             <ReviewStepPanel
+              key={key}
               label={<Text size="large">{step.title}</Text>}
             >
               <Box background="light-2" height="small">
