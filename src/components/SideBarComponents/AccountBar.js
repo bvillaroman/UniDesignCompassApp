@@ -10,7 +10,10 @@ const AccountBar = props => {
   const { chooseCompass, logoutUser } = globalStore()
 
   const goToLink = (link) => {
-    chooseCompass({})
+    chooseCompass({
+      title: "",
+      description: ""
+    })
     navigate(link);
   }
   const signOut = () => {

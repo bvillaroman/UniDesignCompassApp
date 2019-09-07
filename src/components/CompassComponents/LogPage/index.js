@@ -11,14 +11,14 @@ import {
   SessionTitle,
   SessionDescription,
   StepClock,
-  TimerButton
+  TimerButton,
+  AttachmentButton
 } from "../../../styles/CompassPage"
 
 import {userCompassPage} from "../../../context/CompassPage/context"
 
-
 const Logger = () => {
-  const {changeView, currentInteraction, submitInteraction, currentSession, createInteraction } = userCompassPage()
+  const { currentInteraction, submitInteraction, createInteraction } = userCompassPage()
   const [value, setValue] = useState('');
   const [time,setTime] = useState(currentInteraction.duration)
   const [start,setStart] = useState(true)
@@ -30,7 +30,6 @@ const Logger = () => {
   }
   
   const changeToCompass = (e) => {
-    changeView(0)
     submitInteraction({...currentInteraction,log: value }) 
   }
 
@@ -41,9 +40,9 @@ const Logger = () => {
     const seconds = sec_num % 60
 
     return [hours,minutes,seconds]
-        .map(v => v < 10 ? "0" + v : v)
-        .filter((v,i) => v !== "00" || i > 0)
-        .join(":") 
+      .map(v => v < 10 ? "0" + v : v)
+      .filter((v,i) => v !== "00" || i > 0)
+      .join(":") 
   }
 
   useEffect(() => {
@@ -78,6 +77,7 @@ const Logger = () => {
       <LoggerInnerNav gridArea="header" >
         <CompassButton onClick={changeToCompass}/>
         <StepName> {step.title} </StepName>
+        <AttachmentButton onClick={e=> {console.log("attachment added")}}/>
       </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput

@@ -3,7 +3,7 @@ import { StepContainer } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"
 
 const Step = ({activeStep = {}}) => {
-  const {changeView,createInteraction} = userCompassPage()
+  const {createInteraction} = userCompassPage()
 
   const {
     title = '',
@@ -12,10 +12,8 @@ const Step = ({activeStep = {}}) => {
 
   const goToLog = (e) => {
     createInteraction({step: activeStep, duration: 0})
-    changeView(1);
   }
-  // console.log(activeStep)
-
+  
   return (
     <StepContainer onClick={goToLog}>
       {title}

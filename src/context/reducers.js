@@ -12,8 +12,7 @@ const logoutUser = (currentUser, state) => {
   return state
 }
 const selectCompass = (newCompass, state) => {
-  if (newCompass !== {}) return { ...state,compass: newCompass}
-  return state
+  return { ...state,compass: newCompass}
 }
 const addCompass = (newCompass, state) => {
   if (newCompass !== {}) {
