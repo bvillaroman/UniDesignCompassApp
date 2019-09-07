@@ -21,8 +21,8 @@ const Layout = ({ children }) => {
   return (
     <LayoutContainer >
       <SidebarContainer>
-      { user.hasOwnProperty("email") && <AccountBar />}
-      { (user.hasOwnProperty("email") && compass.hasOwnProperty("title")) && <CompassBar compass={compass}/> }
+      { user.email && <AccountBar />}
+      { (user.email && compass.title) && <CompassBar compass={compass}/> }
       </SidebarContainer>
       <MainViewContainer>
         {children}
