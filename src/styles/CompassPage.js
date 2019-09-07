@@ -8,8 +8,6 @@ import {
   TextInput,
   Form,
   Grid,
-  Tabs,
-  Tab
 } from "grommet"
 import { Compass, FormPrevious, Attachment, PauseFill,PlayFill } from 'grommet-icons';
 import React from "react";
@@ -66,22 +64,19 @@ export const StepName = styled(Text)`
 `;
 export const LoggerGrid = styled(Grid)`
   width: 100%;
-  height: 90vh;
+  height: 100%;
   margin: 0 auto;
-`;
-export const LoggerNav = styled(Box)`
-  // justify-content: center;
-  // height: 8vh;
-  // min-height: 3rem;
+  
 `;
 export const LoggerInnerNav = styled(Box)`
-  verticle-align: middle;
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 `;
 export const LoggerTA = styled(Box)`
-  // margin: 1rem auto;
-  // height: 80vh;
-  // min-height: 5rem;
+  padding: 0 1.6rem 1rem 1.6rem;
 `;
 
 // Sessions Creator
@@ -149,6 +144,18 @@ export const DescriptionForm = styled(TextArea)`
 `;
 // Compass Selector
 
+export const CSGrid = styled(Grid)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`;
+
+export const CSMain = styled(Box)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`;
+
 export const StepRow = styled.div`
   margin: 4rem;
   text-align:center;
@@ -202,18 +209,13 @@ export const SessionDescription = styled(Box)`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
-export const MainView = styled(Tabs)`
+export const MainView = styled(Box)`
   justify-content: center;
   width: 100%;
   height: 100%;
   button div {
     border-color: transparent;
   }
-`
-export const MainContent = styled(Tab)`
-  justify-content: center;
-  width: 100%;
-  height: 100%;
 `
 export const SessionView = styled(Grid)`
   text-align: center;

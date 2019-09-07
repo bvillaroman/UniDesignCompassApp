@@ -19,8 +19,8 @@ const CompassFeed = (props) => {
 
   return (
     <Feed gridArea="feed">
-      { user.compasses ? user.compasses.map((compass) => (
-          <CompassCard elevation="xsmall">
+      { user.compasses ? user.compasses.map((compass, key) => (
+          <CompassCard key={key} elevation="xsmall">
             <CompassTitle>{compass.title}</CompassTitle>
             <CompassDescription>{compass.description}</CompassDescription>
             <GoToCompassButton label="Go To Compass" onClick={e => goToCompass(compass)} />

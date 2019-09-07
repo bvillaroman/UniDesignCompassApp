@@ -8,7 +8,10 @@ const AccountBar = props => {
   const { chooseCompass } = globalStore()
 
   const goToLink = (link) => {
-    chooseCompass({})
+    chooseCompass({
+      title: "",
+      description: ""
+    })
     navigate(link);
   }
 
