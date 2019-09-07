@@ -1,7 +1,7 @@
 type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
-  name_of_compass: String
-  description_of_compass: String
+  name_of_compass: String!
+  description_of_compass: String!
   date_start: String
   date_end: String
   sessions: [Session] @connection(name: "CompassSessions")
@@ -12,8 +12,8 @@ type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   session_start_time: Int
   session_end_time: Int
-  name_of_session: String
-  description_of_session: String
+  name_of_session: String!
+  description_of_session: String!
   compass: Compass @connection(name: "CompassSessions")
   interactions: [Interaction] @connection(name: "SessionInteractions")
 }
@@ -22,7 +22,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   interaction_start_time: Int
   interaction_start_end: Int
-  log_content: String
+  log_content: String!
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
   attachments: Attachment
@@ -33,7 +33,7 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
   step_start_time: Int
   step_end_time: Int
   name_of_step: String!
-  description_of_step: String
+  description_of_step: String!
   compass: Compass @connection(name: "CompassSteps")
 }
 
