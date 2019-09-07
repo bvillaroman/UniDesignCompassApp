@@ -18,6 +18,13 @@ export async function getUser(id) {
   })
 }
 
+export async function getCompasses() {
+  const compasses = await API.graphql(graphqlOperation(queries.listCompasss, {limit: 100}));
+
+  return compasses.data.listCompasss.items
+  
+}
+
 export async function getCompass(compass_id) {
   const compass = await API.graphql(graphqlOperation(queries.getCompass, { id: compass_id }));
   console.log(compass)
