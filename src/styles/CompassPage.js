@@ -209,7 +209,7 @@ export const SessionDescription = styled(Box)`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
-export const MainView = styled(Tabs)`
+export const MainView = styled(Box)`
   justify-content: center;
   width: 100%;
   height: 100%;
