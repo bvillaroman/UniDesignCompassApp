@@ -1,6 +1,6 @@
 {
     "identityPoolName": "unidesigncompassapp155c42e4_identitypool_155c42e4",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "unides155c42e4",
     "userPoolName": "unidesigncompassapp155c42e4_userpool_155c42e4",
     "autoVerifiedAttributes": [
