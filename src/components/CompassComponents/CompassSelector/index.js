@@ -13,8 +13,6 @@ import {
 import { globalStore } from "../../../context/context"
 import { userCompassPage } from "../../../context/CompassPage/context"
 
-
-
 const CompassSelector = (props) => {
   const {compass} = globalStore()
   const {currentSession} = userCompassPage()
@@ -73,6 +71,5 @@ const CompassSelector = (props) => {
           <p>Attachments</p>
       </SessionView>
     </CSGrid>
-    
 )};
 export default CompassSelector;
