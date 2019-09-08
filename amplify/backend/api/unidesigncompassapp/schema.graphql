@@ -1,9 +1,17 @@
+type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
+  id: ID!
+  name_of_user: String!
+  email: String!
+  compasses: [Compass] @connection(name: "UserCompasses") 
+}
+
 type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   name_of_compass: String!
   description_of_compass: String!
   date_start: String
   date_end: String
+  user: User @connection(name: "UserCompasses") 
   sessions: [Session] @connection(name: "CompassSessions")
   steps: [Step] @connection(name: "CompassSteps")
 }
@@ -38,9 +46,7 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
 }
 
 type Attachment {
-  id: ID!
-  content: String
-  timestamp: Int
+  description_of_attachment: String
   bucket: String!
   region: String!
   key: String!
