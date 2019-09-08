@@ -11,7 +11,7 @@ import { getCompasses } from "../../utils/queries"
 import { navigate } from "gatsby"
 
 const CompassFeed = (props) => {
-  const {  chooseCompass } = globalStore();
+  const { chooseCompass } = globalStore();
   const [compasses,setCompasses] = useState([])
 
   useEffect(() => {
