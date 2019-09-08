@@ -13,4 +13,4 @@ projects:
         graphQLApiId: zjom4hidifh5pn7fgf3xf4r2yq
       endpoints:
         prod: >-
-          https://4tta3ouufzbs5pompud5cl3nm4.appsync-api.us-east-1.amazonaws.com/graphql
+          https://2p6yoskxanbu7cxywy5izdrpwu.appsync-api.us-east-1.amazonaws.com/graphql
