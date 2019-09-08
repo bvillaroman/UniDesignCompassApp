@@ -30,13 +30,14 @@ const Layout = ({ children }) => {
       loginUser({ email, id: sub }); // save email to global store
     })
       .catch(err => console.log(err));
-
   }
+
+  console.log(children)
   return (
     <LayoutContainer >
       <SidebarContainer>
       { user.email && <AccountBar />}
-      { (user.email && compass.title) && <CompassBar compass={compass}/> }
+      { (user.email && localStorage.getItem('compass')) && <CompassBar id={localStorage.getItem('compass')}/> }
       </SidebarContainer>
       <MainViewContainer>
         {children}

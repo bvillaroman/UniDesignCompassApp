@@ -22,7 +22,8 @@ const CompassFeed = (props) => {
   }, []); 
 
   const goToCompass = (compass) => {
-    chooseCompass(compass)
+    localStorage.setItem('compass', compass.id)
+    // chooseCompass(compass)
     navigate("/Compass")
   }
 

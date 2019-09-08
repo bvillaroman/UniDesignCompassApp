@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { 
   DashboardContainer,
   Header,
@@ -14,6 +14,11 @@ import CompassForm from "./CompassForm"
 
 const Dashboard = (props) => {
   const [tab, setTab] = useState(0)
+
+  useEffect(() => {
+    localStorage.setItem('compass','')
+  },[])
+
   const onActive = (index) => setTab(index)
 
   return (
