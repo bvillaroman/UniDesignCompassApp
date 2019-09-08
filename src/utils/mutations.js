@@ -4,6 +4,16 @@ import config from '../aws-exports';
 
 API.configure(config);
 
+export async function createUser(ID, email, name_of_user) {
+  const userInfo = {
+    ID,
+    name_of_user,
+    email
+  }
+  const newUser = await API.graphql(graphqlOperation(mutations.createUser, { input: userInfo }));
+  return newUser;
+}
+
 export async function createCompass(name_of_compass, description_of_compass,steps) {
   const compassInfo = {
     name_of_compass,
