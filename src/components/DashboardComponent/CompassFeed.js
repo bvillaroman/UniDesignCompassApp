@@ -19,7 +19,7 @@ const CompassFeed = (props) => {
       .then((compasses) => {
         setCompasses(compasses)
       });
-  }); 
+  }, []); 
 
   const goToCompass = (compass) => {
     chooseCompass(compass)

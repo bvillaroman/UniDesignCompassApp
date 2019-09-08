@@ -11,6 +11,7 @@ import {
   ReviewStepsView,
   ReviewStepPanel 
 } from "../../styles/Dashboard"
+import { createCompass } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
 
@@ -19,7 +20,10 @@ const Review = ({backToDashboard}) => {
 
   const submitCompass = event => {
     addCompass(form);
-    backToDashboard()
+    createCompass(form.title,form.description)
+      .then((compass) => {
+        backToDashboard()
+      })
   };
 
   return (
