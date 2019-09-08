@@ -11,7 +11,7 @@ import {
   ReviewStepsView,
   ReviewStepPanel 
 } from "../../styles/Dashboard"
-import { createCompass } from "../../utils/mutations"
+import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
 
@@ -22,6 +22,9 @@ const Review = ({backToDashboard}) => {
     addCompass(form);
     createCompass(form.title,form.description)
       .then((compass) => {
+        form.steps.map((step,key) => {
+          createStep(step.title,step.description, compass.data.createCompass.id)
+        })
         backToDashboard()
       })
   };
