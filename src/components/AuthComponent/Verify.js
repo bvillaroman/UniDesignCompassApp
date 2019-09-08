@@ -28,14 +28,15 @@ const Verify = ({email, name, switchToSignUp}) => {
     // After retrieving the confirmation code from the user
     Auth.confirmSignUp(email, form.code)
       .then(data => {
-        createUser(email,name)
-          .then((res) => {
-            loginUser({
-              email: res.data.createUser.email,
-              id: res.data.createUser.id,
-              compasses: res.data.createUser.compasses,
-            })
-          })
+        // createUser(email,name)
+        //   .then((res) => {
+        //     loginUser({
+        //       email: res.data.createUser.email,
+        //       id: res.data.createUser.id,
+        //       compasses: res.data.createUser.compasses,
+        //     })
+        //   })
+        console.log("success")
       })
       .catch(err => console.log(err));
   }

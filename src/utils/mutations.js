@@ -21,11 +21,9 @@ export async function createCompass(name_of_compass, description_of_compass) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
-    date_start: 'Monday',
-    date_end: 'Friday'
+    date_start: 'asdf',
+    date_end: 'asdf'
   }
-  console.log(compassInfo)
-  console.log(config)
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;
 }
