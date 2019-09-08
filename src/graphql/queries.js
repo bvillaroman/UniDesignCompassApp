@@ -1,6 +1,42 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getUser = `query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const listUsers = `query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+`;
 export const getCompass = `query GetCompass($id: ID!) {
   getCompass(id: $id) {
     id
@@ -8,6 +44,14 @@ export const getCompass = `query GetCompass($id: ID!) {
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -43,6 +87,11 @@ export const listCompasss = `query ListCompasss(
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -67,6 +116,11 @@ export const getSession = `query GetSession($id: ID!) {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -151,9 +205,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -187,9 +239,7 @@ export const listInteractions = `query ListInteractions(
         description_of_step
       }
       attachments {
-        id
-        content
-        timestamp
+        description_of_attachment
         bucket
         region
         key
@@ -212,6 +262,11 @@ export const getStep = `query GetStep($id: ID!) {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }

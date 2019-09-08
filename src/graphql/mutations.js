@@ -1,6 +1,60 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createUser = `mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
 export const createCompass = `mutation CreateCompass($input: CreateCompassInput!) {
   createCompass(input: $input) {
     id
@@ -8,6 +62,14 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -38,6 +100,14 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -68,6 +138,14 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -104,6 +182,11 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -136,6 +219,11 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -168,6 +256,11 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -225,9 +318,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -273,9 +364,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -321,9 +410,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -344,6 +431,11 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -367,6 +459,11 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -390,6 +487,11 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }

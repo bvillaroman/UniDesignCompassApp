@@ -1,6 +1,60 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateUser = `subscription OnCreateUser {
+  onCreateUser {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onUpdateUser = `subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onDeleteUser = `subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    name_of_user
+    email
+    compasses {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      nextToken
+    }
+  }
+}
+`;
 export const onCreateCompass = `subscription OnCreateCompass {
   onCreateCompass {
     id
@@ -8,6 +62,14 @@ export const onCreateCompass = `subscription OnCreateCompass {
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -38,6 +100,14 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -68,6 +138,14 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
     description_of_compass
     date_start
     date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
     sessions {
       items {
         id
@@ -104,6 +182,11 @@ export const onCreateSession = `subscription OnCreateSession {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -136,6 +219,11 @@ export const onUpdateSession = `subscription OnUpdateSession {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -168,6 +256,11 @@ export const onDeleteSession = `subscription OnDeleteSession {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -225,9 +318,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -273,9 +364,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -321,9 +410,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       }
     }
     attachments {
-      id
-      content
-      timestamp
+      description_of_attachment
       bucket
       region
       key
@@ -344,6 +431,11 @@ export const onCreateStep = `subscription OnCreateStep {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -367,6 +459,11 @@ export const onUpdateStep = `subscription OnUpdateStep {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
@@ -390,6 +487,11 @@ export const onDeleteStep = `subscription OnDeleteStep {
       description_of_compass
       date_start
       date_end
+      user {
+        id
+        name_of_user
+        email
+      }
       sessions {
         nextToken
       }
