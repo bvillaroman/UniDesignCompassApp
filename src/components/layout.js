@@ -12,17 +12,32 @@ import Amplify from 'aws-amplify';
 import {AccountBar, CompassBar} from "./SideBarComponents"
 import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
 import {globalStore} from "../context/context"
+import { Auth } from 'aws-amplify'
 
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
 const Layout = ({ children }) => {
-  const {user, compass} = globalStore()
+  const {user, loginUser, compass} = globalStore()
+
+  if (!user.hasOwnProperty("email")) {
+    Auth.currentAuthenticatedUser({
+      bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+    }).then(cognitoUser => {
+      console.log(cognitoUser)
+      const { email,sub } = cognitoUser.attributes;
+      
+      loginUser({ email, id: sub }); // save email to global store
+    })
+      .catch(err => console.log(err));
+  }
+
+  console.log(children)
   return (
     <LayoutContainer >
       <SidebarContainer>
-      { user.hasOwnProperty("email") && <AccountBar />}
-      { (user.hasOwnProperty("email") && compass.hasOwnProperty("title")) && <CompassBar compass={compass}/> }
+      { user.email && <AccountBar />}
+      { (user.email && localStorage.getItem('compass')) && <CompassBar id={localStorage.getItem('compass')}/> }
       </SidebarContainer>
       <MainViewContainer>
         {children}
@@ -30,7 +45,6 @@ const Layout = ({ children }) => {
     </LayoutContainer>
   )
 }
-
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

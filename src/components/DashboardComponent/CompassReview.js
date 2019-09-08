@@ -11,6 +11,7 @@ import {
   ReviewStepsView,
   ReviewStepPanel 
 } from "../../styles/Dashboard"
+import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
 
@@ -19,15 +20,21 @@ const Review = ({backToDashboard}) => {
 
   const submitCompass = event => {
     addCompass(form);
-    backToDashboard()
+    createCompass(form.title,form.description)
+      .then((compass) => {
+        form.steps.map((step,key) => {
+          createStep(step.title,step.description, compass.data.createCompass.id)
+        })
+        backToDashboard()
+      })
   };
 
   return (
     <ReviewCard 
       rows={['20%', '60%', '20%']}
       columns={['50%', '50%']}
-      fill
-      gap={'1rem'}
+      
+      gap='1rem'
       areas={[
         { name: 'header', start: [0, 0], end: [0, 0] },
         { name: 'description', start: [0, 1], end: [0, 1]},
@@ -39,8 +46,9 @@ const Review = ({backToDashboard}) => {
       <ReviewDescription gridArea="description">{form.description}</ReviewDescription>
       <ReviewStepsView gridArea="compass" multiple>
         { 
-          form.steps.map((step) => (        
+          form.steps.map((step,key) => (        
             <ReviewStepPanel
+              key={key}
               label={<Text size="large">{step.title}</Text>}
             >
               <Box background="light-2" height="small">

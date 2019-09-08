@@ -11,18 +11,6 @@ const IndexPage = (props) => {
   // user is the object in globalStore
   const { user, loginUser } = globalStore()
 
-  if (!user.hasOwnProperty("email")) {
-    Auth.currentAuthenticatedUser({
-      bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    }).then(cognitoUser => {
-      const { email } = cognitoUser.attributes;
-
-      loginUser({ email }); // save email to global store
-    })
-      .catch(err => console.log(err));
-
-  }
-
   return (
     <Layout>
       {

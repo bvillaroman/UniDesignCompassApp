@@ -8,7 +8,7 @@ import {
 } from "../../../styles/CompassPage"
 import { FormCard, FormTitle, InputContainer,  InputField, InputTextArea } from "../../../styles/Form"
 
-const SessionCreator = ({email}) => {  
+const SessionCreator = (props) => {  
   const [form,setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: ''})
   const {createSession} = userCompassPage();

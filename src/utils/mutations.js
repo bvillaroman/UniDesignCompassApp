@@ -4,28 +4,23 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-// export async function createUser(email, name) {
-//   const userinfo = {
-//     username: email,
-//     name,
-//     email,
-//     password: 'Password1!',
-//     phone_number: '+12345678'
-//   }
-//   //console.log(userinfo)
-//   const newUser = await API.graphql(graphqlOperation(mutations.createUser, { input: userinfo }));
-//   return newUser;
-// }
+export async function createUser(ID, email, name_of_user) {
+  const userInfo = {
+    ID,
+    name_of_user,
+    email
+  }
+  const newUser = await API.graphql(graphqlOperation(mutations.createUser, { input: userInfo }));
+  return newUser;
+}
 
-export async function createCompass(name_of_compass, description_of_compass) {
+export async function createCompass(name_of_compass, description_of_compass,steps) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
-    date_start: 'Monday',
-    date_end: 'Friday'
+    date_start: '0',
+    date_end: '0',
   }
-  console.log(compassInfo)
-  console.log(config)
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;
 }
@@ -38,8 +33,7 @@ export async function createSession(name_of_session, description_of_session, com
     session_start_time: 1,
     session_end_time: 5
   }
-  console.log(sessionInfo)
-  console.log(config)
+
   const newSession = await API.graphql(graphqlOperation(mutations.createSession, { input: sessionInfo }));
   return newSession;
 }
@@ -49,12 +43,9 @@ export async function createStep(name_of_step, description_of_step, compassId) {
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
-    step_start_time: 12,
-    step_end_time: 18
+    step_start_time: 0,
+    step_end_time: 0
   }
-
-  console.log(stepInfo)
-  console.log(config)
   const newStep = await API.graphql(graphqlOperation(mutations.createStep, { input: stepInfo }));
   return newStep
 }

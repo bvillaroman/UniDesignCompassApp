@@ -4,13 +4,14 @@ import { Link } from 'gatsby';
 
 export const NavigationContainer = styled(Box)`
   text-align: center;
-  min-width: 3rem;
-  background: #e5e5e5;
-  margin: 0;
+  min-width: 4rem;
+  background: white;
+  padding: 1rem 0;
+  border-right: 0.1rem solid #e5e5e5;
 `;
 
 export const NavLink = styled(Button)`
-  margin-top: 2rem;
+  padding-top: 2rem;
   width: 100%;
   align-self: center;
 `;

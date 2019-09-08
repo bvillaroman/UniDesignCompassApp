@@ -1,12 +1,12 @@
-import React, {useState} from 'react'
-import { Tabs, Tab } from "grommet";
+import React, {useState, useEffect} from 'react'
 import { 
   DashboardContainer,
   Header,
   Title, 
   AddCompass,
-  Divider,
-  DashboardGrid
+  DashboardGrid,
+  DashboardTabs, 
+  DashboardTab 
 } from "../../styles/Dashboard"
 
 import Feed from "./CompassFeed"
@@ -14,37 +14,38 @@ import CompassForm from "./CompassForm"
 
 const Dashboard = (props) => {
   const [tab, setTab] = useState(0)
+
+  useEffect(() => {
+    localStorage.setItem('compass','')
+  },[])
+
   const onActive = (index) => setTab(index)
 
   return (
     <DashboardContainer>
-      <Tabs activeIndex={tab} onActive={onActive}>
-        <Tab>
+      <DashboardTabs activeIndex={tab} onActive={onActive}>
+        <DashboardTab>
           <DashboardGrid
-            rows={['5rem', '1rem', 'full']}
+            rows={['20%', '70%']}
+            gap="1rem"
             columns={['70%', '30%']}
             fill
             areas={[
-              { name: 'header', start: [0, 0], end: [1, 0] },
-              { name: 'add', start: [1, 0], end: [1, 0] },
-              { name: 'divider', start: [0, 1], end: [1, 1] },
-              { name: 'feed', start: [0, 2], end: [1, 2] }, 
+              { name: 'header', start: [0, 0], end: [1, 1] },
+              { name: 'feed', start: [0, 1], end: [1, 1] },
             ]}  
           >
             <Header gridArea="header" >
               <Title>Compasses</Title>
-            </Header>
-            <Header gridArea="add" direction="row">
               <AddCompass onClick={e => setTab(1)}/>
             </Header>
-            <Divider gridArea="divider"/>
               <Feed/>
             </DashboardGrid>
-        </Tab>
-        <Tab>
+        </DashboardTab>
+        <DashboardTab>
           <CompassForm backToDashboard={e => {setTab(0)}}/>
-        </Tab>
-      </Tabs>
+        </DashboardTab>
+      </DashboardTabs>
     </DashboardContainer>
   )
 }

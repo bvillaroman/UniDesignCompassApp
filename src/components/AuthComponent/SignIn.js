@@ -38,12 +38,9 @@ const SignIn = ({ switchToSignUp }) => {
       password, // Optional, the password
     })
       .then(user => {
-        const { email } = user.attributes;
-        console.log({ user, email })
+        const { email, sub } = user.attributes;
 
-        loginUser({ email }) // Save to global store
-
-        // globalStore
+        loginUser({ email, id: sub }) // Save to global store
       })
       .catch(err => console.log(err));
   }

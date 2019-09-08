@@ -4,18 +4,11 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-export async function getUser(id) {
-  const user = await API.graphql(graphqlOperation(queries.getUser, { id }));
-  console.log(user)
+export async function getCompasses() {
+  const compasses = await API.graphql(graphqlOperation(queries.listCompasss, {limit: 100}));
 
-  return new Promise(function (resolve, reject) {
-    if (user.data.getUser === null) {
-      reject("No User Found");
-    } else {
-      resolve(user);
-      console.log("It worked from queries util")
-    }
-  })
+  return compasses.data.listCompasss.items
+  
 }
 
 export async function getCompass(compass_id) {

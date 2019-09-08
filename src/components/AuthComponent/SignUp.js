@@ -68,40 +68,33 @@ const SignUp = ({switchToSignIn}) => {
 
   return (
     <FormContainer>
-      <FormTitle> { tab === 0 ? 'Sign Up' : 'Verifcation'} </FormTitle>
-      <Tabs activeIndex={tab} onActive={onActive}>
-        <Tab>
-          <Form
-            onSubmit={submitForm}
-            onChange={onChange}
-            value={form}
-            errors={{...error}}
-          >
-            <InputContainer name="email" required>
-              <InputField name="email"  type="email" placeholder="Email" />
-            </InputContainer>
-            <InputContainer name="name" required >
-              <InputField name="name" placeholder="Name" />
-            </InputContainer>
-            <InputContainer name="password" required >
-              <InputField name="password" type="password" placeholder="Password" />
-            </InputContainer>
-            <InputContainer name="password2" required>
-              <InputField name="password2" type="password" placeholder="Retype Password" />
-            </InputContainer>
-            <Box direction="column" justify="between" margin={{ top: "medium" }}>
-              <Button type="submit" label="Sign Up" primary />
-              <FormSwitchContainer direction="row">
-                <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
-                <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
-              </FormSwitchContainer>
-            </Box>
-          </Form>
-        </Tab>
-        <Tab>
-          <Verify email={form.email} name={form.name} switchToSignUp={e => onActive(0)}/>
-        </Tab>
-      </Tabs>
+      <FormTitle> Sign Up</FormTitle>
+        <Form
+          onSubmit={submitForm}
+          onChange={onChange}
+          value={form}
+          errors={{...error}}
+        >
+          <InputContainer name="email" required>
+            <InputField name="email"  type="email" placeholder="Email" />
+          </InputContainer>
+          <InputContainer name="name" required >
+            <InputField name="name" placeholder="Name" />
+          </InputContainer>
+          <InputContainer name="password" required >
+            <InputField name="password" type="password" placeholder="Password" />
+          </InputContainer>
+          <InputContainer name="password2" required>
+            <InputField name="password2" type="password" placeholder="Retype Password" />
+          </InputContainer>
+          <Box direction="column" justify="between" margin={{ top: "medium" }}>
+            <Button type="submit" label="Sign Up" primary />
+            <FormSwitchContainer direction="row">
+              <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
+              <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
+            </FormSwitchContainer>
+          </Box>
+        </Form>
     </FormContainer>
   )
 }

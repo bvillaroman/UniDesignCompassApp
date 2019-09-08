@@ -7,10 +7,10 @@ import { Auth } from 'aws-amplify'
 
 
 const AccountBar = props => {
-  const { chooseCompass, logoutUser } = globalStore()
+  const { logoutUser } = globalStore()
 
   const goToLink = (link) => {
-    chooseCompass({})
+    localStorage.setItem('compass','')
     navigate(link);
   }
   const signOut = () => {

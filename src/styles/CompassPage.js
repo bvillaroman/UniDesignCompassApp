@@ -7,9 +7,10 @@ import {
   FormField, 
   TextInput,
   Form,
-  Grid
+  Grid,
+  Tab
 } from "grommet"
-import { Compass, FormPrevious, Attachment } from 'grommet-icons';
+import { Compass, FormPrevious, Attachment, PauseFill,PlayFill } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
@@ -33,7 +34,7 @@ export const AttachmentButton = ({onClick}) =>(
 
 // Logger
 export const CompassButtons = styled(Button)`
-  border: 0.15rem solid white;
+  border: 0.15rem solid transparent;
   border-radius: 2rem;
   transition: all 0.3s;
   padding: 0.5rem;
@@ -63,23 +64,20 @@ export const StepName = styled(Text)`
   font-size: 2rem;
 `;
 export const LoggerGrid = styled(Grid)`
-  height: 90vh;
-  width: 95%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-`;
-export const LoggerNav = styled(Box)`
-  // justify-content: center;
-  // height: 8vh;
-  // min-height: 3rem;
+  
 `;
 export const LoggerInnerNav = styled(Box)`
-  verticle-align: middle;
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 `;
 export const LoggerTA = styled(Box)`
-  // margin: 1rem auto;
-  // height: 80vh;
-  // min-height: 5rem;
+  padding: 0 1.6rem 1rem 1.6rem;
 `;
 
 // Sessions Creator
@@ -147,6 +145,18 @@ export const DescriptionForm = styled(TextArea)`
 `;
 // Compass Selector
 
+export const CSGrid = styled(Grid)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`;
+
+export const CSMain = styled(Box)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`;
+
 export const StepRow = styled.div`
   margin: 4rem;
   text-align:center;
@@ -157,15 +167,67 @@ export const StepContainer = styled(CompassButtons)`
   padding: 2rem;
   border: 0.15rem solid #5567FD;
 `
+
+// Compass SessionBar
+
+export const SessionHeader = styled(Box)`
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+`
+export const StepClock = styled(Box)`
+  margin: 1rem auto;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+`
+export const ControlButton = styled(Button)`
+
+`
+export const TimerButton = ({onClick,start}) =>(
+  <ControlButton     
+    onClick={e => onClick()} 
+    icon={ start ? <PauseFill color='#5567FD' /> : <PlayFill color="#5567FD"/> }
+  />
+)
+export const SessionTitle = styled(Box)`
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+`
+export const SessionDescription = styled(Box)`
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: left;
+`
+
 // Compass Page Containers
 
-export const ComponentContainer = styled(Grid)`
+export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
 export const MainView = styled(Box)`
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  button div {
+    border-color: transparent;
+  }
 `
-export const SessionView = styled(Box)`
+export const MainContent = styled(Tab)`
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  button div {
+    border-color: transparent;
+  }
+`
+export const SessionView = styled(Grid)`
   text-align: center;
-  background: #e5e5e5;
+  background: white;
+  width: 100%;
 `
