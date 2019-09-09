@@ -59,14 +59,12 @@ export async function getStep(step_id) {
 
 export async function getInteraction(interaction_id) {
   const interaction = await API.graphql(graphqlOperation(queries.getInteraction, { id: interaction_id }));
-  console.log(interaction)
 
   return new Promise(function (resolve, reject) {
     if (interaction.data.getInteraction === null) {
       reject("No User Found");
     } else {
       resolve(interaction);
-      console.log("It worked from queries util")
     }
   })
 }
