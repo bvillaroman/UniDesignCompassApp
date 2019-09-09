@@ -3,10 +3,9 @@ import {
   Box,
   Button,
   Form,
-  Tab,
-  Tabs
 } from "grommet";
 import { Auth } from 'aws-amplify';
+import {createUser} from "../../utils/mutations"
 
 import {
   FormSwitchButton, 
@@ -17,8 +16,6 @@ import {
   FormSwitchLabel, 
   InputField 
 } from "../../styles/Form"
-import {userAuth} from "../../context/AuthPage/context"
-import Verify from "./Verify"
 
 const SignUp = ({switchToSignIn}) => {
 
@@ -36,11 +33,6 @@ const SignUp = ({switchToSignIn}) => {
     password2: '',
   })
 
-
-  const [tab,setTab] = useState(0);
-
-  const { signupUser} = userAuth();
-
   const onChange = event => {
     const { target: { value,name } } = event;
     setValues({
@@ -49,8 +41,6 @@ const SignUp = ({switchToSignIn}) => {
     })
   };
 
-  const onActive = (index) => setTab(index)
-
   const submitForm = ({value}) => {
     const { email, name, password } = value
 
@@ -58,12 +48,7 @@ const SignUp = ({switchToSignIn}) => {
       username: email,
       password,
       attributes: { name },
-      })
-      .then(data => {
-        signupUser(data.user.username);
-        onActive(1);
-      })
-      .catch(err => console.log(err));
+    })
   }
 
   return (

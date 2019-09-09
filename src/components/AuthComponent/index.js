@@ -3,7 +3,6 @@ import SignIn from './SignIn'
 import SignUp from './SignUp'
 import {FormContainer} from "../../styles/Form"
 import { Tab,Tabs } from "grommet";
-import {AuthProvider} from "../../context/AuthPage/context"
 
 const AuthenticationPage = (props) => {
   const [tab,setTab] = useState(0);
@@ -11,18 +10,16 @@ const AuthenticationPage = (props) => {
   const onActive = (index) => setTab(index)
   
   return (
-    <AuthProvider>
-      <FormContainer alignSelf="center" >
-        <Tabs activeIndex={tab} onActive={onActive}>
-          <Tab >
-            <SignIn switchToSignUp={e => onActive(1)}/>
-          </Tab>
-          <Tab >
-            <SignUp switchToVerification={e => onActive(2)} switchToSignIn={e => onActive(0)}/>
-          </Tab>
-        </Tabs>
-      </FormContainer>
-    </AuthProvider>
+    <FormContainer alignSelf="center" >
+      <Tabs activeIndex={tab} onActive={onActive}>
+        <Tab >
+          <SignIn switchToSignUp={e => onActive(1)}/>
+        </Tab>
+        <Tab >
+          <SignUp switchToVerification={e => onActive(2)} switchToSignIn={e => onActive(0)}/>
+        </Tab>
+      </Tabs>
+    </FormContainer>
   );
 }
 export default AuthenticationPage ;

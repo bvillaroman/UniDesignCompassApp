@@ -2,7 +2,6 @@ import React from 'react'
 import {Box, Text} from "grommet";
 
 import { userDashboard } from "../../context/DashboardPage/context"
-import { globalStore } from "../../context/context"
 import { 
   ReviewCard, 
   ReviewTitle,
@@ -14,19 +13,17 @@ import {
 import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
-
   const { form } = userDashboard();
-  const { addCompass } = globalStore();
 
   const submitCompass = event => {
-    addCompass(form);
     createCompass(form.title,form.description)
       .then((compass) => {
         form.steps.map((step,key) => {
           createStep(step.title,step.description, compass.data.createCompass.id)
         })
-        backToDashboard()
+        return backToDashboard()
       })
+      .catch(err => console.log(err))
   };
 
   return (

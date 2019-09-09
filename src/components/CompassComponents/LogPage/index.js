@@ -76,7 +76,7 @@ const Logger = () => {
     >
       <LoggerInnerNav gridArea="header" >
         <CompassButton onClick={changeToCompass}/>
-        <StepName> {step.title} </StepName>
+        <StepName> {step.name_of_step} </StepName>
         <AttachmentButton onClick={e=> {console.log("attachment added")}}/>
       </LoggerInnerNav>
       <LoggerTA gridArea="main" >
@@ -98,11 +98,11 @@ const Logger = () => {
         gridArea="session"
       >
         {
-          currentInteraction.step.title ? (
+          step.name_of_step ? (
             <>
             <SessionHeader gridArea="header">
               <SessionTitle>
-                {currentInteraction.step.title}
+                {step.name_of_step}
               </SessionTitle>
               <StepClock>
                 {translateTime(time)}
@@ -111,7 +111,7 @@ const Logger = () => {
               </StepClock>
             </SessionHeader>
               <SessionDescription gridArea="description">
-                {currentInteraction.step.description}
+                {step.description_of_step}
               </SessionDescription>
           
               <p>Attachments</p>

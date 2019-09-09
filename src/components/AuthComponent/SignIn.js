@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState} from 'react'
 import { Box, Button, Form } from "grommet";
 import {
   FormSwitchButton,
@@ -11,6 +11,8 @@ import {
 } from "../../styles/Form"
 import { globalStore } from "../../context/context"
 import { Auth } from 'aws-amplify';
+import { getUser } from '../../utils/queries'
+import { createUser } from '../../utils/mutations'
 
 const SignIn = ({ switchToSignUp }) => {
   const { loginUser } = globalStore();
@@ -33,14 +35,17 @@ const SignIn = ({ switchToSignUp }) => {
 
   const submitForm = ({ value }) => {
     const { email, password } = value
-    Auth.signIn({
-      username: email, // Required, the username
-      password, // Optional, the password
-    })
+    Auth.signIn({ username: email, password })
       .then(user => {
-        const { email, sub } = user.attributes;
+        const { sub } = user.attributes;
+        // console.log(user)
+        // getUser(sub)
+        //   .then((user) => {
+        //     // if (user === null) createUser(sub, email, )
+            loginUser({ email, id: sub }) // Save to global store    
+          // })
 
-        loginUser({ email, id: sub }) // Save to global store
+        // loginUser({ email, id: sub }) // Save to global store
       })
       .catch(err => console.log(err));
   }

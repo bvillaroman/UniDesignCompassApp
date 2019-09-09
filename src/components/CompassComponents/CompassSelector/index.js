@@ -1,4 +1,4 @@
-import React  from "react";
+import React, {useState, useEffect}  from "react";
 import Step from "./Step"
 import { 
   StepRow, 
@@ -10,13 +10,19 @@ import {
   SessionHeader, 
   SessionDescription 
 } from "../../../styles/CompassPage"
-import { globalStore } from "../../../context/context"
 import { userCompassPage } from "../../../context/CompassPage/context"
+import { getCompass } from "../../../utils/queries"
 
 const CompassSelector = (props) => {
-  const {compass} = globalStore()
+  const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const {currentSession} = userCompassPage()
-  const {steps} = compass;
+
+  useEffect(() => {
+    getCompass(localStorage.getItem('compass'))
+      .then((res) => {
+        setSteps(res.data.getCompass.steps.items)
+      })
+  },[])
 
   return (
     <CSGrid
