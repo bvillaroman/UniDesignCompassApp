@@ -1,9 +1,11 @@
 import React from "react";
 import { StepContainer } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"
+import { startInteraction } from "../../../utils/mutations"
 
 const Step = ({activeStep = {}}) => {
-  const {createInteraction} = userCompassPage()
+
+  const {createInteraction} =  userCompassPage()
 
   const {
     description_of_step,
@@ -12,7 +14,11 @@ const Step = ({activeStep = {}}) => {
   } = activeStep; 
 
   const goToLog = (e) => {
-    createInteraction({step: activeStep, duration: 0})
+    startInteraction("e680f0e4-47b6-4dbb-a98d-90a4b8389d45",id)
+      .then((interaction) => {
+        // console.log(interaction.data.createInteraction)
+        createInteraction(interaction.data.createInteraction);
+      })
   }
   
   return (
