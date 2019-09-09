@@ -194,15 +194,22 @@ export const TimerButton = ({onClick,start}) =>(
     icon={ start ? <PauseFill color='#5567FD' /> : <PlayFill color="#5567FD"/> }
   />
 )
-export const SessionTitle = styled(Box)`
+export const SessionTitle = styled.p`
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
+  overflow-wrap: break-word;
+  line-height: 2.0rem;
 `
 export const SessionDescription = styled(Box)`
   padding: 1rem;
   font-size: 1rem;
   text-align: left;
+`
+export const SessionAttachments = styled(Box)`
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
 `
 
 // Compass Page Containers

@@ -16,6 +16,7 @@ const Attachments = () => {
   function handleChange(event) {
     const { target: { value, files } } = event
     const [image] = files || []
+    console.log(files)
     updateFile(image || value)
   }
 

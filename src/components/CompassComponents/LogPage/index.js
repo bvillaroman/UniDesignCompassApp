@@ -12,12 +12,14 @@ import {
   SessionDescription,
   StepClock,
   TimerButton,
-  AttachmentButton
+  AttachmentButton,
+  SessionAttachments
 } from "../../../styles/CompassPage"
-// import { Storage, API, graphqlOperation } from 'aws-amplify'
-// import uuid from 'uuid/v4'
+import { Storage, API, graphqlOperation } from 'aws-amplify'
+import uuid from 'uuid/v4'
+import { getInteraction } from '../../../utils/queries'
 import { updateInteraction } from '../../../utils/mutations'
-// import config from '../../../aws-exports'
+import config from '../../../aws-exports'
 
 
 import {userCompassPage} from "../../../context/CompassPage/context"
@@ -25,11 +27,12 @@ import {userCompassPage} from "../../../context/CompassPage/context"
 const Logger = () => {
   const { currentInteraction, submitInteraction, createInteraction } = userCompassPage()
   const [log, setLog] = useState('');
+  const [upload,setUpload] = useState({})
+  const [attachments,setAttachments] = useState([])
   const [time,setTime] = useState(currentInteraction.interaction_start_end)
   const [start,setStart] = useState(true)
 
   const {
-    attachments,
     id,
     interaction_start_end,
     interaction_start_time,
@@ -39,10 +42,24 @@ const Logger = () => {
   } = currentInteraction
   
   useEffect(() => {
+    getInteraction(id).then((res) => {
+      const {log_content, attachments, interaction_start_end} = res.data.getInteraction
+      setLog(log_content)
+      setAttachments(attachments)
+      // setTime(interaction_start_end)
+    })
+  }, [])
+
+  useEffect(() => {
     let interval = null;
-    // if (currentInteraction.interaction_start_end === 0) {
-    //   setTime(0)
-    // } 
+    
+    // getInteraction(id).then((res) => {
+    //   const {log_content, attachments, interaction_start_end} = res.data.getInteraction
+    //   setLog(log_content)
+    //   setAttachments(attachments)
+    //   // setTime(interaction_start_end)
+    // })
+
     if (start) {
       interval = setInterval(() => setTime(time+1), 1000)
       // createInteraction({...currentInteraction, duration: time+1})
@@ -78,14 +95,43 @@ const Logger = () => {
     }
     if (start) {
       updateInteraction(newInteraction)
-      .then((res) => {
-        console.log(res)
-      })  
     } 
     
     return setStart(!start)
   }
 
+  const handleUpload = (event) => { 
+    const { target: { value, files } } = event
+    const [image] = files || []
+    setUpload(image)
+  }
+
+  const uploadToS3 = async (e) => {
+    if (upload) {
+      const { name: fileName, type: mimeType } = upload
+      const fileForUpload = {
+        bucket: config.aws_user_files_s3_bucket,
+        key:  `${uuid()}${fileName}`,
+        region: config.aws_user_files_s3_bucket_region,
+      }
+      const newInteraction = {
+        id,
+        log_content: log,
+        interaction_start_time: time,
+        attachments: fileForUpload
+      }
+
+      try {
+        await Storage.put(fileForUpload.key, upload, { contentType: mimeType })
+        updateInteraction(newInteraction)
+          .then((res) => {
+            setAttachments(res.data.updateInteraction.attachments)
+          })
+      } catch (err) {
+        console.log('error cannot store file: ', err)
+      }
+    }
+  }
 
   return (
     <LoggerGrid
@@ -101,7 +147,13 @@ const Logger = () => {
       <LoggerInnerNav gridArea="header" >
         <CompassButton onClick={changeToCompass}/>
         <StepName> {step.name_of_step} </StepName>
-        <AttachmentButton onClick={e=> {console.log("attachment added")}}/>
+        <input
+          label="File to upload"
+          type="file"
+          onChange={handleUpload}
+          style={{ margin: '10px 0px' }}
+        />
+        <AttachmentButton onClick={uploadToS3}/>
       </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput
@@ -111,7 +163,7 @@ const Logger = () => {
         />
       </LoggerTA>
       <SessionView 
-        rows={['20%', '20%', '60%']}
+        rows={['25%', '15%', '60%']}
         columns={['fill']}
         fill
         areas={[
@@ -137,8 +189,10 @@ const Logger = () => {
               <SessionDescription gridArea="description">
                 {step.description_of_step}
               </SessionDescription>
-          
-              <p>Attachments</p>
+              <SessionAttachments gridArea="attachments">
+                <h1>Attachments</h1>
+                { attachments && <p>{attachments.key.slice(36)}</p>}
+              </SessionAttachments>
             </>
           ) : ''
         }
