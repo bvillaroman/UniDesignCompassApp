@@ -6,12 +6,10 @@ import {
   CompassDescription,
   GoToCompassButton
 } from "../../styles/Dashboard"
-import { globalStore } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
 import { navigate } from "gatsby"
 
 const CompassFeed = (props) => {
-  const { chooseCompass } = globalStore();
   const [compasses,setCompasses] = useState([])
 
   useEffect(() => {
@@ -23,7 +21,6 @@ const CompassFeed = (props) => {
 
   const goToCompass = (compass) => {
     localStorage.setItem('compass', compass.id)
-    // chooseCompass(compass)
     navigate("/Compass")
   }
 

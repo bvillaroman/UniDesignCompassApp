@@ -1,15 +1,13 @@
 export const UPDATE_FORM = "UPDATE_FORM";
 export const UPDATE_ERROR = "UPDATE_ERROR";
 export const SUBMIT_FORM = "SIGN_UP";
-export const SWITCH_TAB = "VERIFY_USER";
-// import {globalStore} from "../context"
+export const SWITCH_TAB = "SWITCH_TAB";
 
 const updateForm = (newForm, state) => ({ ...state, form: {...state.form, ...newForm}})
 const updateError = (newError, state) => ({ ...state, error: {...state.error, ...newError}})
 const switchTab = (tab, state) => ({...state,tab })
-const submitForm = (form,state) => {
-  // globalStore().
-  return state
+const submitForm = (state) => {
+  return {...state, form: {}}
 }
 
 const dashboardReducer = (state,{type,payload}) => {
@@ -19,7 +17,7 @@ const dashboardReducer = (state,{type,payload}) => {
     case UPDATE_ERROR:
       return updateError(payload, state);
     case SUBMIT_FORM:
-      return submitForm(payload, state);
+      return submitForm(state);
     case SWITCH_TAB:
       return switchTab(payload, state);
     default: 

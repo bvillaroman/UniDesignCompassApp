@@ -6,11 +6,17 @@ import {
   SCButton,
   SCFormContainer,
 } from "../../../styles/CompassPage"
-import { FormCard, FormTitle, InputContainer,  InputField, InputTextArea } from "../../../styles/Form"
+import { 
+  FormCard, 
+  FormTitle, 
+  InputContainer,  
+  InputField, 
+  InputTextArea 
+} from "../../../styles/Form"
 
 const SessionCreator = (props) => {  
   const [form,setForm] = useState({ title: '', description: '' });
-  const [error] = useState({ title: '', description: ''})
+  const [error,setError] = useState({ title: '', description: ''})
   const {createSession} = userCompassPage();
 
   const onChange = ({ target: { value,name } }) => { setForm({...form, [name]: value})  };

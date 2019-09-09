@@ -24,7 +24,7 @@ export const DashboardProvider = ({children}) => {
     <DashboardContext.Provider 
       value={{
         updateForm: (form) => dispatch({type: UPDATE_FORM, payload: form}),
-        submitForm: (form) => dispatch({type: SUBMIT_FORM, payload: form}),
+        submitForm: () => dispatch({type: SUBMIT_FORM}),
         updateError: (error) => dispatch({type: UPDATE_ERROR, payload: error}),
         switchTab: (tab)  => dispatch({type: SWITCH_TAB, payload: tab}),
         ...DashboardState

@@ -6,8 +6,9 @@ const Step = ({activeStep = {}}) => {
   const {createInteraction} = userCompassPage()
 
   const {
-    title = '',
-    description = '' 
+    description_of_step,
+    id,
+    name_of_step,
   } = activeStep; 
 
   const goToLog = (e) => {
@@ -16,7 +17,7 @@ const Step = ({activeStep = {}}) => {
   
   return (
     <StepContainer onClick={goToLog}>
-      {title}
+      {name_of_step}
       {/* {duration} */}
     </StepContainer> 
 )};

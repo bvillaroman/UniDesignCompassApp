@@ -18,21 +18,21 @@ import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
 const Layout = ({ children }) => {
-  const {user, loginUser, compass} = globalStore()
+  const {user, loginUser} = globalStore()
 
   if (!user.hasOwnProperty("email")) {
     Auth.currentAuthenticatedUser({
       bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    }).then(cognitoUser => {
+    })
+    .then(cognitoUser => {
       console.log(cognitoUser)
       const { email,sub } = cognitoUser.attributes;
       
       loginUser({ email, id: sub }); // save email to global store
     })
-      .catch(err => console.log(err));
+    .catch(err => console.log(err));
   }
-
-  console.log(children)
+  
   return (
     <LayoutContainer >
       <SidebarContainer>
