@@ -14,23 +14,48 @@ import {
   TimerButton,
   AttachmentButton
 } from "../../../styles/CompassPage"
+// import { Storage, API, graphqlOperation } from 'aws-amplify'
+// import uuid from 'uuid/v4'
+import { updateInteraction } from '../../../utils/mutations'
+// import config from '../../../aws-exports'
+
 
 import {userCompassPage} from "../../../context/CompassPage/context"
 
 const Logger = () => {
   const { currentInteraction, submitInteraction, createInteraction } = userCompassPage()
-  const [value, setValue] = useState('');
-  const [time,setTime] = useState(currentInteraction.duration)
+  const [log, setLog] = useState('');
+  const [time,setTime] = useState(currentInteraction.interaction_start_end)
   const [start,setStart] = useState(true)
 
-  const {step, duration} = currentInteraction;
+  const {
+    attachments,
+    id,
+    interaction_start_end,
+    interaction_start_time,
+    log_content,
+    session,
+    step
+  } = currentInteraction
+  
+  useEffect(() => {
+    let interval = null;
+    // if (currentInteraction.interaction_start_end === 0) {
+    //   setTime(0)
+    // } 
+    if (start) {
+      interval = setInterval(() => setTime(time+1), 1000)
+      // createInteraction({...currentInteraction, duration: time+1})
 
-  const pause = (e) => {
-    setStart(!start)
-  }
+    } else if (!start && time !== 0) {
+      clearInterval(interval)
+      // createInteraction({...currentInteraction, duration: time})
+    }
+    return () => clearInterval(interval);
+  }, [start,time])
   
   const changeToCompass = (e) => {
-    submitInteraction({...currentInteraction,log: value }) 
+    submitInteraction({...currentInteraction,log }) 
   }
 
   const translateTime = (secs) => {
@@ -45,22 +70,21 @@ const Logger = () => {
       .join(":") 
   }
 
-  useEffect(() => {
-    let interval = null;
-    // setStart(true)
-    if (currentInteraction.duration === 0) {
-      setTime(0)
-    } 
-    if (start) {
-      interval = setInterval(() => setTime(time+1), 1000)
-      createInteraction({...currentInteraction, duration: time+1})
-
-    } else if (!start && time !== 0) {
-      clearInterval(interval)
-      createInteraction({...currentInteraction, duration: time})
+  const pause = (e) => {
+    const newInteraction = {
+      id,
+      log_content: log,
+      interaction_start_time: time
     }
-    return () => clearInterval(interval);
-  }, [start,time])
+    if (start) {
+      updateInteraction(newInteraction)
+      .then((res) => {
+        console.log(res)
+      })  
+    } 
+    
+    return setStart(!start)
+  }
 
 
   return (
@@ -82,8 +106,8 @@ const Logger = () => {
       <LoggerTA gridArea="main" >
         <LoggerInput
           placeholder="Enter Log"
-          value={value}
-          onChange={event => setValue(event.target.value)}
+          value={log}
+          onChange={event => setLog(event.target.value)}
         />
       </LoggerTA>
       <SessionView 
