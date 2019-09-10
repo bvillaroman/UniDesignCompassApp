@@ -6,15 +6,17 @@ import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
 import { CompassPageProvider, CompassPageContext } from "../context/CompassPage/context"
 import { MainView } from "../styles/CompassPage"
-import { getCompass } from "../utils/queries"
+// import { getCompass } from "../utils/queries"
+import {globalStore} from "../context/context"
 
 const CompassPage = (props) => {
-  const [compass, setCompass] = useState({})
+  const {compass, selectCompass} = globalStore()
   useEffect(() => {
-    getCompass(localStorage.getItem('compass'))
-      .then((res) => {
-        setCompass(res.data.getCompass)
-      })
+    
+    return () => {
+      selectCompass({})
+      localStorage.removeItem('compass')
+    }
   }, [])
 
   return (

@@ -16,7 +16,6 @@ const Step = ({activeStep = {}}) => {
   const goToLog = (e) => {
     startInteraction("e680f0e4-47b6-4dbb-a98d-90a4b8389d45",id)
       .then((interaction) => {
-        // console.log(interaction.data.createInteraction)
         createInteraction(interaction.data.createInteraction);
       })
   }

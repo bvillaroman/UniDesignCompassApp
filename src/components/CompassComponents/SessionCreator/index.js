@@ -28,8 +28,6 @@ const SessionCreator = (props) => {
     createSession(form.title, form.description, currentCompassId)
       .then((result) => {
         localStorage.setItem('session', result.data.createSession.id)
-        // 
-
       })
       .catch(err => console.log(err))
   }

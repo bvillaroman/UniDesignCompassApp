@@ -38,21 +38,18 @@ export async function getSession(session_id) {
       reject("No User Found");
     } else {
       resolve(session);
-      console.log("It worked from queries util")
     }
   })
 }
 
 export async function getStep(step_id) {
   const step = await API.graphql(graphqlOperation(queries.getStep, { id: step_id }));
-  console.log(step)
 
   return new Promise(function (resolve, reject) {
     if (step.data.getStep === null) {
       reject("No User Found");
     } else {
       resolve(step);
-      console.log("It worked from queries util")
     }
   })
 }
