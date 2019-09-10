@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-//import { userCompassPage } from "../../../context/CompassPage/context"
-import { createSession } from "../../../utils/mutations"
+import { userCompassPage } from "../../../context/CompassPage/context"
+import * as Mutations from "../../../utils/mutations"
 
 import {
   SCButtonContainer,
@@ -16,17 +16,19 @@ import {
 } from "../../../styles/Form"
 
 const SessionCreator = (props) => {
+  const { createSession } = userCompassPage();
   const [form, setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: '' })
-  // const { createSession } = userCompassPage();
 
   const onChange = ({ target: { value, name } }) => { setForm({ ...form, [name]: value }) };
 
   const currentCompassId = localStorage.getItem("compass")
 
   const sendForm = (e) => {
-    createSession(form.title, form.description, currentCompassId)
+    Mutations.createSession(form.title, form.description, currentCompassId)
       .then((result) => {
+        // console.log(result)
+        createSession(result.data.createSession)
         localStorage.setItem('session', result.data.createSession.id)
       })
       .catch(err => console.log(err))
