@@ -9,9 +9,9 @@ export const REMOVE_INTERACTION = "REMOVE_INTERACTION" ;
 
 export const defaultState = {
   user: {},
-  compass: '',
-  session: '',
-  interaction: '',
+  compass: localStorage.getItem('compass') ? localStorage.getItem('compass') : '',
+  session: localStorage.getItem('session') ? localStorage.getItem('session') : '',
+  interaction: localStorage.getItem('interaction') ? localStorage.getItem('interaction') : '',
 }
 
 const loginUser = (newUser, state) => {
@@ -36,7 +36,6 @@ const selectInteraction = (newInteraction, state) => {
 }
 const removeCompass = (state) => {
   localStorage.removeItem('compass')
-  localStorage.getItem('compass')
   return { ...state,compass: ''}
 }
 const removeSession = (state) => {

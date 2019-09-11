@@ -27,7 +27,6 @@ const SessionCreator = (props) => {
   const sendForm = (e) => {
     createSession(form.title, form.description, currentCompassId)
       .then((result) => {
-      
         selectSession(result.data.createSession.id)
       })
       .catch(err => console.log(err))

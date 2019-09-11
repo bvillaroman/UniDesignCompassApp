@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LogPage from "../components/CompassComponents/LogPage"
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
@@ -7,13 +7,13 @@ import { MainView } from "../styles/CompassPage"
 import { globalStore } from "../context/context"
 
 const CompassPage = (props) => {
-  const {session, interaction} = globalStore()
+  const {session, interaction,selectCompass, select} = globalStore()
 
   return (
     <MainView>
       {
-        session ? <LogPage /> :
-        interaction ? <CompassSelector /> :
+        interaction ? <LogPage /> :
+        session ? <CompassSelector /> :
         <SessionCreator />
       }
     </MainView>
