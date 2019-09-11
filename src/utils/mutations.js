@@ -14,7 +14,7 @@ export async function createUser(ID, email, name_of_user) {
   return newUser;
 }
 
-export async function createCompass(name_of_compass, description_of_compass,steps) {
+export async function createCompass(name_of_compass, description_of_compass, steps) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
@@ -58,9 +58,39 @@ export async function startInteraction(sessionId, stepId) {
     interaction_start_time: 0,
     interaction_start_end: 0
   }
-  
+
   const newInteraction = await API.graphql(graphqlOperation(mutations.createInteraction, { input: interactionInfo }));
   return newInteraction
+}
+
+export async function updateCompass(id, name_of_compass, description_of_compass) {
+  const compassInfo = {
+    id,
+    name_of_compass,
+    description_of_compass,
+  }
+  const updatedCompass = await API.graphql(graphqlOperation(mutations.updateCompass, { input: compassInfo }));
+  return updatedCompass;
+}
+
+export async function updateSession(id, name_of_session, description_of_session) {
+  const sessionInfo = {
+    id,
+    name_of_session,
+    description_of_session,
+  }
+  const updatedSession = await API.graphql(graphqlOperation(mutations.updateSession, { input: sessionInfo }));
+  return updatedSession;
+}
+
+export async function updateStep(id, name_of_step, description_of_step) {
+  const stepInfo = {
+    id,
+    name_of_step,
+    description_of_step,
+  }
+  const updatedStep = await API.graphql(graphqlOperation(mutations.updateStep, { input: stepInfo }));
+  return updatedStep;
 }
 
 export async function updateInteraction(interaction) {
