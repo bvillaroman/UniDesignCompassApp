@@ -8,7 +8,7 @@
 import React, {useEffect} from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
-
+// import {navigate} from "gatsby"
 import {AccountBar, CompassBar} from "./SideBarComponents"
 import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
 import {globalStore} from "../context/context"

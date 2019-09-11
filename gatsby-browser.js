@@ -50,7 +50,7 @@ export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>
 }
 
-export const onClientEntry = () => {
-  localStorage.removeItem('compass')
-  localStorage.removeItem('session')
-}
+// export const onClientEntry = () => {
+//   localStorage.removeItem('compass')
+//   localStorage.removeItem('session')
+// }

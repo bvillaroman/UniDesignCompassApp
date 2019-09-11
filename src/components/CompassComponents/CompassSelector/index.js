@@ -11,10 +11,11 @@ import {
   SessionDescription 
 } from "../../../styles/CompassPage"
 import { userCompassPage } from "../../../context/CompassPage/context"
-import { getCompass } from "../../../utils/queries"
+import { getCompass, getSession } from "../../../utils/queries"
 
 const CompassSelector = (props) => {
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
+  const [interactions,setInteractions] = useState([])
   const {currentSession} = userCompassPage()
 
   useEffect(() => {
@@ -23,6 +24,17 @@ const CompassSelector = (props) => {
         setSteps(res.data.getCompass.steps.items)
       })
   },[])
+
+  useEffect(() => {
+    getSession(localStorage.getItem('session'))
+      .then((res) => {
+        setInteractions(res.data.getSession.interactions.items)
+      })
+  },[])
+
+  // const getDuration = (id) => {
+
+  // }
 
   return (
     <CSGrid

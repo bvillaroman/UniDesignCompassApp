@@ -72,7 +72,14 @@ const Logger = () => {
   }, [start,time])
   
   const changeToCompass = (e) => {
-    submitInteraction({...currentInteraction,log }) 
+    const newInteraction = {
+      id,
+      log_content: log,
+      interaction_start_time: time
+    } 
+    updateInteraction(newInteraction).then(() => {
+      submitInteraction({...currentInteraction,log }) 
+    })
   }
 
   const translateTime = (secs) => {
