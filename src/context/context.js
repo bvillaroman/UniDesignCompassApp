@@ -7,19 +7,15 @@ import GlobalReducer, {
   SELECT_SESSION ,
   REMOVE_COMPASS, 
   REMOVE_INTERACTION, 
-  REMOVE_SESSION
+  REMOVE_SESSION,
+  defaultState
 } from "./reducers"
 
 // CONTEXT
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({children}) => {
-  const [globalState,dispatch] = useReducer(GlobalReducer, {
-    user: {},
-    compass: localStorage.getItem('compass') ? localStorage.getItem('compass') : '',
-    session: localStorage.getItem('session') ? localStorage.getItem('session') : '',
-    interaction: localStorage.getItem('interaction') ? localStorage.getItem('interaction') : '',
-  })
+  const [globalState,dispatch] = useReducer(GlobalReducer,defaultState)
   return (
     <GlobalContext.Provider 
       value={{

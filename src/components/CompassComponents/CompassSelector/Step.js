@@ -4,7 +4,7 @@ import { globalStore } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
 const Step = ({activeStep = {}}) => {
-  const {setInteraction, session} = globalStore()
+  const {selectInteraction, session} = globalStore()
 
   const {
     id,
@@ -14,7 +14,7 @@ const Step = ({activeStep = {}}) => {
   const goToLog = (e) => {
     startInteraction(session,id)
       .then((interaction) => {
-        setInteraction(interaction.data.createInteraction.id);
+        selectInteraction(interaction.data.createInteraction.id);
       })
   }
   
