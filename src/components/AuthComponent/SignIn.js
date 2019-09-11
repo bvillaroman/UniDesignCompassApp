@@ -11,8 +11,6 @@ import {
 } from "../../styles/Form"
 import { globalStore } from "../../context/context"
 import { Auth } from 'aws-amplify';
-import { getUser } from '../../utils/queries'
-import { createUser } from '../../utils/mutations'
 
 const SignIn = ({ switchToSignUp }) => {
   const { loginUser } = globalStore();
@@ -38,14 +36,7 @@ const SignIn = ({ switchToSignUp }) => {
     Auth.signIn({ username: email, password })
       .then(user => {
         const { sub } = user.attributes;
-        // console.log(user)
-        // getUser(sub)
-        //   .then((user) => {
-        //     // if (user === null) createUser(sub, email, )
-            loginUser({ email, id: sub }) // Save to global store    
-          // })
-
-        // loginUser({ email, id: sub }) // Save to global store
+        loginUser({ email, id: sub }) // Save to global store    
       })
       .catch(err => console.log(err));
   }
@@ -54,7 +45,6 @@ const SignIn = ({ switchToSignUp }) => {
     <FormContainer>
       <FormTitle> Sign In</FormTitle>
       <Form
-        onReset={event => console.log(event)}
         onSubmit={submitForm}
         onChange={onChange}
         value={form}

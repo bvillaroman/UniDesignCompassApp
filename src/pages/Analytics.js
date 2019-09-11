@@ -1,9 +1,5 @@
 import React from "react";
-import Layout from '../components/Layout';
-
 const AnalyticsPage = (props) => (
-  <Layout>
-    Analytics Page
-  </Layout>
+    <p>Analytics Page</p>
 );
 export default AnalyticsPage;

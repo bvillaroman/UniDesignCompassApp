@@ -10,7 +10,7 @@ const AccountBar = props => {
   const { logoutUser } = globalStore()
 
   const goToLink = (link) => {
-    localStorage.setItem('compass','')
+    // localStorage.setItem('compass','')
     navigate(link);
   }
   const signOut = () => {

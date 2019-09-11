@@ -16,10 +16,10 @@ const Review = ({backToDashboard}) => {
   const { form } = userDashboard();
 
   const submitCompass = event => {
-    createCompass(form.title,form.description)
+    return createCompass(form.title,form.description)
       .then((compass) => {
         form.steps.map((step,key) => {
-          createStep(step.title,step.description, compass.data.createCompass.id)
+          return createStep(step.title,step.description, compass.data.createCompass.id)
         })
         return backToDashboard()
       })

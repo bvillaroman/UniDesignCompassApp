@@ -50,18 +50,23 @@ export async function createStep(name_of_step, description_of_step, compassId) {
   return newStep
 }
 
-export async function createInteraction(log_content, sessionId, stepId) {
+export async function startInteraction(sessionId, stepId) {
   const interactionInfo = {
-    log_content,
+    log_content: " ",
     interactionSessionId: sessionId,
     interactionStepId: stepId,
-    interaction_start_time: 19,
-    interaction_start_end: 23
+    interaction_start_time: 0,
+    interaction_start_end: 0
   }
-
-  console.log(interactionInfo)
-  console.log(config)
+  
   const newInteraction = await API.graphql(graphqlOperation(mutations.createInteraction, { input: interactionInfo }));
   return newInteraction
 }
+
+export async function updateInteraction(interaction) {
+
+  const updatedIntercation = await API.graphql(graphqlOperation(mutations.updateInteraction, { input: interaction }));
+  return updatedIntercation
+}
+
 

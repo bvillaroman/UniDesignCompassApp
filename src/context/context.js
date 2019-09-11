@@ -1,23 +1,36 @@
 import React, { useReducer, createContext, useContext} from "react";
-import GlobalReducer, { SIGN_IN, SIGN_OUT, SELECT_COMPASS, ADD_COMPASS} from "./reducers"
+import GlobalReducer, { 
+  SIGN_IN, 
+  SIGN_OUT, 
+  SELECT_COMPASS, 
+  SELECT_INTERACTION, 
+  SELECT_SESSION ,
+  REMOVE_COMPASS, 
+  REMOVE_INTERACTION, 
+  REMOVE_SESSION
+} from "./reducers"
 
 // CONTEXT
 export const GlobalContext = createContext();
 
 export const GlobalProvider = ({children}) => {
   const [globalState,dispatch] = useReducer(GlobalReducer, {
-    user: {
-      compasses: [],
-    },
-    compass: {}
+    user: {},
+    compass: localStorage.getItem('compass') ? localStorage.getItem('compass') : '',
+    session: localStorage.getItem('session') ? localStorage.getItem('session') : '',
+    interaction: localStorage.getItem('interaction') ? localStorage.getItem('interaction') : '',
   })
   return (
     <GlobalContext.Provider 
       value={{
         loginUser: (user) => dispatch({type: SIGN_IN, payload: user}),
-        chooseCompass: (compass) => dispatch({type: SELECT_COMPASS, payload: compass}),
         logoutUser: () => dispatch({type: SIGN_OUT, payload: {}}),
-        addCompass: (compass) => dispatch({type: ADD_COMPASS, payload: compass}),
+        selectCompass: (compass) => dispatch({type: SELECT_COMPASS, payload: compass}),
+        selectSession: (session) => dispatch({type: SELECT_SESSION, payload: session}),
+        selectInteraction: (interaction) => dispatch({type: SELECT_INTERACTION, payload: interaction}),
+        removeCompass: () => dispatch({type: REMOVE_COMPASS, payload: {}}),
+        removeSession: () => dispatch({type: REMOVE_SESSION, payload: {}}),
+        removeInteraction: () => dispatch({type: REMOVE_INTERACTION, payload: {}}),
         ...globalState
       }}
     >

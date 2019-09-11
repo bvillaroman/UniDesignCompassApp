@@ -10,19 +10,39 @@ import {
   SessionHeader, 
   SessionDescription 
 } from "../../../styles/CompassPage"
-import { userCompassPage } from "../../../context/CompassPage/context"
-import { getCompass } from "../../../utils/queries"
+import { getCompass, getSession } from "../../../utils/queries"
+import {globalStore} from "../../../context/context"
 
 const CompassSelector = (props) => {
+  const {compass, session} = globalStore()
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
-  const {currentSession} = userCompassPage()
+  const [currentSession,setCurrrentSession] = useState({})
+  const [interactions,setInteractions] = useState([])
 
+  // getting the current compass
   useEffect(() => {
-    getCompass(localStorage.getItem('compass'))
+    getCompass(compass)
       .then((res) => {
         setSteps(res.data.getCompass.steps.items)
       })
   },[])
+
+  // getting the current session
+  useEffect(() => {
+    getSession(session)
+      .then((res) => {
+        setCurrrentSession(res.data.getSession)
+      })
+  },[])
+
+
+  // const getDuration = (id) => {
+
+  // }
+
+  // const getTotalTime = () => {
+
+  // }
 
   return (
     <CSGrid
@@ -34,6 +54,7 @@ const CompassSelector = (props) => {
         { name: 'session', start: [1, 0], end: [1, 0] },
       ]}
     >
+      {/* compass wheel */}
       <CSMain gridArea="main">
         <StepRow>
           <Step activeStep={steps[0]} />
@@ -51,6 +72,8 @@ const CompassSelector = (props) => {
           <Step activeStep={steps[5]} />
         </StepRow> 
       </CSMain>
+
+      {/* session bar */}
       <SessionView 
         rows={['20%', '20%', '60%']}
         columns={['fill']}

@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CompassSideBar,
   CompassText,
@@ -6,25 +6,26 @@ import {
   CompassLink,
 } from '../../styles/SideBar'
 import {Compass, DocumentText, BarChart} from 'grommet-icons'
-import {getCompass} from "../../utils/queries"
+import { getCompass } from '../../utils/queries'
 
-const CompassBar = ({id}) => {
-  const [compass,setCompass] = useState('')
 
-  useEffect(() => {
-    getCompass(id)
-      .then((res) => {
-        setCompass(res.data.getCompass)
-      })
-  },[]); 
+const CompassBar = ({compass}) => {
+  const [title, setTitle] = useState({})
+
+  // useEffect(() => {
+  //   getCompass(compass)
+  //     .then((res) => {
+  //       setTitle(res.data.getCompass.name_of_compass)
+  //     })
+  // }, [])
 
   return (
     <CompassSideBar>
-      <CompassText>{compass.name_of_compass}</CompassText>
+      {/* <CompassText>{title}</CompassText> */}
       <LinkContainer>
-        <CompassLink to="/Compass"><Compass/> Compass</CompassLink>
-        <CompassLink to="/Summary"><DocumentText/> Summary</CompassLink>
-        <CompassLink to="/Analytics"><BarChart/> Analytics</CompassLink>
+        <CompassLink to="/Compass"><Compass/>Compass</CompassLink>
+        <CompassLink to="/Summary"><DocumentText/>Summary</CompassLink>
+        <CompassLink to="/Analytics"><BarChart/>Analytics</CompassLink>
       </LinkContainer>
     </CompassSideBar>
   )
