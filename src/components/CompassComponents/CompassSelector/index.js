@@ -46,12 +46,13 @@ const CompassSelector = (props) => {
 
   return (
     <CSGrid
-      rows={['fill']}
+      rows={['80%', '20%']}
       columns={['80%', '20%']}
       fill
       areas={[
         { name: 'main', start: [0, 0], end: [0, 0] },
-        { name: 'session', start: [1, 0], end: [1, 0] },
+        { name: 'session', start: [1, 0], end: [1, 1] },
+        { name: 'interactions', start: [0, 1], end: [0, 1] },
       ]}
     >
       {/* compass wheel */}
@@ -87,7 +88,7 @@ const CompassSelector = (props) => {
       >
         <SessionHeader gridArea="header">
           <SessionTitle>
-            {currentSession.title}
+            {currentSession.name_of_session}
           </SessionTitle>
           <StepClock>
             {/* {translateTime(time)}
@@ -95,10 +96,17 @@ const CompassSelector = (props) => {
           </StepClock>
         </SessionHeader>
           <SessionDescription gridArea="description">
-            {currentSession.description}
+            {currentSession.description_of_session}
           </SessionDescription>
           <p>Attachments</p>
       </SessionView>
+      <div gridArea="interactions">
+      {
+        currentSession.interactions && currentSession.interactions.items.map((session) => {
+          return (<p>{session.id}</p>)
+        })
+      }
+      </div>
     </CSGrid>
 )};
 export default CompassSelector;
