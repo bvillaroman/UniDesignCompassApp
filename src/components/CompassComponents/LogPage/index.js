@@ -20,65 +20,50 @@ import uuid from 'uuid/v4'
 import { getInteraction } from '../../../utils/queries'
 import { updateInteraction } from '../../../utils/mutations'
 import config from '../../../aws-exports'
-
-
-import {userCompassPage} from "../../../context/CompassPage/context"
+import {globalStore} from "../../../context/context"
 
 const Logger = () => {
-  const { currentInteraction, submitInteraction, createInteraction } = userCompassPage()
+  const {interaction, removeInteraction} = globalStore()
+
+  const [step, setStep] = useState('');
   const [log, setLog] = useState('');
   const [upload,setUpload] = useState({})
   const [attachments,setAttachments] = useState([])
-  const [time,setTime] = useState(currentInteraction.interaction_start_end)
+  const [time,setTime] = useState(0)
   const [start,setStart] = useState(true)
 
-  const {
-    id,
-    interaction_start_end,
-    interaction_start_time,
-    log_content,
-    session,
-    step
-  } = currentInteraction
+  const id = interaction
   
   useEffect(() => {
     getInteraction(id).then((res) => {
-      const {log_content, attachments, interaction_start_end} = res.data.getInteraction
+      const {log_content, attachments, interaction_start_end, step} = res.data.getInteraction
+      setStep(step)
       setLog(log_content)
       setAttachments(attachments)
-      // setTime(interaction_start_end)
     })
+
   }, [])
 
   useEffect(() => {
     let interval = null;
-    
-    // getInteraction(id).then((res) => {
-    //   const {log_content, attachments, interaction_start_end} = res.data.getInteraction
-    //   setLog(log_content)
-    //   setAttachments(attachments)
-    //   // setTime(interaction_start_end)
-    // })
 
     if (start) {
       interval = setInterval(() => setTime(time+1), 1000)
-      // createInteraction({...currentInteraction, duration: time+1})
 
     } else if (!start && time !== 0) {
       clearInterval(interval)
-      // createInteraction({...currentInteraction, duration: time})
     }
     return () => clearInterval(interval);
   }, [start,time])
   
   const changeToCompass = (e) => {
     const newInteraction = {
-      id,
+      id ,
       log_content: log,
       interaction_start_time: time
     } 
     updateInteraction(newInteraction).then(() => {
-      submitInteraction({...currentInteraction,log }) 
+      removeInteraction()
     })
   }
 

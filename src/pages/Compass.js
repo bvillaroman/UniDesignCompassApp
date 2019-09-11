@@ -3,27 +3,20 @@ import LogPage from "../components/CompassComponents/LogPage"
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
-import { CompassPageProvider, CompassPageContext } from "../context/CompassPage/context"
 import { MainView } from "../styles/CompassPage"
+import { globalStore } from "../context/context"
 
 const CompassPage = (props) => {
-  
+  const {session, interaction} = globalStore()
+
   return (
-    <CompassPageProvider>
-      <CompassPageContext.Consumer>
-        {
-          ({ currentSession, currentInteraction }) => (
-            <MainView>
-              {
-                currentInteraction.step.name_of_step ? <LogPage /> :
-                currentSession.id ? <CompassSelector /> :
-                <SessionCreator />
-              }
-            </MainView>
-          )
-        }
-      </CompassPageContext.Consumer>
-    </CompassPageProvider>
+    <MainView>
+      {
+        session ? <LogPage /> :
+        interaction ? <CompassSelector /> :
+        <SessionCreator />
+      }
+    </MainView>
   )
 }
 export default CompassPage;

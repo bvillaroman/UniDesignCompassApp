@@ -1,6 +1,18 @@
 export const SIGN_IN = "SIGN_IN";
 export const SIGN_OUT = "SIGN_OUT";
 export const SELECT_COMPASS = "SELECT_COMPASS";
+export const SELECT_SESSION = "SELECT_SESSION";
+export const SELECT_INTERACTION = "SELECT_INTERACTION";
+export const REMOVE_COMPASS = "REMOVE_COMPASS" ;
+export const REMOVE_SESSION = "REMOVE_SESSION" ;
+export const REMOVE_INTERACTION = "REMOVE_INTERACTION" ;
+
+export const defaultState = {
+  user: {},
+  compass: '',
+  session: '',
+  interaction: '',
+}
 
 const loginUser = (newUser, state) => {
   if (newUser !== {}) return { ...state,user: newUser}
@@ -11,7 +23,29 @@ const logoutUser = (currentUser, state) => {
   return state
 }
 const selectCompass = (newCompass, state) => {
+  localStorage.setItem('compass', newCompass)
   return { ...state,compass: newCompass}
+}
+const selectSession = (newSession, state) => {
+  localStorage.setItem('session', newSession)
+  return { ...state,session: newSession}
+}
+const selectInteraction = (newInteraction, state) => {
+  localStorage.setItem('newInteraction', newInteraction)
+  return { ...state,interaction: newInteraction}
+}
+const removeCompass = (state) => {
+  localStorage.removeItem('compass')
+  localStorage.getItem('compass')
+  return { ...state,compass: ''}
+}
+const removeSession = (state) => {
+  localStorage.removeItem('session')
+  return { ...state,session: ''}
+}
+const removeInteraction = (state) => {
+  localStorage.removeItem('interaction')
+  return { ...state,interaction: ''}
 }
 
 const GlobalReducer = (state,{type,payload}) => {
@@ -22,6 +56,16 @@ const GlobalReducer = (state,{type,payload}) => {
       return logoutUser(payload, state);
     case SELECT_COMPASS:
       return selectCompass(payload, state);
+    case SELECT_SESSION:
+      return selectSession(payload, state);
+    case SELECT_INTERACTION:
+      return selectInteraction(payload, state);
+    case REMOVE_COMPASS:
+      return removeCompass(state);
+    case REMOVE_SESSION:
+      return removeSession(state);
+    case REMOVE_INTERACTION:
+      return removeInteraction(state);
     default: 
       return state;
   }

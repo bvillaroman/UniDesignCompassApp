@@ -1,11 +1,10 @@
 import React from "react";
 import { StepContainer } from "../../../styles/CompassPage"
-import { userCompassPage } from "../../../context/CompassPage/context"
+import { globalStore } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
 const Step = ({activeStep = {}}) => {
-
-  const {createInteraction, currentSession} =  userCompassPage()
+  const {setInteraction, session} = globalStore()
 
   const {
     id,
@@ -13,9 +12,9 @@ const Step = ({activeStep = {}}) => {
   } = activeStep; 
 
   const goToLog = (e) => {
-    startInteraction(currentSession.id,id)
+    startInteraction(session,id)
       .then((interaction) => {
-        createInteraction(interaction.data.createInteraction);
+        setInteraction(interaction.data.createInteraction.id);
       })
   }
   

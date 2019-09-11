@@ -18,24 +18,30 @@ import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
 const Layout = (props) => {
-  const {user, loginUser, selectCompass, compass} = globalStore()
+  const {
+    user, 
+    loginUser, 
+    selectCompass, 
+    compass, 
+    removeCompass, 
+    removeSession, 
+    removeInteraction
+  } = globalStore()
 
   useEffect(() => {
-
-    const isNewCompass = localStorage.getItem('compass') 
-                      && compass.id !== localStorage.getItem('compass')
-
-    if (props.uri != "/Compass"){
-      localStorage.removeItem('compass')
-      localStorage.removeItem('session')
-      selectCompass({})
+    if (props.uri !== "/Compass"){
+      removeCompass()
+      removeInteraction()
+      removeSession()
     }
+  }, [])
 
+  useEffect(() => {
     // queries the compass and assigns it throughout the app
-    if (isNewCompass) {
-      getCompass(localStorage.getItem('compass'))
+    if (compass) {
+      getCompass(compass)
         .then((res) => {
-          selectCompass(res.data.getCompass)
+          selectCompass(res.data.getCompass.id)
         })
         .catch((err) => {
           console.log(err)
@@ -62,7 +68,7 @@ const Layout = (props) => {
     <LayoutContainer >
       <SidebarContainer>
       { user.email && <AccountBar />}
-      { (user.email && compass.id) && <CompassBar compass={compass}/> }
+      { (user.email && compass.length) && <CompassBar compass={compass}/> }
       </SidebarContainer>
       <MainViewContainer>
         {props.children}
