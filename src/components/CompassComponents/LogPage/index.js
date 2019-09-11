@@ -191,7 +191,7 @@ const Logger = () => {
               </SessionDescription>
               <SessionAttachments gridArea="attachments">
                 <h1>Attachments</h1>
-                { attachments && <p>{attachments.key.slice(36)}</p>}
+                { attachments && attachments.key && <p>{attachments.key.slice(36)}</p>}
               </SessionAttachments>
             </>
           ) : ''

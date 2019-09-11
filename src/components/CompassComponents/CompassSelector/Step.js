@@ -8,7 +8,6 @@ const Step = ({activeStep = {}}) => {
   const {createInteraction} =  userCompassPage()
 
   const {
-    description_of_step,
     id,
     name_of_step,
   } = activeStep; 

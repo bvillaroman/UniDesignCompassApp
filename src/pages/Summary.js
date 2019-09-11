@@ -1,9 +1,4 @@
 import React from "react";
-import Layout from '../components/Layout';
 
-const SummaryPage = (props) => (
-  <Layout>
-    Summary Page
-  </Layout>
-);
+const SummaryPage = (props) => ( <h1>Summary Page</h1>);
 export default SummaryPage;

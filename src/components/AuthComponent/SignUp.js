@@ -5,7 +5,6 @@ import {
   Form,
 } from "grommet";
 import { Auth } from 'aws-amplify';
-import {createUser} from "../../utils/mutations"
 
 import {
   FormSwitchButton, 

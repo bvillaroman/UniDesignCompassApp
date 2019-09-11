@@ -17,14 +17,20 @@ import { getCompass } from '../utils/queries'
 import awsconfig from '../aws-exports';
 Amplify.configure(awsconfig);
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
   const {user, loginUser, selectCompass, compass} = globalStore()
 
   useEffect(() => {
 
-    console.log("call")
     const isNewCompass = localStorage.getItem('compass') 
                       && compass.id !== localStorage.getItem('compass')
+
+    if (props.uri != "/Compass"){
+      localStorage.removeItem('compass')
+      localStorage.removeItem('session')
+      selectCompass({})
+    }
+
     // queries the compass and assigns it throughout the app
     if (isNewCompass) {
       getCompass(localStorage.getItem('compass'))
@@ -50,7 +56,7 @@ const Layout = ({ children }) => {
     }
     
     
-  }, [children])
+  }, [props.children, props.uri])
   
   return (
     <LayoutContainer >
@@ -59,7 +65,7 @@ const Layout = ({ children }) => {
       { (user.email && compass.id) && <CompassBar compass={compass}/> }
       </SidebarContainer>
       <MainViewContainer>
-        {children}
+        {props.children}
       </MainViewContainer>
     </LayoutContainer>
   )
