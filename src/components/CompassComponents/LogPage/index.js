@@ -15,6 +15,8 @@ import {
   AttachmentButton,
   SessionAttachments
 } from "../../../styles/CompassPage"
+import Attachment from "./Attachment"
+
 import { Storage, API, graphqlOperation } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import { getInteraction } from '../../../utils/queries'
@@ -22,7 +24,7 @@ import { updateInteraction } from '../../../utils/mutations'
 import config from '../../../aws-exports'
 import {globalStore} from "../../../context/context"
 
-const Logger = () => {
+const Logger = ({showAttachment}) => {
   const {interaction, removeInteraction} = globalStore()
 
   const [step, setStep] = useState('');
@@ -117,6 +119,7 @@ const Logger = () => {
         await Storage.put(fileForUpload.key, upload, { contentType: mimeType })
         updateInteraction(newInteraction)
           .then((res) => {
+            console.log(res)
             setAttachments(res.data.updateInteraction.attachments)
           })
       } catch (err) {
@@ -183,7 +186,7 @@ const Logger = () => {
               </SessionDescription>
               <SessionAttachments gridArea="attachments">
                 <h1>Attachments</h1>
-                { attachments && attachments.key && <p>{attachments.key.slice(36)}</p>}
+                { attachments && attachments.key && <Attachment attachment={attachments} showAttachment={showAttachment}/> }
               </SessionAttachments>
             </>
           ) : ''
