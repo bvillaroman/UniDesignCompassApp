@@ -3,7 +3,7 @@ import { StepContainer } from "../../../styles/CompassPage"
 import { globalStore } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
-const Step = ({activeStep = {}}) => {
+const Step = ({activeStep = {}, rotateAngle}) => {
   const {selectInteraction, session} = globalStore()
 
   const {
@@ -19,7 +19,7 @@ const Step = ({activeStep = {}}) => {
   }
   
   return (
-    <StepContainer onClick={goToLog}>
+    <StepContainer rotateAngle={rotateAngle} onClick={goToLog}>
       {name_of_step}
       {/* {duration} */}
     </StepContainer> 

@@ -152,20 +152,40 @@ export const CSGrid = styled(Grid)`
 `;
 
 export const CSMain = styled(Box)`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 export const StepRow = styled.div`
-  margin: 4rem;
-  text-align:center;
+  width: 35rem;
+  height: 35rem;
+  position: relative;
+  button { 
+    top: 38%;
+    left: 38%;
+  }
 `
-export const StepContainer = styled(CompassButtons)`
-  display: inline-block;
-  margin: 0 3rem;
-  padding: 2rem;
+export const StepContainer = styled(Button)`
   border: 0.15rem solid #5567FD;
+  border-radius: 50%;
+  transition: all 0.3s;
+  padding: 1rem;
+  color: black; 
+  font-weight: 600;
+  font-size: 1.3rem;
+  :hover {
+    transition: all 0.2s;
+    background-color: #5567FD;
+  }
+  text-align: center;
+
+  list-style: none;
+	height: 9rem;
+	width: 9rem;
+	position: absolute;
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(0, -200px) rotate(-${props.rotateAngle}deg)` || 'none'};
+  overflow-wrap: break-word;
 `
 
 // Compass SessionBar
