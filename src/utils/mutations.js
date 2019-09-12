@@ -55,8 +55,7 @@ export async function startInteraction(sessionId, stepId) {
     log_content: " ",
     interactionSessionId: sessionId,
     interactionStepId: stepId,
-    interaction_start_time: 0,
-    interaction_start_end: 0
+    duration: 0
   }
 
   const newInteraction = await API.graphql(graphqlOperation(mutations.createInteraction, { input: interactionInfo }));
@@ -99,4 +98,10 @@ export async function updateInteraction(interaction) {
   return updatedIntercation
 }
 
-
+export async function deleteCompass(id) {
+  const compassInfo = {
+    id
+  }
+  const deletedCompass = await API.graphql(graphqlOperation(mutations.deleteCompass, { input: compassInfo }));
+  return deletedCompass;
+}

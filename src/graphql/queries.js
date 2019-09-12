@@ -131,8 +131,7 @@ export const getSession = `query GetSession($id: ID!) {
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -170,8 +169,7 @@ export const listSessions = `query ListSessions(
 export const getInteraction = `query GetInteraction($id: ID!) {
   getInteraction(id: $id) {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -205,7 +203,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key
@@ -221,8 +220,7 @@ export const listInteractions = `query ListInteractions(
   listInteractions(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      interaction_start_time
-      interaction_start_end
+      duration
       log_content
       session {
         id
@@ -239,7 +237,8 @@ export const listInteractions = `query ListInteractions(
         description_of_step
       }
       attachments {
-        description_of_attachment
+        name
+        type
         bucket
         region
         key

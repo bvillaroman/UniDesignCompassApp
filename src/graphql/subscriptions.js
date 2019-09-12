@@ -197,8 +197,7 @@ export const onCreateSession = `subscription OnCreateSession {
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -234,8 +233,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -271,8 +269,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -283,8 +280,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
 export const onCreateInteraction = `subscription OnCreateInteraction {
   onCreateInteraction {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -318,7 +314,8 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key
@@ -329,8 +326,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
 export const onUpdateInteraction = `subscription OnUpdateInteraction {
   onUpdateInteraction {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -364,7 +360,8 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key
@@ -375,8 +372,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
 export const onDeleteInteraction = `subscription OnDeleteInteraction {
   onDeleteInteraction {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -410,7 +406,8 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key

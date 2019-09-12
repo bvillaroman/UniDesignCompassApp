@@ -197,8 +197,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -234,8 +233,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -271,8 +269,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
     interactions {
       items {
         id
-        interaction_start_time
-        interaction_start_end
+        duration
         log_content
       }
       nextToken
@@ -283,8 +280,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
 export const createInteraction = `mutation CreateInteraction($input: CreateInteractionInput!) {
   createInteraction(input: $input) {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -318,7 +314,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key
@@ -329,8 +326,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
 export const updateInteraction = `mutation UpdateInteraction($input: UpdateInteractionInput!) {
   updateInteraction(input: $input) {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -364,7 +360,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key
@@ -375,8 +372,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
 export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInteractionInput!) {
   deleteInteraction(input: $input) {
     id
-    interaction_start_time
-    interaction_start_end
+    duration
     log_content
     session {
       id
@@ -410,7 +406,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
       }
     }
     attachments {
-      description_of_attachment
+      name
+      type
       bucket
       region
       key

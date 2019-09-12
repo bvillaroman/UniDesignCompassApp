@@ -28,8 +28,7 @@ type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
 
 type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
-  interaction_start_time: Int
-  interaction_start_end: Int
+  duration: Int
   log_content: String!
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
@@ -46,7 +45,8 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
 }
 
 type Attachment {
-  description_of_attachment: String
+  name: String
+  type: String
   bucket: String!
   region: String!
   key: String!
