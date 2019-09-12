@@ -8,9 +8,10 @@ import {
   TextInput,
   Form,
   Grid,
-  Tab
+  Tab,
+  Layer
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill } from 'grommet-icons';
+import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Video } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
@@ -29,7 +30,20 @@ export const AttachmentButton = ({onClick}) =>(
     onClick={onClick} 
     icon={<Attachment color="#5567FD"/>}
   />
-    
+)
+export const CloseButton = ({onClick}) =>(
+  <AttachmentButtons     
+    onClick={onClick} 
+    icon={<Close color="#5567FD"/>}
+    label="Close"
+  />
+)
+export const DownloadButton = ({onClick}) =>(
+  <AttachmentButtons     
+    onClick={onClick} 
+    icon={<Download color="#5567FD"/>}
+    label="Download"
+  />
 )
 
 // Logger
@@ -78,6 +92,50 @@ export const LoggerInnerNav = styled(Box)`
 `;
 export const LoggerTA = styled(Box)`
   padding: 0 1.6rem 1rem 1.6rem;
+`;
+
+// attachment components
+export const AttachmentContainer = styled(Box)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`
+export const AttachmentPreviewContainer = styled(Box)`
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+`
+export const AttachmentButtonContainer = styled(Box)`
+  width: 80%;
+  height: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+export const AttachmentItem = styled(Button)`
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+`;
+export const AttachmentPhoto = styled.img`
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+`;
+export const AttachmentButtons = styled(Button)`
+  border: 0.15rem solid #5567FD;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  padding: 1rem;
+  color #5567FD;
+  align-self: center;
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `;
 
 // Sessions Creator
@@ -257,4 +315,9 @@ export const SessionView = styled(Grid)`
   text-align: center;
   background: white;
   width: 100%;
+`
+export const LayerView = styled(Layer)`
+  width: 70%;
+  height: 80%;
+  border-radius: 2rem;
 `
