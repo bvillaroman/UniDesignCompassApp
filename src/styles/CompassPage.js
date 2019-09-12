@@ -11,7 +11,7 @@ import {
   Tab,
   Layer
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Video } from 'grommet-icons';
+import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
@@ -44,6 +44,19 @@ export const DownloadButton = ({onClick}) =>(
     icon={<Download color="#5567FD"/>}
     label="Download"
   />
+)
+export const AttachmentItemButton = ({onClick, attachment}) =>(
+  <AttachmentItem onClick={onClick} >
+    { 
+      attachment.type && 
+      (
+        attachment.type.includes("image") ? <Image color="#5567FD"/> :
+        attachment.type.includes("video") ? <Multimedia color="#5567FD"/> :
+        <Document color="#5567FD"/>
+      )
+    }
+    <span>{attachment.key ? attachment.name : ''} </span>
+  </AttachmentItem>     
 )
 
 // Logger
@@ -113,11 +126,22 @@ export const AttachmentButtonContainer = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
 `
-export const AttachmentItem = styled(Button)`
+export const AttachmentItem = styled(Box)`
   border: none;
-  width: 100%;
+  width: 90%;
+  margin: 0.2rem auto;
   font-size: 1rem;
   font-weight: 500;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  span {
+    padding-left: 0.5rem;
+  }
+  
 `;
 export const AttachmentPhoto = styled.img`
   width: 90%;

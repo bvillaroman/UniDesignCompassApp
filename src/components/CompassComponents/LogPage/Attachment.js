@@ -1,9 +1,8 @@
 import React from "react";
 import { 
-  AttachmentItem,
+  AttachmentItemButton
 } from "../../../styles/CompassPage"
 import { Storage} from 'aws-amplify'
-import { Image, Document, Multimedia } from 'grommet-icons';
 
 const Attachment = ({attachment, showAttachment}) => {
   console.log(attachment)
@@ -18,9 +17,8 @@ const Attachment = ({attachment, showAttachment}) => {
     
   }
   return (
-    <AttachmentItem 
-      icon={<Image color="#5567FD"/>} 
-      label={attachment.key ? attachment.key.slice(36) : ''} 
+    <AttachmentItemButton  
+      attachment={attachment} 
       onClick={loadAttachment} 
     />
   );

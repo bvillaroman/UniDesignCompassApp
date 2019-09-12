@@ -38,7 +38,8 @@ const Logger = ({showAttachment}) => {
   
   useEffect(() => {
     getInteraction(id).then((res) => {
-      const {log_content, attachments, interaction_start_end, step} = res.data.getInteraction
+      const {log_content, attachments, duration, step} = res.data.getInteraction
+      setTime(duration)
       setStep(step)
       setLog(log_content)
       setAttachments(attachments)
@@ -62,7 +63,7 @@ const Logger = ({showAttachment}) => {
     const newInteraction = {
       id ,
       log_content: log,
-      interaction_start_time: time
+      duration: time
     } 
     updateInteraction(newInteraction).then(() => {
       removeInteraction()
@@ -85,7 +86,7 @@ const Logger = ({showAttachment}) => {
     const newInteraction = {
       id,
       log_content: log,
-      interaction_start_time: time
+      duration: time
     }
     if (start) {
       updateInteraction(newInteraction)
@@ -107,11 +108,13 @@ const Logger = ({showAttachment}) => {
         bucket: config.aws_user_files_s3_bucket,
         key:  `${uuid()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
+        name: fileName,
+        type: mimeType
       }
       const newInteraction = {
         id,
         log_content: log,
-        interaction_start_time: time,
+        duration: time,
         attachments: fileForUpload
       }
 
