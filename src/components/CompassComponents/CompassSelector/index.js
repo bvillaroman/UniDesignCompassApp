@@ -58,20 +58,12 @@ const CompassSelector = (props) => {
       {/* compass wheel */}
       <CSMain gridArea="main">
         <StepRow>
-          <Step activeStep={steps[0]} />
-          <Step activeStep={steps[1]} />
-        </StepRow> 
-
-        <StepRow>
-          <Step activeStep={steps[2]} />
-          <Step />
-          <Step activeStep={steps[3]} />
-        </StepRow> 
-
-        <StepRow>
-          <Step activeStep={steps[4]} />
-          <Step activeStep={steps[5]} />
-        </StepRow> 
+          {
+            steps ? steps.map((item,key) => {
+              return (<Step activeStep={item} rotateAngle={key*(360/steps.length)}/>)
+            }) : ''
+          }
+        </StepRow>
       </CSMain>
 
       {/* session bar */}
