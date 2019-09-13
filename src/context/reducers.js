@@ -9,9 +9,9 @@ export const REMOVE_INTERACTION = "REMOVE_INTERACTION" ;
 
 export const defaultState = {
   user: {},
-  compass: localStorage.getItem('compass') ? localStorage.getItem('compass') : '',
-  session: localStorage.getItem('session') ? localStorage.getItem('session') : '',
-  interaction: localStorage.getItem('interaction') ? localStorage.getItem('interaction') : '',
+  compass: typeof localStorage !== 'undefined' && localStorage.getItem('compass') ? localStorage.getItem('compass') : '',
+  session: typeof localStorage !== 'undefined' && localStorage.getItem('session') ? localStorage.getItem('session') : '',
+  interaction: typeof localStorage !== 'undefined' && localStorage.getItem('interaction') ? localStorage.getItem('interaction') : '',
 }
 
 const loginUser = (newUser, state) => {
@@ -23,27 +23,27 @@ const logoutUser = (currentUser, state) => {
   return state
 }
 const selectCompass = (newCompass, state) => {
-  localStorage.setItem('compass', newCompass)
+  if(typeof localStorage !== 'undefined') localStorage.setItem('compass', newCompass)
   return { ...state,compass: newCompass}
 }
 const selectSession = (newSession, state) => {
-  localStorage.setItem('session', newSession)
+  if(typeof localStorage !== 'undefined') localStorage.setItem('session', newSession)
   return { ...state,session: newSession}
 }
 const selectInteraction = (newInteraction, state) => {
-  localStorage.setItem('newInteraction', newInteraction)
+  if(typeof localStorage !== 'undefined') localStorage.setItem('newInteraction', newInteraction)
   return { ...state,interaction: newInteraction}
 }
 const removeCompass = (state) => {
-  localStorage.removeItem('compass')
+  if(typeof localStorage !== 'undefined') localStorage.removeItem('compass')
   return { ...state,compass: ''}
 }
 const removeSession = (state) => {
-  localStorage.removeItem('session')
+  if(typeof localStorage !== 'undefined') localStorage.removeItem('session')
   return { ...state,session: ''}
 }
 const removeInteraction = (state) => {
-  localStorage.removeItem('interaction')
+  if(typeof localStorage !== 'undefined') localStorage.removeItem('interaction')
   return { ...state,interaction: ''}
 }
 

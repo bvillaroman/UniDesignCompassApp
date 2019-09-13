@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useContext} from "react";
+import React, { useReducer, createContext} from "react";
 import DashboardReducer, { UPDATE_FORM, SUBMIT_FORM,SWITCH_TAB,UPDATE_ERROR } from "./reducers"
 
 // CONTEXT
@@ -35,8 +35,4 @@ export const DashboardProvider = ({children}) => {
   )
 }
 
-export const userDashboard = () => {
-  const contextValue = useContext(DashboardContext);
-  return contextValue;
-};
 

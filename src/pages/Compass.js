@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useState, useContext } from "react";
 import LogPage from "../components/CompassComponents/LogPage"
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
@@ -6,17 +6,16 @@ import CompassSelector from "../components/CompassComponents/CompassSelector"
 import { 
   MainView, 
   LayerView, 
-  CompassButtons, 
   AttachmentContainer ,
   AttachmentPreview,
   AttachmentButtonContainer,
   CloseButton,
   DownloadButton
 } from "../styles/CompassPage"
-import { globalStore } from "../context/context"
+import { GlobalContext } from "../context/context"
 
 const CompassPage = (props) => {
-  const {session, interaction} = globalStore()
+  const {session = "", interaction = ""} = useContext(GlobalContext);
   const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();

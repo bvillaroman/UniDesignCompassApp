@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {
   Box,
   Button,
   Form,
 } from "grommet";
 
-import { userDashboard } from "../../context/DashboardPage/context"
+import { DashboardContext } from "../../context/DashboardPage/context"
 import { InputContainer,  InputField, InputTextArea, FormCard, FormTitle } from "../../styles/Form"
 
 const Info = (props) => {
 
-  const { form,  errors, updateForm, switchTab } = userDashboard();
+  const { form,  errors, updateForm, switchTab } = useContext(DashboardContext);
 
   const onChange = event => {
     const { target: { value,name } } = event;

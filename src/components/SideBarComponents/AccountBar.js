@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavigationContainer, NavLink, } from '../../styles/SideBar';
 import { navigate } from "gatsby"
 import { Home, User } from 'grommet-icons'
-import { globalStore } from "../../context/context"
+import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify'
 
 
 const AccountBar = props => {
-  const { logoutUser } = globalStore()
+  const { logoutUser } = useContext(GlobalContext);
 
   const goToLink = (link) => {
     // localStorage.setItem('compass','')

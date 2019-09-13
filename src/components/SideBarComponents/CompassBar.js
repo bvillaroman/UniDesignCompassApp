@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   CompassSideBar,
   CompassText,
@@ -6,8 +6,6 @@ import {
   CompassLink,
 } from '../../styles/SideBar'
 import {Compass, DocumentText, BarChart} from 'grommet-icons'
-import { getCompass } from '../../utils/queries'
-
 
 const CompassBar = ({title}) => {
   return (

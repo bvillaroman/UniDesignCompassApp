@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Tabs, Tab } from "grommet";
 
-import { userDashboard } from "../../context/DashboardPage/context"
+import { DashboardContext } from "../../context/DashboardPage/context"
 import { FormContainer } from "../../styles/Form"
 import { 
   FormHeader, 
@@ -16,7 +16,7 @@ import Steps from "./CompassSteps"
 import Type from "./CompassType"
 
 const Form = ({backToDashboard}) => {
-  const {tab, switchTab } = userDashboard();
+  const {tab, switchTab } = useContext(DashboardContext);
 
   const onActive = (index) => switchTab(index)
 

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { globalStore } from "../../../context/context"
+import React, { useState, useContext } from 'react'
+import { GlobalContext } from "../../../context/context"
 import { createSession } from "../../../utils/mutations"
 
 import {
@@ -16,7 +16,7 @@ import {
 } from "../../../styles/Form"
 
 const SessionCreator = (props) => {
-  const {compass,selectSession} = globalStore()
+  const {compass = "",selectSession} = useContext(GlobalContext);
   const [form, setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: '' })
 

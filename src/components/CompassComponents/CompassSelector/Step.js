@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StepContainer } from "../../../styles/CompassPage"
-import { globalStore } from "../../../context/context"
+import { GlobalContext } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
 const Step = ({activeStep = {}, rotateAngle}) => {
-  const {selectInteraction, session} = globalStore()
+  const {selectInteraction, session = ""} = useContext(GlobalContext);
 
   const {
     id,

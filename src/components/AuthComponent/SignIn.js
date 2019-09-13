@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState, useContext } from 'react'
 import { Box, Button, Form } from "grommet";
 import {
   FormSwitchButton,
@@ -9,11 +9,11 @@ import {
   FormSwitchLabel,
   InputField
 } from "../../styles/Form"
-import { globalStore } from "../../context/context"
+import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify';
 
 const SignIn = ({ switchToSignUp }) => {
-  const { loginUser } = globalStore();
+  const { loginUser } = useContext(GlobalContext);
   const [form, setValues] = useState({
     email: '',
     password: '',

@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Button } from "grommet";
 
-import { userDashboard } from "../../context/DashboardPage/context"
+import { DashboardContext } from "../../context/DashboardPage/context"
 import { FormSwitchContainer, FormCard, FormTitle } from "../../styles/Form"
 
 const Type = (props) => {
 
-  const { updateForm, switchTab } = userDashboard();
+  const { updateForm, switchTab } = useContext(DashboardContext);
 
   const goToCustom = event => {
     switchTab(3);

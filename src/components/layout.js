@@ -5,13 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState, useContext} from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
-// import {navigate} from "gatsby"
 import {AccountBar, CompassBar} from "./SideBarComponents"
 import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
-import {globalStore} from "../context/context"
+import {GlobalContext} from "../context/context"
 import { Auth } from 'aws-amplify'
 import { getCompass } from '../utils/queries'
 import awsconfig from '../aws-exports';
@@ -19,14 +18,13 @@ Amplify.configure(awsconfig);
 
 const Layout = (props) => {
   const {
-    user, 
+    user = {}, 
     loginUser, 
-    selectCompass, 
-    compass, 
+    compass = "", 
     removeCompass, 
     removeSession, 
     removeInteraction
-  } = globalStore()
+  } = useContext(GlobalContext);
 
   const [title,setTitle] = useState('')
 
@@ -70,7 +68,7 @@ const Layout = (props) => {
     <LayoutContainer >
       <SidebarContainer>
       { user.email && <AccountBar />}
-      { (user.email && compass != '' && title != '') ? <CompassBar title={title}/>  : ''}
+      { (user.email && compass !== '' && title !== '') ? <CompassBar title={title}/>  : ''}
       </SidebarContainer>
       <MainViewContainer>
         {props.children}

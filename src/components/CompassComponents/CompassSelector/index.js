@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from "react";
+import React, {useState, useEffect, useContext}  from "react";
 import Step from "./Step"
 import { 
   StepRow, 
@@ -14,12 +14,12 @@ import {
   SessionAttachments
 
 } from "../../../styles/CompassPage"
-import { getCompass, getSession } from "../../../utils/queries"
-import {globalStore} from "../../../context/context"
+import { getSession } from "../../../utils/queries"
+import {GlobalContext} from "../../../context/context"
 import Attachment from "../LogPage/Attachment"
 
 const CompassSelector = ({showAttachment}) => {
-  const { session} = globalStore()
+  const { session } = useContext(GlobalContext);
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
   const [attachments,setAttachments] = useState([])
@@ -33,7 +33,7 @@ const CompassSelector = ({showAttachment}) => {
         const att = res.data.getSession.interactions.items.map((item,key) => (item.attachments))
         setAttachments(att.filter(x => x))
       })
-  },[])
+  },[session])
 
   return (
     <CSGrid
@@ -74,8 +74,6 @@ const CompassSelector = ({showAttachment}) => {
             {currentSession.name_of_session}
           </SessionTitle>
           <StepClock>
-            {/* {translateTime(time)}
-            <TimerButton onClick={pause} start={start}/> */}
           </StepClock>
         </SessionHeader>
           <SessionDescription gridArea="description">

@@ -1,20 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
 import Landing from "../components/LandingPageComponents"
 import Dashboard from "../components/DashboardComponent"
-import { globalStore } from "../context/context"
+import { GlobalContext } from "../context/context"
 import { DashboardProvider } from "../context/DashboardPage/context"
 
 const IndexPage = (props) => {
-  const { user } = globalStore()
+  const { user = {} } = useContext(GlobalContext);
 
   return (
     <>
       {
         user.hasOwnProperty("email") ? 
-        <DashboardProvider>
-          <Dashboard />
-        </DashboardProvider> 
-        : <Landing path="/" />
+          <DashboardProvider>
+            <Dashboard />
+          </DashboardProvider> 
+          : <Landing path="/" />
       }
     </>
   )

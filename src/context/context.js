@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useContext} from "react";
+import React, { useReducer, createContext} from "react";
 import GlobalReducer, { 
   SIGN_IN, 
   SIGN_OUT, 
@@ -34,5 +34,3 @@ export const GlobalProvider = ({children}) => {
     </GlobalContext.Provider>
   )
 }
-
-export const globalStore = () => (useContext(GlobalContext));

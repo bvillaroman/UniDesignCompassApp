@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Box, Text} from "grommet";
 
-import { userDashboard } from "../../context/DashboardPage/context"
+import { DashboardContext } from "../../context/DashboardPage/context"
 import { 
   ReviewCard, 
   ReviewTitle,
@@ -13,7 +13,7 @@ import {
 import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
-  const { form } = userDashboard();
+  const { form } = useContext(DashboardContext);
 
   const submitCompass = event => {
     return createCompass(form.title,form.description)

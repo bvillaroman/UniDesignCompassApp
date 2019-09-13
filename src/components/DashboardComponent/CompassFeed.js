@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState, useContext } from 'react'
 import {
   Feed,
   CompassTitle,
@@ -8,10 +8,10 @@ import {
 } from "../../styles/Dashboard"
 import { getCompasses } from "../../utils/queries"
 import { navigate } from "gatsby"
-import {globalStore} from "../../context/context"
+import {GlobalContext} from "../../context/context"
 
 const CompassFeed = (props) => {
-  const {selectCompass} = globalStore()
+  const {selectCompass} = useContext(GlobalContext);
   const [compasses,setCompasses] = useState([])
 
   useEffect(() => {

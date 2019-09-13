@@ -1,4 +1,4 @@
-import React,{ useState, useEffect} from "react";
+import React,{ useState, useEffect, useContext} from "react";
 import { 
   LoggerGrid,
   LoggerInput, 
@@ -17,19 +17,18 @@ import {
 } from "../../../styles/CompassPage"
 import Attachment from "./Attachment"
 
-import { Storage, API, graphqlOperation } from 'aws-amplify'
+import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import { getInteraction } from '../../../utils/queries'
 import { updateInteraction } from '../../../utils/mutations'
 import config from '../../../aws-exports'
-import {globalStore} from "../../../context/context"
+import {GlobalContext} from "../../../context/context"
 
 const Logger = ({showAttachment}) => {
-  const {interaction, removeInteraction} = globalStore()
+  const {interaction, removeInteraction} = useContext(GlobalContext);
 
   const [step, setStep] = useState('');
   const [log, setLog] = useState('');
-  const [upload,setUpload] = useState({})
   const [attachments,setAttachments] = useState([])
   const [time,setTime] = useState(0)
   const [start,setStart] = useState(true)
@@ -45,7 +44,7 @@ const Logger = ({showAttachment}) => {
       setAttachments(attachments)
     })
 
-  }, [])
+  }, [id])
 
   useEffect(() => {
     let interval = null;
@@ -96,7 +95,7 @@ const Logger = ({showAttachment}) => {
   }
 
   const handleUpload = async (event) => { 
-    const { target: { value, files } } = event
+    const { target: { files } } = event
     const [image] = files || []
     if (image) {
       const { name: fileName, type: mimeType } = image
@@ -170,7 +169,6 @@ const Logger = ({showAttachment}) => {
               <StepClock>
                 {translateTime(time)}
                 <TimerButton onClick={pause} start={start}/>
-                {/* <TimerButton onClick={pause} start={start}/> */}
               </StepClock>
             </SessionHeader>
               <SessionDescription gridArea="description">
