@@ -17,6 +17,7 @@ import {
 import { getSession } from "../../../utils/queries"
 import {GlobalContext} from "../../../context/context"
 import Attachment from "../LogPage/Attachment"
+import Interaction from "./interaction"
 
 const CompassSelector = ({showAttachment}) => {
   const { session } = useContext(GlobalContext);
@@ -94,11 +95,7 @@ const CompassSelector = ({showAttachment}) => {
         {
           currentSession.interactions && currentSession.interactions.items.map((item) => {
             if (item.step) {
-              return (
-                <CSInteraction>
-                  {item.step.name_of_step}  
-                </CSInteraction>
-              )
+              return ( <Interaction interaction={item}/> )
             }
             return ''
   

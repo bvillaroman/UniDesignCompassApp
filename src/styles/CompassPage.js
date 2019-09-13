@@ -297,7 +297,7 @@ export const CSInteractions = styled(Box)`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-export const CSInteraction = styled(Box)`
+export const CSInteraction = styled(Button)`
   border: 0.15rem solid #5567FD;
   border-radius: 50%;
   transition: all 0.3s;
