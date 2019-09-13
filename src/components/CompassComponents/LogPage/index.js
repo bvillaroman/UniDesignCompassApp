@@ -95,15 +95,11 @@ const Logger = ({showAttachment}) => {
     return setStart(!start)
   }
 
-  const handleUpload = (event) => { 
+  const handleUpload = async (event) => { 
     const { target: { value, files } } = event
     const [image] = files || []
-    setUpload(image)
-  }
-
-  const uploadToS3 = async (e) => {
-    if (upload) {
-      const { name: fileName, type: mimeType } = upload
+    if (image) {
+      const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
         key:  `${uuid()}${fileName}`,
@@ -119,7 +115,7 @@ const Logger = ({showAttachment}) => {
       }
 
       try {
-        await Storage.put(fileForUpload.key, upload, { contentType: mimeType })
+        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
         updateInteraction(newInteraction)
           .then((res) => {
             console.log(res)
@@ -145,13 +141,7 @@ const Logger = ({showAttachment}) => {
       <LoggerInnerNav gridArea="header" >
         <CompassButton onClick={changeToCompass}/>
         <StepName> {step.name_of_step} </StepName>
-        <input
-          label="File to upload"
-          type="file"
-          onChange={handleUpload}
-          style={{ margin: '10px 0px' }}
-        />
-        <AttachmentButton onClick={uploadToS3}/>
+        <AttachmentButton  onChange={handleUpload} />
       </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput

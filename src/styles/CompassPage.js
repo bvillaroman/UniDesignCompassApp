@@ -9,7 +9,8 @@ import {
   Form,
   Grid,
   Tab,
-  Layer
+  Layer,
+  Video,
 } from "grommet"
 import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
@@ -25,12 +26,51 @@ export const CompassButton = ({onClick}) =>(
     )}
   />
 )
-export const AttachmentButton = ({onClick}) =>(
-  <CompassButtons     
-    onClick={onClick} 
-    icon={<Attachment color="#5567FD"/>}
-  />
+export const AttachmentButtonLabel = styled.label`
+  cursor: pointer;
+  border: 0.15rem solid transparent;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  padding: 0.5rem;
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  :hover {
+    transition: all 0.3s;
+    border: 0.15rem solid #5567FD;
+    border-radius: 2rem;
+    background-color:#5567FD;
+    color: white; 
+    svg {
+      transition: all 0.3s;
+      fill: white; 
+      stroke: white; 
+    }
+  }
+  input {
+    display: none;
+  }
+`
+export const AttachmentButton = ({onChange}) =>(
+  <AttachmentButtonLabel>
+    <Attachment color="#5567FD"/>
+    <input type="file" onChange={onChange}/>
+  </AttachmentButtonLabel>
+  
 )
+// (
+//   <CompassButtons     
+//     onClick={onClick} 
+//     icon={<Attachment color="#5567FD"/>}
+//   >
+//       <input
+//         label={<Attachment color="#5567FD"/>}
+//         type="file"
+//         onChange={onChange}
+//       />
+//   </CompassButtons>
+// )
 export const CloseButton = ({onClick}) =>(
   <AttachmentButtons     
     onClick={onClick} 
@@ -38,12 +78,13 @@ export const CloseButton = ({onClick}) =>(
     label="Close"
   />
 )
-export const DownloadButton = ({onClick}) =>(
-  <AttachmentButtons     
-    onClick={onClick} 
-    icon={<Download color="#5567FD"/>}
-    label="Download"
-  />
+export const DownloadButton = ({src}) =>(
+  <a href={src} download target="_blank">
+    <AttachmentButtons     
+      icon={<Download color="#5567FD"/>}
+      label="Download"
+    />
+  </a>
 )
 export const AttachmentItemButton = ({onClick, attachment}) =>(
   <AttachmentItem onClick={onClick} >
@@ -51,12 +92,25 @@ export const AttachmentItemButton = ({onClick, attachment}) =>(
       attachment.type && 
       (
         attachment.type.includes("image") ? <Image color="#5567FD"/> :
-        attachment.type.includes("video") ? <Multimedia color="#5567FD"/> :
+        attachment.type.includes("mp4") ? <Multimedia color="#5567FD"/> :
         <Document color="#5567FD"/>
       )
     }
     <span>{attachment.key ? attachment.name : ''} </span>
   </AttachmentItem>     
+)
+
+export const AttachmentPreview = ({attachment,src}) => (
+  <AttachmentPreviewContainer>
+    { 
+      attachment.type && 
+      (
+        attachment.type.includes("image") ? <AttachmentPhoto src={src}/> :
+        attachment.type.includes("video") ? <AttachmentVideo src={src} type={attachment.type}/> :
+        <Document color="#5567FD"/>
+      )
+    }
+  </AttachmentPreviewContainer>
 )
 
 // Logger
@@ -117,6 +171,11 @@ export const AttachmentPreviewContainer = styled(Box)`
   width: 80%;
   height: 80%;
   margin: 0 auto;
+  svg {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+  }
 `
 export const AttachmentButtonContainer = styled(Box)`
   width: 80%;
@@ -144,11 +203,18 @@ export const AttachmentItem = styled(Box)`
   
 `;
 export const AttachmentPhoto = styled.img`
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   margin: 0 auto;
   margin-top: 1rem;
 `;
+
+export const AttachmentVideo = ({src,type}) => (
+  <Video controls="over" fit="cover">
+    <source key="video" src={src} type={type} />
+  </Video>
+)
+
 export const AttachmentButtons = styled(Button)`
   border: 0.15rem solid #5567FD;
   border-radius: 2rem;

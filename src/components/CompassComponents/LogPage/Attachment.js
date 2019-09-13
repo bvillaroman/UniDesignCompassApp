@@ -9,7 +9,7 @@ const Attachment = ({attachment, showAttachment}) => {
   const loadAttachment = (e) => {
     Storage.get(attachment.key)
       .then(result => {
-        showAttachment(result);
+        showAttachment(attachment,result);
       })
       .catch(err => {
         showAttachment('')

@@ -5,11 +5,10 @@ import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
 import { 
   MainView, 
-  AttachmentPhoto, 
   LayerView, 
   CompassButtons, 
   AttachmentContainer ,
-  AttachmentPreviewContainer,
+  AttachmentPreview,
   AttachmentButtonContainer,
   CloseButton,
   DownloadButton
@@ -20,9 +19,11 @@ const CompassPage = (props) => {
   const {session, interaction} = globalStore()
   const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
+  const [source,setSource] = useState();
 
-  const showItem = (item) => {
-    setAttachment(item)
+  const showItem = (attachment,src) => {
+    setAttachment(attachment)
+    setSource(src)
     setShow(true)
   }
 
@@ -40,12 +41,10 @@ const CompassPage = (props) => {
             onClickOutside={() => setShow(false)}
           >
             <AttachmentContainer>
-              <AttachmentPreviewContainer>
-                <AttachmentPhoto src={attachment}/>
-              </AttachmentPreviewContainer>
+              <AttachmentPreview attachment={attachment} src={source}/>
               <AttachmentButtonContainer>
                 <CloseButton onClick={() => setShow(false)} />
-                <DownloadButton onClick={() => setShow(false)} />
+                <DownloadButton  src={source}/>
               </AttachmentButtonContainer>
             </AttachmentContainer>
           </LayerView>
