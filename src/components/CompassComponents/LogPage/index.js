@@ -15,6 +15,8 @@ import {
   AttachmentButton,
   SessionAttachments
 } from "../../../styles/CompassPage"
+import Attachment from "./Attachment"
+
 import { Storage, API, graphqlOperation } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import { getInteraction } from '../../../utils/queries'
@@ -22,7 +24,7 @@ import { updateInteraction } from '../../../utils/mutations'
 import config from '../../../aws-exports'
 import {globalStore} from "../../../context/context"
 
-const Logger = () => {
+const Logger = ({showAttachment}) => {
   const {interaction, removeInteraction} = globalStore()
 
   const [step, setStep] = useState('');
@@ -36,7 +38,8 @@ const Logger = () => {
   
   useEffect(() => {
     getInteraction(id).then((res) => {
-      const {log_content, attachments, interaction_start_end, step} = res.data.getInteraction
+      const {log_content, attachments, duration, step} = res.data.getInteraction
+      setTime(duration)
       setStep(step)
       setLog(log_content)
       setAttachments(attachments)
@@ -60,7 +63,7 @@ const Logger = () => {
     const newInteraction = {
       id ,
       log_content: log,
-      interaction_start_time: time
+      duration: time
     } 
     updateInteraction(newInteraction).then(() => {
       removeInteraction()
@@ -83,7 +86,7 @@ const Logger = () => {
     const newInteraction = {
       id,
       log_content: log,
-      interaction_start_time: time
+      duration: time
     }
     if (start) {
       updateInteraction(newInteraction)
@@ -92,29 +95,27 @@ const Logger = () => {
     return setStart(!start)
   }
 
-  const handleUpload = (event) => { 
+  const handleUpload = async (event) => { 
     const { target: { value, files } } = event
     const [image] = files || []
-    setUpload(image)
-  }
-
-  const uploadToS3 = async (e) => {
-    if (upload) {
-      const { name: fileName, type: mimeType } = upload
+    if (image) {
+      const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
         key:  `${uuid()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
+        name: fileName,
+        type: mimeType
       }
       const newInteraction = {
         id,
         log_content: log,
-        interaction_start_time: time,
+        duration: time,
         attachments: fileForUpload
       }
 
       try {
-        await Storage.put(fileForUpload.key, upload, { contentType: mimeType })
+        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
         updateInteraction(newInteraction)
           .then((res) => {
             setAttachments(res.data.updateInteraction.attachments)
@@ -139,13 +140,7 @@ const Logger = () => {
       <LoggerInnerNav gridArea="header" >
         <CompassButton onClick={changeToCompass}/>
         <StepName> {step.name_of_step} </StepName>
-        <input
-          label="File to upload"
-          type="file"
-          onChange={handleUpload}
-          style={{ margin: '10px 0px' }}
-        />
-        <AttachmentButton onClick={uploadToS3}/>
+        <AttachmentButton  onChange={handleUpload} />
       </LoggerInnerNav>
       <LoggerTA gridArea="main" >
         <LoggerInput
@@ -183,7 +178,7 @@ const Logger = () => {
               </SessionDescription>
               <SessionAttachments gridArea="attachments">
                 <h1>Attachments</h1>
-                { attachments && attachments.key && <p>{attachments.key.slice(36)}</p>}
+                { attachments && attachments.key && <Attachment attachment={attachments} showAttachment={showAttachment}/> }
               </SessionAttachments>
             </>
           ) : ''

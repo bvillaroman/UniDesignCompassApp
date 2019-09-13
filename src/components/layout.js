@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
 // import {navigate} from "gatsby"
@@ -28,20 +28,22 @@ const Layout = (props) => {
     removeInteraction
   } = globalStore()
 
+  const [title,setTitle] = useState('')
+
   useEffect(() => {
     if (props.uri !== "/Compass"){
       removeCompass()
       removeInteraction()
       removeSession()
     }
-  }, [])
+  }, [props.uri])
 
   useEffect(() => {
     // queries the compass and assigns it throughout the app
     if (compass) {
       getCompass(compass)
         .then((res) => {
-          selectCompass(res.data.getCompass.id)
+          setTitle(res.data.getCompass.name_of_compass)
         })
         .catch((err) => {
           console.log(err)
@@ -62,13 +64,13 @@ const Layout = (props) => {
     }
     
     
-  }, [props.children, props.uri])
+  }, [compass])
   
   return (
     <LayoutContainer >
       <SidebarContainer>
       { user.email && <AccountBar />}
-      { (user.email && compass.length) && <CompassBar compass={compass}/> }
+      { (user.email && compass != '' && title != '') ? <CompassBar title={title}/>  : ''}
       </SidebarContainer>
       <MainViewContainer>
         {props.children}

@@ -4,73 +4,57 @@ import {
   StepRow, 
   CSGrid, 
   CSMain,
+  CSInteractions,
+  CSInteraction,
   StepClock,
   SessionView, 
   SessionTitle, 
   SessionHeader, 
-  SessionDescription 
+  SessionDescription ,
+  SessionAttachments
+
 } from "../../../styles/CompassPage"
 import { getCompass, getSession } from "../../../utils/queries"
 import {globalStore} from "../../../context/context"
+import Attachment from "../LogPage/Attachment"
 
-const CompassSelector = (props) => {
-  const {compass, session} = globalStore()
+const CompassSelector = ({showAttachment}) => {
+  const { session} = globalStore()
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
-  const [interactions,setInteractions] = useState([])
-
-  // getting the current compass
-  useEffect(() => {
-    getCompass(compass)
-      .then((res) => {
-        setSteps(res.data.getCompass.steps.items)
-      })
-  },[])
+  const [attachments,setAttachments] = useState([])
 
   // getting the current session
   useEffect(() => {
     getSession(session)
       .then((res) => {
         setCurrrentSession(res.data.getSession)
+        setSteps(res.data.getSession.compass.steps.items)
+        const att = res.data.getSession.interactions.items.map((item,key) => (item.attachments))
+        setAttachments(att.filter(x => x))
       })
   },[])
 
-
-  // const getDuration = (id) => {
-
-  // }
-
-  // const getTotalTime = () => {
-
-  // }
-
   return (
     <CSGrid
-      rows={['fill']}
+      rows={['80%', '20%']}
       columns={['80%', '20%']}
       fill
       areas={[
         { name: 'main', start: [0, 0], end: [0, 0] },
-        { name: 'session', start: [1, 0], end: [1, 0] },
+        { name: 'session', start: [1, 0], end: [1, 1] },
+        { name: 'interactions', start: [0, 1], end: [0, 1] },
       ]}
     >
       {/* compass wheel */}
       <CSMain gridArea="main">
         <StepRow>
-          <Step activeStep={steps[0]} />
-          <Step activeStep={steps[1]} />
-        </StepRow> 
-
-        <StepRow>
-          <Step activeStep={steps[2]} />
-          <Step />
-          <Step activeStep={steps[3]} />
-        </StepRow> 
-
-        <StepRow>
-          <Step activeStep={steps[4]} />
-          <Step activeStep={steps[5]} />
-        </StepRow> 
+          {
+            steps ? steps.map((item,key) => {
+              return (<Step activeStep={item} rotateAngle={key*(360/steps.length)}/>)
+            }) : ''
+          }
+        </StepRow>
       </CSMain>
 
       {/* session bar */}
@@ -87,7 +71,7 @@ const CompassSelector = (props) => {
       >
         <SessionHeader gridArea="header">
           <SessionTitle>
-            {currentSession.title}
+            {currentSession.name_of_session}
           </SessionTitle>
           <StepClock>
             {/* {translateTime(time)}
@@ -95,10 +79,34 @@ const CompassSelector = (props) => {
           </StepClock>
         </SessionHeader>
           <SessionDescription gridArea="description">
-            {currentSession.description}
+            {currentSession.description_of_session}
           </SessionDescription>
-          <p>Attachments</p>
+          <SessionAttachments gridArea="attachments">
+            <p>Attachments</p>
+            { 
+              attachments && 
+              attachments.map((attachment) => (
+                <Attachment attachment={attachment} showAttachment={showAttachment}/> 
+              ))
+            }
+             
+          </SessionAttachments>
       </SessionView>
+      <CSInteractions gridArea="interactions">
+        {
+          currentSession.interactions && currentSession.interactions.items.map((item) => {
+            if (item.step) {
+              return (
+                <CSInteraction>
+                  {item.step.name_of_step}  
+                </CSInteraction>
+              )
+            }
+            return ''
+  
+          })
+        }
+      </CSInteractions>
     </CSGrid>
 )};
 export default CompassSelector;

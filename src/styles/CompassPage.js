@@ -8,9 +8,11 @@ import {
   TextInput,
   Form,
   Grid,
-  Tab
+  Tab,
+  Layer,
+  Video,
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill } from 'grommet-icons';
+import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
@@ -24,12 +26,79 @@ export const CompassButton = ({onClick}) =>(
     )}
   />
 )
-export const AttachmentButton = ({onClick}) =>(
-  <CompassButtons     
+export const AttachmentButtonLabel = styled.label`
+  cursor: pointer;
+  border: 0.15rem solid transparent;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  padding: 0.5rem;
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  :hover {
+    transition: all 0.3s;
+    border: 0.15rem solid #5567FD;
+    border-radius: 2rem;
+    background-color:#5567FD;
+    color: white; 
+    svg {
+      transition: all 0.3s;
+      fill: white; 
+      stroke: white; 
+    }
+  }
+  input {
+    display: none;
+  }
+`
+export const AttachmentButton = ({onChange}) =>(
+  <AttachmentButtonLabel>
+    <Attachment color="#5567FD"/>
+    <input type="file" onChange={onChange}/>
+  </AttachmentButtonLabel>
+  
+)
+export const CloseButton = ({onClick}) =>(
+  <AttachmentButtons     
     onClick={onClick} 
-    icon={<Attachment color="#5567FD"/>}
+    icon={<Close color="#5567FD"/>}
+    label="Close"
   />
-    
+)
+export const DownloadButton = ({src}) =>(
+  <a href={src} download target="_blank">
+    <AttachmentButtons     
+      icon={<Download color="#5567FD"/>}
+      label="Download"
+    />
+  </a>
+)
+export const AttachmentItemButton = ({onClick, attachment}) =>(
+  <AttachmentItem onClick={onClick} >
+    { 
+      attachment.type && 
+      (
+        attachment.type.includes("image") ? <Image color="#5567FD"/> :
+        attachment.type.includes("mp4") ? <Multimedia color="#5567FD"/> :
+        <Document color="#5567FD"/>
+      )
+    }
+    <span>{attachment.key ? attachment.name : ''} </span>
+  </AttachmentItem>     
+)
+
+export const AttachmentPreview = ({attachment,src}) => (
+  <AttachmentPreviewContainer>
+    { 
+      attachment.type && 
+      (
+        attachment.type.includes("image") ? <AttachmentPhoto src={src}/> :
+        attachment.type.includes("video") ? <AttachmentVideo src={src} type={attachment.type}/> :
+        <Document color="#5567FD"/>
+      )
+    }
+  </AttachmentPreviewContainer>
 )
 
 // Logger
@@ -78,6 +147,73 @@ export const LoggerInnerNav = styled(Box)`
 `;
 export const LoggerTA = styled(Box)`
   padding: 0 1.6rem 1rem 1.6rem;
+`;
+
+// attachment components
+export const AttachmentContainer = styled(Box)`
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+`
+export const AttachmentPreviewContainer = styled(Box)`
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  svg {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+  }
+`
+export const AttachmentButtonContainer = styled(Box)`
+  width: 80%;
+  height: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+export const AttachmentItem = styled(Box)`
+  border: none;
+  width: 90%;
+  margin: 1rem auto;
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  span {
+    padding-left: 0.5rem;
+  }
+  
+`;
+export const AttachmentPhoto = styled.img`
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+`;
+
+export const AttachmentVideo = ({src,type}) => (
+  <Video controls="over" fit="cover">
+    <source key="video" src={src} type={type} />
+  </Video>
+)
+
+export const AttachmentButtons = styled(Button)`
+  border: 0.15rem solid #5567FD;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  padding: 1rem;
+  color #5567FD;
+  align-self: center;
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 `;
 
 // Sessions Creator
@@ -152,20 +288,63 @@ export const CSGrid = styled(Grid)`
 `;
 
 export const CSMain = styled(Box)`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+`;
+export const CSInteractions = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+export const CSInteraction = styled(Box)`
+  border: 0.15rem solid #5567FD;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #5567FD;
+  padding: 1rem;
+  color: white; 
+  font-weight: 400;
+  font-size: 1.0rem;
+  height: 7.2rem;
+	width: 7.2rem;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  
 `;
 
 export const StepRow = styled.div`
-  margin: 4rem;
-  text-align:center;
+  width: 35rem;
+  height: 35rem;
+  position: relative;
+  button { 
+    top: 38%;
+    left: 38%;
+  }
 `
-export const StepContainer = styled(CompassButtons)`
-  display: inline-block;
-  margin: 0 3rem;
-  padding: 2rem;
+export const StepContainer = styled(Button)`
   border: 0.15rem solid #5567FD;
+  border-radius: 50%;
+  transition: all 0.3s;
+  padding: 1rem;
+  color: black; 
+  font-weight: 600;
+  font-size: 1.3rem;
+  :hover {
+    transition: all 0.2s;
+    background-color: #5567FD;
+  }
+  text-align: center;
+
+  list-style: none;
+	height: 9rem;
+	width: 9rem;
+	position: absolute;
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(0, -200px) rotate(-${props.rotateAngle}deg)` || 'none'};
+  overflow-wrap: break-word;
 `
 
 // Compass SessionBar
@@ -210,6 +389,8 @@ export const SessionAttachments = styled(Box)`
   padding: 1rem;
   font-size: 1rem;
   text-align: center;
+  height: 100%;
+  overflow: scroll;
 `
 
 // Compass Page Containers
@@ -237,4 +418,9 @@ export const SessionView = styled(Grid)`
   text-align: center;
   background: white;
   width: 100%;
+`
+export const LayerView = styled(Layer)`
+  width: 70%;
+  height: 80%;
+  border-radius: 2rem;
 `
