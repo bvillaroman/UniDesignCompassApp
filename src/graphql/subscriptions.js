@@ -4,17 +4,13 @@
 export const onCreateUser = `subscription OnCreateUser {
   onCreateUser {
     id
-    username
-    first_name
-    last_name
+    name_of_user
     email
-    password_hash
-    phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
       }
@@ -26,17 +22,13 @@ export const onCreateUser = `subscription OnCreateUser {
 export const onUpdateUser = `subscription OnUpdateUser {
   onUpdateUser {
     id
-    username
-    first_name
-    last_name
+    name_of_user
     email
-    password_hash
-    phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
       }
@@ -48,17 +40,13 @@ export const onUpdateUser = `subscription OnUpdateUser {
 export const onDeleteUser = `subscription OnDeleteUser {
   onDeleteUser {
     id
-    username
-    first_name
-    last_name
+    name_of_user
     email
-    password_hash
-    phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
       }
@@ -67,274 +55,445 @@ export const onDeleteUser = `subscription OnDeleteUser {
   }
 }
 `;
-export const onCreateProcess = `subscription OnCreateProcess {
-  onCreateProcess {
+export const onCreateCompass = `subscription OnCreateCompass {
+  onCreateCompass {
     id
-    phaseids {
+    name_of_compass
+    description_of_compass
+    date_start
+    date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
+    sessions {
+      items {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      nextToken
+    }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onUpdateCompass = `subscription OnUpdateCompass {
+  onUpdateCompass {
+    id
+    name_of_compass
+    description_of_compass
+    date_start
+    date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
+    sessions {
+      items {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      nextToken
+    }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onDeleteCompass = `subscription OnDeleteCompass {
+  onDeleteCompass {
+    id
+    name_of_compass
+    description_of_compass
+    date_start
+    date_end
+    user {
+      id
+      name_of_user
+      email
+      compasses {
+        nextToken
+      }
+    }
+    sessions {
+      items {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      nextToken
+    }
+    steps {
+      items {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateSession = `subscription OnCreateSession {
+  onCreateSession {
+    id
+    session_start_time
+    session_end_time
+    name_of_session
+    description_of_session
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
+    interactions {
       items {
         id
         duration
-        title
-        description
+        log_content
       }
       nextToken
     }
-    user_id
-    user {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        nextToken
-      }
-    }
-    name
-    date_start
-    date_end
   }
 }
 `;
-export const onUpdateProcess = `subscription OnUpdateProcess {
-  onUpdateProcess {
+export const onUpdateSession = `subscription OnUpdateSession {
+  onUpdateSession {
     id
-    phaseids {
+    session_start_time
+    session_end_time
+    name_of_session
+    description_of_session
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
+    interactions {
       items {
         id
         duration
-        title
-        description
+        log_content
       }
       nextToken
     }
-    user_id
-    user {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        nextToken
-      }
-    }
-    name
-    date_start
-    date_end
   }
 }
 `;
-export const onDeleteProcess = `subscription OnDeleteProcess {
-  onDeleteProcess {
+export const onDeleteSession = `subscription OnDeleteSession {
+  onDeleteSession {
     id
-    phaseids {
+    session_start_time
+    session_end_time
+    name_of_session
+    description_of_session
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
+      }
+    }
+    interactions {
       items {
         id
         duration
-        title
-        description
+        log_content
       }
       nextToken
     }
-    user_id
-    user {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        nextToken
-      }
-    }
-    name
-    date_start
-    date_end
   }
 }
 `;
-export const onCreatePhase = `subscription OnCreatePhase {
-  onCreatePhase {
+export const onCreateInteraction = `subscription OnCreateInteraction {
+  onCreateInteraction {
     id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
     duration
-    title
-    description
-    process {
+    log_content
+    session {
       id
-      phaseids {
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
         nextToken
       }
-      user_id
-      user {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
     }
-  }
-}
-`;
-export const onUpdatePhase = `subscription OnUpdatePhase {
-  onUpdatePhase {
-    id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
+    step {
       id
-      phaseids {
-        nextToken
-      }
-      user_id
-      user {
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
         id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
-  }
-}
-`;
-export const onDeletePhase = `subscription OnDeletePhase {
-  onDeletePhase {
-    id
-    logs {
-      items {
-        id
-        timestamp
-        text
-      }
-      nextToken
-    }
-    duration
-    title
-    description
-    process {
-      id
-      phaseids {
-        nextToken
-      }
-      user_id
-      user {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
-    }
-  }
-}
-`;
-export const onCreateLog = `subscription OnCreateLog {
-  onCreateLog {
-    id
-    timestamp
-    text
-    phase {
-      id
-      logs {
-        nextToken
-      }
-      duration
-      title
-      description
-      process {
-        id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
       }
     }
+    attachments {
+      name
+      type
+      bucket
+      region
+      key
+    }
   }
 }
 `;
-export const onUpdateLog = `subscription OnUpdateLog {
-  onUpdateLog {
+export const onUpdateInteraction = `subscription OnUpdateInteraction {
+  onUpdateInteraction {
     id
-    timestamp
-    text
-    phase {
+    duration
+    log_content
+    session {
       id
-      logs {
-        nextToken
-      }
-      duration
-      title
-      description
-      process {
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
         id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+    step {
+      id
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+    }
+    attachments {
+      name
+      type
+      bucket
+      region
+      key
+    }
+  }
+}
+`;
+export const onDeleteInteraction = `subscription OnDeleteInteraction {
+  onDeleteInteraction {
+    id
+    duration
+    log_content
+    session {
+      id
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+    step {
+      id
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+    }
+    attachments {
+      name
+      type
+      bucket
+      region
+      key
+    }
+  }
+}
+`;
+export const onCreateStep = `subscription OnCreateStep {
+  onCreateStep {
+    id
+    step_start_time
+    step_end_time
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
       }
     }
   }
 }
 `;
-export const onDeleteLog = `subscription OnDeleteLog {
-  onDeleteLog {
+export const onUpdateStep = `subscription OnUpdateStep {
+  onUpdateStep {
     id
-    timestamp
-    text
-    phase {
+    step_start_time
+    step_end_time
+    name_of_step
+    description_of_step
+    compass {
       id
-      logs {
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      steps {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const onDeleteStep = `subscription OnDeleteStep {
+  onDeleteStep {
+    id
+    step_start_time
+    step_end_time
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
         id
-        user_id
-        name
-        date_start
-        date_end
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
       }
     }
   }

@@ -1,5 +1,11 @@
 {
     "AppSyncApiName": "unidesigncompassapp",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": "false"
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authunidesigncompassapp155c42e4",
+            "Outputs.UserPoolId"
+        ]
+    }
 }

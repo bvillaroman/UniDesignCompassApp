@@ -4,17 +4,13 @@
 export const getUser = `query GetUser($id: ID!) {
   getUser(id: $id) {
     id
-    username
-    first_name
-    last_name
+    name_of_user
     email
-    password_hash
-    phone_number
-    processes {
+    compasses {
       items {
         id
-        user_id
-        name
+        name_of_compass
+        description_of_compass
         date_start
         date_end
       }
@@ -31,13 +27,9 @@ export const listUsers = `query ListUsers(
   listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      username
-      first_name
-      last_name
+      name_of_user
       email
-      password_hash
-      phone_number
-      processes {
+      compasses {
         nextToken
       }
     }
@@ -45,163 +37,276 @@ export const listUsers = `query ListUsers(
   }
 }
 `;
-export const getProcess = `query GetProcess($id: ID!) {
-  getProcess(id: $id) {
+export const getCompass = `query GetCompass($id: ID!) {
+  getCompass(id: $id) {
     id
-    phaseids {
-      items {
-        id
-        duration
-        title
-        description
-      }
-      nextToken
-    }
-    user_id
-    user {
-      id
-      username
-      first_name
-      last_name
-      email
-      password_hash
-      phone_number
-      processes {
-        nextToken
-      }
-    }
-    name
+    name_of_compass
+    description_of_compass
     date_start
     date_end
-  }
-}
-`;
-export const listProcesss = `query ListProcesss(
-  $filter: ModelProcessFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listProcesss(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
+    user {
       id
-      phaseids {
+      name_of_user
+      email
+      compasses {
         nextToken
       }
-      user_id
-      user {
-        id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
-      }
-      name
-      date_start
-      date_end
     }
-    nextToken
-  }
-}
-`;
-export const getPhase = `query GetPhase($id: ID!) {
-  getPhase(id: $id) {
-    id
-    logs {
+    sessions {
       items {
         id
-        timestamp
-        text
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
       }
       nextToken
     }
-    duration
-    title
-    description
-    process {
-      id
-      phaseids {
-        nextToken
-      }
-      user_id
-      user {
+    steps {
+      items {
         id
-        username
-        first_name
-        last_name
-        email
-        password_hash
-        phone_number
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
       }
-      name
-      date_start
-      date_end
+      nextToken
     }
   }
 }
 `;
-export const listPhases = `query ListPhases(
-  $filter: ModelPhaseFilterInput
+export const listCompasss = `query ListCompasss(
+  $filter: ModelCompassFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listPhases(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listCompasss(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      logs {
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
         nextToken
       }
-      duration
-      title
-      description
-      process {
-        id
-        user_id
-        name
-        date_start
-        date_end
+      steps {
+        nextToken
       }
     }
     nextToken
   }
 }
 `;
-export const getLog = `query GetLog($id: ID!) {
-  getLog(id: $id) {
+export const getSession = `query GetSession($id: ID!) {
+  getSession(id: $id) {
     id
-    timestamp
-    text
-    phase {
+    session_start_time
+    session_end_time
+    name_of_session
+    description_of_session
+    compass {
       id
-      logs {
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
         nextToken
       }
-      duration
-      title
-      description
-      process {
+      steps {
+        items {
+          name_of_step
+          id
+        }
+      }
+    }
+    interactions {
+      items {
         id
-        user_id
-        name
+        duration
+        log_content
+        step {
+          name_of_step
+        }
+        attachments {
+          name
+          type
+          bucket
+          region
+          key
+        }
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const listSessions = `query ListSessions(
+  $filter: ModelSessionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSessions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        name_of_compass
+        description_of_compass
         date_start
         date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getInteraction = `query GetInteraction($id: ID!) {
+  getInteraction(id: $id) {
+    id
+    duration
+    log_content
+    session {
+      id
+      session_start_time
+      session_end_time
+      name_of_session
+      description_of_session
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+      interactions {
+        nextToken
+      }
+    }
+    step {
+      id
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
+      }
+    }
+    attachments {
+      name
+      type
+      bucket
+      region
+      key
+    }
+  }
+}
+`;
+export const listInteractions = `query ListInteractions(
+  $filter: ModelInteractionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInteractions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      duration
+      log_content
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      attachments {
+        name
+        type
+        bucket
+        region
+        key
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getStep = `query GetStep($id: ID!) {
+  getStep(id: $id) {
+    id
+    step_start_time
+    step_end_time
+    name_of_step
+    description_of_step
+    compass {
+      id
+      name_of_compass
+      description_of_compass
+      date_start
+      date_end
+      user {
+        id
+        name_of_user
+        email
+      }
+      sessions {
+        nextToken
+      }
+      steps {
+        nextToken
       }
     }
   }
 }
 `;
-export const listLogs = `query ListLogs($filter: ModelLogFilterInput, $limit: Int, $nextToken: String) {
-  listLogs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+export const listSteps = `query ListSteps(
+  $filter: ModelStepFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSteps(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      timestamp
-      text
-      phase {
+      step_start_time
+      step_end_time
+      name_of_step
+      description_of_step
+      compass {
         id
-        duration
-        title
-        description
+        name_of_compass
+        description_of_compass
+        date_start
+        date_end
       }
     }
     nextToken

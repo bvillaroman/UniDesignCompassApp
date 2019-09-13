@@ -1,18 +1,22 @@
 import React from "react";
-import HomePage from "./HomePage"
-import Process from "./Process"
-import { Provider } from 'react-redux';
-import { store } from "../state/store";
-import { Router } from "@reach/router"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Landing from "../components/LandingPageComponents"
+import Dashboard from "../components/DashboardComponent"
+import { globalStore } from "../context/context"
+import { DashboardProvider } from "../context/DashboardPage/context"
 
-const IndexPage = (props) => (
-  <Provider store={store}>
-    <Router>
-      <HomePage path="/" />
-      <Process path="Process/:processID"/>
-    </Router>
+const IndexPage = (props) => {
+  const { user } = globalStore()
 
-  </Provider>
-);
+  return (
+    <>
+      {
+        user.hasOwnProperty("email") ? 
+        <DashboardProvider>
+          <Dashboard />
+        </DashboardProvider> 
+        : <Landing path="/" />
+      }
+    </>
+  )
+}
 export default IndexPage;
