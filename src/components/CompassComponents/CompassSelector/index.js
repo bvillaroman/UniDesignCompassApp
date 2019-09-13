@@ -4,45 +4,36 @@ import {
   StepRow, 
   CSGrid, 
   CSMain,
+  CSInteractions,
+  CSInteraction,
   StepClock,
   SessionView, 
   SessionTitle, 
   SessionHeader, 
-  SessionDescription 
+  SessionDescription ,
+  SessionAttachments
+
 } from "../../../styles/CompassPage"
 import { getCompass, getSession } from "../../../utils/queries"
 import {globalStore} from "../../../context/context"
+import Attachment from "../LogPage/Attachment"
 
-const CompassSelector = (props) => {
-  const {compass, session} = globalStore()
+const CompassSelector = ({showAttachment}) => {
+  const { session} = globalStore()
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
-  const [interactions,setInteractions] = useState([])
-
-  // getting the current compass
-  useEffect(() => {
-    getCompass(compass)
-      .then((res) => {
-        setSteps(res.data.getCompass.steps.items)
-      })
-  },[])
+  const [attachments,setAttachments] = useState([])
 
   // getting the current session
   useEffect(() => {
     getSession(session)
       .then((res) => {
         setCurrrentSession(res.data.getSession)
+        setSteps(res.data.getSession.compass.steps.items)
+        const att = res.data.getSession.interactions.items.map((item,key) => (item.attachments))
+        setAttachments(att.filter(x => x))
       })
   },[])
-
-
-  // const getDuration = (id) => {
-
-  // }
-
-  // const getTotalTime = () => {
-
-  // }
 
   return (
     <CSGrid
@@ -90,15 +81,32 @@ const CompassSelector = (props) => {
           <SessionDescription gridArea="description">
             {currentSession.description_of_session}
           </SessionDescription>
-          <p>Attachments</p>
+          <SessionAttachments gridArea="attachments">
+            <p>Attachments</p>
+            { 
+              attachments && 
+              attachments.map((attachment) => (
+                <Attachment attachment={attachment} showAttachment={showAttachment}/> 
+              ))
+            }
+             
+          </SessionAttachments>
       </SessionView>
-      <div gridArea="interactions">
-      {
-        currentSession.interactions && currentSession.interactions.items.map((session) => {
-          return (<p>{session.id}</p>)
-        })
-      }
-      </div>
+      <CSInteractions gridArea="interactions">
+        {
+          currentSession.interactions && currentSession.interactions.items.map((item) => {
+            if (item.step) {
+              return (
+                <CSInteraction>
+                  {item.step.name_of_step}  
+                </CSInteraction>
+              )
+            }
+            return ''
+  
+          })
+        }
+      </CSInteractions>
     </CSGrid>
 )};
 export default CompassSelector;

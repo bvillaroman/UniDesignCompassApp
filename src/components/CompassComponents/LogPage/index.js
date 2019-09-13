@@ -118,7 +118,6 @@ const Logger = ({showAttachment}) => {
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
         updateInteraction(newInteraction)
           .then((res) => {
-            console.log(res)
             setAttachments(res.data.updateInteraction.attachments)
           })
       } catch (err) {

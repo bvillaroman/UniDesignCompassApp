@@ -59,18 +59,6 @@ export const AttachmentButton = ({onChange}) =>(
   </AttachmentButtonLabel>
   
 )
-// (
-//   <CompassButtons     
-//     onClick={onClick} 
-//     icon={<Attachment color="#5567FD"/>}
-//   >
-//       <input
-//         label={<Attachment color="#5567FD"/>}
-//         type="file"
-//         onChange={onChange}
-//       />
-//   </CompassButtons>
-// )
 export const CloseButton = ({onClick}) =>(
   <AttachmentButtons     
     onClick={onClick} 
@@ -188,7 +176,7 @@ export const AttachmentButtonContainer = styled(Box)`
 export const AttachmentItem = styled(Box)`
   border: none;
   width: 90%;
-  margin: 0.2rem auto;
+  margin: 1rem auto;
   font-size: 1rem;
   font-weight: 500;
   color: black;
@@ -304,6 +292,29 @@ export const CSMain = styled(Box)`
   flex-direction: row;
   justify-content: center;
 `;
+export const CSInteractions = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+`;
+export const CSInteraction = styled(Box)`
+  border: 0.15rem solid #5567FD;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: #5567FD;
+  padding: 1rem;
+  color: white; 
+  font-weight: 400;
+  font-size: 1.0rem;
+  height: 7.2rem;
+	width: 7.2rem;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  
+`;
 
 export const StepRow = styled.div`
   width: 35rem;
@@ -378,6 +389,8 @@ export const SessionAttachments = styled(Box)`
   padding: 1rem;
   font-size: 1rem;
   text-align: center;
+  height: 100%;
+  overflow: scroll;
 `
 
 // Compass Page Containers

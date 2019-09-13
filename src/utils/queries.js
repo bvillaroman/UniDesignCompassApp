@@ -31,7 +31,6 @@ export async function getCompass(compass_id) {
 
 export async function getSession(session_id) {
   const session = await API.graphql(graphqlOperation(queries.getSession, { id: session_id }));
-  console.log(session)
 
   return new Promise(function (resolve, reject) {
     if (session.data.getSession === null) {

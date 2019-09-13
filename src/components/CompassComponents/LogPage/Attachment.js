@@ -5,7 +5,6 @@ import {
 import { Storage} from 'aws-amplify'
 
 const Attachment = ({attachment, showAttachment}) => {
-  console.log(attachment)
   const loadAttachment = (e) => {
     Storage.get(attachment.key)
       .then(result => {
