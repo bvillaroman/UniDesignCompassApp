@@ -6,6 +6,8 @@ export const onCreateUser = `subscription OnCreateUser {
     id
     name_of_user
     email
+    admin_id
+    members_id
     compasses {
       items {
         id
@@ -24,6 +26,8 @@ export const onUpdateUser = `subscription OnUpdateUser {
     id
     name_of_user
     email
+    admin_id
+    members_id
     compasses {
       items {
         id
@@ -42,6 +46,8 @@ export const onDeleteUser = `subscription OnDeleteUser {
     id
     name_of_user
     email
+    admin_id
+    members_id
     compasses {
       items {
         id
@@ -66,6 +72,8 @@ export const onCreateCompass = `subscription OnCreateCompass {
       id
       name_of_user
       email
+      admin_id
+      members_id
       compasses {
         nextToken
       }
@@ -104,6 +112,8 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
       id
       name_of_user
       email
+      admin_id
+      members_id
       compasses {
         nextToken
       }
@@ -142,6 +152,8 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
       id
       name_of_user
       email
+      admin_id
+      members_id
       compasses {
         nextToken
       }
@@ -186,6 +198,8 @@ export const onCreateSession = `subscription OnCreateSession {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -222,6 +236,8 @@ export const onUpdateSession = `subscription OnUpdateSession {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -258,6 +274,8 @@ export const onDeleteSession = `subscription OnDeleteSession {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -314,11 +332,14 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -360,11 +381,14 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -406,11 +430,14 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -432,6 +459,8 @@ export const onCreateStep = `subscription OnCreateStep {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -460,6 +489,8 @@ export const onUpdateStep = `subscription OnUpdateStep {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -488,6 +519,8 @@ export const onDeleteStep = `subscription OnDeleteStep {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -496,6 +529,102 @@ export const onDeleteStep = `subscription OnDeleteStep {
         nextToken
       }
     }
+  }
+}
+`;
+export const onCreateAttachment = `subscription OnCreateAttachment {
+  onCreateAttachment {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const onUpdateAttachment = `subscription OnUpdateAttachment {
+  onUpdateAttachment {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const onDeleteAttachment = `subscription OnDeleteAttachment {
+  onDeleteAttachment {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
   }
 }
 `;
