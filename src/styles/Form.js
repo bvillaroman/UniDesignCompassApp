@@ -43,6 +43,16 @@ export const FormSwitchLabel = styled(Text)`
   color: #2A3664;
   font-size: 25%;
 `;
+export const FormErrorLabel = styled(Text)`
+  color: #E74C3C;
+  font-size: 30%;
+  text-align: center;
+  margin: 0 auto;
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+`;
 export const InputTextArea = styled(TextArea)`
   font-size: 1rem;
   resize: none;
