@@ -15,6 +15,7 @@ export const getUser = `query GetUser($id: ID!) {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -48,6 +49,7 @@ export const getCompass = `query GetCompass($id: ID!) {
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -65,6 +67,7 @@ export const getCompass = `query GetCompass($id: ID!) {
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -75,6 +78,7 @@ export const getCompass = `query GetCompass($id: ID!) {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -93,6 +97,7 @@ export const listCompasss = `query ListCompasss(
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -118,12 +123,14 @@ export const getSession = `query GetSession($id: ID!) {
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -135,10 +142,7 @@ export const getSession = `query GetSession($id: ID!) {
         nextToken
       }
       steps {
-        items {
-          name_of_step
-          id
-        }
+        nextToken
       }
     }
     interactions {
@@ -146,16 +150,8 @@ export const getSession = `query GetSession($id: ID!) {
         id
         duration
         log_content
-        step {
-          name_of_step
-        }
-        attachments {
-          name
-          type
-          bucket
-          region
-          key
-        }
+        createdAt
+        color
       }
       nextToken
     }
@@ -174,12 +170,14 @@ export const listSessions = `query ListSessions(
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -194,18 +192,22 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     id
     duration
     log_content
+    createdAt
+    color
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -217,12 +219,14 @@ export const getInteraction = `query GetInteraction($id: ID!) {
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -248,12 +252,15 @@ export const listInteractions = `query ListInteractions(
       id
       duration
       log_content
+      createdAt
+      color
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -261,6 +268,7 @@ export const listInteractions = `query ListInteractions(
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -277,12 +285,14 @@ export const getStep = `query GetStep($id: ID!) {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -312,12 +322,14 @@ export const listSteps = `query ListSteps(
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     nextToken
@@ -332,12 +344,15 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       id
       duration
       log_content
+      createdAt
+      color
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -345,6 +360,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -369,6 +385,8 @@ export const listAttachments = `query ListAttachments(
         id
         duration
         log_content
+        createdAt
+        color
       }
       bucket
       region
