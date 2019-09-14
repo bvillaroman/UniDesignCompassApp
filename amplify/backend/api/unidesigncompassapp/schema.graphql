@@ -35,6 +35,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   duration: Int
   log_content: String!
   createdAt: AWSDateTime
+  color: String
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
   attachments: [Attachment] @connection(name: "InteractionAttachments")

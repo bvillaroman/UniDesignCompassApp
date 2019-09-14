@@ -151,6 +151,7 @@ export const getSession = `query GetSession($id: ID!) {
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -192,6 +193,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -251,6 +253,7 @@ export const listInteractions = `query ListInteractions(
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -342,6 +345,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -382,6 +386,7 @@ export const listAttachments = `query ListAttachments(
         duration
         log_content
         createdAt
+        color
       }
       bucket
       region
