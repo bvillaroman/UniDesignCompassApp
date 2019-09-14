@@ -15,6 +15,7 @@ export const onCreateUser = `subscription OnCreateUser {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -35,6 +36,7 @@ export const onUpdateUser = `subscription OnUpdateUser {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -55,6 +57,7 @@ export const onDeleteUser = `subscription OnDeleteUser {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -68,6 +71,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -85,6 +89,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -95,6 +100,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -108,6 +114,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -125,6 +132,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -135,6 +143,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -148,6 +157,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -165,6 +175,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -175,6 +186,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -188,12 +200,14 @@ export const onCreateSession = `subscription OnCreateSession {
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -213,6 +227,7 @@ export const onCreateSession = `subscription OnCreateSession {
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -226,12 +241,14 @@ export const onUpdateSession = `subscription OnUpdateSession {
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -251,6 +268,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -264,12 +282,14 @@ export const onDeleteSession = `subscription OnDeleteSession {
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -289,6 +309,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -300,18 +321,21 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -323,12 +347,14 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -349,18 +375,21 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -372,12 +401,14 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -398,18 +429,21 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -421,12 +455,14 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -449,12 +485,14 @@ export const onCreateStep = `subscription OnCreateStep {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -479,12 +517,14 @@ export const onUpdateStep = `subscription OnUpdateStep {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -509,12 +549,14 @@ export const onDeleteStep = `subscription OnDeleteStep {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -540,12 +582,14 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -553,6 +597,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -572,12 +617,14 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -585,6 +632,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -604,12 +652,14 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -617,6 +667,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
