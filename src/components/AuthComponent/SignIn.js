@@ -7,10 +7,12 @@ import {
   FormContainer,
   FormTitle,
   FormSwitchLabel,
-  InputField
+  InputField,
+  FormErrorLabel
 } from "../../styles/Form"
 import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify';
+
 
 const SignIn = ({ switchToSignUp }) => {
   const { loginUser } = useContext(GlobalContext);
@@ -18,10 +20,12 @@ const SignIn = ({ switchToSignUp }) => {
     email: '',
     password: '',
   });
-  const [error] = useState({
+  const [errors] = useState({
     email: '',
     password: '',
   })
+  const [error,setError] = useState("")
+  const [loading,setLoading] = useState(false)
 
   const onChange = event => {
     const { target: { value, name } } = event;
@@ -29,16 +33,24 @@ const SignIn = ({ switchToSignUp }) => {
       ...form,
       [name]: value
     })
+    setError('')
+    setLoading(false)
   };
 
   const submitForm = ({ value }) => {
     const { email, password } = value
+    setLoading(true)
+
     Auth.signIn({ username: email, password })
       .then(user => {
         const { sub } = user.attributes;
         loginUser({ email, id: sub }) // Save to global store    
+        setLoading(false)
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      });
   }
 
   return (
@@ -48,7 +60,7 @@ const SignIn = ({ switchToSignUp }) => {
         onSubmit={submitForm}
         onChange={onChange}
         value={form}
-        errors={{ ...error }}
+        errors={{ ...errors }}
       >
         <InputContainer name="email" required>
           <InputField name="email" type="email" placeholder="Email" />
@@ -62,6 +74,12 @@ const SignIn = ({ switchToSignUp }) => {
             <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
             <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
           </FormSwitchContainer>
+          <FormErrorLabel truncate>
+          {
+            error ? error : (loading && <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />)
+          }
+          </FormErrorLabel>
+
         </Box>
       </Form>
     </FormContainer>
