@@ -6,6 +6,8 @@ export const getUser = `query GetUser($id: ID!) {
     id
     name_of_user
     email
+    admin_id
+    members_id
     compasses {
       items {
         id
@@ -29,6 +31,8 @@ export const listUsers = `query ListUsers(
       id
       name_of_user
       email
+      admin_id
+      members_id
       compasses {
         nextToken
       }
@@ -48,6 +52,8 @@ export const getCompass = `query GetCompass($id: ID!) {
       id
       name_of_user
       email
+      admin_id
+      members_id
       compasses {
         nextToken
       }
@@ -91,6 +97,8 @@ export const listCompasss = `query ListCompasss(
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -120,6 +128,8 @@ export const getSession = `query GetSession($id: ID!) {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -203,11 +213,14 @@ export const getInteraction = `query GetInteraction($id: ID!) {
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -237,11 +250,7 @@ export const listInteractions = `query ListInteractions(
         description_of_step
       }
       attachments {
-        name
-        type
-        bucket
-        region
-        key
+        nextToken
       }
     }
     nextToken
@@ -265,6 +274,8 @@ export const getStep = `query GetStep($id: ID!) {
         id
         name_of_user
         email
+        admin_id
+        members_id
       }
       sessions {
         nextToken
@@ -295,6 +306,60 @@ export const listSteps = `query ListSteps(
         date_start
         date_end
       }
+    }
+    nextToken
+  }
+}
+`;
+export const getAttachment = `query GetAttachment($id: ID!) {
+  getAttachment(id: $id) {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const listAttachments = `query ListAttachments(
+  $filter: ModelAttachmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAttachments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      name
+      type
+      interaction {
+        id
+        duration
+        log_content
+      }
+      bucket
+      region
+      key
     }
     nextToken
   }
