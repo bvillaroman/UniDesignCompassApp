@@ -228,6 +228,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -269,6 +270,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -310,6 +312,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -322,6 +325,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -376,6 +380,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -430,6 +435,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -583,6 +589,7 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -618,6 +625,7 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -653,6 +661,7 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time

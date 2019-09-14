@@ -228,6 +228,7 @@ export const onCreateSession = `subscription OnCreateSession {
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -269,6 +270,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -310,6 +312,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
         duration
         log_content
         createdAt
+        color
       }
       nextToken
     }
@@ -322,6 +325,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -376,6 +380,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -430,6 +435,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
     duration
     log_content
     createdAt
+    color
     session {
       id
       session_start_time
@@ -583,6 +589,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -618,6 +625,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
@@ -653,6 +661,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
       duration
       log_content
       createdAt
+      color
       session {
         id
         session_start_time
