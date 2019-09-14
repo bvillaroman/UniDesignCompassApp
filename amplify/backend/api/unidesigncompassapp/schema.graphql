@@ -2,6 +2,8 @@ type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   name_of_user: String!
   email: String!
+  admin_id: String
+  members_id: [String]
   compasses: [Compass] @connection(name: "UserCompasses") 
 }
 
@@ -32,7 +34,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   log_content: String!
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
-  attachments: Attachment
+  attachments: [Attachment] @connection(name: "InteractionAttachments")
 }
 
 type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -44,9 +46,10 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
   compass: Compass @connection(name: "CompassSteps")
 }
 
-type Attachment {
+type Attachment @model{
   name: String
   type: String
+  interaction: Interaction @connection(name: "InteractionAttachments")
   bucket: String!
   region: String!
   key: String!
