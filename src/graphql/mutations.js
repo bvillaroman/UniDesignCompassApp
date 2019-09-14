@@ -15,6 +15,7 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -35,6 +36,7 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -55,6 +57,7 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       nextToken
     }
@@ -68,6 +71,7 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -85,6 +89,7 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -95,6 +100,7 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -108,6 +114,7 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -125,6 +132,7 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -135,6 +143,7 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -148,6 +157,7 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     description_of_compass
     date_start
     date_end
+    createdAt
     user {
       id
       name_of_user
@@ -165,6 +175,7 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -175,6 +186,7 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       nextToken
     }
@@ -188,12 +200,14 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -213,6 +227,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -226,12 +241,14 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -251,6 +268,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -264,12 +282,14 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -289,6 +309,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -300,18 +321,21 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -323,12 +347,14 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -349,18 +375,21 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -372,12 +401,14 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -398,18 +429,21 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
       interactions {
         nextToken
@@ -421,12 +455,14 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
       step_end_time
       name_of_step
       description_of_step
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
       }
     }
     attachments {
@@ -449,12 +485,14 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -479,12 +517,14 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -509,12 +549,14 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
+      createdAt
       user {
         id
         name_of_user
@@ -540,12 +582,14 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -553,6 +597,7 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -572,12 +617,14 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -585,6 +632,7 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
@@ -604,12 +652,14 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -617,6 +667,7 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
         step_end_time
         name_of_step
         description_of_step
+        createdAt
       }
       attachments {
         nextToken
