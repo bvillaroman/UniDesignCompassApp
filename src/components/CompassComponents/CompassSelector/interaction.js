@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { CSInteraction } from "../../../styles/CompassPage"
+import { CSInteraction, CSInteractionContainer } from "../../../styles/CompassPage"
 import { GlobalContext } from "../../../context/context"
-
-const Interaction = ({interaction = {}}) => {
+import { LinkPrevious } from "grommet-icons"
+const Interaction = ({interaction = {}, isLastStep}) => {
   const {selectInteraction} = useContext(GlobalContext);
 
   const {
@@ -15,8 +15,11 @@ const Interaction = ({interaction = {}}) => {
   }
   
   return (
-    <CSInteraction onClick={goToLog}>
-      {step.name_of_step}  
-    </CSInteraction>
-)};
+    <CSInteractionContainer>
+      <CSInteraction label={step.name_of_step} onClick={goToLog}/>
+      {!isLastStep && <LinkPrevious color="#5567FD" />}
+    </CSInteractionContainer>
+    
+  )
+};
 export default Interaction;

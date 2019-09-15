@@ -41,15 +41,16 @@ export const Title = styled.p`
 `;
 export const Feed = styled(Box)`
   color: black;
-  height: 100%;
-  overflow: scroll;
   padding: 0 2rem;
   padding-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  grid-template-rows: repeat(100,minmax(14rem,1fr));
-  grid-gap: 1rem;
-  align-items:center;
+  section {
+    height: 100%;
+    overflow: scroll;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 `;
 
 export const DashboardButton = styled(Button)`
@@ -145,11 +146,11 @@ export const SubmitCompassButton = styled(Button)`
   align-self: center;
   margin: 0 auto;
 `
-export const CompassCard = styled(Box)`
-  margin: 1rem auto;
+export const CompassCard = styled(Grid)`
+  margin: 1rem;
   padding: 2rem;
-  width: 20rem;
-  height: auto;
+  width: 25rem;
+  height: 20rem;
   background-color: white;
   border-radius: 1rem;
   color: white;
@@ -158,10 +159,11 @@ export const CompassTitle= styled(Text)`
   color: black;
   font-weight: 600;
   font-size: 2rem;
+  line-height: 2.1rem;
 `
 export const CompassDescription= styled(Text)`
   color: black;
-  padding: 2rem;
+  padding: 0 2rem;
   font-weight: 400;
   font-size: 1.2rem;
   overflow: scroll;
