@@ -97,6 +97,10 @@ export async function updateInteraction(interaction) {
   const updatedIntercation = await API.graphql(graphqlOperation(mutations.updateInteraction, { input: interaction }));
   return updatedIntercation
 }
+export async function uploadAttachment(attachment) {
+  const uploadAttachment = await API.graphql(graphqlOperation(mutations.createAttachment, { input: attachment }));
+  return uploadAttachment
+}
 
 export async function deleteCompass(id) {
   const compassInfo = {

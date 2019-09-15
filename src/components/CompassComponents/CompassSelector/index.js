@@ -5,7 +5,6 @@ import {
   CSGrid, 
   CSMain,
   CSInteractions,
-  CSInteraction,
   StepClock,
   SessionView, 
   SessionTitle, 
@@ -31,8 +30,8 @@ const CompassSelector = ({showAttachment}) => {
       .then((res) => {
         setCurrrentSession(res.data.getSession)
         setSteps(res.data.getSession.compass.steps.items)
-        const att = res.data.getSession.interactions.items.map((item,key) => (item.attachments))
-        setAttachments(att.filter(x => x))
+        const interactionAttachments = res.data.getSession.interactions.items.map((item) => item.attachments.items).flat()
+        setAttachments(interactionAttachments)
       })
   },[session])
 

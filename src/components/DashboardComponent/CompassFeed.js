@@ -20,6 +20,7 @@ const CompassFeed = (props) => {
     getCompasses()
       .then((compasses) => {
         setCompasses(compasses)
+        console.log(compasses)
         setLoading(false)
       })
       .catch((error) => {
