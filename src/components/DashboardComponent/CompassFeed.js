@@ -11,7 +11,7 @@ import { navigate } from "gatsby"
 import {GlobalContext} from "../../context/context"
 
 const CompassFeed = (props) => {
-  const {selectCompass} = useContext(GlobalContext);
+  const {selectCompass,user} = useContext(GlobalContext);
   const [compasses,setCompasses] = useState([])
   const [error,setError] = useState("")
   const [loading,setLoading] = useState(true)
@@ -19,8 +19,9 @@ const CompassFeed = (props) => {
   useEffect(() => {
     getCompasses()
       .then((compasses) => {
-        setCompasses(compasses)
-        console.log(compasses)
+
+        setCompasses(compasses.filter((compass) => compass.admins.includes(user.email)))
+        // console.log(compasses)
         setLoading(false)
       })
       .catch((error) => {

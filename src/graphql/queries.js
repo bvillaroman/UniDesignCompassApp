@@ -84,7 +84,13 @@ export const getSession = `query GetSession($id: ID!) {
         nextToken
       }
       steps {
-        nextToken
+        items {
+          id
+          name_of_step
+          description_of_step
+          color
+          createdAt
+        }
       }
     }
     interactions {
@@ -93,6 +99,21 @@ export const getSession = `query GetSession($id: ID!) {
         duration
         log_content
         createdAt
+        attachments {
+          items {
+            name
+            type
+            bucket
+            region
+            key
+          }
+        }
+        step {
+          id
+          name_of_step
+          color
+          createdAt
+        }
       }
       nextToken
     }

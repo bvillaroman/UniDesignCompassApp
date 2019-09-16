@@ -292,7 +292,7 @@ export const CSTitle = styled(Box)`
   line-height: 2.1rem;
   align-self: center;
   text-align: center;
-  `;
+`;
 export const CSMain = styled(Grid)`
   width: 100%;
 `;

@@ -31,15 +31,16 @@ const CompassSelector = ({showAttachment}) => {
     getSession(session)
       .then((res) => {
         setCurrrentSession(res.data.getSession)
-        setSteps(res.data.getSession.compass.steps.items)
+        setSteps(res.data.getSession.compass.steps.items.flat())
         setCurrentInteractions(res.data.getSession.interactions.items.sort((a,b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         }))
-        const interactionAttachments = res.data.getSession.interactions.items.map((item) => item.attachments.items).flat()
+        const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
         setAttachments(interactionAttachments)
       })
   },[session])
 
+  console.log(currentInteractions)
   return (
     <CSGrid
       rows={['80%', '20%']}
