@@ -39,7 +39,7 @@ const CompassSelector = ({showAttachment}) => {
         { name: 'interactions', start: [0, 1], end: [0, 1] },
       ]}
     >
-      <CopmassWheel steps={steps}/>
+      <CopmassWheel compassSteps={steps} interactions={currentInteractions}/>
       <SessionBar session={currentSession} attachments={attachments} showAttachment={showAttachment}/>
       <InteractionFeed interactions={currentInteractions}/>
     </CSGrid>

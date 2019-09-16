@@ -9,7 +9,7 @@ import {
 } from "../../../styles/CompassPage"
 import Attachment from "../LogPage/Attachment"
 
-const CompassSelector = ({session, attachments, showAttachment}) => {
+const SessionBar = ({session, attachments, showAttachment}) => {
 
   return (
     <SessionView 
@@ -45,4 +45,4 @@ const CompassSelector = ({session, attachments, showAttachment}) => {
     </SessionView>
   ) 
 };
-export default CompassSelector;
+export default SessionBar;

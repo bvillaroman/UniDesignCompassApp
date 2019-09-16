@@ -6,17 +6,17 @@ import {
 } from "../../../styles/CompassPage"
 import Interaction from "./interaction"
 
-const CompassSelector = ({interactions}) => {
+const InteractionFeed = ({interactions}) => {
   // getting the current session
   return (
     <CSInteractions 
       gridArea="interactions"
-      rows={['100%']}
+      rows={['20%','80%']}
       fill
       columns={['25%', '75%']}
       areas={[
         { name: 'title', start: [0, 0], end: [0, 0] },
-        { name: 'content', start: [1, 0], end: [1, 0] },
+        { name: 'content', start: [0, 1], end: [1, 1] },
       ]}
     >
       <CSTitle gridArea="title">Recent Logs</CSTitle>
@@ -32,4 +32,4 @@ const CompassSelector = ({interactions}) => {
     </CSInteractions>
   )
 };
-export default CompassSelector;
+export default InteractionFeed;

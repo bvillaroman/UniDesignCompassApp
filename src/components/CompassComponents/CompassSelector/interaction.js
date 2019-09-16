@@ -16,7 +16,7 @@ const Interaction = ({interaction = {}, isLastStep}) => {
   
   return (
     <CSInteractionContainer>
-      <CSInteraction label={step.name_of_step} onClick={goToLog}/>
+      <CSInteraction label={step.name_of_step} onClick={goToLog} color={step.color}/>
       {!isLastStep && <LinkPrevious color="#5567FD" />}
     </CSInteractionContainer>
     

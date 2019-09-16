@@ -9,6 +9,7 @@ const Step = ({activeStep = {}, rotateAngle}) => {
   const {
     id,
     name_of_step,
+    color
   } = activeStep; 
 
   const goToLog = (e) => {
@@ -19,7 +20,7 @@ const Step = ({activeStep = {}, rotateAngle}) => {
   }
   
   return (
-    <StepContainer rotateAngle={rotateAngle} onClick={goToLog}>
+    <StepContainer rotateAngle={rotateAngle} onClick={goToLog} color={color}>
       {name_of_step}
       {/* {duration} */}
     </StepContainer> 

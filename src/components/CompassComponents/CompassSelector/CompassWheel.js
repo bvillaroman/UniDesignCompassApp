@@ -1,4 +1,4 @@
-import React  from "react";
+import React,{useState, useEffect} from "react";
 import { 
   StepRow, 
   CSMain,
@@ -6,7 +6,13 @@ import {
 } from "../../../styles/CompassPage"
 import Step from "./Step"
 
-const CompassSelector = ({steps}) => {
+const CompassWheel = ({compassSteps = [],interactions} = []) => {
+  const [durations,setDurations] = useState(compassSteps)
+
+  // useEffect(() => {
+
+  // }, [])
+  console.log(compassSteps)
 
   return (
     <CSMain 
@@ -24,12 +30,12 @@ const CompassSelector = ({steps}) => {
       </CSTitle>
       <StepRow gridArea="content">
         {
-          steps ? steps.map((item,key) => {
-            return (<Step activeStep={item} rotateAngle={key*(360/steps.length)}/>)
+          compassSteps ? compassSteps.map((item,key) => {
+            return (<Step activeStep={item} key={key} rotateAngle={key*(360/compassSteps.length)}/>)
           }) : ''
         }
       </StepRow>
     </CSMain>
   )
 };
-export default CompassSelector;
+export default CompassWheel;

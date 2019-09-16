@@ -26,7 +26,7 @@ import {GlobalContext} from "../../../context/context"
 
 const Logger = ({showAttachment}) => {
   const {interaction, removeInteraction} = useContext(GlobalContext);
-
+  const [session, setSession] = useState('');
   const [step, setStep] = useState('');
   const [log, setLog] = useState('');
   const [attachments,setAttachments] = useState([])
@@ -37,7 +37,8 @@ const Logger = ({showAttachment}) => {
   
   useEffect(() => {
     getInteraction(id).then((res) => {
-      const {log_content, attachments, duration, step} = res.data.getInteraction
+      const {log_content, attachments, duration, step, session} = res.data.getInteraction
+      setSession(session)
       setTime(duration)
       setStep(step)
       setLog(log_content)
@@ -156,7 +157,7 @@ const Logger = ({showAttachment}) => {
             <>
             <SessionHeader gridArea="header">
               <SessionTitle>
-                {step.name_of_step}
+                {session.name_of_session}
               </SessionTitle>
               <StepClock>
                 {translateTime(time)}
