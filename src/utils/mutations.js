@@ -14,12 +14,14 @@ export async function createUser(ID, email, name_of_user) {
   return newUser;
 }
 
-export async function createCompass(name_of_compass, description_of_compass, steps) {
+export async function createCompass(name_of_compass, description_of_compass, user) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
     date_start: '0',
     date_end: '0',
+    admins: [user],
+    readers: [user]
   }
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;

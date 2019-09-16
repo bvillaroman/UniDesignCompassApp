@@ -21,7 +21,7 @@ const Dashboard = (props) => {
       <DashboardTabs activeIndex={tab} onActive={onActive}>
         <DashboardTab>
           <DashboardGrid
-            rows={['20%', '70%']}
+            rows={['20%', 'fill']}
             gap="1rem"
             columns={['70%', '30%']}
             fill
