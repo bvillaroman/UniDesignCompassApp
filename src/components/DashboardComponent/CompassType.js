@@ -16,31 +16,38 @@ const Type = (props) => {
     updateForm({steps : [
       {
         title:  "Grasp Challenge",
-        description: "Understanding the challenge/problem "
+        description: "Understanding the challenge/problem ",
+        color: "#3498db"
       },
       {
         title:  "Research",
-        description: "Investigating/Researching ideas to incorporate into a solution"
+        description: "Investigating/Researching ideas to incorporate into a solution",
+        color: "#2ecc71"
       },
       {
         title:  "Generate Ideas",
-        description: "Creating ideas/rough drafts of solutions"
+        description: "Creating ideas/rough drafts of solutions",
+        color: "#9b59b6"
       },
       {
         title:  "Model/Test Ideas",
-        description: "Created and test new solutions"
+        description: "Created and test new solutions",
+        color: "#f1c40f"
       },
       {
         title:  "Choose/Make Prototype",
-        description: "Choosing the best solution and implementing it"
+        description: "Choosing the best solution and implementing it",
+        color: "#e67e22"
       },
       {
         title:  "Troubleshoot/Revise",
-        description: "Edit/revise current implementation of solution"
+        description: "Edit/revise current implementation of solution",
+        color: "#e74c3c"
       },
       {
         title:  "Communicate/Reflect",
-        description: "Discuss the overall reflection of the process"
+        description: "Discuss the overall reflection of the process",
+        color: "#7f8c8d"
       },
     ]})
     switchTab(3);

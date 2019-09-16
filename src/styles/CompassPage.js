@@ -307,7 +307,7 @@ export const StepRow = styled(Box)`
   }
 `
 export const StepContainer = styled(Button)`
-  border: 0.15rem solid #5567FD;
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
   padding: 1rem;
@@ -316,8 +316,9 @@ export const StepContainer = styled(Button)`
   font-size: 1.3rem;
   :hover {
     transition: all 0.2s;
-    background-color: #5567FD;
+    background-color: transparent;
   }
+  background-color: ${props => props.color ? props.color : '#5567FD'};
   text-align: center;
 
   list-style: none;
@@ -339,14 +340,20 @@ export const CSInteractionsFeed = styled(Box)`
   flex-wrap: nowrap; 
   height: 100%;
   width: 100%;
+  padding: 0 5rem;
+  // justify-content: center;
 `;
 export const CSInteraction = styled(Button)`
-  border: 0.15rem solid #5567FD;
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
+  :hover {
+    transition: all 0.2s;
+    background-color: transparent;
+    border: 0.15rem solid transparent;
+  }
   border-radius: 50%;
   transition: all 0.3s;
-  background-color: #5567FD;
   padding: 1rem;
-  color: white; 
+  color: black; 
   font-weight: 400;
   font-size: 1.0rem;
   min-height: 7.2rem;
@@ -354,7 +361,8 @@ export const CSInteraction = styled(Button)`
   max-height: 7.2rem;
   max-width: 7.2rem;
   word-break: break-all;
-  // flex:  7.2rem  7.2rem auto;
+  background-color: ${props => props.color ? props.color : '#5567FD'};
+
 `;
 export const CSInteractionContainer = styled(Box)`
   margin: 0 0.5rem;
