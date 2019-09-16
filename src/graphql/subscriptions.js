@@ -1,69 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUser = `subscription OnCreateUser {
-  onCreateUser {
-    id
-    name_of_user
-    email
-    admin_id
-    members_id
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-        createdAt
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const onUpdateUser = `subscription OnUpdateUser {
-  onUpdateUser {
-    id
-    name_of_user
-    email
-    admin_id
-    members_id
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-        createdAt
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const onDeleteUser = `subscription OnDeleteUser {
-  onDeleteUser {
-    id
-    name_of_user
-    email
-    admin_id
-    members_id
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-        createdAt
-      }
-      nextToken
-    }
-  }
-}
-`;
 export const onCreateCompass = `subscription OnCreateCompass {
   onCreateCompass {
     id
@@ -72,16 +9,8 @@ export const onCreateCompass = `subscription OnCreateCompass {
     date_start
     date_end
     createdAt
-    user {
-      id
-      name_of_user
-      email
-      admin_id
-      members_id
-      compasses {
-        nextToken
-      }
-    }
+    admins
+    readers
     sessions {
       items {
         id
@@ -100,6 +29,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       nextToken
@@ -115,16 +45,8 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
     date_start
     date_end
     createdAt
-    user {
-      id
-      name_of_user
-      email
-      admin_id
-      members_id
-      compasses {
-        nextToken
-      }
-    }
+    admins
+    readers
     sessions {
       items {
         id
@@ -143,6 +65,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       nextToken
@@ -158,16 +81,8 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
     date_start
     date_end
     createdAt
-    user {
-      id
-      name_of_user
-      email
-      admin_id
-      members_id
-      compasses {
-        nextToken
-      }
-    }
+    admins
+    readers
     sessions {
       items {
         id
@@ -186,6 +101,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       nextToken
@@ -208,13 +124,8 @@ export const onCreateSession = `subscription OnCreateSession {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -228,7 +139,6 @@ export const onCreateSession = `subscription OnCreateSession {
         duration
         log_content
         createdAt
-        color
       }
       nextToken
     }
@@ -250,13 +160,8 @@ export const onUpdateSession = `subscription OnUpdateSession {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -270,7 +175,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
         duration
         log_content
         createdAt
-        color
       }
       nextToken
     }
@@ -292,13 +196,8 @@ export const onDeleteSession = `subscription OnDeleteSession {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -312,7 +211,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
         duration
         log_content
         createdAt
-        color
       }
       nextToken
     }
@@ -325,7 +223,6 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
     duration
     log_content
     createdAt
-    color
     session {
       id
       session_start_time
@@ -340,6 +237,8 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -351,6 +250,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
       step_end_time
       name_of_step
       description_of_step
+      color
       createdAt
       compass {
         id
@@ -359,6 +259,8 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
     }
     attachments {
@@ -380,7 +282,6 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
     duration
     log_content
     createdAt
-    color
     session {
       id
       session_start_time
@@ -395,6 +296,8 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -406,6 +309,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
       step_end_time
       name_of_step
       description_of_step
+      color
       createdAt
       compass {
         id
@@ -414,6 +318,8 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
     }
     attachments {
@@ -435,7 +341,6 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
     duration
     log_content
     createdAt
-    color
     session {
       id
       session_start_time
@@ -450,6 +355,8 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -461,6 +368,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
       step_end_time
       name_of_step
       description_of_step
+      color
       createdAt
       compass {
         id
@@ -469,6 +377,8 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
         date_start
         date_end
         createdAt
+        admins
+        readers
       }
     }
     attachments {
@@ -491,6 +401,7 @@ export const onCreateStep = `subscription OnCreateStep {
     step_end_time
     name_of_step
     description_of_step
+    color
     createdAt
     compass {
       id
@@ -499,13 +410,8 @@ export const onCreateStep = `subscription OnCreateStep {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -523,6 +429,7 @@ export const onUpdateStep = `subscription OnUpdateStep {
     step_end_time
     name_of_step
     description_of_step
+    color
     createdAt
     compass {
       id
@@ -531,13 +438,8 @@ export const onUpdateStep = `subscription OnUpdateStep {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -555,6 +457,7 @@ export const onDeleteStep = `subscription OnDeleteStep {
     step_end_time
     name_of_step
     description_of_step
+    color
     createdAt
     compass {
       id
@@ -563,13 +466,8 @@ export const onDeleteStep = `subscription OnDeleteStep {
       date_start
       date_end
       createdAt
-      user {
-        id
-        name_of_user
-        email
-        admin_id
-        members_id
-      }
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -589,7 +487,6 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
       duration
       log_content
       createdAt
-      color
       session {
         id
         session_start_time
@@ -604,6 +501,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       attachments {
@@ -625,7 +523,6 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
       duration
       log_content
       createdAt
-      color
       session {
         id
         session_start_time
@@ -640,6 +537,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       attachments {
@@ -661,7 +559,6 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
       duration
       log_content
       createdAt
-      color
       session {
         id
         session_start_time
@@ -676,6 +573,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
         step_end_time
         name_of_step
         description_of_step
+        color
         createdAt
       }
       attachments {

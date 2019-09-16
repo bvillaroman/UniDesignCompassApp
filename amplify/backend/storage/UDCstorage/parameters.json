@@ -1,7 +1,7 @@
 {
-    "bucketName": "unidesigncompassappbae5057b044f48cf82aa6ceaccf66b0e",
-    "authPolicyName": "s3_amplify_8c0720ba",
-    "unauthPolicyName": "s3_amplify_8c0720ba",
+    "bucketName": "unidesigncompassapp2676b56b36744a6aa82a23ba366f55c2",
+    "authPolicyName": "s3_amplify_df20d0de",
+    "unauthPolicyName": "s3_amplify_df20d0de",
     "authRoleName": {
         "Ref": "AuthRoleName"
     },
@@ -19,15 +19,15 @@
         "s3:DeleteObject"
     ],
     "s3PermissionsAuthenticatedPublic": "s3:PutObject,s3:GetObject,s3:DeleteObject",
-    "s3PublicPolicy": "Public_policy_9bf849da",
+    "s3PublicPolicy": "Public_policy_90359e35",
     "s3PermissionsAuthenticatedUploads": "s3:PutObject",
-    "s3UploadsPolicy": "Uploads_policy_9bf849da",
+    "s3UploadsPolicy": "Uploads_policy_90359e35",
     "s3PermissionsAuthenticatedProtected": "s3:PutObject,s3:GetObject,s3:DeleteObject",
-    "s3ProtectedPolicy": "Protected_policy_98313b61",
+    "s3ProtectedPolicy": "Protected_policy_d1e28345",
     "s3PermissionsAuthenticatedPrivate": "s3:PutObject,s3:GetObject,s3:DeleteObject",
-    "s3PrivatePolicy": "Private_policy_98313b61",
+    "s3PrivatePolicy": "Private_policy_d1e28345",
     "AuthenticatedAllowList": "ALLOW",
-    "s3ReadPolicy": "read_policy_9bf849da",
+    "s3ReadPolicy": "read_policy_90359e35",
     "s3PermissionsGuestPublic": "s3:GetObject",
     "s3PermissionsGuestUploads": "DISALLOW",
     "GuestAllowList": "ALLOW",
