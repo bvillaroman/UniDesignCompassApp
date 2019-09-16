@@ -1,60 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUser = `mutation CreateUser($input: CreateUserInput!) {
-  createUser(input: $input) {
-    id
-    name_of_user
-    email
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
-  updateUser(input: $input) {
-    id
-    name_of_user
-    email
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
-  deleteUser(input: $input) {
-    id
-    name_of_user
-    email
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
 export const createCompass = `mutation CreateCompass($input: CreateCompassInput!) {
   createCompass(input: $input) {
     id
@@ -62,14 +8,9 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      name_of_user
-      email
-      compasses {
-        nextToken
-      }
-    }
+    createdAt
+    admins
+    readers
     sessions {
       items {
         id
@@ -77,6 +18,7 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -87,6 +29,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        color
+        createdAt
       }
       nextToken
     }
@@ -100,14 +44,9 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      name_of_user
-      email
-      compasses {
-        nextToken
-      }
-    }
+    createdAt
+    admins
+    readers
     sessions {
       items {
         id
@@ -115,6 +54,7 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -125,6 +65,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        color
+        createdAt
       }
       nextToken
     }
@@ -138,14 +80,9 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      name_of_user
-      email
-      compasses {
-        nextToken
-      }
-    }
+    createdAt
+    admins
+    readers
     sessions {
       items {
         id
@@ -153,6 +90,7 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -163,6 +101,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
         step_end_time
         name_of_step
         description_of_step
+        color
+        createdAt
       }
       nextToken
     }
@@ -176,17 +116,16 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -199,6 +138,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -212,17 +152,16 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -235,6 +174,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -248,17 +188,16 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -271,6 +210,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         id
         duration
         log_content
+        createdAt
       }
       nextToken
     }
@@ -282,18 +222,23 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -305,20 +250,28 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
       step_end_time
       name_of_step
       description_of_step
+      color
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -328,18 +281,23 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -351,20 +309,28 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
       step_end_time
       name_of_step
       description_of_step
+      color
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -374,18 +340,23 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -397,20 +368,28 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
       step_end_time
       name_of_step
       description_of_step
+      color
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -422,17 +401,17 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    color
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -450,17 +429,17 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    color
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -478,17 +457,17 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
     step_end_time
     name_of_step
     description_of_step
+    color
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -496,6 +475,114 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
         nextToken
       }
     }
+  }
+}
+`;
+export const createAttachment = `mutation CreateAttachment($input: CreateAttachmentInput!) {
+  createAttachment(input: $input) {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      createdAt
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+        createdAt
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+        color
+        createdAt
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachmentInput!) {
+  updateAttachment(input: $input) {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      createdAt
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+        createdAt
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+        color
+        createdAt
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachmentInput!) {
+  deleteAttachment(input: $input) {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      createdAt
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+        createdAt
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+        color
+        createdAt
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
   }
 }
 `;

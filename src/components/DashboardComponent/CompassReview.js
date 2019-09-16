@@ -2,24 +2,27 @@ import React, {useContext} from 'react'
 import {Box, Text} from "grommet";
 
 import { DashboardContext } from "../../context/DashboardPage/context"
+import { GlobalContext } from "../../context/context"
 import { 
   ReviewCard, 
   ReviewTitle,
   ReviewDescription, 
   SubmitCompassButton, 
   ReviewStepsView,
-  ReviewStepPanel 
+  ReviewStepPanel ,
+  ReviewStepDescription
 } from "../../styles/Dashboard"
 import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
+  const { user } = useContext(GlobalContext);
   const { form } = useContext(DashboardContext);
 
   const submitCompass = event => {
-    return createCompass(form.title,form.description)
+    return createCompass(form.title,form.description, user.email)
       .then((compass) => {
         form.steps.map((step,key) => {
-          return createStep(step.title,step.description, compass.data.createCompass.id)
+          return createStep(step.title,step.description,step.color,compass.data.createCompass.id)
         })
         return backToDashboard()
       })
@@ -46,11 +49,12 @@ const Review = ({backToDashboard}) => {
           form.steps.map((step,key) => (        
             <ReviewStepPanel
               key={key}
+              color={step.color}
               label={<Text size="large">{step.title}</Text>}
             >
-              <Box background="light-2" height="small">
+              <ReviewStepDescription>
                 {step.description}
-              </Box>
+              </ReviewStepDescription>
             </ReviewStepPanel>
           ))
         }

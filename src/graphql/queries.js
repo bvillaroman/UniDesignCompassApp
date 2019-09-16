@@ -1,42 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUser = `query GetUser($id: ID!) {
-  getUser(id: $id) {
-    id
-    name_of_user
-    email
-    compasses {
-      items {
-        id
-        name_of_compass
-        description_of_compass
-        date_start
-        date_end
-      }
-      nextToken
-    }
-  }
-}
-`;
-export const listUsers = `query ListUsers(
-  $filter: ModelUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      name_of_user
-      email
-      compasses {
-        nextToken
-      }
-    }
-    nextToken
-  }
-}
-`;
 export const getCompass = `query GetCompass($id: ID!) {
   getCompass(id: $id) {
     id
@@ -44,14 +8,9 @@ export const getCompass = `query GetCompass($id: ID!) {
     description_of_compass
     date_start
     date_end
-    user {
-      id
-      name_of_user
-      email
-      compasses {
-        nextToken
-      }
-    }
+    createdAt
+    admins
+    readers
     sessions {
       items {
         id
@@ -59,6 +18,7 @@ export const getCompass = `query GetCompass($id: ID!) {
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       nextToken
     }
@@ -69,6 +29,8 @@ export const getCompass = `query GetCompass($id: ID!) {
         step_end_time
         name_of_step
         description_of_step
+        color
+        createdAt
       }
       nextToken
     }
@@ -87,11 +49,9 @@ export const listCompasss = `query ListCompasss(
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -110,24 +70,26 @@ export const getSession = `query GetSession($id: ID!) {
     session_end_time
     name_of_session
     description_of_session
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
       steps {
         items {
-          name_of_step
           id
+          name_of_step
+          description_of_step
+          color
+          createdAt
         }
       }
     }
@@ -136,15 +98,21 @@ export const getSession = `query GetSession($id: ID!) {
         id
         duration
         log_content
-        step {
-          name_of_step
-        }
+        createdAt
         attachments {
-          name
-          type
-          bucket
-          region
-          key
+          items {
+            name
+            type
+            bucket
+            region
+            key
+          }
+        }
+        step {
+          id
+          name_of_step
+          color
+          createdAt
         }
       }
       nextToken
@@ -164,12 +132,16 @@ export const listSessions = `query ListSessions(
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -184,18 +156,23 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     id
     duration
     log_content
+    createdAt
     session {
       id
       session_start_time
       session_end_time
       name_of_session
       description_of_session
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
       interactions {
         nextToken
@@ -207,20 +184,28 @@ export const getInteraction = `query GetInteraction($id: ID!) {
       step_end_time
       name_of_step
       description_of_step
+      color
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
     }
     attachments {
-      name
-      type
-      bucket
-      region
-      key
+      items {
+        name
+        type
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -235,12 +220,14 @@ export const listInteractions = `query ListInteractions(
       id
       duration
       log_content
+      createdAt
       session {
         id
         session_start_time
         session_end_time
         name_of_session
         description_of_session
+        createdAt
       }
       step {
         id
@@ -248,13 +235,11 @@ export const listInteractions = `query ListInteractions(
         step_end_time
         name_of_step
         description_of_step
+        color
+        createdAt
       }
       attachments {
-        name
-        type
-        bucket
-        region
-        key
+        nextToken
       }
     }
     nextToken
@@ -268,17 +253,17 @@ export const getStep = `query GetStep($id: ID!) {
     step_end_time
     name_of_step
     description_of_step
+    color
+    createdAt
     compass {
       id
       name_of_compass
       description_of_compass
       date_start
       date_end
-      user {
-        id
-        name_of_user
-        email
-      }
+      createdAt
+      admins
+      readers
       sessions {
         nextToken
       }
@@ -301,13 +286,77 @@ export const listSteps = `query ListSteps(
       step_end_time
       name_of_step
       description_of_step
+      color
+      createdAt
       compass {
         id
         name_of_compass
         description_of_compass
         date_start
         date_end
+        createdAt
+        admins
+        readers
       }
+    }
+    nextToken
+  }
+}
+`;
+export const getAttachment = `query GetAttachment($id: ID!) {
+  getAttachment(id: $id) {
+    name
+    type
+    interaction {
+      id
+      duration
+      log_content
+      createdAt
+      session {
+        id
+        session_start_time
+        session_end_time
+        name_of_session
+        description_of_session
+        createdAt
+      }
+      step {
+        id
+        step_start_time
+        step_end_time
+        name_of_step
+        description_of_step
+        color
+        createdAt
+      }
+      attachments {
+        nextToken
+      }
+    }
+    bucket
+    region
+    key
+  }
+}
+`;
+export const listAttachments = `query ListAttachments(
+  $filter: ModelAttachmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAttachments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      name
+      type
+      interaction {
+        id
+        duration
+        log_content
+        createdAt
+      }
+      bucket
+      region
+      key
     }
     nextToken
   }

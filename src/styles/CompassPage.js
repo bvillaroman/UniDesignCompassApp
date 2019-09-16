@@ -12,7 +12,7 @@ import {
   Layer,
   Video,
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
+import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia, LinkPrevious } from 'grommet-icons';
 import React from "react";
 
 export const CompassButton = ({onClick}) =>(
@@ -286,39 +286,20 @@ export const CSGrid = styled(Grid)`
   height: 100%;
   margin: 0 auto;
 `;
-
-export const CSMain = styled(Box)`
-  display: grid;
-  flex-direction: row;
-  justify-content: center;
-`;
-export const CSInteractions = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-`;
-export const CSInteraction = styled(Button)`
-  border: 0.15rem solid #5567FD;
-  border-radius: 50%;
-  transition: all 0.3s;
-  background-color: #5567FD;
-  padding: 1rem;
-  color: white; 
-  font-weight: 400;
-  font-size: 1.0rem;
-  height: 7.2rem;
-	width: 7.2rem;
-  overflow-wrap: break-word;
-  display: flex;
-  flex-flow: column;
+export const CSTitle = styled(Box)`
+  font-size: 2.0rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  align-self: center;
   text-align: center;
-  justify-content: center;
-  
 `;
-
-export const StepRow = styled.div`
+export const CSMain = styled(Grid)`
+  width: 100%;
+`;
+export const StepRow = styled(Box)`
   width: 35rem;
   height: 35rem;
+  margin: 0 auto;
   position: relative;
   button { 
     top: 38%;
@@ -326,7 +307,7 @@ export const StepRow = styled.div`
   }
 `
 export const StepContainer = styled(Button)`
-  border: 0.15rem solid #5567FD;
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
   padding: 1rem;
@@ -335,8 +316,9 @@ export const StepContainer = styled(Button)`
   font-size: 1.3rem;
   :hover {
     transition: all 0.2s;
-    background-color: #5567FD;
+    background-color: transparent;
   }
+  background-color: ${props => props.color ? props.color : '#5567FD'};
   text-align: center;
 
   list-style: none;
@@ -344,8 +326,54 @@ export const StepContainer = styled(Button)`
 	width: 9rem;
 	position: absolute;
   transform: ${props => `rotate(${props.rotateAngle}deg) translate(0, -200px) rotate(-${props.rotateAngle}deg)` || 'none'};
-  overflow-wrap: break-word;
+  word-break: break-all;
 `
+export const CSInteractions = styled(Grid)`
+  align-items: center;
+  text-align: center;
+`;
+export const CSInteractionsFeed = styled(Box)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto;
+  flex-wrap: nowrap; 
+  height: 100%;
+  width: 100%;
+  padding: 0 5rem;
+  // justify-content: center;
+`;
+export const CSInteraction = styled(Button)`
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
+  :hover {
+    transition: all 0.2s;
+    background-color: transparent;
+    border: 0.15rem solid transparent;
+  }
+  border-radius: 50%;
+  transition: all 0.3s;
+  padding: 1rem;
+  color: black; 
+  font-weight: 400;
+  font-size: 1.0rem;
+  min-height: 7.2rem;
+  min-width: 7.2rem;
+  max-height: 7.2rem;
+  max-width: 7.2rem;
+  word-break: break-all;
+  background-color: ${props => props.color ? props.color : '#5567FD'};
+
+`;
+export const CSInteractionContainer = styled(Box)`
+  margin: 0 0.5rem;
+  min-width: 10rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-between;
+`;
+
 
 // Compass SessionBar
 

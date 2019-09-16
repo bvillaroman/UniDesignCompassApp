@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   CompassSideBar,
-  CompassText,
+  CompassHeader,
   LinkContainer,
   CompassLink,
 } from '../../styles/SideBar'
@@ -10,7 +10,7 @@ import {Compass, DocumentText, BarChart} from 'grommet-icons'
 const CompassBar = ({title}) => {
   return (
     <CompassSideBar>
-      <CompassText>{title}</CompassText>
+      <CompassHeader>{title}</CompassHeader>
       <LinkContainer>
         <CompassLink to="/Compass"><Compass/>Compass</CompassLink>
         <CompassLink to="/Summary"><DocumentText/>Summary</CompassLink>

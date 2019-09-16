@@ -20,13 +20,13 @@ import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import { getInteraction } from '../../../utils/queries'
-import { updateInteraction } from '../../../utils/mutations'
+import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
 import config from '../../../aws-exports'
 import {GlobalContext} from "../../../context/context"
 
 const Logger = ({showAttachment}) => {
   const {interaction, removeInteraction} = useContext(GlobalContext);
-
+  const [session, setSession] = useState('');
   const [step, setStep] = useState('');
   const [log, setLog] = useState('');
   const [attachments,setAttachments] = useState([])
@@ -37,11 +37,12 @@ const Logger = ({showAttachment}) => {
   
   useEffect(() => {
     getInteraction(id).then((res) => {
-      const {log_content, attachments, duration, step} = res.data.getInteraction
+      const {log_content, attachments, duration, step, session} = res.data.getInteraction
+      setSession(session)
       setTime(duration)
       setStep(step)
       setLog(log_content)
-      setAttachments(attachments)
+      setAttachments(attachments.items)
     })
 
   }, [id])
@@ -62,7 +63,7 @@ const Logger = ({showAttachment}) => {
     const newInteraction = {
       id ,
       log_content: log,
-      duration: time
+      duration: time,
     } 
     updateInteraction(newInteraction).then(() => {
       removeInteraction()
@@ -85,11 +86,9 @@ const Logger = ({showAttachment}) => {
     const newInteraction = {
       id,
       log_content: log,
-      duration: time
+      duration: time,
     }
-    if (start) {
-      updateInteraction(newInteraction)
-    } 
+    if (start)  updateInteraction(newInteraction)
     
     return setStart(!start)
   }
@@ -104,20 +103,14 @@ const Logger = ({showAttachment}) => {
         key:  `${uuid()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
         name: fileName,
-        type: mimeType
+        type: mimeType,
       }
-      const newInteraction = {
-        id,
-        log_content: log,
-        duration: time,
-        attachments: fileForUpload
-      }
-
+    
       try {
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        updateInteraction(newInteraction)
+        uploadAttachment({...fileForUpload,attachmentInteractionId: interaction})
           .then((res) => {
-            setAttachments(res.data.updateInteraction.attachments)
+            setAttachments([res.data.createAttachment, ...attachments])
           })
       } catch (err) {
         console.log('error cannot store file: ', err)
@@ -164,7 +157,7 @@ const Logger = ({showAttachment}) => {
             <>
             <SessionHeader gridArea="header">
               <SessionTitle>
-                {step.name_of_step}
+                {session.name_of_session}
               </SessionTitle>
               <StepClock>
                 {translateTime(time)}
@@ -176,7 +169,12 @@ const Logger = ({showAttachment}) => {
               </SessionDescription>
               <SessionAttachments gridArea="attachments">
                 <h1>Attachments</h1>
-                { attachments && attachments.key && <Attachment attachment={attachments} showAttachment={showAttachment}/> }
+                { 
+                  attachments.length > 0 && 
+                  attachments.map((item) => (
+                    <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
+                  )) 
+                }
               </SessionAttachments>
             </>
           ) : ''

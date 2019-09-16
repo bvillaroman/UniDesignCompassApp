@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, {useEffect, useState, useContext} from "react"
+import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
-import {AccountBar, CompassBar} from "./SideBarComponents"
-import { LayoutContainer,SidebarContainer, MainViewContainer } from "../styles/layout"
-import {GlobalContext} from "../context/context"
+import { AccountBar, CompassBar } from "./SideBarComponents"
+import { LayoutContainer, SidebarContainer, MainViewContainer } from "../styles/layout"
+import { GlobalContext } from "../context/context"
 import { Auth } from 'aws-amplify'
 import { getCompass } from '../utils/queries'
 import awsconfig from '../aws-exports';
@@ -18,18 +18,18 @@ Amplify.configure(awsconfig);
 
 const Layout = (props) => {
   const {
-    user = {}, 
-    loginUser, 
-    compass = "", 
-    removeCompass, 
-    removeSession, 
+    user = {},
+    loginUser,
+    compass = "",
+    removeCompass,
+    removeSession,
     removeInteraction
   } = useContext(GlobalContext);
 
-  const [title,setTitle] = useState('')
+  const [title, setTitle] = useState('')
 
   useEffect(() => {
-    if (props.uri !== "/Compass"){
+    if (props.uri !== "/Compass" && props.uri !== "/Summary") {
       removeCompass()
       removeInteraction()
       removeSession()
@@ -46,29 +46,29 @@ const Layout = (props) => {
         .catch((err) => {
           console.log(err)
         })
-    } 
-    
+    }
+
     // user authentications 
     if (!user.hasOwnProperty("email")) {
       Auth.currentAuthenticatedUser({
         bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
       })
-      .then(cognitoUser => {
-        const { email,sub } = cognitoUser.attributes;
-        
-        loginUser({ email, id: sub }); // save email to global store
-      })
-      .catch(err => console.log(`cognito error: ${err}`));
+        .then(cognitoUser => {
+          const { email, sub } = cognitoUser.attributes;
+
+          loginUser({ email, id: sub }); // save email to global store
+        })
+        .catch(err => console.log(`cognito error: ${err}`));
     }
-    
-    
+
+
   }, [compass])
-  
+
   return (
     <LayoutContainer >
       <SidebarContainer>
-      { user.email && <AccountBar />}
-      { (user.email && compass !== '' && title !== '') ? <CompassBar title={title}/>  : ''}
+        {user.email && <AccountBar />}
+        {(user.email && compass !== '' && title !== '') ? <CompassBar title={title} /> : ''}
       </SidebarContainer>
       <MainViewContainer>
         {props.children}

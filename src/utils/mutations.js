@@ -14,12 +14,14 @@ export async function createUser(ID, email, name_of_user) {
   return newUser;
 }
 
-export async function createCompass(name_of_compass, description_of_compass, steps) {
+export async function createCompass(name_of_compass, description_of_compass, user) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
     date_start: '0',
     date_end: '0',
+    admins: [user],
+    readers: [user]
   }
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;
@@ -38,13 +40,14 @@ export async function createSession(name_of_session, description_of_session, com
   return newSession;
 }
 
-export async function createStep(name_of_step, description_of_step, compassId) {
+export async function createStep(name_of_step, description_of_step,color, compassId) {
   const stepInfo = {
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
     step_start_time: 0,
-    step_end_time: 0
+    step_end_time: 0,
+    color
   }
   const newStep = await API.graphql(graphqlOperation(mutations.createStep, { input: stepInfo }));
   return newStep
@@ -96,6 +99,10 @@ export async function updateInteraction(interaction) {
 
   const updatedIntercation = await API.graphql(graphqlOperation(mutations.updateInteraction, { input: interaction }));
   return updatedIntercation
+}
+export async function uploadAttachment(attachment) {
+  const uploadAttachment = await API.graphql(graphqlOperation(mutations.createAttachment, { input: attachment }));
+  return uploadAttachment
 }
 
 export async function deleteCompass(id) {

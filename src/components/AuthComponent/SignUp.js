@@ -13,7 +13,8 @@ import {
   FormContainer, 
   FormTitle,
   FormSwitchLabel, 
-  InputField 
+  InputField ,
+  FormErrorLabel
 } from "../../styles/Form"
 
 const SignUp = ({switchToSignIn}) => {
@@ -32,22 +33,37 @@ const SignUp = ({switchToSignIn}) => {
     password2: '',
   })
 
+  const [message,setMessage] = useState("")
+  const [loading,setLoading] = useState(false)
+
+
   const onChange = event => {
     const { target: { value,name } } = event;
     setValues({
       ...form,
       [name]: value
     })
+    setMessage("")
+    setLoading(false)
   };
 
   const submitForm = ({value}) => {
     const { email, name, password } = value
 
+    setLoading(true)
     Auth.signUp({
       username: email,
       password,
       attributes: { name },
     })
+    .then(user => {
+      setMessage("User created! We emailed you a link to verify your account!")
+      setLoading(false)
+    })
+    .catch(err => {
+      setMessage(err.message)
+      setLoading(false)
+    });
   }
 
   return (
@@ -77,6 +93,12 @@ const SignUp = ({switchToSignIn}) => {
               <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
               <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
             </FormSwitchContainer>
+            <FormErrorLabel truncate>
+              {
+                message ? message : (loading && <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />)
+              }
+            </FormErrorLabel>
+
           </Box>
         </Form>
     </FormContainer>
