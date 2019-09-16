@@ -1,4 +1,10 @@
 import React from "react";
+import Summary from "../components/SummaryComponents"
 
-const SummaryPage = (props) => ( <h1>Summary Page</h1>);
+const SummaryPage = (props) => {
+  return (
+    <div>
+      <Summary />
+    </div>)
+};
 export default SummaryPage;
