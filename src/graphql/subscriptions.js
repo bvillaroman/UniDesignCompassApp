@@ -19,6 +19,121 @@ export const onCreateCompass = `subscription OnCreateCompass {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -31,6 +146,62 @@ export const onCreateCompass = `subscription OnCreateCompass {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -55,6 +226,121 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -67,6 +353,62 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -91,6 +433,121 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -103,6 +560,62 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       nextToken
     }
@@ -127,9 +640,121 @@ export const onCreateSession = `subscription OnCreateSession {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -139,6 +764,154 @@ export const onCreateSession = `subscription OnCreateSession {
         duration
         log_content
         createdAt
+        session {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        step {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
+        attachments {
+          items {
+            name
+            type
+            interaction {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            bucket
+            region
+            key
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -163,9 +936,121 @@ export const onUpdateSession = `subscription OnUpdateSession {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -175,6 +1060,154 @@ export const onUpdateSession = `subscription OnUpdateSession {
         duration
         log_content
         createdAt
+        session {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        step {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
+        attachments {
+          items {
+            name
+            type
+            interaction {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            bucket
+            region
+            key
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -199,9 +1232,121 @@ export const onDeleteSession = `subscription OnDeleteSession {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -211,6 +1356,154 @@ export const onDeleteSession = `subscription OnDeleteSession {
         duration
         log_content
         createdAt
+        session {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        step {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
+        attachments {
+          items {
+            name
+            type
+            interaction {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            bucket
+            region
+            key
+          }
+          nextToken
+        }
       }
       nextToken
     }
@@ -239,8 +1532,152 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
       interactions {
+        items {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -261,12 +1698,156 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
     }
     attachments {
       items {
         name
         type
+        interaction {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         bucket
         region
         key
@@ -298,8 +1879,152 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
       interactions {
+        items {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -320,12 +2045,156 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
     }
     attachments {
       items {
         name
         type
+        interaction {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         bucket
         region
         key
@@ -357,8 +2226,152 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
       interactions {
+        items {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         nextToken
       }
     }
@@ -379,12 +2392,156 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
         createdAt
         admins
         readers
+        sessions {
+          items {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
       }
     }
     attachments {
       items {
         name
         type
+        interaction {
+          id
+          duration
+          log_content
+          createdAt
+          session {
+            id
+            session_start_time
+            session_end_time
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            step_start_time
+            step_end_time
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              date_start
+              date_end
+              createdAt
+              admins
+              readers
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                createdAt
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
         bucket
         region
         key
@@ -413,9 +2570,121 @@ export const onCreateStep = `subscription OnCreateStep {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -441,9 +2710,121 @@ export const onUpdateStep = `subscription OnUpdateStep {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -469,9 +2850,121 @@ export const onDeleteStep = `subscription OnDeleteStep {
       admins
       readers
       sessions {
+        items {
+          id
+          session_start_time
+          session_end_time
+          name_of_session
+          description_of_session
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+          interactions {
+            items {
+              id
+              duration
+              log_content
+              createdAt
+              session {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
         nextToken
       }
       steps {
+        items {
+          id
+          step_start_time
+          step_end_time
+          name_of_step
+          description_of_step
+          color
+          createdAt
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            date_start
+            date_end
+            createdAt
+            admins
+            readers
+            sessions {
+              items {
+                id
+                session_start_time
+                session_end_time
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                step_start_time
+                step_end_time
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              nextToken
+            }
+          }
+        }
         nextToken
       }
     }
@@ -494,6 +2987,121 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       step {
         id
@@ -503,8 +3111,127 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       attachments {
+        items {
+          name
+          type
+          interaction {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          bucket
+          region
+          key
+        }
         nextToken
       }
     }
@@ -530,6 +3257,121 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       step {
         id
@@ -539,8 +3381,127 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       attachments {
+        items {
+          name
+          type
+          interaction {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          bucket
+          region
+          key
+        }
         nextToken
       }
     }
@@ -566,6 +3527,121 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
         name_of_session
         description_of_session
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       step {
         id
@@ -575,8 +3651,127 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
         description_of_step
         color
         createdAt
+        compass {
+          id
+          name_of_compass
+          description_of_compass
+          date_start
+          date_end
+          createdAt
+          admins
+          readers
+          sessions {
+            items {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            nextToken
+          }
+        }
       }
       attachments {
+        items {
+          name
+          type
+          interaction {
+            id
+            duration
+            log_content
+            createdAt
+            session {
+              id
+              session_start_time
+              session_end_time
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+              interactions {
+                nextToken
+              }
+            }
+            step {
+              id
+              step_start_time
+              step_end_time
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                date_start
+                date_end
+                createdAt
+                admins
+                readers
+              }
+            }
+            attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          bucket
+          region
+          key
+        }
         nextToken
       }
     }
