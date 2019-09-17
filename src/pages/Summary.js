@@ -1,10 +1,10 @@
 import React from "react";
-import Summary from "../components/SummaryComponents"
+import SummarySession from "../components/SummaryComponents/SummarySession"
 
 const SummaryPage = (props) => {
   return (
     <div>
-      <Summary />
+      <SummarySession />
     </div>)
 };
 export default SummaryPage;
