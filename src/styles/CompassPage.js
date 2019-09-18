@@ -114,6 +114,7 @@ export const LoggerHeader = styled(Box)`
 export const LoggerTitle = styled.h4`
   font-size: 1.2rem;
   padding: 0;
+  width: 50%;
   color: ${props => props.color ? props.color: '#5567FD'};
   line-height: 1.3rem;
   text-align: left;

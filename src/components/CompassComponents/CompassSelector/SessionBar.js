@@ -11,7 +11,7 @@ import { getSession } from "../../../utils/queries"
 import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
-import Attachment from "../LogPage/Attachment"
+import Attachment from "./Attachment"
 import {GlobalContext} from "../../../context/context"
 
 const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteraction}) => {
@@ -53,7 +53,7 @@ const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteract
           </SessionDescription> */}
         </SessionAccordion>
       </SessionSection> 
-      { interaction.id && ( <Logger interaction={interaction} /> ) }
+      { interaction.id && ( <Logger interaction={interaction} showAttachment={showAttachment}/> ) }
       <InteractionFeed interactions={pastLogs} goToInteraction={setInteraction}/>
       {/* <SessionAttachments gridArea="attachments">
         <p>Past Logs</p>

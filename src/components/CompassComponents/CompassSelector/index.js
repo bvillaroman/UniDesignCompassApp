@@ -12,13 +12,12 @@ const CompassSelector = ({showAttachment}) => {
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
   const [currentInteractions,setCurrentInteractions] = useState([])
-  const [attachments,setAttachments] = useState([])
+  // const [attachments,setAttachments] = useState([])
 
   const selectStep = (interaction) => {
     setActiveStep(interaction)
   }
   
-
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
     getSession(session)
@@ -28,10 +27,11 @@ const CompassSelector = ({showAttachment}) => {
         setCurrentInteractions(res.data.getSession.interactions.items.sort((a,b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         }))
-        const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
-        setAttachments(interactionAttachments)
+        // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
+        // setAttachments(interactionAttachments)
       })
   },[session])
+
 
   return (
     <CSGrid
@@ -51,7 +51,7 @@ const CompassSelector = ({showAttachment}) => {
       <SessionBar 
         session={currentSession}
         interactions={currentInteractions} 
-        attachments={attachments} 
+        // attachments={attachments} 
         showAttachment={showAttachment} 
         interaction={activeStep}
         setInteraction={selectStep}
