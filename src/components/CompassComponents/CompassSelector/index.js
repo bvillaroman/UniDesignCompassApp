@@ -3,18 +3,23 @@ import { CSGrid } from "../../../styles/CompassPage"
 import { getSession } from "../../../utils/queries"
 import {GlobalContext} from "../../../context/context"
 
-import InteractionFeed from "./InteractionFeed"
 import SessionBar from "./SessionBar"
-import CopmassWheel from "./CompassWheel"
+import CompassWheel from "./CompassWheel"
 
 const CompassSelector = ({showAttachment}) => {
   const { session } = useContext(GlobalContext);
+  const [activeStep, setActiveStep] = useState({})
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
   const [currentInteractions,setCurrentInteractions] = useState([])
   const [attachments,setAttachments] = useState([])
 
-  // getting the current session
+  const selectStep = (interaction) => {
+    setActiveStep(interaction)
+  }
+  
+
+  // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
     getSession(session)
       .then((res) => {
@@ -30,18 +35,27 @@ const CompassSelector = ({showAttachment}) => {
 
   return (
     <CSGrid
-      rows={['80%', '20%']}
-      columns={['80%', '20%']}
+      rows={['40rem', 'fill']}
+      columns={['60%', '40%']}
       fill
       areas={[
         { name: 'main', start: [0, 0], end: [0, 0] },
         { name: 'session', start: [1, 0], end: [1, 1] },
-        { name: 'interactions', start: [0, 1], end: [0, 1] },
       ]}
     >
-      <CopmassWheel compassSteps={steps} interactions={currentInteractions}/>
-      <SessionBar session={currentSession} attachments={attachments} showAttachment={showAttachment}/>
-      <InteractionFeed interactions={currentInteractions}/>
+      <CompassWheel 
+        compassSteps={steps} 
+        interactions={currentInteractions} 
+        selectStep={selectStep}
+      />
+      <SessionBar 
+        session={currentSession}
+        interactions={currentInteractions} 
+        attachments={attachments} 
+        showAttachment={showAttachment} 
+        interaction={activeStep}
+        setInteraction={selectStep}
+      />
     </CSGrid>
 )};
 export default CompassSelector;

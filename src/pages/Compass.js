@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import LogPage from "../components/CompassComponents/LogPage"
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
@@ -15,7 +14,7 @@ import {
 import { GlobalContext } from "../context/context"
 
 const CompassPage = (props) => {
-  const {session = "", interaction = ""} = useContext(GlobalContext);
+  const {session = ""} = useContext(GlobalContext);
   const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
@@ -29,9 +28,7 @@ const CompassPage = (props) => {
   return (
     <MainView>
       {
-        interaction ? <LogPage showAttachment={showItem}/> :
-        session ? <CompassSelector showAttachment={showItem}/> :
-        <SessionCreator />
+        session ? <CompassSelector showAttachment={showItem}/> : <SessionCreator />
       }
       {
         show && (

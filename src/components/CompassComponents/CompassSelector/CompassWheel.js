@@ -6,18 +6,13 @@ import {
 } from "../../../styles/CompassPage"
 import Step from "./Step"
 
-const CompassWheel = ({compassSteps = [],interactions} = []) => {
+const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
   const [durations,setDurations] = useState(compassSteps)
-
-  // useEffect(() => {
-
-  // }, [])
-  console.log(compassSteps)
 
   return (
     <CSMain 
       gridArea="main"
-      rows={['10%', '90%']}
+      rows={['10%', '30rem']}
       columns={['30%', '70%']}
       fill
       areas={[
@@ -28,10 +23,18 @@ const CompassWheel = ({compassSteps = [],interactions} = []) => {
       <CSTitle gridArea="title">
         <span>Compass Steps</span>  
       </CSTitle>
-      <StepRow gridArea="content">
+      <StepRow gridArea="content" circleLength={compassSteps.length}>
         {
           compassSteps ? compassSteps.map((item,key) => {
-            return (<Step activeStep={item} key={key} rotateAngle={key*(360/compassSteps.length)}/>)
+            return (
+              <Step 
+                activeStep={item} 
+                key={key} 
+                selectStep={selectStep} 
+                circleLength={compassSteps.length}
+                rotateAngle={key*(360/(compassSteps.length))}
+              />
+            )
           }) : ''
         }
       </StepRow>
