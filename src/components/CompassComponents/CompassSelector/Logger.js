@@ -18,7 +18,7 @@ import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import {GlobalContext} from "../../../context/context"
 
-const Logger = ({interaction={}, showAttachment, setInteraction }) => {
+const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }) => {
   const { session } = useContext(GlobalContext);
   const [step, setStep] = useState({});
   const [time,setTime] = useState(0)
@@ -43,7 +43,10 @@ const Logger = ({interaction={}, showAttachment, setInteraction }) => {
 
     if (interaction.id){
       if (start) {
-        interval = setInterval(() => setTime(time+1), 1000)
+        interval = setInterval(() => {
+          increaseClock()
+          setTime(time+1)
+        }, 1000)
 
       } else if (!start && time !== 0) {
         clearInterval(interval)
@@ -60,7 +63,6 @@ const Logger = ({interaction={}, showAttachment, setInteraction }) => {
     }
     if (start) {
       updateInteraction(newInteraction)
-      
     }
     
     return setStart(!start)
