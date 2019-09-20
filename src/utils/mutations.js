@@ -112,3 +112,27 @@ export async function deleteCompass(id) {
   const deletedCompass = await API.graphql(graphqlOperation(mutations.deleteCompass, { input: compassInfo }));
   return deletedCompass;
 }
+
+export async function deleteSession(id) {
+  const SessionInfo = {
+    id
+  }
+  const deletedSession = await API.graphql(graphqlOperation(mutations.deleteSession, { input: SessionInfo }));
+  return deletedSession;
+}
+
+export async function deleteInteraction(id) {
+  const InteractionInfo = {
+    id
+  }
+  const deletedInteraction = await API.graphql(graphqlOperation(mutations.deleteInteraction, { input: InteractionInfo }));
+  return deletedInteraction;
+}
+
+export async function deleteStep(id) {
+  const StepInfo = {
+    id
+  }
+  const deletedStep = await API.graphql(graphqlOperation(mutations.deleteStep, { input: StepInfo }));
+  return deletedStep;
+}
