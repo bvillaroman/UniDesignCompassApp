@@ -8,11 +8,12 @@ import {
 } from "../../../styles/CompassPage"
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
-const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction }) => {
+const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction, totalTime, increaseClock }) => {
   const [currentSession,setCurrrentSession] = useState({})
 
   useEffect(() => {
     setCurrrentSession(session)
+    
   },[session])
 
   const translateTime = (secs) => {
@@ -34,10 +35,10 @@ const SessionBar = ({ session, interactions,showAttachment,interaction,setIntera
           {currentSession.name_of_session} 
         </SessionTitle>
         <SessionClock >
-          {translateTime(0)}
+          {translateTime(totalTime)}
         </SessionClock>
       </SessionSection>
-      { interaction.id && ( <Logger setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
+      { interaction.id && ( <Logger increaseClock={increaseClock} setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
       <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
     </SessionView>
   ) 
