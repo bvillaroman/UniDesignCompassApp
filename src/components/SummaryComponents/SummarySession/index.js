@@ -7,6 +7,8 @@ import SummaryLog from '../SummaryLog/'
 const SummarySession = () => {
   const { compass } = useContext(GlobalContext)
   const [sessions, setSession] = useState([])
+  // get all sessions of the compass
+  // const [allSessions, setAllSessions] = useState([])
   const [expandLog, setExpandLog] = useState("")
   const [currentCompass, setCurrentCompass] = useState("")
   const [render, showRender] = useState(false)
@@ -16,7 +18,12 @@ const SummarySession = () => {
     getCompass(compass)
       //.then(res => getCurrentCompass(res.data.getCompass.name_of_compass))
       .then(res => {
+
+        // replaced by below
         setSession(res.data.getCompass.sessions.items)
+
+        // array of all sessions in the compass
+        // setAllSessions(res.data.getCompass.sessions.items)
         setCurrentCompass(res.data.getCompass.name_of_compass)
         // conso  le.log(res)
       })
@@ -24,10 +31,30 @@ const SummarySession = () => {
   }, [])
 
 
+  // 1. get all sessions
 
+  // getCompass(compass)
+  //.then(res => getCurrentCompass(res.data.getCompass.name_of_compass))
+  // .then(res => {
+    // array of all sessions in the compass
+    // setAllSessions(res.data.getCompass.sessions.items)
+  // })
+
+  // 2. get All interactions with a selected session
+  // getSession(compass)
+  //.then(res => get(res.data.getSession.name_of_session)){
+  // })
+
+
+  // 3. get data for selected interaction
+  // getInteraction(interaction)
+  //.then(res => setInteraction(res.data.getInteraction.interaction))
+  // })
+
+
+  // get intreraction logs
   const getSessionLogs = (id) => {
-    // console.log("Getting session logs")
-
+    // console.log("Getting session logs"
     getInteraction(id)
       .then(res => {
         setExpandLog(res.data.getInteraction)
