@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { getSession } from "../../../utils/queries"
 import {GlobalContext} from "../../../context/context"
+import { createInteractionSub, updateInteractionSub } from '../../../utils/subscriptions'
 
 import SessionBar from "./SessionBar"
 import CompassWheel from "./CompassWheel"
@@ -16,6 +17,8 @@ const CompassSelector = ({showAttachment}) => {
 
   const selectStep = (interaction) => {
     setActiveStep(interaction)
+    // console.log([interaction, ...currentInteractions])
+    setCurrentInteractions([interaction, ...currentInteractions])
   }
   
   // getting the current session and distribute: session,steps, all interactions, all attachments
@@ -31,6 +34,16 @@ const CompassSelector = ({showAttachment}) => {
         // setAttachments(interactionAttachments)
       })
   },[session])
+
+  // useEffect(() => {
+  //   updateInteractionSub()
+  //     .subscribe({
+  //       next: (interactionData) => console.log(interactionData)
+  //     })
+
+  //   return updateInteractionSub().unSubscribe()
+
+  // },[])
 
 
   return (
