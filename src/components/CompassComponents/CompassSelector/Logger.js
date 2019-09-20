@@ -7,7 +7,8 @@ import {
   LoggerAttachments,
   StepClock,
   TimerButton,
-  AttachmentButton
+  AttachmentButton,
+  SessionAttachments
 } from "../../../styles/CompassPage"
 import { getInteraction } from '../../../utils/queries'
 import { updateInteraction, uploadAttachment, } from '../../../utils/mutations'
@@ -123,15 +124,22 @@ const Logger = ({interaction={}, showAttachment, setInteraction }) => {
         disabled={!start}
       />
       <LoggerAttachments>
-        <span>Attachments</span>
-        <AttachmentButton  onChange={handleUpload} />
-
-        { 
-          attachments.length > 0 && 
-          attachments.map((item) => (
-            <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
-          )) 
-        }
+        <LoggerHeader>
+          <LoggerTitle color="black">
+            Attachments
+          </LoggerTitle>
+          <StepClock >
+            <AttachmentButton disabled={!start} onChange={handleUpload} color={step.color}/>
+          </StepClock>
+        </LoggerHeader>
+        <SessionAttachments>
+          { 
+            attachments.length > 0 && 
+            attachments.map((item) => (
+              <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
+            )) 
+          }
+        </SessionAttachments>
       </LoggerAttachments>
     </LoggerGrid>
   );

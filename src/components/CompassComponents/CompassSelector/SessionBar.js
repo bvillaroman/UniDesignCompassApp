@@ -1,22 +1,18 @@
  import React, {useState, useEffect}  from "react";
 import { 
   SessionView, 
-  SessionAccordion, 
   SessionSection, 
-  SessionDescription ,
-  StepSection,
+  LoggerTitle ,
+  SessionTitle,
   SessionClock,
 } from "../../../styles/CompassPage"
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
-import Attachment from "./Attachment"
 const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction }) => {
   const [currentSession,setCurrrentSession] = useState({})
 
   useEffect(() => {
     setCurrrentSession(session)
-    // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
-    // setAttachments(interactionAttachments)
   },[session])
 
   const translateTime = (secs) => {
@@ -31,21 +27,18 @@ const SessionBar = ({ session, interactions,showAttachment,interaction,setIntera
       .join(":") 
   }
 
-
   return (
     <SessionView  gridArea="session" >
       <SessionSection>
-        <SessionAccordion  label={<div> {currentSession.name_of_session} {translateTime(0)} </div>}>
-          {/* <SessionDescription >
-            {currentSession.description_of_session}
-          </SessionDescription> */}
-        </SessionAccordion>
-      </SessionSection> 
+        <SessionTitle >
+          {currentSession.name_of_session} 
+        </SessionTitle>
+        <SessionClock >
+          {translateTime(0)}
+        </SessionClock>
+      </SessionSection>
       { interaction.id && ( <Logger setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
       <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
-      {/* <SessionAttachments gridArea="attachments">
-        <p>Past Logs</p>
-      </SessionAttachments> */}
     </SessionView>
   ) 
 };

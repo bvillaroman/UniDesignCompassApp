@@ -12,8 +12,8 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
   return (
     <CSMain 
       gridArea="main"
-      rows={['10%', '30rem']}
-      columns={['30%', '70%']}
+      rows={['3rem', '30rem']}
+      columns={['15rem', 'fill']}
       fill
       areas={[
         { name: 'title', start: [0, 0], end: [0, 1] },
