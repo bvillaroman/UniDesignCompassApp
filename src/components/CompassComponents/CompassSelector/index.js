@@ -18,7 +18,7 @@ const CompassSelector = ({showAttachment}) => {
   const selectStep = (interaction) => {
     setActiveStep(interaction)
     // console.log([interaction, ...currentInteractions])
-    setCurrentInteractions([interaction, ...currentInteractions])
+    if (interaction.id !== activeStep.id) setCurrentInteractions([interaction, ...currentInteractions])
   }
   
   // getting the current session and distribute: session,steps, all interactions, all attachments
@@ -30,20 +30,8 @@ const CompassSelector = ({showAttachment}) => {
         setCurrentInteractions(res.data.getSession.interactions.items.sort((a,b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         }))
-        // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
-        // setAttachments(interactionAttachments)
       })
   },[session])
-
-  // useEffect(() => {
-  //   updateInteractionSub()
-  //     .subscribe({
-  //       next: (interactionData) => console.log(interactionData)
-  //     })
-
-  //   return updateInteractionSub().unSubscribe()
-
-  // },[])
 
 
   return (
