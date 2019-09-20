@@ -23,15 +23,13 @@ export const AttachmentButtonLabel = styled.label`
   border-radius: 2rem;
   transition: all 0.3s;
   padding: 0.5rem;
-  svg {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
+  width: 1.5rem;
+  height: 1.5rem;
   :hover {
     transition: all 0.3s;
-    border: 0.15rem solid #5567FD;
+    border: 0.15rem solid ${ props => props.color ? props.color : '#5567FD'};
     border-radius: 2rem;
-    background-color:#5567FD;
+    background-color:${ props => props.color ? props.color : '#5567FD'};
     color: white; 
     svg {
       transition: all 0.3s;
@@ -43,9 +41,9 @@ export const AttachmentButtonLabel = styled.label`
     display: none;
   }
 `
-export const AttachmentButton = ({onChange}) =>(
-  <AttachmentButtonLabel>
-    <Attachment color="#5567FD"/>
+export const AttachmentButton = ({onChange, color}) =>(
+  <AttachmentButtonLabel color={color}>
+    <Attachment color={color ? color: "#5567FD"}/>
     <input type="file" onChange={onChange}/>
   </AttachmentButtonLabel>
   
@@ -68,14 +66,12 @@ export const DownloadButton = ({src}) =>(
 export const AttachmentItemButton = ({onClick, attachment}) =>(
   <AttachmentItem onClick={onClick} >
     { 
-      attachment.type && 
-      (
+
         attachment.type.includes("image") ? <Image color="#5567FD"/> :
         attachment.type.includes("mp4") ? <Multimedia color="#5567FD"/> :
         <Document color="#5567FD"/>
-      )
     }
-    <span>{attachment.key ? attachment.name : ''} </span>
+    <span>{attachment.key ? attachment.name : ''}</span>
   </AttachmentItem>     
 )
 
@@ -114,6 +110,7 @@ export const LoggerHeader = styled(Box)`
 export const LoggerTitle = styled.h4`
   font-size: 1.2rem;
   padding: 0;
+  width: 50%;
   color: ${props => props.color ? props.color: '#5567FD'};
   line-height: 1.3rem;
   text-align: left;
@@ -137,11 +134,9 @@ export const LoggerInnerNav = styled(Box)`
   padding: 0 1rem;
 `;
 export const LoggerAttachments = styled(Box)`
-  // padding: 1rem;
-  // font-size: 1rem;
-  // text-align: center;
-  // height: 100%;
-  // overflow: scroll;
+  width: 100%;
+  height: 100%;
+  margin: 0.5rem auto;
 `
 
 // attachment components
@@ -170,18 +165,23 @@ export const AttachmentButtonContainer = styled(Box)`
 `
 export const AttachmentItem = styled(Box)`
   border: none;
-  width: 90%;
+  width: 100%;
+  min-height: 2.2rem;
   margin: 1rem auto;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: black;
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  
   align-items: center;
+  justify-content: center;
   span {
     padding-left: 0.5rem;
+  }
+  svg {
+    width: 2rem;
+    height: 2rem;
   }
   
 `;
@@ -287,7 +287,8 @@ export const CSTitle = styled(Box)`
   font-weight: 600;
   line-height: 1.6rem;
   align-self: center;
-  text-align: center;
+  text-align: left;
+  padding-left: 1.5rem;
 `;
 export const CSMain = styled(Grid)`
   height: 100%;
@@ -336,6 +337,7 @@ export const CSInteractions = styled(Box)`
   display: flex;
   flex-direction: column;
   width: auto;
+  min-height: 10rem;
 `;
 export const CSInteractionsFeed = styled(Box)`
   display: flex;
@@ -391,23 +393,30 @@ export const SessionView = styled(Box)`
   display: flex;
   flex-direction: column;
 `
-export const SessionSection = styled(Accordion)`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-`
-export const SessionAccordion = styled(AccordionPanel)`
+export const SessionSection = styled(Box)`
   text-align: center;  
-  h4 {
-    font-size: 1.2rem;
-  }
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.2rem;
   word-break: break-word;
   padding: 0.5rem;
-  height: 3rem;
+  width: 100%;
+  min-height: 3rem;
   margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`
+export const SessionTitle = styled.h4`
+  font-size: 1.2rem;
+  padding: 0;
+  width: 50%;
+  color: black;
+  line-height: 1.3rem;
+  text-align: left;
+  font-weight: 600;
+  margin: 0;
 `
 export const SessionDescription = styled(Box)`
   width: 70%;
@@ -428,11 +437,14 @@ export const SessionClock = styled(Box)`
   font-weight: 500;
 `
 export const SessionAttachments = styled(Box)`
-  padding: 1rem;
   font-size: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow: scroll;
+  border: 0.1rem solid rgba(0,0,0,0.2);
+  border-radius: 0.3rem;
 `
 export const StepAccordion = styled(AccordionPanel)`
   text-align: center;

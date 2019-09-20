@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React, {useState, useEffect, useContext}  from "react";
 import { 
   LoggerGrid,
   LoggerTitle,
@@ -6,29 +6,34 @@ import {
   LoggerHeader,
   LoggerAttachments,
   StepClock,
-  TimerButton
+  TimerButton,
+  AttachmentButton,
+  SessionAttachments
 } from "../../../styles/CompassPage"
 import { getInteraction } from '../../../utils/queries'
-import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
+import { updateInteraction, uploadAttachment, } from '../../../utils/mutations'
+import Attachment from "./Attachment"
+import { Storage } from 'aws-amplify'
+import uuid from 'uuid/v4'
+import config from '../../../aws-exports'
+import {GlobalContext} from "../../../context/context"
 
-const Logger = ({interaction={} }) => {
+const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }) => {
+  const { session } = useContext(GlobalContext);
   const [step, setStep] = useState({});
   const [time,setTime] = useState(0)
   const [log, setLog] = useState('')
   const [start,setStart] = useState(true)
+  const [attachments,setAttachments] = useState([])
 
     //handle currentInteraction
   useEffect(() => {
-    getInteraction(interaction.id).then((res) => {
-      const {log_content, duration, step} = res.data.getInteraction
+      const {log_content, duration, step, attachments} = interaction
       setTime(duration)
       setStep(step)
       setLog(log_content)
       setStart(true)
-    })
-    // return {
-
-    // }
+      setAttachments(attachments.items)
   }, [interaction.id])
 
 
@@ -38,7 +43,10 @@ const Logger = ({interaction={} }) => {
 
     if (interaction.id){
       if (start) {
-        interval = setInterval(() => setTime(time+1), 1000)
+        interval = setInterval(() => {
+          increaseClock()
+          setTime(time+1)
+        }, 1000)
 
       } else if (!start && time !== 0) {
         clearInterval(interval)
@@ -50,10 +58,12 @@ const Logger = ({interaction={} }) => {
   const pause = (e) => {
     const newInteraction = {
       id: interaction.id,
-      log_content: log,
+      log_content: log ? log : " ",
       duration: time,
     }
-    if (start) updateInteraction(newInteraction)
+    if (start) {
+      updateInteraction(newInteraction)
+    }
     
     return setStart(!start)
   }
@@ -72,10 +82,35 @@ const Logger = ({interaction={} }) => {
       .join(":") 
   }
 
+  const handleUpload = async (event) => { 
+    const { target: { files } } = event
+    const [image] = files || []
+    if (image) {
+      const { name: fileName, type: mimeType } = image
+      const fileForUpload = {
+        bucket: config.aws_user_files_s3_bucket,
+        key:  `${uuid()}${fileName}`,
+        region: config.aws_user_files_s3_bucket_region,
+        name: fileName,
+        type: mimeType,
+      }
+    
+      try {
+        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
+        uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
+          .then((res) => {
+            setAttachments([res.data.createAttachment, ...attachments])
+          })
+      } catch (err) {
+        console.log('error cannot store file: ', err)
+      }
+    }
+  }
+
   return (
     <LoggerGrid>
       <LoggerHeader>
-        <LoggerTitle gridArea="title" color={step.color}>
+        <LoggerTitle color={step.color}>
           {step.name_of_step} 
         </LoggerTitle>
         <StepClock >
@@ -90,15 +125,24 @@ const Logger = ({interaction={} }) => {
         color={step.color}
         disabled={!start}
       />
-      {/* <LoggerAttachments>
-        <span>Attachments</span>
-        { 
-          attachments.length > 0 && 
-          attachments.map((item) => (
-            <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
-          )) 
-        }
-      </LoggerAttachments> */}
+      <LoggerAttachments>
+        <LoggerHeader>
+          <LoggerTitle color="black">
+            Attachments
+          </LoggerTitle>
+          <StepClock >
+            <AttachmentButton disabled={!start} onChange={handleUpload} color={step.color}/>
+          </StepClock>
+        </LoggerHeader>
+        <SessionAttachments>
+          { 
+            attachments.length > 0 && 
+            attachments.map((item) => (
+              <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
+            )) 
+          }
+        </SessionAttachments>
+      </LoggerAttachments>
     </LoggerGrid>
   );
 }

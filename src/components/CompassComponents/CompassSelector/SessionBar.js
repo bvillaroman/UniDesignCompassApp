@@ -1,34 +1,19 @@
- import React, {useState, useEffect, useContext}  from "react";
+ import React, {useState, useEffect}  from "react";
 import { 
   SessionView, 
-  SessionAccordion, 
   SessionSection, 
-  SessionDescription ,
-  StepSection,
+  LoggerTitle ,
+  SessionTitle,
   SessionClock,
 } from "../../../styles/CompassPage"
-import { getSession } from "../../../utils/queries"
-import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
-import Attachment from "../LogPage/Attachment"
-import {GlobalContext} from "../../../context/context"
-
-const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteraction}) => {
-  const { session } = useContext(GlobalContext);
+const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction, totalTime, increaseClock }) => {
   const [currentSession,setCurrrentSession] = useState({})
-  const [pastLogs, setPastLogs] = useState([]);
 
   useEffect(() => {
-    getSession(session)
-      .then((res) => {
-        setCurrrentSession(res.data.getSession)
-        setPastLogs(res.data.getSession.interactions.items.sort((a,b) => {
-          return new Date(b.createdAt) - new Date(a.createdAt);
-        }))
-        // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
-        // setAttachments(interactionAttachments)
-      })
+    setCurrrentSession(session)
+    
   },[session])
 
   const translateTime = (secs) => {
@@ -43,21 +28,18 @@ const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteract
       .join(":") 
   }
 
-
   return (
     <SessionView  gridArea="session" >
       <SessionSection>
-        <SessionAccordion  label={<div> {currentSession.name_of_session} {translateTime(0)} </div>}>
-          {/* <SessionDescription >
-            {currentSession.description_of_session}
-          </SessionDescription> */}
-        </SessionAccordion>
-      </SessionSection> 
-      { interaction.id && ( <Logger interaction={interaction} /> ) }
-      <InteractionFeed interactions={pastLogs} goToInteraction={setInteraction}/>
-      {/* <SessionAttachments gridArea="attachments">
-        <p>Past Logs</p>
-      </SessionAttachments> */}
+        <SessionTitle >
+          {currentSession.name_of_session} 
+        </SessionTitle>
+        <SessionClock >
+          {translateTime(totalTime)}
+        </SessionClock>
+      </SessionSection>
+      { interaction.id && ( <Logger increaseClock={increaseClock} setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
+      <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
     </SessionView>
   ) 
 };
