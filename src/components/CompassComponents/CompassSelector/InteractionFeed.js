@@ -1,29 +1,29 @@
 import React from "react";
 import { 
   CSInteractions,
-  CSTitle,
+  InteractionsTitle,
   CSInteractionsFeed
 } from "../../../styles/CompassPage"
 import Interaction from "./interaction"
 
-const InteractionFeed = ({interactions}) => {
+const InteractionFeed = ({interactions, goToInteraction}) => {
   // getting the current session
   return (
-    <CSInteractions 
-      gridArea="interactions"
-      rows={['20%','80%']}
-      fill
-      columns={['25%', '75%']}
-      areas={[
-        { name: 'title', start: [0, 0], end: [0, 0] },
-        { name: 'content', start: [0, 1], end: [1, 1] },
-      ]}
-    >
-      <CSTitle gridArea="title">Recent Logs</CSTitle>
-      <CSInteractionsFeed gridArea="content">
+    <CSInteractions >
+      <InteractionsTitle >Recent Logs</InteractionsTitle>
+      <CSInteractionsFeed>
         {
           interactions ? interactions.map((item, key) => {
-            if (item.step) return ( <Interaction interaction={item} isLastStep={key == interactions.length - 1}/> )
+            if (item.step) {
+              return ( 
+                <Interaction 
+                  key={key}
+                  interaction={item} 
+                  isLastStep={key == interactions.length - 1} 
+                  goToInteraction={goToInteraction}
+                /> 
+              )
+            }
             return ''
           }
           ) : <p>There are no logs!</p>

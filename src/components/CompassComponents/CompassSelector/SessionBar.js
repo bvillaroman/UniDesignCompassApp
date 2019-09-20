@@ -1,47 +1,45 @@
-import React from "react";
+ import React, {useState, useEffect}  from "react";
 import { 
-  StepClock,
   SessionView, 
-  SessionTitle, 
-  SessionHeader, 
-  SessionDescription ,
-  SessionAttachments,
+  SessionSection, 
+  LoggerTitle ,
+  SessionTitle,
+  SessionClock,
 } from "../../../styles/CompassPage"
-import Attachment from "../LogPage/Attachment"
+import Logger from "./Logger"
+import InteractionFeed from "./InteractionFeed"
+const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction, totalTime, increaseClock }) => {
+  const [currentSession,setCurrrentSession] = useState({})
 
-const SessionBar = ({session, attachments, showAttachment}) => {
+  useEffect(() => {
+    setCurrrentSession(session)
+    
+  },[session])
+
+  const translateTime = (secs) => {
+    const sec_num = parseInt(secs, 10)
+    const hours   = Math.floor(sec_num / 3600)
+    const minutes = Math.floor(sec_num / 60) % 60
+    const seconds = sec_num % 60
+
+    return [hours,minutes,seconds]
+      .map(v => v < 10 ? "0" + v : v)
+      .filter((v,i) => v !== "00" || i > 0)
+      .join(":") 
+  }
 
   return (
-    <SessionView 
-      rows={['20%', '20%', '60%']}
-      columns={['fill']}
-      fill
-      areas={[
-        { name: 'header', start: [0, 0], end: [0, 0] },
-        { name: 'description', start: [0, 1], end: [0, 1] },
-        { name: 'attachments', start: [0, 2], end: [0, 2] },
-      ]}
-      gridArea="session"
-    >
-      <SessionHeader gridArea="header">
-        <SessionTitle>
-          {session.name_of_session}
+    <SessionView  gridArea="session" >
+      <SessionSection>
+        <SessionTitle >
+          {currentSession.name_of_session} 
         </SessionTitle>
-        <StepClock>
-        </StepClock>
-      </SessionHeader>
-        <SessionDescription gridArea="description">
-          {session.description_of_session}
-        </SessionDescription>
-        <SessionAttachments gridArea="attachments">
-          <p>Attachments</p>
-          { 
-            attachments && 
-            attachments.map((attachment) => (
-              <Attachment attachment={attachment} showAttachment={showAttachment}/> 
-            ))
-          }
-        </SessionAttachments>
+        <SessionClock >
+          {translateTime(totalTime)}
+        </SessionClock>
+      </SessionSection>
+      { interaction.id && ( <Logger increaseClock={increaseClock} setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
+      <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
     </SessionView>
   ) 
 };
