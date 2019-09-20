@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React, {useState, useEffect, useContext}  from "react";
 import { 
   LoggerGrid,
   LoggerTitle,
@@ -15,8 +15,10 @@ import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
+import {GlobalContext} from "../../../context/context"
 
-const Logger = ({interaction={}, showAttachment }) => {
+const Logger = ({interaction={}, showAttachment, setInteraction }) => {
+  const { session } = useContext(GlobalContext);
   const [step, setStep] = useState({});
   const [time,setTime] = useState(0)
   const [log, setLog] = useState('')
@@ -25,17 +27,12 @@ const Logger = ({interaction={}, showAttachment }) => {
 
     //handle currentInteraction
   useEffect(() => {
-    getInteraction(interaction.id).then((res) => {
-      const {log_content, duration, step, attachments} = res.data.getInteraction
+      const {log_content, duration, step, attachments} = interaction
       setTime(duration)
       setStep(step)
       setLog(log_content)
       setStart(true)
       setAttachments(attachments.items)
-    })
-    // return {
-
-    // }
   }, [interaction.id])
 
 
@@ -57,10 +54,13 @@ const Logger = ({interaction={}, showAttachment }) => {
   const pause = (e) => {
     const newInteraction = {
       id: interaction.id,
-      log_content: log,
+      log_content: log ? log : " ",
       duration: time,
     }
-    if (start) updateInteraction(newInteraction)
+    if (start) {
+      updateInteraction(newInteraction)
+      
+    }
     
     return setStart(!start)
   }

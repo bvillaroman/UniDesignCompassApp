@@ -1,4 +1,4 @@
- import React, {useState, useEffect, useContext}  from "react";
+ import React, {useState, useEffect}  from "react";
 import { 
   SessionView, 
   SessionAccordion, 
@@ -7,28 +7,16 @@ import {
   StepSection,
   SessionClock,
 } from "../../../styles/CompassPage"
-import { getSession } from "../../../utils/queries"
-import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
 import Attachment from "./Attachment"
-import {GlobalContext} from "../../../context/context"
-
-const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteraction}) => {
-  const { session } = useContext(GlobalContext);
+const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction }) => {
   const [currentSession,setCurrrentSession] = useState({})
-  const [pastLogs, setPastLogs] = useState([]);
 
   useEffect(() => {
-    getSession(session)
-      .then((res) => {
-        setCurrrentSession(res.data.getSession)
-        setPastLogs(res.data.getSession.interactions.items.sort((a,b) => {
-          return new Date(b.createdAt) - new Date(a.createdAt);
-        }))
-        // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
-        // setAttachments(interactionAttachments)
-      })
+    setCurrrentSession(session)
+    // const interactionAttachments =  res.data.getSession.interactions ? res.data.getSession.interactions.items.map((item) => item.attachments.items).flat() : []
+    // setAttachments(interactionAttachments)
   },[session])
 
   const translateTime = (secs) => {
@@ -53,8 +41,8 @@ const SessionBar = ({ attachments, showAttachment, interaction = {}, setInteract
           </SessionDescription> */}
         </SessionAccordion>
       </SessionSection> 
-      { interaction.id && ( <Logger interaction={interaction} showAttachment={showAttachment}/> ) }
-      <InteractionFeed interactions={pastLogs} goToInteraction={setInteraction}/>
+      { interaction.id && ( <Logger setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
+      <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
       {/* <SessionAttachments gridArea="attachments">
         <p>Past Logs</p>
       </SessionAttachments> */}
