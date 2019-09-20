@@ -1,13 +1,15 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { getCompass, getSession } from "../../../utils/queries";
+import { getCompass, getSession, getInteraction } from "../../../utils/queries";
 import { GlobalContext } from '../../../context/context';
+// import SummaryLog from '../SummaryLog/index';
+import SummaryLog from '../SummaryLog/'
 
 const SummarySession = () => {
   const { compass } = useContext(GlobalContext)
   const [sessions, setSession] = useState([])
-  //const [interactions, setInteraction] = useState([])
+  const [expandLog, setExpandLog] = useState("")
   const [currentCompass, setCurrentCompass] = useState("")
-  console.log(compass)
+  const [render, useRender] = useState(false)
 
   //Mounting once when the page loads
   useEffect(() => {
@@ -16,53 +18,58 @@ const SummarySession = () => {
       .then(res => {
         setSession(res.data.getCompass.sessions.items)
         setCurrentCompass(res.data.getCompass.name_of_compass)
-        //console.log(res)
+        // conso  le.log(res)
       })
       .catch(err => console.log(err))
   }, [])
 
-  // const getSessionLogs = (id) => {
-  //   console.log("Getting session logs")
-  //   getSession(id)
-  //     .then(res => {
-  //       console.log(res.data.getSession.interactions.items)
-  //     })
-  //     .catch(err => console.log(err))
-  //   //props.showInteraction()
-  // }
 
-  const interactionReduce = (session) => {
-    let interactionArray = ""
-    let divArray = session.interactions.items.reduce((accumulate, interaction) => {
-      console.log(interactionArray)
-      interactionArray += interaction.log_content + '\n'
-    })
-    return interactionArray;
+
+  const getSessionLogs = (id) => {
+    // console.log("Getting session logs")
+
+    getInteraction(id)
+      .then(res => {
+        setExpandLog(res.data.getInteraction)
+        console.log(res.data.getInteraction)
+        useRender(!render)
+      })
+      .catch(err => console.log('getSessionLogs err:', err))
   }
 
-  let renderthis = []
-  renderthis.push(<h5>Summary for {currentCompass}</h5>);
-  renderthis.push(<h6>{sessions.map(session => (
-    <div>
-      <div>
-        {session.interactions.items.map(interaction => (
-          <div>
-            <div key={session.id} >
-              {session.name_of_session} ||
-          	  {session.description_of_session} ||
-              {session.createdAt} ||
-              {interaction.step.name_of_step} ||
-              {interaction.log_content}
-            </div>
-          </div>
-        ))}
-      </div></div>))}</h6>);
 
-  return (
-    <div>
-      {renderthis}
-    </div>
-  )
+  const SessionTable = ({ sessions }) => {
+    return (
+      <table>
+        <tbody>
+          <tr><th>Session Name</th><th>Session Description</th><th>Created At</th><th>step</th><th>log</th></tr>
+          {sessions.map(session =>
+            session.interactions.items.map((interaction, i) => (
+              <tr key={interaction.id} onClick={() => getSessionLogs(interaction.id)}>
+                <td>{session.name_of_session}</td>
+                <td>{session.description_of_session.substring(0, 10) + "..."}</td>
+                <td>{session.createdAt.substring(0, 19)}</td>
+                <td>{interaction.step.name_of_step}</td>
+                <td>{interaction.log_content.substring(0, 5) + "..."}</td>
+              </tr>
+            ))
+
+          )}
+        </tbody>
+      </table>
+    )
+  }
+
+  const renderLog = () => {
+    useRender(!render)
+  }
+
+  const storeLog = expandLog.log_content;
+  const attachments = expandLog.attachments;
+
+  return render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} /> : <SessionTable sessions={sessions} />
 }
 
 export default SummarySession;
+
+

@@ -131,11 +131,24 @@ export const ReviewStepsView = styled(Accordion)`
 export const ReviewStepPanel = styled(AccordionPanel)`
   font-size: 0.5rem;
   padding: 0.5rem;
+  background-color: ${props => props.color ? props.color : 'black'};
+  color: white;
+  border-radius: 1rem;
+  width: 80%;
+  margin: 0.1rem auto;
+  word-break: break-all;
+`
+export const ReviewStepDescription = styled(Box)`
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  height: auto;
+  padding: 2rem 1rem;
   background-color: white;
   color: black;
   border-radius: 1rem;
-  // border: 0.01rem solid black;
+  width: 80%;
   margin: 0.1rem auto;
+  word-break: break-word;
 `
 export const SubmitCompassButton = styled(Button)`
   background-color: white;

@@ -11,21 +11,12 @@ import {
   Tab,
   Layer,
   Video,
+  Accordion,
+  AccordionPanel
 } from "grommet"
 import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia, LinkPrevious } from 'grommet-icons';
 import React from "react";
 
-export const CompassButton = ({onClick}) =>(
-  <CompassButtons     
-    onClick={e => onClick()} 
-    icon={(
-      <div>
-        <FormPrevious color='#5567FD' /> 
-        <Compass color="#5567FD"/>
-      </div>
-    )}
-  />
-)
 export const AttachmentButtonLabel = styled.label`
   cursor: pointer;
   border: 0.15rem solid transparent;
@@ -102,41 +93,41 @@ export const AttachmentPreview = ({attachment,src}) => (
 )
 
 // Logger
-export const CompassButtons = styled(Button)`
-  border: 0.15rem solid transparent;
-  border-radius: 2rem;
-  transition: all 0.3s;
-  padding: 0.5rem;
-  svg {
-    width: 1.8rem;
-    height: 1.8rem;
-  }
-  :hover {
-    transition: all 0.3s;
-    border: 0.15rem solid #5567FD;
-    border-radius: 2rem;
-    background-color:#5567FD;
-    color: white; 
-    svg {
-      transition: all 0.3s;
-      fill: white; 
-      stroke: white; 
-    }
-  }
+
+export const LoggerGrid = styled(Box)`
+  width: 90%;
+  min-height: 20rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
 `;
+export const LoggerHeader = styled(Box)`
+  width: 100%;
+  margin: 1rem auto;
+  height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const LoggerTitle = styled.h4`
+  font-size: 1.2rem;
+  padding: 0;
+  color: ${props => props.color ? props.color: '#5567FD'};
+  line-height: 1.3rem;
+  text-align: left;
+  font-weight: 600;
+`
 export const LoggerInput = styled(TextArea)`
-  border-color: #5567FD;
+  border-color: black;
   resize: none;
   height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
 `;
 export const StepName = styled(Text)`
   font-size: 2rem;
-`;
-export const LoggerGrid = styled(Grid)`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  
 `;
 export const LoggerInnerNav = styled(Box)`
   display: flex;
@@ -145,9 +136,13 @@ export const LoggerInnerNav = styled(Box)`
   justify-content: space-between;
   padding: 0 1rem;
 `;
-export const LoggerTA = styled(Box)`
-  padding: 0 1.6rem 1rem 1.6rem;
-`;
+export const LoggerAttachments = styled(Box)`
+  // padding: 1rem;
+  // font-size: 1rem;
+  // text-align: center;
+  // height: 100%;
+  // overflow: scroll;
+`
 
 // attachment components
 export const AttachmentContainer = styled(Box)`
@@ -285,51 +280,62 @@ export const CSGrid = styled(Grid)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  overflow-y: auto; 
 `;
 export const CSTitle = styled(Box)`
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: 2.1rem;
+  line-height: 1.6rem;
   align-self: center;
   text-align: center;
 `;
 export const CSMain = styled(Grid)`
-  width: 100%;
+  height: 100%;
 `;
 export const StepRow = styled(Box)`
-  width: 35rem;
-  height: 35rem;
+  min-width: 20rem;
+  min-height: 20rem;
+  width: 50%;
+  height: 100%;
   margin: 0 auto;
   position: relative;
-  button { 
-    top: 38%;
-    left: 38%;
-  }
 `
 export const StepContainer = styled(Button)`
-  border: 0.15rem solid #5567FD;
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
   padding: 1rem;
   color: black; 
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1rem;
   :hover {
     transition: all 0.2s;
-    background-color: #5567FD;
+    background-color: transparent;
   }
+  top: 38%;
+  left: 38%;
+  background-color: ${props => props.color ? props.color : '#5567FD'};
   text-align: center;
 
   list-style: none;
-	height: 9rem;
-	width: 9rem;
+	height: 7rem;
+  width: 7rem;
+  display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(0, -200px) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.3}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
   word-break: break-all;
 `
-export const CSInteractions = styled(Grid)`
-  align-items: center;
+export const InteractionsTitle = styled(Box)`
   text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0.5rem auto;
+  height: auto;
+`;
+export const CSInteractions = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: auto;
 `;
 export const CSInteractionsFeed = styled(Box)`
   display: flex;
@@ -339,71 +345,87 @@ export const CSInteractionsFeed = styled(Box)`
   flex-wrap: nowrap; 
   height: 100%;
   width: 100%;
-`;
-export const CSInteraction = styled(Button)`
-  border: 0.15rem solid #5567FD;
-  border-radius: 50%;
-  transition: all 0.3s;
-  background-color: #5567FD;
   padding: 1rem;
-  color: white; 
-  font-weight: 400;
-  font-size: 1.0rem;
-  min-height: 7.2rem;
-  min-width: 7.2rem;
-  max-height: 7.2rem;
-  max-width: 7.2rem;
-  word-break: break-all;
-  // flex:  7.2rem  7.2rem auto;
+  // justify-content: center;
 `;
 export const CSInteractionContainer = styled(Box)`
   margin: 0 0.5rem;
-  min-width: 10rem;
+  min-width: 7.6rem;
   height: 100%;
   display: flex;
   flex-direction: row;
   align-items:center;
   justify-content: space-between;
 `;
+export const CSInteraction = styled(Button)`
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
+  :hover {
+    transition: all 0.2s;
+    background-color: transparent;
+    border: 0.15rem solid transparent;
+  }
+  border-radius: 50%;
+  transition: all 0.3s;
+  padding: 1rem;
+  color: black; 
+  font-weight: 600;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  min-height: 5rem;
+  min-width: 5rem;
+  max-height: 5rem;
+  max-width: 5rem;
+  word-break: break-all;
+  background-color: ${props => props.color ? props.color : '#5567FD'};
+
+`;
 
 
 // Compass SessionBar
-
-export const SessionHeader = styled(Box)`
-  padding: 1rem;
+export const SessionView = styled(Box)`
+  text-align: center;
+  background: white;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 `
-export const StepClock = styled(Box)`
-  margin: 1rem auto;
-  width: 50%;
+export const SessionSection = styled(Accordion)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: 400;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
 `
-export const ControlButton = styled(Button)`
-
-`
-export const TimerButton = ({onClick,start}) =>(
-  <ControlButton     
-    onClick={e => onClick()} 
-    icon={ start ? <PauseFill color='#5567FD' /> : <PlayFill color="#5567FD"/> }
-  />
-)
-export const SessionTitle = styled.p`
-  text-align: center;
-  font-size: 2rem;
+export const SessionAccordion = styled(AccordionPanel)`
+  text-align: center;  
+  h4 {
+    font-size: 1.2rem;
+  }
   font-weight: 600;
-  overflow-wrap: break-word;
-  line-height: 2.0rem;
+  line-height: 1.2rem;
+  word-break: break-word;
+  padding: 0.5rem;
+  height: 3rem;
+  margin: 1rem auto;
 `
 export const SessionDescription = styled(Box)`
-  padding: 1rem;
-  font-size: 1rem;
+  width: 70%;
+  height: 100%;
+  font-size: 0.8rem;
   text-align: left;
+  margin: 0 auto;
+`
+export const SessionClock = styled(Box)`
+  margin: 0.5rem 0;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
 `
 export const SessionAttachments = styled(Box)`
   padding: 1rem;
@@ -412,7 +434,55 @@ export const SessionAttachments = styled(Box)`
   height: 100%;
   overflow: scroll;
 `
-
+export const StepAccordion = styled(AccordionPanel)`
+  text-align: center;
+  h4 {
+    font-size: 1.2rem;
+    padding: 0;
+    color: ${props => props.color ? props.color: '#5567FD'}
+  }
+  svg {
+    color: black;
+    stroke: black;
+  }
+  font-weight: 600;
+  line-height: 1.2rem;
+  word-break: break-word;
+  padding: 0.5rem;
+  height: 3rem;
+  margin: 0.5rem auto;
+`
+export const StepDescription = styled(Box)`
+  width: 75%;
+  height: 100%;
+  font-size: 0.8rem;
+  text-align: left;
+  margin: 0 auto;
+`
+export const StepClock = styled(Box)`
+  margin: 0.5rem 0;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+`
+export const ControlButton = styled(Button)`
+  svg {
+    width: 1.3rem;
+    height: 1.4rem;
+  }
+  padding-right: 0;
+`
+export const TimerButton = ({onClick,start, color}) =>(
+  <ControlButton     
+    onClick={e => onClick()} 
+    icon={ start ? <PauseFill color={color ? color: '#5567FD'} /> : <PlayFill color={color ? color: '#5567FD'}/> }
+  />
+)
 // Compass Page Containers
 
 export const ComponentContainer = styled(Box)`
@@ -434,11 +504,7 @@ export const MainContent = styled(Tab)`
     border-color: transparent;
   }
 `
-export const SessionView = styled(Grid)`
-  text-align: center;
-  background: white;
-  width: 100%;
-`
+
 export const LayerView = styled(Layer)`
   width: 70%;
   height: 80%;
