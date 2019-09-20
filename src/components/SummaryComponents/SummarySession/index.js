@@ -9,7 +9,7 @@ const SummarySession = () => {
   const [sessions, setSession] = useState([])
   const [expandLog, setExpandLog] = useState("")
   const [currentCompass, setCurrentCompass] = useState("")
-  const [render, useRender] = useState(false)
+  const [render, showRender] = useState(false)
 
   //Mounting once when the page loads
   useEffect(() => {
@@ -32,7 +32,7 @@ const SummarySession = () => {
       .then(res => {
         setExpandLog(res.data.getInteraction)
         console.log(res.data.getInteraction)
-        useRender(!render)
+        showRender(!render)
       })
       .catch(err => console.log('getSessionLogs err:', err))
   }
@@ -61,13 +61,21 @@ const SummarySession = () => {
   }
 
   const renderLog = () => {
-    useRender(!render)
+    showRender(!render)
   }
 
   const storeLog = expandLog.log_content;
   const attachments = expandLog.attachments;
 
-  return render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} /> : <SessionTable sessions={sessions} />
+  return (
+    <>
+    { 
+      render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} /> 
+      : <SessionTable sessions={sessions} /> 
+    }
+    </>
+    
+  )
 }
 
 export default SummarySession;
