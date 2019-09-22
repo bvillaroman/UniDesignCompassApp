@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StepContainer } from "../../../styles/CompassPage"
+import { StepContainer, StepText } from "../../../styles/CompassPage"
 import { GlobalContext } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
@@ -9,7 +9,8 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength}) => {
   const {
     id,
     name_of_step,
-    color
+    color,
+    duration
   } = activeStep; 
 
   const goToLog = (e) => {
@@ -18,6 +19,19 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength}) => {
         selectStep(interaction.data.createInteraction)        
       })
   }
+
+  const translateTime = (secs) => {
+    const sec_num = parseInt(secs, 10)
+    const hours   = Math.floor(sec_num / 3600)
+    const minutes = Math.floor(sec_num / 60) % 60
+    const seconds = sec_num % 60
+
+    return [hours,minutes,seconds]
+      .map(v => v < 10 ? "0" + v : v)
+      .filter((v,i) => v !== "00" || i > 0)
+      .join(":") 
+  }
+
   
   return (
     <StepContainer 
@@ -26,8 +40,11 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength}) => {
       color={color}
       circleLength={circleLength}
     >
-      {name_of_step}
-      {/* {duration} */}
+      <StepText>
+        <p>{name_of_step}</p> 
+        <p>{translateTime(duration)}</p>
+      </StepText>
+      
     </StepContainer> 
 )};
 export default Step;

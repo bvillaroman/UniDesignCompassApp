@@ -13,15 +13,26 @@ const CompassSelector = ({showAttachment}) => {
   const [currentSession,setCurrrentSession] = useState({})
   const [currentInteractions,setCurrentInteractions] = useState([])
   const [totalTime, setTotalTime] = useState(0)
-  // const [attachments,setAttachments] = useState([])
 
   const selectStep = (interaction) => {
+    const stepFromCurrentInteraction = currentInteractions.find((item) => {
+      return interaction.id === item.id
+    })
+
+    if (stepFromCurrentInteraction === undefined) {
+      setCurrentInteractions([interaction, ...currentInteractions])
+    }
     setActiveStep(interaction)
-    // console.log([interaction, ...currentInteractions])
-    if (interaction.id !== activeStep.id) setCurrentInteractions([interaction, ...currentInteractions])
   }
 
-  const increaseClock = () => {
+  // increase the total clock and the clock of the interaction
+  const increaseClock = (interaction,newTime) => {
+    currentInteractions.find((item,key) => {
+      if (interaction.id === item.id) {
+        let newArr = currentInteractions
+        newArr[key].duration = newTime
+      }
+    })
     setTotalTime(totalTime + 1)
   }
   
@@ -66,7 +77,6 @@ const CompassSelector = ({showAttachment}) => {
         interactions={currentInteractions} 
         totalTime={totalTime}
         increaseClock={increaseClock}
-        // attachments={attachments} 
         showAttachment={showAttachment} 
         interaction={activeStep}
         setInteraction={selectStep}

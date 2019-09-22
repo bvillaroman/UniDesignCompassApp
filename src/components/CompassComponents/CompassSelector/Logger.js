@@ -25,13 +25,22 @@ const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }
 
     //handle currentInteraction
   useEffect(() => {
-      const {log_content, duration, step, attachments} = interaction
+      const {log_content, duration, step, attachments, id} = interaction
       setTime(duration)
       setStep(step)
       setLog(log_content)
       setStart(true)
       setAttachments(attachments.items)
-  }, [interaction.id])
+
+      const newInteraction = {
+        id: id,
+        log_content: log ? log : " ",
+        duration: time,
+      }
+
+      updateInteraction(newInteraction)
+      return 
+  }, [interaction])
 
 
   // handle interaction time
@@ -41,7 +50,7 @@ const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }
     if (interaction.id){
       if (start) {
         interval = setInterval(() => {
-          increaseClock()
+          increaseClock(interaction,time+1)
           setTime(time+1)
         }, 1000)
 
