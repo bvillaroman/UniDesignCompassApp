@@ -2,7 +2,6 @@ import React, {useState, useEffect, useContext}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { getSession } from "../../../utils/queries"
 import {GlobalContext} from "../../../context/context"
-import { createInteractionSub, updateInteractionSub } from '../../../utils/subscriptions'
 
 import SessionBar from "./SessionBar"
 import CompassWheel from "./CompassWheel"

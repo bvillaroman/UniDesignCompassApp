@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import { 
   StepRow, 
   CSMain,
@@ -7,7 +7,7 @@ import {
 import Step from "./Step"
 
 const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
-  const [durations,setDurations] = useState(compassSteps)
+  // const [durations,setDurations] = useState(compassSteps)
 
   return (
     <CSMain 

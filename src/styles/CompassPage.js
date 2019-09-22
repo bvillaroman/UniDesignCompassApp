@@ -11,10 +11,9 @@ import {
   Tab,
   Layer,
   Video,
-  Accordion,
   AccordionPanel
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia, LinkPrevious } from 'grommet-icons';
+import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const AttachmentButtonLabel = styled.label`
@@ -446,7 +445,7 @@ export const SessionAttachments = styled(Box)`
   border: 0.1rem solid rgba(0,0,0,0.2);
   border-radius: 0.3rem;
 `
-export const StepAccordion = styled(AccordionPanel)`
+export const StepAccordion = styled(div)`
   text-align: center;
   h4 {
     font-size: 1.2rem;

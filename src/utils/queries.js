@@ -4,12 +4,6 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-export const getUser = async (userID) => {
-  const user = await API.graphql(graphqlOperation(queries.getUser, {id: userID}));
-
-  return user
-}
-
 export async function getCompasses() {
   const compasses = await API.graphql(graphqlOperation(queries.listCompasss, {limit: 100}));
 

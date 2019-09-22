@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { CSInteraction, CSInteractionContainer } from "../../../styles/CompassPage"
 import { LinkPrevious } from "grommet-icons"
 const Interaction = ({interaction = {}, isLastStep, goToInteraction}) => {
 
-  const {
-    id,
-    step,
-  } = interaction; 
+  const { step } = interaction; 
 
   const goToLog = (e) => {
     goToInteraction(interaction)
