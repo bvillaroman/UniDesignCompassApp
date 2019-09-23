@@ -26,6 +26,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   duration: Int
   log_content: String!
+  comments: String
   createdAt: AWSDateTime
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
