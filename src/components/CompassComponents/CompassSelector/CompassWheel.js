@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React, { useState,useEffect } from "react";
 import { 
   StepRow, 
   CSMain,
@@ -7,7 +7,46 @@ import {
 import Step from "./Step"
 
 const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
-  const [durations,setDurations] = useState(compassSteps)
+  const [steps,setSteps] = useState([])
+
+  useEffect(() => {
+    if (compassSteps.length) {
+      let arr = compassSteps.map((step) => ({
+          id : step.id,
+          name_of_step : step.name_of_step,
+          color: step.color,
+          duration: 0
+        })
+      );
+
+      if (interactions.length) {
+        interactions.forEach(item => {
+          arr.find((step) => {
+            if (step.id === item.step.id){
+              step.duration = step.duration + item.duration
+            }
+          })
+        })
+      }
+
+      setSteps(arr)
+    }
+    
+  }, [compassSteps, interactions])
+
+  // console.log(steps)
+
+  const translateTime = (secs) => {
+    const sec_num = parseInt(secs, 10)
+    const hours   = Math.floor(sec_num / 3600)
+    const minutes = Math.floor(sec_num / 60) % 60
+    const seconds = sec_num % 60
+
+    return [hours,minutes,seconds]
+      .map(v => v < 10 ? "0" + v : v)
+      .filter((v,i) => v !== "00" || i > 0)
+      .join(":") 
+  }
 
   return (
     <CSMain 
@@ -25,7 +64,7 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
       </CSTitle>
       <StepRow gridArea="content" circleLength={compassSteps.length}>
         {
-          compassSteps ? compassSteps.map((item,key) => {
+          steps.length > 0 ? steps.map((item,key) => {
             return (
               <Step 
                 activeStep={item} 

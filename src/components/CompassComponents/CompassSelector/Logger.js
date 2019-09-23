@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, {useState, useEffect}  from "react";
 import { 
   LoggerGrid,
   LoggerTitle,
@@ -10,16 +10,13 @@ import {
   AttachmentButton,
   SessionAttachments
 } from "../../../styles/CompassPage"
-import { getInteraction } from '../../../utils/queries'
 import { updateInteraction, uploadAttachment, } from '../../../utils/mutations'
 import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
-import {GlobalContext} from "../../../context/context"
 
 const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }) => {
-  const { session } = useContext(GlobalContext);
   const [step, setStep] = useState({});
   const [time,setTime] = useState(0)
   const [log, setLog] = useState('')
@@ -28,13 +25,22 @@ const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }
 
     //handle currentInteraction
   useEffect(() => {
-      const {log_content, duration, step, attachments} = interaction
+      const {log_content, duration, step, attachments, id} = interaction
       setTime(duration)
       setStep(step)
       setLog(log_content)
       setStart(true)
       setAttachments(attachments.items)
-  }, [interaction.id])
+
+      const newInteraction = {
+        id: id,
+        log_content: log ? log : " ",
+        duration: time,
+      }
+
+      updateInteraction(newInteraction)
+      return 
+  }, [interaction])
 
 
   // handle interaction time
@@ -44,7 +50,7 @@ const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }
     if (interaction.id){
       if (start) {
         interval = setInterval(() => {
-          increaseClock()
+          increaseClock(interaction,time+1)
           setTime(time+1)
         }, 1000)
 

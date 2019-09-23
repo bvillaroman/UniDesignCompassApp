@@ -11,10 +11,9 @@ import {
   Tab,
   Layer,
   Video,
-  Accordion,
   AccordionPanel
 } from "grommet"
-import { Compass, FormPrevious, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia, LinkPrevious } from 'grommet-icons';
+import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const AttachmentButtonLabel = styled.label`
@@ -305,10 +304,6 @@ export const StepContainer = styled(Button)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
-  padding: 1rem;
-  color: black; 
-  font-weight: 600;
-  font-size: 1rem;
   :hover {
     transition: all 0.2s;
     background-color: transparent;
@@ -316,15 +311,26 @@ export const StepContainer = styled(Button)`
   top: 38%;
   left: 38%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
-  text-align: center;
 
   list-style: none;
-	height: 7rem;
-  width: 7rem;
+	height: 7.6rem;
+  width: 7.6rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.3}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+`
+export const StepText = styled(Box)`
+  padding: 1rem;
+  color: black; 
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   word-break: break-all;
+  p {
+    margin: 0;
+  }
 `
 export const InteractionsTitle = styled(Box)`
   text-align: center;
@@ -381,6 +387,14 @@ export const CSInteraction = styled(Button)`
   background-color: ${props => props.color ? props.color : '#5567FD'};
 
 `;
+export const CSInteractionButtonContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 0.8rem;
+  }
+`;
+
 
 
 // Compass SessionBar
@@ -446,7 +460,7 @@ export const SessionAttachments = styled(Box)`
   border: 0.1rem solid rgba(0,0,0,0.2);
   border-radius: 0.3rem;
 `
-export const StepAccordion = styled(AccordionPanel)`
+export const StepAccordion = styled.div`
   text-align: center;
   h4 {
     font-size: 1.2rem;

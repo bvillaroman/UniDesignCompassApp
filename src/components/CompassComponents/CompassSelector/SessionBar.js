@@ -2,7 +2,6 @@
 import { 
   SessionView, 
   SessionSection, 
-  LoggerTitle ,
   SessionTitle,
   SessionClock,
 } from "../../../styles/CompassPage"
