@@ -80,6 +80,7 @@ export const getCompass = `query GetCompass($id: ID!) {
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -269,6 +270,7 @@ export const listCompasss = `query ListCompasss(
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -409,6 +411,7 @@ export const getSession = `query GetSession($id: ID!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -487,6 +490,7 @@ export const getSession = `query GetSession($id: ID!) {
         id
         duration
         log_content
+        comments
         createdAt
         session {
           id
@@ -533,6 +537,7 @@ export const getSession = `query GetSession($id: ID!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -608,6 +613,7 @@ export const getSession = `query GetSession($id: ID!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -693,6 +699,7 @@ export const listSessions = `query ListSessions(
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -734,6 +741,7 @@ export const listSessions = `query ListSessions(
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -763,6 +771,7 @@ export const listSessions = `query ListSessions(
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -801,6 +810,7 @@ export const listSessions = `query ListSessions(
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -822,6 +832,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     id
     duration
     log_content
+    comments
     createdAt
     session {
       id
@@ -868,6 +879,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -909,6 +921,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -938,6 +951,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -976,6 +990,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -1034,6 +1049,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1079,6 +1095,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -1108,6 +1125,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1146,6 +1164,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -1174,6 +1193,7 @@ export const listInteractions = `query ListInteractions(
       id
       duration
       log_content
+      comments
       createdAt
       session {
         id
@@ -1243,6 +1263,7 @@ export const listInteractions = `query ListInteractions(
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -1371,6 +1392,7 @@ export const listInteractions = `query ListInteractions(
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -1498,6 +1520,7 @@ export const getStep = `query GetStep($id: ID!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1626,6 +1649,7 @@ export const listSteps = `query ListSteps(
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1675,6 +1699,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       id
       duration
       log_content
+      comments
       createdAt
       session {
         id
@@ -1744,6 +1769,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -1872,6 +1898,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -1950,6 +1977,7 @@ export const listAttachments = `query ListAttachments(
         id
         duration
         log_content
+        comments
         createdAt
         session {
           id
@@ -1996,6 +2024,7 @@ export const listAttachments = `query ListAttachments(
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -2071,6 +2100,7 @@ export const listAttachments = `query ListAttachments(
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
