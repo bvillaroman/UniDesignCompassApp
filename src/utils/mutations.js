@@ -49,7 +49,7 @@ export async function startInteraction(sessionId, stepId) {
     interactionSessionId: sessionId,
     interactionStepId: stepId,
     duration: 0,
-    comment: ""
+    comments: " "
   }
 
   const newInteraction = await API.graphql(graphqlOperation(mutations.createInteraction, { input: interactionInfo }));
