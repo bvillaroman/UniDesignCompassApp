@@ -11,6 +11,7 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
 
   useEffect(() => {
     if (compassSteps.length) {
+      // assign values for compassSteps with starting duration 0
       let arr = compassSteps.map((step) => ({
           id : step.id,
           name_of_step : step.name_of_step,
@@ -34,7 +35,6 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
     
   }, [compassSteps, interactions])
 
-  // console.log(steps)
 
   const translateTime = (secs) => {
     const sec_num = parseInt(secs, 10)
