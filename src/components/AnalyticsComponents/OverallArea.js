@@ -1,10 +1,20 @@
 import React,{useState, useEffect} from "react";
 import PieChart from './PieChart';
-import {ContainerHeader, HeaderText, PieChartContainer, OverallArea} from '../../styles/AnalyticsPage';
+import TimeLine from './TimeLine';
+
+import { 
+  ContainerHeader, 
+  HeaderText, 
+  PieChartContainer, 
+  OverallArea,
+  TimeLineContainer
+} from '../../styles/AnalyticsPage';
 
 export default ({sessions = {}, steps={}}) => {
+  const [interactions, setInteractions]  = useState([])
   const [data,setData] = useState([])
   const [labels,setLabels] = useState([])
+  const [colors,setColors] = useState([])
 
   useEffect(() => {
 
@@ -13,7 +23,7 @@ export default ({sessions = {}, steps={}}) => {
                               .map(item => item.interactions.items)
                               .flat().filter((interaction) => (interaction.duration > 0))
                                
-      const interactions = steps.map((step) => ({
+      const parsedInteractions = steps.map((step) => ({
               id : step.id,
               title : step.name_of_step,
               color: step.color,
@@ -22,15 +32,18 @@ export default ({sessions = {}, steps={}}) => {
           );
     
       allInteractions.forEach(item => {
-        interactions.find((step) => {
+        parsedInteractions.find((step) => {
           if (step.id === item.step.id){
             step.value = step.value + item.duration
           }
         })
       })
 
-      setLabels( interactions.map((item) => item.title) )
-      setData( interactions.map((item) => item.value))
+      setInteractions(allInteractions)
+      setLabels( parsedInteractions.map((item) => item.title) )
+      setData( parsedInteractions.map((item) => item.value))
+      setColors( parsedInteractions.map((item) => item.color))
+
     }
 
   }, [sessions, steps])
@@ -41,8 +54,11 @@ export default ({sessions = {}, steps={}}) => {
         <HeaderText> All Sessions </HeaderText>
       </ContainerHeader>
       <PieChartContainer container="overall">
-        { data && labels && <PieChart labels={labels} data={data} />}
+        { data && labels && <PieChart labels={labels} data={data} colors={colors}/>}
       </PieChartContainer>
+      <TimeLineContainer pad="large" direction="row" gap="medium">
+        {/* { interactions && <TimeLine interactions={interactions} />} */}
+      </TimeLineContainer>
     </OverallArea>
   )
 };

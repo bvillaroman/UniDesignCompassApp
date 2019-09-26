@@ -1,27 +1,26 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { PieChartComponent } from "../../styles/AnalyticsPage"
 
-export default ({labels, data}) => {
-  const options =  {
-    labels,
-    responsive: [{
-      breakpoint: 480,
-      options: {
-        
-      }
-    }],
-    legend: {
-      position: 'bottom',
-      horizontalAlign: 'center'
-    },
-    // dataLabels: {
-    //   formatter: (val, { seriesIndex, dataPointIndex, w }) => {
-    //     console.log(data[seriesIndex])
-    //     return `${Math.floor(val)}% \n(${data[seriesIndex]}s)`
-    //   }
-    // },
+export default ({labels, data, colors}) => {
+  const [options, setOptions]= useState({})
 
-  }
+  useEffect(() => {
+    setOptions({
+      labels,
+      responsive: [{
+        breakpoint: 480,
+        options: {
+          
+        }
+      }],
+      legend: {
+        position: 'bottom',
+        horizontalAlign: 'center'
+      },
+      colors
+    })
+  }, [labels, colors])
+
 
   return (
     <PieChartComponent 
