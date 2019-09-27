@@ -80,6 +80,7 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -287,6 +288,7 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -494,6 +496,7 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -685,6 +688,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -763,6 +767,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         id
         duration
         log_content
+        comments
         createdAt
         session {
           id
@@ -809,6 +814,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -884,6 +890,7 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -981,6 +988,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1059,6 +1067,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         id
         duration
         log_content
+        comments
         createdAt
         session {
           id
@@ -1105,6 +1114,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1180,6 +1190,7 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1277,6 +1288,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1355,6 +1367,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         id
         duration
         log_content
+        comments
         createdAt
         session {
           id
@@ -1401,6 +1414,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1476,6 +1490,7 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -1515,6 +1530,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     id
     duration
     log_content
+    comments
     createdAt
     session {
       id
@@ -1561,6 +1577,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1602,6 +1619,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -1631,6 +1649,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1669,6 +1688,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -1727,6 +1747,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1772,6 +1793,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -1801,6 +1823,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1839,6 +1862,7 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -1862,6 +1886,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     id
     duration
     log_content
+    comments
     createdAt
     session {
       id
@@ -1908,6 +1933,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -1949,6 +1975,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -1978,6 +2005,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2016,6 +2044,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -2074,6 +2103,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2119,6 +2149,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -2148,6 +2179,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2186,6 +2218,7 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -2209,6 +2242,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     id
     duration
     log_content
+    comments
     createdAt
     session {
       id
@@ -2255,6 +2289,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2296,6 +2331,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -2325,6 +2361,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2363,6 +2400,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -2421,6 +2459,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2466,6 +2505,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           id
           duration
           log_content
+          comments
           createdAt
           session {
             id
@@ -2495,6 +2535,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               nextToken
@@ -2533,6 +2574,7 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
                 id
                 duration
                 log_content
+                comments
                 createdAt
               }
               bucket
@@ -2615,6 +2657,7 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -2755,6 +2798,7 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -2895,6 +2939,7 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
               id
               duration
               log_content
+              comments
               createdAt
               session {
                 id
@@ -2979,6 +3024,7 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
       id
       duration
       log_content
+      comments
       createdAt
       session {
         id
@@ -3048,6 +3094,7 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -3176,6 +3223,7 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -3249,6 +3297,7 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
       id
       duration
       log_content
+      comments
       createdAt
       session {
         id
@@ -3318,6 +3367,7 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -3446,6 +3496,7 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -3519,6 +3570,7 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
       id
       duration
       log_content
+      comments
       createdAt
       session {
         id
@@ -3588,6 +3640,7 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id
@@ -3716,6 +3769,7 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             id
             duration
             log_content
+            comments
             createdAt
             session {
               id

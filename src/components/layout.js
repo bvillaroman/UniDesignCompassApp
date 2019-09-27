@@ -29,7 +29,7 @@ const Layout = (props) => {
   const [title, setTitle] = useState('')
 
   useEffect(() => {
-    if (props.uri !== "/Compass" && props.uri !== "/Summary") {
+    if (props.uri !== "/Compass" && props.uri !== "/Summary" && props.uri !== "/Analytics") {
       removeCompass()
       removeInteraction()
       removeSession()

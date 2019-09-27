@@ -30,7 +30,7 @@ export async function createSession(name_of_session, description_of_session, com
   return newSession;
 }
 
-export async function createStep(name_of_step, description_of_step,color, compassId) {
+export async function createStep(name_of_step, description_of_step, color, compassId) {
   const stepInfo = {
     name_of_step,
     description_of_step,
@@ -48,7 +48,8 @@ export async function startInteraction(sessionId, stepId) {
     log_content: " ",
     interactionSessionId: sessionId,
     interactionStepId: stepId,
-    duration: 0
+    duration: 0,
+    comments: " "
   }
 
   const newInteraction = await API.graphql(graphqlOperation(mutations.createInteraction, { input: interactionInfo }));
