@@ -3,7 +3,8 @@ import {
   Button, 
   Box, 
   Grid,
-  Text
+  Text,
+  Menu
 } from "grommet"
 import React from "react";
 import ReactApexChart from 'react-apexcharts';
@@ -32,7 +33,7 @@ export const InteractionBar = styled(Box)`
   height: 100%;
 `;
 export const ToolBox = styled(Box)`
-  margin-top: 0.5rem;
+  margin: 0.5rem 0;
   padding: 0.5rem 1rem;
   text-align: center;
   background: ${ props => props.color ? props.color : 'white'};
@@ -101,11 +102,19 @@ export const OverallArea = styled(Box)`
 
 export const ContainerHeader = styled(Box)`
   width: 100%;
-  height: 2.1rem;
+  min-height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 ` 
 
 export const HeaderText = styled(Text)`
   font-weight: 600;
   font-size: 2rem;
+  word-break: break-word;
+  line-height: 2.1rem;
 ` 
-
+export const SessionSelector = styled(Menu)`
+  width: 100%;
+`

@@ -7,17 +7,25 @@ import {
   PieChartContainer, 
   ContainerHeader, 
   HeaderText,
+  SessionSelector,
   TimeLineContainer 
 } from '../../styles/AnalyticsPage';
 
-export default ({session = {}}) => {
+export default ({sessions = {}}) => {
+  const [selectedSession,setSelectedSession] = useState({})
   const [interactions,setInteractions] = useState([])
   const [data,setData] = useState([])
   const [labels,setLabels] = useState([])
   const [colors,setColors] = useState([])
+  const [formattedSessions,setFormatterSessions] = useState([])
 
   useEffect(() => {
-    if (session.interactions && session.interactions.items.length > 0) {
+    if (sessions.length > 0) {
+      let arrOfSessions = sessions.map(item => ({
+        onClick: () => setSelectedSession(item),
+        label: item.name_of_session 
+      }))
+      let session = selectedSession ? selectedSession : sessions[1]
       let allInteractions = session.interactions.items
                              .flat()
                              .filter((interaction) => (interaction.duration > 0))
@@ -39,18 +47,25 @@ export default ({session = {}}) => {
       })
 
       const filteredData = parsedInteractions.filter((interaction) => (interaction.value > 0))
+      setFormatterSessions(arrOfSessions)
+      setSelectedSession(session)
       setInteractions(allInteractions)
       setLabels( filteredData.map((item) => item.title) )
       setData( filteredData.map((item) => item.value))
       setColors( filteredData.map((item) => item.color))
     }
 
-  }, [session])
+  }, [selectedSession])
 
   return (
     <SelectedArea gridArea ='selected'>
       <ContainerHeader> 
-        <HeaderText> {session.name_of_session} </HeaderText>
+       
+        <SessionSelector
+          label={ (<HeaderText> {selectedSession.name_of_session} </HeaderText>)}
+          items={formattedSessions}
+          dropAlign={{ top: "bottom" }}
+        />
       </ContainerHeader>
       <PieChartContainer container="selected">
         { data && labels && <PieChart labels={labels} data={data} colors={colors}/>}

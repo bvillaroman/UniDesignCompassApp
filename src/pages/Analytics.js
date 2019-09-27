@@ -45,7 +45,7 @@ export default (props) => {
         { name: 'overall', start: [1, 0], end: [1, 1] },
       ]} 
     >
-      <SelectedArea steps={steps} session={selectedSession}/>
+      <SelectedArea steps={steps} session={selectedSession} sessions={sessions}/>
       <OverallArea steps={steps} sessions={sessions}/>
     </AnalyticsGrid>
   )
