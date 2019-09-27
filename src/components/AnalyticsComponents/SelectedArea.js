@@ -11,7 +11,7 @@ import {
   TimeLineContainer 
 } from '../../styles/AnalyticsPage';
 
-export default ({sessions = {}}) => {
+export default ({sessions = [], steps = []}) => {
   const [selectedSession,setSelectedSession] = useState({})
   const [interactions,setInteractions] = useState([])
   const [data,setData] = useState([])
@@ -20,16 +20,22 @@ export default ({sessions = {}}) => {
   const [formattedSessions,setFormatterSessions] = useState([])
 
   useEffect(() => {
-    if (sessions.length > 0) {
-      let arrOfSessions = sessions.map(item => ({
-        onClick: () => setSelectedSession(item),
-        label: item.name_of_session 
-      }))
-      let session = selectedSession ? selectedSession : sessions[1]
-      let allInteractions = session.interactions.items
-                             .flat()
-                             .filter((interaction) => (interaction.duration > 0))
+    const filteredSessions = sessions.length ? sessions.filter((session) => (session.interactions && session.interactions.items.length > 0)) : []
+    if (filteredSessions.length > 0) {
+      
+      let arrOfSessions = filteredSessions.map(item => ({
+                              onClick: () => setSelectedSession(item),
+                              label: item.name_of_session 
+                            }))
 
+      let session = (selectedSession !== {}) ? filteredSessions[0] : selectedSession
+
+      
+      let allInteractions = session.interactions.items
+                            .flat()
+                            .filter((interaction) => (interaction.duration > 0))
+
+  
       const parsedInteractions = session.compass.steps.items.map((step) => ({
           id : step.id,
           title : step.name_of_step,
@@ -55,7 +61,7 @@ export default ({sessions = {}}) => {
       setColors( filteredData.map((item) => item.color))
     }
 
-  }, [selectedSession])
+  }, [sessions,selectedSession, steps])
 
   return (
     <SelectedArea gridArea ='selected'>
