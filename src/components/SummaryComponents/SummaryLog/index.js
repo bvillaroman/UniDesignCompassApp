@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { updateInteraction } from "../../../utils/mutations";
+import { getInteraction } from "../../../utils/queries"
 import { Storage } from 'aws-amplify';
 import {
   SummaryTitle,
@@ -9,7 +11,8 @@ import {
   SummaryLogHeader,
   SummaryContainer,
   TextAreaContainer,
-  TextArea
+  TextArea,
+  CommentButton
 } from '../../../styles/SummaryPage'
 
 const Link = ({ item, name }) => {
@@ -28,8 +31,30 @@ const LinkArray = ({ items }) => {
   )
 }
 
-const SummaryLog = ({ attachments, showLog, currentLog }) => {
+const SummaryLog = ({ attachments, showLog, currentLog, interactId }) => {
   const { items } = attachments;
+  const [comment, setComment] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    updateInteraction(interactionId)
+      .then(res => res)
+      .catch(err => console.log('updateInteraction has an error', err))
+  }
+
+  const interactionId = {
+    id: interactId,
+    comments: comment
+  }
+
+  useEffect(() => {
+    getInteraction(interactId)
+      .then(res => {
+        setComment(res.data.getInteraction.comments)
+      })
+      .catch(err => console.log(err))
+  }, [])
+
   return (
     <SummaryContainer>
       <SummaryLogHeader>
@@ -40,7 +65,17 @@ const SummaryLog = ({ attachments, showLog, currentLog }) => {
         <SummaryLogBox>
           <SingleSummaryLog>{currentLog}</SingleSummaryLog>
         </SummaryLogBox>
-        <TextArea></TextArea>
+        <form onSubmit={handleSubmit} style={{ marginTop: "0.5em" }}>
+          <TextArea
+            placeholder="Please enter comments here..."
+            onChange={e => {
+              setComment(e.target.value)
+            }}
+            value={comment}
+          >
+          </TextArea>
+          <CommentButton type="submit" label="Add Comment"></CommentButton>
+        </form>
       </TextAreaContainer>
       <LinkArray items={items} />
     </SummaryContainer>
