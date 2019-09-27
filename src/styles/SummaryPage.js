@@ -91,6 +91,7 @@ export const SummaryTableCellBody = styled(TableCell)`
   scope: "row"; 
   border: "bottom";
   border-bottom: solid 1px;
+  background-color: ${props => props.color ? props.color : "transparent"};
 `
 
 export const SummaryLogHeader = styled.div`
@@ -116,11 +117,28 @@ export const TextAreaContainer = styled.div`
 `;
 
 export const TextArea = styled.textarea`
-  height: 85%;
-  width: 25%;
+  height: 90%;
+  width: 85%;
   float: right; 
-  margin-top: 1em; 
-  padding-left: 1em;
+  //margin-top: 1em; 
+  padding-left: 0.5em;
   border-radius: 10px; 
   margin-left: 1em;
+  font-size: 20px;
+`;
+
+export const CommentButton = styled(Button)`
+  width: 90%;
+  margin-left 2.4em;
+  transition: all 0.3s;
+  border: 0.15rem solid #5567FD;
+  background-color:#5567FD;
+  color: white; 
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white; 
+  }
+  border-radius: 1em;
+  margin-top: 0.5em;
 `;
