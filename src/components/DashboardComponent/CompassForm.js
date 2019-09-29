@@ -2,12 +2,13 @@ import React, {useContext} from 'react'
 import { Tabs, Tab } from "grommet";
 
 import { DashboardContext } from "../../context/DashboardPage/context"
-import { FormContainer } from "../../styles/Form"
+import { FormContainer} from "../../styles/Form"
 import { 
-  FormHeader, 
+  Header, 
   Title, 
   BackButton,
-  DashboardGrid
+  CompassFormTabs, 
+  CompassFormTab 
 } from "../../styles/Dashboard"
 
 import Info from "./CompassInfo"
@@ -21,30 +22,21 @@ const Form = ({backToDashboard}) => {
   const onActive = (index) => switchTab(index)
 
   return (
-    <DashboardGrid
-      rows={['20%', '80%',]}
-      gap="1rem"
-      columns={['full']}
-      fill
-      areas={[
-        { name: 'header', start: [0, 0], end: [0, 0] },
-        { name: 'feed', start: [0, 1], end: [0, 1] },
-      ]}  
-    >
-      <FormHeader gridArea="header" direction="row">
+    <>
+      <Header gridArea="header" direction="row">
         <BackButton onClick={e=> {backToDashboard()}}></BackButton>
-        <Title>Create Compass</Title>
+        <Title>Create a Project</Title>
         <Title/>
-      </FormHeader>
-      <FormContainer gridArea="feed">
-        <Tabs activeIndex={tab} onActive={onActive}>
-          <Tab><Info/></Tab>
-          <Tab><Type/></Tab>
-          <Tab><Steps/></Tab>
-          <Tab><Review backToDashboard={e=>backToDashboard()}/></Tab>
-        </Tabs>
-      </FormContainer>
-    </DashboardGrid>
+      </Header>
+      <CompassFormTabs>
+        {
+          tab === 1 ? <CompassFormTab><Type/></CompassFormTab>
+          : tab === 2 ? <CompassFormTab><Steps/></CompassFormTab>
+          : tab === 3 ? <CompassFormTab><Review backToDashboard={e=>backToDashboard()}/></CompassFormTab>
+          : <CompassFormTab><Info/></CompassFormTab>
+        }
+      </CompassFormTabs>
+    </>
   )
 }
 
