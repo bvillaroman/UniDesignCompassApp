@@ -7,7 +7,6 @@ import {
   Menu
 } from "grommet"
 import React from "react";
-import ReactApexChart from 'react-apexcharts';
 
 // Time Line elements
 export const TimeLineContainer = styled(Box)`
@@ -69,10 +68,6 @@ export const PieChartContainer = styled(Box)`
   min-height:${ props => props.container === "overall" ? '21.125rem' : '21.3125rem' }; 
   margin : 1rem auto;
 `;
-
-export const PieChartComponent = styled(ReactApexChart)`
-`;
-
 
 // Grids and Containers
 export const AnalyticsGrid = styled(Grid)`

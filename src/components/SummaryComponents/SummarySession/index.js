@@ -2,14 +2,16 @@ import React, { useContext, useState, useEffect } from 'react';
 import { getCompass, getInteraction } from "../../../utils/queries";
 import { GlobalContext } from '../../../context/context';
 import SummaryLog from '../SummaryLog/';
+import SummaryLegend from '../SummaryLegend/';
 import { Image } from 'grommet-icons';
 import {
+  SummaryMainView,
   SummaryTable,
   SummaryTableHeader,
   SummaryTableBody,
   SummaryTableRow,
-  SummaryTableCellHeader,
-  SummaryTableCellBody,
+  SummaryTdHeader,
+  SummaryTdBody,
   SummaryTableConatiner
 } from '../../../styles/SummaryPage';
 
@@ -39,33 +41,36 @@ const SummarySession = () => {
 
   const SessionTable = ({ sessions }) => {
     return (
-      <div>{sessions.map(session =>
-        <SummaryTableConatiner>
-          <SummaryTable alignSelf="stretch">
-            <SummaryTableHeader>
-              <SummaryTableRow>
-                <SummaryTableCellHeader>Session Name</SummaryTableCellHeader>
-                <SummaryTableCellHeader>Duration</SummaryTableCellHeader>
-                <SummaryTableCellHeader>Step</SummaryTableCellHeader>
-                <SummaryTableCellHeader>Log</SummaryTableCellHeader>
-                <SummaryTableCellHeader>Attachments</SummaryTableCellHeader>
-              </SummaryTableRow>
-            </SummaryTableHeader>
-            {session.interactions.items.map((interaction, i) =>
-              <SummaryTableBody>
-                <tr key={interaction.id} onClick={() => getSessionLogs(interaction.id)} style={{ cursor: "pointer" }}>
-                  <SummaryTableCellBody>{session.name_of_session}</SummaryTableCellBody>
-                  <SummaryTableCellBody>{interaction.duration}</SummaryTableCellBody>
-                  <SummaryTableCellBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 19) + "..."}</SummaryTableCellBody>
-                  <SummaryTableCellBody>{interaction.log_content.substring(0, 5) + "..."}</SummaryTableCellBody>
-                  <SummaryTableCellBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "No Attachments"}</SummaryTableCellBody>
-                </tr>
-              </SummaryTableBody>
-            )}
-          </SummaryTable>
-        </SummaryTableConatiner>
-      )}
-      </div>)
+      <>
+        <SummaryMainView>{sessions.map(session =>
+          <SummaryTableConatiner>
+            <SummaryTable alignSelf="stretch">
+              <SummaryTableHeader>
+                <SummaryTableRow>
+                  <SummaryTdHeader style={{ width: '12%' }}>Session</SummaryTdHeader>
+                  <SummaryTdHeader style={{ width: '9%' }}>Time</SummaryTdHeader>
+                  <SummaryTdHeader>Log</SummaryTdHeader>
+                  <SummaryTdHeader style={{ width: '19%' }}>Attachments</SummaryTdHeader>
+                </SummaryTableRow>
+              </SummaryTableHeader>
+              {session.interactions.items.map((interaction, i) =>
+                <SummaryTableBody>
+                  <tr key={interaction.id} onClick={() => getSessionLogs(interaction.id)} style={{ cursor: "pointer" }}>
+                    <SummaryTdBody color={interaction.step.color}>{session.name_of_session.substring(0, 10) + "..."}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color}>{interaction.duration}s</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color}>{interaction.log_content.substring(0, 15) + "..."}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color}>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                    {console.log(interaction)}
+                  </tr>
+                </SummaryTableBody>
+              )}
+            </SummaryTable>
+          </SummaryTableConatiner>
+        )}
+        </SummaryMainView>
+        <SummaryLegend></SummaryLegend>
+      </>
+    )
   }
 
   const renderLog = () => {
