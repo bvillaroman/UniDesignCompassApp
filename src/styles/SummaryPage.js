@@ -79,6 +79,10 @@ export const SummaryTableBody = styled(TableBody)`
 `;
 
 export const SummaryTableRow = styled(TableRow)`
+  // td {}
+`;
+
+export const SummaryTableCell = styled(TableCell)`
 `;
 
 export const SummaryTableCellHeader = styled(TableCell)`
@@ -92,7 +96,12 @@ export const SummaryTableCellBody = styled(TableCell)`
   border: "bottom";
   border-bottom: solid 1px;
   background-color: ${props => props.color ? props.color : "transparent"};
-`
+`;
+
+export const SummaryTdBody = styled.td`
+  border-bottom: solid 1px;
+  background-color: ${props => props.color ? props.color : "transparent"};
+`;
 
 export const SummaryLogHeader = styled.div`
 
@@ -141,4 +150,18 @@ export const CommentButton = styled(Button)`
   }
   border-radius: 1em;
   margin-top: 0.5em;
+`;
+
+export const SummaryMainView = styled.div`
+  overflow: auto;
+  width: 80%; 
+  margin-top: 1em;
+  margin-Left: 1em; 
+  margin-bottom: 1em;
+  border: outset;
+`;
+
+export const SummaryTdHeader = styled.td`
+  text-align: center;
+  font-size: 1.4em;
 `;
