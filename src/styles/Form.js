@@ -1,21 +1,21 @@
 import styled from "styled-components"
-import { Box, FormField, Text, TextInput, TextArea} from "grommet"
+import { Box, FormField, Text, TextInput, TextArea } from "grommet"
 
 export const FormCard = styled(Box)`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: auto;
-  // min-width: 22rem;
   padding: 2rem;
   border-radius: 2rem;
-  width: 80%;
+  width: ${props => props.type === "feed" ? '100%' : '80%' };
   color: black;
   background: white;
+  height: 100%;
 `;
 export const FormContainer = styled(Box)`
   width: 80%;
   margin: 0 auto;
+  height: 100%;
 `;
 export const FormTitle = styled(Text)`
   margin: 0 auto;
@@ -57,7 +57,7 @@ export const InputTextArea = styled(TextArea)`
   font-size: 1rem;
   resize: none;
   height: 100%;
-  min-height: 15rem;
+  min-height: 10rem;
   color: black;
   border: 0.01rem solid grey;
 `;

@@ -2,7 +2,7 @@ import React, { useEffect,useState, useContext } from 'react'
 import {
   Feed,
   CompassTitle,
-  CompassCard,
+  ProjectCard,
   CompassDescription,
   GoToCompassButton
 } from "../../styles/Dashboard"
@@ -41,7 +41,7 @@ const CompassFeed = (props) => {
       {
         loading ? <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />
         : compasses ? compasses.map((compass, key) => (
-          <CompassCard 
+          <ProjectCard 
             key={key} 
             elevation="xsmall"
             rows={['30%', '60%','10%']}
@@ -57,7 +57,7 @@ const CompassFeed = (props) => {
             <CompassTitle gridArea="header">{compass.name_of_compass}</CompassTitle>
             <CompassDescription gridArea="description">{compass.description_of_compass}</CompassDescription>
             <GoToCompassButton gridArea="navigate" label="Go To Compass" onClick={e => goToCompass(compass)} />
-          </CompassCard>
+          </ProjectCard>
           )
         ) 
         : error ? <p>{error}</p> 

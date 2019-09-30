@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { 
   DashboardContainer,
   Header,
@@ -11,35 +11,35 @@ import {
 
 import Feed from "./CompassFeed"
 import CompassForm from "./CompassForm"
+import { DashboardContext } from "../../context/DashboardPage/context"
 
 const Dashboard = (props) => {
+  const { clearForm, switchTab } = useContext(DashboardContext);
   const [tab, setTab] = useState(0)
-  const onActive = (index) => setTab(index)
 
+  const backToDashboard = (e) => {
+    setTab(0);
+    clearForm();
+    switchTab(0);
+  }
   return (
     <DashboardContainer>
-      <DashboardTabs activeIndex={tab} onActive={onActive}>
-        <DashboardTab>
-          <DashboardGrid
-            rows={['20%', 'fill']}
-            gap="1rem"
-            columns={['70%', '30%']}
-            fill
-            areas={[
-              { name: 'header', start: [0, 0], end: [1, 1] },
-              { name: 'feed', start: [0, 1], end: [1, 1] },
-            ]}  
-          >
-            <Header gridArea="header" >
-              <Title>Compasses</Title>
-              <AddCompass onClick={e => setTab(1)}/>
-            </Header>
+      <DashboardTabs>
+        {
+          tab === 1 ?  (
+            <DashboardTab>
+              <CompassForm backToDashboard={backToDashboard}/>
+            </DashboardTab>
+          ) : (
+            <DashboardTab>
+              <Header gridArea="header" >
+                <Title>Projects</Title>
+                <AddCompass onClick={e => setTab(1)}/>
+              </Header>
               <Feed/>
-            </DashboardGrid>
-        </DashboardTab>
-        <DashboardTab>
-          <CompassForm backToDashboard={e => {setTab(0)}}/>
-        </DashboardTab>
+            </DashboardTab>
+          ) 
+        }
       </DashboardTabs>
     </DashboardContainer>
   )

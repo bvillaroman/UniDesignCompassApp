@@ -15,7 +15,7 @@ export const wrapRootElement = ({ element }) => (
     theme={
       {
         global: { 
-          colors: { primary: '#5361FF', secondary: '#F2F2F2',fore: '#FEFFFE', focus: "transparent"  } 
+          colors: { primary: '#5361FF', secondary: '#F2F2F2',fore: '#FEFFFE', focus: "none"  } 
         } ,
         button: {
           color: 'white', 
