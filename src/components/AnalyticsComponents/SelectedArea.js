@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from "react";
-import PieChart from './PieChart';
+import Loadable from "@loadable/component"
 import TimeLine from './TimeLine';
-
 import {
   SelectedArea, 
   PieChartContainer, 
@@ -10,6 +9,7 @@ import {
   SessionSelector,
   TimeLineContainer 
 } from '../../styles/AnalyticsPage';
+const PieChart = Loadable({ loader: () => import('./PieChart')});
 
 export default ({sessions = [], steps = []}) => {
   const [selectedSession,setSelectedSession] = useState({})

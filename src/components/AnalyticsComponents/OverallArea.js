@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
-import PieChart from './PieChart';
 import TimeLine from './TimeLine';
+import Loadable from "@loadable/component"
 
 import { 
   ContainerHeader, 
@@ -9,6 +9,9 @@ import {
   OverallArea,
   TimeLineContainer
 } from '../../styles/AnalyticsPage';
+
+
+const PieChart = Loadable({ loader: () => import('./PieChart')});
 
 export default ({sessions = {}, steps={}}) => {
   const [interactions, setInteractions]  = useState([])

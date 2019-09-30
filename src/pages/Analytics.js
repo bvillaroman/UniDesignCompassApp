@@ -1,10 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 
-import { 
- AnalyticsGrid,
- PieChart, 
- BarGraph,
-} from "../styles/AnalyticsPage"
+import {  AnalyticsGrid, } from "../styles/AnalyticsPage"
 import { GlobalContext } from "../context/context"
 
 import OverallArea from "../components/AnalyticsComponents/OverallArea"

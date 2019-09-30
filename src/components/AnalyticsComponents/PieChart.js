@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import { PieChartComponent } from "../../styles/AnalyticsPage"
+import ReactApexChart from 'react-apexcharts';
 
 export default ({labels, data, colors}) => {
   const [options, setOptions]= useState({})
@@ -23,7 +23,7 @@ export default ({labels, data, colors}) => {
 
 
   return (
-    <PieChartComponent 
+    <ReactApexChart 
       options={options} 
       series={data}
       type="pie"

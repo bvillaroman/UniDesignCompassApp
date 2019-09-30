@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Abraham Bruce Villaroman, Kenny Tan",
   "dependencies": {
+    "@loadable/component": "^5.10.3",
     "@reach/router": "^1.2.1",
     "apexcharts": "^3.8.6",
     "aws-amplify": "^1.1.40",
