@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { 
   DashboardContainer,
   Header,
@@ -11,17 +11,24 @@ import {
 
 import Feed from "./CompassFeed"
 import CompassForm from "./CompassForm"
+import { DashboardContext } from "../../context/DashboardPage/context"
 
 const Dashboard = (props) => {
+  const { clearForm, switchTab } = useContext(DashboardContext);
   const [tab, setTab] = useState(0)
 
+  const backToDashboard = (e) => {
+    setTab(0);
+    clearForm();
+    switchTab(0);
+  }
   return (
     <DashboardContainer>
       <DashboardTabs>
         {
           tab === 1 ?  (
             <DashboardTab>
-              <CompassForm backToDashboard={e => {setTab(0)}}/>
+              <CompassForm backToDashboard={backToDashboard}/>
             </DashboardTab>
           ) : (
             <DashboardTab>

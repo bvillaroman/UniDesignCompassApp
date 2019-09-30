@@ -22,7 +22,7 @@ const Review = ({backToDashboard}) => {
   const { form } = useContext(DashboardContext);
 
   const submitCompass = event => {
-    return createCompass(form.title,form.description, user.email)
+    return createCompass(form.title,form.description,form.admins,form.readers)
       .then((compass) => {
         form.steps.map((step,key) => {
           return createStep(step.title,step.description,step.color,compass.data.createCompass.id)

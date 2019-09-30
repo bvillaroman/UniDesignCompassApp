@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, Grid, Accordion, AccordionPanel, Text, Tabs, Tab } from "grommet"
+import { Box, Button, Grid, Accordion, AccordionPanel, Text,TextInput } from "grommet"
 import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
 // Dashboard
@@ -195,6 +195,91 @@ export const CompassButtonLink = styled(Button)`
   padding: 0.5rem 1rem;
   color: black;
   border: 0.1rem solid #5567FD;
+`
+
+// Permissions Components
+export const PermissionsCard = styled(Box)`
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  background-color: white;
+  border: 0.1rem solid ;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+`;
+export const PermissionsDetails = styled(Box)`
+  height: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+export const PermissionsTitle= styled(Text)`
+  color: black;
+  font-weight: 600;
+  font-size: 2rem;
+`
+export const PermissionsForm= styled(Box)`
+  color: black;
+`
+export const GoToReviewButton = styled(Button)`
+  background-color: white;
+  border: 0.1rem solid #5567FD;
+  border-radius: 1rem;
+  color: black;
+  padding: 0.1rem 1rem;
+  align-self: center;
+  margin: 0 auto;
+`
+export const PermissionsInputs= styled(Box)`
+  width: 100%;
+  color: black;
+  marigin: 1rem auto;
+`
+
+export const PermissionInput = styled(TextInput)`
+  width: 100%;
+  height: 1.8rem;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  border-radius: 0.2rem;
+  border: 2px solid #d4d5d6;
+  color: #565656;
+  -webkit-appearance: none;
+
+  :focus {
+    border-color: #5567FD;
+    outline: none;
+  }
+`
+export const PermissionItem = styled(Box)`
+  width: 100%;
+  height: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  border: 2px solid #5567FD;
+  color: white;
+  background: #5567FD;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  button { 
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+  }
+`
+export const PermissionError = styled(Text)`
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  color: tomato-red;
 `
 
 // Review Components
