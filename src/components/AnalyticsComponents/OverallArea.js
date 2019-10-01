@@ -11,7 +11,7 @@ import {
 } from '../../styles/AnalyticsPage';
 
 
-const PieChart = Loadable({ loader: () => import('./PieChart')});
+const PieChart = Loadable(() => import('./PieChart'));
 
 export default ({sessions = {}, steps={}}) => {
   const [interactions, setInteractions]  = useState([])

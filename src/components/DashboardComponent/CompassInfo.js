@@ -26,7 +26,7 @@ const Info = (props) => {
 
   return (
     <FormCard>
-      <FormTitle>Compass Details</FormTitle>
+      <FormTitle>Project Details</FormTitle>
       <Form
         onSubmit={submitForm}
         onChange={onChange}
@@ -34,10 +34,10 @@ const Info = (props) => {
         errors={{...errors}}
       >
         <InputContainer name="title" required>
-          <InputField name="title"  type="text" placeholder="Title of your Compass" />
+          <InputField name="title"  type="text" placeholder="Title of your project" />
         </InputContainer>
         <InputContainer name="description" required >
-          <InputTextArea name="description" placeholder="Description of your design process" />
+          <InputTextArea name="description" placeholder="Description of your project" />
         </InputContainer>
         <Box direction="column" justify="between" margin={{ top: "medium" }}>
           <Button type="submit" onClick={submitForm} label="Compass Type" primary />
