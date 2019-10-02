@@ -3,6 +3,7 @@ import { getCompass, getInteraction } from "../../../utils/queries";
 import { GlobalContext } from '../../../context/context';
 import SummaryLog from '../SummaryLog/';
 import SummaryLegend from '../SummaryLegend/';
+import CompassBar from '../../SideBarComponents/CompassBar'
 import { Image } from 'grommet-icons';
 import {
   SummaryMainView,
@@ -18,6 +19,7 @@ import {
 const SummarySession = () => {
   const { compass } = useContext(GlobalContext)
   const [sessions, setSession] = useState([])
+  // const [compassID, setCompassID] = useState('')
   const [expandLog, setExpandLog] = useState("")
   const [render, showRender] = useState(false)
 
@@ -26,6 +28,8 @@ const SummarySession = () => {
     getCompass(compass)
       .then(res => {
         setSession(res.data.getCompass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
+        // console.log(res.data.getCompass)
+        // setCompassID(res.data.getCompass.id)
       })
       .catch(err => console.log(err))
   }, [])
@@ -43,23 +47,26 @@ const SummarySession = () => {
     return (
       <>
         <SummaryMainView>{sessions.map(session =>
-          <SummaryTableConatiner>
+          <SummaryTableConatiner style={{ margin: '1em', width: '96%' }}>
+            <div style={{ fontSize: 'x-large', fontWeight: 500 }}>
+              {session.name_of_session}
+            </div>
             <SummaryTable alignSelf="stretch">
               <SummaryTableHeader>
-                <SummaryTableRow>
-                  <SummaryTdHeader style={{ width: '12%' }}>Session</SummaryTdHeader>
-                  <SummaryTdHeader style={{ width: '9%' }}>Time</SummaryTdHeader>
-                  <SummaryTdHeader>Log</SummaryTdHeader>
+                <SummaryTableRow style={{ fontSize: "initial" }}>
+                  <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
+                  <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
+                  <SummaryTdHeader style={{}}>Log</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '19%' }}>Attachments</SummaryTdHeader>
                 </SummaryTableRow>
               </SummaryTableHeader>
               {session.interactions.items.map((interaction, i) =>
                 <SummaryTableBody>
                   <tr key={interaction.id} onClick={() => getSessionLogs(interaction.id)} style={{ cursor: "pointer" }}>
-                    <SummaryTdBody color={interaction.step.color}>{session.name_of_session.substring(0, 10) + "..."}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color}>{interaction.duration}s</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color}>{interaction.log_content.substring(0, 15) + "..."}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color}>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.duration}s</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.log_content.substring(0, 50) + "..."}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                     {console.log(interaction)}
                   </tr>
                 </SummaryTableBody>
@@ -87,6 +94,7 @@ const SummarySession = () => {
         render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} interactId={interactId} />
           : <SessionTable sessions={sessions} />
       }
+      {/* <CompassBar compassID={compassID} /> */}
     </>
 
   )

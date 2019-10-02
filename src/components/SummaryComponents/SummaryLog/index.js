@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { updateInteraction } from "../../../utils/mutations";
 import { getInteraction } from "../../../utils/queries"
+import { navigate } from "gatsby"
 import { Storage } from 'aws-amplify';
 import {
   SummaryTitle,
@@ -60,6 +61,7 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId }) => {
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
         <SummaryListButton label=" Return to Logs " onClick={() => showLog()} />
+        <SummaryListButton label=" Edit Log " onClick={() => navigate('/Compass')} />
       </SummaryLogHeader>
       <TextAreaContainer>
         <SummaryLogBox>
