@@ -1,7 +1,5 @@
 import React from "react";
 import BlankBar from "./BlankBar"
-// import CompassBar from "./CompassBar";
-// import AccountBar from "./AccountBar";
 import Loadable from "react-loadable"
 
 export default Loadable.Map({

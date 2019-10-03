@@ -4,7 +4,6 @@ import {
   Header,
   Title, 
   AddCompass,
-  DashboardGrid,
   DashboardTabs, 
   DashboardTab 
 } from "../../styles/Dashboard"

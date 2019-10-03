@@ -19,7 +19,7 @@ const InteractionFeed = ({interactions, goToInteraction}) => {
                 <Interaction 
                   key={key}
                   interaction={item} 
-                  isLastStep={key == interactions.length - 1} 
+                  isLastStep={key === interactions.length - 1} 
                   goToInteraction={goToInteraction}
                 /> 
               )

@@ -1,10 +1,7 @@
 import React,{useState, useRef} from "react";
 import { Drop} from "grommet";
-import { 
-  TimeLineContainer,
-  TimeLineBar,
+import {  
   InteractionBar ,
-  HeaderText,
   ToolBox,
   ToolBoxText,
   ToolLabel,

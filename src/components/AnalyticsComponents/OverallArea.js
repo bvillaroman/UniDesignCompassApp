@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import TimeLine from './TimeLine';
+// import TimeLine from './TimeLine';
 import Loadable from "@loadable/component"
 
 import { 
@@ -14,7 +14,7 @@ import {
 const PieChart = Loadable(() => import('./PieChart'));
 
 export default ({sessions = {}, steps={}}) => {
-  const [interactions, setInteractions]  = useState([])
+  // const [interactions, setInteractions]  = useState([])
   const [data,setData] = useState([])
   const [labels,setLabels] = useState([])
   const [colors,setColors] = useState([])
@@ -42,7 +42,7 @@ export default ({sessions = {}, steps={}}) => {
         })
       })
 
-      setInteractions(allInteractions)
+      // setInteractions(allInteractions)
       setLabels( parsedInteractions.map((item) => item.title) )
       setData( parsedInteractions.map((item) => item.value))
       setColors( parsedInteractions.map((item) => item.color))

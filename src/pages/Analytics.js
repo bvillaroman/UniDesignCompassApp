@@ -8,7 +8,7 @@ import SelectedArea from "../components/AnalyticsComponents/SelectedArea"
 import { getCompass } from '../utils/queries'
 
 export default (props) => {
-  const {session = "", compass = ""} = useContext(GlobalContext);
+  const { compass = ""} = useContext(GlobalContext);
   const [steps, setSteps] = useState([])
   const [selectedSession, setSelectedSession] = useState({})
   const [sessions, setSessions] = useState([])
