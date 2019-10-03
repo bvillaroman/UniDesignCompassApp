@@ -10,6 +10,7 @@ import {
   InputField,
   FormErrorLabel
 } from "../../styles/Form"
+import {Loader} from "../../styles/layout"
 import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify';
 
@@ -76,7 +77,7 @@ const SignIn = ({ switchToSignUp }) => {
           </FormSwitchContainer>
           <FormErrorLabel truncate>
           {
-            error ? error : (loading && <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />)
+            error ? error : (loading && <Loader/>)
           }
           </FormErrorLabel>
 

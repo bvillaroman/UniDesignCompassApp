@@ -5,16 +5,21 @@ import {
   LinkContainer,
   CompassLink,
 } from '../../styles/SideBar'
-import { Compass, DocumentText, BarChart } from 'grommet-icons'
+import {Compass, DocumentText, BarChart, Home, User} from 'grommet-icons'
 
-const CompassBar = ({ title }) => {
+
+const CompassBar = ({compass, title, show = true}) => {
   return (
     <CompassSideBar>
-      <CompassHeader>{title}</CompassHeader>
       <LinkContainer>
-        <CompassLink to={"/Compass?c=${compassID}&s=${sessionID}&i=${interactionID}"}><Compass />Compass</CompassLink>
-        <CompassLink to={'/Summary?c=b1d4f1cb-04e1-4c55-80bc-80048c2ff73f'} ><DocumentText />Summary</CompassLink>
-        <CompassLink to={"/Analytics?c=${compassID}&s=${sessionID}&i=${interactionID}"}><BarChart />Analytics</CompassLink>
+        <CompassHeader to={`/Compass?c=${compass}`}>{title}</CompassHeader>
+        <CompassLink to={`/Compass?c=${compass}`}><Compass/>{show && <span>Compass</span>}</CompassLink>
+        <CompassLink to={`/Summary?c=${compass}`}><DocumentText/>{show && <span>Summary</span>}</CompassLink>
+        <CompassLink to={`/Analytics?c=${compass}`}><BarChart/>{show && <span>Analytics</span>}</CompassLink>
+      </LinkContainer>
+      <LinkContainer>
+        <CompassLink to={`/`}><Home /> {show && <span>Home</span>} </CompassLink>
+        <CompassLink to={`/Profile`}><User /> {show && <span>Profile</span>}</CompassLink>
       </LinkContainer>
     </CompassSideBar >
   )
