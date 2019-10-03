@@ -16,7 +16,7 @@ import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 
-const Logger = ({interaction={}, showAttachment, setInteraction, increaseClock }) => {
+const Logger = ({interaction={}, showAttachment, increaseClock }) => {
   const [step, setStep] = useState({});
   const [time,setTime] = useState(0)
   const [log, setLog] = useState('')

@@ -27,7 +27,6 @@ export default ({labels, data, colors}) => {
       options={options} 
       series={data}
       type="pie"
-      // width="430"
     />
   )
 };

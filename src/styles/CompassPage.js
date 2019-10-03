@@ -11,7 +11,6 @@ import {
   Tab,
   Layer,
   Video,
-  AccordionPanel
 } from "grommet"
 import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";

@@ -9,7 +9,6 @@ import InteractionBar from "./InteractionBar"
 const TimeLine = ({interactions}) => {
   const [data,setData] = useState([])
   
-
   useEffect(() => {
 
     if(interactions.length ) {

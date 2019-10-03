@@ -1,8 +1,6 @@
 import React, {useContext} from 'react'
-import { Tabs, Tab } from "grommet";
 
 import { DashboardContext } from "../../context/DashboardPage/context"
-import { FormContainer} from "../../styles/Form"
 import { 
   Header, 
   Title, 
@@ -18,10 +16,7 @@ import Type from "./CompassType"
 import Permissions from "./CompassPermissions"
 
 const Form = ({backToDashboard}) => {
-  const {tab, switchTab } = useContext(DashboardContext);
-
-  const onActive = (index) => switchTab(index)
-
+  const {tab} = useContext(DashboardContext);
   return (
     <>
       <Header gridArea="header" direction="row">

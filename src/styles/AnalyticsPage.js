@@ -1,12 +1,10 @@
 import styled from "styled-components"
 import { 
-  Button, 
   Box, 
   Grid,
   Text,
   Menu
 } from "grommet"
-import React from "react";
 
 // Time Line elements
 export const TimeLineContainer = styled(Box)`
