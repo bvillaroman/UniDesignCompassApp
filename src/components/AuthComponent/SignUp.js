@@ -16,7 +16,7 @@ import {
   InputField ,
   FormErrorLabel
 } from "../../styles/Form"
-
+import { Loader } from "../../styles/layout"
 const SignUp = ({switchToSignIn}) => {
 
   const [form,setValues] = useState({
@@ -95,7 +95,7 @@ const SignUp = ({switchToSignIn}) => {
             </FormSwitchContainer>
             <FormErrorLabel truncate>
               {
-                message ? message : (loading && <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />)
+                message ? message : (loading && <Loader/>)
               }
             </FormErrorLabel>
 

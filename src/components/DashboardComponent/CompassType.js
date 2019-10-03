@@ -55,9 +55,9 @@ const Type = (props) => {
     }
   ]; 
 
-  const goToCustom = event => {
-    switchTab(3);
-  };
+  // const goToCustom = event => {
+  //   switchTab(3);
+  // };
 
   const goToReview = event => {
     updateForm({steps : defaultCompass })

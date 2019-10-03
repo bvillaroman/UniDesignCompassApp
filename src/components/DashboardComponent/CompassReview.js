@@ -1,12 +1,10 @@
 import React, {useContext} from 'react'
-import {Box, Text} from "grommet";
+import { Text} from "grommet";
 
 import { DashboardContext } from "../../context/DashboardPage/context"
-import { GlobalContext } from "../../context/context"
 import { 
   ReviewCard, 
   ReviewTitle,
-  ReviewDescription, 
   SubmitCompassButton, 
   ReviewStepsView,
   ReviewStepPanel ,
@@ -18,7 +16,6 @@ import {
 import { createCompass, createStep } from "../../utils/mutations"
 
 const Review = ({backToDashboard}) => {
-  const { user } = useContext(GlobalContext);
   const { form } = useContext(DashboardContext);
 
   const submitCompass = event => {

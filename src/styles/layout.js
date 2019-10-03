@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import React from "react";
 import { Box, } from "grommet";
 
 export const LayoutContainer = styled(Box)` 
@@ -7,9 +8,6 @@ export const LayoutContainer = styled(Box)`
   flex-direction: row;
 `;
 export const SidebarContainer = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  // width: ${props => props.Compass ? '20%' : '5%'} ;
   height: 100vh;
 `;
 export const MainViewContainer = styled(Box)`
@@ -19,3 +17,11 @@ export const MainViewContainer = styled(Box)`
   height: 100vh;
   background: #F4F6F9;
 `;
+export const Loader = () => (
+  <div className="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+)

@@ -7,7 +7,6 @@ import {
   ContainerHeader, 
   HeaderText,
   SessionSelector,
-  TimeLineContainer 
 } from '../../styles/AnalyticsPage';
 
 const PieChart = Loadable(() => import('./PieChart'));

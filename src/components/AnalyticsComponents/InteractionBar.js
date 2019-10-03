@@ -1,10 +1,7 @@
 import React,{useState, useRef} from "react";
 import { Drop} from "grommet";
-import { 
-  TimeLineContainer,
-  TimeLineBar,
+import {  
   InteractionBar ,
-  HeaderText,
   ToolBox,
   ToolBoxText,
   ToolLabel,
@@ -15,33 +12,32 @@ export default ({interaction}) => {
   const [over,setOver]= useState(false);
   const ref = useRef(null);
 
-  // const dateFormatter = (date) => {
-  //   const newDate = new Date(date)
-  //   const monthNames = [
-  //     "January", "February", "March",
-  //     "April", "May", "June", "July",
-  //     "August", "September", "October",
-  //     "November", "December"
-  //   ];
+  const dateFormatter = (date) => {
+    const newDate = new Date(date)
+    const monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
   
-  //   const day = newDate.getDate();
-  //   const monthIndex = newDate.getMonth();
-  //   const year = newDate.getFullYear();
+    const day = newDate.getDate();
+    const monthIndex = newDate.getMonth();
+    const year = newDate.getFullYear();
   
-  //   return day + ' ' + monthNames[monthIndex] + ' ' + year;
-  // }
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
 
-  // const timeFormatter = (d) => {
-  //   let date = new Date(d)
-  //   var hours = date.getHours();
-  //   var minutes = date.getMinutes();
-  //   var ampm = hours >= 12 ? 'pm' : 'am';
-  //   hours = hours % 12;
-  //   hours = hours ? hours : 12; // the hour '0' should be '12'
-  //   minutes = minutes < 10 ? '0'+minutes : minutes;
-  //   var strTime = hours + ':' + minutes + ' ' + ampm;
-  //   return strTime;
-  // }
+  const timeFormatter = (d) => {
+    let date = new Date(d)
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    return `${hours}:${minutes} ${ampm}`;
+  }
   return (
     <>
       <InteractionBar
@@ -66,13 +62,12 @@ export default ({interaction}) => {
             </ToolBoxText>
             <ToolBoxText>
               <ToolLabel>Created on: </ToolLabel>
-              <ToolValue>{interaction.createdAt}</ToolValue>
+              <ToolValue>{dateFormatter(interaction.createdAt)}</ToolValue>
             </ToolBoxText>
-            {/* <ToolBoxText>
+            <ToolBoxText>
               <ToolLabel>Time Created: </ToolLabel>
               <ToolValue>{timeFormatter(interaction.createdAt)}</ToolValue>
-            </ToolBoxText> */}
-            
+            </ToolBoxText>
           </ToolBox>
         </Drop>
       )}

@@ -8,25 +8,30 @@
 import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
-import { AccountBar, CompassBar } from "./SideBarComponents"
-import { LayoutContainer, SidebarContainer, MainViewContainer } from "../styles/layout"
+import SideBar from "./SideBarComponents"
+import { LayoutContainer, MainViewContainer } from "../styles/layout"
 import { GlobalContext } from "../context/context"
 import { Auth } from 'aws-amplify'
 import { getCompass } from '../utils/queries'
+import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
+
 Amplify.configure(awsconfig);
+
 
 const Layout = (props) => {
   const {
-    user = {},
+    user = { },
     loginUser,
-    compass = "",
+    // compass = "",
     removeCompass,
     removeSession,
     removeInteraction
   } = useContext(GlobalContext);
 
   const [title, setTitle] = useState('')
+  const [compass, setCompass] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (props.uri !== "/Compass" && props.uri !== "/Summary" && props.uri !== "/Analytics") {
@@ -36,14 +41,22 @@ const Layout = (props) => {
     }
   }, [props.uri])
 
+  // setting up the compass
+  useEffect(() => {
+    const compass = (queryStringParser(props.location.search).compassID)
+    setCompass(compass)
+  }, [props.location.search])
+
   useEffect(() => {
     // queries the compass and assigns it throughout the app
     if (compass) {
       getCompass(compass)
         .then((res) => {
+          setLoading(false)
           setTitle(res.data.getCompass.name_of_compass)
         })
         .catch((err) => {
+          setLoading(false)
           console.log(err)
         })
     }
@@ -55,21 +68,20 @@ const Layout = (props) => {
       })
         .then(cognitoUser => {
           const { email, sub } = cognitoUser.attributes;
-
+          setLoading(false)
           loginUser({ email, id: sub }); // save email to global store
         })
-        .catch(err => console.log(`cognito error: ${err}`));
+        .catch(err => {
+          setLoading(false)
+          console.log(`cognito error: ${err}`)
+        });
     }
 
-
-  }, [compass])
+  },[compass])
 
   return (
     <LayoutContainer >
-      <SidebarContainer>
-        {user.email && <AccountBar />}
-        {(user.email && compass !== '' && title !== '') ? <CompassBar title={title} /> : ''}
-      </SidebarContainer>
+      <SideBar loading={loading} user={user} compass={compass} title={title}/>
       <MainViewContainer>
         {props.children}
       </MainViewContainer>
