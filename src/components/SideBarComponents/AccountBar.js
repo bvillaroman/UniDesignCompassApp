@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { NavigationContainer, NavLink, } from '../../styles/SideBar';
+import { NavigationContainer, CompassLink,SignOutButton } from '../../styles/SideBar';
 import { navigate } from "gatsby"
 import { Home, User } from 'grommet-icons'
 import { GlobalContext } from "../../context/context"
@@ -24,9 +24,9 @@ const AccountBar = props => {
 
   return (
     <NavigationContainer>
-      <NavLink onClick={e => goToLink("/")}><Home /></NavLink>
-      <NavLink onClick={e => goToLink("/Profile")}><User /></NavLink>
-      <NavLink onClick={e => signOut()}>Sign out</NavLink>
+      <CompassLink to="/"><Home /></CompassLink>
+      <CompassLink to="/Profile"><User /></CompassLink>
+      <SignOutButton onClick={e => signOut()}>Sign out</SignOutButton>
     </NavigationContainer>
   )
 }

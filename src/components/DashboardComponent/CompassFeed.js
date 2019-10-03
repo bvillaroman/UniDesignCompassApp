@@ -6,6 +6,7 @@ import {
   CompassDescription,
   GoToCompassButton
 } from "../../styles/Dashboard"
+import { Loader } from "../../styles/layout"
 import { getCompasses } from "../../utils/queries"
 import { navigate } from "gatsby"
 import {GlobalContext} from "../../context/context"
@@ -39,7 +40,7 @@ const CompassFeed = (props) => {
     <Feed gridArea="feed">
       <section>
       {
-        loading ? <img src="https://www.perthfestival.com.au/src/themes/__/images/loader.gif" />
+        loading ? <Loader />
         : compasses ? compasses.map((compass, key) => (
           <ProjectCard 
             key={key} 
