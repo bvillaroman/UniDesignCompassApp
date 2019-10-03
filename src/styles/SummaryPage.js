@@ -69,7 +69,7 @@ export const SummaryTable = styled(Table)`
 `;
 
 export const SummaryTableHeader = styled(TableHeader)`
-  font-weight: bold;
+  font-weight: 350;
   border-bottom: solid 1.5px;
   width: 20%;
 `;
@@ -162,6 +162,6 @@ export const SummaryMainView = styled.div`
 `;
 
 export const SummaryTdHeader = styled.td`
-  text-align: center;
+  text-align: left;
   font-size: 1.4em;
 `;
