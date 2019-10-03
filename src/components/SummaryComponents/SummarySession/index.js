@@ -15,11 +15,13 @@ import {
   SummaryTdBody,
   SummaryTableConatiner
 } from '../../../styles/SummaryPage';
+import { Loader } from '../../../styles/layout';
 
 const SummarySession = (props) => {
   const { compass } = useContext(GlobalContext)
   const [sessions, setSession] = useState([])
   // const [compassID, setCompassID] = useState('')
+  const [loading, setLoading] = useState(true)
   const [expandLog, setExpandLog] = useState("")
   const [render, showRender] = useState(false)
 
@@ -27,13 +29,18 @@ const SummarySession = (props) => {
   console.log()
   //Mounting once when the page loads
   useEffect(() => {
+    setLoading(true)
     getCompass(compass)
       .then(res => {
+        setLoading(false)
         setSession(res.data.getCompass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
         // console.log(res.data.getCompass)
         // setCompassID(res.data.getCompass.id)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        setLoading(false)
+        console.log(err)
+      })
   }, [])
 
   const getSessionLogs = (id) => {
@@ -106,8 +113,12 @@ const SummarySession = (props) => {
   return (
     <>
       {
-        render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} interactId={interactId} />
-          : <SessionTable sessions={sessions} />
+        loading ? <Loader/> : 
+          (
+            render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} interactId={interactId} />
+            : <SessionTable sessions={sessions} />
+          )
+
       }
       {/* <CompassBar compassID={compassID} /> */}
     </>
