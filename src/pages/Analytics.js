@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import {  Loader } from "../styles/layout"
 import { getCompass } from '../utils/queries'
 import  queryStringParser from '../utils/queryStringParser'
