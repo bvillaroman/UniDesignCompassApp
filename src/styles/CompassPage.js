@@ -308,7 +308,7 @@ export const StepContainer = styled(Button)`
     background-color: transparent;
   }
   top: 38%;
-  left: 38%;
+  left: 31%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
 
   list-style: none;
@@ -439,9 +439,8 @@ export const SessionDescription = styled(Box)`
   margin: 0 auto;
 `
 export const SessionClock = styled(Box)`
-  margin: 0.5rem 0;
   width: auto;
-  height: 3rem;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -510,6 +509,10 @@ export const TimerButton = ({onClick,start, color}) =>(
 )
 // Compass Page Containers
 
+export const SCContainer = styled(Box)`
+  margin: 0 auto;
+  width: 100%;
+`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `

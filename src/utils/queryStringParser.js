@@ -13,8 +13,8 @@ export default (query) => {
       case 's': 
         sessionID = element.replace("s=","");
         break;
-      case 'o': 
-        interactionID = element.replace("s=","");
+      case 'i': 
+        interactionID = element.replace("i=","");
         break;
     }
   })
