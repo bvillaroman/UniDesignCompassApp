@@ -25,12 +25,20 @@ export const FormTitle = styled(Text)`
   color: #5361FE;
 `;
 export const FormSwitchContainer = styled(Box)`
-  margin: 1rem auto;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
+`;
+export const FormSwitchBox = styled(Box)`
+  margin: 1rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
 `;
 export const FormSwitchButton = styled(Text)`
   color: #2A3664;;
@@ -52,6 +60,12 @@ export const FormErrorLabel = styled(Text)`
     width: 3rem;
     height: 3rem;
   }
+`;
+export const FormMessageLabel = styled(Text)`
+  color: #5361FE;
+  font-size: 30%;
+  text-align: center;
+  margin: 0 auto;
 `;
 export const InputTextArea = styled(TextArea)`
   font-size: 1rem;
