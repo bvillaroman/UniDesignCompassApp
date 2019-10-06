@@ -32,10 +32,12 @@ const LinkArray = ({ items }) => {
   )
 }
 
-const SummaryLog = ({ attachments, showLog, currentLog, interactId }) => {
-  const { items } = attachments;
+const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, comments }) => {
   const [comment, setComment] = useState("");
+  const [sessionID, setSessionID] = useState("");
+  const [interactionID, setInteractionID] = useState("");
 
+  console.log(attachments)
   const handleSubmit = (event) => {
     event.preventDefault();
     updateInteraction(interactionId)
@@ -60,8 +62,8 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId }) => {
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
-        <SummaryListButton label=" Return to Logs " onClick={() => showLog()} />
-        <SummaryListButton label=" Edit Log " onClick={() => navigate('/Compass')} />
+        <SummaryListButton label=" Return to Logs " onClick={() => navigate(`/Summary?c=${compassID}`)} />
+        <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compassID}&s=${sessionID}&i=${interactionID}`)} />
       </SummaryLogHeader>
       <TextAreaContainer>
         <SummaryLogBox>
@@ -79,7 +81,7 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId }) => {
           <CommentButton type="submit" label="Add Comment"></CommentButton>
         </form>
       </TextAreaContainer>
-      <LinkArray items={items} />
+      <LinkArray items={attachments.items} />
     </SummaryContainer>
   )
 }

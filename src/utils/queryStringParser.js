@@ -4,23 +4,23 @@ export default (query) => {
   let compassID = ""
   let sessionID = ""
   let interactionID = ""
-  
+
   items.forEach(element => {
-    switch(element[0]){
-      case 'c': 
-        compassID = element.replace("c=","");
+    switch (element[0]) {
+      case 'c':
+        compassID = element.replace("c=", "");
         break;
-      case 's': 
-        sessionID = element.replace("s=","");
+      case 's':
+        sessionID = element.replace("s=", "");
         break;
-      case 'o': 
-        interactionID = element.replace("s=","");
+      case 'i':
+        interactionID = element.replace("i=", "");
         break;
     }
   })
 
   return {
-    compassID ,
+    compassID,
     sessionID,
     interactionID
   }
