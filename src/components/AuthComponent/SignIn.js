@@ -4,6 +4,7 @@ import {
   FormSwitchButton,
   InputContainer,
   FormSwitchContainer,
+  FormSwitchBox,
   FormContainer,
   FormTitle,
   FormSwitchLabel,
@@ -15,7 +16,7 @@ import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify';
 
 
-const SignIn = ({ switchToSignUp }) => {
+const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
   const { loginUser } = useContext(GlobalContext);
   const [form, setValues] = useState({
     email: '',
@@ -71,16 +72,21 @@ const SignIn = ({ switchToSignUp }) => {
         </InputContainer>
         <Box direction="column" justify="between" margin={{ top: "medium" }}>
           <Button type="submit" label="Sign In" primary />
-          <FormSwitchContainer direction="row">
-            <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
-            <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
-          </FormSwitchContainer>
-          <FormErrorLabel truncate>
-          {
-            error ? error : (loading && <Loader/>)
-          }
-          </FormErrorLabel>
-
+          <FormSwitchBox>
+            <FormSwitchContainer direction="row">
+              <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
+              <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
+              </FormSwitchContainer>
+              <FormSwitchContainer direction="row">
+                <FormSwitchLabel truncate>Forgot Password ?</FormSwitchLabel>
+                <FormSwitchButton onClick={e => switchToForgetPassword()}> Reset Password </FormSwitchButton>
+              </FormSwitchContainer>
+              <FormErrorLabel truncate>
+              {
+                error ? error : (loading && <Loader/>)
+              }
+              </FormErrorLabel>
+          </FormSwitchBox>
         </Box>
       </Form>
     </FormContainer>
