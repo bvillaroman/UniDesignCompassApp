@@ -61,57 +61,6 @@ export const LogAttachments = styled.h6`
   margin-right: 0.5em;
 `;
 
-export const SummaryTable = styled(Table)`
-  //display: block;
-  overflow: auto;
-  width:100%;
-  table-layout: fixed;
-`;
-
-export const SummaryTableHeader = styled(TableHeader)`
-  font-weight: 350;
-  border-bottom: solid 1.5px;
-  width: 20%;
-`;
-
-export const SummaryTableBody = styled(TableBody)`
-  overflow: auto;
-`;
-
-export const SummaryTableRow = styled(TableRow)`
-  // td {}
-`;
-
-export const SummaryTableCell = styled(TableCell)`
-`;
-
-export const SummaryTableCellHeader = styled(TableCell)`
-  scope: col; 
-  border: bottom;
-  size: large;
-`;
-
-export const SummaryTableCellBody = styled(TableCell)`
-  scope: "row"; 
-  border: "bottom";
-  border-bottom: solid 1px;
-  background-color: ${props => props.color ? props.color : "transparent"};
-`;
-
-export const SummaryTdBody = styled.td`
-  border-bottom: solid 1px;
-  background-color: ${props => props.color ? props.color : "transparent"};
-`;
-
-export const SummaryLogHeader = styled.div`
-
-`;
-
-export const SummaryTableConatiner = styled.div`
-  width: 100%;
-  display: block;
-  overflow: auto;
-`;
 
 export const SummaryContainer = styled.div`
   padding: 2em;
@@ -152,13 +101,76 @@ export const CommentButton = styled(Button)`
   margin-top: 0.5em;
 `;
 
+//SummarySession
+export const SummaryTable = styled(Table)`
+  //display: block;
+  overflow: auto;
+  width:100%;
+  table-layout: fixed;
+`;
+
+export const SummaryTableHeader = styled(TableHeader)`
+  font-weight: 350;
+  border-bottom: solid 1.5px;
+  width: 20%;
+`;
+
+export const SummaryTableBody = styled(TableBody)`
+  overflow: auto;
+`;
+
+export const SummaryTableRow = styled(TableRow)`
+  font-size: initial;
+`;
+
+export const SummaryTableCell = styled(TableCell)`
+`;
+
+export const SummaryTableCellHeader = styled(TableCell)`
+  scope: col; 
+  border: bottom;
+  size: large;
+`;
+
+export const SummaryTableCellBody = styled(TableCell)`
+  scope: "row"; 
+  border: "bottom";
+  border-bottom: solid 1px;
+  background-color: ${props => props.color ? props.color : "transparent"};
+`;
+
+export const SummaryTdBody = styled.td`
+  border-bottom: solid 1px;
+  border: hidden;
+  background-color: ${props => props.color ? props.color : "transparent"};
+  
+`;
+
+export const SummaryLogHeader = styled.div`
+
+`;
+
+export const SummaryTableConatiner = styled.div`
+  width: 100%;
+  display: block;
+  overflow: auto;
+  margin: 1em;
+  width: 96%
+`;
+
+export const SummarySessionName = styled.div`
+  font-size: x-large;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+`;
+
 export const SummaryMainView = styled.div`
   overflow: auto;
-  width: 80%; 
+  width: 90%; 
   margin-top: 1em;
   margin-Left: 1em; 
   margin-bottom: 1em;
-  border: outset;
+  //border: groove;
 `;
 
 export const SummaryTdHeader = styled.td`

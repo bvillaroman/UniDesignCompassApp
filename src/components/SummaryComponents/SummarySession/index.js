@@ -1,9 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { getCompass, getInteraction } from "../../../utils/queries";
-import { GlobalContext } from '../../../context/context';
-import SummaryLog from '../SummaryLog/';
+import React, { useState, useEffect } from 'react';
+import { getCompass } from "../../../utils/queries";
+import { navigate } from "gatsby"
 import SummaryLegend from '../SummaryLegend/';
-// import CompassBar from '../../SideBarComponents/CompassBar'
 import { Image } from 'grommet-icons';
 import {
   SummaryMainView,
@@ -13,46 +11,33 @@ import {
   SummaryTableRow,
   SummaryTdHeader,
   SummaryTdBody,
-  SummaryTableConatiner
+  SummaryTableConatiner,
+  SummarySessionName
 } from '../../../styles/SummaryPage';
 import { Loader } from '../../../styles/layout';
 
 const SummarySession = (props) => {
-  const { compass } = useContext(GlobalContext)
   const [sessions, setSession] = useState([])
-  // const [compassID, setCompassID] = useState('')
   const [loading, setLoading] = useState(true)
-  const [expandLog, setExpandLog] = useState("")
-  const [render, showRender] = useState(false)
+  const { compassID } = props;
 
-  const compassID = props.compassID.slice(3);
-  console.log()
   //Mounting once when the page loads
   useEffect(() => {
     setLoading(true)
-    getCompass(compass)
-      .then(res => {
-        setLoading(false)
-        setSession(res.data.getCompass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
-        // console.log(res.data.getCompass)
-        // setCompassID(res.data.getCompass.id)
-      })
-      .catch(err => {
-        setLoading(false)
-        console.log(err)
-      })
-  }, [])
+    if (compassID !== "") {
+      getCompass(compassID)
+        .then(res => {
+          setLoading(false)
+          setSession(res.data.getCompass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
+        })
+        .catch(err => {
+          setLoading(false)
+          console.log(err)
+        })
+    }
+  }, [compassID])
 
-  const getSessionLogs = (id) => {
-    getInteraction(id)
-      .then(res => {
-        setExpandLog(res.data.getInteraction)
-        showRender(!render)
-      })
-      .catch(err => console.log('getSessionLogs err:', err))
-  }
-
-  function timeConverter(a, b) {
+  const timeConverter = (a, b) => {
     if (a.createdAt > b.createdAt) {
       return -1
     } else if (a.createdAt < b.createdAt) {
@@ -66,29 +51,29 @@ const SummarySession = (props) => {
     return (
       <>
         <SummaryMainView>{sessions.sort(timeConverter).map((session, i) =>
-          <SummaryTableConatiner style={{ margin: '1em', width: '96%' }} key={i}>
-            <div style={{ fontSize: 'x-large', fontWeight: 500 }}>
+          <SummaryTableConatiner key={i}>
+            <SummarySessionName>
               {session.name_of_session}
-            </div>
+            </SummarySessionName>
             <SummaryTable alignSelf="stretch">
               <SummaryTableHeader>
-                <SummaryTableRow style={{ fontSize: "initial" }}>
+                <SummaryTableRow>
                   <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
                   <SummaryTdHeader>CreatedAt</SummaryTdHeader>
-                  <SummaryTdHeader style={{}}>Log</SummaryTdHeader>
+                  <SummaryTdHeader>Log</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '19%' }}>Attachments</SummaryTdHeader>
                 </SummaryTableRow>
               </SummaryTableHeader>
-              {console.log(session.interactions.items.sort(timeConverter))}
+              {/* {console.log(session.interactions.items.sort(timeConverter))} */}
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
-                <SummaryTableBody key={i}>
-                  <tr key={interaction.id} onClick={() => getSessionLogs(interaction.id)} style={{ cursor: "pointer" }}>
-                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.duration}s</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.createdAt.substring(0, 19)}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.log_content.substring(0, 50) + "..."}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} style={{ border: "hidden" }}>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                <SummaryTableBody>
+                  <tr key={i} onClick={() => navigate(`/Summary?c=${compassID}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
+                    <SummaryTdBody color={interaction.step.color} >{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} >{interaction.duration}s</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} >{interaction.createdAt.substring(0, 19)}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} >{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color} >{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                     {console.log(interaction)}
                   </tr>
                 </SummaryTableBody>
@@ -102,27 +87,12 @@ const SummarySession = (props) => {
     )
   }
 
-  const renderLog = () => {
-    showRender(!render)
-  }
-
-  const interactId = expandLog.id
-  const storeLog = expandLog.log_content;
-  const attachments = expandLog.attachments;
-
   return (
     <>
       {
-        loading ? <Loader/> : 
-          (
-            render ? <SummaryLog currentLog={storeLog} showLog={renderLog} attachments={attachments} interactId={interactId} />
-            : <SessionTable sessions={sessions} />
-          )
-
+        loading ? <Loader /> : <SessionTable sessions={sessions} />
       }
-      {/* <CompassBar compassID={compassID} /> */}
     </>
-
   )
 }
 
