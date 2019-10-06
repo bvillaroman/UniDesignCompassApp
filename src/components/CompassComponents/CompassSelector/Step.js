@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { StepContainer, StepText } from "../../../styles/CompassPage"
-import { GlobalContext } from "../../../context/context"
 import { startInteraction } from "../../../utils/mutations"
 
-const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength}) => {
-  const {session = ""} = useContext(GlobalContext);
+const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength, session}) => {
 
   const {
     id,
@@ -14,7 +12,7 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength}) => {
   } = activeStep; 
 
   const goToLog = (e) => {
-    startInteraction(session,id)
+    startInteraction(session.id,id)
       .then((interaction) => {
         selectStep(interaction.data.createInteraction)        
       })

@@ -12,7 +12,7 @@ import { navigate } from "gatsby"
 import {GlobalContext} from "../../context/context"
 
 const CompassFeed = (props) => {
-  const {selectCompass,user} = useContext(GlobalContext);
+  const {user} = useContext(GlobalContext);
   const [compasses,setCompasses] = useState([])
   const [error,setError] = useState("")
   const [loading,setLoading] = useState(true)
@@ -32,7 +32,6 @@ const CompassFeed = (props) => {
   }, []); 
 
   const goToCompass = (compass) => {
-    selectCompass(compass.id)
     navigate(`/Compass?c=${compass.id}`)
   }
 

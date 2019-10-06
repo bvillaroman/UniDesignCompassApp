@@ -2,11 +2,12 @@ import React, { useState,useEffect } from "react";
 import { 
   StepRow, 
   CSMain,
-  CSTitle
+  CSTitle,
+  SessionClock
 } from "../../../styles/CompassPage"
 import Step from "./Step"
 
-const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
+const CompassWheel = ({compassSteps = [],interactions = [], selectStep, session, totalTime }) => {
   const [steps,setSteps] = useState([])
 
   useEffect(() => {
@@ -36,17 +37,17 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
   }, [compassSteps, interactions])
 
 
-  // const translateTime = (secs) => {
-  //   const sec_num = parseInt(secs, 10)
-  //   const hours   = Math.floor(sec_num / 3600)
-  //   const minutes = Math.floor(sec_num / 60) % 60
-  //   const seconds = sec_num % 60
+  const translateTime = (secs) => {
+    const sec_num = parseInt(secs, 10)
+    const hours   = Math.floor(sec_num / 3600)
+    const minutes = Math.floor(sec_num / 60) % 60
+    const seconds = sec_num % 60
 
-  //   return [hours,minutes,seconds]
-  //     .map(v => v < 10 ? "0" + v : v)
-  //     .filter((v,i) => v !== "00" || i > 0)
-  //     .join(":") 
-  // }
+    return [hours,minutes,seconds]
+      .map(v => v < 10 ? "0" + v : v)
+      .filter((v,i) => v !== "00" || i > 0)
+      .join(":") 
+  }
 
   return (
     <CSMain 
@@ -63,6 +64,7 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
         <span>Compass Steps</span>  
       </CSTitle>
       <StepRow gridArea="content" circleLength={compassSteps.length}>
+        <SessionClock> {translateTime(totalTime)} </SessionClock>
         {
           steps.length > 0 ? steps.map((item,key) => {
             return (
@@ -72,6 +74,7 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep}) => {
                 selectStep={selectStep} 
                 circleLength={compassSteps.length}
                 rotateAngle={key*(360/(compassSteps.length))}
+                session={session}
               />
             )
           }) : ''

@@ -1,14 +1,13 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, {useState, useEffect}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { getSession } from "../../../utils/queries"
-import {GlobalContext} from "../../../context/context"
+import {navigate} from "gatsby"
 
 import SessionBar from "./SessionBar"
 import CompassWheel from "./CompassWheel"
 
-const CompassSelector = ({showAttachment}) => {
-  const { session } = useContext(GlobalContext);
-  const [activeStep, setActiveStep] = useState({})
+const CompassSelector = ({showAttachment, session, compass, interaction }) => {
+  const [activeStep, setActiveStep] = useState({interaction})
   const [steps,setSteps] = useState([{},{},{},{},{},{},{}])
   const [currentSession,setCurrrentSession] = useState({})
   const [currentInteractions,setCurrentInteractions] = useState([])
@@ -23,6 +22,7 @@ const CompassSelector = ({showAttachment}) => {
       setCurrentInteractions([interaction, ...currentInteractions])
     }
     setActiveStep(interaction)
+    navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
   }
 
   // increase the total clock and the clock of the interaction
@@ -38,24 +38,26 @@ const CompassSelector = ({showAttachment}) => {
   
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
-    getSession(session)
-      .then((res) => {
-        setCurrrentSession(res.data.getSession)
-        setSteps(res.data.getSession.compass.steps.items.flat())
-        const interactions = res.data.getSession.interactions.items.sort((a,b) => {
-          return new Date(b.createdAt) - new Date(a.createdAt);
-        })
-        setCurrentInteractions(interactions)
-        let time = 0
-        if (interactions.length) {
-          interactions.forEach(element => {
-            time += element.duration
-          });
-        }
-        setTotalTime(time)
+    if(session) {
+      setCurrrentSession(session)
+      setSteps(session.compass.steps.items.flat())
+      const interactions = session.interactions.items.sort((a,b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
       })
+      setCurrentInteractions(interactions)
+      let time = 0
+      if (interactions.length) {
+        interactions.forEach(element => {
+          time += element.duration
+        });
+      }
+      setTotalTime(time)
+    }
   },[session])
 
+  useEffect(() => {
+    if(interaction !== {}) setActiveStep(interaction)
+  },[interaction])
 
   return (
     <CSGrid
@@ -71,11 +73,12 @@ const CompassSelector = ({showAttachment}) => {
         compassSteps={steps} 
         interactions={currentInteractions} 
         selectStep={selectStep}
+        session={session}
+        totalTime={totalTime}
       />
       <SessionBar 
         session={currentSession}
         interactions={currentInteractions} 
-        totalTime={totalTime}
         increaseClock={increaseClock}
         showAttachment={showAttachment} 
         interaction={activeStep}
