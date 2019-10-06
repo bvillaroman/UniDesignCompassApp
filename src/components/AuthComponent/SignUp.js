@@ -10,6 +10,7 @@ import {
   FormSwitchButton, 
   InputContainer, 
   FormSwitchContainer, 
+  FormSwitchBox, 
   FormContainer, 
   FormTitle,
   FormSwitchLabel, 
@@ -89,16 +90,17 @@ const SignUp = ({switchToSignIn}) => {
           </InputContainer>
           <Box direction="column" justify="between" margin={{ top: "medium" }}>
             <Button type="submit" label="Sign Up" primary />
-            <FormSwitchContainer direction="row">
-              <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
-              <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
-            </FormSwitchContainer>
-            <FormErrorLabel truncate>
-              {
-                message ? message : (loading && <Loader/>)
-              }
-            </FormErrorLabel>
-
+            <FormSwitchBox>
+              <FormSwitchContainer direction="row">
+                <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
+                <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
+              </FormSwitchContainer>
+              <FormErrorLabel truncate>
+                {
+                  message ? message : (loading && <Loader/>)
+                }
+              </FormErrorLabel>
+            </FormSwitchBox>
           </Box>
         </Form>
     </FormContainer>
