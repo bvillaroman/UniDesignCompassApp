@@ -44,6 +44,8 @@ const SummaryPage = (props) => {
             currentLog={log.log_content}
             interactId={interactionID}
             compassID={compassID}
+            sessionID={sessionID}
+            interactionID={interactionID}
             comments={log.comments}
           />
         ) : <SummarySession compassID={compassID} />
