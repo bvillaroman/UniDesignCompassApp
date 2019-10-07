@@ -32,10 +32,10 @@ const LinkArray = ({ items }) => {
   )
 }
 
-const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, comments }) => {
+const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, comments, sessionID, interactionID }) => {
   const [comment, setComment] = useState("");
-  const [sessionID, setSessionID] = useState("");
-  const [interactionID, setInteractionID] = useState("");
+  // const [sessionID, setSessionID] = useState("");
+  // const [interactionID, setInteractionID] = useState("");
 
   console.log(attachments)
   const handleSubmit = (event) => {
