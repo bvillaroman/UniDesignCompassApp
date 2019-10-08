@@ -23,11 +23,13 @@ const CompassPage = (props) => {
     updateCompass, 
     clearCompass, 
     compass, 
-    updateSession, 
+    updateSession,
     clearSession, 
     session,
     updateInteraction, 
-    clearInteraction
+    clearInteraction,    
+    updateInteractions, 
+    clearInteractions
   } = useContext(CompassContext);
   const [compassID, setCompassID] = useState("")
   const [sessionID, setSessionID] = useState("")
@@ -73,14 +75,22 @@ const CompassPage = (props) => {
         .then((res) => {
           setLoading(false)
           updateSession(res.data.getSession)
+          let interactions = []
+          if (res.data.getSession.interactions.items.length > 0) {
+            interactions = res.data.getSession.interactions.items.sort((a,b) => {
+              return new Date(b.createdAt) - new Date(a.createdAt);
+            })
+          }
+          updateInteractions(interactions);
         })
         .catch((err) => {
           setLoading(false)
           clearSession();
+          clearInteractions();
           console.log(err)
         })
     }
-  }, [sessionID])
+  }, [sessionID, interactionID])
 
   useEffect(() => {
     // queries the compass and assigns it throughout the app
