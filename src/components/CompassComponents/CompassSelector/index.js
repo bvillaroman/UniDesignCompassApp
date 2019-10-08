@@ -57,12 +57,11 @@ const CompassSelector = ({showAttachment}) => {
         selectStep={selectStep}
         totalTime={totalTime}
       />
-      {/* <SessionBar 
+      <SessionBar 
         increaseClock={increaseClock}
         showAttachment={showAttachment} 
-        interaction={interaction}
         setInteraction={selectStep}
-      /> */}
+      />
     </CSGrid>
 )};
 export default CompassSelector;

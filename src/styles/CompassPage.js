@@ -90,7 +90,7 @@ export const AttachmentPreview = ({attachment,src}) => (
 
 export const LoggerGrid = styled(Box)`
   width: 90%;
-  min-height: 20rem;
+  min-height: 26rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -117,6 +117,7 @@ export const LoggerTitle = styled.h4`
 export const LoggerInput = styled(TextArea)`
   border-color: black;
   resize: none;
+  min-height: 10rem;
   height: 100%;
   font-size: 0.8rem;
   font-weight: 400;
@@ -134,6 +135,7 @@ export const LoggerInnerNav = styled(Box)`
 export const LoggerAttachments = styled(Box)`
   width: 100%;
   height: 100%;
+  min-height: 12rem;
   margin: 0.5rem auto;
 `
 
@@ -332,9 +334,10 @@ export const StepText = styled(Box)`
   }
 `
 export const InteractionsTitle = styled(Box)`
-  text-align: center;
-  font-size: 1.3rem;
+  text-align: left;
+  font-size: 1.2rem;
   font-weight: 600;
+  width: 90%;
   margin: 0.5rem auto;
   height: auto;
 `;
@@ -407,26 +410,20 @@ export const SessionView = styled(Box)`
   flex-direction: column;
 `
 export const SessionSection = styled(Box)`
-  text-align: center;  
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.2rem;
-  word-break: break-word;
-  padding: 0.5rem;
-  width: 100%;
+  width: 90%;
   min-height: 3rem;
-  margin: 1rem auto;
+  margin: 0 auto;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
 `
 export const SessionTitle = styled.h4`
-  font-size: 1.2rem;
+  word-break: break-word;
+  font-size: 2rem;
   padding: 0;
   width: 50%;
   color: black;
-  line-height: 1.3rem;
+  line-height: 2.1rem;
   text-align: left;
   font-weight: 600;
   margin: 0;
@@ -496,8 +493,8 @@ export const StepClock = styled(Box)`
 `
 export const ControlButton = styled(Button)`
   svg {
-    width: 1.3rem;
-    height: 1.4rem;
+    width: 1.0rem;
+    height: 1.0rem;
   }
   padding-right: 0;
 `
