@@ -7,41 +7,30 @@ import SessionBar from "./SessionBar"
 import CompassWheel from "./CompassWheel"
 
 const CompassSelector = ({showAttachment}) => {
-  const {session,compass,interaction,updateInteractions, interactions} = useContext(CompassContext)
-  const [totalTime, setTotalTime] = useState(0)
-
-  const selectStep = (interaction) => {
+  const {session,compass,updateInteractions, interactions, updateTime} = useContext(CompassContext)
+  const selectStep = async (interaction) => {
     const stepFromCurrentInteraction = interactions.find((item) => {
       return interaction.id === item.id
     })
 
     if (stepFromCurrentInteraction === undefined) {
-      updateInteractions([interaction, ...interactions])
+      await updateInteractions([interaction, ...interactions])
     }
+    
     navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
+    
   }
 
-  // increase the total clock and the clock of the interaction
-  const increaseClock = (interaction,newTime) => {
-    interactions.find((item,key) => {
-      if (interaction.id === item.id) {
-        let newArr = interactions
-        newArr[key].duration = newTime
-      }
-    })
-    setTotalTime(totalTime + 1)
-  }
-  
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
-    let time = 0;
     if (interactions.length) {
+      let time = 0;
       interactions.forEach(element => {
         time += element.duration
       });
+      updateTime(time)
     }
-    setTotalTime(time)
-  },[session,interactions])
+  },[interactions])
 
   return (
     <CSGrid
@@ -53,12 +42,8 @@ const CompassSelector = ({showAttachment}) => {
         { name: 'session', start: [1, 0], end: [1, 1] },
       ]}
     >
-      <CompassWheel 
-        selectStep={selectStep}
-        totalTime={totalTime}
-      />
+      <CompassWheel selectStep={selectStep} />
       <SessionBar 
-        increaseClock={increaseClock}
         showAttachment={showAttachment} 
         setInteraction={selectStep}
       />

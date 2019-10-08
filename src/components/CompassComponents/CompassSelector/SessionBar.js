@@ -8,7 +8,7 @@ import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({showAttachment,setInteraction, increaseClock }) => {
+export default ({showAttachment, setInteraction}) => {
   const {session} = useContext(CompassContext)
 
   return (
@@ -18,10 +18,7 @@ export default ({showAttachment,setInteraction, increaseClock }) => {
           {session.name_of_session} 
         </SessionTitle>
       </SessionSection> 
-        <Logger 
-          increaseClock={increaseClock} 
-          showAttachment={showAttachment}
-        />
+        <Logger  showAttachment={showAttachment} />
       <InteractionFeed goToInteraction={setInteraction}/>
     </SessionView>
   ) 

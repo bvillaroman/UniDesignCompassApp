@@ -18,8 +18,8 @@ import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({ showAttachment, increaseClock }) => {
-  const {interaction} = useContext(CompassContext);
+export default ({ showAttachment }) => {
+  const {interaction,updateTime, time} = useContext(CompassContext);
 
   const intialStep = {
     name_of_step: "Logger",
@@ -27,55 +27,58 @@ export default ({ showAttachment, increaseClock }) => {
   };
 
   const [step, setStep] = useState(intialStep);
-  const [time,setTime] = useState(0);
+  const [interactionTime,setInteractionTime] = useState(0);
   const [log, setLog] = useState('');
   const [start,setStart] = useState(false);
   const [attachments,setAttachments] = useState([]);
 
-    //handle currentInteraction
-  // useEffect(() => {
-  //     const {log_content, duration, step, attachments, id} = interaction
-  //     setTime(duration)
-  //     setStep(step)
-  //     setLog(log_content)
-  //     setStart(true)
-  //     setAttachments(attachments.items)
+  // intialize interaction into the logger
+  useEffect(() => {
+    if(interaction.hasOwnProperty("id")){
+      const {log_content, duration, step, attachments, id} = interaction
+      setInteractionTime(duration)
+      setStep(step)
+      setLog(log_content)
+      setStart(true)
+      setAttachments(attachments.items)
 
-  //     const newInteraction = {
-  //       id: id,
-  //       log_content: log ? log : " ",
-  //       duration: time,
-  //     }
+      const newInteraction = {
+        id: id,
+        log_content: log ? log : " ",
+        duration: interactionTime,
+      }
       
-  //     // return () => {
-  //     //   updateInteraction(newInteraction)
-  //     // }
-  // }, [interaction])
+      return () => {
+        console.log(newInteraction)
+        // updateInteraction(newInteraction)
+      }
+    }
+  }, [interaction])
 
 
   // handle interaction time
-  // useEffect(() => {
-  //   let interval = null;
+  useEffect(() => {
+    let interval = null;
 
-  //   if (interaction.id){
-  //     if (start) {
-  //       interval = setInterval(() => {
-  //         increaseClock(interaction,time+1)
-  //         setTime(time+1)
-  //       }, 1000)
+    if (interaction.id){
+      if (start) {
+        interval = setInterval(() => {
+          if (time > 0) updateTime(time+1)
+          setInteractionTime(interactionTime+1)
+        }, 1000)
 
-  //     } else if (!start && time !== 0) {
-  //       clearInterval(interval)
-  //     }
-  //     return () => clearInterval(interval);
-  //   }
-  // }, [start,time, interaction.id])
+      } else if (!start && time !== 0) {
+        clearInterval(interval)
+      }
+      return () => clearInterval(interval);
+    }
+  }, [start,interactionTime, interaction.id])
   
   const pause = (e) => {
     const newInteraction = {
       id: interaction.id,
       log_content: log ? log : " ",
-      duration: time,
+      duration: interactionTime,
     }
     if (start) {
       updateInteraction(newInteraction)
@@ -116,7 +119,7 @@ export default ({ showAttachment, increaseClock }) => {
           {step.name_of_step} 
         </LoggerTitle>
         <StepClock >
-          {translateTime(time)}
+          {translateTime(interactionTime)}
           <TimerButton color={step.color} onClick={pause} start={start}/>
         </StepClock>
       </LoggerHeader>

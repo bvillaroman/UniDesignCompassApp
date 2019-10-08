@@ -4,10 +4,12 @@ import CompassReducer, {
   UPDATE_SESSION,
   UPDATE_INTERACTION,
   UPDATE_INTERACTIONS,
+  UPDATE_TIME,
   CLEAR_COMPASS, 
   CLEAR_SESSION, 
   CLEAR_INTERACTION,
-  CLEAR_INTERACTIONS
+  CLEAR_INTERACTIONS,
+  CLEAR_TIME,
 } from "./reducers"
 
 // CONTEXT
@@ -17,7 +19,8 @@ export const initialState = {
   compass: {},
   session: {},
   interaction: {},
-  interactions: []
+  interactions: [],
+  time: 0
 }
 
 export const CompassProvider = ({children}) => {
@@ -29,10 +32,12 @@ export const CompassProvider = ({children}) => {
         updateSession: (session) => dispatch({type: UPDATE_SESSION, payload: session}),
         updateInteraction: (interaction) => dispatch({type: UPDATE_INTERACTION, payload: interaction}),
         updateInteractions: (interactions) => dispatch({type: UPDATE_INTERACTIONS, payload: interactions}), 
+        updateTime: (time) => dispatch({type: UPDATE_TIME, payload: time}), 
         clearCompass: () => dispatch({type: CLEAR_COMPASS}),
         clearSession: () => dispatch({type: CLEAR_SESSION}),
         clearInteraction: () => dispatch({type: CLEAR_INTERACTION}),
         clearInteractions: () => dispatch({type: CLEAR_INTERACTIONS}),
+        clearTime: () => dispatch({type: CLEAR_TIME}),
         ...CompassState
       }}
     >

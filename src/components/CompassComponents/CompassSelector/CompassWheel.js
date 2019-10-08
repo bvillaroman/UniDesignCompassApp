@@ -8,8 +8,8 @@ import {
 } from "../../../styles/CompassPage"
 import Step from "./Step"
 
-const CompassWheel = ({ selectStep, totalTime }) => {
-  const {session, interactions} = useContext(CompassContext)
+const CompassWheel = ({ selectStep }) => {
+  const {session, interactions, time} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
 
   useEffect(() => {
@@ -38,33 +38,6 @@ const CompassWheel = ({ selectStep, totalTime }) => {
     }
   }, [session,interactions])
 
-  // useEffect(() => {
-  //   if (compassSteps.length) {
-  //     // assign values for compassSteps with starting duration 0
-  //     let arr = compassSteps.map((step) => ({
-  //         id : step.id,
-  //         name_of_step : step.name_of_step,
-  //         color: step.color,
-  //         duration: 0
-  //       })
-  //     );
-
-  //     if (interactions.length) {
-  //       interactions.forEach(item => {
-  //         arr.find((step) => {
-  //           if (step.id === item.step.id){
-  //             step.duration = step.duration + item.duration
-  //           }
-  //         })
-  //       })
-  //     }
-
-  //     setSteps(arr)
-  //   }
-    
-  // }, [compassSteps, interactions])
-
-
   const translateTime = (secs) => {
     const sec_num = parseInt(secs, 10)
     const hours   = Math.floor(sec_num / 3600)
@@ -92,7 +65,7 @@ const CompassWheel = ({ selectStep, totalTime }) => {
         <span>Compass Steps</span>  
       </CSTitle>
       <StepRow gridArea="content" circleLength={steps.length}>
-        <SessionClock> {translateTime(totalTime)} </SessionClock>
+        <SessionClock> {translateTime(time)} </SessionClock>
         {
           steps.length > 0 ? steps.map((item,key) => {
             return (

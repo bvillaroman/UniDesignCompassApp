@@ -29,7 +29,8 @@ const CompassPage = (props) => {
     updateInteraction, 
     clearInteraction,    
     updateInteractions, 
-    clearInteractions
+    clearInteractions,
+    clearTime
   } = useContext(CompassContext);
   const [compassID, setCompassID] = useState("")
   const [sessionID, setSessionID] = useState("")
@@ -65,6 +66,8 @@ const CompassPage = (props) => {
           clearCompass();
           console.log(err);
         })
+    } else {
+      clearCompass()
     }
   }, [compassID])
 
@@ -89,12 +92,15 @@ const CompassPage = (props) => {
           clearInteractions();
           console.log(err)
         })
+    } else {
+      clearSession();
     }
   }, [sessionID, interactionID])
 
   useEffect(() => {
     // queries the compass and assigns it throughout the app
     if (interactionID) {
+      clearInteraction();
       getInteraction(interactionID)
         .then((res) => {
           setLoading(false);
@@ -105,6 +111,8 @@ const CompassPage = (props) => {
           clearInteraction();
           console.log(err);
         })
+    } else {
+      clearInteraction();
     }
   }, [interactionID])
 
