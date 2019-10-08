@@ -37,9 +37,10 @@ const Logger = ({interaction={}, showAttachment, increaseClock }) => {
         log_content: log ? log : " ",
         duration: time,
       }
-
-      updateInteraction(newInteraction)
-      return 
+      
+      // return () => {
+      //   updateInteraction(newInteraction)
+      // }
   }, [interaction])
 
 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { CompassContext } from "../../../context/CompassPage/context"
 import { createSession } from "../../../utils/mutations"
 import {navigate} from "gatsby"
 
@@ -17,12 +18,13 @@ import {
 } from "../../../styles/Form"
 
 const SessionCreator = (props) => {
+  const {compass} = useContext(CompassContext)
   const [form, setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: '' })
 
   const onChange = ({ target: { value, name } }) => { setForm({ ...form, [name]: value }) };
 
-  const currentCompassId = props.compass.id
+  const currentCompassId = compass.id
 
   const sendForm = (e) => {
     createSession(form.title, form.description, currentCompassId)

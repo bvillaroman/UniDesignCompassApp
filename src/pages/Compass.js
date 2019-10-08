@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
+
+import {CompassContext} from "../context/CompassPage/context"
 import queryStringParser from '../utils/queryStringParser'
 import {getCompass,getSession,getInteraction} from '../utils/queries'
 
@@ -17,12 +19,19 @@ import {
 import {Loader} from "../styles/layout"
 
 const CompassPage = (props) => {
+  const {
+    updateCompass, 
+    clearCompass, 
+    compass, 
+    updateSession, 
+    clearSession, 
+    session,
+    updateInteraction, 
+    clearInteraction
+  } = useContext(CompassContext);
   const [compassID, setCompassID] = useState("")
   const [sessionID, setSessionID] = useState("")
   const [interactionID, setInteractionID] = useState("")
-  const [compass, setCompass] = useState("")
-  const [session, setSession] = useState("")
-  const [interaction, setInteraction] = useState("")
   const [loading, setLoading] = useState(true)
   const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
@@ -46,12 +55,13 @@ const CompassPage = (props) => {
     if (compassID) {
       getCompass(compassID)
         .then((res) => {
-          setLoading(false)
-          setCompass(res.data.getCompass)
+          setLoading(false);
+          updateCompass(res.data.getCompass);
         })
         .catch((err) => {
-          setLoading(false)
-          console.log(err)
+          setLoading(false);
+          clearCompass();
+          console.log(err);
         })
     }
   }, [compassID])
@@ -62,10 +72,11 @@ const CompassPage = (props) => {
       getSession(sessionID)
         .then((res) => {
           setLoading(false)
-          setSession(res.data.getSession)
+          updateSession(res.data.getSession)
         })
         .catch((err) => {
           setLoading(false)
+          clearSession();
           console.log(err)
         })
     }
@@ -76,22 +87,24 @@ const CompassPage = (props) => {
     if (interactionID) {
       getInteraction(interactionID)
         .then((res) => {
-          setLoading(false)
-          setInteraction(res.data.getInteraction)
+          setLoading(false);
+          updateInteraction(res.data.getInteraction);
         })
         .catch((err) => {
-          setLoading(false)
-          console.log(err)
+          setLoading(false);
+          clearInteraction();
+          console.log(err);
         })
     }
   }, [interactionID])
+
 
   return (
     <MainView>
       {
         loading ? <Loader /> : (
-          session ? (
-            <CompassSelector compass={compass} session={session} interaction={interaction} showAttachment={showItem}/>
+          session.hasOwnProperty("id") ? (
+            <CompassSelector  showAttachment={showItem} />
           ) : <SessionCreator compass={compass}/>
         )
       }

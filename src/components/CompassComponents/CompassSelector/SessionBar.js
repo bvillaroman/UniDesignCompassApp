@@ -14,7 +14,16 @@ export default ({ session, interactions,showAttachment,interaction,setInteractio
           {session.name_of_session} 
         </SessionTitle>
       </SessionSection>
-        { interaction.id && ( <Logger increaseClock={increaseClock} setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
+        { 
+          interaction.id && ( 
+            <Logger 
+              increaseClock={increaseClock} 
+              setInteraction={setInteraction} 
+              interaction={interaction} 
+              showAttachment={showAttachment}
+            /> 
+          ) 
+        }
       <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
     </SessionView>
   ) 
