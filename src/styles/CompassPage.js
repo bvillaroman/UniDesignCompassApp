@@ -11,6 +11,8 @@ import {
   Tab,
   Layer,
   Video,
+  Accordion, 
+  AccordionPanel
 } from "grommet"
 import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
@@ -85,6 +87,117 @@ export const AttachmentPreview = ({attachment,src}) => (
     }
   </AttachmentPreviewContainer>
 )
+
+// Step Description
+export const StepDetailsContainer = styled(Box)`
+  width: 90%;
+  min-height: 6rem;
+  height: auto;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`;
+export const StepDetailsTitle = styled.h1`
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  font-size: 2.0rem;
+  color: ${props => props.color ? props.color: "black"};
+  font-weight: 600;
+`;
+export const StepDetailsDescription = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 1.0rem;
+  padding-left: 1rem;
+  color: black;
+`;
+
+// Compass Wheel 
+export const CompassWheelContainer = styled(Box)`
+  width: 100%;
+  min-height: 28rem;
+  height: 40%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+`;
+
+// Compass Viewer Containers
+export const MainContainer = styled(Box)`
+  width: 60%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CompassNavigationBar = styled(Box)`
+  width: 40%;
+  height: 100%
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+`;
+
+// Compass Details 
+export const CompassDetailsContainer = styled(Box)`
+  width: 90%;
+  min-height: 6rem;
+  height: auto;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`;
+export const CompassDetailsTitle = styled.h1`
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  font-size: 2.0rem;
+  color: ${props => props.color ? props.color: "black"};
+  font-weight: 600;
+`;
+export const CompassDetailsDescription = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 1.0rem;
+  padding-left: 1rem;
+  color: black;
+`;
+
+// Session Creator 
+
+export const SCContainer = styled(Accordion)`
+  margin: 1rem auto;
+  width: 90%;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`
+export const SCPanel = styled(AccordionPanel)`
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+`
+export const SCBody = styled(Form)`
+  // padding: 0 1rem;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  background: white;
+`
 
 // Logger
 
@@ -312,13 +425,15 @@ export const StepContainer = styled(Button)`
   top: 38%;
   left: 31%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
-
   list-style: none;
 	height: 7.6rem;
   width: 7.6rem;
   display: block;
 	position: absolute;
   transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  box-shadow: 0 1px 3px 0 #b3b3b3;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
 `
 export const StepText = styled(Box)`
   padding: 1rem;
@@ -506,10 +621,6 @@ export const TimerButton = ({onClick,start, color}) =>(
 )
 // Compass Page Containers
 
-export const SCContainer = styled(Box)`
-  margin: 0 auto;
-  width: 100%;
-`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
@@ -529,7 +640,12 @@ export const MainContent = styled(Tab)`
     border-color: transparent;
   }
 `
-
+export const CompassViewerContainer = styled(Box)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+`
 export const LayerView = styled(Layer)`
   width: 70%;
   height: 80%;
