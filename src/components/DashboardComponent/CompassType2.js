@@ -1,7 +1,5 @@
-import React, { useContext, useState } from 'react'
-
-import { DashboardContext } from "../../context/DashboardPage/context"
-import { FormCard, FormTitle } from "../../styles/Form"
+import React, { useContext } from 'react'
+import { GlobalContext } from "../../context/context"
 import {
   CompassCard,
   CompassTypeFeed,
@@ -13,10 +11,10 @@ import {
   CompassButtonLink
 } from "../../styles/Dashboard"
 import { createCompass, createStep } from "../../utils/mutations"
+import { navigate } from "gatsby"
 
 const CompassType2 = (props) => {
-
-  const { updateForm, switchTab } = useContext(DashboardContext);
+  const { user } = useContext(GlobalContext);
 
   const defaultCompass = [
     {
@@ -56,20 +54,17 @@ const CompassType2 = (props) => {
     }
   ];
 
-  const [compassID, setCompassID] = useState("")
 
-  const goToReview = event => {
+  const goToReview = (event) => {
     console.log('clicked default compass')
-    // updateForm({ title: "Untitled", description: "", steps: defaultCompass })
     // switchTab(3);
-
-    createCompass("Untitled", " ")
+    createCompass("Untitled", " ", [user.email], [])
       .then(res => {
-        setCompassID(res.data.createCompass.id)
-        defaultCompass.map((step, key) =>
+        defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
           // console.log(step.title, step.description, step.color, compass.data.createCompass.id)
         )
+        navigate(`/Compass?c=${res.data.createCompass.id}`)
       })
       .catch(err => console.log(err))
   };
