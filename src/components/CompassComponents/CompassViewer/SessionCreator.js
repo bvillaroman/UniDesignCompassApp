@@ -6,15 +6,14 @@ import {navigate} from "gatsby"
 import {
   SCButtonContainer,
   SCButton,
+  SCHeader,
   SCBody,
+  SCForm,
   SCContainer,
-  SCPanel
+  SCTextArea,
+  SCInputContainer,
+  SCInputField
 } from "../../../styles/CompassPage"
-import {
-  InputContainer,
-  InputField,
-  InputTextArea
-} from "../../../styles/Form"
 
 const SessionCreator = (props) => {
   const {compass} = useContext(CompassContext)
@@ -35,26 +34,26 @@ const SessionCreator = (props) => {
 
   return (
     <SCContainer>
-      <SCPanel label="Create Session">
-        <SCBody  
-          onSubmit={sendForm}
-          onChange={onChange}
-          errors={{ ...error }}
-          value={form}
-        >
-          <InputContainer name="title" required>
-            <InputField name="title" type="text" placeholder="Session Title" />
-          </InputContainer>
-          <InputContainer name="description" required>
-            <InputTextArea name="description" placeholder="Session Description" />
-          </InputContainer>
-          <SCButtonContainer>
-            <SCButton type="submit" label="Create Session" />
-          </SCButtonContainer>
-        </SCBody>
-      </SCPanel>
+      <SCHeader> Start a New Session </SCHeader>
+      <SCBody>
+        <SCForm  
+            onSubmit={sendForm}
+            onChange={onChange}
+            errors={{ ...error }}
+            value={form}
+          >
+            <SCInputContainer name="title" required>
+              <SCInputField name="title" type="text" placeholder="Session Title" />
+            </SCInputContainer>
+            <SCInputContainer name="description" required>
+              <SCTextArea name="description" placeholder="Session Description" />
+            </SCInputContainer>
+            <SCButtonContainer>
+              <SCButton type="submit" label="Create Session" />
+            </SCButtonContainer>
+          </SCForm>
+      </SCBody>
     </SCContainer>
-   
   )
 }
 

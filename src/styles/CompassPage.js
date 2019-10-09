@@ -14,7 +14,7 @@ import {
   Accordion, 
   AccordionPanel
 } from "grommet"
-import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
+import {  CompassIcon, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const AttachmentButtonLabel = styled.label`
@@ -133,7 +133,6 @@ export const CompassWheelContainer = styled(Box)`
 export const MainContainer = styled(Box)`
   width: 60%;
   height: 100%;
-  overflow: auto;
   display: flex;
   flex-direction: column;
 `;
@@ -141,31 +140,39 @@ export const MainContainer = styled(Box)`
 export const CompassNavigationBar = styled(Box)`
   width: 40%;
   height: 100%
-  overflow: auto;
   display: flex;
   flex-direction: column;
-  background: white;
+  // background: white;
 `;
 
 // Compass Details 
 export const CompassDetailsContainer = styled(Box)`
   width: 90%;
-  min-height: 6rem;
-  height: auto;
+  min-height: 15rem;
+
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
   background: white;
   padding: 1rem;
+  svg {
+    width: 50%;
+    height: 6rem;
+    margin: auto;
+    stroke: #5567FD;
+  }
   box-shadow: 0 1px 3px 0 #d2d4d6;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 `;
+
 export const CompassDetailsTitle = styled.h1`
+  text-align: center;
   margin: 0 auto;
   width: 100%;
   height: auto;
   font-size: 2.0rem;
+  line-height: 2.2rem;
   color: ${props => props.color ? props.color: "black"};
   font-weight: 600;
 `;
@@ -179,26 +186,76 @@ export const CompassDetailsDescription = styled.p`
 
 // Session Creator 
 
-export const SCContainer = styled(Accordion)`
+export const SCContainer = styled(Box)`
   margin: 1rem auto;
+  padding: 1rem;
   width: 90%;
+  height: auto;
+  min-height: 19rem;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+  background: white;
 `
-export const SCPanel = styled(AccordionPanel)`
-  width: 100%;
-  padding: 0 1rem;
+export const SCHeader = styled.h1`
+  text-align: center;
   margin: 0 auto;
-`
-export const SCBody = styled(Form)`
-  // padding: 0 1rem;
-  width: 90%;
+  margin-bottom: 1rem;
+  width: 100%;
   height: auto;
+  font-size: 2.0rem;
+  line-height: 2.2rem;
+  color: black;
+  font-weight: 600;
+`
+export const SCBody = styled(Box)`
+  width: 90%;
+  height: 100%;
   margin: 0 auto;
   background: white;
 `
+export const SCForm = styled(Form)`
+`
 
+export const SCTextArea = styled(TextArea)`
+  font-size: 1rem;
+  resize: none;
+  height: 100%;
+  min-height: 6rem;
+  color: black;
+  border: 0.01rem solid grey;
+`;
+export const SCInputContainer = styled(FormField)`
+  border-bottom: none;
+  color: black;
+  background-color: #F0F0F0;
+`;
+export const SCInputField = styled(TextInput)`
+  font-weight: 550;
+  font-size: 1rem;
+  padding-top: 1rem;
+  color: black;
+`;
+
+export const SCButtonContainer = styled(Box)`
+  width: 100%;
+  margin: 1rem auto;
+`;
+
+export const SCButton = styled(Button)`
+  width: 12rem;
+  transition: all 0.3s;
+  border: 0.15rem solid #5567FD;
+  border-radius: 2rem;
+  background-color:#5567FD;
+  color: white; 
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white; 
+  }
+  margin: 0 auto;
+`;
 // Logger
 
 export const LoggerGrid = styled(Box)`
@@ -326,32 +383,6 @@ export const AttachmentButtons = styled(Button)`
 
 // Sessions Creator
 
-export const SCCard = styled(Box)`
-  color: white;
-  background-color: transparent;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-`;
-export const SCButton = styled(Button)`
-  width: 50%;
-  transition: all 0.3s;
-  border: 0.15rem solid #5567FD;
-  border-radius: 2rem;
-  background-color:#5567FD;
-  color: white; 
-  svg {
-    transition: all 0.3s;
-    fill: white; 
-    stroke: white; 
-  }
-  margin: 0 auto;
-
-`;
-export const SCButtonContainer = styled(Box)`
-  width: 100%;
-  margin: 1rem auto;
-`;
 export const SCSwitchLabel = styled(Text)`
   color: #2A3664;
 `;
@@ -636,6 +667,7 @@ export const MainContent = styled(Tab)`
   justify-content: center;
   width: 100%;
   height: 100%;
+
   button div {
     border-color: transparent;
   }
@@ -643,6 +675,7 @@ export const MainContent = styled(Tab)`
 export const CompassViewerContainer = styled(Box)`
   width: 100%;
   height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: row;
 `
