@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CompassContext } from "../../../context/CompassPage/context"
 import { StepContainer, StepText } from "../../../styles/CompassPage"
 import { startInteraction } from "../../../utils/mutations"
 
-const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength, session}) => {
+const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
+  const {session,compass,interaction} = useContext(CompassContext)
 
   const {
     id,
