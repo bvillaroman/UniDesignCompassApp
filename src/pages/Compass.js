@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import SessionCreator from "../components/CompassComponents/SessionCreator"
+import CompassViewer from "../components/CompassComponents/CompassViewer"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
 
 import {CompassContext} from "../context/CompassPage/context"
@@ -123,7 +124,7 @@ const CompassPage = (props) => {
         loading ? <Loader /> : (
           session.hasOwnProperty("id") ? (
             <CompassSelector  showAttachment={showItem} />
-          ) : <SessionCreator compass={compass}/>
+          ) : <CompassViewer />
         )
       }
       {
