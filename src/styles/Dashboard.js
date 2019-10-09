@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Box, Button, Grid, Accordion, AccordionPanel, Text,TextInput } from "grommet"
+import { Box, Button, Grid, Accordion, AccordionPanel, Text, TextInput } from "grommet"
 import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
 // Dashboard
@@ -15,7 +15,7 @@ export const DashboardGrid = styled(Grid)`
   height: 100%;
   // margin-bottom: 3rem;
 `;
-export const DashboardTabs= styled(Box)`
+export const DashboardTabs = styled(Box)`
   width: 100%;
   height: 100%;
   display: flex;
@@ -24,7 +24,7 @@ export const DashboardTabs= styled(Box)`
     border-color: transparent;
   }
 `;
-export const DashboardTab= styled(Box)`
+export const DashboardTab = styled(Box)`
   width: 100%;
   height: 100%;
 `;
@@ -99,8 +99,9 @@ export const CompassFormTab = styled(Box)`
 
 // compass type
 export const CompassTypeFeed = styled(Box)`
-  // min-height: 30rem;
-  height: 100%;
+  width: 100%;
+  margin: 0.5rem auto;
+  min-height: 17rem;
   overflow: auto;
   color: black;
   section {
@@ -108,19 +109,22 @@ export const CompassTypeFeed = styled(Box)`
     overflow: auto;
     width: auto;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
 `;
 export const CompassCard = styled(Box)`
   margin: 0.5rem;
-  padding: 1rem 2rem;
-  width: 25rem;
-  height: 20rem;
-  border 0.1rem solid #5567FD;
+  padding: 1rem;
+  height: 16rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  background: white;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
 `;
 
 export const CompassCardTitle = styled(Box)`
@@ -128,15 +132,15 @@ export const CompassCardTitle = styled(Box)`
   min-height: 2rem;
   height: 20%;
   color: black;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 550;
+  font-size: 1.4rem;
   display: flex;
   flex-direction: row;
 `;
 
 export const CompassCardDetails = styled(Box)`
   height: 80%;
-  min-height: 14rem;
+  min-height: 10rem;
   width: 100%!important;
   color: black;
   font-weight: 600;
@@ -156,15 +160,15 @@ export const StepContainer = styled(Box)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
-  top: 38%;
-  left: 35%;
+  top: 35%;
+  left: 40%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
   list-style: none;
-	height: 3.0rem;
-  width: 3.0rem;
+	height: 2.8rem;
+  width: 2.8rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*0.6}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.5}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
 `
 export const StepText = styled(Box)`
   padding: 1rem;
@@ -216,12 +220,12 @@ export const PermissionsDetails = styled(Box)`
   flex-direction: column;
   justify-content: space-between;
 `
-export const PermissionsTitle= styled(Text)`
+export const PermissionsTitle = styled(Text)`
   color: black;
   font-weight: 600;
   font-size: 2rem;
 `
-export const PermissionsForm= styled(Box)`
+export const PermissionsForm = styled(Box)`
   color: black;
 `
 export const GoToReviewButton = styled(Button)`
@@ -233,7 +237,7 @@ export const GoToReviewButton = styled(Button)`
   align-self: center;
   margin: 0 auto;
 `
-export const PermissionsInputs= styled(Box)`
+export const PermissionsInputs = styled(Box)`
   width: 100%;
   color: black;
   marigin: 1rem auto;
@@ -301,12 +305,12 @@ export const ReviewDetails = styled(Box)`
   flex-direction: column;
   justify-content: space-between;
 `
-export const ReviewTitle= styled(Text)`
+export const ReviewTitle = styled(Text)`
   color: black;
   font-weight: 600;
   font-size: 2rem;
 `
-export const ReviewDescription= styled(Box)`
+export const ReviewDescription = styled(Box)`
   color: black;
 `
 export const ReviewStepsView = styled(Accordion)`
@@ -346,21 +350,21 @@ export const SubmitCompassButton = styled(Button)`
   margin: 0 auto;
 `
 
-export const AddCompass = ({onClick}) =>(
-  <DashboardButton     
-    onClick={e => onClick()} 
-    icon={(<AddCircle color="#5567FD"/>)}
+export const AddCompass = ({ onClick }) => (
+  <DashboardButton
+    onClick={e => onClick()}
+    icon={(<AddCircle color="#5567FD" />)}
     label="New Project"
     alignSelf="end"
   />
 )
 
-export const BackButton = ({onClick}) =>(
-  <DashboardButton     
-    onClick={e => onClick()} 
-    icon={(<FormPreviousLink color="#5567FD"/>)}
-    style={{float: 'left'}}
-    // label="Add Compass"
+export const BackButton = ({ onClick }) => (
+  <DashboardButton
+    onClick={e => onClick()}
+    icon={(<FormPreviousLink color="#5567FD" />)}
+    style={{ float: 'left' }}
+  // label="Add Compass"
   />
 )
 
@@ -374,13 +378,13 @@ export const ProjectCard = styled(Grid)`
   color: white;
 `;
 
-export const CompassTitle= styled(Text)`
+export const CompassTitle = styled(Text)`
   color: black;
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.1rem;
 `
-export const CompassDescription= styled(Text)`
+export const CompassDescription = styled(Text)`
   color: black;
   padding: 0 2rem;
   font-weight: 400;

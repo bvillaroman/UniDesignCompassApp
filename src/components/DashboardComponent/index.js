@@ -1,12 +1,13 @@
-import React, {useState, useContext} from 'react'
-import { 
+import React, { useState, useContext } from 'react'
+import {
   DashboardContainer,
   Header,
-  Title, 
+  Title,
   AddCompass,
-  DashboardTabs, 
-  DashboardTab 
-} from "../../styles/Dashboard"
+  DashboardTabs,
+  DashboardTab
+} from "../../styles/Dashboard";
+import CompassType2 from "./CompassType2";
 
 import Feed from "./CompassFeed"
 import CompassForm from "./CompassForm"
@@ -25,19 +26,20 @@ const Dashboard = (props) => {
     <DashboardContainer>
       <DashboardTabs>
         {
-          tab === 1 ?  (
+          tab === 1 ? (
             <DashboardTab>
-              <CompassForm backToDashboard={backToDashboard}/>
+              <CompassForm backToDashboard={backToDashboard} />
             </DashboardTab>
           ) : (
-            <DashboardTab>
-              <Header gridArea="header" >
-                <Title>Projects</Title>
-                <AddCompass onClick={e => setTab(1)}/>
-              </Header>
-              <Feed/>
-            </DashboardTab>
-          ) 
+              <DashboardTab>
+                <Header gridArea="header" >
+                  <Title>Projects</Title>
+                  <AddCompass onClick={e => setTab(1)} />
+                </Header>
+                <CompassType2 />
+                <Feed />
+              </DashboardTab>
+            )
         }
       </DashboardTabs>
     </DashboardContainer>
