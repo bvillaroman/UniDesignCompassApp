@@ -1,4 +1,5 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useContext } from "react";
+import { CompassContext } from "../../../context/CompassPage/context"
 import { 
   StepRow, 
   CSMain,
@@ -7,12 +8,13 @@ import {
 } from "../../../styles/CompassPage"
 import Step from "./Step"
 
-const CompassWheel = ({compassSteps = [],interactions = [], selectStep, session, totalTime }) => {
+const CompassWheel = ({ selectStep }) => {
+  const {session, interactions, time} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
 
   useEffect(() => {
-    if (compassSteps.length) {
-      // assign values for compassSteps with starting duration 0
+    if(session.hasOwnProperty("compass")){
+      const compassSteps = session.compass.steps.items.flat();
       let arr = compassSteps.map((step) => ({
           id : step.id,
           name_of_step : step.name_of_step,
@@ -32,10 +34,9 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep, session,
       }
 
       setSteps(arr)
-    }
-    
-  }, [compassSteps, interactions])
 
+    }
+  }, [session,interactions])
 
   const translateTime = (secs) => {
     const sec_num = parseInt(secs, 10)
@@ -63,8 +64,8 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep, session,
       <CSTitle gridArea="title">
         <span>Compass Steps</span>  
       </CSTitle>
-      <StepRow gridArea="content" circleLength={compassSteps.length}>
-        <SessionClock> {translateTime(totalTime)} </SessionClock>
+      <StepRow gridArea="content" circleLength={steps.length}>
+        <SessionClock> {translateTime(time)} </SessionClock>
         {
           steps.length > 0 ? steps.map((item,key) => {
             return (
@@ -72,8 +73,8 @@ const CompassWheel = ({compassSteps = [],interactions = [], selectStep, session,
                 activeStep={item} 
                 key={key} 
                 selectStep={selectStep} 
-                circleLength={compassSteps.length}
-                rotateAngle={key*(360/(compassSteps.length))}
+                circleLength={steps.length}
+                rotateAngle={key*(360/(steps.length))}
                 session={session}
               />
             )

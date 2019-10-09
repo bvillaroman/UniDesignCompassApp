@@ -11,8 +11,10 @@ import {
   Tab,
   Layer,
   Video,
+  Accordion, 
+  AccordionPanel
 } from "grommet"
-import {  Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
+import {  CompassIcon, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const AttachmentButtonLabel = styled.label`
@@ -86,11 +88,179 @@ export const AttachmentPreview = ({attachment,src}) => (
   </AttachmentPreviewContainer>
 )
 
+// Step Description
+export const StepDetailsContainer = styled(Box)`
+  width: 90%;
+  min-height: 6rem;
+  height: auto;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`;
+export const StepDetailsTitle = styled.h1`
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  font-size: 2.0rem;
+  color: ${props => props.color ? props.color: "black"};
+  font-weight: 600;
+`;
+export const StepDetailsDescription = styled.p`
+  width: 100%;
+  height: auto;
+  font-size: 1.0rem;
+  padding-left: 1rem;
+  color: black;
+`;
+
+// Compass Wheel 
+export const CompassWheelContainer = styled(Box)`
+  width: 100%;
+  min-height: 28rem;
+  height: 40%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+`;
+
+// Compass Viewer Containers
+export const MainContainer = styled(Box)`
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CompassNavigationBar = styled(Box)`
+  width: 40%;
+  height: 100%
+  display: flex;
+  flex-direction: column;
+  // background: white;
+`;
+
+// Compass Details 
+export const CompassDetailsContainer = styled(Box)`
+  width: 90%;
+  min-height: 15rem;
+
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  svg {
+    width: 50%;
+    height: 6rem;
+    margin: auto;
+    stroke: #5567FD;
+  }
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`;
+
+export const CompassDetailsTitle = styled.h1`
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  font-size: 2.0rem;
+  line-height: 2.2rem;
+  color: ${props => props.color ? props.color: "black"};
+  font-weight: 600;
+`;
+export const CompassDetailsDescription = styled.p`
+  width: 90%;
+  height: auto;
+  font-size: 1.0rem;
+  padding-left: 1rem;
+  color: black;
+`;
+
+// Session Creator 
+
+export const SCContainer = styled(Box)`
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 90%;
+  height: auto;
+  min-height: 19rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  background: white;
+`
+export const SCHeader = styled.h1`
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  font-size: 2.0rem;
+  line-height: 2.2rem;
+  color: black;
+  font-weight: 600;
+`
+export const SCBody = styled(Box)`
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  background: white;
+`
+export const SCForm = styled(Form)`
+`
+
+export const SCTextArea = styled(TextArea)`
+  font-size: 1rem;
+  resize: none;
+  height: 100%;
+  min-height: 6rem;
+  color: black;
+  border: 0.01rem solid grey;
+`;
+export const SCInputContainer = styled(FormField)`
+  border-bottom: none;
+  color: black;
+  background-color: #F0F0F0;
+`;
+export const SCInputField = styled(TextInput)`
+  font-weight: 550;
+  font-size: 1rem;
+  padding-top: 1rem;
+  color: black;
+`;
+
+export const SCButtonContainer = styled(Box)`
+  width: 100%;
+  margin: 1rem auto;
+`;
+
+export const SCButton = styled(Button)`
+  width: 12rem;
+  transition: all 0.3s;
+  border: 0.15rem solid #5567FD;
+  border-radius: 2rem;
+  background-color:#5567FD;
+  color: white; 
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white; 
+  }
+  margin: 0 auto;
+`;
 // Logger
 
 export const LoggerGrid = styled(Box)`
   width: 90%;
-  min-height: 20rem;
+  min-height: 26rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -117,6 +287,7 @@ export const LoggerTitle = styled.h4`
 export const LoggerInput = styled(TextArea)`
   border-color: black;
   resize: none;
+  min-height: 10rem;
   height: 100%;
   font-size: 0.8rem;
   font-weight: 400;
@@ -134,6 +305,7 @@ export const LoggerInnerNav = styled(Box)`
 export const LoggerAttachments = styled(Box)`
   width: 100%;
   height: 100%;
+  min-height: 12rem;
   margin: 0.5rem auto;
 `
 
@@ -211,32 +383,6 @@ export const AttachmentButtons = styled(Button)`
 
 // Sessions Creator
 
-export const SCCard = styled(Box)`
-  color: white;
-  background-color: transparent;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-`;
-export const SCButton = styled(Button)`
-  width: 50%;
-  transition: all 0.3s;
-  border: 0.15rem solid #5567FD;
-  border-radius: 2rem;
-  background-color:#5567FD;
-  color: white; 
-  svg {
-    transition: all 0.3s;
-    fill: white; 
-    stroke: white; 
-  }
-  margin: 0 auto;
-
-`;
-export const SCButtonContainer = styled(Box)`
-  width: 100%;
-  margin: 1rem auto;
-`;
 export const SCSwitchLabel = styled(Text)`
   color: #2A3664;
 `;
@@ -310,13 +456,15 @@ export const StepContainer = styled(Button)`
   top: 38%;
   left: 31%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
-
   list-style: none;
 	height: 7.6rem;
   width: 7.6rem;
   display: block;
 	position: absolute;
   transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  box-shadow: 0 1px 3px 0 #b3b3b3;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
 `
 export const StepText = styled(Box)`
   padding: 1rem;
@@ -332,9 +480,10 @@ export const StepText = styled(Box)`
   }
 `
 export const InteractionsTitle = styled(Box)`
-  text-align: center;
-  font-size: 1.3rem;
+  text-align: left;
+  font-size: 1.2rem;
   font-weight: 600;
+  width: 90%;
   margin: 0.5rem auto;
   height: auto;
 `;
@@ -407,26 +556,20 @@ export const SessionView = styled(Box)`
   flex-direction: column;
 `
 export const SessionSection = styled(Box)`
-  text-align: center;  
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.2rem;
-  word-break: break-word;
-  padding: 0.5rem;
-  width: 100%;
+  width: 90%;
   min-height: 3rem;
-  margin: 1rem auto;
+  margin: 0 auto;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
 `
 export const SessionTitle = styled.h4`
-  font-size: 1.2rem;
+  word-break: break-word;
+  font-size: 2rem;
   padding: 0;
   width: 50%;
   color: black;
-  line-height: 1.3rem;
+  line-height: 2.1rem;
   text-align: left;
   font-weight: 600;
   margin: 0;
@@ -496,8 +639,8 @@ export const StepClock = styled(Box)`
 `
 export const ControlButton = styled(Button)`
   svg {
-    width: 1.3rem;
-    height: 1.4rem;
+    width: 1.0rem;
+    height: 1.0rem;
   }
   padding-right: 0;
 `
@@ -509,10 +652,6 @@ export const TimerButton = ({onClick,start, color}) =>(
 )
 // Compass Page Containers
 
-export const SCContainer = styled(Box)`
-  margin: 0 auto;
-  width: 100%;
-`
 export const ComponentContainer = styled(Box)`
   margin: 0 auto;
 `
@@ -528,11 +667,18 @@ export const MainContent = styled(Tab)`
   justify-content: center;
   width: 100%;
   height: 100%;
+
   button div {
     border-color: transparent;
   }
 `
-
+export const CompassViewerContainer = styled(Box)`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+`
 export const LayerView = styled(Layer)`
   width: 70%;
   height: 80%;
