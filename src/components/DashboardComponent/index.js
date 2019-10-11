@@ -33,8 +33,8 @@ const Dashboard = (props) => {
           ) : (
               <DashboardTab>
                 <Header gridArea="header" >
-                  <Title>Projects</Title>
-                  <AddCompass onClick={e => setTab(1)} />
+                  <Title>Project Hub</Title>
+                  {/* <AddCompass onClick={e => setTab(1)} /> */}
                 </Header>
                 <CompassType2 />
                 <Feed />

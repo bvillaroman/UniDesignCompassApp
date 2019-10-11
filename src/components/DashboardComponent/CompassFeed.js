@@ -19,10 +19,8 @@ const CompassFeed = (props) => {
 
   useEffect(() => {
     getCompasses()
-      .then((compasses) => {
-
-        setCompasses(compasses.filter((compass) => compass.admins.includes(user.email)))
-        // console.log(compasses)
+      .then((res) => {
+        setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
         setLoading(false)
       })
       .catch((error) => {

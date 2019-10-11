@@ -91,43 +91,6 @@ const CompassType2 = (props) => {
             </CompassCircle>
           </CompassCardDetails>
         </CompassCard>
-        <CompassCard onClick={goToReview}>
-          <CompassCardTitle>Default Compass</CompassCardTitle>
-          <CompassCardDetails>
-            <CompassCircle gridArea="content" circleLength={defaultCompass.length}>
-              {
-                defaultCompass.map((item, key) => (
-                  <StepContainer
-                    key={key}
-                    circleLength={defaultCompass.length}
-                    rotateAngle={key * (360 / (defaultCompass.length))}
-                    color={item.color}
-                  />
-                )
-                )
-              }
-            </CompassCircle>
-          </CompassCardDetails>
-        </CompassCard>
-        <CompassCard onClick={goToReview}>
-          <CompassCardTitle>Default Compass</CompassCardTitle>
-          <CompassCardDetails>
-            <CompassCircle gridArea="content" circleLength={defaultCompass.length}>
-              {
-                defaultCompass.map((item, key) => (
-                  <StepContainer
-                    key={key}
-                    circleLength={defaultCompass.length}
-                    rotateAngle={key * (360 / (defaultCompass.length))}
-                    color={item.color}
-                  />
-                )
-                )
-              }
-            </CompassCircle>
-          </CompassCardDetails>
-        </CompassCard>
-
       </section>
     </CompassTypeFeed>
   )
