@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Feed,
   CompassTitle,
@@ -7,27 +7,19 @@ import {
   GoToCompassButton
 } from "../../styles/Dashboard"
 import { Loader } from "../../styles/layout"
-import { getCompasses } from "../../utils/queries"
 import { navigate } from "gatsby"
-import { GlobalContext } from "../../context/context"
 
 const CompassFeed = (props) => {
-  const { user } = useContext(GlobalContext);
   const [compasses, setCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    getCompasses()
-      .then((res) => {
-        setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
-        setLoading(false)
-      })
-      .catch((error) => {
-        setError(error.message)
-        setLoading(false)
-      });
-  }, []);
+    if (props.compasses.length) {
+      setLoading(false)
+      setCompasses(props.compasses)
+    }
+  }, [props.compasses]);
 
   const goToCompass = (compass) => {
     navigate(`/Compass?c=${compass.id}`)

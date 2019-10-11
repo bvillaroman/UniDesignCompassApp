@@ -10,49 +10,6 @@ export const DashboardContainer = styled(Box)`
   padding: 0 2rem;
   overflow: auto;
 `;
-export const DashboardGrid = styled(Grid)`
-  width: 100%;
-  height: 100%;
-  // margin-bottom: 3rem;
-`;
-export const DashboardTabs = styled(Box)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  button div {
-    border-color: transparent;
-  }
-`;
-export const DashboardTab = styled(Box)`
-  width: 100%;
-  height: 100%;
-`;
-export const DashboardButton = styled(Button)`
-  transition: all 0.3s;
-  max-width: 11rem;
-  padding: 0.5rem;
-  border: 0.1rem solid #5567FD;
-  border-radius: 2rem;
-  background-color: #5567FD;
-  color: white;
-  align-self: auto;
-  svg { 
-    stroke: white;
-    background: transparent;
-  }
-  :hover {
-    transition: all 0.3s;
-    background-color: white;
-    color: #5567FD;
-    svg {
-      transition: all 0.3s;
-      stroke: #5567FD; 
-      background: transparent;
-    }
-  }
-`;
-
 export const Header = styled(Box)`
   padding: 0 2rem;
   color: black;
@@ -85,17 +42,6 @@ export const Feed = styled(Box)`
     justify-content: space-evenly;
   }
 `;
-
-// Compass Form Info
-export const CompassFormTabs = styled(Box)`
-  height: auto;
-  width: 100%;
-  margin: 1rem auto;
-`
-export const CompassFormTab = styled(Box)`
-  width: 100%;
-  margin: 0 auto;
-`
 
 // compass type
 export const CompassTypeFeed = styled(Box)`
@@ -183,24 +129,6 @@ export const StepText = styled(Box)`
     margin: 0;
   }
 `
-export const CompassButtonContainer = styled(Box)`
-  min-width: 10rem;
-  min-height: 8rem;
-  width: 40%;
-  height: 100%;  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`
-export const CompassButtonLink = styled(Button)`
-  font-size: 1rem;
-  width: 100%;
-  height: auto;  
-  padding: 0.5rem 1rem;
-  color: black;
-  border: 0.1rem solid #5567FD;
-`
-
 // Permissions Components
 export const PermissionsCard = styled(Box)`
   margin: 0 auto;
@@ -349,25 +277,7 @@ export const SubmitCompassButton = styled(Button)`
   align-self: center;
   margin: 0 auto;
 `
-
-export const AddCompass = ({ onClick }) => (
-  <DashboardButton
-    onClick={e => onClick()}
-    icon={(<AddCircle color="#5567FD" />)}
-    label="New Project"
-    alignSelf="end"
-  />
-)
-
-export const BackButton = ({ onClick }) => (
-  <DashboardButton
-    onClick={e => onClick()}
-    icon={(<FormPreviousLink color="#5567FD" />)}
-    style={{ float: 'left' }}
-  // label="Add Compass"
-  />
-)
-
+// Project Feed details
 export const ProjectCard = styled(Grid)`
   margin: 1rem;
   padding: 2rem;
