@@ -1,47 +1,46 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+
+import { GlobalContext } from "../../context/context"
+import { getCompasses } from "../../utils/queries"
+
 import {
   DashboardContainer,
   Header,
   Title,
-  AddCompass,
-  DashboardTabs,
-  DashboardTab
+  InfoText
 } from "../../styles/Dashboard";
-import CompassType2 from "./CompassType2";
 
-import Feed from "./CompassFeed"
-import CompassForm from "./CompassForm"
-import { DashboardContext } from "../../context/DashboardPage/context"
+import ProjectCreator from "./ProjectCreator";
+import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
-  const { clearForm, switchTab } = useContext(DashboardContext);
-  const [tab, setTab] = useState(0)
+  const { user } = useContext(GlobalContext);
+  const [compasses, setCompasses] = useState([])
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(true)
 
-  const backToDashboard = (e) => {
-    setTab(0);
-    clearForm();
-    switchTab(0);
-  }
+  useEffect(() => {
+    getCompasses()
+      .then((res) => {
+        setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
+        setLoading(false)
+      })
+      .catch((error) => {
+        setError(error.message)
+        setLoading(false)
+      });
+  }, []);
+
   return (
     <DashboardContainer>
-      <DashboardTabs>
-        {
-          tab === 1 ? (
-            <DashboardTab>
-              <CompassForm backToDashboard={backToDashboard} />
-            </DashboardTab>
-          ) : (
-              <DashboardTab>
-                <Header gridArea="header" >
-                  <Title>Project Hub</Title>
-                  {/* <AddCompass onClick={e => setTab(1)} /> */}
-                </Header>
-                <CompassType2 />
-                <Feed />
-              </DashboardTab>
-            )
-        }
-      </DashboardTabs>
+      <Header >
+        <Title>Project Hub</Title>
+        <InfoText>What are projects?</InfoText>
+      </Header>
+
+      <ProjectCreator />
+
+      <Feed compasses={compasses}/>
     </DashboardContainer>
   )
 }

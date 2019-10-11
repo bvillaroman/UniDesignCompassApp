@@ -1,58 +1,13 @@
-import React from "react"
 import styled from "styled-components"
 import { Box, Button, Grid, Accordion, AccordionPanel, Text, TextInput } from "grommet"
-import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
-// Dashboard
+// Dashboard Containers
 export const DashboardContainer = styled(Box)`
   width: 100%;
   height: 100%;
-  padding: 0 2rem;
   overflow: auto;
+  padding: 0 2rem;
 `;
-export const DashboardGrid = styled(Grid)`
-  width: 100%;
-  height: 100%;
-  // margin-bottom: 3rem;
-`;
-export const DashboardTabs = styled(Box)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  button div {
-    border-color: transparent;
-  }
-`;
-export const DashboardTab = styled(Box)`
-  width: 100%;
-  height: 100%;
-`;
-export const DashboardButton = styled(Button)`
-  transition: all 0.3s;
-  max-width: 11rem;
-  padding: 0.5rem;
-  border: 0.1rem solid #5567FD;
-  border-radius: 2rem;
-  background-color: #5567FD;
-  color: white;
-  align-self: auto;
-  svg { 
-    stroke: white;
-    background: transparent;
-  }
-  :hover {
-    transition: all 0.3s;
-    background-color: white;
-    color: #5567FD;
-    svg {
-      transition: all 0.3s;
-      stroke: #5567FD; 
-      background: transparent;
-    }
-  }
-`;
-
 export const Header = styled(Box)`
   padding: 0 2rem;
   color: black;
@@ -62,91 +17,82 @@ export const Header = styled(Box)`
   flex-direction: row;
   align-items: center;
   border-bottom: 0.1rem solid rgba(0,0,0,0.1);
-  margin-top: 1rem;
   width: 100%;
 `;
 export const Title = styled.p`
   color: black;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0;
 `;
-export const Feed = styled(Box)`
+export const InfoText = styled.p`
   color: black;
-  height: 90%;
-  overflow: auto;
-  padding: 2rem;
-  section {
-    height: 100%;
-    overflow: scroll;
-    width: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
 `;
 
-// Compass Form Info
-export const CompassFormTabs = styled(Box)`
-  height: auto;
+// Project Type
+export const ProjectTypeFeedContainer = styled(Box)`
   width: 100%;
-  margin: 1rem auto;
-`
-export const CompassFormTab = styled(Box)`
-  width: 100%;
-  margin: 0 auto;
-`
-
-// compass type
-export const CompassTypeFeed = styled(Box)`
-  width: 100%;
-  margin: 0.5rem auto;
-  min-height: 17rem;
-  overflow: auto;
+  min-height: 15rem;
   color: black;
-  section {
-    height: 100%;
-    overflow: auto;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-`;
-export const CompassCard = styled(Box)`
-  margin: 0.5rem;
-  padding: 1rem;
-  height: 16rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-`;
-
-export const CompassCardTitle = styled(Box)`
-  width: 100%;
-  min-height: 2rem;
-  height: 20%;
-  color: black;
-  font-weight: 550;
-  font-size: 1.4rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0.5rem 2rem;
+`;
+export const ProjectTypeFeedHeader = styled(Box)`
+  width: 100%;
+  min-height: 1.2rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  text-align: left;
+`;
+export const ProjectTypeFeed = styled(Box)`
+  width: 100%;
+  margin: 0.5rem auto;
+  min-height: 14rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
-export const CompassCardDetails = styled(Box)`
-  height: 80%;
-  min-height: 10rem;
+export const TemplateContainer = styled(Box)`
+  padding: 1rem;
+  width: 9.5rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const ProjectTypeDetails = styled(Box)`
+  height: 10rem;
   width: 100%!important;
   color: black;
   font-weight: 600;
   font-size: 1.5rem;
   display: flex;
   flex-direction: row;
+  background: white;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  
+`;
+export const CompassCardTitle = styled(Box)`
+  width: 100%;
+  height: 1rem;
+  color: black;
+  font-weight: 450;
+  font-size: 0.9rem;
+  text-align: center;
+  
 `;
 export const CompassCircle = styled(Box)`
   min-width: ${props => props.size ? `${props.size}rem` : '12rem'};
@@ -160,15 +106,15 @@ export const StepContainer = styled(Box)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
-  top: 35%;
-  left: 40%;
+  top: 40%;
+  left: 26%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
   list-style: none;
-	height: 2.8rem;
-  width: 2.8rem;
+	height: 1.5rem;
+  width: 1.5rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.5}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.3}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
 `
 export const StepText = styled(Box)`
   padding: 1rem;
@@ -183,24 +129,6 @@ export const StepText = styled(Box)`
     margin: 0;
   }
 `
-export const CompassButtonContainer = styled(Box)`
-  min-width: 10rem;
-  min-height: 8rem;
-  width: 40%;
-  height: 100%;  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`
-export const CompassButtonLink = styled(Button)`
-  font-size: 1rem;
-  width: 100%;
-  height: auto;  
-  padding: 0.5rem 1rem;
-  color: black;
-  border: 0.1rem solid #5567FD;
-`
-
 // Permissions Components
 export const PermissionsCard = styled(Box)`
   margin: 0 auto;
@@ -349,54 +277,63 @@ export const SubmitCompassButton = styled(Button)`
   align-self: center;
   margin: 0 auto;
 `
-
-export const AddCompass = ({ onClick }) => (
-  <DashboardButton
-    onClick={e => onClick()}
-    icon={(<AddCircle color="#5567FD" />)}
-    label="New Project"
-    alignSelf="end"
-  />
-)
-
-export const BackButton = ({ onClick }) => (
-  <DashboardButton
-    onClick={e => onClick()}
-    icon={(<FormPreviousLink color="#5567FD" />)}
-    style={{ float: 'left' }}
-  // label="Add Compass"
-  />
-)
-
-export const ProjectCard = styled(Grid)`
-  margin: 1rem;
-  padding: 2rem;
-  width: 25rem;
-  height: 20rem;
-  background-color: white;
-  border-radius: 1rem;
-  color: white;
-`;
-
-export const CompassTitle = styled(Text)`
+// Project Feed details
+export const Feed = styled(Box)`
   color: black;
-  font-weight: 600;
-  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const ProjectCard = styled(Box)`
+  margin: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 4rem;
+  background-color: white;
+  color: white;
+  flex-direction: row;
+  transition: all 0.1s;
+  :hover {
+    cursor: pointer;
+    transition: all 0.1s;
+    background-color: #5567FD;
+    color: white;
+  }
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+
+`;
+export const CompassTitle = styled(Box)`
+  color: black;
+  font-weight: 400;
+  font-size: 1.5rem;
   line-height: 2.1rem;
+  width: 30%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 2rem;
 `
-export const CompassDescription = styled(Text)`
+export const CompassDescription = styled(Box)`
   color: black;
   padding: 0 2rem;
-  font-weight: 400;
-  font-size: 1.2rem;
-  overflow: scroll;
+  font-size: 0.9rem;
+  width: 40%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `
-export const GoToCompassButton = styled(Button)`
-  background-color: white;
-  border: 0.1rem solid #5567FD;
-  border-radius: 1rem;
+export const CompassDate = styled(Box)`
+  padding: 0 2rem;
+
+  font-size: 0.9rem;
   color: black;
-  padding: 0.1rem 1rem;
-  align-self: center;
-  margin: 0 auto;
+  width: 30%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: end;
 `

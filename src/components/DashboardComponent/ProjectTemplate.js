@@ -1,19 +1,16 @@
 import React, { useContext } from 'react'
 import { GlobalContext } from "../../context/context"
 import {
-  CompassCard,
-  CompassTypeFeed,
+  TemplateContainer,
   CompassCircle,
   StepContainer,
   CompassCardTitle,
-  CompassCardDetails,
-  CompassButtonContainer,
-  CompassButtonLink
+  ProjectTypeDetails
 } from "../../styles/Dashboard"
 import { createCompass, createStep } from "../../utils/mutations"
 import { navigate } from "gatsby"
 
-const CompassType2 = (props) => {
+export default (props) => {
   const { user } = useContext(GlobalContext);
 
   const defaultCompass = [
@@ -54,15 +51,11 @@ const CompassType2 = (props) => {
     }
   ];
 
-
   const goToReview = (event) => {
-    console.log('clicked default compass')
-    // switchTab(3);
     createCompass("Untitled", " ", [user.email], [])
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
-          // console.log(step.title, step.description, step.color, compass.data.createCompass.id)
         )
         navigate(`/Compass?c=${res.data.createCompass.id}`)
       })
@@ -70,30 +63,23 @@ const CompassType2 = (props) => {
   };
 
   return (
-
-    <CompassTypeFeed>
-      <section>
-        <CompassCard onClick={goToReview}>
-          <CompassCardTitle>Default Compass</CompassCardTitle>
-          <CompassCardDetails>
-            <CompassCircle gridArea="content" circleLength={defaultCompass.length}>
-              {
-                defaultCompass.map((item, key) => (
-                  <StepContainer
-                    key={key}
-                    circleLength={defaultCompass.length}
-                    rotateAngle={key * (360 / (defaultCompass.length))}
-                    color={item.color}
-                  />
-                )
-                )
-              }
-            </CompassCircle>
-          </CompassCardDetails>
-        </CompassCard>
-      </section>
-    </CompassTypeFeed>
+    <TemplateContainer onClick={goToReview}>
+      <ProjectTypeDetails>
+        <CompassCircle gridArea="content" circleLength={defaultCompass.length}>
+          {
+            defaultCompass.map((item, key) => (
+                <StepContainer
+                  key={key}
+                  circleLength={defaultCompass.length}
+                  rotateAngle={key * (360 / (defaultCompass.length))}
+                  color={item.color}
+                />
+              )
+            )
+          }
+        </CompassCircle>
+      </ProjectTypeDetails>
+      <CompassCardTitle>Default Compass</CompassCardTitle>
+    </TemplateContainer>     
   )
 }
-
-export default CompassType2; 

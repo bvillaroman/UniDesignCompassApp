@@ -9,3 +9,19 @@ export default (secs) => {
     .filter((v,i) => v !== "00" || i > 0)
     .join(":") 
 }
+
+export const dateFormatter = (date) => {
+  const newDate = new Date(date)
+  const monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  const day = newDate.getDate();
+  const monthIndex = newDate.getMonth();
+  const year = newDate.getFullYear();
+
+  return  monthNames[monthIndex] + " " + day + ', ' + year;
+}
