@@ -1,14 +1,12 @@
-import React from "react"
 import styled from "styled-components"
 import { Box, Button, Grid, Accordion, AccordionPanel, Text, TextInput } from "grommet"
-import { AddCircle, FormPreviousLink } from 'grommet-icons';
 
-// Dashboard
+// Dashboard Containers
 export const DashboardContainer = styled(Box)`
   width: 100%;
   height: 100%;
-  padding: 0 2rem;
   overflow: auto;
+  padding: 0 2rem;
 `;
 export const Header = styled(Box)`
   padding: 0 2rem;
@@ -19,23 +17,26 @@ export const Header = styled(Box)`
   flex-direction: row;
   align-items: center;
   border-bottom: 0.1rem solid rgba(0,0,0,0.1);
-  margin-top: 1rem;
   width: 100%;
 `;
 export const Title = styled.p`
   color: black;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
+  margin: 0;
+`;
+export const InfoText = styled.p`
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
   margin: 0;
 `;
 export const Feed = styled(Box)`
   color: black;
-  height: 90%;
-  overflow: auto;
+  height: 100%;
   padding: 2rem;
   section {
     height: 100%;
-    overflow: scroll;
     width: auto;
     display: flex;
     flex-wrap: wrap;
@@ -43,56 +44,67 @@ export const Feed = styled(Box)`
   }
 `;
 
-// compass type
-export const CompassTypeFeed = styled(Box)`
+// Project Type
+export const ProjectTypeFeedContainer = styled(Box)`
   width: 100%;
-  margin: 0.5rem auto;
-  min-height: 17rem;
-  overflow: auto;
+  min-height: 15rem;
   color: black;
-  section {
-    height: 100%;
-    overflow: auto;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-`;
-export const CompassCard = styled(Box)`
-  margin: 0.5rem;
-  padding: 1rem;
-  height: 16rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-`;
-
-export const CompassCardTitle = styled(Box)`
-  width: 100%;
-  min-height: 2rem;
-  height: 20%;
-  color: black;
-  font-weight: 550;
-  font-size: 1.4rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0.5rem 2rem;
+`;
+export const ProjectTypeFeedHeader = styled(Box)`
+  width: 100%;
+  min-height: 1.2rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  text-align: left;
+`;
+export const ProjectTypeFeed = styled(Box)`
+  width: 100%;
+  margin: 0.5rem auto;
+  min-height: 14rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `;
 
-export const CompassCardDetails = styled(Box)`
-  height: 80%;
-  min-height: 10rem;
+export const TemplateContainer = styled(Box)`
+  padding: 1rem;
+  width: 9.5rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const ProjectTypeDetails = styled(Box)`
+  height: 10rem;
   width: 100%!important;
   color: black;
   font-weight: 600;
   font-size: 1.5rem;
   display: flex;
   flex-direction: row;
+  background: white;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  
+`;
+export const CompassCardTitle = styled(Box)`
+  width: 100%;
+  height: 1rem;
+  color: black;
+  font-weight: 450;
+  font-size: 0.9rem;
+  text-align: center;
+  
 `;
 export const CompassCircle = styled(Box)`
   min-width: ${props => props.size ? `${props.size}rem` : '12rem'};
@@ -106,15 +118,15 @@ export const StepContainer = styled(Box)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
   transition: all 0.3s;
-  top: 35%;
-  left: 40%;
+  top: 40%;
+  left: 26%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
   list-style: none;
-	height: 2.8rem;
-  width: 2.8rem;
+	height: 1.5rem;
+  width: 1.5rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.5}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.3}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
 `
 export const StepText = styled(Box)`
   padding: 1rem;

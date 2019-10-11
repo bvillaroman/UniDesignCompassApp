@@ -7,6 +7,7 @@ import {
   DashboardContainer,
   Header,
   Title,
+  InfoText
 } from "../../styles/Dashboard";
 
 import ProjectCreator from "./ProjectCreator";
@@ -32,8 +33,9 @@ const Dashboard = (props) => {
 
   return (
     <DashboardContainer>
-      <Header gridArea="header" >
+      <Header >
         <Title>Project Hub</Title>
+        <InfoText>What are projects?</InfoText>
       </Header>
 
       <ProjectCreator />
