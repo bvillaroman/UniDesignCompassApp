@@ -7,6 +7,7 @@ import "./src/styles/global.css"
 // You can delete this file if you're not using it
 import React from "react"
 import { GlobalProvider } from "./src/context/context"
+import { CompassProvider } from "./src/context/CompassPage/context"
 import Layout from "./src/components/layout"
 import { Grommet } from 'grommet';
 
@@ -39,7 +40,9 @@ export const wrapRootElement = ({ element }) => (
     }
   >
     <GlobalProvider>
-      {element}
+      <CompassProvider>
+        {element}
+      </CompassProvider>
     </GlobalProvider>
   </Grommet>
 )

@@ -1,16 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
 import { 
   CSInteractions,
   InteractionsTitle,
   CSInteractionsFeed
 } from "../../../styles/CompassPage"
 import Interaction from "./interaction"
+import { CompassContext } from "../../../context/CompassPage/context"
 
-const InteractionFeed = ({interactions, goToInteraction}) => {
+export default ({goToInteraction}) => {
+  const {interactions} = useContext(CompassContext)
+
   // getting the current session
   return (
     <CSInteractions >
-      <InteractionsTitle >Recent Logs</InteractionsTitle>
+      <InteractionsTitle> Recent Logs </InteractionsTitle>
       <CSInteractionsFeed>
         {
           interactions ? interactions.map((item, key) => {
@@ -32,4 +35,3 @@ const InteractionFeed = ({interactions, goToInteraction}) => {
     </CSInteractions>
   )
 };
-export default InteractionFeed;

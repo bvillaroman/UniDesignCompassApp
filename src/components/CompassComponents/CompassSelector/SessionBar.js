@@ -1,45 +1,25 @@
- import React, {useState, useEffect}  from "react";
+import React,{useContext} from "react";
 import { 
   SessionView, 
   SessionSection, 
   SessionTitle,
-  SessionClock,
 } from "../../../styles/CompassPage"
 import Logger from "./Logger"
 import InteractionFeed from "./InteractionFeed"
-const SessionBar = ({ session, interactions,showAttachment,interaction,setInteraction, totalTime, increaseClock }) => {
-  const [currentSession,setCurrrentSession] = useState({})
+import { CompassContext } from "../../../context/CompassPage/context"
 
-  useEffect(() => {
-    setCurrrentSession(session)
-    
-  },[session])
-
-  const translateTime = (secs) => {
-    const sec_num = parseInt(secs, 10)
-    const hours   = Math.floor(sec_num / 3600)
-    const minutes = Math.floor(sec_num / 60) % 60
-    const seconds = sec_num % 60
-
-    return [hours,minutes,seconds]
-      .map(v => v < 10 ? "0" + v : v)
-      .filter((v,i) => v !== "00" || i > 0)
-      .join(":") 
-  }
+export default ({showAttachment, setInteraction}) => {
+  const {session} = useContext(CompassContext)
 
   return (
     <SessionView  gridArea="session" >
       <SessionSection>
         <SessionTitle >
-          {currentSession.name_of_session} 
+          {session.name_of_session} 
         </SessionTitle>
-        <SessionClock >
-          {translateTime(totalTime)}
-        </SessionClock>
-      </SessionSection>
-      { interaction.id && ( <Logger increaseClock={increaseClock} setInteraction={setInteraction} interaction={interaction} showAttachment={showAttachment}/> ) }
-      <InteractionFeed interactions={interactions} goToInteraction={setInteraction}/>
+      </SessionSection> 
+        <Logger  showAttachment={showAttachment} />
+      <InteractionFeed goToInteraction={setInteraction}/>
     </SessionView>
   ) 
 };
-export default SessionBar;
