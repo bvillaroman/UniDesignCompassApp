@@ -25,7 +25,7 @@ const MainView = (props) => (
       <p>Record, track and visualize your design process.</p>
     </MainContent>
     <AuthContainer gridArea="FormContainer"><Auth /></AuthContainer>
-    <AboutContainer gridArea="contact" ><p>About</p></AboutContainer>
+    <AboutContainer gridArea="contact" ><p>About UDC</p></AboutContainer>
     <ContactContainer gridArea="about" ><p>Contact</p></ContactContainer>
   </MainViewContainer>
 )

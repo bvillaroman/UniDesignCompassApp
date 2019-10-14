@@ -37,9 +37,7 @@ const Dashboard = (props) => {
         <Title>Project Hub</Title>
         <InfoText>What are projects?</InfoText>
       </Header>
-
       <ProjectCreator />
-
       <Feed compasses={compasses}/>
     </DashboardContainer>
   )
