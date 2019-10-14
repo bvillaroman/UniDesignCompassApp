@@ -9,9 +9,8 @@ export const DashboardContainer = styled(Box)`
   padding: 0 2rem;
 `;
 export const Header = styled(Box)`
-  padding: 0 2rem;
   color: black;
-  min-height: 4rem;
+  min-height: 2.5rem;
   justify-content: space-between;
   display: flex;
   flex-direction: row;
@@ -22,7 +21,7 @@ export const Header = styled(Box)`
 export const Title = styled.p`
   color: black;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0;
 `;
 export const InfoText = styled.p`
@@ -31,31 +30,34 @@ export const InfoText = styled.p`
   font-size: 1rem;
   margin: 0;
 `;
+export const DashboardSectionHeader = styled(Box)`
+  width: 100%;
+  min-height: 1.3rem;
+  margin: 0.5rem auto;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: left;
+  align-items: center;
+`;
 
 // Project Type
 export const ProjectTypeFeedContainer = styled(Box)`
   width: 100%;
-  min-height: 15rem;
+  min-height: 15.6rem;
   color: black;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
 `;
-export const ProjectTypeFeedHeader = styled(Box)`
-  width: 100%;
-  min-height: 1.2rem;
-  color: black;
-  display: flex;
-  flex-direction: row;
-  font-size: 1.2rem;
-  text-align: left;
-`;
+
 export const ProjectTypeFeed = styled(Box)`
   width: 100%;
-  margin: 0.5rem auto;
-  min-height: 14rem;
+  min-height: 12rem;
   color: black;
   display: flex;
   flex-direction: row;
@@ -64,15 +66,15 @@ export const ProjectTypeFeed = styled(Box)`
 `;
 
 export const TemplateContainer = styled(Box)`
-  padding: 1rem;
+  padding: 0 1rem;
   width: 9.5rem;
-  height: 14rem;
+  height: 11rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 export const ProjectTypeDetails = styled(Box)`
-  height: 10rem;
+  height: 9rem;
   width: 100%!important;
   color: black;
   font-weight: 600;
@@ -116,18 +118,84 @@ export const StepContainer = styled(Box)`
 	position: absolute;
   transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.3}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
 `
-export const StepText = styled(Box)`
-  padding: 1rem;
-  color: black; 
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
+// Project Feed details
+
+export const ProjectFeedContainer = styled(Box)`
+  color: black;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 2rem;
   display: flex;
   flex-direction: column;
-  word-break: break-all;
-  p {
-    margin: 0;
+`;
+export const ProjectFeedHeader = styled(Box)`
+  padding: .5rem 0;
+  width: 100%;
+  min-height: 1.5rem;
+  background-color: none;
+  flex-direction: row;
+  div {
+    font-size: 1.0rem;
+    font-weight: 4500;
+    color: rgba(0,0,0,0.6);
   }
+  border-bottom: 0.05rem solid rgba(0,0,0,0.1);
+`;
+export const Feed = styled(Box)`
+  color: black;
+  width: 100%;
+  height: 100%;
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+`;
+export const ProjectCard = styled(Box)`
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 4rem;
+  background-color: none;
+  flex-direction: row;
+  // transition: all 0.2s;
+  :hover {
+    cursor: pointer;
+    // transition: all 0.2s;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #d2d4d6;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    border-radius: 0.5rem;
+  }
+`;
+export const CompassTitle = styled(Box)`
+  color: black;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+  width: 30%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 2rem;
+`
+export const CompassDescription = styled(Box)`
+  color: rgba(0,0,0,0.8);
+  font-weight: 400;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  width: 40%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`
+export const CompassDate = styled(Box)`
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.8);
+  width: 30%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: end;
 `
 // Permissions Components
 export const PermissionsCard = styled(Box)`
@@ -276,64 +344,4 @@ export const SubmitCompassButton = styled(Button)`
   padding: 0.1rem 1rem;
   align-self: center;
   margin: 0 auto;
-`
-// Project Feed details
-export const Feed = styled(Box)`
-  color: black;
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-`;
-export const ProjectCard = styled(Box)`
-  margin: 1rem;
-  padding: 1rem 0;
-  width: 100%;
-  min-height: 4rem;
-  background-color: white;
-  color: white;
-  flex-direction: row;
-  transition: all 0.1s;
-  :hover {
-    cursor: pointer;
-    transition: all 0.1s;
-    background-color: #5567FD;
-    color: white;
-  }
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-
-`;
-export const CompassTitle = styled(Box)`
-  color: black;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2.1rem;
-  width: 30%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0 2rem;
-`
-export const CompassDescription = styled(Box)`
-  color: black;
-  padding: 0 2rem;
-  font-size: 0.9rem;
-  width: 40%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-`
-export const CompassDate = styled(Box)`
-  padding: 0 2rem;
-
-  font-size: 0.9rem;
-  color: black;
-  width: 30%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: end;
 `
