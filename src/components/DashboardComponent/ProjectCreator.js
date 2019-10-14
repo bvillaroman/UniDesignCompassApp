@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ProjectTypeFeed, ProjectTypeFeedContainer, ProjectTypeFeedHeader } from "../../styles/Dashboard"
+import { ProjectTypeFeed, ProjectTypeFeedContainer, DashboardSectionHeader } from "../../styles/Dashboard"
 
 import ProjectTemplate from "./ProjectTemplate"
 
@@ -8,9 +8,9 @@ export default (props) => {
 
   return (
     <ProjectTypeFeedContainer>
-      <ProjectTypeFeedHeader>
+      <DashboardSectionHeader>
         Create a Project
-      </ProjectTypeFeedHeader>
+      </DashboardSectionHeader>
       <ProjectTypeFeed>
         <ProjectTemplate/>
       </ProjectTypeFeed>

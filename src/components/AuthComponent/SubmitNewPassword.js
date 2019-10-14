@@ -81,7 +81,7 @@ export default ({ switchToSignUp, user, switchToReset }) => {
       </FormSwitchContainer>
       <FormSwitchContainer direction="row">
         <FormSwitchLabel truncate>Re-enter email?</FormSwitchLabel>
-        <FormSwitchButton onClick={e => switchToReset()}> Back to email </FormSwitchButton>
+        <FormSwitchButton onClick={e => switchToReset()}> Back to Sign in </FormSwitchButton>
       </FormSwitchContainer>
       <FormMessageLabel truncate >
       { message }

@@ -4,7 +4,10 @@ import {
   CompassTitle,
   ProjectCard,
   CompassDescription,
-  CompassDate
+  CompassDate,
+  DashboardSectionHeader,
+  ProjectFeedContainer,
+  ProjectFeedHeader
 } from "../../styles/Dashboard"
 import { Loader } from "../../styles/layout"
 import { navigate } from "gatsby"
@@ -27,7 +30,14 @@ const CompassFeed = (props) => {
   }
 
   return (
-    <Feed gridArea="feed">
+    <ProjectFeedContainer>
+      <DashboardSectionHeader> Past Projects </DashboardSectionHeader>
+      <ProjectFeedHeader>
+        <CompassTitle >Name</CompassTitle>
+        <CompassDescription >Description</CompassDescription>
+        <CompassDate> Created On</CompassDate>
+      </ProjectFeedHeader>
+      <Feed gridArea="feed">
         {
           loading ? <Loader />
             : compasses ? compasses.map((compass, key) => (
@@ -41,7 +51,9 @@ const CompassFeed = (props) => {
               : error ? <p>{error}</p>
                 : <p>you have no compasses</p>
         }
-    </Feed>
+      </Feed>
+    </ProjectFeedContainer>
+    
   )
 }
 
