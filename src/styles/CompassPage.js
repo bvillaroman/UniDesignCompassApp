@@ -12,9 +12,10 @@ import {
   Layer,
   Video,
   Accordion, 
-  AccordionPanel
+  AccordionPanel,
+  Menu
 } from "grommet"
-import {  CompassIcon, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
+import {  AddCircle, More, Attachment, PauseFill,PlayFill, Close, Download, Image, Document, Multimedia } from 'grommet-icons';
 import React from "react";
 
 export const AttachmentButtonLabel = styled.label`
@@ -187,33 +188,133 @@ export const CompassDetailsDescription = styled.p`
 // Session Creator 
 
 export const SCContainer = styled(Box)`
-  margin: 1rem auto;
-  padding: 1rem;
-  width: 90%;
-  height: auto;
-  min-height: 19rem;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-  background: white;
-`
-export const SCHeader = styled.h1`
-  text-align: center;
   margin: 0 auto;
-  margin-bottom: 1rem;
-  width: 100%;
-  height: auto;
-  font-size: 2.0rem;
-  line-height: 2.2rem;
-  color: black;
-  font-weight: 600;
-`
-export const SCBody = styled(Box)`
+  padding-top: 1rem;
   width: 90%;
   height: 100%;
-  margin: 0 auto;
-  background: white;
+  background: transparent;
 `
+export const SCHeader = styled(Box)`
+  text-align: left;
+  margin: 1rem auto;
+  width: 100%;
+  height: auto;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+    margin: 0;
+    padding: 0;
+  }
+`
+export const SCAddSession = styled(Button)`
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  background: #5567FD; 
+  color: white;
+  padding: 0.3rem 0.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+`
+
+export const SCBody = styled(Box)`
+  width: 98%;
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  background: transparent;
+`
+export const SessionRow = styled(Box)`
+  padding: 1rem 0;
+  width: 100%;
+  min-height: 4rem;
+  background-color: none;
+  flex-direction: row;
+  align-items: center;
+  :hover {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #d2d4d6;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+    border-radius: 0.5rem;
+  }
+`;
+export const SessionRowHeader = styled(Box)`
+  padding: 0;
+  width: 100%;
+  min-height: 2rem;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(0,0,0,0.1);
+  margin: 0.5rem auto;
+  div {
+    font-size: 1rem;
+    margin: 0;
+    color: rgba(0,0,0,0.6);
+  }
+`;
+export const SessionRowTitle = styled(Box)`
+  color: black;
+  font-weight: 450;
+  font-size: 0.9rem;
+  width: 60%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0 1rem;
+`
+export const SessionRowDate = styled(Box)`
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.8);
+  width: 30%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`
+export const SessionRowMore = styled(Box)`
+  padding: 0 1rem;
+  width: 10%;
+`
+const SessionRowMoreStyle = styled(Button)`
+  svg {
+    transform: rotate(90deg);
+    height: 1rem;
+    width: 1rem;
+    padding: 0.5rem;
+    :hover {
+      stroke: white;
+    }
+  }
+  :hover {
+    background-color: #5567FD;
+    stroke: white;
+  }
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 100%;
+  text-align: center;
+`
+export const SessionRowMoreButton = ({onClick}) => (
+  <SessionRowMoreStyle 
+    icon={<More/>}
+    onClick={onClick}
+    round
+  />
+);
+
 export const SCForm = styled(Form)`
 `
 
@@ -236,12 +337,10 @@ export const SCInputField = styled(TextInput)`
   padding-top: 1rem;
   color: black;
 `;
-
 export const SCButtonContainer = styled(Box)`
   width: 100%;
   margin: 1rem auto;
 `;
-
 export const SCButton = styled(Button)`
   width: 12rem;
   transition: all 0.3s;
@@ -256,6 +355,7 @@ export const SCButton = styled(Button)`
   }
   margin: 0 auto;
 `;
+
 // Logger
 
 export const LoggerGrid = styled(Box)`

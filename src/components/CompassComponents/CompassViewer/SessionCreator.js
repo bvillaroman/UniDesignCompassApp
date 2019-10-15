@@ -1,7 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { CompassContext } from "../../../context/CompassPage/context"
 import { createSession } from "../../../utils/mutations"
+import { dateFormatter, timeSorter } from "../../../utils/translateTime"
 import {navigate} from "gatsby"
+import { AddCircle} from 'grommet-icons';
 
 import {
   SCButtonContainer,
@@ -12,20 +14,38 @@ import {
   SCContainer,
   SCTextArea,
   SCInputContainer,
-  SCInputField
+  SCInputField,
+  SessionRow,
+  SessionRowTitle,
+  SessionRowDate,
+  SCAddSession,
+  SessionRowMore,
+  SessionRowMoreButton,
+  SessionRowHeader
 } from "../../../styles/CompassPage"
 
 const SessionCreator = (props) => {
   const {compass} = useContext(CompassContext)
   const [form, setForm] = useState({ title: '', description: '' });
   const [error] = useState({ title: '', description: '' })
+  const [pastSessions, setPastSessions] = useState([])
+
+  useEffect(() => {
+    if(compass.hasOwnProperty("id")){
+      setPastSessions(compass.sessions.items.sort(timeSorter))
+    }  
+  }, [compass])
 
   const onChange = ({ target: { value, name } }) => { setForm({ ...form, [name]: value }) };
 
   const currentCompassId = compass.id
 
+  const goToSession = (session) => {
+    navigate(`/Compass?c=${currentCompassId}&s=${session}`)
+  }
+
   const sendForm = (e) => {
-    createSession(form.title, form.description, currentCompassId)
+    createSession("untitled", " ", currentCompassId)
       .then((result) => {
         navigate(`/Compass?c=${currentCompassId}&s=${result.data.createSession.id}`)
       })
@@ -34,9 +54,32 @@ const SessionCreator = (props) => {
 
   return (
     <SCContainer>
-      <SCHeader> Start a New Session </SCHeader>
+      <SCHeader> 
+        <p>Sessions </p>
+        <SCAddSession 
+          onClick={sendForm} 
+          label="New Session" 
+          icon={<AddCircle/>}
+        />
+      </SCHeader>
+      
       <SCBody>
-        <SCForm  
+        <SessionRowHeader>
+          <SessionRowTitle>Title</SessionRowTitle>
+          <SessionRowDate>Created on</SessionRowDate>
+          <SessionRowMore></SessionRowMore>
+        </SessionRowHeader>
+        {
+          pastSessions !== [] ? pastSessions.map((session, key) => (
+              <SessionRow key={key} onClick={(e) => goToSession(session.id)}>
+                <SessionRowTitle >{session.name_of_session}</SessionRowTitle>
+                <SessionRowDate>{dateFormatter(session.createdAt)}</SessionRowDate>
+                <SessionRowMore><SessionRowMoreButton onClick={e => console.log("more")} /></SessionRowMore>
+              </SessionRow>
+            )
+          ) : <p>You have no Sessions!</p>
+        }
+        {/* <SCForm  
             onSubmit={sendForm}
             onChange={onChange}
             errors={{ ...error }}
@@ -51,7 +94,7 @@ const SessionCreator = (props) => {
             <SCButtonContainer>
               <SCButton type="submit" label="Create Session" />
             </SCButtonContainer>
-          </SCForm>
+          </SCForm> */}
       </SCBody>
     </SCContainer>
   )
