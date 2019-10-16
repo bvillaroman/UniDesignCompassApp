@@ -58,7 +58,7 @@ const CompassLinkStyles = styled(Link)`
   margin: 0.5rem 0;
 
   @media (max-width: 376px){
-    display: none;
+    //display: none;
   }
 `
 export const SignOutButton = styled(Button)`
@@ -78,8 +78,8 @@ export const HamburgerIcon = styled.label`
   line-height: 70px;
 
   @media (max-width: 376px){
-    display: block;
-    cursor: pointer;
+    //display: block;
+    //cursor: pointer;
 
     &:hover ${CompassLink}{
       display: block;
