@@ -3,6 +3,16 @@ import styled from 'styled-components';
 import { Box, Button, Grid } from 'grommet';
 import { Link } from 'gatsby';
 
+// const size = {
+//   mobileS: 'max-width: 321px',
+//   mobileM: 'max-width: 376px',
+//   mobileL: 'max-width: 426px',
+//   tablet: 'max-width: 767px',
+//   laptop: 'max-width: 1025px',
+//   laptopL: 'max-width: 1441px',
+//   desktop: 'max-width: 2561px'
+// }
+
 export const LandingPageContainer = styled(Grid)`
   width: 100%;
   background: white;
@@ -42,15 +52,19 @@ export const LinkButton = styled(Button)`
   background-color:#5567FD;
   color: white; 
 `;
-export const GatsbyLink = ({to,label,primary}) => (
-  <GatsbyLinkContainer to={to}>
-    {primary ? <LinkButton label={label}/> : label}
+export const GatsbyLink = ({ to, label, primary }) => (
+  <GatsbyLinkContainer to={to} style={{ margin: 'auto' }}>
+    {primary ? <LinkButton label={label} /> : label}
   </GatsbyLinkContainer>
 )
 export const MainViewContainer = styled(Grid)`
   width: 90%;
   margin: 0 auto;  
   margin-top: 1rem;
+
+  @media (max-width: 1025px) {
+    display: block;
+  }
 `
 export const MainContent = styled(Box)`
   font-size: 3.5rem;
@@ -67,6 +81,11 @@ export const AuthContainer = styled(Box)`
   align-self: start;
   text-align: center;
   border-left: 0.1rem solid rgba(0,0,0,0.1);
+
+  @media (max-width: 1025px) {
+    border: none;
+    border-top: 0.1rem solid rgba(0,0,0,0.1);
+  }
 `
 export const AboutContainer = styled(Box)`
 `
