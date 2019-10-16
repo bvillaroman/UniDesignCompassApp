@@ -12,7 +12,7 @@ const NavBar = (props) => (
       <GatsbyLink to="/" label="UDCompass" />
       </LogoBox>
       <LinkContainer>
-        <GatsbyLink to="/" label="About" />
+        <GatsbyLink to="/" label="About UDC" />
         <GatsbyLink to="/" label="Contact"/>
       </LinkContainer>
   </NavContainer>

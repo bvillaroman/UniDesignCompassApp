@@ -63,7 +63,7 @@ export default ({ switchToSignUp }) => {
               <InputField name="email" type="email" placeholder="Email" />
             </InputContainer>
             <Box direction="column" justify="between" margin={{ top: "medium" }}>
-              <Button type="submit" label="Send Confirmation code" primary />
+              <Button type="submit" label="Send Confirmation Code" primary />
               <FormSwitchBox >
                 <FormSwitchContainer direction="row">
                   <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
