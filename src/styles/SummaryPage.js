@@ -33,6 +33,11 @@ export const SummaryListButton = styled(Button)`
     stroke: white; 
   }
   margin: 0 auto;
+
+  @media (max-width: 376px){
+    width: 45%;
+    margin: 0.45em;
+  }
 `;
 
 export const SummaryLogBox = styled.div`
@@ -45,6 +50,9 @@ export const SummaryLogBox = styled.div`
   padding: 0.5em;
   overflow: auto;
   
+  @media (max-width: 376px){
+    width: auto;
+  }
 `;
 
 export const SingleSummaryLog = styled.h4`
@@ -65,6 +73,11 @@ export const LogAttachments = styled.h6`
 export const SummaryContainer = styled.div`
   padding: 2em;
   width: 100%;
+
+  @media (max-width: 376px){
+    width: auto;
+    padding: 1em;
+  }
 `;
 
 export const TextAreaContainer = styled.div`
@@ -72,6 +85,10 @@ export const TextAreaContainer = styled.div`
   height: 85%;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 376px){
+    flex-direction: column;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -83,6 +100,12 @@ export const TextArea = styled.textarea`
   border-radius: 10px; 
   margin-left: 1em;
   font-size: 20px;
+
+  @media (max-width: 376px){
+    width: -webkit-fill-available;
+    margin-left: 0;
+  }
+  
 `;
 
 export const CommentButton = styled(Button)`
@@ -99,6 +122,12 @@ export const CommentButton = styled(Button)`
   }
   border-radius: 1em;
   margin-top: 0.5em;
+
+  @media (max-width: 376px){
+    width: 45%;
+    float: left;
+    margin-top: 0.5em;
+  }
 `;
 
 //SummarySession
@@ -106,13 +135,18 @@ export const SummaryTable = styled(Table)`
   //display: block;
   overflow: auto;
   width:100%;
-  table-layout: fixed;
+  //table-layout: fixed;
+
+  @media (max-width: 376px){
+    
+  }
 `;
 
 export const SummaryTableHeader = styled(TableHeader)`
   font-weight: 350;
   border-bottom: solid 1.5px;
   width: 20%;
+
 `;
 
 export const SummaryTableBody = styled(TableBody)`
@@ -140,14 +174,16 @@ export const SummaryTableCellBody = styled(TableCell)`
 `;
 
 export const SummaryTdBody = styled.td`
-  border-bottom: solid 1px;
-  border: hidden;
+  //border-bottom: solid 1px;
+  //border: hidden;
   background-color: ${props => props.color ? props.color : "transparent"};
   
 `;
 
 export const SummaryLogHeader = styled.div`
-
+  @media (max-width: 376px){
+    text-align-last: center;  
+  }
 `;
 
 export const SummaryTableConatiner = styled.div`
@@ -155,7 +191,9 @@ export const SummaryTableConatiner = styled.div`
   display: block;
   overflow: auto;
   margin: 1em;
-  width: 96%
+  width: 96%;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  background: white;
 `;
 
 export const SummarySessionName = styled.div`
@@ -170,10 +208,21 @@ export const SummaryMainView = styled.div`
   margin-top: 1em;
   margin-Left: 1em; 
   margin-bottom: 1em;
+  margin-right: 1em;
   //border: groove;
 `;
 
 export const SummaryTdHeader = styled.td`
   text-align: left;
   font-size: 1.4em;
+`;
+
+export const SummaryTdHeader1 = styled.td`
+  text-align: left;
+  font-size: 1.4em;
+
+  @media (max-width: 376px){
+    background: blue;
+    position: fixed;
+  }  
 `;

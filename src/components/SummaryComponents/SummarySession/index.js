@@ -7,6 +7,7 @@ import {
   SummaryMainView,
   SummaryTable,
   SummaryTableHeader,
+  SummaryTdHeader1,
   SummaryTableBody,
   SummaryTableRow,
   SummaryTdHeader,
@@ -60,20 +61,20 @@ const SummarySession = (props) => {
                 <SummaryTableRow>
                   <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
-                  <SummaryTdHeader>CreatedAt</SummaryTdHeader>
+                  {/* <SummaryTdHeader>CreatedAt</SummaryTdHeader> */}
                   <SummaryTdHeader>Log</SummaryTdHeader>
-                  <SummaryTdHeader style={{ width: '19%' }}>Attachments</SummaryTdHeader>
+                  <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader>
                 </SummaryTableRow>
               </SummaryTableHeader>
               {/* {console.log(session.interactions.items.sort(timeConverter))} */}
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
                 <SummaryTableBody>
                   <tr key={i} onClick={() => navigate(`/Summary?c=${compassID}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
-                    <SummaryTdBody color={interaction.step.color} >{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} >{interaction.duration}s</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} >{interaction.createdAt.substring(0, 19)}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} >{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
-                    <SummaryTdBody color={interaction.step.color} >{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
+                    <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
+                    {/* <SummaryTdBody>{interaction.createdAt.substring(0, 19)}</SummaryTdBody> */}
+                    <SummaryTdBody>{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
+                    <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                     {console.log(interaction)}
                   </tr>
                 </SummaryTableBody>

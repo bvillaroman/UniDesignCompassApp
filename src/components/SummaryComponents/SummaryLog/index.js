@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { updateInteraction } from "../../../utils/mutations";
 import { getInteraction } from "../../../utils/queries"
 import { navigate } from "gatsby"
-import { Storage } from 'aws-amplify';
+import LogLinkArray from '../SummaryLinks/LogLinkArray'
+// import { Storage } from 'aws-amplify';
 import {
   SummaryTitle,
   SummaryListButton,
@@ -16,28 +17,33 @@ import {
   CommentButton
 } from '../../../styles/SummaryPage'
 
-const Link = ({ item, name }) => {
-  const [link, setLink] = useState(undefined)
-  Storage.get(item)
-    .then(result => setLink(result))
-    .catch(err => console.log('You have no attachments', err))
-  return (link ? <LogAttachments><a href={link} target="__blank__">{name}</a></LogAttachments> : null)
-}
+// const Link = ({ item }) => {
+//   const { key, name } = item;
+//   const [link, setLink] = useState(undefined)
+//   console.log({ key })
+//   Storage.get(key)
+//     .then(res => setLink(res))
+//     .catch(err => console.log('You have no attachments', err))
+//   return (link ? <LogAttachments><a href={link} target="__blank__">{name}</a></LogAttachments> : null)
+// }
 
-const LinkArray = ({ items }) => {
-  return (
-    <>
-      {items.map((item, i) => <Link name={item.name} key={i} />)}
-    </>
-  )
-}
+// const LinkArray = ({ items }) => {
+//   console.log({ items })
+//   return (
+//     <>
+//       {items.map((item, i) => <Link item={item} />)}
+//       {/* {<Link name={item.name} key={i} />} */}
+//     </>
+//   )
+// }
 
 const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, comments, sessionID, interactionID }) => {
   const [comment, setComment] = useState("");
   // const [sessionID, setSessionID] = useState("");
   // const [interactionID, setInteractionID] = useState("");
 
-  console.log(attachments)
+  const { items } = attachments;
+  console.log(items, 'SUP')
   const handleSubmit = (event) => {
     event.preventDefault();
     updateInteraction(interactionId)
@@ -81,7 +87,7 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, c
           <CommentButton type="submit" label="Add Comment"></CommentButton>
         </form>
       </TextAreaContainer>
-      <LinkArray items={attachments.items} />
+      <LogLinkArray items={items} />
     </SummaryContainer>
   )
 }
