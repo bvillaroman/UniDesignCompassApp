@@ -9,7 +9,7 @@ import {
   TableBody
 } from 'grommet';
 
-
+//Summary Log
 export const SummaryTitle = styled.h4`
   padding: 0;
   margin: 0; 
@@ -22,7 +22,7 @@ export const SummaryListButton = styled(Button)`
   float: right;
   color: black;
   padding: initial;
-  width: 15%;
+  width: 16%;
   transition: all 0.3s;
   border: 0.15rem solid #5567FD;
   background-color:#5567FD;
@@ -109,8 +109,8 @@ export const TextArea = styled.textarea`
 `;
 
 export const CommentButton = styled(Button)`
-  width: 90%;
-  margin-left 2.4em;
+  width: 89%;
+  float: right;
   transition: all 0.3s;
   border: 0.15rem solid #5567FD;
   background-color:#5567FD;

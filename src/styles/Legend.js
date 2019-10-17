@@ -6,7 +6,7 @@ export const LegendContainer = styled.div`
   padding: 0; 
   background-color: white;
 
-  @media (max-width: 376px){
+  @media (max-width: 500px){
     width: 100%
   }
 `;
@@ -17,7 +17,7 @@ export const UlContainer = styled.ul`
   text-align: left;
   margin: 0;
 
-  @media (max-width: 376px){
+  @media (max-width: 500px){
     list-style: none;
     padding: 1em;
     text-align: center;

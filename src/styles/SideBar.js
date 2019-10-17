@@ -19,9 +19,15 @@ export const CompassSideBar = styled(Box)`
   height: 100vh;
   justify-content: space-between;
 
-  @media (max-width: 376px){
+  @media (max-width: 768px){
     width: 100%;
     height: 0%;
+    
+    
+    a:not(:nth-last-child(4)){
+      ${props => props.renderSidebar ? 'display: none;' : 'initial'};
+    };
+
   }
 `
 export const CompassHeader = styled(Link)`
@@ -37,6 +43,10 @@ export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media (max-width: 768px){
+    width: 20%;
+  }
 `;
 
 const CompassLinkStyles = styled(Link)`
@@ -57,7 +67,7 @@ const CompassLinkStyles = styled(Link)`
   justify-content: center;
   margin: 0.5rem 0;
 
-  @media (max-width: 376px){
+  @media (max-width: 768px){
     //display: none;
   }
 `
@@ -77,23 +87,10 @@ export const HamburgerIcon = styled.label`
   display: none;
   line-height: 70px;
 
-  @media (max-width: 376px){
-    //display: block;
-    //cursor: pointer;
-
-    &:hover ${CompassLink}{
-      display: block;
-    }
-  }
-`;
-
-export const HamburgerInput = styled.input`
-  display: none;
-
-  @media (max-width: 376px){
-    #toggle:checked + .CompassLink {
-      display: block;
-    }
+  @media (max-width: 768px){
+    display: block;
+    cursor: pointer;
+    align-self: flex-end;
   }
 `;
 

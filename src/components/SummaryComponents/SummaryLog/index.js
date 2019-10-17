@@ -68,14 +68,14 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, c
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
-        <SummaryListButton label=" Return to Logs " onClick={() => navigate(`/Summary?c=${compassID}`)} />
+        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compassID}`)} />
         <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compassID}&s=${sessionID}&i=${interactionID}`)} />
       </SummaryLogHeader>
       <TextAreaContainer>
         <SummaryLogBox>
           <SingleSummaryLog>{currentLog}</SingleSummaryLog>
         </SummaryLogBox>
-        <form onSubmit={handleSubmit} style={{ marginTop: "0.5em" }}>
+        <form onSubmit={handleSubmit} style={{ marginTop: "0.5em", width: "40%" }}>
           <TextArea
             placeholder="Please enter comments here..."
             onChange={e => {

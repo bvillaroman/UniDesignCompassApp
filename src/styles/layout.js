@@ -7,7 +7,7 @@ export const LayoutContainer = styled(Box)`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 376px){
+  @media (max-width: 768px){
     flex-direction: column;
   }  
 `;
@@ -21,7 +21,7 @@ export const MainViewContainer = styled(Box)`
   height: 100vh;
   background: #F4F6F9;
 
-  @media (max-width: 376px){
+  @media (max-width: 500px){
     flex-direction: column-reverse;
     block-size: inherit;
   }  
