@@ -146,7 +146,7 @@ export const CompassNavigationBar = styled(Box)`
   // background: white;
 `;
 
-// Compass Details 
+// Project Details 
 export const ProjectDetailsContainer = styled(Box)`
   width: 90%;
   min-height: 15rem;
@@ -167,24 +167,80 @@ export const ProjectDetailsContainer = styled(Box)`
   transition: box-shadow 150ms ease;
 `;
 
-export const ProjectDetailsTitle = styled.h1`
-  text-align: left;
-  padding-left: 0.5rem;
-  margin: 0 auto;
+export const ProjectDetailsTitle = styled(Box)`
   width: 100%;
   height: auto;
-  font-size: 2.0rem;
-  line-height: 2.2rem;
-  color: ${props => props.color ? props.color: "black"};
-  font-weight: 600;
+  flex-direction: row;
+  align-items: center;
+  span {
+    text-align: left;
+    padding-left: 0.5rem;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+    color: ${props => props.color ? props.color: "black"};
+    font-weight: 600;
+  }
 `;
-export const CompassDetailsDescription = styled.p`
+export const EditProjectButton = styled(Button)`
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  background: #5567FD; 
+  color: white;
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+`;
+export const CompassDetailsDescription = styled(Box)`
   width: 90%;
-  height: auto;
+  margin: 0 auto;
   font-size: 1.0rem;
-  padding-left: 1rem;
+  padding: 1rem;
   color: black;
 `;
+export const ProjectTitleText = styled(Box)`
+  font-weight: 550;
+  font-size: 1rem;
+  color: black;
+  margin: 0;  
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: none;
+  padding: 11px;
+  padding-top: 0.9rem;
+  background: transparent;
+  font-weight: 600;
+`
+export const ProjectDescriptionText = styled(Box)`
+  font-size: 1rem;
+  padding: 11px;
+  padding-top: 10px;
+  color: black;
+`
+export const ProjectEditButtons = styled(Box)`
+  width: 100%;
+  flex-direction: row;  
+  justify-content: space-between;
+`
+export const CompassDetailsTitle = styled(Box)`
+  font-weight: 550;
+  font-size: 1rem;
+  padding-top: 1rem;
+  color: black;
+  margin: 0;  
+  box-sizing: border-box;
+  border: none;
+  padding: 11px;
+  background: transparent;
+  font-weight: 600;
+`
 
 // Session Creator 
 
