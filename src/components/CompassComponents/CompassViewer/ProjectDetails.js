@@ -1,7 +1,7 @@
 import React,{useContext,useEffect, useState} from "react";
 import { 
-  CompassDetailsContainer, 
-  CompassDetailsTitle, 
+  ProjectDetailsContainer, 
+  ProjectDetailsTitle, 
   CompassDetailsDescription,
 } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
@@ -11,6 +11,7 @@ export default (props) => {
   const {compass} = useContext(CompassContext)
   const [title, setTitle] = useState("Compass Details")
   const [description, setDescription] = useState(" ")
+  const [steps, setSteps] = useState([])
 
   useEffect(() => {
     if(compass.hasOwnProperty("id")){
@@ -18,18 +19,37 @@ export default (props) => {
       setTitle(name)
       const desc = compass.description_of_compass.length > 2 ? compass.description_of_compass.charAt(0).toUpperCase() + compass.description_of_compass.slice(1) : " ";
       setDescription(desc)
+
+      setSteps(compass.steps.items)
     }  
   }, [compass])
   
   return (
-    <CompassDetailsContainer>
-      <Compass />
-      <CompassDetailsTitle >
+    <ProjectDetailsContainer>
+      {/* <div> Project </div> */}
+      <ProjectDetailsTitle >
         {title} 
-      </CompassDetailsTitle>
+      </ProjectDetailsTitle>
       <CompassDetailsDescription >
         {description} 
       </CompassDetailsDescription>
-    </CompassDetailsContainer>
+
+      {/* <div> Compass </div>
+
+      <ProjectDetailsTitle >
+        Compass Type
+      </ProjectDetailsTitle>
+      <CompassDetailsDescription >
+        {
+          steps && steps.map(step => (
+            <div>
+              <div> {step.name_of_step}</div>
+              <div> {step.description_of_step}</div>
+            </div> 
+          )
+        ) }
+      </CompassDetailsDescription> */}
+    </ProjectDetailsContainer>
+
   ) 
 };

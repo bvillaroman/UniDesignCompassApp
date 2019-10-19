@@ -147,7 +147,7 @@ export const CompassNavigationBar = styled(Box)`
 `;
 
 // Compass Details 
-export const CompassDetailsContainer = styled(Box)`
+export const ProjectDetailsContainer = styled(Box)`
   width: 90%;
   min-height: 15rem;
 
@@ -167,8 +167,9 @@ export const CompassDetailsContainer = styled(Box)`
   transition: box-shadow 150ms ease;
 `;
 
-export const CompassDetailsTitle = styled.h1`
-  text-align: center;
+export const ProjectDetailsTitle = styled.h1`
+  text-align: left;
+  padding-left: 0.5rem;
   margin: 0 auto;
   width: 100%;
   height: auto;

@@ -1,8 +1,7 @@
 import React, {useState, useEffect, useContext}  from "react";
 import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
-import CompassDetails from "./CompassDetails"
-import CompassWheel from "./CompassWheel"
+import ProjectDetails from "./ProjectDetails"
 import SessionCreator from "./SessionCreator"
 import StepDetails from "./StepDetails"
 
@@ -43,7 +42,7 @@ export default (props) => {
           <SessionCreator/>
       </MainContainer>
       <CompassNavigationBar>
-        <CompassDetails />
+        <ProjectDetails />
       </CompassNavigationBar>
     </CompassViewerContainer>
 )};
