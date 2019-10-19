@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   CompassSideBar,
   CompassHeader,
   LinkContainer,
   CompassLink,
+  HamburgerIcon
 } from '../../styles/SideBar'
-import {Compass, DocumentText, BarChart, Home, User} from 'grommet-icons'
+import { Compass, DocumentText, BarChart, Home, User } from 'grommet-icons'
 
 
-const CompassBar = ({compass, title, show = true}) => {
+const CompassBar = ({ compass, title, show = true }) => {
+  const [renderSidebar, setRenderSidebar] = useState(true);
+  const handleClick = () => {
+    setRenderSidebar(!renderSidebar);
+  }
+
   return (
-    <CompassSideBar>
+    <CompassSideBar renderSidebar={renderSidebar}>
+      <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
-        <CompassHeader to={`/Compass?c=${compass}`}>{title}</CompassHeader>
-        <CompassLink to={`/Compass?c=${compass}`}><Compass/>{show && <span>Compass</span>}</CompassLink>
-        <CompassLink to={`/Summary?c=${compass}`}><DocumentText/>{show && <span>Summary</span>}</CompassLink>
-        <CompassLink to={`/Analytics?c=${compass}`}><BarChart/>{show && <span>Analytics</span>}</CompassLink>
+        <CompassHeader className='compassHeader' to={`/Compass?c=${compass}`}>{title}</CompassHeader>
+        <CompassLink to={`/Compass?c=${compass}`}><Compass />{show && <span>Compass</span>}</CompassLink>
+        <CompassLink to={`/Summary?c=${compass}`}><DocumentText />{show && <span>Summary</span>}</CompassLink>
+        <CompassLink to={`/Analytics?c=${compass}`}><BarChart />{show && <span>Analytics</span>}</CompassLink>
       </LinkContainer>
       <LinkContainer>
         <CompassLink to={`/`}><Home /> {show && <span>Home</span>} </CompassLink>
@@ -25,3 +32,5 @@ const CompassBar = ({compass, title, show = true}) => {
   )
 }
 export default CompassBar;
+
+
