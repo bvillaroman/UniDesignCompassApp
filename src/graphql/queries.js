@@ -6,16 +6,13 @@ export const getCompass = `query GetCompass($id: ID!) {
     id
     name_of_compass
     description_of_compass
-    date_start
-    date_end
     createdAt
+    compassType
     admins
     readers
     sessions {
       items {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -23,16 +20,13 @@ export const getCompass = `query GetCompass($id: ID!) {
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -40,9 +34,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -55,8 +48,6 @@ export const getCompass = `query GetCompass($id: ID!) {
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -65,9 +56,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -84,8 +74,6 @@ export const getCompass = `query GetCompass($id: ID!) {
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -93,9 +81,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -105,8 +92,6 @@ export const getCompass = `query GetCompass($id: ID!) {
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -115,9 +100,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -141,8 +125,6 @@ export const getCompass = `query GetCompass($id: ID!) {
     steps {
       items {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -151,16 +133,13 @@ export const getCompass = `query GetCompass($id: ID!) {
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -168,9 +147,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -183,8 +161,6 @@ export const getCompass = `query GetCompass($id: ID!) {
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -193,9 +169,8 @@ export const getCompass = `query GetCompass($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -219,16 +194,13 @@ export const listCompasss = `query ListCompasss(
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -236,16 +208,13 @@ export const listCompasss = `query ListCompasss(
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -255,8 +224,6 @@ export const listCompasss = `query ListCompasss(
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -274,16 +241,12 @@ export const listCompasss = `query ListCompasss(
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -301,8 +264,6 @@ export const listCompasss = `query ListCompasss(
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -311,16 +272,13 @@ export const listCompasss = `query ListCompasss(
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -330,8 +288,6 @@ export const listCompasss = `query ListCompasss(
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -351,8 +307,6 @@ export const listCompasss = `query ListCompasss(
 export const getSession = `query GetSession($id: ID!) {
   getSession(id: $id) {
     id
-    session_start_time
-    session_end_time
     name_of_session
     description_of_session
     createdAt
@@ -360,16 +314,13 @@ export const getSession = `query GetSession($id: ID!) {
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -377,16 +328,13 @@ export const getSession = `query GetSession($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -396,8 +344,6 @@ export const getSession = `query GetSession($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -415,16 +361,12 @@ export const getSession = `query GetSession($id: ID!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -442,8 +384,6 @@ export const getSession = `query GetSession($id: ID!) {
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -452,16 +392,13 @@ export const getSession = `query GetSession($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -471,8 +408,6 @@ export const getSession = `query GetSession($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -494,8 +429,6 @@ export const getSession = `query GetSession($id: ID!) {
         createdAt
         session {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -503,16 +436,13 @@ export const getSession = `query GetSession($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -522,8 +452,6 @@ export const getSession = `query GetSession($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -541,16 +469,12 @@ export const getSession = `query GetSession($id: ID!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -565,8 +489,6 @@ export const getSession = `query GetSession($id: ID!) {
         }
         step {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -575,16 +497,13 @@ export const getSession = `query GetSession($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -594,8 +513,6 @@ export const getSession = `query GetSession($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -617,16 +534,12 @@ export const getSession = `query GetSession($id: ID!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -656,8 +569,6 @@ export const listSessions = `query ListSessions(
   listSessions(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      session_start_time
-      session_end_time
       name_of_session
       description_of_session
       createdAt
@@ -665,16 +576,13 @@ export const listSessions = `query ListSessions(
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -682,9 +590,8 @@ export const listSessions = `query ListSessions(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -710,8 +617,6 @@ export const listSessions = `query ListSessions(
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -720,9 +625,8 @@ export const listSessions = `query ListSessions(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -745,8 +649,6 @@ export const listSessions = `query ListSessions(
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -754,9 +656,8 @@ export const listSessions = `query ListSessions(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -779,8 +680,6 @@ export const listSessions = `query ListSessions(
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -789,9 +688,8 @@ export const listSessions = `query ListSessions(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -836,8 +734,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     createdAt
     session {
       id
-      session_start_time
-      session_end_time
       name_of_session
       description_of_session
       createdAt
@@ -845,16 +741,13 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -862,9 +755,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -890,8 +782,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -900,9 +790,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -925,8 +814,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -934,9 +821,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -959,8 +845,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -969,9 +853,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1005,8 +888,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     }
     step {
       id
-      step_start_time
-      step_end_time
       name_of_step
       description_of_step
       color
@@ -1015,16 +896,13 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1032,9 +910,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1060,8 +937,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1070,9 +945,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1099,8 +973,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1108,9 +980,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1133,8 +1004,6 @@ export const getInteraction = `query GetInteraction($id: ID!) {
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1143,9 +1012,8 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1197,8 +1065,6 @@ export const listInteractions = `query ListInteractions(
       createdAt
       session {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -1206,16 +1072,13 @@ export const listInteractions = `query ListInteractions(
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1223,9 +1086,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1238,8 +1100,6 @@ export const listInteractions = `query ListInteractions(
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1248,9 +1108,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1267,8 +1126,6 @@ export const listInteractions = `query ListInteractions(
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1276,9 +1133,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1288,8 +1144,6 @@ export const listInteractions = `query ListInteractions(
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1298,9 +1152,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1321,8 +1174,6 @@ export const listInteractions = `query ListInteractions(
       }
       step {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -1331,16 +1182,13 @@ export const listInteractions = `query ListInteractions(
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1348,9 +1196,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1363,8 +1210,6 @@ export const listInteractions = `query ListInteractions(
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1373,9 +1218,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1396,8 +1240,6 @@ export const listInteractions = `query ListInteractions(
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1405,9 +1247,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1417,8 +1258,6 @@ export const listInteractions = `query ListInteractions(
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1427,9 +1266,8 @@ export const listInteractions = `query ListInteractions(
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1459,8 +1297,6 @@ export const listInteractions = `query ListInteractions(
 export const getStep = `query GetStep($id: ID!) {
   getStep(id: $id) {
     id
-    step_start_time
-    step_end_time
     name_of_step
     description_of_step
     color
@@ -1469,16 +1305,13 @@ export const getStep = `query GetStep($id: ID!) {
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -1486,16 +1319,13 @@ export const getStep = `query GetStep($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1505,8 +1335,6 @@ export const getStep = `query GetStep($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1524,16 +1352,12 @@ export const getStep = `query GetStep($id: ID!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1551,8 +1375,6 @@ export const getStep = `query GetStep($id: ID!) {
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -1561,16 +1383,13 @@ export const getStep = `query GetStep($id: ID!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1580,8 +1399,6 @@ export const getStep = `query GetStep($id: ID!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1605,8 +1422,6 @@ export const listSteps = `query ListSteps(
   listSteps(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      step_start_time
-      step_end_time
       name_of_step
       description_of_step
       color
@@ -1615,16 +1430,13 @@ export const listSteps = `query ListSteps(
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1632,9 +1444,8 @@ export const listSteps = `query ListSteps(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1660,8 +1471,6 @@ export const listSteps = `query ListSteps(
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1670,9 +1479,8 @@ export const listSteps = `query ListSteps(
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1703,8 +1511,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       createdAt
       session {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -1712,16 +1518,13 @@ export const getAttachment = `query GetAttachment($id: ID!) {
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1729,9 +1532,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1744,8 +1546,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1754,9 +1554,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1773,8 +1572,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1782,9 +1579,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1794,8 +1590,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1804,9 +1598,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1827,8 +1620,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       }
       step {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -1837,16 +1628,13 @@ export const getAttachment = `query GetAttachment($id: ID!) {
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1854,9 +1642,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1869,8 +1656,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1879,9 +1664,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1902,8 +1686,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -1911,9 +1693,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1923,8 +1704,6 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -1933,9 +1712,8 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -1981,8 +1759,6 @@ export const listAttachments = `query ListAttachments(
         createdAt
         session {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -1990,16 +1766,13 @@ export const listAttachments = `query ListAttachments(
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2009,8 +1782,6 @@ export const listAttachments = `query ListAttachments(
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2028,16 +1799,12 @@ export const listAttachments = `query ListAttachments(
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2052,8 +1819,6 @@ export const listAttachments = `query ListAttachments(
         }
         step {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -2062,16 +1827,13 @@ export const listAttachments = `query ListAttachments(
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2081,8 +1843,6 @@ export const listAttachments = `query ListAttachments(
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2104,16 +1864,12 @@ export const listAttachments = `query ListAttachments(
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
