@@ -9,7 +9,7 @@ export const DashboardProvider = ({children}) => {
     form : {
       title: "",
       description: "",
-      date_start: "",
+      compassType: "",
       steps: [],
       admins: [],
       readers: []
@@ -17,8 +17,10 @@ export const DashboardProvider = ({children}) => {
     errors: {
       title: "",
       description: "",
-      date_start: "",
-      steps: ""
+      compassType: "",
+      steps: [],
+      admins: [],
+      readers: []
     },
     tab: 0
   })

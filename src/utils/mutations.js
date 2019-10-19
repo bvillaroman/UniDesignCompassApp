@@ -4,12 +4,11 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-export async function createCompass(name_of_compass, description_of_compass,admins,readers) {
+export async function createCompass(name_of_compass, description_of_compass,compassType,admins,readers) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
-    date_start: '0',
-    date_end: '0',
+    compassType,
     admins,
     readers
   }
@@ -21,9 +20,7 @@ export async function createSession(name_of_session, description_of_session, com
   const sessionInfo = {
     name_of_session,
     description_of_session,
-    sessionCompassId: compassId,
-    session_start_time: 1,
-    session_end_time: 5
+    sessionCompassId: compassId
   }
 
   const newSession = await API.graphql(graphqlOperation(mutations.createSession, { input: sessionInfo }));
@@ -35,8 +32,6 @@ export async function createStep(name_of_step, description_of_step, color, compa
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
-    step_start_time: 0,
-    step_end_time: 0,
     color
   }
   const newStep = await API.graphql(graphqlOperation(mutations.createStep, { input: stepInfo }));
