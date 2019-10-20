@@ -3,7 +3,6 @@ import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../
 import { CompassContext } from "../../../context/CompassPage/context"
 import ProjectDetails from "./ProjectDetails"
 import SessionCreator from "./SessionCreator"
-import StepDetails from "./StepDetails"
 
 export default (props) => {
   const {compass} = useContext(CompassContext)

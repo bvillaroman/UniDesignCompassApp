@@ -2,11 +2,15 @@ import React,{useContext,useEffect, useState} from "react";
 import { 
   ProjectDetailsContainer, 
   ProjectDetailsTitle, 
-  CompassDetailsDescription,
+  ProjectDetailsDescription,
   EditProjectButton,
   ProjectTitleText,
   ProjectDescriptionText,
-  ProjectEditButtons
+  ProjectEditButtons,
+  CompassDetailsDescription,
+  CompassStepAccordion,
+  CompassStepPanel,
+  CompassStepDescription
 } from "../../../styles/CompassPage"
 import {
   InputContainer,
@@ -16,6 +20,7 @@ import {
 import { CompassContext } from "../../../context/CompassPage/context"
 import { updateCompass } from "../../../utils/mutations"
 import { Edit } from 'grommet-icons';
+import StepDetails from "./StepDetails"
 
 export default (props) => {
   const {compass} = useContext(CompassContext)
@@ -60,55 +65,47 @@ export default (props) => {
   
   return (
     <ProjectDetailsContainer>
-      {/* <div> Project </div> */}
       <ProjectDetailsTitle > 
-        <span>Your Project</span>
+        <span>Project Details</span>
       <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
       </ProjectDetailsTitle>
-      <CompassDetailsDescription >
-        { 
-          edit ? (        
-            <form
-              onSubmit={submitForm}
-              onChange={onChange}
-              value={{title,description}}
-              errors={{ ...errors }}
-            >
-              <InputContainer name="title">
-                <InputField name="title" value={title} />
-              </InputContainer>
-              <InputContainer name="description">
-                <InputTextArea name="description" value={description} />
-              </InputContainer>
-              <ProjectEditButtons>
-                <span> {message} </span>
-                <EditProjectButton label="Save" onClick={submitForm} />
-              </ProjectEditButtons>
-            </form>
-          ) : (
-            <>
-              <ProjectTitleText>{title}</ProjectTitleText>
-              <ProjectDescriptionText> {description} </ProjectDescriptionText>
-            </>
-          )
-        }
-      </CompassDetailsDescription>
-
+      { 
+        edit ? (        
+          <form
+            onSubmit={submitForm}
+            onChange={onChange}
+            value={{title,description}}
+            errors={{ ...errors }}
+          >
+            <InputContainer name="title">
+              <InputField name="title" value={title} />
+            </InputContainer>
+            <InputContainer name="description">
+              <InputTextArea name="description" value={description} />
+            </InputContainer>
+            <ProjectEditButtons>
+              <span> {message} </span>
+              <EditProjectButton label="Save" onClick={submitForm} />
+            </ProjectEditButtons>
+          </form>
+        ) : (
+          <ProjectDetailsDescription>
+            <ProjectTitleText>{title}</ProjectTitleText>
+            <ProjectDescriptionText> {description} </ProjectDescriptionText>
+          </ProjectDetailsDescription>
+        )
+      }
       <ProjectDetailsTitle> 
-        <span>Compass</span> 
+        <span> Compass Details</span> 
       </ProjectDetailsTitle>
-      {/* <CompassDetailsDescription >
-        {
-          steps && steps.map(step => (
-              <div>
-                <div> {step.name_of_step}</div>
-                <div> {step.description_of_step}</div>
-              </div> 
-            )
-          ) 
-        }
-      </CompassDetailsDescription> */}
+      
+      {/* compass details */}
+      <CompassDetailsDescription>
+        <CompassStepAccordion>
+          { steps && steps.map(step => (<StepDetails step={step} />)) }
+        </CompassStepAccordion> 
+      </CompassDetailsDescription>
+        
     </ProjectDetailsContainer>
-
   ) 
 };
