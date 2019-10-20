@@ -25,27 +25,27 @@ export default (props) => {
       color: "#2ecc71"
     },
     {
-      title: "Generate Ideas",
+      title: "Brainstorm",
       description: "Creating ideas/ rough drafts of solutions",
       color: "#9b59b6"
     },
     {
-      title: "Model/ Test Ideas",
+      title: "Test",
       description: "Created and test new solutions",
       color: "#f1c40f"
     },
     {
-      title: "Choose/ Make Prototype",
+      title: "Prototype",
       description: "Choosing the best solution and implementing it",
       color: "#e67e22"
     },
     {
-      title: "Troubleshoot/ Revise",
+      title: "Revise",
       description: "Edit/revise current implementation of solution",
       color: "#e74c3c"
     },
     {
-      title: "Communicate/ Reflect",
+      title: "Reflect",
       description: "Discuss the overall reflection of the process",
       color: "#7f8c8d"
     }
