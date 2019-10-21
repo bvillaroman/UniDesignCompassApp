@@ -10,8 +10,9 @@ import CompassWheel from "./CompassWheel"
 const CompassSelector = ({showAttachment}) => {
   const {session,compass,updateInteraction, interactions, updateTime} = useContext(CompassContext)
 
-  const selectStep = async (interaction) => {
-    await updateInteraction(interaction)
+  const selectStep = (interaction) => {
+    console.log(compass)
+    updateInteraction(interaction)
     navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
   }
 

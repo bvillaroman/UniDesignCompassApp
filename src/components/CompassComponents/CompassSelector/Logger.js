@@ -35,6 +35,7 @@ export default ({ showAttachment }) => {
   // intialize interaction into the logger
   useEffect(() => {
     if(interaction.hasOwnProperty("id")){
+      // console.log("change")
       const {log_content, duration, step, attachments, id} = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
@@ -43,23 +44,17 @@ export default ({ showAttachment }) => {
       setStart(true)
       setAttachments(attachments.items)
     }
-  }, [interaction])
 
-  useEffect(() => {
-
-    if(interaction.hasOwnProperty("id")){
-
+    return () => {
       const newInteraction = {
         id: interaction.id,
         log_content: log ? log : " ",
         duration: interactionTime,
       }
-      console.log(newInteraction)
+      // console.log(newInteraction)
       // Mutation.updateInteraction(newInteraction)
     }
-    
   }, [interaction.id])
-
 
   // handle interaction time
   useEffect(() => {

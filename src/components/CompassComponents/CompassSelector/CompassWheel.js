@@ -50,8 +50,13 @@ export default ({ selectStep }) => {
     //   // await Mutation.updateInteraction(interaction);
     //   updateInteraction(interaction)
     // }
-    const newInteraction = await Mutation.startInteraction(session.id,id);
-    selectStep(newInteraction.data.createInteraction);   
+    Mutation.startInteraction(session.id,id)
+    .then((res) => {
+      console.log(res.data.createInteraction)
+      selectStep(res.data.createInteraction);   
+    });
+    
+    
   }
 
   useEffect(() => {
@@ -66,6 +71,7 @@ export default ({ selectStep }) => {
         }],
         dataLabels: {
           formatter: function(value, { seriesIndex, dataPointIndex, w }) {
+            // if (interaction.hasOwnProperty("id")) return interaction.step.name_of_step 
             return steps[seriesIndex].name_of_step 
           }
         },
