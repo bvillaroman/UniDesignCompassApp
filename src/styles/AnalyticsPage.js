@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { 
-  Box, 
+import {
+  Box,
   Grid,
   Text,
   Menu
@@ -24,7 +24,7 @@ export const TimeLineBar = styled(Box)`
   background: transparent;
 `;
 export const InteractionBar = styled(Box)`
-  width: ${ props => props.width ? props.width : 0 };
+  width: ${ props => props.width ? props.width : 0};
   background: ${ props => props.color ? props.color : 'white'};
   margin: 0 0.2rem;
   height: 100%;
@@ -60,10 +60,10 @@ export const ToolValue = styled.span`
 
 // Pie chart elements
 export const PieChartContainer = styled(Box)`
-  width: ${ props => props.container === "overall" ? '95%' : '65%' };
-  min-width:${ props => props.container === "overall" ? '22.125rem' : '23.3125rem' }; 
+  width: ${ props => props.container === "overall" ? '95%' : '65%'};
+  min-width:${ props => props.container === "overall" ? '22.125rem' : '23.3125rem'}; 
   height: 100%;
-  min-height:${ props => props.container === "overall" ? '21.125rem' : '21.3125rem' }; 
+  min-height:${ props => props.container === "overall" ? '21.125rem' : '21.3125rem'}; 
   margin : 1rem auto;
 `;
 
@@ -72,6 +72,11 @@ export const AnalyticsGrid = styled(Grid)`
   height: 100%;
   width: 100%;
   overflow: auto;
+
+  @media (max-width: 375px) {
+    display: contents;
+    height: 100vh;
+  }
 
 `;
 
@@ -91,6 +96,10 @@ export const OverallArea = styled(Box)`
   height: 100%;
   overflow: auto;
   background-color: white;
+
+  @media (max-width: 375px) {
+    overflow: hidden;
+  }
 `
 
 export const ContainerHeader = styled(Box)`
@@ -100,14 +109,14 @@ export const ContainerHeader = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-` 
+`
 
 export const HeaderText = styled(Text)`
   font-weight: 600;
   font-size: 2rem;
   word-break: break-word;
   line-height: 2.1rem;
-` 
+`
 export const SessionSelector = styled(Menu)`
   width: 100%;
 `
