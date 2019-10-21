@@ -4,13 +4,19 @@ import {
   StepRow, 
   CSMain,
   CSTitle,
-  SessionClock
+  SessionClock,
+  CompassWheelContainer,
+  CompassWheel
 } from "../../../styles/CompassPage"
+import * as Mutation from "../../../utils/mutations"
 import Step from "./Step"
+import ReactApexChart from 'react-apexcharts';
 
-const CompassWheel = ({ selectStep }) => {
-  const {session, interactions, time} = useContext(CompassContext)
+
+export default ({ selectStep }) => {
+  const {session, interactions, interaction = {},updateInteraction, time} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
+  const [options, setOptions]= useState({})
 
   useEffect(() => {
     if(session.hasOwnProperty("compass")){
@@ -38,6 +44,72 @@ const CompassWheel = ({ selectStep }) => {
     }
   }, [session,interactions])
 
+  const goToLog = async (id) => {
+    // if(interaction.hasOwnProperty("id")){
+    //   console.log("from compassWheel: ",interaction)
+    //   // await Mutation.updateInteraction(interaction);
+    //   updateInteraction(interaction)
+    // }
+    Mutation.startInteraction(session.id,id)
+    .then((res) => {
+      console.log(res.data.createInteraction)
+      selectStep(res.data.createInteraction);   
+    });
+    
+    
+  }
+
+  useEffect(() => {
+    if(steps !== []) {
+      setOptions({
+        labels: steps.map(step => step.name_of_step),
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            
+          }
+        }],
+        dataLabels: {
+          formatter: function(value, { seriesIndex, dataPointIndex, w }) {
+            // if (interaction.hasOwnProperty("id")) return interaction.step.name_of_step 
+            return steps[seriesIndex].name_of_step 
+          }
+        },
+        legend: {
+          show: false
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '40%',
+              labels: {
+                show: true,
+                name: {
+                  show:true
+                },
+                value: {
+                  show:false
+                }
+              }
+            }
+          }
+        },
+        tooltip : {
+          enabled: false,
+        },
+        chart: {
+          events: {
+            dataPointSelection: function(event, chartContext, config){
+              goToLog(steps[config.dataPointIndex].id)
+            }
+          }
+        },
+        colors: steps.map(step => step.color),
+        series: steps.map(step => Math.floor(100/steps.length) * 0.1)
+      })
+    }
+  }, [steps])
+
   const translateTime = (secs) => {
     const sec_num = parseInt(secs, 10)
     const hours   = Math.floor(sec_num / 3600)
@@ -51,20 +123,23 @@ const CompassWheel = ({ selectStep }) => {
   }
 
   return (
-    <CSMain 
-      gridArea="main"
-      rows={['3rem', '30rem']}
-      columns={['15rem', 'fill']}
-      fill
-      areas={[
-        { name: 'title', start: [0, 0], end: [0, 1] },
-        { name: 'content', start: [0, 1], end: [1, 1] },
-      ]}
-    >
+    <CompassWheelContainer >
       <CSTitle gridArea="title">
         <span>Compass Steps</span>  
       </CSTitle>
-      <StepRow gridArea="content" circleLength={steps.length}>
+      <CompassWheel >
+        {
+          options.series && (
+            <ReactApexChart 
+              options={options} 
+              type="donut" 
+              series={options.series}
+            />
+          )
+        }
+      </CompassWheel>
+      
+      {/* <StepRow gridArea="content" circleLength={steps.length}>
         <SessionClock> {translateTime(time)} </SessionClock>
         {
           steps.length > 0 ? steps.map((item,key) => {
@@ -80,8 +155,7 @@ const CompassWheel = ({ selectStep }) => {
             )
           }) : ''
         }
-      </StepRow>
-    </CSMain>
+      </StepRow> */}
+    </CompassWheelContainer >
   )
 };
-export default CompassWheel;

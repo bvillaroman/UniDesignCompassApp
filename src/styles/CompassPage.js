@@ -90,40 +90,64 @@ export const AttachmentPreview = ({attachment,src}) => (
 )
 
 // Step Description
-export const StepDetailsContainer = styled(Box)`
-  width: 90%;
-  min-height: 6rem;
+export const StepDetailsContainer = styled(Accordion)`
+  width: 100%;
   height: auto;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   display: flex;
   flex-direction: column;
-  background: white;
-  padding: 1rem;
+  color: white;
+`;
+export const StepDetailsTitle = styled(AccordionPanel)`
+  
+  margin: 0.5rem auto;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div {
+    width: auto;
+    padding: 0.5rem 1rem;
+    h4 { 
+      font-size: 1.0rem;
+      color: white;
+      margin: 0;
+    };
+    svg { 
+      stroke: white;
+      width: 1rem;
+      height: 1rem;
+      justify-self: end;
+      margin: 0;
+    };
+  };
+  background-color: ${props => props.color ? props.color: "white"};
+  border-radius: 1rem;
   box-shadow: 0 1px 3px 0 #d2d4d6;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
 `;
-export const StepDetailsTitle = styled.h1`
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  font-size: 2.0rem;
-  color: ${props => props.color ? props.color: "black"};
-  font-weight: 600;
-`;
-export const StepDetailsDescription = styled.p`
-  width: 100%;
+export const StepDetailsDescription = styled(Box)`
+  width: auto;
   height: auto;
   font-size: 1.0rem;
-  padding-left: 1rem;
+  padding: 0 1.5rem;
   color: black;
 `;
 
 // Compass Wheel 
 export const CompassWheelContainer = styled(Box)`
   width: 100%;
-  min-height: 28rem;
-  height: 40%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+`;
+export const CompassWheel = styled(Box)`
+  width: 100%;
+  height: auto;
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
@@ -146,7 +170,7 @@ export const CompassNavigationBar = styled(Box)`
   // background: white;
 `;
 
-// Compass Details 
+// Project Details 
 export const ProjectDetailsContainer = styled(Box)`
   width: 90%;
   min-height: 15rem;
@@ -167,24 +191,117 @@ export const ProjectDetailsContainer = styled(Box)`
   transition: box-shadow 150ms ease;
 `;
 
-export const ProjectDetailsTitle = styled.h1`
-  text-align: left;
-  padding-left: 0.5rem;
-  margin: 0 auto;
+export const ProjectDetailsTitle = styled(Box)`
+  width: 100%;
+  min-height: 2rem;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  span {
+    text-align: left;
+    padding-left: 0.5rem;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    font-size: 1.5rem;
+    color: ${props => props.color ? props.color: "black"};
+    font-weight: 600;
+  }
+`;
+export const EditProjectButton = styled(Button)`
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  background: #5567FD; 
+  color: white;
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+`;
+export const ProjectDetailsDescription = styled(Box)`
   width: 100%;
   height: auto;
-  font-size: 2.0rem;
-  line-height: 2.2rem;
-  color: ${props => props.color ? props.color: "black"};
-  font-weight: 600;
-`;
-export const CompassDetailsDescription = styled.p`
-  width: 90%;
-  height: auto;
+  margin: 0 auto;
+  margin-bottom: 1rem;
   font-size: 1.0rem;
-  padding-left: 1rem;
   color: black;
 `;
+export const ProjectTitleText = styled(Box)`
+  font-weight: 550;
+  font-size: 1rem;
+  color: black;
+  margin: 0;  
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: none;
+  padding: 11px;
+  padding-top: 0.9rem;
+  background: transparent;
+  font-weight: 600;
+`
+export const ProjectDescriptionText = styled(Box)`
+  font-size: 1rem;
+  padding: 11px;
+  padding-top: 10px;
+  color: black;
+  max-height: 10rem;
+  overflow: auto;
+`
+export const ProjectEditButtons = styled(Box)`
+  width: 100%;
+  flex-direction: row;  
+  justify-content: space-between;
+`
+export const CompassDetailsDescription = styled(Box)`
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  font-size: 1.0rem;
+  padding: 0.5rem 1rem;
+  color: black;
+`;
+
+export const CompassStepAccordion = styled(Accordion)`
+  height: 100%;
+`
+export const CompassStepPanel = styled(AccordionPanel)`
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  background-color: ${props => props.color ? props.color : 'black'};
+  color: white;
+  border-radius: 1rem;
+  width: 100%;
+  margin: 0.1rem auto;
+  word-break: break-all;
+  height: 3rem;
+  h4 {
+    font-size: 0.8rem;
+    color: white;
+    margin: 0;
+  }
+  svg {
+    fill: white; 
+    stroke: white;
+    height: 1rem;
+    width: 1rem;
+  }
+`
+export const CompassStepDescription = styled(Box)`
+  font-size: 0.7rem;
+  line-height: 0.8rem;
+  height: auto;
+  padding: 0.5rem;
+  background-color: ${props => props.color ? props.color : 'white'};
+  color: black;
+  width: 90%;
+
+  word-break: break-word;
+`
 
 // Session Creator 
 
@@ -521,11 +638,12 @@ export const DescriptionForm = styled(TextArea)`
 `;
 // Compass Selector
 
-export const CSGrid = styled(Grid)`
+export const CSGrid = styled(Box)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto; 
+  flex-direction: row;
 `;
 export const CSTitle = styled(Box)`
   font-size: 1.5rem;
@@ -538,6 +656,7 @@ export const CSTitle = styled(Box)`
 export const CSMain = styled(Grid)`
   height: 100%;
 `;
+
 export const StepRow = styled(Box)`
   min-width: 20rem;
   min-height: 20rem;
@@ -699,8 +818,8 @@ export const SessionAttachments = styled(Box)`
   flex-direction: column;
   height: 100%;
   overflow: scroll;
-  border: 0.1rem solid rgba(0,0,0,0.2);
-  border-radius: 0.3rem;
+  border-top: 0.1rem solid rgba(0,0,0,0.2);
+  // border-radius: 0.3rem;
 `
 export const StepAccordion = styled.div`
   text-align: center;
