@@ -5,20 +5,14 @@ import {navigate} from "gatsby"
 
 import SessionBar from "./SessionBar"
 import CompassWheel from "./CompassWheel"
+// import Compass from "./Compass"
 
 const CompassSelector = ({showAttachment}) => {
-  const {session,compass,updateInteractions, interactions, updateTime} = useContext(CompassContext)
-  const selectStep = async (interaction) => {
-    const stepFromCurrentInteraction = interactions.find((item) => {
-      return interaction.id === item.id
-    })
+  const {session,compass,updateInteraction, interactions, updateTime} = useContext(CompassContext)
 
-    if (stepFromCurrentInteraction === undefined) {
-      await updateInteractions([interaction, ...interactions])
-    }
-    
+  const selectStep = async (interaction) => {
+    await updateInteraction(interaction)
     navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
-    
   }
 
   // getting the current session and distribute: session,steps, all interactions, all attachments
@@ -33,16 +27,9 @@ const CompassSelector = ({showAttachment}) => {
   },[interactions])
 
   return (
-    <CSGrid
-      rows={['40rem', 'fill']}
-      columns={['60%', '40%']}
-      fill
-      areas={[
-        { name: 'main', start: [0, 0], end: [0, 0] },
-        { name: 'session', start: [1, 0], end: [1, 1] },
-      ]}
-    >
+    <CSGrid>
       <CompassWheel selectStep={selectStep} />
+      {/* <Compass /> */}
       <SessionBar 
         showAttachment={showAttachment} 
         setInteraction={selectStep}

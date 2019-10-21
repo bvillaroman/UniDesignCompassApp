@@ -138,8 +138,16 @@ export const StepDetailsDescription = styled(Box)`
 // Compass Wheel 
 export const CompassWheelContainer = styled(Box)`
   width: 100%;
-  min-height: 28rem;
-  height: 40%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+`;
+export const CompassWheel = styled(Box)`
+  width: 100%;
+  height: auto;
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
@@ -630,11 +638,12 @@ export const DescriptionForm = styled(TextArea)`
 `;
 // Compass Selector
 
-export const CSGrid = styled(Grid)`
+export const CSGrid = styled(Box)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto; 
+  flex-direction: row;
 `;
 export const CSTitle = styled(Box)`
   font-size: 1.5rem;
@@ -647,6 +656,7 @@ export const CSTitle = styled(Box)`
 export const CSMain = styled(Grid)`
   height: 100%;
 `;
+
 export const StepRow = styled(Box)`
   min-width: 20rem;
   min-height: 20rem;

@@ -11,7 +11,7 @@ import {
   SessionAttachments
 } from "../../../styles/CompassPage"
 import translateTime from '../../../utils/translateTime'
-import { updateInteraction, uploadAttachment } from '../../../utils/mutations'
+import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
@@ -19,7 +19,7 @@ import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
 export default ({ showAttachment }) => {
-  const {interaction,updateTime, time} = useContext(CompassContext);
+  const {interaction,updateInteraction,updateTime, time} = useContext(CompassContext);
 
   const intialStep = {
     name_of_step: "Logger",
@@ -36,24 +36,29 @@ export default ({ showAttachment }) => {
   useEffect(() => {
     if(interaction.hasOwnProperty("id")){
       const {log_content, duration, step, attachments, id} = interaction
+      const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
-      setLog(log_content)
+      setLog(parsedLog)
       setStart(true)
       setAttachments(attachments.items)
+    }
+  }, [interaction])
+
+  useEffect(() => {
+
+    if(interaction.hasOwnProperty("id")){
 
       const newInteraction = {
-        id: id,
+        id: interaction.id,
         log_content: log ? log : " ",
         duration: interactionTime,
       }
-      
-      return () => {
-        console.log(newInteraction)
-        // updateInteraction(newInteraction)
-      }
+      console.log(newInteraction)
+      // Mutation.updateInteraction(newInteraction)
     }
-  }, [interaction])
+    
+  }, [interaction.id])
 
 
   // handle interaction time
@@ -63,7 +68,8 @@ export default ({ showAttachment }) => {
     if (interaction.id){
       if (start) {
         interval = setInterval(() => {
-          if (time > 0) updateTime(time+1)
+          updateInteraction({ duration: interactionTime+1 })
+          // updateTime(time+1)
           setInteractionTime(interactionTime+1)
         }, 1000)
 
@@ -72,7 +78,7 @@ export default ({ showAttachment }) => {
       }
       return () => clearInterval(interval);
     }
-  }, [start,interactionTime, interaction.id])
+  }, [start,interactionTime])
   
   const pause = (e) => {
     const newInteraction = {
@@ -81,7 +87,7 @@ export default ({ showAttachment }) => {
       duration: interactionTime,
     }
     if (start) {
-      updateInteraction(newInteraction)
+      Mutation.updateInteraction(newInteraction)
     }
     
     return setStart(!start)
@@ -102,7 +108,7 @@ export default ({ showAttachment }) => {
     
       try {
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
+        Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
           .then((res) => {
             setAttachments([res.data.createAttachment, ...attachments])
           })
