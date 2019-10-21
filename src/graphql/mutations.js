@@ -6,16 +6,13 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     id
     name_of_compass
     description_of_compass
-    date_start
-    date_end
     createdAt
+    compassType
     admins
     readers
     sessions {
       items {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -23,16 +20,13 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -40,9 +34,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -55,8 +48,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -65,9 +56,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -84,8 +74,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -93,9 +81,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -105,8 +92,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -115,9 +100,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -141,8 +125,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
     steps {
       items {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -151,16 +133,13 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -168,9 +147,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -183,8 +161,6 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -193,9 +169,8 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -214,16 +189,13 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     id
     name_of_compass
     description_of_compass
-    date_start
-    date_end
     createdAt
+    compassType
     admins
     readers
     sessions {
       items {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -231,16 +203,13 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -248,9 +217,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -263,8 +231,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -273,9 +239,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -292,8 +257,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -301,9 +264,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -313,8 +275,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -323,9 +283,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -349,8 +308,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
     steps {
       items {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -359,16 +316,13 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -376,9 +330,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -391,8 +344,6 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -401,9 +352,8 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -422,16 +372,13 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     id
     name_of_compass
     description_of_compass
-    date_start
-    date_end
     createdAt
+    compassType
     admins
     readers
     sessions {
       items {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -439,16 +386,13 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -456,9 +400,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -471,8 +414,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -481,9 +422,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -500,8 +440,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -509,9 +447,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -521,8 +458,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -531,9 +466,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -557,8 +491,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
     steps {
       items {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -567,16 +499,13 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -584,9 +513,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -599,8 +527,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -609,9 +535,8 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -628,8 +553,6 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
 export const createSession = `mutation CreateSession($input: CreateSessionInput!) {
   createSession(input: $input) {
     id
-    session_start_time
-    session_end_time
     name_of_session
     description_of_session
     createdAt
@@ -637,16 +560,13 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -654,16 +574,13 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -673,8 +590,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -692,16 +607,12 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -719,8 +630,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -729,16 +638,13 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -748,8 +654,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -771,8 +675,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         createdAt
         session {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -780,16 +682,13 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -799,8 +698,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -818,16 +715,12 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -842,8 +735,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
         }
         step {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -852,16 +743,13 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -871,8 +759,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -894,16 +780,12 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -928,8 +810,6 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
 export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!) {
   updateSession(input: $input) {
     id
-    session_start_time
-    session_end_time
     name_of_session
     description_of_session
     createdAt
@@ -937,16 +817,13 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -954,16 +831,13 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -973,8 +847,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -992,16 +864,12 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1019,8 +887,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -1029,16 +895,13 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1048,8 +911,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1071,8 +932,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         createdAt
         session {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -1080,16 +939,13 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1099,8 +955,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1118,16 +972,12 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1142,8 +992,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
         }
         step {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -1152,16 +1000,13 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1171,8 +1016,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1194,16 +1037,12 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1228,8 +1067,6 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
 export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!) {
   deleteSession(input: $input) {
     id
-    session_start_time
-    session_end_time
     name_of_session
     description_of_session
     createdAt
@@ -1237,16 +1074,13 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -1254,16 +1088,13 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1273,8 +1104,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1292,16 +1121,12 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1319,8 +1144,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -1329,16 +1152,13 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1348,8 +1168,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1371,8 +1189,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         createdAt
         session {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -1380,16 +1196,13 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1399,8 +1212,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1418,16 +1229,12 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1442,8 +1249,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
         }
         step {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -1452,16 +1257,13 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -1471,8 +1273,6 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1494,16 +1294,12 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -1534,8 +1330,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     createdAt
     session {
       id
-      session_start_time
-      session_end_time
       name_of_session
       description_of_session
       createdAt
@@ -1543,16 +1337,13 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1560,9 +1351,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1588,8 +1378,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1598,9 +1386,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1623,8 +1410,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1632,9 +1417,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1657,8 +1441,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1667,9 +1449,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1703,8 +1484,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
     }
     step {
       id
-      step_start_time
-      step_end_time
       name_of_step
       description_of_step
       color
@@ -1713,16 +1492,13 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1730,9 +1506,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1758,8 +1533,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1768,9 +1541,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1797,8 +1569,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1806,9 +1576,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1831,8 +1600,6 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1841,9 +1608,8 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1890,8 +1656,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     createdAt
     session {
       id
-      session_start_time
-      session_end_time
       name_of_session
       description_of_session
       createdAt
@@ -1899,16 +1663,13 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1916,9 +1677,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1944,8 +1704,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -1954,9 +1712,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -1979,8 +1736,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -1988,9 +1743,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2013,8 +1767,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2023,9 +1775,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2059,8 +1810,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
     }
     step {
       id
-      step_start_time
-      step_end_time
       name_of_step
       description_of_step
       color
@@ -2069,16 +1818,13 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2086,9 +1832,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2114,8 +1859,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2124,9 +1867,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2153,8 +1895,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2162,9 +1902,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2187,8 +1926,6 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2197,9 +1934,8 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2246,8 +1982,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     createdAt
     session {
       id
-      session_start_time
-      session_end_time
       name_of_session
       description_of_session
       createdAt
@@ -2255,16 +1989,13 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2272,9 +2003,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2300,8 +2030,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2310,9 +2038,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2335,8 +2062,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2344,9 +2069,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2369,8 +2093,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2379,9 +2101,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2415,8 +2136,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
     }
     step {
       id
-      step_start_time
-      step_end_time
       name_of_step
       description_of_step
       color
@@ -2425,16 +2144,13 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
         id
         name_of_compass
         description_of_compass
-        date_start
-        date_end
         createdAt
+        compassType
         admins
         readers
         sessions {
           items {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2442,9 +2158,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2470,8 +2185,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
         steps {
           items {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2480,9 +2193,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2509,8 +2221,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           createdAt
           session {
             id
-            session_start_time
-            session_end_time
             name_of_session
             description_of_session
             createdAt
@@ -2518,9 +2228,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2543,8 +2252,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           }
           step {
             id
-            step_start_time
-            step_end_time
             name_of_step
             description_of_step
             color
@@ -2553,9 +2260,8 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
               id
               name_of_compass
               description_of_compass
-              date_start
-              date_end
               createdAt
+              compassType
               admins
               readers
               sessions {
@@ -2596,8 +2302,6 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
 export const createStep = `mutation CreateStep($input: CreateStepInput!) {
   createStep(input: $input) {
     id
-    step_start_time
-    step_end_time
     name_of_step
     description_of_step
     color
@@ -2606,16 +2310,13 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -2623,16 +2324,13 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2642,8 +2340,6 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2661,16 +2357,12 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2688,8 +2380,6 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -2698,16 +2388,13 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2717,8 +2404,6 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2737,8 +2422,6 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
 export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
   updateStep(input: $input) {
     id
-    step_start_time
-    step_end_time
     name_of_step
     description_of_step
     color
@@ -2747,16 +2430,13 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -2764,16 +2444,13 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2783,8 +2460,6 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2802,16 +2477,12 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2829,8 +2500,6 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -2839,16 +2508,13 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2858,8 +2524,6 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2878,8 +2542,6 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
 export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
   deleteStep(input: $input) {
     id
-    step_start_time
-    step_end_time
     name_of_step
     description_of_step
     color
@@ -2888,16 +2550,13 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
       id
       name_of_compass
       description_of_compass
-      date_start
-      date_end
       createdAt
+      compassType
       admins
       readers
       sessions {
         items {
           id
-          session_start_time
-          session_end_time
           name_of_session
           description_of_session
           createdAt
@@ -2905,16 +2564,13 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2924,8 +2580,6 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2943,16 +2597,12 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
               createdAt
               session {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
               }
               step {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -2970,8 +2620,6 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
       steps {
         items {
           id
-          step_start_time
-          step_end_time
           name_of_step
           description_of_step
           color
@@ -2980,16 +2628,13 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             id
             name_of_compass
             description_of_compass
-            date_start
-            date_end
             createdAt
+            compassType
             admins
             readers
             sessions {
               items {
                 id
-                session_start_time
-                session_end_time
                 name_of_session
                 description_of_session
                 createdAt
@@ -2999,8 +2644,6 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             steps {
               items {
                 id
-                step_start_time
-                step_end_time
                 name_of_step
                 description_of_step
                 color
@@ -3028,8 +2671,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
       createdAt
       session {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -3037,16 +2678,13 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3054,9 +2692,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3069,8 +2706,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3079,9 +2714,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3098,8 +2732,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3107,9 +2739,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3119,8 +2750,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3129,9 +2758,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3152,8 +2780,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
       }
       step {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -3162,16 +2788,13 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3179,9 +2802,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3194,8 +2816,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3204,9 +2824,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3227,8 +2846,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3236,9 +2853,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3248,8 +2864,6 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3258,9 +2872,8 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3301,8 +2914,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
       createdAt
       session {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -3310,16 +2921,13 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3327,9 +2935,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3342,8 +2949,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3352,9 +2957,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3371,8 +2975,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3380,9 +2982,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3392,8 +2993,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3402,9 +3001,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3425,8 +3023,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
       }
       step {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -3435,16 +3031,13 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3452,9 +3045,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3467,8 +3059,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3477,9 +3067,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3500,8 +3089,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3509,9 +3096,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3521,8 +3107,6 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3531,9 +3115,8 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3574,8 +3157,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
       createdAt
       session {
         id
-        session_start_time
-        session_end_time
         name_of_session
         description_of_session
         createdAt
@@ -3583,16 +3164,13 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3600,9 +3178,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3615,8 +3192,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3625,9 +3200,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3644,8 +3218,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3653,9 +3225,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3665,8 +3236,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3675,9 +3244,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3698,8 +3266,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
       }
       step {
         id
-        step_start_time
-        step_end_time
         name_of_step
         description_of_step
         color
@@ -3708,16 +3274,13 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
           id
           name_of_compass
           description_of_compass
-          date_start
-          date_end
           createdAt
+          compassType
           admins
           readers
           sessions {
             items {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3725,9 +3288,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3740,8 +3302,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
           steps {
             items {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3750,9 +3310,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3773,8 +3332,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             createdAt
             session {
               id
-              session_start_time
-              session_end_time
               name_of_session
               description_of_session
               createdAt
@@ -3782,9 +3339,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }
@@ -3794,8 +3350,6 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             }
             step {
               id
-              step_start_time
-              step_end_time
               name_of_step
               description_of_step
               color
@@ -3804,9 +3358,8 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
                 id
                 name_of_compass
                 description_of_compass
-                date_start
-                date_end
                 createdAt
+                compassType
                 admins
                 readers
               }

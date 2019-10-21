@@ -2,9 +2,10 @@ type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   name_of_compass: String!
   description_of_compass: String!
-  date_start: String
-  date_end: String
+  # date_start: String
+  # date_end: String
   createdAt: AWSDateTime
+  compassType: String!
   admins: [String]
   readers: [String]
   sessions: [Session] @connection(name: "CompassSessions")
@@ -13,8 +14,8 @@ type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
 
 type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
-  session_start_time: Int
-  session_end_time: Int
+  # session_start_time: Int
+  # session_end_time: Int
   name_of_session: String!
   description_of_session: String!
   createdAt: AWSDateTime
@@ -35,8 +36,8 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
 
 type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id:ID!
-  step_start_time: Int
-  step_end_time: Int
+  # step_start_time: Int
+  # step_end_time: Int
   name_of_step: String!
   description_of_step: String!
   color: String

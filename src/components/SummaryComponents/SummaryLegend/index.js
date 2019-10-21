@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+  LegendContainer,
   UlContainer,
+  Title,
   Challenge,
   Ideas,
   Model,
@@ -12,8 +14,10 @@ import {
 
 const SummaryLegend = () => {
   return (
-    <>
+    // <>
+    <LegendContainer>
       <UlContainer>
+        <Title>Legend</Title>
         <Challenge>Challenge</Challenge>
         <Ideas>Ideas</Ideas>
         <Model>Model</Model>
@@ -22,7 +26,8 @@ const SummaryLegend = () => {
         <Research>Research</Research>
         <Reflect>Reflect</Reflect>
       </UlContainer>
-    </>
+    </LegendContainer>
+    // </>
   )
 };
 

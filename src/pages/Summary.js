@@ -21,7 +21,7 @@ const SummaryPage = (props) => {
     console.log(`interaction: ${interaction}`)
   }, [props.location.search])
 
-  console.log(interactionID)
+  console.log(compassID)
 
   useEffect(() => {
     // attachments,  currentLog, interactId, compassID

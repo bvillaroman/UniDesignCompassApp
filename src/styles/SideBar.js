@@ -18,6 +18,17 @@ export const CompassSideBar = styled(Box)`
   padding: 1rem 0;
   height: 100vh;
   justify-content: space-between;
+
+  @media (max-width: 768px){
+    width: 100%;
+    height: 0%;
+    
+    
+    a:not(:nth-last-child(4)){
+      ${props => props.renderSidebar ? 'display: none;' : 'initial'};
+    };
+
+  }
 `
 export const CompassHeader = styled(Link)`
   text-align: center;
@@ -32,6 +43,10 @@ export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media (max-width: 768px){
+    width: 20%;
+  }
 `;
 
 const CompassLinkStyles = styled(Link)`
@@ -51,6 +66,10 @@ const CompassLinkStyles = styled(Link)`
   }
   justify-content: center;
   margin: 0.5rem 0;
+
+  @media (max-width: 768px){
+    //display: none;
+  }
 `
 export const SignOutButton = styled(Button)`
   display: flex;
@@ -63,19 +82,31 @@ export const SignOutButton = styled(Button)`
   justify-content: center;
   margin: 0.5rem 0;
 `
+
+export const HamburgerIcon = styled.label`
+  display: none;
+  line-height: 70px;
+
+  @media (max-width: 768px){
+    display: block;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+`;
+
 const activeLinkStyle = {
   background: "white",
   color: "black"
 
 };
 
-export const CompassLink = ({to,children}) => (
-  <CompassLinkStyles 
-    to={to} 
+export const CompassLink = ({ to, children }) => (
+  <CompassLinkStyles
+    to={to}
     activeStyle={activeLinkStyle}
     partiallyActive={to !== "/" ? true : false}
 
   >
-      {children}
-  </CompassLinkStyles> 
+    {children}
+  </CompassLinkStyles>
 )

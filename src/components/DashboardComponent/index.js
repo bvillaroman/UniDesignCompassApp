@@ -9,6 +9,8 @@ import {
   Title,
   InfoText
 } from "../../styles/Dashboard";
+import { Loader } from "../../styles/layout"
+
 
 import ProjectCreator from "./ProjectCreator";
 import Feed from "./ProjectFeed";
@@ -32,14 +34,20 @@ const Dashboard = (props) => {
   }, []);
 
   return (
-    <DashboardContainer>
-      <Header >
-        <Title>Project Hub</Title>
-        <InfoText>What are projects?</InfoText>
-      </Header>
-      <ProjectCreator />
-      <Feed compasses={compasses}/>
-    </DashboardContainer>
+    <>
+      {
+        loading ? <Loader/> : (
+          <DashboardContainer>
+            <Header >
+              <Title>Project Hub</Title>
+              <InfoText>What are projects?</InfoText>
+            </Header>
+            <ProjectCreator />
+            <Feed compasses={compasses}/>
+          </DashboardContainer>
+        )
+      }
+    </>
   )
 }
 

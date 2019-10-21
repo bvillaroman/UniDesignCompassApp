@@ -7,7 +7,7 @@ export const FormCard = styled(Box)`
   margin: 0 auto;
   padding: 2rem;
   border-radius: 2rem;
-  width: ${props => props.type === "feed" ? '100%' : '80%' };
+  width: ${props => props.type === "feed" ? '100%' : '80%'};
   color: black;
   background: white;
   height: 100%;
@@ -31,6 +31,10 @@ export const FormSwitchContainer = styled(Box)`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 530px) {
+    display: contents;
+  }
 `;
 export const FormSwitchBox = styled(Box)`
   margin: 1rem auto;

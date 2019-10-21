@@ -17,12 +17,12 @@ const MainView = (props) => (
     areas={[
       { name: 'mainContent', start: [0, 0], end: [0, 0] },
       { name: 'FormContainer', start: [1, 0], end: [1, 0] },
-      { name: 'about', start: [0, 1], end: [1, 1] },      
+      { name: 'about', start: [0, 1], end: [1, 1] },
       { name: 'contact', start: [0, 2], end: [1, 2] }
     ]}
   >
     <MainContent gridArea="mainContent">
-      <p>Record, track and visualize your design process.</p>
+      <p>Log, Track and Visualize your Design Process.</p>
     </MainContent>
     <AuthContainer gridArea="FormContainer"><Auth /></AuthContainer>
     <AboutContainer gridArea="contact" ><p>About UDC</p></AboutContainer>
