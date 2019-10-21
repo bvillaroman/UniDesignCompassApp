@@ -818,8 +818,8 @@ export const SessionAttachments = styled(Box)`
   flex-direction: column;
   height: 100%;
   overflow: scroll;
-  border: 0.1rem solid rgba(0,0,0,0.2);
-  border-radius: 0.3rem;
+  border-top: 0.1rem solid rgba(0,0,0,0.2);
+  // border-radius: 0.3rem;
 `
 export const StepAccordion = styled.div`
   text-align: center;

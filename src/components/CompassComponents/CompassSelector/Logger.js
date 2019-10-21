@@ -106,6 +106,7 @@ export default ({ showAttachment }) => {
         Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
           .then((res) => {
             setAttachments([res.data.createAttachment, ...attachments])
+            updateInteraction({attachments: [res.data.createAttachment, ...attachments]})
           })
       } catch (err) {
         console.log('error cannot store file: ', err)
@@ -141,12 +142,12 @@ export default ({ showAttachment }) => {
           </StepClock>
         </LoggerHeader>
         <SessionAttachments>
-          {/* { 
+          { 
             attachments.length > 0 && 
             attachments.map((item) => (
               <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
             )) 
-          } */}
+          }
         </SessionAttachments>
       </LoggerAttachments>
     </LoggerGrid>

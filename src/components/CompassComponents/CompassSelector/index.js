@@ -2,9 +2,11 @@ import React, {useState, useEffect, useContext}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 import {navigate} from "gatsby"
+import Loadable from "@loadable/component"
 
 import SessionBar from "./SessionBar"
-import CompassWheel from "./CompassWheel"
+const CompassWheel = Loadable(() => import('./CompassWheel'));
+
 // import Compass from "./Compass"
 
 const CompassSelector = ({showAttachment}) => {

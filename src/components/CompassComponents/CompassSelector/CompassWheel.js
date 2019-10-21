@@ -94,6 +94,9 @@ export default ({ selectStep }) => {
             }
           }
         },
+        tooltip : {
+          enabled: false,
+        },
         chart: {
           events: {
             dataPointSelection: function(event, chartContext, config){
