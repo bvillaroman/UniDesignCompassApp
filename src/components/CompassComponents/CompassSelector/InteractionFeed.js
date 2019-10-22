@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { 
   CSInteractions,
-  InteractionsTitle,
+  CSInteractionsTitle,
   CSInteractionsFeed
 } from "../../../styles/CompassPage"
 import Interaction from "./interaction"
@@ -13,7 +13,7 @@ export default (props) => {
   // getting the current session
   return (
     <CSInteractions >
-      <InteractionsTitle> Recent Logs </InteractionsTitle>
+      <CSInteractionsTitle> Recent Logs </CSInteractionsTitle>
       <CSInteractionsFeed>
         {
           interactions ? interactions.map((item, key) => {

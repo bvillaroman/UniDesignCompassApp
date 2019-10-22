@@ -14,7 +14,6 @@ const Interaction = ({interaction = {}, isLastStep}) => {
       .filter((v,i) => v !== "00" || i > 0)
       .join(":") 
   }
-
   
   return (
     <CSInteractionContainer>

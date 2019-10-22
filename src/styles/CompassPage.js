@@ -729,19 +729,21 @@ export const StepText = styled(Box)`
     margin: 0;
   }
 `
-export const InteractionsTitle = styled(Box)`
+
+// InteractionFeed 
+export const CSInteractions = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-height: 10rem;
+`;
+export const CSInteractionsTitle = styled(Box)`
   text-align: left;
   font-size: 1.2rem;
   font-weight: 600;
   width: 90%;
   margin: 0.5rem auto;
   height: auto;
-`;
-export const CSInteractions = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  min-height: 10rem;
 `;
 export const CSInteractionsFeed = styled(Box)`
   display: flex;
@@ -761,6 +763,14 @@ export const CSInteractionContainer = styled(Box)`
   flex-direction: row;
   align-items:center;
   justify-content: space-between;
+`;
+export const CSInteractionButtonContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  span {
+    font-size: 0.8rem;
+  }
 `;
 export const CSInteraction = styled(Button)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
@@ -784,15 +794,6 @@ export const CSInteraction = styled(Button)`
   background-color: ${props => props.color ? props.color : '#5567FD'};
 
 `;
-export const CSInteractionButtonContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  span {
-    font-size: 0.8rem;
-  }
-`;
-
-
 
 // Compass SessionBar
 export const SessionView = styled(Box)`
