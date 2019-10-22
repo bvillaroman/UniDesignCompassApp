@@ -1,5 +1,5 @@
 import React from "react";
-import { AttachmentItemButton } from "../../../styles/CompassPage"
+import { AttachmentItemButton } from "../../../styles/Modals"
 import { Storage} from 'aws-amplify'
 
 const Attachment = ({attachment, showAttachment}) => {

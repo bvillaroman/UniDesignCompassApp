@@ -9,7 +9,6 @@ import {
 import * as Mutation from "../../../utils/mutations"
 import ReactApexChart from 'react-apexcharts';
 
-
 export default ({ selectStep }) => {
   const {session, interactions, interaction = {},updateInteraction, time} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
@@ -35,22 +34,10 @@ export default ({ selectStep }) => {
           })
         })
       }
-
       setSteps(arr)
-
     }
   }, [session,interactions])
-
-  const goToLog = async (id) => {
-
-    Mutation.startInteraction(session.id,id)
-    .then((res) => {
-      console.log(res.data.createInteraction)
-      selectStep(res.data.createInteraction);   
-    });
-    
-  }
-
+  
   useEffect(() => {
     if(steps !== []) {
       setOptions({
@@ -95,6 +82,13 @@ export default ({ selectStep }) => {
     }
   }, [steps])
 
+  const goToLog = async (id) => {
+    // Mutation.startInteraction(session.id,id)
+    // .then((res) => {
+    //   selectStep(res.data.createInteraction);   
+    // });
+  }
+
   const translateTime = (secs) => {
     const sec_num = parseInt(secs, 10)
     const hours   = Math.floor(sec_num / 3600)
@@ -125,24 +119,6 @@ export default ({ selectStep }) => {
           )
         }
       </CompassWheel>
-      
-      {/* <StepRow gridArea="content" circleLength={steps.length}>
-        <SessionClock> {translateTime(time)} </SessionClock>
-        {
-          steps.length > 0 ? steps.map((item,key) => {
-            return (
-              <Step 
-                activeStep={item} 
-                key={key} 
-                selectStep={selectStep} 
-                circleLength={steps.length}
-                rotateAngle={key*(360/(steps.length))}
-                session={session}
-              />
-            )
-          }) : ''
-        }
-      </StepRow> */}
     </CompassWheelContainer >
   )
 };

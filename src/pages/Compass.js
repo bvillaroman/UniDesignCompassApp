@@ -3,19 +3,21 @@ import React, { useState, useEffect, useContext } from "react";
 import CompassViewer from "../components/CompassComponents/CompassViewer"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
 
+import ReviewLog from "../components/ModalComponents/ReviewLog"
+
 import {CompassContext} from "../context/CompassPage/context"
 import queryStringParser from '../utils/queryStringParser'
 import {getCompass,getSession,getInteraction} from '../utils/queries'
 
+import { MainView } from "../styles/CompassPage"
 import { 
-  MainView, 
   LayerView, 
   AttachmentContainer ,
   AttachmentPreview,
   AttachmentButtonContainer,
   CloseButton,
   DownloadButton
-} from "../styles/CompassPage"
+} from "../styles/Modals"
 import {Loader} from "../styles/layout"
 
 const CompassPage = (props) => {
@@ -121,7 +123,7 @@ const CompassPage = (props) => {
     <MainView>
       {
         loading ? <Loader /> : (
-          session.hasOwnProperty("id") ? (
+          compassID && session.hasOwnProperty("id") ? (
             <CompassSelector  showAttachment={showItem} />
           ) : <CompassViewer />
         )
@@ -141,6 +143,8 @@ const CompassPage = (props) => {
             </AttachmentContainer>
           </LayerView>
         )
+      }{
+        show && <ReviewLog closeWindow={() => setShow(false)}/>
       }
     </MainView>
   )

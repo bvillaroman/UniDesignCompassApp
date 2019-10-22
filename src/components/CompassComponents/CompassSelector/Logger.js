@@ -7,9 +7,9 @@ import {
   LoggerAttachments,
   StepClock,
   TimerButton,
-  AttachmentButton,
   SessionAttachments
 } from "../../../styles/CompassPage"
+import { AttachmentButton } from "../../../styles/Modals"
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
@@ -138,7 +138,11 @@ export default ({ showAttachment }) => {
             Attachments
           </LoggerTitle>
           <StepClock >
-            <AttachmentButton disabled={!start} onChange={handleUpload} color={step.color}/>
+            <AttachmentButton 
+              disabled={!start && !interaction.hasOwnProperty("id")} 
+              onChange={handleUpload} 
+              color={step.color}
+            />
           </StepClock>
         </LoggerHeader>
         <SessionAttachments>
