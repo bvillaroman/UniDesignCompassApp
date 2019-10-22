@@ -7,7 +7,7 @@ import {
 import Interaction from "./interaction"
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({goToInteraction}) => {
+export default (props) => {
   const {interactions} = useContext(CompassContext)
 
   // getting the current session
@@ -23,7 +23,6 @@ export default ({goToInteraction}) => {
                   key={key}
                   interaction={item} 
                   isLastStep={key === interactions.length - 1} 
-                  goToInteraction={goToInteraction}
                 /> 
               )
             }

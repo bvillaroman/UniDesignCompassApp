@@ -19,7 +19,6 @@ export default ({showAttachment, setInteraction}) => {
         </SessionTitle>
       </SessionSection> 
         <Logger  showAttachment={showAttachment} />
-      <InteractionFeed goToInteraction={setInteraction}/>
     </SessionView>
   ) 
 };

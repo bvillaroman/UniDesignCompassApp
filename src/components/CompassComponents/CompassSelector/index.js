@@ -3,11 +3,11 @@ import { CSGrid } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 import {navigate} from "gatsby"
 import Loadable from "@loadable/component"
+import InteractionFeed from "./InteractionFeed"
 
 import SessionBar from "./SessionBar"
-const CompassWheel = Loadable(() => import('./CompassWheel'));
+import CompassSection from "./CompassSection"
 
-// import Compass from "./Compass"
 
 const CompassSelector = ({showAttachment}) => {
   const {session,compass,updateInteraction, interactions, updateTime} = useContext(CompassContext)
@@ -31,8 +31,7 @@ const CompassSelector = ({showAttachment}) => {
 
   return (
     <CSGrid>
-      <CompassWheel selectStep={selectStep} />
-      {/* <Compass /> */}
+      <CompassSection/>
       <SessionBar 
         showAttachment={showAttachment} 
         setInteraction={selectStep}

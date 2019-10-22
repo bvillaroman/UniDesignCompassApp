@@ -1,15 +1,12 @@
 import React, { useState,useEffect, useContext } from "react";
 import { CompassContext } from "../../../context/CompassPage/context"
 import { 
-  StepRow, 
-  CSMain,
   CSTitle,
   SessionClock,
   CompassWheelContainer,
   CompassWheel
 } from "../../../styles/CompassPage"
 import * as Mutation from "../../../utils/mutations"
-import Step from "./Step"
 import ReactApexChart from 'react-apexcharts';
 
 
@@ -45,17 +42,12 @@ export default ({ selectStep }) => {
   }, [session,interactions])
 
   const goToLog = async (id) => {
-    // if(interaction.hasOwnProperty("id")){
-    //   console.log("from compassWheel: ",interaction)
-    //   // await Mutation.updateInteraction(interaction);
-    //   updateInteraction(interaction)
-    // }
+
     Mutation.startInteraction(session.id,id)
     .then((res) => {
       console.log(res.data.createInteraction)
       selectStep(res.data.createInteraction);   
     });
-    
     
   }
 
@@ -63,15 +55,8 @@ export default ({ selectStep }) => {
     if(steps !== []) {
       setOptions({
         labels: steps.map(step => step.name_of_step),
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            
-          }
-        }],
         dataLabels: {
           formatter: function(value, { seriesIndex, dataPointIndex, w }) {
-            // if (interaction.hasOwnProperty("id")) return interaction.step.name_of_step 
             return steps[seriesIndex].name_of_step 
           }
         },
@@ -134,6 +119,8 @@ export default ({ selectStep }) => {
               options={options} 
               type="donut" 
               series={options.series}
+              width="100%"
+              height="100%"
             />
           )
         }
