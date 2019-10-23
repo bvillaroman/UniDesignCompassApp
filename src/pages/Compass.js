@@ -122,11 +122,11 @@ const CompassPage = (props) => {
   return (
     <MainView>
       {
-        loading ? <Loader /> : (
-          compassID && session.hasOwnProperty("id") ? (
-            <CompassSelector  showAttachment={showItem} />
-          ) : <CompassViewer />
-        )
+        !loading ? (
+          compass.hasOwnProperty("id") ?  ( 
+            session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
+          ) : <div> sorry, this project does not exist !</div>
+        ) :  <Loader />
       }
       {
         show && (
