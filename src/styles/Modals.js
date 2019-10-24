@@ -119,7 +119,7 @@ export const CloseButton = ({onClick}) =>(
   />
 )
 export const DownloadButton = ({src}) =>(
-  <a href={src} download target="_blank">
+  <a href={src} download target="_blank" rel="noopener noreferrer">
     <AttachmentButtons     
       icon={<Download color="#5567FD"/>}
       label="Download"

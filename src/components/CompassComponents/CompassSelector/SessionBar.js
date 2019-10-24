@@ -5,10 +5,9 @@ import {
   SessionTitle,
 } from "../../../styles/CompassPage"
 import Logger from "./Logger"
-import InteractionFeed from "./InteractionFeed"
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({showAttachment, setInteraction}) => {
+export default ({showAttachment}) => {
   const {session} = useContext(CompassContext)
 
   return (

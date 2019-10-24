@@ -1,19 +1,10 @@
 import React from "react";
 import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../styles/CompassPage"
 import { LinkPrevious } from "grommet-icons"
+import translateTime from "../../../utils/translateTime"
+
 const Interaction = ({interaction = {}, isLastStep}) => {
   const { step, duration } = interaction;  
-  const translateTime = (secs) => {
-    const sec_num = parseInt(secs, 10)
-    const hours   = Math.floor(sec_num / 3600)
-    const minutes = Math.floor(sec_num / 60) % 60
-    const seconds = sec_num % 60
-
-    return [hours,minutes,seconds]
-      .map(v => v < 10 ? "0" + v : v)
-      .filter((v,i) => v !== "00" || i > 0)
-      .join(":") 
-  }
   
   return (
     <CSInteractionContainer>

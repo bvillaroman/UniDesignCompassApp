@@ -33,13 +33,11 @@ export default ({sessions = {}, steps={}}) => {
               value: 0
             })
           );
-    
-      allInteractions.forEach(item => {
-        parsedInteractions.find((step) => {
-          if (step.id === item.step.id){
-            step.value = step.value + item.duration
-          }
-        })
+      
+      parsedInteractions.forEach( step => {
+        let temp = allInteractions.filter(interaction => interaction.step.id === step.id)
+        const value = temp.reduce((totalTime = 0, interaction) => parseInt(totalTime) + parseInt(interaction.duration), 0)
+        step.value = value
       })
 
       // setInteractions(allInteractions)

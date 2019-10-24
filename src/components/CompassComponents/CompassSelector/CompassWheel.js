@@ -2,15 +2,15 @@ import React, { useState,useEffect, useContext } from "react";
 import { CompassContext } from "../../../context/CompassPage/context"
 import { 
   CSTitle,
-  SessionClock,
+  // SessionClock,
   CompassWheelContainer,
   CompassWheel
 } from "../../../styles/CompassPage"
-import * as Mutation from "../../../utils/mutations"
+// import * as Mutation from "../../../utils/mutations"
 import ReactApexChart from 'react-apexcharts';
 
 export default ({ selectStep }) => {
-  const {session, interactions, interaction = {},updateInteraction, time} = useContext(CompassContext)
+  const {session, interactions} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
   const [options, setOptions]= useState({})
 
@@ -25,15 +25,12 @@ export default ({ selectStep }) => {
         })
       );
 
-      if (interactions.length) {
-        interactions.forEach(item => {
-          arr.find((step) => {
-            if (step.id === item.step.id){
-              step.duration = step.duration + item.duration
-            }
-          })
-        })
-      }
+      arr.forEach( step => {
+        let temp = interactions.filter(interaction => interaction.step.id === step.id)
+        const value = temp.reduce((totalTime = 0, interaction) => parseInt(totalTime) + parseInt(interaction.duration), 0)
+        step.duration = value
+      })
+
       setSteps(arr)
     }
   }, [session,interactions])
@@ -77,7 +74,7 @@ export default ({ selectStep }) => {
           }
         },
         colors: steps.map(step => step.color),
-        series: steps.map(step => Math.floor(100/steps.length) * 0.1)
+        series: steps.map(() => Math.floor(100/steps.length) * 0.1)
       })
     }
   }, [steps])
@@ -87,19 +84,7 @@ export default ({ selectStep }) => {
     // .then((res) => {
     //   selectStep(res.data.createInteraction);   
     // });
-  }
-
-  const translateTime = (secs) => {
-    const sec_num = parseInt(secs, 10)
-    const hours   = Math.floor(sec_num / 3600)
-    const minutes = Math.floor(sec_num / 60) % 60
-    const seconds = sec_num % 60
-
-    return [hours,minutes,seconds]
-      .map(v => v < 10 ? "0" + v : v)
-      .filter((v,i) => v !== "00" || i > 0)
-      .join(":") 
-  }
+  } 
 
   return (
     <CompassWheelContainer >

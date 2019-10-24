@@ -31,8 +31,7 @@ const CompassPage = (props) => {
     updateInteraction, 
     clearInteraction,    
     updateInteractions, 
-    clearInteractions,
-    clearTime
+    clearInteractions
   } = useContext(CompassContext);
   const [compassID, setCompassID] = useState("")
   const [sessionID, setSessionID] = useState("")
@@ -53,6 +52,8 @@ const CompassPage = (props) => {
     setCompassID(compassID)
     setSessionID(sessionID)
     setInteractionID(interactionID)
+
+  // eslint-disable-next-line
   }, [props.location.search])
 
   useEffect(() => {
@@ -71,6 +72,8 @@ const CompassPage = (props) => {
     } else {
       clearCompass()
     }
+
+  // eslint-disable-next-line
   }, [compassID])
 
   useEffect(() => {
@@ -97,6 +100,8 @@ const CompassPage = (props) => {
     } else {
       clearSession();
     }
+
+  // eslint-disable-next-line
   }, [sessionID, interactionID])
 
   useEffect(() => {
@@ -116,6 +121,8 @@ const CompassPage = (props) => {
     } else {
       clearInteraction();
     }
+    
+  // eslint-disable-next-line
   }, [interactionID])
 
 

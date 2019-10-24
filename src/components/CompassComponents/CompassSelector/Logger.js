@@ -19,7 +19,7 @@ import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
 export default ({ showAttachment }) => {
-  const {interaction,updateInteraction,updateTime, time} = useContext(CompassContext);
+  const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
     name_of_step: "Logger",
@@ -34,9 +34,8 @@ export default ({ showAttachment }) => {
 
   // intialize interaction into the logger
   useEffect(() => {
-    if(interaction.hasOwnProperty("id")){
-      // console.log("change")
-      const {log_content, duration, step, attachments, id} = interaction
+    if(interaction.id){
+      const {log_content, duration, step, attachments} = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
@@ -45,15 +44,7 @@ export default ({ showAttachment }) => {
       setAttachments(attachments.items)
     }
 
-    return () => {
-      const newInteraction = {
-        id: interaction.id,
-        log_content: log ? log : " ",
-        duration: interactionTime,
-      }
-      // console.log(newInteraction)
-      // Mutation.updateInteraction(newInteraction)
-    }
+  // eslint-disable-next-line
   }, [interaction.id])
 
   // handle interaction time
@@ -64,15 +55,16 @@ export default ({ showAttachment }) => {
       if (start) {
         interval = setInterval(() => {
           updateInteraction({ duration: interactionTime+1 })
-          // updateTime(time+1)
           setInteractionTime(interactionTime+1)
         }, 1000)
 
-      } else if (!start && time !== 0) {
+      } else if (!start) {
         clearInterval(interval)
       }
       return () => clearInterval(interval);
     }
+    
+  // eslint-disable-next-line
   }, [start,interactionTime])
   
   const pause = (e) => {

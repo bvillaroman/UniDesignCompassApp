@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, {useEffect, useContext}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 import {navigate} from "gatsby"
-import Loadable from "@loadable/component"
-import InteractionFeed from "./InteractionFeed"
+// import Loadable from "@loadable/component"
+// import InteractionFeed from "./InteractionFeed"
 
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
@@ -27,6 +27,8 @@ const CompassSelector = ({showAttachment}) => {
       });
       updateTime(time)
     }
+    
+  // eslint-disable-next-line
   },[interactions])
 
   return (

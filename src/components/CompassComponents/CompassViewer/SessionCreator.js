@@ -6,15 +6,9 @@ import {navigate} from "gatsby"
 import { AddCircle} from 'grommet-icons';
 
 import {
-  SCButtonContainer,
-  SCButton,
   SCHeader,
   SCBody,
-  SCForm,
   SCContainer,
-  SCTextArea,
-  SCInputContainer,
-  SCInputField,
   SessionRow,
   SessionRowTitle,
   SessionRowDate,
@@ -26,8 +20,6 @@ import {
 
 const SessionCreator = (props) => {
   const {compass} = useContext(CompassContext)
-  const [form, setForm] = useState({ title: '', description: '' });
-  const [error] = useState({ title: '', description: '' })
   const [pastSessions, setPastSessions] = useState([])
 
   useEffect(() => {
@@ -35,8 +27,6 @@ const SessionCreator = (props) => {
       setPastSessions(compass.sessions.items.sort(timeSorter))
     }  
   }, [compass])
-
-  const onChange = ({ target: { value, name } }) => { setForm({ ...form, [name]: value }) };
 
   const currentCompassId = compass.id
 
@@ -79,22 +69,6 @@ const SessionCreator = (props) => {
             )
           ) : <p>You have no Sessions!</p>
         }
-        {/* <SCForm  
-            onSubmit={sendForm}
-            onChange={onChange}
-            errors={{ ...error }}
-            value={form}
-          >
-            <SCInputContainer name="title" required>
-              <SCInputField name="title" type="text" placeholder="Session Title" />
-            </SCInputContainer>
-            <SCInputContainer name="description" required>
-              <SCTextArea name="description" placeholder="Session Description" />
-            </SCInputContainer>
-            <SCButtonContainer>
-              <SCButton type="submit" label="Create Session" />
-            </SCButtonContainer>
-          </SCForm> */}
       </SCBody>
     </SCContainer>
   )

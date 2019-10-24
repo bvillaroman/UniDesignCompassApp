@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 
 import { GlobalContext } from "../../context/context"
-import { CompassContext } from "../../context/CompassPage/context"
 import CompassBar from "./CompassBar"
 import AccountBar from "./AccountBar"
 import BlankBar from "./BlankBar"

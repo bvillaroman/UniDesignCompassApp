@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-
+// 
 import { GlobalContext } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
 
+// styles
 import {
   DashboardContainer,
   Header,
@@ -11,7 +12,7 @@ import {
 } from "../../styles/Dashboard";
 import { Loader } from "../../styles/layout"
 
-
+// components
 import ProjectCreator from "./ProjectCreator";
 import Feed from "./ProjectFeed";
 
@@ -31,7 +32,7 @@ const Dashboard = (props) => {
         setError(error.message)
         setLoading(false)
       });
-  }, []);
+  }, [user.email]);
 
   return (
     <>
@@ -43,7 +44,10 @@ const Dashboard = (props) => {
               <InfoText>What are projects?</InfoText>
             </Header>
             <ProjectCreator />
-            <Feed compasses={compasses}/>
+            {
+              !error ? (compasses.length ? <Feed compasses={compasses}/>  : <div>You have no projects, start one from above! </div>)
+              : <div> Error !</div>
+            }
           </DashboardContainer>
         )
       }

@@ -12,7 +12,6 @@ import SideBar from "./SideBarComponents"
 import { LayoutContainer, MainViewContainer } from "../styles/layout"
 
 import { GlobalContext } from "../context/context"
-import { CompassContext } from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
 import { getCompass } from '../utils/queries'
@@ -52,9 +51,7 @@ const Layout = (props) => {
   // user authentications 
   useEffect(() => {
     if (!user.hasOwnProperty("email")) {
-      Auth.currentAuthenticatedUser({
-        bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-      })
+      Auth.currentAuthenticatedUser({ bypassCache: false   })
         .then(cognitoUser => {
           const { email, sub } = cognitoUser.attributes;
           setLoading(false)
@@ -66,7 +63,7 @@ const Layout = (props) => {
         });
     }
 
-  }, [user])
+  }, [loginUser,user])
 
   return (
     <LayoutContainer >

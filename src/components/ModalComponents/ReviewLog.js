@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React from "react";
 
 import { 
   LayerView, 
@@ -7,7 +7,7 @@ import {
   CloseButton,
 } from "../../styles/Modals"
 
-const ReviewLog = ({closeWindow, interaction}) => {
+const ReviewLog = ({closeWindow}) => {
 
   return (
     <LayerView
