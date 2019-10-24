@@ -6,8 +6,6 @@ import CompassSelector from "../components/CompassComponents/CompassSelector"
 import ReviewLog from "../components/ModalComponents/ReviewLog"
 
 import {CompassContext} from "../context/CompassPage/context"
-import queryStringParser from '../utils/queryStringParser'
-import {getCompass,getSession,getInteraction} from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
 import { 
@@ -21,22 +19,7 @@ import {
 import {Loader} from "../styles/layout"
 
 const CompassPage = (props) => {
-  const {
-    updateCompass, 
-    clearCompass, 
-    compass, 
-    updateSession,
-    clearSession, 
-    session,
-    updateInteraction, 
-    clearInteraction,    
-    updateInteractions, 
-    clearInteractions
-  } = useContext(CompassContext);
-  const [compassID, setCompassID] = useState("")
-  const [sessionID, setSessionID] = useState("")
-  const [interactionID, setInteractionID] = useState("")
-  const [loading, setLoading] = useState(true)
+  const { compass, session, } = useContext(CompassContext);
   const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
@@ -48,94 +31,17 @@ const CompassPage = (props) => {
   }
 
   useEffect(() => {
-    const {compassID,sessionID,interactionID} = queryStringParser(props.location.search)
-    setCompassID(compassID)
-    setSessionID(sessionID)
-    setInteractionID(interactionID)
 
-  // eslint-disable-next-line
-  }, [props.location.search])
-
-  useEffect(() => {
-    // queries the compass and assigns it throughout the app
-    if (compassID) {
-      getCompass(compassID)
-        .then((res) => {
-          setLoading(false);
-          updateCompass(res.data.getCompass);
-        })
-        .catch((err) => {
-          setLoading(false);
-          clearCompass();
-          console.log(err);
-        })
-    } else {
-      clearCompass()
-    }
-
-  // eslint-disable-next-line
-  }, [compassID])
-
-  useEffect(() => {
-    // queries the compass and assigns it throughout the app
-    if (sessionID) {
-      getSession(sessionID)
-        .then((res) => {
-          setLoading(false)
-          updateSession(res.data.getSession)
-          let interactions = []
-          if (res.data.getSession.interactions.items.length > 0) {
-            interactions = res.data.getSession.interactions.items.sort((a,b) => {
-              return new Date(b.createdAt) - new Date(a.createdAt);
-            })
-          }
-          updateInteractions(interactions);
-        })
-        .catch((err) => {
-          setLoading(false)
-          clearSession();
-          clearInteractions();
-          console.log(err)
-        })
-    } else {
-      clearSession();
-    }
-
-  // eslint-disable-next-line
-  }, [sessionID, interactionID])
-
-  useEffect(() => {
-    // queries the compass and assigns it throughout the app
-    if (interactionID) {
-      clearInteraction();
-      getInteraction(interactionID)
-        .then((res) => {
-          setLoading(false);
-          updateInteraction(res.data.getInteraction);
-        })
-        .catch((err) => {
-          setLoading(false);
-          clearInteraction();
-          console.log(err);
-        })
-    } else {
-      clearInteraction();
-    }
-    
-  // eslint-disable-next-line
-  }, [interactionID])
-
+  },[session])
 
   return (
     <MainView>
       {
-        !loading ? (
-          compass.hasOwnProperty("id") ?  ( 
-            session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
-          ) : <div> sorry, this project does not exist !</div>
-        ) :  <Loader />
+        compass.hasOwnProperty("id") ?  ( 
+          session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
+        ) : <div> sorry, this project does not exist !</div>
       }
-      {
+      {/* {
         show && (
           <LayerView
             onEsc={() => setShow(false)}
@@ -150,7 +56,8 @@ const CompassPage = (props) => {
             </AttachmentContainer>
           </LayerView>
         )
-      }{
+      } */}
+      {
         show && <ReviewLog closeWindow={() => setShow(false)}/>
       }
     </MainView>

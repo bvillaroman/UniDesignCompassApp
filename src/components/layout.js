@@ -9,12 +9,13 @@ import React, { useEffect, useState, useContext } from "react"
 import PropTypes from "prop-types"
 import Amplify from 'aws-amplify';
 import SideBar from "./SideBarComponents"
-import { LayoutContainer, MainViewContainer } from "../styles/layout"
+import { LayoutContainer, MainViewContainer, Loader } from "../styles/layout"
 
 import { GlobalContext } from "../context/context"
+import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
-import { getCompass } from '../utils/queries'
+import { getCompass,getSession,getInteraction } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
@@ -23,29 +24,93 @@ Amplify.configure(awsconfig);
 
 const Layout = (props) => {
   const { user = {}, loginUser } = useContext(GlobalContext);
+  const {
+    updateCompass, 
+    clearCompass,
+    updateSession,
+    clearSession, 
+    updateInteraction, 
+    clearInteraction,    
+    updateInteractions, 
+    clearInteractions
+  } = useContext(CompassContext);
 
-  const [compassExists, setCompassExists] = useState('')
   const [loading, setLoading] = useState(true)
 
   // setting up the compass through the url
   useEffect(() => {
     const compass = queryStringParser(props.location.search).compassID
     if (compass) {
+      clearCompass()
+      setLoading(true)
       getCompass(compass)
         .then((res) => {
-          console.log("compassExists")
+          setLoading(false);
+          updateCompass(res.data.getCompass);
           setLoading(false)
-          setCompassExists(true)
         })
         .catch((err) => {
           setLoading(false)
-          setCompassExists(false)
+          clearCompass();
           console.log(err)
         })
-
     } else {
-      setCompassExists(false)
+      clearCompass()
+    } 
+  }, [props.location.search])
+
+  // setting up the session through url
+  useEffect(() => {
+    const session = queryStringParser(props.location.search).sessionID
+    if (session) {
+      clearSession();
+      setLoading(true)
+      getSession(session)
+        .then((res) => {
+          setLoading(false)
+          updateSession(res.data.getSession)
+          let interactions = []
+          if (res.data.getSession.interactions.items.length > 0) {
+            interactions = res.data.getSession.interactions.items.sort((a,b) => {
+              return new Date(b.createdAt) - new Date(a.createdAt);
+            })
+          }
+          updateInteractions(interactions);
+        })
+        .catch((err) => {
+          setLoading(false)
+          clearSession();
+          clearInteractions();
+          console.log(err)
+        })
+    } else {
+      clearSession();
     }
+  }, [props.location.search])
+
+  // setting up the interaction through url
+  useEffect(() => {
+    // queries the compass and assigns it throughout the app
+    const interaction = queryStringParser(props.location.search).interactionID
+
+    if (interaction) {
+      clearInteraction();
+      setLoading(true)
+      getInteraction(interaction)
+        .then((res) => {
+          setLoading(false);
+          updateInteraction(res.data.getInteraction);
+        })
+        .catch((err) => {
+          setLoading(false);
+          clearInteraction();
+          console.log(err);
+        })
+    } else {
+      clearInteraction();
+    }
+
+  // eslint-disable-next-line
   }, [props.location.search])
 
   // user authentications 
@@ -67,9 +132,9 @@ const Layout = (props) => {
 
   return (
     <LayoutContainer >
-      <SideBar loading={loading} compassExists={compassExists}/>
+      <SideBar loading={loading}/>
       <MainViewContainer>
-        {props.children}
+        { loading ? <Loader/> : props.children }
       </MainViewContainer>
     </LayoutContainer>
   )
