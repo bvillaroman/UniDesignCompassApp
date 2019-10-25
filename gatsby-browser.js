@@ -8,6 +8,7 @@ import "./src/styles/global.css"
 import React from "react"
 import { GlobalProvider } from "./src/context/context"
 import { CompassProvider } from "./src/context/CompassPage/context"
+import { ReviewModalProvider } from "./src/context/ReviewModal/context"
 import Layout from "./src/components/layout"
 import { Grommet } from 'grommet';
 
@@ -41,7 +42,9 @@ export const wrapRootElement = ({ element }) => (
   >
     <GlobalProvider>
       <CompassProvider>
-        {element}
+        <ReviewModalProvider>
+          {element}
+        </ReviewModalProvider>
       </CompassProvider>
     </GlobalProvider>
   </Grommet>
