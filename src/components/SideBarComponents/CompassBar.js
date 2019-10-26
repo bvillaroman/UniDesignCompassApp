@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   CompassSideBar,
   CompassHeader,
@@ -8,8 +8,11 @@ import {
 } from '../../styles/SideBar'
 import { Compass, DocumentText, BarChart, Home, User } from 'grommet-icons'
 
+import { CompassContext } from "../../context/CompassPage/context"
 
-const CompassBar = ({ compass, title, show = true }) => {
+const CompassBar = (props) => {
+  const { compass } = useContext(CompassContext);
+
   const [renderSidebar, setRenderSidebar] = useState(true);
   const handleClick = () => {
     setRenderSidebar(!renderSidebar);
@@ -19,14 +22,14 @@ const CompassBar = ({ compass, title, show = true }) => {
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
-        <CompassHeader className='compassHeader' to={`/Compass?c=${compass}`}>{title}</CompassHeader>
-        <CompassLink to={`/Compass?c=${compass}`}><Compass />{show && <span>Compass</span>}</CompassLink>
-        <CompassLink to={`/Summary?c=${compass}`}><DocumentText />{show && <span>Summary</span>}</CompassLink>
-        <CompassLink to={`/Analytics?c=${compass}`}><BarChart />{show && <span>Analytics</span>}</CompassLink>
+        <CompassHeader className='compassHeader' to={`/`}>UDC</CompassHeader>
+        <CompassLink to={`/Compass?c=${compass.id}`}><Compass /><span>Compass</span></CompassLink>
+        <CompassLink to={`/Summary?c=${compass.id}`}><DocumentText /><span>Summary</span></CompassLink>
+        <CompassLink to={`/Analytics?c=${compass.id}`}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
-        <CompassLink to={`/`}><Home /> {show && <span>Home</span>} </CompassLink>
-        <CompassLink to={`/Profile`}><User /> {show && <span>Profile</span>}</CompassLink>
+        <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>
+        <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
       </LinkContainer>
     </CompassSideBar >
   )

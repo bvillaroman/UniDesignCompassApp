@@ -1,25 +1,26 @@
-import React from "react";
-import BlankBar from "./BlankBar"
-import Loadable from "react-loadable"
+import React, { useContext } from "react"
 
-export default Loadable.Map({
-  loader: {
-    CompassBar: () => import("./CompassBar"),
-    AccountBar: () => import("./AccountBar"),
-  },
-  loading: () => <BlankBar/>,
-  render(loaded, {user, compass, title}) {
-    let CompassBar = loaded.CompassBar.default;
-    let AccountBar = loaded.AccountBar.default;
-    return  (
-      <> 
-      { 
-        user.email ? 
-          (compass !== '' && title !== '') ? <CompassBar compass={compass} title={title}/> 
-                                          :  compass !== '' ? <BlankBar/> : <AccountBar/>
-        : null
+import { GlobalContext } from "../../context/context"
+import { CompassContext } from "../../context/CompassPage/context"
+
+import CompassBar from "./CompassBar"
+import AccountBar from "./AccountBar"
+import BlankBar from "./BlankBar"
+
+export default (props) => {
+  const { user = {} } = useContext(GlobalContext);
+  const { compass } = useContext(CompassContext);
+
+  const userSignedIn = user.hasOwnProperty("email");
+  const compassExists = compass.hasOwnProperty("id")
+
+  return (
+    <> 
+      {
+        // if the user is signed in 
+        props.loading ? <BlankBar/>
+        : userSignedIn ? ( compassExists? <CompassBar /> : <AccountBar/> ) : null
       }
-      </>
-    )
-  }
-});
+    </>
+  )
+}

@@ -8,9 +8,7 @@ import {
   ProjectDescriptionText,
   ProjectEditButtons,
   CompassDetailsDescription,
-  CompassStepAccordion,
-  CompassStepPanel,
-  CompassStepDescription
+  CompassStepAccordion
 } from "../../../styles/CompassPage"
 import {
   InputContainer,
@@ -28,18 +26,17 @@ export default (props) => {
   const [description, setDescription] = useState(" ")
   const [steps, setSteps] = useState([])
   const [edit, setEdit] = useState(false)
-  const [errors] = useState({
+  const [errors, setErrors] = useState({
     title: '',
     description: '',
   })
   const [message, setMessage] = useState("")
-  const [error,setError] = useState("")
 
   const onChange = event => {
     const { target: { value, name } } = event;
     if(name === "title") setTitle(value)
     else setDescription(value)
-    setError('')
+    setErrors('')
     setMessage('')
   };
 

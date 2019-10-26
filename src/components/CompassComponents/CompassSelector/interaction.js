@@ -1,25 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../styles/CompassPage"
 import { LinkPrevious } from "grommet-icons"
-const Interaction = ({interaction = {}, isLastStep, goToInteraction}) => {
+import translateTime from "../../../utils/translateTime"
+import {ReviewModalContext} from "../../../context/ReviewModal/context"
+
+const Interaction = ({interaction = {}, isLastStep}) => {
   const { step, duration } = interaction;  
-  const translateTime = (secs) => {
-    const sec_num = parseInt(secs, 10)
-    const hours   = Math.floor(sec_num / 3600)
-    const minutes = Math.floor(sec_num / 60) % 60
-    const seconds = sec_num % 60
+  const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
-    return [hours,minutes,seconds]
-      .map(v => v < 10 ? "0" + v : v)
-      .filter((v,i) => v !== "00" || i > 0)
-      .join(":") 
+  const openReviewLog = (evt) => {
+    updateInteraction(interaction);
+    updateShowModal(true)
   }
-
   
   return (
     <CSInteractionContainer>
       <CSInteractionButtonContainer>
-        <CSInteraction label={step.name_of_step} onClick={e => goToInteraction(interaction)} color={step.color}/> 
+        <CSInteraction 
+          label={step.name_of_step} 
+          color={step.color}
+          onClick={openReviewLog}
+        /> 
         <span>{translateTime(duration)}</span>
       </CSInteractionButtonContainer>
       

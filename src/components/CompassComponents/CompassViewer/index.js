@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, { useEffect, useContext}  from "react";
 import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 import ProjectDetails from "./ProjectDetails"

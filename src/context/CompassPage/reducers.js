@@ -16,9 +16,7 @@ const updateInteraction = (newInteraction, state) => {
   let newInteractions = state.interactions;
   newInteractions = newInteractions.filter((item) => { return interaction.id !== item.id })
   newInteractions = [interaction, ...newInteractions]
-
-  // console.log(newInteractions)
-
+  
   return { 
     ...state, 
     interaction, 

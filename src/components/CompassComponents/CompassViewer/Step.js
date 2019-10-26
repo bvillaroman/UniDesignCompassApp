@@ -3,10 +3,7 @@ import { StepContainer, StepText } from "../../../styles/CompassPage"
 
 const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
 
-  const {
-    title,
-    color,
-  } = activeStep; 
+  const { title, color } = activeStep; 
   
   return (
     <StepContainer 

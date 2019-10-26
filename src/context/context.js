@@ -1,13 +1,7 @@
 import React, { useReducer, createContext} from "react";
 import GlobalReducer, { 
   SIGN_IN, 
-  SIGN_OUT, 
-  SELECT_COMPASS, 
-  SELECT_INTERACTION, 
-  SELECT_SESSION ,
-  REMOVE_COMPASS, 
-  REMOVE_INTERACTION, 
-  REMOVE_SESSION,
+  SIGN_OUT,
   defaultState
 } from "./reducers"
 
@@ -21,12 +15,6 @@ export const GlobalProvider = ({children}) => {
       value={{
         loginUser: (user) => dispatch({type: SIGN_IN, payload: user}),
         logoutUser: () => dispatch({type: SIGN_OUT, payload: {}}),
-        selectCompass: (compass) => dispatch({type: SELECT_COMPASS, payload: compass}),
-        selectSession: (session) => dispatch({type: SELECT_SESSION, payload: session}),
-        selectInteraction: (interaction) => dispatch({type: SELECT_INTERACTION, payload: interaction}),
-        removeCompass: () => dispatch({type: REMOVE_COMPASS, payload: {}}),
-        removeSession: () => dispatch({type: REMOVE_SESSION, payload: {}}),
-        removeInteraction: () => dispatch({type: REMOVE_INTERACTION, payload: {}}),
         ...globalState
       }}
     >

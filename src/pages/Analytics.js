@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {  Loader } from "../styles/layout"
-import { getCompass } from '../utils/queries'
-import  queryStringParser from '../utils/queryStringParser'
 import Loadable from "react-loadable"
+
+import {CompassContext} from "../context/CompassPage/context"
 
 const LoadableComponent = Loadable.Map({
   loader: {
@@ -33,35 +33,27 @@ const LoadableComponent = Loadable.Map({
 });
 
 export default (props) => {
-  const [compass, setCompass] = useState("")
+  const { compass,session } = useContext(CompassContext);
+
   const [steps, setSteps] = useState([])
   const [selectedSession, setSelectedSession] = useState({})
   const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const compass =queryStringParser(props.location.search).compassID
-    setCompass(compass)
-  }, [props.location.search])
-
-
-  useEffect(() => {
     // queries the compass and assigns it throughout the app
     setLoading(true)
-    if (compass) {
-      getCompass(compass)
-        .then((res) => {
-          setLoading(false)
-          setSteps(res.data.getCompass.steps.items)
-          if (res.data.getCompass.sessions.items) {
-            setSessions(res.data.getCompass.sessions.items)
-            setSelectedSession(res.data.getCompass.sessions.items[1])
-          }
-        })
-        .catch((err) => {
-          setLoading(false)
-          console.log(err)
-        })
+    if (compass.hasOwnProperty("id")) {
+      
+      setSteps(compass.steps.items)
+      if (compass.sessions.items) {
+        setSessions(compass.sessions.items)
+        if (session.hasOwnProperty("id")) setSelectedSession(session)
+        else setSelectedSession(compass.sessions.items[1])
+      } 
+      setLoading(false)
+    } else {
+      setLoading(false)
     }
   }, [compass])
 
