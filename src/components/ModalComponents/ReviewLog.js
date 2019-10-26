@@ -2,11 +2,13 @@ import React,{useEffect,useState, useContext} from "react";
 
 import { 
   LayerView, 
-  AttachmentContainer ,
-  AttachmentButton,
-  AttachmentButtonContainer,
+  AttachmentItemButton,
+  AttachmentPreview,
+  ReviewLogAttachmentPreview,
+  AttachmentFilePlaceHolder,
   CloseButton,
-  ReviewLogGrid,
+  ReviewLogAttachmentsSection,
+  ReviewLogContainer,
   ReviewLogTitle,
   ReviewLogInput, 
   ReviewLogHeader,
@@ -14,8 +16,7 @@ import {
   ReviewLogAttachments
 } from "../../styles/Modals"
 
-import Attachment from "../../components/CompassComponents/CompassSelector"
-
+import { Storage} from 'aws-amplify'
 import {ReviewModalContext} from "../../context/ReviewModal/context"
 
 const ReviewLog = () => {
@@ -23,6 +24,7 @@ const ReviewLog = () => {
   const [log, setLog] = useState("")
   const [step, setStep] = useState({})
   const [attachments, setAttachments] = useState([])
+  const [selectedAttachment, setSelectedAttachment] = useState({})
 
   // handle parsing of interaction
   useEffect(() => {
@@ -38,39 +40,67 @@ const ReviewLog = () => {
     updateShowModal(false);
   }
 
+  const loadAttachment = (attachment) => {
+    Storage.get(attachment.key)
+      .then(result => {
+        setSelectedAttachment({
+          src: result,
+          attachment
+        });
+      })
+      .catch(err => {
+        setSelectedAttachment({})
+      });
+  }
+
   return (
     <LayerView
       onEsc={closeWindow}
       onClickOutside={closeWindow}
     >
-      <AttachmentContainer>
-        <ReviewLogGrid>
-          <ReviewLogHeader>
-            <ReviewLogTitle color={step.color}> {step.name_of_step}  </ReviewLogTitle>
-            <CloseButton onClick={closeWindow} />
-          </ReviewLogHeader>
-          <ReviewLogInput
-            placeholder="Enter Log"
-            value={log}
-            onChange={event => setLog(event.target.value)}
-            color={step.color} 
-          />
+      <ReviewLogContainer>
+        <ReviewLogHeader>
+          <ReviewLogTitle color={step.color}> {step.name_of_step}  </ReviewLogTitle>
+          <CloseButton onClick={closeWindow} />
+        </ReviewLogHeader>
+        <ReviewLogInput
+          placeholder="Enter Log"
+          value={log}
+          onChange={event => setLog(event.target.value)}
+          color={step.color} 
+        />
+        <ReviewLogAttachmentsSection>
           <ReviewLogAttachmentsContainer>
             <ReviewLogHeader>
               <ReviewLogTitle color="black"> Attachments </ReviewLogTitle>
               {/* <AttachmentButton onChange={handleUpload}  color={step.color}/>               */}
             </ReviewLogHeader>
             <ReviewLogAttachments>
-              {/* { 
-                attachments.length > 0 && 
-                attachments.map((item) => (
-                  <Attachment key={item.key} attachment={item} />
-                )) 
-              } */}
+              { 
+                attachments.length > 0 ?
+                attachments.map((attachment) => (
+                  <AttachmentItemButton 
+                    key={attachment.key} 
+                    attachment={attachment}  
+                    onClick={e => loadAttachment(attachment)} 
+                  />
+                )) : 
+                <p>You have no attachments !</p>
+              }
             </ReviewLogAttachments>
           </ReviewLogAttachmentsContainer>
-        </ReviewLogGrid>
-      </AttachmentContainer>
+          <ReviewLogAttachmentPreview>
+            {
+              selectedAttachment.hasOwnProperty("src") ? (
+                <AttachmentPreview 
+                  src={selectedAttachment.src} 
+                  attachment={selectedAttachment.attachment}
+                />
+              ) : <AttachmentFilePlaceHolder> <span>Preview</span> </AttachmentFilePlaceHolder>
+            }
+          </ReviewLogAttachmentPreview>
+        </ReviewLogAttachmentsSection>
+      </ReviewLogContainer>
     </LayerView>
   )
 }

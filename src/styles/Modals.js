@@ -10,9 +10,9 @@ export const LayerView = styled(Layer)`
   border-radius: 2rem;
 `
 
-export const ReviewLogGrid = styled(Box)`
-  width: 90%;
-  min-height: 26rem;
+export const ReviewLogContainer = styled(Box)`
+  width: 95%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -54,13 +54,21 @@ export const ReviewLogInnerNav = styled(Box)`
   justify-content: space-between;
   padding: 0 1rem;
 `;
-export const ReviewLogAttachmentsContainer = styled(Box)`
+export const ReviewLogAttachmentsSection = styled(Box)`
   width: 100%;
   height: 100%;
   min-height: 12rem;
   margin: 0.5rem auto;
+  flex-direction: row;
+`
+export const ReviewLogAttachmentsContainer = styled(Box)`
+  width: 40%;
+  height: 100%;
+  min-height: 12rem;
+  flex-direction: column;
 `
 export const ReviewLogAttachments = styled(Box)`
+  width: 100%;
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -69,6 +77,10 @@ export const ReviewLogAttachments = styled(Box)`
   overflow: scroll;
   border-top: 0.1rem solid rgba(0,0,0,0.2);
   // border-radius: 0.3rem;
+`
+export const ReviewLogAttachmentPreview = styled(Box)`
+  width: 60%;
+  height: auto;
 `
 
 
@@ -125,8 +137,8 @@ export const AttachmentContainer = styled(Box)`
   margin: 0 auto;
 `
 export const AttachmentPreviewContainer = styled(Box)`
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   svg {
     width: 70%;
@@ -163,12 +175,36 @@ export const AttachmentItem = styled(Box)`
     height: 2rem;
   }
 `;
-export const AttachmentPhoto = styled.img`
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
-  margin-top: 1rem;
+const AttachmentPhotoStyle = styled(Box)`
+  padding: 5%;
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  a {
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
 `;
+export const AttachmentFilePlaceHolder = styled(Box)`
+  width: 85%;
+  height: 85%;
+  justify-content: center;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: auto;
+  background: grey;
+  color: white;
+`;
+export const AttachmentPhoto = ({src}) => (
+  <AttachmentPhotoStyle >
+    <a href={src} target="_blank">
+      <img src={src}/>
+    </a>
+  </AttachmentPhotoStyle>
+)
 export const AttachmentVideo = ({src,type}) => (
   <Video controls="over" fit="cover">
     <source key="video" src={src} type={type} />
