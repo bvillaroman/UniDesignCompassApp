@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
-// 
 import { GlobalContext } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
+import CustomCompassForm from "./ProjectCustomForm"
 
 // styles
 import {
@@ -37,16 +37,17 @@ const Dashboard = (props) => {
   return (
     <>
       {
-        loading ? <Loader/> : (
+        loading ? <Loader /> : (
           <DashboardContainer>
             <Header >
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
+            <CustomCompassForm />
             <ProjectCreator />
             {
-              !error ? (compasses.length ? <Feed compasses={compasses}/>  : <div>You have no projects, start one from above! </div>)
-              : <div> Error !</div>
+              !error ? (compasses.length ? <Feed compasses={compasses} /> : <div>You have no projects, start one from above! </div>)
+                : <div> Error !</div>
             }
           </DashboardContainer>
         )

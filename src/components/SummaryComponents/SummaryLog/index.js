@@ -21,9 +21,8 @@ const SummaryLog = (props) => {
   const [comment, setComment] = useState("");
 
   const { items } = interaction.attachments;
-  // console.log(items, 'SUP')
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const newInteraction = {
       id: interaction.id,
       comments: comment
@@ -34,12 +33,14 @@ const SummaryLog = (props) => {
   }
 
   useEffect(() => {
-    getInteraction(interaction.id)
-      .then(res => {
-        setComment(res.data.getInteraction.interaction.comments)
-      })
-      .catch(err => console.log(err))
-  }, [])
+    // getInteraction(interaction.id)
+    // .then(res => {
+    // setComment(res.data.getInteraction.interaction.comments)
+    setComment(interaction.comments)
+    // })
+    // .catch(err => console.log(err))
+    // }, [interaction.comments])
+  })
 
   return (
     <SummaryContainer>
