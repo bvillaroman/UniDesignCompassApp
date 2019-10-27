@@ -1,7 +1,7 @@
 
 import styled from "styled-components"
 import { Layer, Button, Box, TextArea } from "grommet"
-import { Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
+import { Edit,Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
 import React from "react";
 
 export const LayerView = styled(Layer)`
@@ -11,24 +11,26 @@ export const LayerView = styled(Layer)`
 `
 
 export const ReviewLogContainer = styled(Box)`
-  width: 95%;
-  height: 100%;
+  width: 99%;
+  padding: 0 1.5rem;
+  height: 98%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 
 `;
 export const ReviewLogHeader = styled(Box)`
   width: 100%;
-  margin: 1rem auto;
-  height: 2.4rem;
+  margin: 0.5rem auto;
+  min-height: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 export const ReviewLogTitle = styled.h4`
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   padding: 0;
   width: 50%;
   color: ${props => props.color ? props.color: '#5567FD'};
@@ -36,11 +38,28 @@ export const ReviewLogTitle = styled.h4`
   text-align: left;
   font-weight: 600;
 `
+export const ReviewLogText = styled(Box)`
+  border-color: black;
+  min-height: 10rem;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem 0.75rem;
+`;
 export const ReviewLogInput = styled(TextArea)`
   border-color: black;
   resize: none;
-  min-height: 10rem;
+  min-height: 7.5rem;
   height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+`;
+export const ReviewLogInputButtons = styled(Box)`
+  flex-direction: row;
+  width: 100%;
+  min-height: 2rem;
+  margin-top: 0.5rem;
+  justify-content: space-between;
   font-size: 0.8rem;
   font-weight: 400;
 `;
@@ -216,10 +235,44 @@ export const AttachmentButton = ({onChange, color, disabled}) =>(
     <input type="file" onChange={onChange} disabled={disabled}/>
   </AttachmentButtonLabel>
 )
+
 export const CloseButton = ({onClick}) =>(
   <AttachmentButtons     
     onClick={onClick} 
     icon={<Close color="#5567FD"/>}
+  />
+)
+
+const EditLogButtonStyle = styled(AttachmentButtons)`
+  padding: 0.2rem .5rem;
+  font-weight: 500;
+`
+export const EditLogButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    icon={<Edit color="#5567FD"/>}
+    label="Edit Log"
+  />
+)
+
+export const SaveButtonContainer = styled(Box)`
+  flex-direction: row;
+  align-items: center;
+  p {
+    font-size: 1.0rem;
+    margin-right: 1rem;
+  }
+`
+export const SaveButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    label="Save"
+  />
+)
+export const ClearButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    label="Clear"
   />
 )
 export const DownloadButton = ({src}) =>(

@@ -7,22 +7,31 @@ import {
   ReviewLogAttachmentPreview,
   AttachmentFilePlaceHolder,
   CloseButton,
+  SaveButtonContainer,
+  SaveButton,
+  ClearButton,
+  EditLogButton,
   ReviewLogAttachmentsSection,
   ReviewLogContainer,
   ReviewLogTitle,
+  ReviewLogText,
   ReviewLogInput, 
+  ReviewLogInputButtons,
   ReviewLogHeader,
   ReviewLogAttachmentsContainer,
   ReviewLogAttachments
 } from "../../styles/Modals"
 
 import { Storage} from 'aws-amplify'
+import * as Mutation from '../../utils/mutations'
 import {ReviewModalContext} from "../../context/ReviewModal/context"
 
 const ReviewLog = () => {
   const { interaction, updateInteraction, updateShowModal, clearInteraction } = useContext(ReviewModalContext);
   const [log, setLog] = useState("")
+  const [saved, setSaved] = useState(false)
   const [step, setStep] = useState({})
+  const [editEnabled,setEditEnabled] =  useState(false)
   const [attachments, setAttachments] = useState([])
   const [selectedAttachment, setSelectedAttachment] = useState({})
 
@@ -40,6 +49,11 @@ const ReviewLog = () => {
     updateShowModal(false);
   }
 
+  const handleLog = (e) => {
+    setLog(e.target.value)
+    setSaved(false)
+  }
+
   const loadAttachment = (attachment) => {
     Storage.get(attachment.key)
       .then(result => {
@@ -53,6 +67,21 @@ const ReviewLog = () => {
       });
   }
 
+  const saveLog = (e) => {
+
+    const newInteraction = {
+      id: interaction.id,
+      log_content: log
+    }
+    Mutation.updateInteraction(newInteraction)
+      .then((res) => {
+        updateInteraction(res.data.updateInteraction)
+        setSaved(true)
+      }).catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <LayerView
       onEsc={closeWindow}
@@ -61,14 +90,31 @@ const ReviewLog = () => {
       <ReviewLogContainer>
         <ReviewLogHeader>
           <ReviewLogTitle color={step.color}> {step.name_of_step}  </ReviewLogTitle>
-          <CloseButton onClick={closeWindow} />
+          <CloseButton onClick={closeWindow} />  
         </ReviewLogHeader>
-        <ReviewLogInput
-          placeholder="Enter Log"
-          value={log}
-          onChange={event => setLog(event.target.value)}
-          color={step.color} 
-        />
+        <ReviewLogHeader>
+          <ReviewLogTitle color="black"> Log </ReviewLogTitle>
+          <EditLogButton onClick={e => setEditEnabled(!editEnabled)} />  
+        </ReviewLogHeader>
+        {
+          editEnabled ? (
+            <>
+            <ReviewLogInput
+              placeholder="Enter Log"
+              value={log}
+              onChange={handleLog}
+              color={step.color} 
+            />
+            <ReviewLogInputButtons> 
+              <ClearButton onClick={e=> setLog("")}/>
+              <SaveButtonContainer>
+                {saved && <p>Saved!</p>}
+                <SaveButton onClick={saveLog}/>
+              </SaveButtonContainer>
+            </ReviewLogInputButtons>
+            </>
+          ) : ( <ReviewLogText> {log.replace(" ", "") !== "" ? log : "You have no Log!"} </ReviewLogText> )  
+        }
         <ReviewLogAttachmentsSection>
           <ReviewLogAttachmentsContainer>
             <ReviewLogHeader>
