@@ -40,7 +40,11 @@ const SummaryLog = (props) => {
     // })
     // .catch(err => console.log(err))
     // }, [interaction.comments])
-  })
+  }, [])
+
+  // const handleChange = (e) => {
+  //   setComment(e.target.value)
+  // }
 
   return (
     <SummaryContainer>
@@ -59,6 +63,7 @@ const SummaryLog = (props) => {
             onChange={e => {
               setComment(e.target.value)
             }}
+            // onChange={handleChange}
             value={comment}
           >
           </TextArea>
