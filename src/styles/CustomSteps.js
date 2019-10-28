@@ -1,24 +1,30 @@
 import styled from 'styled-components';
-import { Button } from 'grommet';
+import { Button, TextInput } from 'grommet';
 
 export const CustomStepsForm = styled.form`
-  width: fit-content;
-  margin: 1em;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
+  width: 70%;
+  margin: 0 auto;
+  // box-shadow: 0 1px 3px 0 #d2d4d6;
   background: white;
   padding: 1em;
-  //overflow: auto;
-  width: 50%;
 `;
 
-export const CustomStepsHeader = styled.label`
+export const CustomStepsHeaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+export const CustomStepsHeader = styled(TextInput)`
+  width: 60%;
   color: black;
   font-weight: 500;
   margin: 0;
-  font-size: 2.5rem;
-  line-height: 2.6rem;
+  font-size: 2.0rem;
+  line-height: 2.1rem;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem;
 `;
 
 export const CustomStepsLabel = styled.label`
@@ -40,7 +46,7 @@ export const CustomStepsButton = styled(Button)`
   margin: 0;
   font-size: 0.9rem;
   float: right;
-  //margin-bottom: -1em;
+  width: 40%;
   
 `;
 
@@ -68,20 +74,27 @@ export const CustomStepsOption = styled.option`
 `;
 
 export const CustomStepsDiv = styled.div`
+  margin: 0.5rem auto;
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 80%;
 `;
 
 export const CustomStepsDiv2 = styled.div`
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5rem auto;
 `;
 
 export const CustomStepsDiv3 = styled.div`
   width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
   padding-right: 6em;
+  margin: 0.5rem auto;
 `;

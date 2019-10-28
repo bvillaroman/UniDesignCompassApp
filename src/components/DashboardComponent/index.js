@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GlobalContext } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
-import CustomCompassForm from "./ProjectCustomForm"
-
+import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
+import {ReviewModalContext} from "../../context/ReviewModal/context"
 // styles
 import {
   DashboardContainer,
@@ -18,6 +18,7 @@ import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
   const { user } = useContext(GlobalContext);
+  const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
@@ -43,7 +44,7 @@ const Dashboard = (props) => {
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
-            <CustomCompassForm />
+            { showModal && <CustomCompassForm /> }
             <ProjectCreator />
             {
               !error ? (compasses.length ? <Feed compasses={compasses} /> : <div>You have no projects, start one from above! </div>)
