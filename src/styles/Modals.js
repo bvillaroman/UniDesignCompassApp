@@ -1,6 +1,6 @@
 
 import styled from "styled-components"
-import { Layer, Button, Box, TextArea } from "grommet"
+import { Layer, Button, Box, TextArea, Text } from "grommet"
 import { Edit,Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
 import React from "react";
 
