@@ -10,7 +10,9 @@ import {
   CustomStepsInput,
   CustomStepsSelect,
   CustomStepsOption,
-  CustomStepsDiv
+  CustomStepsDiv,
+  CustomStepsDiv2,
+  CustomStepsDiv3
 } from "../../styles/CustomSteps"
 import { AddCircle } from 'grommet-icons';
 
@@ -64,8 +66,8 @@ const CustomCompassForm = () => {
 
           return (
             <CustomStepsDiv key={`step-${idx}`}>
-              <div style={{ flex: '1 0 50%' }}>
-                <CustomStepsLabel htmlFor={titleId}>{`Step Title ${idx + 1}`}</CustomStepsLabel>
+              <CustomStepsDiv2>
+                <CustomStepsLabel htmlFor={titleId}>{`Step #${idx + 1}`}</CustomStepsLabel>
                 <CustomStepsInput
                   placeholder="Step Title..."
                   type="text"
@@ -76,8 +78,6 @@ const CustomCompassForm = () => {
                   value={step[idx].title}
                   onChange={handleStepChange}
                 />
-              </div>
-              <div>
                 <CustomStepsSelect
                   type="text"
                   color={colorId}
@@ -92,8 +92,8 @@ const CustomCompassForm = () => {
                   <CustomStepsOption>#8D6A9F</CustomStepsOption>
                   <CustomStepsOption>#03F7EB</CustomStepsOption>
                 </CustomStepsSelect>
-              </div>
-              <div>
+              </CustomStepsDiv2>
+              <CustomStepsDiv3>
                 <CustomStepsLabel htmlFor={descriptionId}>Description</CustomStepsLabel>
                 <CustomStepsInput
                   placeholder="Step Description..."
@@ -105,7 +105,8 @@ const CustomCompassForm = () => {
                   value={step[idx].description}
                   onChange={handleStepChange}
                 />
-              </div>
+              </CustomStepsDiv3>
+
             </CustomStepsDiv>
 
           );

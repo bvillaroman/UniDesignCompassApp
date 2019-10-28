@@ -4,6 +4,7 @@ import { getInteraction } from "../../../utils/queries"
 import { navigate } from "gatsby"
 import LogLinkArray from '../SummaryLinks/LogLinkArray'
 import { CompassContext } from "../../../context/CompassPage/context";
+import { ReviewModalContext } from "../../../context/ReviewModal/context";
 import {
   SummaryTitle,
   SummaryListButton,
@@ -18,6 +19,7 @@ import {
 
 const SummaryLog = (props) => {
   const { compass, session, interaction } = useContext(CompassContext);
+  const { updateShowModal, updateInteraction, showModal } = useContext(ReviewModalContext)
   const [comment, setComment] = useState("");
 
   const { items } = interaction.attachments;
@@ -33,25 +35,22 @@ const SummaryLog = (props) => {
   }
 
   useEffect(() => {
-    // getInteraction(interaction.id)
-    // .then(res => {
-    // setComment(res.data.getInteraction.interaction.comments)
     setComment(interaction.comments)
-    // })
-    // .catch(err => console.log(err))
-    // }, [interaction.comments])
   }, [])
 
-  // const handleChange = (e) => {
-  //   setComment(e.target.value)
-  // }
+  const openReviewLog = (evt) => {
+    updateInteraction(interaction);
+    updateShowModal(true)
+  }
 
   return (
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
         <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compass.id}`)} />
-        <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} />
+        <SummaryListButton label=" Edit Log " onClick={openReviewLog} />
+        {showModal}
+        {/* <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} /> */}
       </SummaryLogHeader>
       <TextAreaContainer>
         <SummaryLogBox>

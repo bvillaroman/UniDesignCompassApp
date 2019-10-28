@@ -8,6 +8,7 @@ export const CustomStepsForm = styled.form`
   background: white;
   padding: 1em;
   //overflow: auto;
+  width: 50%;
 `;
 
 export const CustomStepsHeader = styled.label`
@@ -47,7 +48,6 @@ export const CustomStepsInput = styled.input`
   border: none;
   border-bottom: 2px solid #f4f6f9;
   font-size: large;
-  width: 50%
 `;
 
 export const CustomStepsSelect = styled.select`
@@ -73,4 +73,15 @@ export const CustomStepsDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+`;
+
+export const CustomStepsDiv2 = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+export const CustomStepsDiv3 = styled.div`
+  width: 100%;
+  text-align: center;
+  padding-right: 6em;
 `;
