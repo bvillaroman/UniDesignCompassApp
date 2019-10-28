@@ -22,7 +22,6 @@ import { MainView } from "../styles/CompassPage"
 const CompassPage = (props) => {
   const { compass, session, } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
-  const [show, setShow] = useState();
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
 

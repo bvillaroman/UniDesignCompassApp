@@ -1,7 +1,7 @@
 
 import styled from "styled-components"
 import { Layer, Button, Box, TextArea } from "grommet"
-import { Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
+import { Edit,Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
 import React from "react";
 
 export const LayerView = styled(Layer)`
@@ -10,25 +10,27 @@ export const LayerView = styled(Layer)`
   border-radius: 2rem;
 `
 
-export const ReviewLogGrid = styled(Box)`
-  width: 90%;
-  min-height: 26rem;
+export const ReviewLogContainer = styled(Box)`
+  width: 99%;
+  padding: 0 1.5rem;
+  height: 98%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 
 `;
 export const ReviewLogHeader = styled(Box)`
   width: 100%;
-  margin: 1rem auto;
-  height: 2.4rem;
+  margin: 0.5rem auto;
+  min-height: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 export const ReviewLogTitle = styled.h4`
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   padding: 0;
   width: 50%;
   color: ${props => props.color ? props.color: '#5567FD'};
@@ -36,11 +38,28 @@ export const ReviewLogTitle = styled.h4`
   text-align: left;
   font-weight: 600;
 `
+export const ReviewLogText = styled(Box)`
+  border-color: black;
+  min-height: 10rem;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem 0.75rem;
+`;
 export const ReviewLogInput = styled(TextArea)`
   border-color: black;
   resize: none;
-  min-height: 10rem;
+  min-height: 7.5rem;
   height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+`;
+export const ReviewLogInputButtons = styled(Box)`
+  flex-direction: row;
+  width: 100%;
+  min-height: 2rem;
+  margin-top: 0.5rem;
+  justify-content: space-between;
   font-size: 0.8rem;
   font-weight: 400;
 `;
@@ -54,13 +73,21 @@ export const ReviewLogInnerNav = styled(Box)`
   justify-content: space-between;
   padding: 0 1rem;
 `;
-export const ReviewLogAttachmentsContainer = styled(Box)`
+export const ReviewLogAttachmentsSection = styled(Box)`
   width: 100%;
   height: 100%;
   min-height: 12rem;
   margin: 0.5rem auto;
+  flex-direction: row;
+`
+export const ReviewLogAttachmentsContainer = styled(Box)`
+  width: 40%;
+  height: 100%;
+  min-height: 12rem;
+  flex-direction: column;
 `
 export const ReviewLogAttachments = styled(Box)`
+  width: 100%;
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -69,6 +96,10 @@ export const ReviewLogAttachments = styled(Box)`
   overflow: scroll;
   border-top: 0.1rem solid rgba(0,0,0,0.2);
   // border-radius: 0.3rem;
+`
+export const ReviewLogAttachmentPreview = styled(Box)`
+  width: 60%;
+  height: auto;
 `
 
 
@@ -125,8 +156,8 @@ export const AttachmentContainer = styled(Box)`
   margin: 0 auto;
 `
 export const AttachmentPreviewContainer = styled(Box)`
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   svg {
     width: 70%;
@@ -163,12 +194,36 @@ export const AttachmentItem = styled(Box)`
     height: 2rem;
   }
 `;
-export const AttachmentPhoto = styled.img`
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
-  margin-top: 1rem;
+const AttachmentPhotoStyle = styled(Box)`
+  padding: 5%;
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  a {
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
 `;
+export const AttachmentFilePlaceHolder = styled(Box)`
+  width: 85%;
+  height: 85%;
+  justify-content: center;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: auto;
+  background: grey;
+  color: white;
+`;
+export const AttachmentPhoto = ({src}) => (
+  <AttachmentPhotoStyle >
+    <a href={src} target="_blank" rel="noopener noreferrer">
+      <img src={src} alt="attachmentphoto"/>
+    </a>
+  </AttachmentPhotoStyle>
+)
 export const AttachmentVideo = ({src,type}) => (
   <Video controls="over" fit="cover">
     <source key="video" src={src} type={type} />
@@ -180,10 +235,44 @@ export const AttachmentButton = ({onChange, color, disabled}) =>(
     <input type="file" onChange={onChange} disabled={disabled}/>
   </AttachmentButtonLabel>
 )
+
 export const CloseButton = ({onClick}) =>(
   <AttachmentButtons     
     onClick={onClick} 
     icon={<Close color="#5567FD"/>}
+  />
+)
+
+const EditLogButtonStyle = styled(AttachmentButtons)`
+  padding: 0.2rem .5rem;
+  font-weight: 500;
+`
+export const EditLogButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    icon={<Edit color="#5567FD"/>}
+    label="Edit Log"
+  />
+)
+
+export const SaveButtonContainer = styled(Box)`
+  flex-direction: row;
+  align-items: center;
+  p {
+    font-size: 1.0rem;
+    margin-right: 1rem;
+  }
+`
+export const SaveButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    label="Save"
+  />
+)
+export const ClearButton = ({onClick}) =>(
+  <EditLogButtonStyle     
+    onClick={onClick} 
+    label="Clear"
   />
 )
 export const DownloadButton = ({src}) =>(
