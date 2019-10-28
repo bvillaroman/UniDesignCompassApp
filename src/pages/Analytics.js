@@ -40,22 +40,26 @@ export default (props) => {
   const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
 
+  // handle compass data
   useEffect(() => {
     // queries the compass and assigns it throughout the app
     setLoading(true)
     if (compass.hasOwnProperty("id")) {
-      
       setSteps(compass.steps.items)
-      if (compass.sessions.items) {
-        setSessions(compass.sessions.items)
-        if (session.hasOwnProperty("id")) setSelectedSession(session)
-        else setSelectedSession(compass.sessions.items[1])
-      } 
-      setLoading(false)
-    } else {
-      setLoading(false)
-    }
+      if (compass.sessions.items) setSessions(compass.sessions.items) 
+    } 
+    setLoading(false)
   }, [compass])
+
+  // handle sessopm data
+  useEffect(() => {
+    // queries the compass and assigns it throughout the app
+    setLoading(true)
+    if (session.hasOwnProperty("id")) setSelectedSession(session)
+    else setSelectedSession(compass.sessions.items[1])
+    setLoading(false)
+      
+  }, [session])
 
 
   return ( 

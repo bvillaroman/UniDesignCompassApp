@@ -219,8 +219,8 @@ export const AttachmentFilePlaceHolder = styled(Box)`
 `;
 export const AttachmentPhoto = ({src}) => (
   <AttachmentPhotoStyle >
-    <a href={src} target="_blank">
-      <img src={src}/>
+    <a href={src} target="_blank" rel="noopener noreferrer">
+      <img src={src} alt="attachmentphoto"/>
     </a>
   </AttachmentPhotoStyle>
 )
