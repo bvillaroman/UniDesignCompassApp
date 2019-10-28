@@ -1,118 +1,99 @@
 import React, { useState, useEffect } from "react";
-//import { GlobalContext } from "../context/context";
 import { Auth } from 'aws-amplify';
-//import { Edit } from 'grommet-icons'
 import {
-    ProfileContainer,
-    ProfileTitle,
-    FormContainter,
-    FormName,
-    FormNameLabel,
-    FormNameInput,
-    NameButton,
-    FormPassword,
-    FormPasswordLabel,
-    FormPasswordInput,
-    PasswordButton
+  ProfileContainer,
+  ProfileTitle,
+  FormContainter,
+  FormName,
+  FormNameLabel,
+  FormNameInput,
+  NameButton,
+  FormPassword,
+  FormPasswordLabel,
+  FormPasswordInput,
+  PasswordButton
 
 } from '../styles/ProfilePage'
 
 const ProfilePage = (props) => {
-    const [name, setName] = useState('');
-    const [newName, setNewName] = useState('');
-    const [oldPassword, setOldPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
+  const [newName, setNewName] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showErrorOldPass, setShowErrorOldPass] = useState(false);
+  const [showErrorNewPass, setShowErrorNewPass] = useState(false);
 
-    useEffect(() => {
-        Auth.currentAuthenticatedUser({ bypassCache: true })
-            .then(res => { return setName(res.attributes.name) })
-            .catch(err => console.log(err))
-    }, [name])
+  useEffect(() => {
+    Auth.currentAuthenticatedUser({ bypassCache: true })
+      .then(res => { return setName(res.attributes.name) })
+      .catch(err => console.log(err))
+  }, [name])
 
-    // const changeName = (event) => {
-    //     event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    // }
+    let user = await Auth.currentAuthenticatedUser();
+    let result = await Auth.updateUserAttributes(user, {
+      'name': newName
+    });
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    // await Auth.currentAuthenticatedUser({ bypassCache: true })
+    //     .then(res => { console.log(res.attributes.name) })
+    //     .catch(err => console.log(err))
+  }
 
-        let user = await Auth.currentAuthenticatedUser();
-        console.log(user.attributes.name)
-        let result = await Auth.updateUserAttributes(user, {
+  const submitPassword = (e) => {
+    e.preventDefault()
+    console.log('changing password from form')
 
-            'name': newName
-        });
-
-        console.log(result)
-        console.log(user.attributes.name)
-
-
-        await Auth.currentAuthenticatedUser({ bypassCache: true })
-            .then(res => { console.log(res.attributes.name) })
-            .catch(err => console.log(err))
+    if (newPassword === confirmPassword) {
+      Auth.currentAuthenticatedUser()
+        .then(user => {
+          return Auth.changePassword(user, oldPassword, newPassword);
+        })
+        // .then(data => console.log(data))
+        .catch(err =>
+          console.log(err, 'old password does not match'), setShowErrorOldPass(!false)
+        );
+    } else {
+      console.log('Password does not match')
+      setShowErrorNewPass(!false)
     }
+  }
 
-    const changePassword = () => {
-        Auth.currentAuthenticatedUser()
-            .then(user => {
-                return Auth.changePassword(user, 'Password1', 'Password');
-            })
-            .then(data => console.log(data))
-            .catch(err => console.log(err));
-    }
+  return (
+    <ProfileContainer>
+      <ProfileTitle>Profile Page</ProfileTitle>
+      <FormContainter>
+        <FormName onSubmit={handleSubmit}>
+          <FormNameLabel>
+            Name: </FormNameLabel>
+          <FormNameInput type="text" name="name" placeholder={name} value={newName} onChange={e => { setNewName(e.target.value) }} />
 
-    const submitPassword = (e) => {
-        e.preventDefault()
-        console.log('changing password from form')
-        console.log(oldPassword)
-        console.log(newPassword)
-        console.log(confirmPassword)
+          <NameButton type="submit">Change Name</NameButton>
+        </FormName>
+        <br />
+        <FormPassword onSubmit={submitPassword}>
+          <FormPasswordLabel>
+            Old Password:  </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} />
 
-        if (newPassword === confirmPassword) {
-            Auth.currentAuthenticatedUser()
-                .then(user => {
-                    return Auth.changePassword(user, oldPassword, newPassword);
-                })
-                .then(data => console.log(data))
-                .catch(err => console.log(err, 'old password does not match'));
-        } else {
-            console.log('Password does not match')
-        }
-    }
+          <FormPasswordLabel>
+            New Password:  </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} />
 
+          <FormPasswordLabel>
+            Confirm New Password: </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} />
 
-
-    return (
-        <ProfileContainer>
-            <ProfileTitle>Profile Page</ProfileTitle>
-            <FormContainter>
-                <FormName onSubmit={handleSubmit}>
-                    <FormNameLabel>
-                        Name: <FormNameInput type="text" name="name" placeholder={name} value={newName} onChange={e => { setNewName(e.target.value) }} />
-                    </FormNameLabel>
-                    <NameButton type="submit">Change Name</NameButton>
-                </FormName>
-                <br />
-
-                <FormPassword onSubmit={submitPassword}>
-                    <FormPasswordLabel>
-                        Old Password: <FormPasswordInput type="password" password="password" onChange={e => setOldPassword(e.target.value)} />
-                    </FormPasswordLabel>
-                    <FormPasswordLabel>
-                        New Password: <FormPasswordInput type="password" password="password" onChange={e => setNewPassword(e.target.value)} />
-                    </FormPasswordLabel>
-                    <FormPasswordLabel>
-                        Confirm New Password: <FormPasswordInput type="password" password="password" onChange={e => setConfirmPassword(e.target.value)} />
-                    </FormPasswordLabel>
-                    <PasswordButton type="submit">Change Password</PasswordButton>
-                </FormPassword>
-
-                <br />
-                {/* <button onClick={changePassword}>Click me to change password to Password</button> */}
-            </FormContainter>
-        </ProfileContainer>
-    )
+          <PasswordButton type="submit">Change Password</PasswordButton>
+        </FormPassword>
+        {showErrorNewPass ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>}
+        {showErrorOldPass ? <h4>{"Old password does not match"}</h4> : <h4 hidden></h4>}
+        <br />
+      </FormContainter>
+    </ProfileContainer>
+  )
 };
 export default ProfilePage;

@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-
 import { GlobalContext } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
-
+import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
+import {ReviewModalContext} from "../../context/ReviewModal/context"
+// styles
 import {
   DashboardContainer,
   Header,
@@ -11,12 +12,13 @@ import {
 } from "../../styles/Dashboard";
 import { Loader } from "../../styles/layout"
 
-
+// components
 import ProjectCreator from "./ProjectCreator";
 import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
   const { user } = useContext(GlobalContext);
+  const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
@@ -31,19 +33,23 @@ const Dashboard = (props) => {
         setError(error.message)
         setLoading(false)
       });
-  }, []);
+  }, [user.email]);
 
   return (
     <>
       {
-        loading ? <Loader/> : (
+        loading ? <Loader /> : (
           <DashboardContainer>
             <Header >
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
+            { showModal && <CustomCompassForm /> }
             <ProjectCreator />
-            <Feed compasses={compasses}/>
+            {
+              !error ? (compasses.length ? <Feed compasses={compasses} /> : <div>You have no projects, start one from above! </div>)
+                : <div> Error !</div>
+            }
           </DashboardContainer>
         )
       }

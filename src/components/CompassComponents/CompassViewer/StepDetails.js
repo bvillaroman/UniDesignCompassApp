@@ -1,7 +1,5 @@
 import React, {useState, useEffect}  from "react";
-import { StepDetailsContainer, StepDetailsTitle, StepDetailsDescription } from "../../../styles/CompassPage"
-import {  } from 'grommet-icons';
-
+import { StepDetailsTitle, StepDetailsDescription } from "../../../styles/CompassPage"
 
 export default ({step}) => {
   const [title, setTitle] = useState("")

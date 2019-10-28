@@ -1,57 +1,22 @@
-import React, { useEffect, useState } from "react";
-import SummarySession from "../components/SummaryComponents/SummarySession/"
-import SummaryLog from "../components/SummaryComponents/SummaryLog/"
-import queryStringParser from "../utils/queryStringParser"
-import { getInteraction } from "../utils/queries"
+import React, { useContext, useEffect, useState } from "react";
+import SummarySession from "../components/SummaryComponents/SummarySession/";
+import SummaryLog from "../components/SummaryComponents/SummaryLog/";
+import { CompassContext } from "../context/CompassPage/context";
+import { ReviewModalContext } from "../context/ReviewModal/context"
+import ReviewLog from "../components/ModalComponents/ReviewLog"
 
 const SummaryPage = (props) => {
-  const [log, setLog] = useState({});
-  const [compassID, setCompassID] = useState("");
-  const [sessionID, setSessionID] = useState("");
-  const [interactionID, setInteractionID] = useState("");
-
-  useEffect(() => {
-    const compass = queryStringParser(props.location.search).compassID
-    const session = queryStringParser(props.location.search).sessionID
-    const interaction = queryStringParser(props.location.search).interactionID
-    setCompassID(compass)
-    setSessionID(session)
-    setInteractionID(interaction)
-    console.log(`session: ${session}`)
-    console.log(`interaction: ${interaction}`)
-  }, [props.location.search])
-
-  console.log(compassID)
-
-  useEffect(() => {
-    // attachments,  currentLog, interactId, compassID
-    if (interactionID !== "") {
-      getInteraction(interactionID)
-        .then(res => {
-          console.log(res.data.getInteraction)
-          setLog(res.data.getInteraction)
-        })
-        .catch(err => setLog({}))
-    }
-  }, [interactionID])
+  const { compass, session, interaction } = useContext(CompassContext);
+  const { showModal } = useContext(ReviewModalContext);
 
   return (
     <>
       {
-        interactionID && log != {} && log.attachments ? (
-          <SummaryLog
-            attachments={log.attachments}
-            currentLog={log.log_content}
-            interactId={interactionID}
-            compassID={compassID}
-            sessionID={sessionID}
-            interactionID={interactionID}
-            comments={log.comments}
-          />
-        ) : <SummarySession compassID={compassID} />
+        interaction.hasOwnProperty("id") ? (
+          < SummaryLog />
+        ) : <SummarySession />
       }
-      {/* <SummarySession compassID={compassID} /> */}
-
+      {showModal && <ReviewLog />}
     </>
   )
 };

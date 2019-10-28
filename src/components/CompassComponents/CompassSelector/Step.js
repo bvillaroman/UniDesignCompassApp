@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { CompassContext } from "../../../context/CompassPage/context"
 import { StepContainer, StepText } from "../../../styles/CompassPage"
 import { startInteraction } from "../../../utils/mutations"
+import translateTime from '../../../utils/translateTime'
 
 const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
-  const {session,compass,interaction} = useContext(CompassContext)
+  const {session} = useContext(CompassContext)
 
   const {
     id,
@@ -19,19 +20,6 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
         selectStep(interaction.data.createInteraction)        
       })
   }
-
-  const translateTime = (secs) => {
-    const sec_num = parseInt(secs, 10)
-    const hours   = Math.floor(sec_num / 3600)
-    const minutes = Math.floor(sec_num / 60) % 60
-    const seconds = sec_num % 60
-
-    return [hours,minutes,seconds]
-      .map(v => v < 10 ? "0" + v : v)
-      .filter((v,i) => v !== "00" || i > 0)
-      .join(":") 
-  }
-
   
   return (
     <StepContainer 

@@ -1,6 +1,4 @@
-import React from "react"
 import styled from 'styled-components';
-import Button from 'grommet';
 
 export const ProfileContainer = styled.div`
   display: flex; 
@@ -25,19 +23,22 @@ export const FormContainter = styled.div`
   display: block;
 
   margin: 1em;
-  width: 96%;
+  //width: 96%;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   background: white;
   padding: 1em;
 `;
 
 export const FormName = styled.form`
-  
+display: flex;
+flex-direction: column;
 `;
 
 export const FormNameLabel = styled.label`
   font-size: 1.3rem;
   font-weight: 500;
+  display: inline-block
+  width: 5em;
 `;
 
 export const FormNameInput = styled.input`
@@ -55,7 +56,8 @@ export const NameButton = styled.button`
   border: 0.15em solid #5567FD;
   background-color: #5567FD;
   color: white;
-  margin: 0 auto;
+  //margin: 0 auto;
+  float: left;
 `;
 
 export const FormPassword = styled.form`
@@ -66,6 +68,8 @@ export const FormPassword = styled.form`
 export const FormPasswordLabel = styled.label`
   font-size: 1.3rem;
   font-weight: 500;
+  display: inline-block
+  width: 5em;
 `;
 
 export const FormPasswordInput = styled.input`

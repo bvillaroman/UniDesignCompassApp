@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { updateInteraction } from "../../../utils/mutations";
 import { getInteraction } from "../../../utils/queries"
 import { navigate } from "gatsby"
 import LogLinkArray from '../SummaryLinks/LogLinkArray'
-// import { Storage } from 'aws-amplify';
+import { CompassContext } from "../../../context/CompassPage/context";
+import { ReviewModalContext } from "../../../context/ReviewModal/context";
 import {
   SummaryTitle,
   SummaryListButton,
   SummaryLogBox,
   SingleSummaryLog,
-  LogAttachments,
   SummaryLogHeader,
   SummaryContainer,
   TextAreaContainer,
@@ -17,63 +17,44 @@ import {
   CommentButton
 } from '../../../styles/SummaryPage'
 
-// const Link = ({ item }) => {
-//   const { key, name } = item;
-//   const [link, setLink] = useState(undefined)
-//   console.log({ key })
-//   Storage.get(key)
-//     .then(res => setLink(res))
-//     .catch(err => console.log('You have no attachments', err))
-//   return (link ? <LogAttachments><a href={link} target="__blank__">{name}</a></LogAttachments> : null)
-// }
-
-// const LinkArray = ({ items }) => {
-//   console.log({ items })
-//   return (
-//     <>
-//       {items.map((item, i) => <Link item={item} />)}
-//       {/* {<Link name={item.name} key={i} />} */}
-//     </>
-//   )
-// }
-
-const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, comments, sessionID, interactionID }) => {
+const SummaryLog = (props) => {
+  const { compass, session, interaction } = useContext(CompassContext);
+  const { updateShowModal, updateInteraction, showModal } = useContext(ReviewModalContext)
   const [comment, setComment] = useState("");
-  // const [sessionID, setSessionID] = useState("");
-  // const [interactionID, setInteractionID] = useState("");
 
-  const { items } = attachments;
-  console.log(items, 'SUP')
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    updateInteraction(interactionId)
+  const { items } = interaction.attachments;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newInteraction = {
+      id: interaction.id,
+      comments: comment
+    }
+    updateInteraction(newInteraction)
       .then(res => res)
       .catch(err => console.log('updateInteraction has an error', err))
   }
 
-  const interactionId = {
-    id: interactId,
-    comments: comment
-  }
-
   useEffect(() => {
-    getInteraction(interactId)
-      .then(res => {
-        setComment(res.data.getInteraction.comments)
-      })
-      .catch(err => console.log(err))
+    setComment(interaction.comments)
   }, [])
+
+  const openReviewLog = (evt) => {
+    updateInteraction(interaction);
+    updateShowModal(true)
+  }
 
   return (
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
-        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compassID}`)} />
-        <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compassID}&s=${sessionID}&i=${interactionID}`)} />
+        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compass.id}`)} />
+        <SummaryListButton label=" Edit Log " onClick={openReviewLog} />
+        {showModal}
+        {/* <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} /> */}
       </SummaryLogHeader>
       <TextAreaContainer>
         <SummaryLogBox>
-          <SingleSummaryLog>{currentLog}</SingleSummaryLog>
+          <SingleSummaryLog>{interaction.log_content}</SingleSummaryLog>
         </SummaryLogBox>
         <form onSubmit={handleSubmit} style={{ marginTop: "0.5em", width: "40%" }}>
           <TextArea
@@ -81,6 +62,7 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, c
             onChange={e => {
               setComment(e.target.value)
             }}
+            // onChange={handleChange}
             value={comment}
           >
           </TextArea>
@@ -93,6 +75,3 @@ const SummaryLog = ({ attachments, showLog, currentLog, interactId, compassID, c
 }
 
 export default SummaryLog;
-
-
-

@@ -1,22 +1,24 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, {useEffect, useContext}  from "react";
 import { CSGrid } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 import {navigate} from "gatsby"
-import Loadable from "@loadable/component"
+// import Loadable from "@loadable/component"
+// import InteractionFeed from "./InteractionFeed"
 
 import SessionBar from "./SessionBar"
-const CompassWheel = Loadable(() => import('./CompassWheel'));
+import CompassSection from "./CompassSection"
 
-// import Compass from "./Compass"
 
 const CompassSelector = ({showAttachment}) => {
-  const {session,compass,updateInteraction, interactions, updateTime} = useContext(CompassContext)
+  const {session,compass,updateInteraction, interactions, updateTime, interaction} = useContext(CompassContext)
 
-  const selectStep = (interaction) => {
-    console.log(compass)
-    updateInteraction(interaction)
-    navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
-  }
+  // useEffect(() => {
+  //   if (interaction.id) {
+  //     navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
+  //   } else {
+  //     navigate(`/Compass?c=${compass.id}&s=${session.id}`)
+  //   }
+  // }, [interaction])
 
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
@@ -27,16 +29,14 @@ const CompassSelector = ({showAttachment}) => {
       });
       updateTime(time)
     }
+    
+  // eslint-disable-next-line
   },[interactions])
 
   return (
     <CSGrid>
-      <CompassWheel selectStep={selectStep} />
-      {/* <Compass /> */}
-      <SessionBar 
-        showAttachment={showAttachment} 
-        setInteraction={selectStep}
-      />
+      <CompassSection/>
+      <SessionBar showAttachment={showAttachment} />
     </CSGrid>
 )};
 export default CompassSelector;

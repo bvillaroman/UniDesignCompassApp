@@ -16,6 +16,8 @@ export default (query) => {
       case 'i':
         interactionID = element.replace("i=", "");
         break;
+      default: 
+        break;
     }
   })
 

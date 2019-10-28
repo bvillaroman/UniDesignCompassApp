@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { Box, Button, Grid, Accordion, AccordionPanel, Text, TextInput } from "grommet"
+import { Box, Button, Accordion, AccordionPanel, Text, TextInput } from "grommet"
+import {Link} from "gatsby"
 
 // Dashboard Containers
 export const DashboardContainer = styled(Box)`
@@ -74,6 +75,7 @@ export const TemplateContainer = styled(Box)`
   justify-content: space-between;
 `;
 export const ProjectTypeDetails = styled(Box)`
+  cursor: pointer;
   height: 9rem;
   width: 100%!important;
   color: black;
@@ -96,10 +98,9 @@ export const CompassCardTitle = styled(Box)`
   text-align: center;
   
 `;
-export const CompassCircle = styled(Box)`
-  min-width: ${props => props.size ? `${props.size}rem` : '12rem'};
-  min-height: ${props => props.size ? `${props.size}rem` : '8rem'};
-  width: 40%;
+export const CompassCircle = styled(Link)`
+  min-width: 7.7rem;
+  min-height: 8rem;
   height: 100%;
   position: relative;
   margin: 0 auto;
@@ -109,7 +110,7 @@ export const StepContainer = styled(Box)`
   border-radius: 50%;
   transition: all 0.3s;
   top: 40%;
-  left: 26%;
+  left: 40%;
   background-color: ${props => props.color ? props.color : '#5567FD'};
   list-style: none;
 	height: 1.5rem;
@@ -155,10 +156,9 @@ export const ProjectCard = styled(Box)`
   min-height: 4rem;
   background-color: none;
   flex-direction: row;
-  // transition: all 0.2s;
+  cursor: pointer;
   :hover {
     cursor: pointer;
-    // transition: all 0.2s;
     background-color: white;
     box-shadow: 0 1px 3px 0 #d2d4d6;
     -webkit-transition: box-shadow 150ms ease;
