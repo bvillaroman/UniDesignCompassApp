@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../styles/CompassPage"
 import { LinkPrevious } from "grommet-icons"
 import translateTime from "../../../utils/translateTime"
+import {getInteraction} from "../../../utils/queries"
 import {ReviewModalContext} from "../../../context/ReviewModal/context"
 
 const Interaction = ({interaction = {}, isLastStep}) => {
@@ -9,8 +10,12 @@ const Interaction = ({interaction = {}, isLastStep}) => {
   const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
   const openReviewLog = (evt) => {
-    updateInteraction(interaction);
     updateShowModal(true)
+    getInteraction(interaction.id)
+      .then((res => {
+        updateInteraction(res.data.getInteraction);
+      }))
+    
   }
   
   return (

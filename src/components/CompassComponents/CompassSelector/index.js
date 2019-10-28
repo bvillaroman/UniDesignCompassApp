@@ -10,13 +10,15 @@ import CompassSection from "./CompassSection"
 
 
 const CompassSelector = ({showAttachment}) => {
-  const {session,compass,updateInteraction, interactions, updateTime} = useContext(CompassContext)
+  const {session,compass,updateInteraction, interactions, updateTime, interaction} = useContext(CompassContext)
 
-  const selectStep = (interaction) => {
-    console.log(compass)
-    updateInteraction(interaction)
-    navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
-  }
+  // useEffect(() => {
+  //   if (interaction.id) {
+  //     navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
+  //   } else {
+  //     navigate(`/Compass?c=${compass.id}&s=${session.id}`)
+  //   }
+  // }, [interaction])
 
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {
@@ -34,10 +36,7 @@ const CompassSelector = ({showAttachment}) => {
   return (
     <CSGrid>
       <CompassSection/>
-      <SessionBar 
-        showAttachment={showAttachment} 
-        setInteraction={selectStep}
-      />
+      <SessionBar showAttachment={showAttachment} />
     </CSGrid>
 )};
 export default CompassSelector;

@@ -102,8 +102,14 @@ export const CompassWheelContainer = styled(Box)`
 export const CompassWheel = styled(Box)`
   width: 100%;
   min-width: 26rem;
-  min-height: 100%;
+  height: 100%;
   margin: 0 auto;
+  div {    
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
 `;
 
 // Logger

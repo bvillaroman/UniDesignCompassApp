@@ -6,12 +6,7 @@ import Loadable from "@loadable/component"
 import InteractionFeed from "./InteractionFeed"
 const CompassWheel = Loadable(() => import('./CompassWheel'));
 
-const CompassSelector = ({showAttachment}) => {
-  // const {compass} = useContext(CompassContext)
-
-  const selectStep = (interaction) => {
-    console.log(interaction)
-  }
+const CompassSelector = ({selectStep}) => {
 
   return (
     <CompassSectionContainer>
