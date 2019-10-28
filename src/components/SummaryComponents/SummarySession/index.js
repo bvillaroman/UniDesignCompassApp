@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { getCompass } from "../../../utils/queries";
 import { navigate } from "gatsby"
 import SummaryLegend from '../SummaryLegend/';
 import { Image } from 'grommet-icons';
+import { CompassContext } from "../../../context/CompassPage/context";
 import {
   SummaryMainView,
   SummaryTable,
@@ -18,6 +19,8 @@ import {
 import { Loader } from '../../../styles/layout';
 
 const SummarySession = (props) => {
+  const { compass, session, interaction } = useContext(CompassContext);
+
   const [sessions, setSession] = useState([])
   const [loading, setLoading] = useState(true)
   const { compassID } = props;
@@ -25,18 +28,11 @@ const SummarySession = (props) => {
   //Mounting once when the page loads
   useEffect(() => {
     setLoading(true)
-    if (compassID !== "") {
-      getCompass(compassID)
-        .then(res => {
-          setLoading(false)
-          setSession(res.data.getCompass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
-        })
-        .catch(err => {
-          setLoading(false)
-          console.log(err)
-        })
+    if (compass.sessions) {
+      setSession(compass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
+      setLoading(false)
     }
-  }, [compassID])
+  }, [compass.sessions])
 
   const timeConverter = (a, b) => {
     if (a.createdAt > b.createdAt) {
@@ -69,7 +65,7 @@ const SummarySession = (props) => {
               {/* {console.log(session.interactions.items.sort(timeConverter))} */}
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
                 <SummaryTableBody>
-                  <tr key={i} onClick={() => navigate(`/Summary?c=${compassID}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
+                  <tr key={i} onClick={() => navigate(`/Summary?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                     <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
                     {/* <SummaryTdBody>{interaction.createdAt.substring(0, 19)}</SummaryTdBody> */}

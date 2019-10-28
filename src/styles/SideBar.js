@@ -8,6 +8,13 @@ export const NavigationContainer = styled(Box)`
   min-width: 4rem;
   padding: 1rem 0;
   background: #5361FE;
+
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+  }
 `;
 
 export const CompassSideBar = styled(Box)`
@@ -38,6 +45,10 @@ export const CompassHeader = styled(Link)`
   font-weight: 900;
   color: white;
   text-decoration: underline;
+
+  @media (max-width: 768px){
+    flex: 0 0 100%;
+  }
 `
 export const LinkContainer = styled(Box)`
   display: flex;
@@ -45,7 +56,11 @@ export const LinkContainer = styled(Box)`
   width: 100%;
 
   @media (max-width: 768px){
-    width: 20%;
+    //width: 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis:50%;
   }
 `;
 
@@ -85,7 +100,6 @@ export const SignOutButton = styled(Button)`
 
 export const HamburgerIcon = styled.label`
   display: none;
-  line-height: 70px;
 
   @media (max-width: 768px){
     display: block;
@@ -110,3 +124,7 @@ export const CompassLink = ({ to, children }) => (
     {children}
   </CompassLinkStyles>
 )
+
+//    a:not(:nth-last-child(4)){
+    //   ${props => props.renderSidebar ? 'display: none;' : 'initial'};
+    // };
