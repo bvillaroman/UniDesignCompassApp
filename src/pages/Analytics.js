@@ -53,11 +53,12 @@ export default (props) => {
 
   // handle sessopm data
   useEffect(() => {
-    // queries the compass and assigns it throughout the app
-    setLoading(true)
-    if (session.hasOwnProperty("id")) setSelectedSession(session)
-    else setSelectedSession(compass.sessions.items[1])
-    setLoading(false)
+    if(compass.hasOwnProperty("id")){
+      setLoading(true)
+      if (session.hasOwnProperty("id")) setSelectedSession(session)
+      else setSelectedSession(compass.sessions.items[1])
+      setLoading(false)
+    }
       
   }, [session])
 
