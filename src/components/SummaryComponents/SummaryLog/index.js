@@ -23,6 +23,7 @@ const SummaryLog = (props) => {
   const [comment, setComment] = useState("");
 
   const { items } = interaction.attachments;
+  console.log(items)
   const handleSubmit = (e) => {
     e.preventDefault();
     const newInteraction = {
@@ -46,8 +47,8 @@ const SummaryLog = (props) => {
   return (
     <SummaryContainer>
       <SummaryLogHeader>
-        <SummaryTitle>Log and Attachments</SummaryTitle>
-        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary/?c=${compass.id}`)} />
+        <SummaryTitle>Log</SummaryTitle>
+        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compass.id}`)} />
         <SummaryListButton label=" Edit Log " onClick={openReviewLog} />
         {showModal}
         {/* <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} /> */}
@@ -69,6 +70,7 @@ const SummaryLog = (props) => {
           <CommentButton type="submit" label="Add Comment"></CommentButton>
         </form>
       </TextAreaContainer>
+      <h4>Attachment</h4>
       <LogLinkArray items={items} />
     </SummaryContainer>
   )

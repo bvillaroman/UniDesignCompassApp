@@ -23,7 +23,7 @@ export const MainViewContainer = styled(Box)`
 
   @media (max-width: 500px){
     flex-direction: column-reverse;
-    block-size: inherit;
+    //block-size: inherit;
   }  
 `;
 export const Loader = () => (

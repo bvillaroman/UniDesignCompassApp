@@ -1,7 +1,7 @@
 
 import styled from "styled-components"
 import { Layer, Button, Box, TextArea, Text } from "grommet"
-import { Edit,Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
+import { Edit, Attachment, Close, Download, Image, Document, Multimedia, Video } from 'grommet-icons';
 import React from "react";
 
 export const LayerView = styled(Layer)`
@@ -33,7 +33,7 @@ export const ReviewLogTitle = styled.h4`
   font-size: 1.8rem;
   padding: 0;
   width: 50%;
-  color: ${props => props.color ? props.color: '#5567FD'};
+  color: ${props => props.color ? props.color : '#5567FD'};
   line-height: 1.3rem;
   text-align: left;
   font-weight: 600;
@@ -194,7 +194,7 @@ export const AttachmentItem = styled(Box)`
     height: 2rem;
   }
 `;
-const AttachmentPhotoStyle = styled(Box)`
+export const AttachmentPhotoStyle = styled(Box)`
   padding: 5%;
   img {
     width: 100%;
@@ -217,29 +217,29 @@ export const AttachmentFilePlaceHolder = styled(Box)`
   background: grey;
   color: white;
 `;
-export const AttachmentPhoto = ({src}) => (
+export const AttachmentPhoto = ({ src }) => (
   <AttachmentPhotoStyle >
     <a href={src} target="_blank" rel="noopener noreferrer">
-      <img src={src} alt="attachmentphoto"/>
+      <img src={src} alt="attachmentphoto" />
     </a>
   </AttachmentPhotoStyle>
 )
-export const AttachmentVideo = ({src,type}) => (
+export const AttachmentVideo = ({ src, type }) => (
   <Video controls="over" fit="cover">
     <source key="video" src={src} type={type} />
   </Video>
 )
-export const AttachmentButton = ({onChange, color, disabled}) =>(
+export const AttachmentButton = ({ onChange, color, disabled }) => (
   <AttachmentButtonLabel color={color} disabled={disabled}>
-    <Attachment color={color ? color: "#5567FD"}/>
-    <input type="file" onChange={onChange} disabled={disabled}/>
+    <Attachment color={color ? color : "#5567FD"} />
+    <input type="file" onChange={onChange} disabled={disabled} />
   </AttachmentButtonLabel>
 )
 
-export const CloseButton = ({onClick}) =>(
-  <AttachmentButtons     
-    onClick={onClick} 
-    icon={<Close color="#5567FD"/>}
+export const CloseButton = ({ onClick }) => (
+  <AttachmentButtons
+    onClick={onClick}
+    icon={<Close color="#5567FD" />}
   />
 )
 
@@ -247,10 +247,10 @@ const EditLogButtonStyle = styled(AttachmentButtons)`
   padding: 0.2rem .5rem;
   font-weight: 500;
 `
-export const EditLogButton = ({onClick}) =>(
-  <EditLogButtonStyle     
-    onClick={onClick} 
-    icon={<Edit color="#5567FD"/>}
+export const EditLogButton = ({ onClick }) => (
+  <EditLogButtonStyle
+    onClick={onClick}
+    icon={<Edit color="#5567FD" />}
     label="Edit Log"
   />
 )
@@ -263,48 +263,48 @@ export const SaveButtonContainer = styled(Box)`
     margin-right: 1rem;
   }
 `
-export const SaveButton = ({onClick}) =>(
-  <EditLogButtonStyle     
-    onClick={onClick} 
+export const SaveButton = ({ onClick }) => (
+  <EditLogButtonStyle
+    onClick={onClick}
     label="Save"
   />
 )
-export const ClearButton = ({onClick}) =>(
-  <EditLogButtonStyle     
-    onClick={onClick} 
+export const ClearButton = ({ onClick }) => (
+  <EditLogButtonStyle
+    onClick={onClick}
     label="Clear"
   />
 )
-export const DownloadButton = ({src}) =>(
+export const DownloadButton = ({ src }) => (
   <a href={src} download target="_blank" rel="noopener noreferrer">
-    <AttachmentButtons     
-      icon={<Download color="#5567FD"/>}
+    <AttachmentButtons
+      icon={<Download color="#5567FD" />}
       label="Download"
     />
   </a>
 )
-export const AttachmentItemButton = ({onClick, attachment}) =>(
+export const AttachmentItemButton = ({ onClick, attachment }) => (
   <AttachmentItem onClick={onClick} >
-    { 
-      attachment.type && 
+    {
+      attachment.type &&
       (
-        attachment.type.includes("image") ? <Image color="#5567FD"/> :
-        attachment.type.includes("mp4") ? <Multimedia color="#5567FD"/> :
-        <Document color="#5567FD"/>
+        attachment.type.includes("image") ? <Image color="#5567FD" /> :
+          attachment.type.includes("mp4") ? <Multimedia color="#5567FD" /> :
+            <Document color="#5567FD" />
       )
     }
     <span>{attachment.key ? attachment.name : ''}</span>
-  </AttachmentItem>     
+  </AttachmentItem>
 )
 
-export const AttachmentPreview = ({attachment,src}) => (
+export const AttachmentPreview = ({ attachment, src }) => (
   <AttachmentPreviewContainer>
-    { 
-      attachment.type && 
+    {
+      attachment.type &&
       (
-        attachment.type.includes("image") ? <AttachmentPhoto src={src}/> :
-        attachment.type.includes("video") ? <AttachmentVideo src={src} type={attachment.type}/> :
-        <Document color="#5567FD"/>
+        attachment.type.includes("image") ? <AttachmentPhoto src={src} /> :
+          attachment.type.includes("video") ? <AttachmentVideo src={src} type={attachment.type} /> :
+            <Document color="#5567FD" />
       )
     }
   </AttachmentPreviewContainer>

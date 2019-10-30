@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import { NavigationContainer, CompassLink,SignOutButton, CompassHeader } from '../../styles/SideBar';
+import React, { useContext } from 'react';
+import { NavigationContainer, CompassLink, SignOutButton, CompassHeaderDash } from '../../styles/SideBar';
 import { navigate } from "gatsby"
 import { User } from 'grommet-icons'
 import { GlobalContext } from "../../context/context"
@@ -23,7 +23,7 @@ const AccountBar = props => {
 
   return (
     <NavigationContainer>
-      <CompassHeader className='compassHeader' to="/">UDC</CompassHeader>
+      <CompassHeaderDash className='CompassHeaderDash' to="/">UDC</CompassHeaderDash>
       <CompassLink to="/Profile"><User /></CompassLink>
       <SignOutButton onClick={e => signOut()}>Sign out</SignOutButton>
     </NavigationContainer>
