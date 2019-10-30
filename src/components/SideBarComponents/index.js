@@ -5,6 +5,7 @@ import { CompassContext } from "../../context/CompassPage/context"
 
 import CompassBar from "./CompassBar"
 import AccountBar from "./AccountBar"
+import BlankBar from "./BlankBar"
 
 export default (props) => {
   const { user = {} } = useContext(GlobalContext);
@@ -16,8 +17,9 @@ export default (props) => {
   return (
     <> 
       {
+        props.loading ? <BlankBar/>
         // if the user is signed in 
-        userSignedIn ? ( compassExists ? <CompassBar /> : <AccountBar/> ) : null
+        : userSignedIn ? ( compassExists ? <CompassBar /> : <AccountBar/> ) : null
       }
     </>
   )
