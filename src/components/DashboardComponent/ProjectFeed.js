@@ -22,7 +22,7 @@ const CompassFeed = (props) => {
   }, [props.compasses]);
 
   const goToCompass = (compass) => {
-    navigate(`/Compass?c=${compass.id}`)
+    navigate(`/Compass/?c=${compass.id}`)
   }
 
   return (

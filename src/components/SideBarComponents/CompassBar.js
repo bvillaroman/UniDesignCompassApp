@@ -23,9 +23,9 @@ const CompassBar = (props) => {
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
         <CompassHeader className='compassHeader' to={`/`}>UDC</CompassHeader>
-        <CompassLink to={`/Compass?c=${compass.id}`}><Compass /><span>Compass</span></CompassLink>
-        <CompassLink to={`/Summary?c=${compass.id}`}><DocumentText /><span>Summary</span></CompassLink>
-        <CompassLink to={`/Analytics?c=${compass.id}`}><BarChart /><span>Analytics</span></CompassLink>
+        <CompassLink to={`/Compass/?c=${compass.id}`}><Compass /><span>Compass</span></CompassLink>
+        <CompassLink to={`/Summary/?c=${compass.id}`}><DocumentText /><span>Summary</span></CompassLink>
+        <CompassLink to={`/Analytics/?c=${compass.id}`}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
         <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>

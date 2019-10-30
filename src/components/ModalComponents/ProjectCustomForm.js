@@ -55,7 +55,7 @@ const CustomCompassForm = () => {
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
         )
         updateShowModal(false)
-        navigate(`/Compass?c=${res.data.createCompass.id}`)
+        navigate(`/Compass/?c=${res.data.createCompass.id}`)
       })
       .catch(err => console.log(err))
   }
