@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { GlobalContext } from "../../context/context"
 import { getCompasses } from "../../utils/queries"
 import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
+
+import { CompassContext } from "../../context/CompassPage/context"
+import { GlobalContext } from "../../context/context"
 import {ReviewModalContext} from "../../context/ReviewModal/context"
 // styles
 import {
@@ -18,12 +20,17 @@ import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
   const { user } = useContext(GlobalContext);
+  const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    clearCompass() 
+    clearSession() 
+    clearInteraction()
+    clearInteractions()
     getCompasses()
       .then((res) => {
         setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
