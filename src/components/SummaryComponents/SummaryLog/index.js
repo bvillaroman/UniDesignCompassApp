@@ -47,7 +47,7 @@ const SummaryLog = (props) => {
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log and Attachments</SummaryTitle>
-        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary?c=${compass.id}`)} />
+        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary/?c=${compass.id}`)} />
         <SummaryListButton label=" Edit Log " onClick={openReviewLog} />
         {showModal}
         {/* <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} /> */}

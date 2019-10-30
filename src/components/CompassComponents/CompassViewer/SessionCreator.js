@@ -31,13 +31,13 @@ const SessionCreator = (props) => {
   const currentCompassId = compass.id
 
   const goToSession = (session) => {
-    navigate(`/Compass?c=${currentCompassId}&s=${session}`)
+    navigate(`/Compass/?c=${currentCompassId}&s=${session}`)
   }
 
   const sendForm = (e) => {
     createSession("untitled", " ", currentCompassId)
       .then((result) => {
-        navigate(`/Compass?c=${currentCompassId}&s=${result.data.createSession.id}`)
+        navigate(`/Compass/?c=${currentCompassId}&s=${result.data.createSession.id}`)
       })
       .catch(err => console.log(err))
   }

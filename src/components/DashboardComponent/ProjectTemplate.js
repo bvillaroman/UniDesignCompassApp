@@ -57,7 +57,7 @@ export default (props) => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
         )
-        navigate(`/Compass?c=${res.data.createCompass.id}`)
+        navigate(`/Compass/?c=${res.data.createCompass.id}`)
       })
       .catch(err => console.log(err))
   };
