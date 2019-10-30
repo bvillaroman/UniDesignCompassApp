@@ -35,15 +35,25 @@ const Layout = (props) => {
     clearInteractions
   } = useContext(CompassContext);
 
+  const [compassID, setCompassID] = useState("")
+  const [interactionID, setInteractionID] = useState("")
+  const [sessionID, setSessionID] = useState("")
   const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setCompassID(queryStringParser(props.location.search).compassID)
+    setSessionID(queryStringParser(props.location.search).sessionID)
+    setInteractionID(queryStringParser(props.location.search).interactionID)
+
+  }, [props.location.search])
 
   // setting up the compass through the url
   useEffect(() => {
-    const compass = queryStringParser(props.location.search).compassID
-    if (compass) {
+  
+    if (compassID !== "") {
       clearCompass()
       setLoading(true)
-      getCompass(compass)
+      getCompass(compassID)
         .then((res) => {
           setLoading(false);
           updateCompass(res.data.getCompass);
@@ -57,15 +67,17 @@ const Layout = (props) => {
     } else {
       clearCompass()
     } 
-  }, [props.location.search])
 
+  }, [compassID])
+
+  console.log(props)
   // setting up the session through url
   useEffect(() => {
-    const session = queryStringParser(props.location.search).sessionID
-    if (session) {
+    
+    if (sessionID !== "") {
       clearSession();
       setLoading(true)
-      getSession(session)
+      getSession(sessionID)
         .then((res) => {
           setLoading(false)
           updateSession(res.data.getSession)
@@ -86,17 +98,15 @@ const Layout = (props) => {
     } else {
       clearSession();
     }
-  }, [props.location.search])
+  }, [sessionID])
 
   // setting up the interaction through url
   useEffect(() => {
-    // queries the compass and assigns it throughout the app
-    const interaction = queryStringParser(props.location.search).interactionID
 
-    if (interaction) {
+    if (interactionID !== "") {
       clearInteraction();
       setLoading(true)
-      getInteraction(interaction)
+      getInteraction(interactionID)
         .then((res) => {
           setLoading(false);
           updateInteraction(res.data.getInteraction);
@@ -111,7 +121,7 @@ const Layout = (props) => {
     }
 
   // eslint-disable-next-line
-  }, [props.location.search])
+  }, [interactionID])
 
   // user authentications 
   useEffect(() => {
