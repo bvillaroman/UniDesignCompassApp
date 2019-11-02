@@ -75,6 +75,7 @@ export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  //height: 100%
 
   @media (max-width: 768px){
     //width: 20%;
@@ -145,3 +146,8 @@ export const CompassLink = ({ to, children }) => (
     {children}
   </CompassLinkStyles>
 )
+
+
+// a:not(:nth-last-child(4)){
+//   ${props => props.renderSidebar ? 'display: none;' : 'initial'};
+// };

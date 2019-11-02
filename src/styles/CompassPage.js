@@ -542,6 +542,10 @@ export const CSGrid = styled(Box)`
   margin: 0 auto;
   overflow-y: auto; 
   flex-direction: row;
+
+  @media (max-width: 900px){
+    flex-direction: column;
+  }    
 `;
 export const CSTitle = styled(Box)`
   width: 100%;
