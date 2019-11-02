@@ -82,7 +82,7 @@ export const SummaryContainer = styled.div`
 
 export const TextAreaContainer = styled.div`
   width: 100%;
-  height: 85%;
+  height: 75%;
   display: flex;
   flex-direction: row;
 
