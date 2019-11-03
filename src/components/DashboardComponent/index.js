@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { getCompasses } from "../../utils/queries"
 import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
-
+import {updateProjectsSub} from "../../utils/subscriptions"
 import { CompassContext } from "../../context/CompassPage/context"
 import { GlobalContext } from "../../context/context"
 import {ReviewModalContext} from "../../context/ReviewModal/context"
@@ -23,14 +23,16 @@ const Dashboard = (props) => {
   const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
+  const [newestProject, setNewestProject] = useState({})
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  useEffect( () => {
     clearCompass() 
     clearSession() 
     clearInteraction()
     clearInteractions()
+
     getCompasses()
       .then((res) => {
         setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
@@ -40,7 +42,30 @@ const Dashboard = (props) => {
         setError(error.message)
         setLoading(false)
       });
+
   }, [user.email]);
+
+  // subscription for any new project being created
+  useEffect(() => {
+    const subscriber = updateProjectsSub().subscribe({
+      next: res => {
+        const newProject = res.value.data.onCreateCompass
+        if(newProject.admins.includes(user.email)){
+          setNewestProject(newProject)
+        }
+      }
+    });
+
+    return () => subscriber.unsubscribe()
+  }, [])
+
+  // if a new project is created, add it to existing projects
+  useEffect(() => {
+    if(newestProject !== {}) {
+      if (compasses.length) setCompasses([newestProject, ...compasses]) 
+      else setCompasses([newestProject]) 
+    }
+  }, [newestProject])
 
   return (
     <>
