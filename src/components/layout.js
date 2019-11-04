@@ -41,9 +41,11 @@ const Layout = (props) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setCompassID(queryStringParser(props.location.search).compassID)
-    setSessionID(queryStringParser(props.location.search).sessionID)
-    setInteractionID(queryStringParser(props.location.search).interactionID)
+    const {compassID, sessionID, interactionID} = queryStringParser(props.location.search)
+    setCompassID(compassID)
+    setSessionID(sessionID)
+    setInteractionID(interactionID)
+    console.log(`called locations: ${JSON.stringify(queryStringParser(props.location.search))}`)
 
   }, [props.location.search])
 
@@ -101,7 +103,7 @@ const Layout = (props) => {
 
   // setting up the interaction through url
   useEffect(() => {
-
+    // console.log(`called intearctionid: ${interactionID}`)
     if (interactionID !== "") {
       clearInteraction();
       setLoading(true)

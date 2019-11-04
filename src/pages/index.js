@@ -1,12 +1,17 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Landing from "../components/LandingPageComponents"
 import Dashboard from "../components/DashboardComponent"
 import { GlobalContext } from "../context/context"
 import { DashboardProvider } from "../context/DashboardPage/context"
 
 const IndexPage = (props) => {
-  const { user = {} } = useContext(GlobalContext);
+  const { user = {}, clearInteraction, clearSession } = useContext(GlobalContext);
 
+  useEffect(() => {
+    return () => {
+      clearInteraction()
+    }
+  }, [])
   return (
     <>
       {
