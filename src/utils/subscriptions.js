@@ -6,6 +6,8 @@ API.configure(config);
 
 export const updateProjectsSub = () => API.graphql( graphqlOperation(subscriptions.onCreateCompass))
 
+export const createSessionSub = () => API.graphql( graphqlOperation(subscriptions.onCreateSession))
+
 export const updateInteractionSub = async () => {
   const subscription = await API.graphql( graphqlOperation(subscriptions.onUpdateInteraction))
     
