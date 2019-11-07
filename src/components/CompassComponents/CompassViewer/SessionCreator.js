@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { CompassContext } from "../../../context/CompassPage/context"
 import { createSession } from "../../../utils/mutations"
+import { createSessionSub } from "../../../utils/subscriptions"
 import { dateFormatter, timeSorter } from "../../../utils/translateTime"
 import {navigate} from "gatsby"
 import { AddCircle} from 'grommet-icons';
@@ -21,6 +22,14 @@ import {
 const SessionCreator = (props) => {
   const {compass} = useContext(CompassContext)
   const [pastSessions, setPastSessions] = useState([])
+
+  // if a new project is created, add it to existing projects
+  // useEffect(() => {
+  //   if(newestProject !== {}) {
+  //     if (compasses.length) setCompasses([newestProject, ...compasses]) 
+  //     else setCompasses([newestProject]) 
+  //   }
+  // }, [newestProject])
 
   useEffect(() => {
     if(compass.hasOwnProperty("id")){
