@@ -23,21 +23,7 @@ const SessionCreator = (props) => {
   const {compass} = useContext(CompassContext)
   const [pastSessions, setPastSessions] = useState([])
 
-  // // subscription for any new project being created
-  // useEffect(() => {
-  //   const subscriber = updateProjectsSub().subscribe({
-  //     next: res => {
-  //       const newProject = res.value.data.onCreateCompass
-  //       if(newProject.admins.includes(user.email)){
-  //         setNewestProject(newProject)
-  //       }
-  //     }
-  //   });
-
-  //   return () => subscriber.unsubscribe()
-  // }, [])
-
-  // // if a new project is created, add it to existing projects
+  // if a new project is created, add it to existing projects
   // useEffect(() => {
   //   if(newestProject !== {}) {
   //     if (compasses.length) setCompasses([newestProject, ...compasses]) 

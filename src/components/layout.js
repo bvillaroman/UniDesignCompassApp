@@ -45,7 +45,6 @@ const Layout = (props) => {
     setCompassID(compassID)
     setSessionID(sessionID)
     setInteractionID(interactionID)
-    console.log(`called locations: ${JSON.stringify(queryStringParser(props.location.search))}`)
 
   }, [props.location.search])
 
