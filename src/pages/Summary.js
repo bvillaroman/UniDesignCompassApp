@@ -74,7 +74,7 @@ const SummaryPage = (props) => {
 
       // const newSession = oldSession.interactions.items = newInteractions
 
-
+      console.log(compass)
       // newSessions = compass.sessions.items.find(session => session.id === newSession.id) session = newSession
       // const newCompass = {
       //  ...compass,

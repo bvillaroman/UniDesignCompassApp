@@ -16,8 +16,7 @@ export default (props) => {
   return (
     <CompassViewerContainer>
       <MainContainer >
-
-          <SessionCreator/>
+        <SessionCreator/>  
       </MainContainer>
       <CompassNavigationBar>
         <ProjectDetails />

@@ -9,6 +9,7 @@ import {
 import * as Mutation from "../../../utils/mutations"
 // import ReactApexChart from 'react-apexcharts';
 import PieChart from 'react-minimal-pie-chart';
+import {navigate} from 'gatsby'
 
 const FULL_WIDTH = 32;
 const NORMAL_WIDTH = 30;
@@ -92,7 +93,7 @@ export default (props) => {
   const goToLog = async (id) => {
     Mutation.startInteraction(session.id,id)
     .then((res) => {
-      updateInteraction(res.data.createInteraction);   
+      updateInteraction(res.data.createInteraction);
     });
   } 
 

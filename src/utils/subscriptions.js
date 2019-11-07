@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 import { API, graphqlOperation } from "aws-amplify";
 import * as subscriptions from '../graphql/subscriptions';
 // import { buildSubscription } from ""
@@ -6,21 +17,7 @@ API.configure(config);
 
 export const updateProjectsSub = () => API.graphql(graphqlOperation(subscriptions.onCreateCompass))
 
-// export const updateInteractionSub = async () => {
-//   const subscription = await API.graphql(graphqlOperation(subscriptions.onUpdateInteraction))
-
-//   return subscription
-// }
-
-// export const createInteractionSub = async () => {
-//   const subscription = await API.graphql(graphqlOperation(subscriptions.onCreateInteraction))
-//     .subscribe({
-//       next: (interactionData) => console.log(interactionData)
-//     })
-//   return subscription
-// }
-
-// export const updateInteractionSubTest = () => API.graphql(graphqlOperation(subscriptions.onUpdateInteraction))
+export const createSessionSub = () => API.graphql(graphqlOperation(subscriptions.onCreateSession))
 
 export const updateInteractionSub = () => {
   const owner = localStorage.getItem("authuser");
@@ -29,3 +26,11 @@ export const updateInteractionSub = () => {
 
   return subscription
 }
+
+// export const createInteractionSub = async () => {
+//   const subscription = await API.graphql( graphqlOperation(subscriptions.onCreateInteraction))
+//     .subscribe({
+//       next: (interactionData) => console.log(interactionData)
+//     })
+//   return subscription
+// }

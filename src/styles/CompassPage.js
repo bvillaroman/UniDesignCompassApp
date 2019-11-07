@@ -214,10 +214,11 @@ export const ProjectDetailsContainer = styled(Box)`
 
 export const ProjectDetailsTitle = styled(Box)`
   width: 100%;
-  min-height: 2rem;
+  min-height: 3rem;
   flex-direction: row;
   align-items: center;
   margin-bottom: 1rem;
+  justify-content: space-between;
   span {
     text-align: left;
     padding-left: 0.5rem;
