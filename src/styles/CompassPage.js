@@ -10,7 +10,8 @@ import {
   Grid,
   Tab,
   Accordion,
-  AccordionPanel
+  AccordionPanel,
+  Menu
 } from "grommet"
 import { More, PauseFill, PlayFill } from 'grommet-icons';
 import React from "react";
@@ -427,12 +428,12 @@ export const SessionRowMore = styled(Box)`
   padding: 0 1rem;
   width: 10%;
 `
-const SessionRowMoreStyle = styled(Button)`
+const SessionRowMoreStyle = styled(Menu)`
   svg {
     transform: rotate(90deg);
     height: 1rem;
     width: 1rem;
-    padding: 0.5rem;
+    // padding: 0.5rem;
     :hover {
       stroke: white;
     }
@@ -441,17 +442,23 @@ const SessionRowMoreStyle = styled(Button)`
     background-color: #5567FD;
     stroke: white;
   }
+  div {
+    padding: 0 0.5rem;
+  }
   width: 2rem;
   height: 2rem;
   padding: 0;
   border-radius: 100%;
   text-align: center;
 `
-export const SessionRowMoreButton = ({ onClick }) => (
+export const SessionRowMoreButton = ({ onDelete, session }) => (
   <SessionRowMoreStyle
     icon={<More />}
-    onClick={onClick}
     round
+    items={[
+      { label: 'edit', onClick: () => {console.log("click")} },
+      { label: 'delete', onClick: () => {onDelete()} },
+    ]}
   />
 );
 
