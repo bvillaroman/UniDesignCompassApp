@@ -6,10 +6,11 @@ import { ReviewModalContext } from "../context/ReviewModal/context";
 import ReviewLog from "../components/ModalComponents/ReviewLog";
 import { updateInteractionSub } from "../utils/subscriptions"
 import { updateCompass } from "../utils/mutations"
+import { updateSession } from "../utils/mutations"
 import { Iteration } from "grommet-icons";
 
 const SummaryPage = (props) => {
-  const { compass, session, interaction, update } = useContext(CompassContext);
+  const { compass, session, interaction, update, updateSessions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [list, setList] = useState([]);
   const [updateLog, setUpdatedLog] = useState([]);
@@ -39,17 +40,17 @@ const SummaryPage = (props) => {
 
   useEffect(() => {
     if (updateLog.hasOwnProperty("id")) {
-      console.log("UpdateLog: ", updateLog)
+      // console.log("UpdateLog: ", updateLog)
       const updatedInteractionSessionID = updateLog.session.id
-      console.log("Session ID: ", updatedInteractionSessionID)
+      // console.log("Session ID: ", updatedInteractionSessionID)
 
 
       // const oldInteractions = compass.sessions.items find w (SessionID).interactions.items 
       const allSession = compass.sessions.items
-      console.log(allSession)
+      // console.log(allSession)
 
       const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
-      console.log("Old Interactions: ", typeof oldInteractions)
+      // console.log("Old Interactions: ", typeof oldInteractions)
 
       const newInteraction = oldInteractions.interactions.items.map((interaction) => {
         if (updateLog.id === interaction.id) {
@@ -58,7 +59,7 @@ const SummaryPage = (props) => {
           return interaction
         }
       })
-      console.log("new interaction: ", newInteraction)
+      // console.log("new interaction: ", newInteraction)
 
       // const oldSession = compass.sessions.items.find w (SessionID)
       // console.log(compass)
@@ -67,9 +68,9 @@ const SummaryPage = (props) => {
         session.id === updatedInteractionSessionID
       )
       let oldSessionOrInteraction = compass.sessions.items[prevSessionIndex].interactions.items
-      console.log("pre assigning: ", compass.sessions.items)
+      // console.log("pre assigning: ", compass.sessions.items)
       compass.sessions.items[prevSessionIndex].interactions.items = newInteraction
-      console.log("post assinging: ", compass.sessions.items)
+      // console.log("post assinging: ", compass.sessions.items)
 
 
       // const newSession = oldSession.interactions.items = newInteractions
@@ -82,7 +83,7 @@ const SummaryPage = (props) => {
       //    items : newSession
       //  }
       // }
-      updateCompass(compass)
+      updateSessions(compass.sessions.items)
       // const newCompass = {
       //   ...compass,
       //   sessions

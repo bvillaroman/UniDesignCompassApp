@@ -41,6 +41,7 @@ const SummaryLog = (props) => {
 
   const openReviewLog = (evt) => {
     updateInteraction(interaction);
+    // console.log(interaction)
     updateShowModal(true)
   }
 
