@@ -379,7 +379,7 @@ export const SessionRow = styled(Box)`
   padding: 1rem 0;
   width: 100%;
   min-height: 4rem;
-  background-color: none;
+  background-color: ${props => props.active ? "white" : "none"};
   flex-direction: row;
   align-items: center;
   :hover {
@@ -414,6 +414,8 @@ export const SessionRowTitle = styled(Box)`
   white-space: nowrap;
   overflow: hidden;
   padding: 0 1rem;
+  flex-direction: row;
+  justify-content: space-between;
 `
 export const SessionRowDate = styled(Box)`
   padding: 0 1rem;
@@ -451,13 +453,13 @@ const SessionRowMoreStyle = styled(Menu)`
   border-radius: 100%;
   text-align: center;
 `
-export const SessionRowMoreButton = ({ onDelete, session }) => (
+export const SessionRowMoreButton = ({ onDelete, onEdit }) => (
   <SessionRowMoreStyle
     icon={<More />}
     round
     items={[
-      { label: 'edit', onClick: () => {console.log("click")} },
-      { label: 'delete', onClick: () => {onDelete()} },
+      { label: 'edit', onClick: () => onEdit()},
+      { label: 'delete', onClick: () => onDelete()},
     ]}
   />
 );
