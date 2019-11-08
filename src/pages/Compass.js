@@ -68,7 +68,7 @@ const CompassPage = (props) => {
 
   // if an interaction has been updated, add it to existing projects
   useEffect(() => {
-    if (updateLog.hasOwnProperty("id")) {
+    if ((typeof updateLog) === Object && updateLog.hasOwnProperty("id")) {
       const updatedInteractionSessionID = updateLog.session.id 
 
       const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
@@ -83,9 +83,6 @@ const CompassPage = (props) => {
       const oldSessions = compass.sessions.items
       const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
       oldSessions[prevSessionIndex].interactions.items = newInteractions
-
-      // console.log(oldSessions)
-
       updateSessions(oldSessions)
     }
   }, [updateLog])
