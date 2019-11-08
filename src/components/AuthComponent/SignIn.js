@@ -11,7 +11,7 @@ import {
   InputField,
   FormErrorLabel
 } from "../../styles/Form"
-import {Loader} from "../../styles/layout"
+import { Loader } from "../../styles/layout"
 import { GlobalContext } from "../../context/context"
 import { Auth } from 'aws-amplify';
 
@@ -26,8 +26,8 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
     email: '',
     password: '',
   })
-  const [error,setError] = useState("")
-  const [loading,setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const onChange = event => {
     const { target: { value, name } } = event;
@@ -46,6 +46,7 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
     Auth.signIn({ username: email, password })
       .then(user => {
         const { sub } = user.attributes;
+        localStorage.setItem("authuser", sub)
         loginUser({ email, id: sub }) // Save to global store    
         setLoading(false)
       })
@@ -76,16 +77,16 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
             <FormSwitchContainer direction="row">
               <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
               <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
-              </FormSwitchContainer>
-              <FormSwitchContainer direction="row">
-                <FormSwitchLabel truncate>Forgot Password ?</FormSwitchLabel>
-                <FormSwitchButton onClick={e => switchToForgetPassword()}> Reset Password </FormSwitchButton>
-              </FormSwitchContainer>
-              <FormErrorLabel truncate>
+            </FormSwitchContainer>
+            <FormSwitchContainer direction="row">
+              <FormSwitchLabel truncate>Forgot Password ?</FormSwitchLabel>
+              <FormSwitchButton onClick={e => switchToForgetPassword()}> Reset Password </FormSwitchButton>
+            </FormSwitchContainer>
+            <FormErrorLabel truncate>
               {
-                error ? error : (loading && <Loader/>)
+                error ? error : (loading && <Loader />)
               }
-              </FormErrorLabel>
+            </FormErrorLabel>
           </FormSwitchBox>
         </Box>
       </Form>

@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { updateInteraction } from "../../../utils/mutations";
+import * as Mutations from "../../../utils/mutations";
 import { getInteraction } from "../../../utils/queries"
 import { navigate } from "gatsby"
 import LogLinkArray from '../SummaryLinks/LogLinkArray'
@@ -23,14 +23,14 @@ const SummaryLog = (props) => {
   const [comment, setComment] = useState("");
 
   const { items } = interaction.attachments;
-  console.log(items)
+  // console.log(items)
   const handleSubmit = (e) => {
     e.preventDefault();
     const newInteraction = {
       id: interaction.id,
       comments: comment
     }
-    updateInteraction(newInteraction)
+    Mutations.updateInteraction(newInteraction)
       .then(res => res)
       .catch(err => console.log('updateInteraction has an error', err))
   }
@@ -41,6 +41,7 @@ const SummaryLog = (props) => {
 
   const openReviewLog = (evt) => {
     updateInteraction(interaction);
+    // console.log(interaction)
     updateShowModal(true)
   }
 
