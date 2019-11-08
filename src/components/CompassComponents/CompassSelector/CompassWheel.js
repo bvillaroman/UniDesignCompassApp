@@ -97,13 +97,14 @@ export default (props) => {
       const updatedInteractionSessionID = res.data.createInteraction.session.id 
 
       const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
-      const newInteractions = oldInteractions.interactions ? [res.data.createInteraction, ...oldInteractions.interactions.items] : [res.data.createInteraction]
+      const newInteractions = oldInteractions ? [res.data.createInteraction, ...oldInteractions.interactions.items] : [res.data.createInteraction]
 
       const oldSessions = compass.sessions.items
       const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
-      oldSessions[prevSessionIndex].interactions.items = newInteractions
-      updateSessions(oldSessions)
+      if (prevSessionIndex > 0) oldSessions[prevSessionIndex].interactions.items = newInteractions
       updateInteraction(res.data.createInteraction);
+      updateSessions(oldSessions)
+      
     });
   } 
 
