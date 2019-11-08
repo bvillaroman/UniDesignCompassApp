@@ -18,7 +18,7 @@ const CompassPage = (props) => {
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
   const [newestSession, setNewestSession] = useState({});
-  const [updateLog, setUpdatedLog] = useState([]);
+  const [updateLog, setUpdatedLog] = useState({});
 
   const showItem = (attachment,src) => {
     setAttachment(attachment)

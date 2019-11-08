@@ -113,7 +113,7 @@ export const AttachmentButtonLabel = styled.label`
   height: 1.5rem;
   svg {
     fill: ${ props => props.disabled ? "grey" : "black"}; 
-    stroke: ${ props => props.disabled ? "grey" : "black"}; 
+    stroke: ${ props => props.disabled ? "grey" : props.color}; 
   }
   :hover {
     transition: all 0.3s;
@@ -193,6 +193,9 @@ export const AttachmentItem = styled(Box)`
     width: 2rem;
     height: 2rem;
   }
+`;
+export const AttachmentLinkStyle = styled.a`
+  text-decoration: none;
 `;
 export const AttachmentPhotoStyle = styled(Box)`
   padding: 5%;
@@ -289,7 +292,7 @@ export const AttachmentItemButton = ({ onClick, attachment }) => (
       attachment.type &&
       (
         attachment.type.includes("image") ? <Image color="#5567FD" /> :
-          attachment.type.includes("mp4") ? <Multimedia color="#5567FD" /> :
+          attachment.type.includes("mp4") || attachment.type.includes("mov") ? <Multimedia color="#5567FD" /> :
             <Document color="#5567FD" />
       )
     }
