@@ -1,18 +1,19 @@
 import styled from "styled-components"
-import { 
-  Button, 
-  TextArea, 
-  Box, 
-  Text, 
-  FormField, 
+import {
+  Button,
+  TextArea,
+  Box,
+  Text,
+  FormField,
   TextInput,
   Form,
   Grid,
   Tab,
-  Accordion, 
-  AccordionPanel
+  Accordion,
+  AccordionPanel,
+  Menu
 } from "grommet"
-import { More, PauseFill,PlayFill } from 'grommet-icons';
+import { More, PauseFill, PlayFill } from 'grommet-icons';
 import React from "react";
 // Compass Page Containers
 
@@ -42,6 +43,10 @@ export const CompassViewerContainer = styled(Box)`
   overflow: auto;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 767px){
+    flex-direction: column;
+  }    
 `
 
 // Step Description
@@ -78,7 +83,7 @@ export const StepDetailsTitle = styled(AccordionPanel)`
       margin: 0;
     };
   };
-  background-color: ${props => props.color ? props.color: "white"};
+  background-color: ${props => props.color ? props.color : "white"};
   border-radius: 1rem;
   box-shadow: 0 1px 3px 0 #d2d4d6;
 `;
@@ -134,7 +139,7 @@ export const LoggerTitle = styled.h4`
   font-size: 1.2rem;
   padding: 0;
   width: 50%;
-  color: ${props => props.color ? props.color: '#5567FD'};
+  color: ${props => props.color ? props.color : '#5567FD'};
   line-height: 1.3rem;
   text-align: left;
   font-weight: 600;
@@ -169,6 +174,10 @@ export const MainContainer = styled(Box)`
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 767px){
+    width: 100%
+  }  
 `;
 
 export const CompassNavigationBar = styled(Box)`
@@ -177,6 +186,10 @@ export const CompassNavigationBar = styled(Box)`
   display: flex;
   flex-direction: column;
   // background: white;
+
+  @media (max-width: 767px){
+    width: 100%
+  } 
 `;
 
 // Project Details 
@@ -202,10 +215,11 @@ export const ProjectDetailsContainer = styled(Box)`
 
 export const ProjectDetailsTitle = styled(Box)`
   width: 100%;
-  min-height: 2rem;
+  min-height: 3rem;
   flex-direction: row;
   align-items: center;
   margin-bottom: 1rem;
+  justify-content: space-between;
   span {
     text-align: left;
     padding-left: 0.5rem;
@@ -213,7 +227,7 @@ export const ProjectDetailsTitle = styled(Box)`
     width: 100%;
     height: auto;
     font-size: 1.5rem;
-    color: ${props => props.color ? props.color: "black"};
+    color: ${props => props.color ? props.color : "black"};
     font-weight: 600;
   }
 `;
@@ -365,7 +379,7 @@ export const SessionRow = styled(Box)`
   padding: 1rem 0;
   width: 100%;
   min-height: 4rem;
-  background-color: none;
+  background-color: ${props => props.active ? "white" : "none"};
   flex-direction: row;
   align-items: center;
   :hover {
@@ -400,6 +414,8 @@ export const SessionRowTitle = styled(Box)`
   white-space: nowrap;
   overflow: hidden;
   padding: 0 1rem;
+  flex-direction: row;
+  justify-content: space-between;
 `
 export const SessionRowDate = styled(Box)`
   padding: 0 1rem;
@@ -414,12 +430,12 @@ export const SessionRowMore = styled(Box)`
   padding: 0 1rem;
   width: 10%;
 `
-const SessionRowMoreStyle = styled(Button)`
+const SessionRowMoreStyle = styled(Menu)`
   svg {
     transform: rotate(90deg);
     height: 1rem;
     width: 1rem;
-    padding: 0.5rem;
+    // padding: 0.5rem;
     :hover {
       stroke: white;
     }
@@ -428,17 +444,23 @@ const SessionRowMoreStyle = styled(Button)`
     background-color: #5567FD;
     stroke: white;
   }
+  div {
+    padding: 0 0.5rem;
+  }
   width: 2rem;
   height: 2rem;
   padding: 0;
   border-radius: 100%;
   text-align: center;
 `
-export const SessionRowMoreButton = ({onClick}) => (
-  <SessionRowMoreStyle 
-    icon={<More/>}
-    onClick={onClick}
+export const SessionRowMoreButton = ({ onDelete, onEdit }) => (
+  <SessionRowMoreStyle
+    icon={<More />}
     round
+    items={[
+      { label: 'edit', onClick: () => onEdit()},
+      { label: 'delete', onClick: () => onDelete()},
+    ]}
   />
 );
 
@@ -530,6 +552,10 @@ export const CSGrid = styled(Box)`
   margin: 0 auto;
   overflow-y: auto; 
   flex-direction: row;
+
+  @media (max-width: 900px){
+    flex-direction: column;
+  }    
 `;
 export const CSTitle = styled(Box)`
   width: 100%;
@@ -565,7 +591,7 @@ export const StepContainer = styled(Button)`
   width: 7.6rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength*1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
   box-shadow: 0 1px 3px 0 #b3b3b3;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
@@ -710,7 +736,7 @@ export const StepAccordion = styled.div`
   h4 {
     font-size: 1.2rem;
     padding: 0;
-    color: ${props => props.color ? props.color: '#5567FD'}
+    color: ${props => props.color ? props.color : '#5567FD'}
   }
   svg {
     color: black;
@@ -748,9 +774,9 @@ export const ControlButton = styled(Button)`
   }
   padding-right: 0;
 `
-export const TimerButton = ({onClick,start, color}) =>(
-  <ControlButton     
-    onClick={e => onClick()} 
-    icon={ start ? <PauseFill color={color ? color: '#5567FD'} /> : <PlayFill color={color ? color: '#5567FD'}/> }
+export const TimerButton = ({ onClick, start, color }) => (
+  <ControlButton
+    onClick={e => onClick()}
+    icon={start ? <PauseFill color={color ? color : '#5567FD'} /> : <PlayFill color={color ? color : '#5567FD'} />}
   />
 )

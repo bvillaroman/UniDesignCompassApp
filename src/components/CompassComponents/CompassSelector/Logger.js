@@ -18,7 +18,7 @@ import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({ showAttachment }) => {
+export default (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
@@ -112,10 +112,14 @@ export default ({ showAttachment }) => {
         <LoggerTitle color={step.color}>
           {step.name_of_step} 
         </LoggerTitle>
-        <StepClock >
-          {translateTime(interactionTime)}
-          <TimerButton color={step.color} onClick={pause} start={start}/>
-        </StepClock>
+        {
+          step.hasOwnProperty("id") && (
+            <StepClock >
+              {translateTime(interactionTime)}
+              <TimerButton color={step.color} onClick={pause} start={start}/>
+            </StepClock>
+          )
+        }
       </LoggerHeader>
       <LoggerInput
         placeholder="Enter Log"
@@ -129,19 +133,23 @@ export default ({ showAttachment }) => {
           <LoggerTitle color="black">
             Attachments
           </LoggerTitle>
-          <StepClock >
-            <AttachmentButton 
-              disabled={!start && !interaction.hasOwnProperty("id")} 
-              onChange={handleUpload} 
-              color={step.color}
-            />
-          </StepClock>
+          {
+            step.hasOwnProperty("id") && (
+              <StepClock >
+                <AttachmentButton 
+                  disabled={!start} 
+                  onChange={handleUpload} 
+                  color={step.color}
+                />
+              </StepClock>
+            )
+          }
         </LoggerHeader>
         <SessionAttachments>
           { 
             attachments.length > 0 && 
             attachments.map((item) => (
-              <Attachment key={item.key} attachment={item} showAttachment={showAttachment}/>
+              <Attachment key={item.key} attachment={item}/>
             )) 
           }
         </SessionAttachments>

@@ -83,10 +83,15 @@ export const InputContainer = styled(FormField)`
   border-bottom: none;
   color: black;
   background-color: #F0F0F0;
+  ${props => props.name === "title" && "margin-bottom: 0;"} 
 `;
 export const InputField = styled(TextInput)`
   font-weight: 550;
   font-size: 1rem;
   padding-top: 1rem;
   color: black;
+  ${props => props.width && `width: ${props.width}`};
+  ${props => props.removeBorder && "border: none"};
+  ${props => props.removeBorder && "background-color: #F0F0F0;"};
+  
 `;

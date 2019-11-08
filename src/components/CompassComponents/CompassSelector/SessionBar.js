@@ -17,7 +17,7 @@ export default ({showAttachment}) => {
           {session.name_of_session} 
         </SessionTitle>
       </SessionSection> 
-        <Logger  showAttachment={showAttachment} />
+        <Logger />
     </SessionView>
   ) 
 };

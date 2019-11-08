@@ -4,138 +4,99 @@ import CompassViewer from "../components/CompassComponents/CompassViewer"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
 import ReviewLog from "../components/ModalComponents/ReviewLog"
 
-import { getCompass,getSession,getInteraction } from '../utils/queries'
 import {CompassContext} from "../context/CompassPage/context"
+import {GlobalContext} from "../context/context"
 import {ReviewModalContext} from "../context/ReviewModal/context"
-import queryStringParser from '../utils/queryStringParser'
+import {createSessionSub, updateInteractionSub} from "../utils/subscriptions"
 
 import { MainView } from "../styles/CompassPage"
-// import { 
-//   LayerView, 
-//   AttachmentContainer ,
-//   AttachmentPreview,
-//   AttachmentButtonContainer,
-//   CloseButton,
-//   DownloadButton
-// } from "../styles/Modals"
-import {Loader} from "../styles/layout"
 
 const CompassPage = (props) => {
-  const {
-    compass,
-    updateCompass, 
-    clearCompass,
-    session,
-    updateSession,
-    clearSession, 
-    updateInteraction, 
-    clearInteraction,    
-    updateInteractions, 
-    clearInteractions
-  } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
+  const { compass, session,updateSessions, clearInteraction, clearSession } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
+  const [newestSession, setNewestSession] = useState({});
+  const [updateLog, setUpdatedLog] = useState({});
 
   const showItem = (attachment,src) => {
     setAttachment(attachment)
     setSource(src)
   }
-
-  const [compassID, setCompassID] = useState("")
-  const [interactionID, setInteractionID] = useState("")
-  const [sessionID, setSessionID] = useState("")
-  const [loading, setLoading] = useState(true)
-
+  // subscription for any new project being created
   useEffect(() => {
-    setCompassID(queryStringParser(props.location.search).compassID)
-    setSessionID(queryStringParser(props.location.search).sessionID)
-    setInteractionID(queryStringParser(props.location.search).interactionID)
+    const subscriber = createSessionSub().subscribe({
+      next: res => {
+        const newSession = res.value.data.onCreateSession
+        if(newSession.compass.admins.includes(user.email)){
+          setNewestSession(newSession)
+        }
+      }
+    });
 
-  }, [props.location.search])
-
-  // setting up the compass through the url
-  useEffect(() => {
-  
-    if (compassID !== "") {
-      clearCompass()
-      setLoading(true)
-      getCompass(compassID)
-        .then((res) => {
-          setLoading(false);
-          updateCompass(res.data.getCompass);
-          setLoading(false)
-        })
-        .catch((err) => {
-          setLoading(false)
-          clearCompass();
-          console.log(err)
-        })
-    } else {
-      clearCompass()
-    } 
-
-  }, [compassID])
-
-  // setting up the session through url
-  useEffect(() => {
-    
-    if (sessionID !== "") {
-      clearSession();
-      setLoading(true)
-      getSession(sessionID)
-        .then((res) => {
-          setLoading(false)
-          updateSession(res.data.getSession)
-          let interactions = []
-          if (res.data.getSession.interactions.items.length > 0) {
-            interactions = res.data.getSession.interactions.items.sort((a,b) => {
-              return new Date(b.createdAt) - new Date(a.createdAt);
-            })
-          }
-          updateInteractions(interactions);
-        })
-        .catch((err) => {
-          setLoading(false)
-          clearSession();
-          clearInteractions();
-          console.log(err)
-        })
-    } else {
-      clearSession();
+    return () => {
+      clearInteraction()
+      clearSession()
+      subscriber.unsubscribe()
     }
-  }, [sessionID])
+  }, [])
 
-  // setting up the interaction through url
+  // if a new project is created, add it to existing projects
   useEffect(() => {
-
-    if (interactionID !== "") {
-      clearInteraction();
-      setLoading(true)
-      getInteraction(interactionID)
-        .then((res) => {
-          setLoading(false);
-          updateInteraction(res.data.getInteraction);
-        })
-        .catch((err) => {
-          setLoading(false);
-          clearInteraction();
-          console.log(err);
-        })
-    } else {
-      clearInteraction();
+    if(newestSession.hasOwnProperty("id")) {
+      let sessions = compass.sessions.items
+      if (sessions.length) {
+        const filteredSessions = sessions.filter(interaction => newestSession.id !== interaction.id)
+        sessions = [newestSession, ...filteredSessions]
+      }
+      else sessions = [newestSession]
+      updateSessions(sessions)
     }
+  }, [newestSession])
 
-  // eslint-disable-next-line
-  }, [interactionID])
+  // subscription for updated interactions
+  useEffect(() => {
+    const sub = updateInteractionSub().subscribe((updatedInteraction) => {
+      const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
+      setUpdatedLog(newUpdatedInteraction)
+    })
+    return () => {
+      sub.unsubscribe();
+    }
+  }, [])
+
+  // if an interaction has been updated, add it to existing projects
+  useEffect(() => {
+    if (updateLog.hasOwnProperty("id")) {
+      const updatedInteractionSessionID = updateLog.session.id 
+
+      const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
+      const newInteractions = oldInteractions.hasOwnProperty("interactions") ? oldInteractions.interactions.items.map((interaction) => {
+        if (updateLog.id === interaction.id) {
+          return updateLog
+        } else {
+          return interaction
+        }
+      }) : [updateLog]
+
+      const oldSessions = compass.sessions.items
+      const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
+      oldSessions[prevSessionIndex].interactions.items = newInteractions
+
+      // console.log(oldSessions)
+
+      updateSessions(oldSessions)
+    }
+  }, [updateLog])
 
   return (
     <MainView>
       {
-        !loading ? (compass.hasOwnProperty("id") ?  ( 
-            session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
-          ) : <div> sorry, this project does not exist !</div>
-        ) : <Loader />
+        compass.hasOwnProperty("id") ?  ( 
+          session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
+        ) : <div> sorry, this project does not exist !</div>
+        
       }
       {/* {
         show && (

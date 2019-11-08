@@ -62,10 +62,10 @@ export default (props) => {
   
   return (
     <ProjectDetailsContainer>
-      <ProjectDetailsTitle > 
-        <span>Project Details</span>
-      <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
-      </ProjectDetailsTitle>
+      {/* <ProjectDetailsTitle > 
+        <span>{compass.name_of_compass}</span>
+        <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
+      </ProjectDetailsTitle> */}
       { 
         edit ? (        
           <form
@@ -74,9 +74,12 @@ export default (props) => {
             value={{title,description}}
             errors={{ ...errors }}
           >
-            <InputContainer name="title">
-              <InputField name="title" value={title} />
-            </InputContainer>
+            <ProjectDetailsTitle > 
+              <InputContainer name="title" >
+                <InputField name="title" value={title} />
+              </InputContainer>
+              <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
+            </ProjectDetailsTitle>
             <InputContainer name="description">
               <InputTextArea name="description" value={description} />
             </InputContainer>
@@ -86,17 +89,20 @@ export default (props) => {
             </ProjectEditButtons>
           </form>
         ) : (
-          <ProjectDetailsDescription>
-            <ProjectTitleText>{title}</ProjectTitleText>
-            <ProjectDescriptionText> {description} </ProjectDescriptionText>
-          </ProjectDetailsDescription>
+          <>
+            <ProjectDetailsTitle > 
+              <span>{compass.name_of_compass}</span>
+              <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
+            </ProjectDetailsTitle>
+            <ProjectDetailsDescription>
+              <ProjectDescriptionText> {description} </ProjectDescriptionText>
+            </ProjectDetailsDescription>
+          </>
         )
       }
       <ProjectDetailsTitle> 
-        <span> Compass Details</span> 
+        <span> {compass.compassType} </span> 
       </ProjectDetailsTitle>
-      
-      {/* compass details */}
       <CompassDetailsDescription>
         <CompassStepAccordion>
           { steps && steps.map(step => (<StepDetails step={step} />)) }

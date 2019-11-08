@@ -10,11 +10,13 @@ import * as Mutation from "../../../utils/mutations"
 // import ReactApexChart from 'react-apexcharts';
 import PieChart from 'react-minimal-pie-chart';
 
+import {navigate} from 'gatsby'
+
 const FULL_WIDTH = 32;
 const NORMAL_WIDTH = 30;
 
 export default (props) => {
-  const {compass, session, interactions, updateInteraction, clearInteraction} = useContext(CompassContext)
+  const {compass, session, interactions, updateInteraction, clearInteraction, updateSessions} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
   const [options, setOptions]= useState({})
   const [activeStep, setActiveStep] = useState({})
@@ -92,7 +94,16 @@ export default (props) => {
   const goToLog = async (id) => {
     Mutation.startInteraction(session.id,id)
     .then((res) => {
-      updateInteraction(res.data.createInteraction);   
+      const updatedInteractionSessionID = res.data.createInteraction.session.id 
+
+      const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
+      const newInteractions = oldInteractions.interactions ? [res.data.createInteraction, ...oldInteractions.interactions.items] : [res.data.createInteraction]
+
+      const oldSessions = compass.sessions.items
+      const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
+      oldSessions[prevSessionIndex].interactions.items = newInteractions
+      updateSessions(oldSessions)
+      updateInteraction(res.data.createInteraction);
     });
   } 
 

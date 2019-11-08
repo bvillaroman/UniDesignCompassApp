@@ -37,7 +37,7 @@ export const CompassSideBar = styled(Box)`
 
   }
 `
-export const CompassHeader = styled(Link)`
+export const CompassHeaderDash = styled(Link)`
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -47,13 +47,35 @@ export const CompassHeader = styled(Link)`
   text-decoration: underline;
 
   @media (max-width: 768px){
-    flex: 0 0 100%;
+    //flex: 0 0 100%;
+    line-height: 3rem;
+    margin-bottom: auto;
+    //flex: 0 1 100%;
   }
 `
+
+export const CompassHeaderCompass = styled(Link)`
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  font-weight: 900;
+  color: white;
+  text-decoration: underline;
+
+  @media (max-width: 768px){
+    //flex: 0 0 100%;
+    line-height: 3rem;
+    margin-bottom: auto;
+    flex: 0 1 100%;
+  }
+`
+
 export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  //height: 100%
 
   @media (max-width: 768px){
     //width: 20%;
@@ -125,6 +147,7 @@ export const CompassLink = ({ to, children }) => (
   </CompassLinkStyles>
 )
 
-//    a:not(:nth-last-child(4)){
-    //   ${props => props.renderSidebar ? 'display: none;' : 'initial'};
-    // };
+
+// a:not(:nth-last-child(4)){
+//   ${props => props.renderSidebar ? 'display: none;' : 'initial'};
+// };
