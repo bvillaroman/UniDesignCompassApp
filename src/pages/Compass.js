@@ -7,18 +7,9 @@ import ReviewLog from "../components/ModalComponents/ReviewLog"
 import {CompassContext} from "../context/CompassPage/context"
 import {GlobalContext} from "../context/context"
 import {ReviewModalContext} from "../context/ReviewModal/context"
-import {createSessionSub} from "../utils/subscriptions"
+import {createSessionSub, updateInteractionSub} from "../utils/subscriptions"
 
 import { MainView } from "../styles/CompassPage"
-// import { 
-//   LayerView, 
-//   AttachmentContainer ,
-//   AttachmentPreview,
-//   AttachmentButtonContainer,
-//   CloseButton,
-//   DownloadButton
-// } from "../styles/Modals"
-import {Loader} from "../styles/layout"
 
 const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
@@ -27,6 +18,7 @@ const CompassPage = (props) => {
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
   const [newestSession, setNewestSession] = useState({});
+  const [updateLog, setUpdatedLog] = useState([]);
 
   const showItem = (attachment,src) => {
     setAttachment(attachment)
@@ -62,6 +54,41 @@ const CompassPage = (props) => {
       updateSessions(sessions)
     }
   }, [newestSession])
+
+  // subscription for updated interactions
+  useEffect(() => {
+    const sub = updateInteractionSub().subscribe((updatedInteraction) => {
+      const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
+      setUpdatedLog(newUpdatedInteraction)
+    })
+    return () => {
+      sub.unsubscribe();
+    }
+  }, [])
+
+  // if an interaction has been updated, add it to existing projects
+  useEffect(() => {
+    if (updateLog.hasOwnProperty("id")) {
+      const updatedInteractionSessionID = updateLog.session.id 
+
+      const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
+      const newInteractions = oldInteractions.hasOwnProperty("interactions") ? oldInteractions.interactions.items.map((interaction) => {
+        if (updateLog.id === interaction.id) {
+          return updateLog
+        } else {
+          return interaction
+        }
+      }) : [updateLog]
+
+      const oldSessions = compass.sessions.items
+      const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
+      oldSessions[prevSessionIndex].interactions.items = newInteractions
+
+      // console.log(oldSessions)
+
+      updateSessions(oldSessions)
+    }
+  }, [updateLog])
 
   return (
     <MainView>
