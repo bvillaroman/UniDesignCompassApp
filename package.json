@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^9.3.2",
     "babel-jest": "^24.7.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-gatsby": "^0.1.11",
