@@ -90,4 +90,8 @@ export const InputField = styled(TextInput)`
   font-size: 1rem;
   padding-top: 1rem;
   color: black;
+  ${props => props.width && `width: ${props.width}`};
+  ${props => props.removeBorder && "border: none"};
+  ${props => props.removeBorder && "background-color: #F0F0F0;"};
+  
 `;
