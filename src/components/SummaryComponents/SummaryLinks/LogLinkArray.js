@@ -5,8 +5,10 @@ const LogLinkArray = ({ items }) => {
   // console.log({ items })
   return (
     <>
-      {items.map((item, i) => <LogLink item={item} />)}
+
+      {items.length && items.map((item, i) => <LogLink item={item} />)}
       {/* {<Link name={item.name} key={i} />} */}
+
     </>
   )
 }
