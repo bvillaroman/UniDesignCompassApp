@@ -8,13 +8,13 @@ import {CompassContext} from "../context/CompassPage/context"
 import {GlobalContext} from "../context/context"
 import {ReviewModalContext} from "../context/ReviewModal/context"
 import {createSessionSub, updateInteractionSub} from "../utils/subscriptions"
-import { getCompass,getSession,getInteraction } from '../utils/queries'
+import { getCompass } from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
 
 const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
-  const { compass, session,updateSessions, clearInteraction, clearSession, updateCompass } = useContext(CompassContext);
+  const { compass, session, clearInteraction, clearSession, updateCompass } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
@@ -52,6 +52,7 @@ const CompassPage = (props) => {
     })
     return () => {
       clearInteraction()
+      clearSession()
       createSession.unsubscribe()
       updateInteraction.unsubscribe()
     }
@@ -61,7 +62,7 @@ const CompassPage = (props) => {
     <MainView>
       {
         compass.hasOwnProperty("id") ?  ( 
-          session.hasOwnProperty("id") ? <CompassSelector  showAttachment={showItem} /> : <CompassViewer /> 
+          session.hasOwnProperty("id") ? <CompassSelector showAttachment={showItem} /> : <CompassViewer /> 
         ) : <div> sorry, this project does not exist !</div>
         
       }
