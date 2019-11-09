@@ -1,6 +1,5 @@
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
-export const UPDATE_SESSIONS = "UPDATE_SESSIONS";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
 export const UPDATE_INTERACTIONS = "UPDATE_INTERACTIONS";
 export const UPDATE_TIME = "UPDATE_TIME";
@@ -11,12 +10,6 @@ export const CLEAR_INTERACTIONS = "CLEAR_INTERACTION";
 export const CLEAR_TIME = "CLEAR_TIME";
 
 const updateCompass = (newCompass, state) => ({ ...state, compass: newCompass})
-const updateSessions = (newSessions, state) => ({ ...state, compass: {
-  ...state.compass,
-  sessions: { 
-    items : newSessions
-  }
-}})
 const updateSession = (newSession, state) => ({ ...state, session: newSession})
 const updateInteraction = (newInteraction, state) => {
   const interaction = {...state.interaction, ...newInteraction}
@@ -45,8 +38,6 @@ export default (state,{type,payload}) => {
       return updateCompass(payload, state);
     case UPDATE_SESSION:
       return updateSession(payload, state);
-    case UPDATE_SESSIONS:
-        return updateSessions(payload, state); 
     case UPDATE_INTERACTION:
       return updateInteraction(payload, state);
     case UPDATE_INTERACTIONS:
