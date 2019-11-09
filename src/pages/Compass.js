@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+// import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
 import CompassViewer from "../components/CompassComponents/CompassViewer"
 import CompassSelector from "../components/CompassComponents/CompassSelector"
@@ -16,12 +17,12 @@ const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
   const { compass, session, clearInteraction, clearSession, updateCompass } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
-  const [attachment,setAttachment] = useState();
-  const [source,setSource] = useState();
+  // const [attachment,setAttachment] = useState();
+  // const [source,setSource] = useState();
 
   const showItem = (attachment,src) => {
-    setAttachment(attachment)
-    setSource(src)
+    // setAttachment(attachment)
+    // setSource(src)
   }
   // subscription for any new project being created
   useEffect(() => {
@@ -56,6 +57,9 @@ const CompassPage = (props) => {
       createSession.unsubscribe()
       updateInteraction.unsubscribe()
     }
+
+
+  // eslint-disable-next-line
   }, [])
 
   return (

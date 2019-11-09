@@ -22,6 +22,8 @@ const SummaryPage = (props) => {
     return () => {
       sub.unsubscribe();
     }
+    
+    // eslint-disable-next-line
   }, [])
 
   return (

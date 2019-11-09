@@ -19,7 +19,7 @@ import {
   SessionRowHeader,
   EditProjectButton
 } from "../../../styles/CompassPage"
-import { InputContainer,  InputField } from "../../../styles/Form"
+import { InputField } from "../../../styles/Form"
 
 const SessionCreator = (props) => {
   const {compass, updateCompass} = useContext(CompassContext)

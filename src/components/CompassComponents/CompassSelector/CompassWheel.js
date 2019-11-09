@@ -12,7 +12,7 @@ const FULL_WIDTH = 32;
 const NORMAL_WIDTH = 30;
 
 export default (props) => {
-  const {compass, session, interactions, updateInteraction, clearInteraction} = useContext(CompassContext)
+  const { session, interactions, updateInteraction, clearInteraction} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
   const [options, setOptions]= useState({})
   const [activeStep, setActiveStep] = useState({})
@@ -85,11 +85,14 @@ export default (props) => {
         series: steps.map(() => Math.floor(100/steps.length) * 0.1)
       })
     }
+    
+    // eslint-disable-next-line
   }, [steps])
 
   const goToLog = async (id) => {
     Mutation.startInteraction(session.id,id)
-    .then((res) => updateInteraction(res.data.createInteraction));
+      .then((res) => updateInteraction(res.data.createInteraction))
+      .catch((err) => console.log(err));
   } 
 
   function onMouseOut(event, propsData, index) {
