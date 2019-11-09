@@ -13,6 +13,7 @@ const PieChart = Loadable(() => import('./PieChart'));
 
 export default ({sessions = [], steps = []}) => {
   const [selectedSession,setSelectedSession] = useState({})
+  const [selectedSessionIndex,setSelectedSessionIndex] = useState(0)
   const [interactions,setInteractions] = useState([])
   const [data,setData] = useState([])
   const [labels,setLabels] = useState([])
@@ -23,13 +24,16 @@ export default ({sessions = [], steps = []}) => {
     const filteredSessions = sessions.length ? sessions.filter((session) => (session.interactions && session.interactions.items.length > 0)) : []
     if (filteredSessions.length > 0) {
       
-      let arrOfSessions = filteredSessions.map(item => ({
-                              onClick: () => setSelectedSession(item),
+      let arrOfSessions = filteredSessions.map((item,index) => ({
+                              onClick: () => {
+                                setSelectedSession(item)
+                                setSelectedSessionIndex(index)
+                              },
                               label: item.name_of_session 
                             }))
-
-      let session = (selectedSession !== {}) ? filteredSessions[0] : selectedSession
-
+                              
+      let session = filteredSessions[selectedSessionIndex]
+                
       
       let allInteractions = session.interactions.items
                             .flat()
@@ -64,7 +68,6 @@ export default ({sessions = [], steps = []}) => {
   return (
     <SelectedArea gridArea ='selected'>
       <ContainerHeader> 
-       
         <SessionSelector
           label={ (<HeaderText> {selectedSession.name_of_session} </HeaderText>)}
           items={formattedSessions}
