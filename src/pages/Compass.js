@@ -8,17 +8,16 @@ import {CompassContext} from "../context/CompassPage/context"
 import {GlobalContext} from "../context/context"
 import {ReviewModalContext} from "../context/ReviewModal/context"
 import {createSessionSub, updateInteractionSub} from "../utils/subscriptions"
+import { getCompass,getSession,getInteraction } from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
 
 const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
-  const { compass, session,updateSessions, clearInteraction, clearSession } = useContext(CompassContext);
+  const { compass, session,updateSessions, clearInteraction, clearSession, updateCompass } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [attachment,setAttachment] = useState();
   const [source,setSource] = useState();
-  const [newestSession, setNewestSession] = useState({});
-  const [updateLog, setUpdatedLog] = useState({});
 
   const showItem = (attachment,src) => {
     setAttachment(attachment)
@@ -26,66 +25,37 @@ const CompassPage = (props) => {
   }
   // subscription for any new project being created
   useEffect(() => {
-    const subscriber = createSessionSub().subscribe({
+    const createSession = createSessionSub().subscribe({
       next: res => {
         const newSession = res.value.data.onCreateSession
-        if(newSession.compass.admins.includes(user.email)){
-          setNewestSession(newSession)
+        if(newSession.compass.admins.includes(user.email) ){
+          getCompass(newSession.compass.id)
+          .then((res) => {
+            updateCompass(res.data.getCompass);
+          })
+          .catch((err) => {
+            console.log(err)
+          })
         }
       }
     });
 
-    return () => {
-      clearInteraction()
-      clearSession()
-      subscriber.unsubscribe()
-    }
-  }, [])
-
-  // if a new project is created, add it to existing projects
-  useEffect(() => {
-    if(newestSession.hasOwnProperty("id")) {
-      let sessions = compass.sessions.items
-      if (sessions.length) {
-        const filteredSessions = sessions.filter(interaction => newestSession.id !== interaction.id)
-        sessions = [newestSession, ...filteredSessions]
-      }
-      else sessions = [newestSession]
-      updateSessions(sessions)
-    }
-  }, [newestSession])
-
-  // subscription for updated interactions
-  useEffect(() => {
-    const sub = updateInteractionSub().subscribe((updatedInteraction) => {
+    const updateInteraction = updateInteractionSub().subscribe((updatedInteraction) => {
       const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
-      setUpdatedLog(newUpdatedInteraction)
+      getCompass(newUpdatedInteraction.session.compass.id)
+        .then((res) => {
+          updateCompass(res.data.getCompass);
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     })
     return () => {
-      sub.unsubscribe();
+      clearInteraction()
+      createSession.unsubscribe()
+      updateInteraction.unsubscribe()
     }
   }, [])
-
-  // if an interaction has been updated, add it to existing projects
-  useEffect(() => {
-    if ((typeof updateLog) === Object && updateLog.hasOwnProperty("id")) {
-      const updatedInteractionSessionID = updateLog.session.id 
-
-      const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
-      const newInteractions = oldInteractions.hasOwnProperty("interactions") ? oldInteractions.interactions.items.map((interaction) => {
-        if (updateLog.id === interaction.id) {
-          return updateLog
-        } else {
-          return interaction
-        }
-      }) : [updateLog]
-
-      const oldSessions = compass.sessions.items
-      const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
-      oldSessions[prevSessionIndex].interactions.items = newInteractions
-      updateSessions(oldSessions)
-    }
-  }, [updateLog])
 
   return (
     <MainView>
