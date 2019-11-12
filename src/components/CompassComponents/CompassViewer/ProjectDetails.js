@@ -4,7 +4,7 @@ import {
   ProjectDetailsTitle, 
   ProjectDetailsDescription,
   EditProjectButton,
-  ProjectTitleText,
+  // ProjectTitleText,
   ProjectDescriptionText,
   ProjectEditButtons,
   CompassDetailsDescription,

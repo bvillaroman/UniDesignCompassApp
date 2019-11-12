@@ -36,7 +36,7 @@ const TimeLine = ({interactions}) => {
           <TimeLineBar>
             {
               data.map((item,index) => (
-                <InteractionBar interaction={item}/>
+                <InteractionBar key={index} interaction={item}/>
               ))
             }
           </TimeLineBar>

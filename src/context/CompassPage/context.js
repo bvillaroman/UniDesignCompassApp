@@ -1,7 +1,6 @@
 import React, { useReducer, createContext} from "react";
 import CompassReducer, { 
   UPDATE_COMPASS, 
-  UPDATE_SESSIONS,
   UPDATE_SESSION,
   UPDATE_INTERACTION,
   UPDATE_INTERACTIONS,
@@ -30,7 +29,6 @@ export const CompassProvider = ({children}) => {
     <CompassContext.Provider 
       value={{
         updateCompass: (compass) => dispatch({type: UPDATE_COMPASS, payload: compass}),
-        updateSessions: (sessions) => dispatch({type: UPDATE_SESSIONS, payload: sessions}),
         updateSession: (session) => dispatch({type: UPDATE_SESSION, payload: session}),
         updateInteraction: (interaction) => dispatch({type: UPDATE_INTERACTION, payload: interaction}),
         updateInteractions: (interactions) => dispatch({type: UPDATE_INTERACTIONS, payload: interactions}), 

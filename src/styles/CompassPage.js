@@ -623,26 +623,30 @@ export const CSInteractionsTitle = styled(Box)`
   font-weight: 600;
   width: 90%;
   margin: 0.5rem auto;
-  height: auto;
+  min-height: 1.3rem;
 `;
 export const CSInteractionsFeed = styled(Box)`
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   flex-wrap: nowrap; 
-  height: 100%;
+  min-height: 8.5rem;
   width: 100%;
   padding: 1rem;
 `;
 export const CSInteractionContainer = styled(Box)`
   margin: 0 0.5rem;
   min-width: 7.6rem;
-  height: 100%;
+  min-height: 7rem;
   display: flex;
   flex-direction: row;
   align-items:center;
   justify-content: space-between;
+  svg {
+    margin-bottom: 1rem;
+  }
 `;
 export const CSInteractionButtonContainer = styled(Box)`
   display: flex;

@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { CompassContext } from "../../../context/CompassPage/context"
 import { createSession, deleteSession, updateSession } from "../../../utils/mutations"
-import { createSessionSub } from "../../../utils/subscriptions"
+import { getCompass } from "../../../utils/queries"
 import { dateFormatter, timeSorter } from "../../../utils/translateTime"
 import {navigate} from "gatsby"
 import { AddCircle} from 'grommet-icons';
@@ -19,21 +19,13 @@ import {
   SessionRowHeader,
   EditProjectButton
 } from "../../../styles/CompassPage"
-import { InputContainer,  InputField } from "../../../styles/Form"
+import { InputField } from "../../../styles/Form"
 
 const SessionCreator = (props) => {
-  const {compass, updateSessions} = useContext(CompassContext)
+  const {compass, updateCompass} = useContext(CompassContext)
   const [pastSessions, setPastSessions] = useState([])
   const [selectedSession, setSelectedSession] = useState({})
   const [title, setTitle] = useState("")
-
-  // if a new project is created, add it to existing projects
-  // useEffect(() => {
-  //   if(newestProject !== {}) {
-  //     if (compasses.length) setCompasses([newestProject, ...compasses]) 
-  //     else setCompasses([newestProject]) 
-  //   }
-  // }, [newestProject])
 
   useEffect(() => {
     if(compass.hasOwnProperty("id")){
@@ -58,13 +50,11 @@ const SessionCreator = (props) => {
   const onDelete = (session) => {
     deleteSession(session.id)
       .then(res => {
-        const newSessions = compass.sessions.items.filter(session => session.id !== res.data.deleteSession.id)
-        updateSessions(newSessions)
+        getCompass(res.data.deleteSession.compass.id)
+          .then((res) => updateCompass(res.data.getCompass))
+          .catch((err) => console.log(err))
       })
-      .catch(err => {
-        console.log(err)
-      })
-  
+      .catch(err => console.log(err))
   }
 
   const onEdit = (session) => {
@@ -75,17 +65,15 @@ const SessionCreator = (props) => {
   const saveTitle = (session) => {
     updateSession(session.id, title, session.description_of_session)
     .then((res) => {
-      const newSessions = compass.sessions.items
-      const index = newSessions.indexOf(res.data.updateSession);
-
-      if (index !== -1)  newSessions[index] = res.data.updateSession;
-
-      setSelectedSession({})
-      setTitle("")
-      updateSessions(newSessions)
+      getCompass(res.data.updateSession.compass.id)
+        .then((res) => {
+          updateCompass(res.data.getCompass)
+          setSelectedSession({})
+          setTitle("")
+        })
+        .catch((err) => console.log(err))
     })
     .catch(err => console.log(err))
-    
   }
 
   return (

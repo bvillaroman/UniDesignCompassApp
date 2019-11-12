@@ -10,7 +10,6 @@ export const createSessionSub = () => API.graphql(graphqlOperation(subscriptions
 
 export const updateInteractionSub = () => {
   const owner = localStorage.getItem("authuser");
-  console.log(owner);
   const subscription = API.graphql({ query: subscriptions.onUpdateInteraction, variables: { owner: owner } })
 
   return subscription

@@ -1,6 +1,5 @@
 import React from "react";
 import { CompassSectionContainer } from "../../../styles/CompassPage"
-// import { CompassContext } from "../../../context/CompassPage/context"
 import Loadable from "@loadable/component"
 
 import InteractionFeed from "./InteractionFeed"

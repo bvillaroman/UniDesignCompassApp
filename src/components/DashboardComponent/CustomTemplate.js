@@ -2,8 +2,6 @@ import React, { useContext } from 'react'
 import { ReviewModalContext } from "../../context/ReviewModal/context"
 import {
   TemplateContainer,
-  CompassCircle,
-  StepContainer,
   CompassCardTitle,
   ProjectTypeDetails
 } from "../../styles/Dashboard"
