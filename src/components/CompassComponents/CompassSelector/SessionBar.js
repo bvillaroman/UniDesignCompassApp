@@ -7,7 +7,7 @@ import {
 import Logger from "./Logger"
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default ({showAttachment}) => {
+export default (props) => {
   const {session} = useContext(CompassContext)
 
   return (

@@ -69,6 +69,8 @@ const Layout = (props) => {
       clearCompass()
     } 
 
+
+  // eslint-disable-next-line
   }, [compassID])
 
   // setting up the session through url
@@ -98,6 +100,8 @@ const Layout = (props) => {
     } else {
       clearSession();
     }
+
+  // eslint-disable-next-line
   }, [sessionID])
 
   // setting up the interaction through url

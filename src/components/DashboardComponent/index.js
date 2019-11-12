@@ -43,6 +43,8 @@ const Dashboard = (props) => {
         setLoading(false)
       });
 
+      
+  // eslint-disable-next-line
   }, [user.email]);
 
   // subscription for any new project being created
@@ -57,6 +59,8 @@ const Dashboard = (props) => {
     });
 
     return () => subscriber.unsubscribe()
+
+  // eslint-disable-next-line
   }, [])
 
   // if a new project is created, add it to existing projects
@@ -65,6 +69,8 @@ const Dashboard = (props) => {
       if (compasses.length) setCompasses([newestProject, ...compasses]) 
       else setCompasses([newestProject]) 
     }
+
+  // eslint-disable-next-line
   }, [newestProject])
 
   return (

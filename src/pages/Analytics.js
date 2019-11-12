@@ -49,6 +49,8 @@ export default (props) => {
       if (compass.sessions.items) setSessions(compass.sessions.items) 
     } 
     setLoading(false)
+
+  // eslint-disable-next-line
   }, [compass])
 
   // handle sessopm data
@@ -60,6 +62,7 @@ export default (props) => {
       setLoading(false)
     }
       
+  // eslint-disable-next-line
   }, [session])
 
 

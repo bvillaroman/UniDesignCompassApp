@@ -22,7 +22,7 @@ export default (props) => {
                 <Interaction 
                   key={key}
                   interaction={item} 
-                  isLastStep={key === interactions.length - 1} 
+                  isLastStep={key === 0} 
                 /> 
               )
             }

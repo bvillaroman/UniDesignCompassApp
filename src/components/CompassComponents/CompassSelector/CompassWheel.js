@@ -2,23 +2,19 @@ import React, { useState,useEffect, useContext } from "react";
 import { CompassContext } from "../../../context/CompassPage/context"
 import { 
   CSTitle,
-  // SessionClock,
   CompassWheelContainer,
   CompassWheel
 } from "../../../styles/CompassPage"
 import * as Mutation from "../../../utils/mutations"
-// import ReactApexChart from 'react-apexcharts';
 import PieChart from 'react-minimal-pie-chart';
-
-import {navigate} from 'gatsby'
 
 const FULL_WIDTH = 32;
 const NORMAL_WIDTH = 30;
 
 export default (props) => {
-  const {compass, session, interactions, updateInteraction, clearInteraction, updateSessions} = useContext(CompassContext)
+  const { session, interactions, updateInteraction, clearInteraction} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
-  const [options, setOptions]= useState({})
+  // const [options, setOptions]= useState({})
   const [activeStep, setActiveStep] = useState({})
 
   useEffect(() => {
@@ -47,65 +43,56 @@ export default (props) => {
     }
   }, [session,interactions])
   
-  useEffect(() => {
-    if(steps !== []) {
-      setOptions({
-        labels: steps.map(step => step.name_of_step),
-        dataLabels: {
-          formatter: function(value, { seriesIndex, dataPointIndex, w }) {
-            return steps[seriesIndex].name_of_step 
-          }
-        },
-        legend: {
-          show: false
-        },
-        plotOptions: {
-          pie: {
-            donut: {
-              size: '40%',
-              labels: {
-                show: true,
-                name: {
-                  show:true
-                },
-                value: {
-                  show:false
-                }
-              }
-            }
-          }
-        },
-        tooltip : {
-          enabled: false,
-        },
-        chart: {
-          events: {
-            dataPointSelection: function(event, chartContext, config){
-              goToLog(steps[config.dataPointIndex].id)
-            }
-          }
-        },
-        colors: steps.map(step => step.color),
-        series: steps.map(() => Math.floor(100/steps.length) * 0.1)
-      })
-    }
-  }, [steps])
+  // useEffect(() => {
+  //   if(steps !== []) {
+  //     setOptions({
+  //       labels: steps.map(step => step.name_of_step),
+  //       dataLabels: {
+  //         formatter: function(value, { seriesIndex, dataPointIndex, w }) {
+  //           return steps[seriesIndex].name_of_step 
+  //         }
+  //       },
+  //       legend: {
+  //         show: false
+  //       },
+  //       plotOptions: {
+  //         pie: {
+  //           donut: {
+  //             size: '40%',
+  //             labels: {
+  //               show: true,
+  //               name: {
+  //                 show:true
+  //               },
+  //               value: {
+  //                 show:false
+  //               }
+  //             }
+  //           }
+  //         }
+  //       },
+  //       tooltip : {
+  //         enabled: false,
+  //       },
+  //       chart: {
+  //         events: {
+  //           dataPointSelection: function(event, chartContext, config){
+  //             goToLog(steps[config.dataPointIndex].id)
+  //           }
+  //         }
+  //       },
+  //       colors: steps.map(step => step.color),
+  //       series: steps.map(() => Math.floor(100/steps.length) * 0.1)
+  //     })
+  //   }
+    
+  //   // eslint-disable-next-line
+  // }, [steps])
 
   const goToLog = async (id) => {
     Mutation.startInteraction(session.id,id)
-    .then((res) => {
-      const updatedInteractionSessionID = res.data.createInteraction.session.id 
-
-      const oldInteractions = compass.sessions.items.find((session) => session.id === updatedInteractionSessionID)
-      const newInteractions = oldInteractions ? [res.data.createInteraction, ...oldInteractions.interactions.items] : [res.data.createInteraction]
-
-      const oldSessions = compass.sessions.items
-      const prevSessionIndex = oldSessions.findIndex((session) => session.id === updatedInteractionSessionID )
-      if (prevSessionIndex > 0) oldSessions[prevSessionIndex].interactions.items = newInteractions
-      updateInteraction(res.data.createInteraction);
-      updateSessions(oldSessions)
-      
-    });
+      .then((res) => updateInteraction(res.data.createInteraction))
+      .catch((err) => console.log(err));
   } 
 
   function onMouseOut(event, propsData, index) {
@@ -177,7 +164,7 @@ export default (props) => {
       </CSTitle>
       <CompassWheel color={activeStep.defaultColor}>
         {
-          options.series && (
+          // options.series && (
             // <ReactApexChart 
             //   options={options} 
             //   type="donut" 
@@ -185,6 +172,7 @@ export default (props) => {
             //   width="100%"
             //   height="110%"
             // />
+          steps.length && (
             <PieChart
               label={({ data, dataIndex }) => data[dataIndex].title }
               labelPosition={70}

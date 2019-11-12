@@ -20,10 +20,9 @@ import {
 const SummaryLog = (props) => {
   const { compass, session, interaction } = useContext(CompassContext);
   const { updateShowModal, updateInteraction, showModal } = useContext(ReviewModalContext)
+  const { items } = interaction.attachments;
   const [comment, setComment] = useState("");
 
-  const { items } = interaction.attachments;
-  // console.log(items)
   const handleSubmit = (e) => {
     e.preventDefault();
     const newInteraction = {
@@ -73,7 +72,7 @@ const SummaryLog = (props) => {
       </TextAreaContainer>
       <div style={{ overflow: "auto" }}>
         <h4 style={{ borderBottom: "0.1rem solid rgba(0,0,0,0.2)", textAlign: "center", overflow: "auto" }}>Attachment</h4>
-        <LogLinkArray items={items} />
+        {items && items.length && <LogLinkArray items={items} />}
       </div>
     </SummaryContainer>
   )

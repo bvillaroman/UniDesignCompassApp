@@ -6,10 +6,12 @@ const Attachment = ({attachment}) => {
   const [source, setSource] = useState("")
   
   useEffect(() => {
-    Storage.get(attachment.key)
-    .then(result => setSource(result))
-    .catch(err =>  setSource(''));
-  }, [])
+    if (attachment.hasOwnProperty("key")){
+      Storage.get(attachment.key)
+      .then(result => setSource(result))
+      .catch(err =>  setSource(''));
+    }
+  }, [attachment])
 
   return (
     <AttachmentLinkStyle href={source} target="_blank" rel="noopener noreferrer">

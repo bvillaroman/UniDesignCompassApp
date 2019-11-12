@@ -1,12 +1,12 @@
 import React, {useContext} from "react";
 import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../styles/CompassPage"
-import { LinkPrevious } from "grommet-icons"
+import { LinkNext } from "grommet-icons"
 import translateTime from "../../../utils/translateTime"
 import {getInteraction} from "../../../utils/queries"
 import {ReviewModalContext} from "../../../context/ReviewModal/context"
 
-const Interaction = ({interaction = {}, isLastStep}) => {
-  const { step, duration } = interaction;  
+const Interaction = ({interaction = {}, isLastStep = false}) => {
+  const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
   const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
   const openReviewLog = (evt) => {
@@ -14,8 +14,7 @@ const Interaction = ({interaction = {}, isLastStep}) => {
     getInteraction(interaction.id)
       .then((res => {
         updateInteraction(res.data.getInteraction);
-      }))
-    
+      })) 
   }
   
   return (
@@ -29,7 +28,7 @@ const Interaction = ({interaction = {}, isLastStep}) => {
         <span>{translateTime(duration)}</span>
       </CSInteractionButtonContainer>
       
-      {!isLastStep && <LinkPrevious color="#5567FD" />}
+      {!isLastStep && <LinkNext color="#5567FD" />}
     </CSInteractionContainer>
 
     
