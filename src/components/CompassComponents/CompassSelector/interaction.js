@@ -5,8 +5,8 @@ import translateTime from "../../../utils/translateTime"
 import {getInteraction} from "../../../utils/queries"
 import {ReviewModalContext} from "../../../context/ReviewModal/context"
 
-const Interaction = ({interaction = {}, isLastStep}) => {
-  const { step, duration } = interaction;  
+const Interaction = ({interaction = {}, isLastStep = false}) => {
+  const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
   const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
   const openReviewLog = (evt) => {

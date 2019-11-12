@@ -5,13 +5,23 @@ import InteractionFeed from "../InteractionFeed"
 import {render, waitForElement, cleanup, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-const renderApp = (
-    compassProps = { compass: {}, section: {}, interaction: {}, interactions: [] },
-    reviewProps = { interaction: {}, showModal: false }
-  ) => {
+const renderApp = ( compassProps, reviewProps ) => {
 
   return  render( 
-    <CompassContext.Provider  value={{
+    <CompassContext.Provider value={compassProps}>
+      <ReviewModalContext.Provider value={reviewProps}>
+        <InteractionFeed /> 
+      </ReviewModalContext.Provider>
+    </CompassContext.Provider >
+  )
+}
+
+describe('testing Interaction Feed', () => {
+  let compassProps = {}
+  let reviewProps = {} 
+  beforeEach(() => {
+    cleanup()
+    compassProps = {
       updateCompass: jest.fn(),
       updateSession: jest.fn(),
       updateInteraction: jest.fn(),
@@ -22,40 +32,22 @@ const renderApp = (
       clearInteraction: jest.fn(),
       clearInteractions: jest.fn(),
       clearTime: jest.fn(),
-      compass : compassProps.compass,
-      session: compassProps.session,
-      interaction: compassProps.interaction,
-      interactions: compassProps.interactions
-    }}>
-      <ReviewModalContext.Provider value={{
-        updateShowModal: (showModalBool) => dispatch({type: UPDATE_SHOW_MODAL, payload: showModalBool}),
-        updateInteraction: (interaction) => dispatch({type: UPDATE_INTERACTION, payload: interaction}),
-        clearInteraction: () => dispatch({type: CLEAR_INTERACTION}),
-        interaction: reviewProps.interaction,
-        showModal: reviewProps.showModal,
-        }}
-      >
-        <InteractionFeed /> 
-      </ReviewModalContext.Provider>
-
-    </CompassContext.Provider >
-  )
-}
-
-describe('testing Interaction Feed', () => {
-  let compassProps = { compass: {}, section: {}, interaction: {}, interactions: [] }
-  let reviewProps = { interaction: {}, showModal: false }
-
-  beforeEach(() => {
-    cleanup()
-    compassProps = {}
-    reviewProps = {}
+      compass : {},
+      session: {},
+      interaction: {},
+      interactions: [],
+    }
+    reviewProps = {
+      updateShowModal: jest.fn(),
+      updateInteraction: jest.fn(),
+      clearInteraction: jest.fn(),
+      interaction: {},
+      showModal: false,
+    } 
   })
 
   afterEach(() => {
     cleanup()
-    compassProps = {}
-    reviewProps = {}
   })
 
   test('Show default values with given interactions', async () => {
