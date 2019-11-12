@@ -20,10 +20,9 @@ import {
 const SummaryLog = (props) => {
   const { compass, session, interaction } = useContext(CompassContext);
   const { updateShowModal, updateInteraction, showModal } = useContext(ReviewModalContext)
+  const { items } = interaction.attachments;
   const [comment, setComment] = useState("");
 
-  const { items } = interaction.attachments;
-  // console.log(items)
   const handleSubmit = (e) => {
     e.preventDefault();
     const newInteraction = {

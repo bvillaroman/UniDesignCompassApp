@@ -187,7 +187,8 @@ export const SummaryLogHeader = styled.div`
 `;
 
 export const SummaryTableConatiner = styled.div`
-  width: 100%;
+  width: auto;
+  padding: 1rem;
   display: block;
   overflow: auto;
   margin: 1em;
