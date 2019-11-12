@@ -7,30 +7,28 @@ import {ReviewModalContext} from "../../../context/ReviewModal/context"
 
 const Interaction = ({interaction = {}, isLastStep}) => {
   const { step, duration } = interaction;  
-  // const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
+  const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
-  // const openReviewLog = (evt) => {
-  //   updateShowModal(true)
-  //   getInteraction(interaction.id)
-  //     .then((res => {
-  //       updateInteraction(res.data.getInteraction);
-  //     }))
-    
-  // }
+  const openReviewLog = (evt) => {
+    updateShowModal(true)
+    getInteraction(interaction.id)
+      .then((res => {
+        updateInteraction(res.data.getInteraction);
+      })) 
+  }
   
   return (
     <CSInteractionContainer>
       <CSInteractionButtonContainer>
-        {/* <CSInteraction 
+        <CSInteraction 
           label={step.name_of_step} 
           color={step.color}
           onClick={openReviewLog}
         /> 
-        <span>{translateTime(duration)}</span> */}
-        {step.name_of_step}
+        <span>{translateTime(duration)}</span>
       </CSInteractionButtonContainer>
       
-      {/* {!isLastStep && <LinkNext color="#5567FD" />} */}
+      {!isLastStep && <LinkNext color="#5567FD" />}
     </CSInteractionContainer>
 
     

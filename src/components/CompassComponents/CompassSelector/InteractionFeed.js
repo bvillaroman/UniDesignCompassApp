@@ -10,8 +10,6 @@ import { CompassContext } from "../../../context/CompassPage/context"
 export default (props) => {
   const {interactions} = useContext(CompassContext)
 
-  // console.log(interactions)
-  // console.log(useContext(CompassContext))
   // getting the current session
   return (
     <CSInteractions >

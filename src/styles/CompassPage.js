@@ -630,6 +630,7 @@ export const CSInteractionsFeed = styled(Box)`
   flex-direction: row-reverse;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   flex-wrap: nowrap; 
   min-height: 8.5rem;
   width: 100%;
