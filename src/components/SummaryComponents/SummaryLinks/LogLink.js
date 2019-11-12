@@ -8,11 +8,9 @@ import { Edit, Attachment, Close, Download, Image, Document, Multimedia, Video }
 const LogLink = ({ item }) => {
   const { key, name, type } = item;
   const [link, setLink] = useState(undefined)
-  //console.log({ key })
 
   Storage.get(key)
     .then(res => setLink(res))
-    // .then(res => console.log(res))
     .catch(err => console.log('You have no attachments', err))
 
   return (
