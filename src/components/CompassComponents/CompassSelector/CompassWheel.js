@@ -7,6 +7,7 @@ import {
 } from "../../../styles/CompassPage"
 import * as Mutation from "../../../utils/mutations"
 import PieChart from 'react-minimal-pie-chart';
+import { Doughnut } from 'react-chartjs-2';
 
 const FULL_WIDTH = 32;
 const NORMAL_WIDTH = 30;
@@ -14,7 +15,7 @@ const NORMAL_WIDTH = 30;
 export default (props) => {
   const { session, interactions, updateInteraction, clearInteraction} = useContext(CompassContext)
   const [steps,setSteps] = useState([])
-  // const [options, setOptions]= useState({})
+  const [options, setOptions]= useState({})
   const [activeStep, setActiveStep] = useState({})
 
   useEffect(() => {
@@ -39,6 +40,17 @@ export default (props) => {
         step.duration = value
       })
 
+      const data = {
+        datasets: [{
+          data : arr.map( step => step.value ),
+          backgroundColor: arr.map( step => step.color ),
+        }],
+        labels:  arr.map( step => step.title )
+      };
+
+      console.log(data)
+
+      setOptions(data)
       setSteps(arr)
     }
   }, [session,interactions])
@@ -155,7 +167,6 @@ export default (props) => {
       clearInteraction()
     }
   }
-
   
   return (
     <CompassWheelContainer >
@@ -163,7 +174,12 @@ export default (props) => {
         <span>Compass Steps</span>  
       </CSTitle>
       <CompassWheel color={activeStep.defaultColor}>
-        {
+
+        <Doughnut 
+          data={options}
+          legend={{ display: false }}
+        />
+        {/*
           // options.series && (
             // <ReactApexChart 
             //   options={options} 
@@ -190,7 +206,7 @@ export default (props) => {
               animate
             />
           )
-        }
+            */}
       </CompassWheel>
     </CompassWheelContainer >
   )
