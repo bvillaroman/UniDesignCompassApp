@@ -54,9 +54,7 @@ describe('testing Interaction object', () => {
     }
   })
 
-  afterEach(() => {
-    cleanup()
-  })
+  afterEach( cleanup )
 
   test('Show default values with given interaction', async () => {
     const interactions = [
@@ -178,9 +176,9 @@ describe('testing Interaction object', () => {
 
     expect(step).toBeInTheDocument();
 
-    // fireEvent.click(getByText("Grasp Challenge"))
+    fireEvent.click(getByText("Grasp Challenge"))
 
-    // expect(reviewProps.updateShowModal).toHaveBeenCalledTimes(1)
+    expect(reviewProps.updateShowModal).toHaveBeenCalledTimes(1)
     // expect(reviewProps.updateInteraction).toHaveBeenCalledTimes(1)
   });
 
