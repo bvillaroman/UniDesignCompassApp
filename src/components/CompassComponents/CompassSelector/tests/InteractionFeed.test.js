@@ -20,7 +20,6 @@ describe('testing Interaction Feed', () => {
   let compassProps = {}
   let reviewProps = {} 
   beforeEach(() => {
-    cleanup()
     compassProps = {
       updateCompass: jest.fn(),
       updateSession: jest.fn(),
@@ -46,9 +45,7 @@ describe('testing Interaction Feed', () => {
     } 
   })
 
-  afterEach(() => {
-    cleanup()
-  })
+  afterEach( cleanup )
 
   test('Show default values with given interactions', async () => {
     compassProps.interactions = [
