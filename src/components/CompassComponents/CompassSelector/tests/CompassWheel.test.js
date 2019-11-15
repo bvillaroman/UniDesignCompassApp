@@ -398,7 +398,7 @@ describe('testing Interaction object', () => {
     fireEvent.click(Brainstorm[0])
     fireEvent.click(Brainstorm[1])
 
-    debug()
+    // debug()
     expect(true).toBe(true)
     // expect(compassProps.updateInteraction).toHaveBeenCalledTimes(1)
     // expect(reviewProps.updateInteraction).toHaveBeenCalledTimes(1)
