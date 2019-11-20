@@ -77,7 +77,6 @@ const ReviewLog = () => {
     Mutation.updateInteraction(newInteraction)
       .then((res) => {
         updateInteraction(res.data.updateInteraction)
-        Compass.updateInteraction(res.data.updateInteraction);
         setSaved(true)
       }).catch(err => {
         console.log(err)
