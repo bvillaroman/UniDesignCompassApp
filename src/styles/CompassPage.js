@@ -98,8 +98,7 @@ export const StepDetailsDescription = styled(Box)`
 // Compass Wheel 
 export const CompassWheelContainer = styled(Box)`
   width: 100%;
-  min-height: 24rem;
-  margin: 1rem auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background: transparent;
@@ -108,11 +107,11 @@ export const CompassWheel = styled(Box)`
   width: 100%;
   min-width: 26rem;
   height: 100%;
-  margin: 0 auto;
   div {    
-    height: 100%;
+    height: 90%;
     width: 70%;
     margin: 0 auto;
+    margin-top: 1rem;
     border-radius: 50%;
   }
 `;
@@ -545,31 +544,35 @@ export const DescriptionForm = styled(TextArea)`
 `;
 
 // Compass Selector
-
-export const CSGrid = styled(Box)`
+export const CSContainer = styled(Box)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto; 
+`;
+export const CSGrid = styled(Box)`
+  width: 100%;
+  height: 100%;
+  min-height: 30rem;
+  margin: 0 auto;
   flex-direction: row;
-
-  @media (max-width: 900px){
-    flex-direction: column;
-  }    
+  background-color: white;
 `;
 export const CSTitle = styled(Box)`
   width: 100%;
   min-height: 2.0rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-height: 2.2rem;
   font-weight: 600;
   text-align: left;
   padding-left: 1.5rem;
+  margin-top: 1.0rem;
 `;
 export const CSMain = styled(Grid)`
   height: 100%;
 `;
 export const CompassSectionContainer = styled(Box)`
-  width: 100%;
+  width: 50%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto;
@@ -626,7 +629,6 @@ export const CSInteractionsTitle = styled(Box)`
   min-height: 1.3rem;
 `;
 export const CSInteractionsFeed = styled(Box)`
-  display: flex;
   flex-direction: row-reverse;
   align-items: center;
   overflow-x: auto;
@@ -682,12 +684,12 @@ export const CSInteraction = styled(Button)`
 // Compass SessionBar
 export const SessionView = styled(Box)`
   text-align: center;
-  background: white;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  border-left: 2px solid #e3e3e3;
+
 `
 export const SessionSection = styled(Box)`
   width: 90%;

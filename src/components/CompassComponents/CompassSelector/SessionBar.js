@@ -11,13 +11,13 @@ export default (props) => {
   const {session} = useContext(CompassContext)
 
   return (
-    <SessionView  gridArea="session" >
+    <SessionView>
       <SessionSection>
         <SessionTitle >
           {session.name_of_session} 
         </SessionTitle>
       </SessionSection> 
-        <Logger />
+      <Logger />
     </SessionView>
   ) 
 };
