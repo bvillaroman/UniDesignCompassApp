@@ -5,7 +5,6 @@ import CompassWheel from "../CompassWheel"
 import {render, waitForElement, cleanup, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
-afterEach(cleanup)
 const renderApp = ( compassProps, reviewProps ) => {
 
   return  render( 
@@ -46,6 +45,7 @@ describe('testing Interaction object', () => {
       showModal: false,
     } 
   })
+  afterEach(cleanup)
 
   test('Show default values  no interaction', async () => {
      const compass = {

@@ -10,7 +10,6 @@ const CompassSelector = ({selectStep}) => {
   return (
     <CompassSectionContainer>
       <CompassWheel selectStep={selectStep} />
-      <InteractionFeed />
     </CompassSectionContainer>
 )};
 export default CompassSelector;
