@@ -2,7 +2,7 @@ import React from "react";
 import { CompassSectionContainer } from "../../../styles/CompassPage"
 import Loadable from "@loadable/component"
 
-import InteractionFeed from "./InteractionFeed"
+// import InteractionFeed from "./InteractionFeed"
 // const CompassWheel = Loadable(() => import('./CompassWheel'));
 const NewCompassWheel = Loadable(() => import('./NewCompassWheel'));
 
