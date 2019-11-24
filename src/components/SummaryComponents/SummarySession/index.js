@@ -20,6 +20,7 @@ import { Loader } from '../../../styles/layout';
 
 const SummarySession = (props) => {
   const { compass, session, interaction } = useContext(CompassContext);
+  console.log("context", useContext(CompassContext))
 
   const [sessions, setSession] = useState([])
   const [loading, setLoading] = useState(true)
@@ -45,6 +46,7 @@ const SummarySession = (props) => {
   }
 
   const SessionTable = ({ sessions }) => {
+    console.log('sessions :', sessions)
     return (
       <>
         <SummaryMainView>{sessions.sort(timeConverter).map((session, i) =>
@@ -66,7 +68,7 @@ const SummarySession = (props) => {
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
                 <SummaryTableBody>
                   <tr key={i} onClick={() => navigate(`/Summary/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
-                    <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 7)}</SummaryTdBody>
+                    <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
                     {/* <SummaryTdBody>{interaction.createdAt.substring(0, 19)}</SummaryTdBody> */}
                     <SummaryTdBody>{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>

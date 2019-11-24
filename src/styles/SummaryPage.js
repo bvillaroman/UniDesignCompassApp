@@ -146,11 +146,13 @@ export const SummaryTableHeader = styled(TableHeader)`
   font-weight: 350;
   border-bottom: solid 1.5px;
   width: 20%;
-
+  border-bottom: solid;
 `;
 
 export const SummaryTableBody = styled(TableBody)`
   overflow: auto;
+  border-bottom: solid;
+  border-width: 1px;
 `;
 
 export const SummaryTableRow = styled(TableRow)`

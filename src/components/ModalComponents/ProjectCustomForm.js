@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from "../../context/context";
-import {ReviewModalContext} from "../../context/ReviewModal/context"
-import { createCompass, createStep } from "../../utils/mutations";
+import { ReviewModalContext } from "../../context/ReviewModal/context"
+import { createCompass, createStep, updateStep } from "../../utils/mutations";
 import { navigate } from "gatsby";
 import {
   CustomStepsForm,
@@ -14,55 +14,76 @@ import {
   CustomStepsOption,
   CustomStepsDiv,
   CustomStepsDiv2,
-  CustomStepsDiv3
+  CustomStepsDiv3,
+  CustomStepsRemoveButton
 } from "../../styles/CustomSteps"
-import { 
-  LayerView, 
+import {
+  LayerView,
   CloseButton,
   ReviewLogTitle,
   ReviewLogHeader,
   ReviewLogContainer
 } from "../../styles/Modals"
 
-import { AddCircle } from 'grommet-icons';
+import { AddCircle, FormClose } from 'grommet-icons';
 
 const CustomCompassForm = () => {
   const { user } = useContext(GlobalContext);
   const { updateShowModal } = useContext(ReviewModalContext);
 
   const blankStep = { title: '', description: '', color: '#5361FE' }
-  const [step, setStep] = useState([
+  const [steps, setSteps] = useState([
     { ...blankStep }
   ]);
 
   const addStep = () => {
-    setStep([...step, { ...blankStep }]);
+    setSteps([...steps, { ...blankStep }]);
   }
 
   const handleStepChange = (e) => {
-    const updatedSteps = [...step];
+    const updatedSteps = [...steps];
     updatedSteps[e.target.dataset.idx][e.target.name] = e.target.value;
-    setStep(updatedSteps);
+    setSteps(updatedSteps);
   };
 
   const CustomStepSubmit = (e) => {
     e.preventDefault()
-    console.log(step)
+    console.log(steps)
 
-    createCompass("Untitled", "-", "default", [user.email], [])
-      .then(res => {
-        step.forEach((step, key) =>
-          createStep(step.title, step.description, step.color, res.data.createCompass.id)
-        )
-        updateShowModal(false)
-        navigate(`/Compass/?c=${res.data.createCompass.id}`)
+    if (steps.length <= 1 || steps.description === "" || steps.title === "") {
+      alert('Please enter more than 1 step')
+    }
+    else {
+      steps.map(step => {
+        if (step.description === "" || step.title === "") {
+          alert("Title or Description cannot be empty")
+
+        } else {
+          createCompass("Untitled", "-", "default", [user.email], [])
+            .then(res => {
+              steps.forEach((step, key) =>
+                createStep(step.title, step.description, step.color, res.data.createCompass.id)
+              )
+              updateShowModal(false)
+              navigate(`/Compass/?c=${res.data.createCompass.id}`)
+            })
+            .catch(err => console.log(err))
+        }
       })
-      .catch(err => console.log(err))
+    }
+  }
+
+  const handleRemove = (e, idx) => {
+    const updatedSteps = [...steps];
+    updatedSteps.splice(idx, 1);
+    setSteps(updatedSteps)
   }
 
   const closeWindow = () => {
     updateShowModal(false);
   }
+
+  const buttonDisabled = steps.length <= 1 || steps.filter(step => (step.description === "" || step.title === "")).length > 0
 
   return (
     <LayerView
@@ -71,12 +92,12 @@ const CustomCompassForm = () => {
     >
       <ReviewLogContainer>
         <ReviewLogHeader>
-            <ReviewLogTitle> Custom Project </ReviewLogTitle>
-            <CloseButton onClick={closeWindow} />  
-          </ReviewLogHeader>
+          <ReviewLogTitle> Custom Project </ReviewLogTitle>
+          <CloseButton onClick={closeWindow} />
+        </ReviewLogHeader>
         <CustomStepsForm onSubmit={CustomStepSubmit}>
           <CustomStepsHeaderContainer>
-            <CustomStepsHeader placeholder="Compass Title"/>
+            <CustomStepsHeader placeholder="Compass Title" />
             <CustomStepsButton
               label="Add New Step"
               onClick={addStep}
@@ -84,7 +105,7 @@ const CustomCompassForm = () => {
             />
           </CustomStepsHeaderContainer>
           {
-            step.map((val, idx) => {
+            steps.map((val, idx) => {
               const titleId = `name_of_step-${idx}`;
               const descriptionId = `description_of_step-${idx}`;
               const colorId = `color-${idx}`
@@ -100,7 +121,7 @@ const CustomCompassForm = () => {
                       data-idx={idx}
                       id={titleId}
                       name="title"
-                      value={step[idx].title}
+                      value={steps[idx].title}
                       onChange={handleStepChange}
                     />
                     <CustomStepsSelect
@@ -109,7 +130,7 @@ const CustomCompassForm = () => {
                       data-idx={idx}
                       id={colorId}
                       name="color"
-                      value={step[idx].color}
+                      value={steps[idx].color}
                       onChange={handleStepChange}>
                       <CustomStepsOption>#5361FE</CustomStepsOption>
                       <CustomStepsOption>#99EDCC</CustomStepsOption>
@@ -117,6 +138,7 @@ const CustomCompassForm = () => {
                       <CustomStepsOption>#8D6A9F</CustomStepsOption>
                       <CustomStepsOption>#03F7EB</CustomStepsOption>
                     </CustomStepsSelect>
+                    <CustomStepsRemoveButton onClick={() => handleRemove(idx)} icon={<FormClose />} />
                   </CustomStepsDiv2>
                   <CustomStepsDiv3>
                     <CustomStepsLabel htmlFor={descriptionId}>Description</CustomStepsLabel>
@@ -127,7 +149,7 @@ const CustomCompassForm = () => {
                       data-idx={idx}
                       id={descriptionId}
                       name="description"
-                      value={step[idx].description}
+                      value={steps[idx].description}
                       onChange={handleStepChange}
                     />
                   </CustomStepsDiv3>
@@ -137,7 +159,7 @@ const CustomCompassForm = () => {
               );
             })
           }
-          <CustomStepsButton type="submit" label="Submit" value="Submit" />
+          <CustomStepsButton type="submit" label="Submit" value="Submit" disabled={buttonDisabled} />
         </CustomStepsForm>
       </ReviewLogContainer>
     </LayerView>
