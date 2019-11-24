@@ -20,7 +20,7 @@ import {
 const SummaryLog = (props) => {
   const { compass, session, interaction } = useContext(CompassContext);
   const { updateShowModal, updateInteraction, showModal } = useContext(ReviewModalContext)
-  const { items } = interaction.attachments;
+  // const { items } = interaction.attachments;
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e) => {
@@ -48,8 +48,8 @@ const SummaryLog = (props) => {
     <SummaryContainer>
       <SummaryLogHeader>
         <SummaryTitle>Log</SummaryTitle>
-        <SummaryListButton label=" All Logs " onClick={() => navigate(`/Summary/?c=${compass.id}`)} />
-        <SummaryListButton label=" Edit Log " onClick={openReviewLog} />
+        <SummaryListButton label="All Logs" onClick={() => navigate(`/Summary/?c=${compass.id}`)} />
+        <SummaryListButton label="Edit Log" onClick={openReviewLog} />
         {showModal}
         {/* <SummaryListButton label=" Edit Log " onClick={() => navigate(`/Compass?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} /> */}
       </SummaryLogHeader>
@@ -72,7 +72,7 @@ const SummaryLog = (props) => {
       </TextAreaContainer>
       <div style={{ overflow: "auto" }}>
         <h4 style={{ borderBottom: "0.1rem solid rgba(0,0,0,0.2)", textAlign: "center", overflow: "auto" }}>Attachment</h4>
-        {items && items.length && <LogLinkArray items={items} />}
+        {/* {items && items.length && <LogLinkArray items={items} />} */}
       </div>
     </SummaryContainer>
   )

@@ -98,3 +98,7 @@ export const CustomStepsDiv3 = styled.div`
   padding-right: 6em;
   margin: 0.5rem auto;
 `;
+
+export const CustomStepsRemoveButton = styled(Button)`
+  padding: 0;
+`;
