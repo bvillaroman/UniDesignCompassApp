@@ -14,7 +14,8 @@ const Interaction = ({interaction = {}, isLastStep = false}) => {
     getInteraction(interaction.id)
       .then((res => {
         updateInteraction(res.data.getInteraction);
-      })) 
+      }))
+      .catch((err) => console.log(err))
   }
   
   return (
