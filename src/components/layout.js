@@ -50,7 +50,6 @@ const Layout = (props) => {
 
   // setting up the compass through the url
   useEffect(() => {
-  
     if (compassID !== "") {
       clearCompass()
       setLoading(true)
@@ -66,7 +65,7 @@ const Layout = (props) => {
           console.log(err)
         })
     } else {
-      clearCompass()
+      clearCompass()      
     } 
 
 
@@ -83,6 +82,7 @@ const Layout = (props) => {
         .then((res) => {
           setLoading(false)
           updateSession(res.data.getSession)
+          localStorage.setItem("session", res.data.getSession.id);
           let interactions = []
           if (res.data.getSession.interactions.items.length > 0) {
             interactions = res.data.getSession.interactions.items.sort((a,b) => {

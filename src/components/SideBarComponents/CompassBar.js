@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { navigateTo } from 'gatsby';
 import {
   CompassSideBar,
   CompassHeaderCompass,
@@ -12,27 +13,34 @@ import { CompassContext } from "../../context/CompassPage/context"
 
 const CompassBar = ({page}) => {
 
-  const { compass, session } = useContext(CompassContext);
+  const CompassInfo = useContext(CompassContext);
   const [renderSidebar, setRenderSidebar] = useState(true);
-  // const [activePage, setActivePage] = useState("");
 
-  // useEffect(() => {
-  //   setActivePage
-  // }, props.page)
+  const session = localStorage.getItem("session");
 
   const handleClick = () => {
     setRenderSidebar(!renderSidebar);
   }
 
+  const clearCurrentSession = (e) => {
+    e.preventDefault()
+    localStorage.setItem("session", "")
+    navigateTo(`/Compass/?c=${CompassInfo.compass.id}`)
+  }
   return (
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
         <CompassHeaderCompass className='CompassHeaderCompass' to={`/`} >UDC</CompassHeaderCompass>
-        <CompassLink to={`/Compass/?c=${compass.id}`} active={page === "/Compass/" && !session}><Compass /><span>Compass</span></CompassLink>
-        { session.hasOwnProperty("id") && <CompassLink size="small" to={`/Compass/?c=${compass.id}/&s=${session.id}`} active={true}><FormNextLink /><span>Session</span></CompassLink>}
-        <CompassLink to={`/Summary/?c=${compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
-        <CompassLink to={`/Analytics/?c=${compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
+        <CompassLink 
+          active={page === "/Compass/" && !CompassInfo.session.hasOwnProperty("id")} 
+          onClick={clearCurrentSession}
+        >
+          <Compass /><span>Compass</span>
+        </CompassLink>
+        { session && <CompassLink size="small" to={`/Compass/?c=${CompassInfo.compass.id}&s=${session}`} active={CompassInfo.session.hasOwnProperty("id")}><FormNextLink /><span>Session</span></CompassLink>}
+        <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
+        <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
         <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>

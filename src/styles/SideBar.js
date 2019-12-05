@@ -100,7 +100,7 @@ const CompassLinkStyles = styled(Link)`
     ${({size}) => size === "small" && "height: 1.5rem"};
     ${({size}) => size === "small" && "width: 1.5rem"};
     ${({size}) => size === "small" && "margin-left: 1.5rem"};
-    align-items: center;
+    ${({active}) => active && "margin-bottom: 0.2rem"};
   }
   span {
     ${({size}) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
@@ -146,12 +146,13 @@ export const HamburgerIcon = styled.label`
   }
 `;
 
-export const CompassLink = ({ to, children, active,size }) => (
+export const CompassLink = ({ to, children, active,size, onClick }) => (
   <CompassLinkStyles
     to={to}
     active={active}
     partiallyActive={to !== "/" ? true : false}
     size={size}
+    onClick={onClick}
   >
     {children}
   </CompassLinkStyles>

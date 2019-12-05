@@ -70,22 +70,6 @@ const CompassPage = (props) => {
         ) : <div> sorry, this project does not exist !</div>
         
       }
-      {/* {
-        show && (
-          <LayerView
-            onEsc={() => setShow(false)}
-            onClickOutside={() => setShow(false)}
-          >
-            <AttachmentContainer>
-              <AttachmentPreview attachment={attachment} src={source}/>
-              <AttachmentButtonContainer>
-                <CloseButton onClick={() => setShow(false)} />
-                <DownloadButton  src={source}/>
-              </AttachmentButtonContainer>
-            </AttachmentContainer>
-          </LayerView>
-        )
-      } */}
       { showModal && <ReviewLog /> }
     </MainView>
   )
