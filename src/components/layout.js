@@ -146,7 +146,7 @@ const Layout = (props) => {
 
   return (
     <LayoutContainer >
-      <SideBar loading={loading}/>
+      <SideBar loading={loading} page={props.location.pathname}/>
       <MainViewContainer>
         { loading ? <Loader/> : props.children }
       </MainViewContainer>

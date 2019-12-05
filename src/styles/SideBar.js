@@ -96,14 +96,17 @@ const CompassLinkStyles = styled(Link)`
   align-items: center;
   svg {
     fill: black;
-    stroke: black;
+    stroke:  black;
+    ${({active}) => active && "padding-bottom: 0.2rem"};
   }
   span {
     margin-left: 0.8rem;
+    ${({active}) => active && "border-bottom: 0.1rem solid white"};
+    ${({active}) => active && "padding-bottom: 0.1rem"};
+    line-height: 2.0rem;
   }
   justify-content: center;
   margin: 0.5rem 0;
-
   @media (max-width: 768px){
     //display: none;
   }
@@ -130,16 +133,10 @@ export const HamburgerIcon = styled.label`
   }
 `;
 
-const activeLinkStyle = {
-  background: "white",
-  color: "black"
-
-};
-
-export const CompassLink = ({ to, children }) => (
+export const CompassLink = ({ to, children, active }) => (
   <CompassLinkStyles
     to={to}
-    activeStyle={activeLinkStyle}
+    active={active}
     partiallyActive={to !== "/" ? true : false}
 
   >
