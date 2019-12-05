@@ -97,16 +97,29 @@ const CompassLinkStyles = styled(Link)`
   svg {
     fill: black;
     stroke:  black;
-    ${({active}) => active && "padding-bottom: 0.2rem"};
+    ${({size}) => size === "small" && "height: 1.5rem"};
+    ${({size}) => size === "small" && "width: 1.5rem"};
+    ${({size}) => size === "small" && "margin-left: 1.5rem"};
+    align-items: center;
   }
   span {
-    margin-left: 0.8rem;
-    ${({active}) => active && "border-bottom: 0.1rem solid white"};
-    ${({active}) => active && "padding-bottom: 0.1rem"};
-    line-height: 2.0rem;
+    ${({size}) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
+    ${({active,size}) => {
+      if (active) {
+        if (size === "small") return "border-bottom: 0.05rem solid white"
+        else return "border-bottom: 0.1rem solid white"
+      }
+    }};
+    ${({active,size}) => {
+      if (active) {
+        if (size === "small") return "padding-bottom: 0.05rem"
+        else return "padding-bottom: 0.1rem"
+      }
+    }};
+    ${({size}) => size === "small" && "font-size: 0.8rem"};
   }
   justify-content: center;
-  margin: 0.5rem 0;
+  ${({size}) => size === "small" ? "margin: 0 auto" : "margin: 0.5rem auto"};
   @media (max-width: 768px){
     //display: none;
   }
@@ -133,12 +146,12 @@ export const HamburgerIcon = styled.label`
   }
 `;
 
-export const CompassLink = ({ to, children, active }) => (
+export const CompassLink = ({ to, children, active,size }) => (
   <CompassLinkStyles
     to={to}
     active={active}
     partiallyActive={to !== "/" ? true : false}
-
+    size={size}
   >
     {children}
   </CompassLinkStyles>
