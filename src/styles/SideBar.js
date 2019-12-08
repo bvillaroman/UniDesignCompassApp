@@ -31,7 +31,7 @@ export const CompassSideBar = styled(Box)`
     height: 0%;
     
     
-    a:not(:nth-last-child(6)){
+    a:not(:nth-last-child(5)){
       ${props => props.renderSidebar ? 'display: none;' : 'initial'};
     };
 
@@ -97,29 +97,29 @@ const CompassLinkStyles = styled(Link)`
   svg {
     fill: black;
     stroke:  black;
-    ${({size}) => size === "small" && "height: 1.5rem"};
-    ${({size}) => size === "small" && "width: 1.5rem"};
-    ${({size}) => size === "small" && "margin-left: 1.5rem"};
-    ${({active}) => active && "margin-bottom: 0.2rem"};
+    ${({ size }) => size === "small" && "height: 1.5rem"};
+    ${({ size }) => size === "small" && "width: 1.5rem"};
+    ${({ size }) => size === "small" && "margin-left: 1.5rem"};
+    ${({ active }) => active && "margin-bottom: 0.2rem"};
   }
   span {
-    ${({size}) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
-    ${({active,size}) => {
-      if (active) {
-        if (size === "small") return "border-bottom: 0.05rem solid white"
-        else return "border-bottom: 0.1rem solid white"
-      }
-    }};
-    ${({active,size}) => {
-      if (active) {
-        if (size === "small") return "padding-bottom: 0.05rem"
-        else return "padding-bottom: 0.1rem"
-      }
-    }};
-    ${({size}) => size === "small" && "font-size: 0.8rem"};
+    ${({ size }) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
+    ${({ active, size }) => {
+    if (active) {
+      if (size === "small") return "border-bottom: 0.05rem solid white"
+      else return "border-bottom: 0.1rem solid white"
+    }
+  }};
+    ${({ active, size }) => {
+    if (active) {
+      if (size === "small") return "padding-bottom: 0.05rem"
+      else return "padding-bottom: 0.1rem"
+    }
+  }};
+    ${({ size }) => size === "small" && "font-size: 0.8rem"};
   }
   justify-content: center;
-  ${({size}) => size === "small" ? "margin: 0 auto" : "margin: 0.5rem auto"};
+  ${({ size }) => size === "small" ? "margin: 0 auto" : "margin: 0.5rem auto"};
   @media (max-width: 768px){
     //display: none;
   }
@@ -146,7 +146,7 @@ export const HamburgerIcon = styled.label`
   }
 `;
 
-export const CompassLink = ({ to, children, active,size, onClick }) => (
+export const CompassLink = ({ to, children, active, size, onClick }) => (
   <CompassLinkStyles
     to={to}
     active={active}
@@ -157,19 +157,3 @@ export const CompassLink = ({ to, children, active,size, onClick }) => (
     {children}
   </CompassLinkStyles>
 )
-
-export const CompassLink2 = ({ to, children }) => (
-  <CompassLinkStyles
-    to={to}
-    activeStyle={activeLinkStyle}
-    partiallyActive={to !== "/" ? true : false}
-
-  >
-    {children}
-  </CompassLinkStyles>
-)
-
-
-// a:not(:nth-last-child(4)){
-//   ${props => props.renderSidebar ? 'display: none;' : 'initial'};
-// };
