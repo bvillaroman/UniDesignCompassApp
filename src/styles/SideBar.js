@@ -31,7 +31,7 @@ export const CompassSideBar = styled(Box)`
     height: 0%;
     
     
-    a:not(:nth-last-child(4)){
+    a:not(:nth-last-child(6)){
       ${props => props.renderSidebar ? 'display: none;' : 'initial'};
     };
 
@@ -153,6 +153,17 @@ export const CompassLink = ({ to, children, active,size, onClick }) => (
     partiallyActive={to !== "/" ? true : false}
     size={size}
     onClick={onClick}
+  >
+    {children}
+  </CompassLinkStyles>
+)
+
+export const CompassLink2 = ({ to, children }) => (
+  <CompassLinkStyles
+    to={to}
+    activeStyle={activeLinkStyle}
+    partiallyActive={to !== "/" ? true : false}
+
   >
     {children}
   </CompassLinkStyles>

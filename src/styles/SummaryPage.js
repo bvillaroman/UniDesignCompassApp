@@ -9,6 +9,54 @@ import {
   TableBody
 } from 'grommet';
 
+//NEW SUMMARY LOG
+export const SummaryListButton1 = styled(Button)`
+  float: right;
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  background: #5567FD; 
+  color: white;
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+`;
+
+export const TextArea1 = styled.textarea`
+  margin-top: 0.5em; 
+  border-radius: 10px; 
+  font-size: 20px;
+  width: 100%;
+  height: 17em;
+  overflow: auto;
+
+  @media (max-width: 376px){
+    width: -webkit-fill-available;
+    margin-left: 0;
+  }
+  
+`;
+
+export const CommentButton1 = styled(Button)`
+  width: 100%;
+  transition: all 0.3s;
+  border: 0.15rem solid #5567FD;
+  background-color:#5567FD;
+  color: white; 
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white; 
+  }
+  border-radius: 1em;
+  margin-top: 0.5em;
+`;
+
 //Summary Log
 export const SummaryTitle = styled.h4`
   padding: 0;

@@ -5,6 +5,7 @@ import {
   CompassHeaderCompass,
   LinkContainer,
   CompassLink,
+  CompassLink2,
   HamburgerIcon
 } from '../../styles/SideBar'
 import { Compass, DocumentText, BarChart, Home, User, FormNextLink} from 'grommet-icons'
@@ -43,8 +44,8 @@ const CompassBar = ({page}) => {
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
-        <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>
-        <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
+        <CompassLink2 to={`/`}><Home /><span>Home</span> </CompassLink2>
+        <CompassLink2 to={`/Profile`}><User /><span>Profile</span></CompassLink2>
       </LinkContainer>
     </CompassSideBar >
   )
