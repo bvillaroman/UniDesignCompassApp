@@ -4,6 +4,7 @@ import {
   CompassHeaderCompass,
   LinkContainer,
   CompassLink,
+  CompassLink2,
   HamburgerIcon
 } from '../../styles/SideBar'
 import { Compass, DocumentText, BarChart, Home, User } from 'grommet-icons'
@@ -26,10 +27,10 @@ const CompassBar = (props) => {
         <CompassLink to={`/Compass/?c=${compass.id}`}><Compass /><span>Compass</span></CompassLink>
         <CompassLink to={`/Summary/?c=${compass.id}`}><DocumentText /><span>Summary</span></CompassLink>
         <CompassLink to={`/Analytics/?c=${compass.id}`}><BarChart /><span>Analytics</span></CompassLink>
-      </LinkContainer>
-      <LinkContainer>
-        <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>
-        <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
+        {/* </LinkContainer>
+      <LinkContainer> */}
+        <CompassLink2 to={`/`}><Home /><span>Home</span> </CompassLink2>
+        <CompassLink2 to={`/Profile`}><User /><span>Profile</span></CompassLink2>
       </LinkContainer>
     </CompassSideBar >
   )
