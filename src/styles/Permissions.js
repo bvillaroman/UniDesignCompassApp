@@ -73,3 +73,15 @@ export const PermissionSubmit = styled(Button)`
   margin: 0;
   font-size: 0.9rem;
 `;
+
+export const PermissionButton = styled(Button)` 
+  align-self: flex-end;
+`;
+
+export const PermissionLabel = styled.label`
+
+`;
+
+export const PermissionInput = styled.input`
+
+`;

@@ -1,17 +1,9 @@
-import React, { useEffect, useContext}  from "react";
+import React from "react";
 import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../../../styles/CompassPage"
-import { CompassContext } from "../../../context/CompassPage/context"
 import ProjectDetails from "./ProjectDetails"
 import SessionCreator from "./SessionCreator"
 
 export default (props) => {
-  const {compass} = useContext(CompassContext)
-  useEffect(() => {
-    if(compass.hasOwnProperty("id")){
-
-    }
-
-  }, [compass])
 
   return (
     <CompassViewerContainer>

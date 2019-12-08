@@ -52,6 +52,7 @@ export default (props) => {
   ];
 
   const goToReview = (event) => {
+    console.log([user.email])
     createCompass("Untitled", "-", "default", [user.email], [])
       .then(res => {
         defaultCompass.forEach((step, key) =>
