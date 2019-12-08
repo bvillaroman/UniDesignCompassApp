@@ -19,7 +19,7 @@ export default (props) => {
       {
         props.loading ? <BlankBar/>
         // if the user is signed in 
-        : userSignedIn ? ( compassExists ? <CompassBar /> : <AccountBar/> ) : null
+        : userSignedIn ? ( compassExists ? <CompassBar page={props.page} compass={props.session}/> : <AccountBar/> ) : null
       }
     </>
   )

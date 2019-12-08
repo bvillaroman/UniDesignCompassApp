@@ -98,24 +98,71 @@ export const StepDetailsDescription = styled(Box)`
 // Compass Wheel 
 export const CompassWheelContainer = styled(Box)`
   width: 100%;
-  min-height: 24rem;
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-`;
-export const CompassWheel = styled(Box)`
-  width: 100%;
-  min-width: 26rem;
   height: 100%;
   margin: 0 auto;
-  div {    
-    height: 100%;
-    width: 70%;
-    margin: 0 auto;
-    border-radius: 50%;
-  }
+  background: transparent;
+  position: relative;
 `;
+// export const CompassWheelContainer = styled(Box)`
+//   width: 100%;
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: column;
+//   background: transparent;
+// `;
+// export const CompassWheel = styled(Box)`
+//   width: 100%;
+//   min-width: 26rem;
+//   height: 100%;
+//   div {    
+//     height: 90%;
+//     width: 70%;
+//     margin: 0 auto;
+//     margin-top: 1rem;
+//     border-radius: 50%;
+//   }
+// `;
+export const CompassWheel = styled(Box)`
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+`;
+export const StepContainer = styled(Button)`
+  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
+  border-radius: 50%;
+  transition: all 0.3s;
+  :hover {
+    transition: all 0.2s;
+    background-color: transparent;
+  }
+  top: 35%;
+  left: 40%;
+  background-color: ${props => props.color ? props.color : '#5567FD'};
+  list-style: none;
+	height: 6.5rem;
+  width: 6.5rem;
+  display: block;
+	position: absolute;
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.2}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  box-shadow: 0 1px 3px 0 #b3b3b3;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  font-size: 0.8rem;
+`
+export const StepText = styled(Box)`
+  padding: 1rem 0.5rem;
+  color: black; 
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto!important;
+  justify-content: center;
+  p {
+    margin: 0;
+  }
+`
 
 // Logger
 export const LoggerGrid = styled(Box)`
@@ -545,70 +592,41 @@ export const DescriptionForm = styled(TextArea)`
 `;
 
 // Compass Selector
-
-export const CSGrid = styled(Box)`
+export const CSContainer = styled(Box)`
   width: 100%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto; 
+`;
+export const CSGrid = styled(Box)`
+  width: 100%;
+  height: 100%;
+  min-height: 30rem;
+  margin: 0 auto;
   flex-direction: row;
-
-  @media (max-width: 900px){
-    flex-direction: column;
-  }    
+  background-color: white;
 `;
 export const CSTitle = styled(Box)`
   width: 100%;
   min-height: 2.0rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-height: 2.2rem;
   font-weight: 600;
   text-align: left;
   padding-left: 1.5rem;
+  margin-top: 1.0rem;
 `;
 export const CSMain = styled(Grid)`
   height: 100%;
 `;
 export const CompassSectionContainer = styled(Box)`
-  width: 100%;
+  width: 50%;
   height: 100%;
   margin: 0 auto;
   overflow-y: auto;
 `;
 
-export const StepContainer = styled(Button)`
-  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
-  border-radius: 50%;
-  transition: all 0.3s;
-  :hover {
-    transition: all 0.2s;
-    background-color: transparent;
-  }
-  top: 38%;
-  left: 31%;
-  background-color: ${props => props.color ? props.color : '#5567FD'};
-  list-style: none;
-	height: 7.6rem;
-  width: 7.6rem;
-  display: block;
-	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
-  box-shadow: 0 1px 3px 0 #b3b3b3;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-`
-export const StepText = styled(Box)`
-  padding: 1rem;
-  color: black; 
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  word-break: break-all;
-  p {
-    margin: 0;
-  }
-`
+
 
 // InteractionFeed 
 export const CSInteractions = styled(Box)`
@@ -626,7 +644,6 @@ export const CSInteractionsTitle = styled(Box)`
   min-height: 1.3rem;
 `;
 export const CSInteractionsFeed = styled(Box)`
-  display: flex;
   flex-direction: row-reverse;
   align-items: center;
   overflow-x: auto;
@@ -682,12 +699,12 @@ export const CSInteraction = styled(Button)`
 // Compass SessionBar
 export const SessionView = styled(Box)`
   text-align: center;
-  background: white;
-  width: 100%;
+  width: 50%;
   height: 100%;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  border-left: 2px solid #e3e3e3;
+
 `
 export const SessionSection = styled(Box)`
   width: 90%;

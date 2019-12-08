@@ -4,8 +4,8 @@ import { StepContainer, StepText } from "../../../styles/CompassPage"
 import { startInteraction } from "../../../utils/mutations"
 import translateTime from '../../../utils/translateTime'
 
-const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
-  const {session} = useContext(CompassContext)
+const Step = ({activeStep = {}, rotateAngle, circleLength }) => {
+  const {session,updateInteraction} = useContext(CompassContext)
 
   const {
     id,
@@ -17,7 +17,7 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
   const goToLog = (e) => {
     startInteraction(session.id,id)
       .then((interaction) => {
-        selectStep(interaction.data.createInteraction)        
+        updateInteraction(interaction.data.createInteraction)        
       })
   }
   
@@ -32,7 +32,6 @@ const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
         <p>{name_of_step}</p> 
         <p>{translateTime(duration)}</p>
       </StepText>
-      
     </StepContainer> 
 )};
 export default Step;
