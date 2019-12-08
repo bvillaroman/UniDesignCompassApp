@@ -1,9 +1,10 @@
 import React, {useEffect, useContext}  from "react";
-import { CSGrid } from "../../../styles/CompassPage"
+import { CSContainer, CSGrid } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
 
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
+import InteractionFeed from "./InteractionFeed"
 
 const CompassSelector = ({showAttachment}) => {
   const {interactions, updateTime} = useContext(CompassContext)
@@ -22,9 +23,12 @@ const CompassSelector = ({showAttachment}) => {
   },[interactions])
 
   return (
-    <CSGrid>
-      <CompassSection/>
-      <SessionBar showAttachment={showAttachment} />
-    </CSGrid>
+    <CSContainer>
+      <CSGrid>
+        <CompassSection/>
+        <SessionBar showAttachment={showAttachment} />
+      </CSGrid>
+      <InteractionFeed/>
+    </CSContainer>
 )};
 export default CompassSelector;
