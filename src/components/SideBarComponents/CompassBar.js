@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { navigateTo } from 'gatsby';
 import {
   CompassSideBar,
@@ -27,6 +27,7 @@ const CompassBar = ({ page }) => {
     localStorage.setItem("session", "")
     navigateTo(`/Compass/?c=${CompassInfo.compass.id}`)
   }
+  
   return (
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
