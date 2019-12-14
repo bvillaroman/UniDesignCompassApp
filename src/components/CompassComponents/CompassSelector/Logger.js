@@ -128,7 +128,7 @@ const Logger = (props) => {
         color={step.color}
         disabled={!start}
       />
-      <LoggerAttachments>
+      {/* <LoggerAttachments>
         <LoggerHeader>
           <LoggerTitle color="black">
             Attachments
@@ -153,7 +153,7 @@ const Logger = (props) => {
             )) 
           }
         </SessionAttachments>
-      </LoggerAttachments>
+      </LoggerAttachments> */}
     </LoggerGrid>
   );
 }
