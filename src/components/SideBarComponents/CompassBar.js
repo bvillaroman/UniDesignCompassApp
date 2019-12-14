@@ -38,7 +38,7 @@ const CompassBar = ({ page }) => {
         >
           <Compass /><span>Compass</span>
         </CompassLink>
-        {session && <CompassLink size="small" to={`/Compass/?c=${CompassInfo.compass.id}&s=${session}`} active={CompassInfo.session.hasOwnProperty("id")}><FormNextLink /><span>Session</span></CompassLink>}
+        {session && <CompassLink size="small" to={`/Compass/?c=${CompassInfo.compass.id}&s=${session}`} active={page === "/Compass/" && CompassInfo.session.hasOwnProperty("id")}><FormNextLink /><span>Session</span></CompassLink>}
         <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>

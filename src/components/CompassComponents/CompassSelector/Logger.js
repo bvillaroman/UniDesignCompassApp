@@ -18,7 +18,7 @@ import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default (props) => {
+const Logger = (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
@@ -35,6 +35,7 @@ export default (props) => {
   // intialize interaction into the logger
   useEffect(() => {
     if(interaction.id){
+      console.log(interaction)
       const {log_content, duration, step, attachments} = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
@@ -45,13 +46,13 @@ export default (props) => {
     }
 
   // eslint-disable-next-line
-  }, [interaction.id])
+  }, [interaction])
 
   // handle interaction time
   useEffect(() => {
     let interval = null;
 
-    if (interaction.id){
+    if (interaction.hasOwnProperty("id")){
       if (start) {
         interval = setInterval(() => {
           updateInteraction({ duration: interactionTime+1 })
@@ -65,7 +66,7 @@ export default (props) => {
     }
     
   // eslint-disable-next-line
-  }, [start,interactionTime])
+  }, [start,interactionTime, interaction])
   
   const pause = (e) => {
     const newInteraction = {
@@ -157,3 +158,5 @@ export default (props) => {
     </LoggerGrid>
   );
 }
+
+export default Logger;
