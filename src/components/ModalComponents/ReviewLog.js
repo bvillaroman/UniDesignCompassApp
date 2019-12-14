@@ -25,10 +25,8 @@ import {
 import { Storage} from 'aws-amplify'
 import * as Mutation from '../../utils/mutations'
 import {ReviewModalContext} from "../../context/ReviewModal/context"
-import {CompassContext} from "../../context/CompassPage/context"
 const ReviewLog = () => {
   const { interaction, updateInteraction, updateShowModal, clearInteraction } = useContext(ReviewModalContext);
-  const Compass = useContext(CompassContext);
   const [log, setLog] = useState("")
   const [saved, setSaved] = useState(false)
   const [step, setStep] = useState({})

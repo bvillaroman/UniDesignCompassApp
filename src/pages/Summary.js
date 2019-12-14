@@ -28,11 +28,12 @@ const SummaryPage = (props) => {
 
   return (
     <>
-      {
+      {/* {
         interaction.hasOwnProperty("id") ? (
           < SummaryLog />
-        ) : <SummarySession />
-      }
+        ) :  */}
+      <SummarySession />
+      {/* } */}
       {showModal && <ReviewLog />}
     </>
   )

@@ -9,11 +9,11 @@ const Interaction = ({interaction = {}, isLastStep = false}) => {
   const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
   const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
-  const openReviewLog = (evt) => {
-    updateShowModal(true)
+  const openReviewLog = (evt) => {    
     getInteraction(interaction.id)
       .then((res => {
         updateInteraction(res.data.getInteraction);
+        updateShowModal(true)        
       }))
       .catch((err) => console.log(err))
   }
