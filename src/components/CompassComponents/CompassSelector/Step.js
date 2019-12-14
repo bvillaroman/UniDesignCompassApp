@@ -5,7 +5,7 @@ import { startInteraction } from "../../../utils/mutations"
 import translateTime from '../../../utils/translateTime'
 
 const Step = ({activeStep = {}, rotateAngle, circleLength }) => {
-  const {session,updateInteraction} = useContext(CompassContext)
+  const {session,updateInteraction, interaction} = useContext(CompassContext)
 
   const {
     id,
@@ -15,10 +15,13 @@ const Step = ({activeStep = {}, rotateAngle, circleLength }) => {
   } = activeStep; 
 
   const goToLog = (e) => {
-    startInteraction(session.id,id)
-      .then((interaction) => {
-        updateInteraction(interaction.data.createInteraction)        
-      })
+    // console.log(interaction.hasOwnProperty("id"))
+    if(!interaction.hasOwnProperty("id") || id !== interaction.step.id) {
+      startInteraction(session.id,id)
+        .then((interaction) => {
+          updateInteraction(interaction.data.createInteraction)        
+        })
+    }
   }
   
   return (
