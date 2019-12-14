@@ -50,14 +50,13 @@ const CompassPage = (props) => {
           console.log(err)
         })
     })
+
     return () => {
       clearInteraction()
       clearSession()
       createSession.unsubscribe()
       updateInteraction.unsubscribe()
     }
-
-
   // eslint-disable-next-line
   }, [])
 
@@ -71,15 +70,15 @@ const CompassPage = (props) => {
         }))
         .catch((err) => console.log(err))
     }
+  // eslint-disable-next-line
   }, [props.location.search])
 
   return (
     <MainView>
       {
-        compass.hasOwnProperty("id") ?  ( 
-          session.hasOwnProperty("id") ? <CompassSelector showAttachment={showItem} /> : <CompassViewer /> 
-        ) : <div> sorry, this project does not exist !</div>
-        
+        session.hasOwnProperty("id") ? <CompassSelector showAttachment={showItem} /> : (
+          compass.hasOwnProperty("id") ? <CompassViewer /> : <div> sorry, this project does not exist !</div>
+        )
       }
       { showModal && <ReviewLog /> }
     </MainView>

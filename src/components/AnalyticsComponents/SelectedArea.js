@@ -62,7 +62,8 @@ export default ({sessions = [], steps = []}) => {
       setData( filteredData.map((item) => item.value))
       setColors( filteredData.map((item) => item.color))
     }
-
+    
+  // eslint-disable-next-line
   }, [sessions,selectedSession, steps])
 
   return (

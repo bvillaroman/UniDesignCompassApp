@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from "../../context/context";
 import { ReviewModalContext } from "../../context/ReviewModal/context"
-import { createCompass, createStep, updateStep } from "../../utils/mutations";
+import { createCompass, createStep } from "../../utils/mutations";
 import { navigate } from "gatsby";
 import {
   CustomStepsForm,
