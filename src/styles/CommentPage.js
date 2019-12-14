@@ -26,6 +26,10 @@ export const CommentBox = styled.div`
   padding: 0.5em;
 `;
 
+export const CommentRef = styled.div`
+`;
+
+
 //Display Comments
 export const CommentCard = styled.div`
   padding: 0.6em; 
