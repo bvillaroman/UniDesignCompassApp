@@ -35,6 +35,7 @@ const Logger = (props) => {
   // intialize interaction into the logger
   useEffect(() => {
     if(interaction.id){
+      console.log(interaction)
       const {log_content, duration, step, attachments} = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
@@ -45,7 +46,7 @@ const Logger = (props) => {
     }
 
   // eslint-disable-next-line
-  }, [interaction.id])
+  }, [interaction])
 
   // handle interaction time
   useEffect(() => {
