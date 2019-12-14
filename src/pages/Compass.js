@@ -9,16 +9,15 @@ import {CompassContext} from "../context/CompassPage/context"
 import {GlobalContext} from "../context/context"
 import {ReviewModalContext} from "../context/ReviewModal/context"
 import {createSessionSub, updateInteractionSub} from "../utils/subscriptions"
-import { getCompass } from '../utils/queries'
+import { getCompass, getInteraction } from '../utils/queries'
+import queryStringParser from '../utils/queryStringParser'
 
 import { MainView } from "../styles/CompassPage"
 
 const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
   const { compass, session, clearInteraction, clearSession, updateCompass } = useContext(CompassContext);
-  const { showModal } = useContext(ReviewModalContext);
-  // const [attachment,setAttachment] = useState();
-  // const [source,setSource] = useState();
+  const { updateShowModal, showModal, updateInteraction } = useContext(ReviewModalContext);
 
   const showItem = (attachment,src) => {
     // setAttachment(attachment)
@@ -61,6 +60,18 @@ const CompassPage = (props) => {
 
   // eslint-disable-next-line
   }, [])
+
+  useEffect(() => {
+    const {interactionID} = queryStringParser(props.location.search)
+    if(interactionID) {      
+      getInteraction(interactionID)
+        .then((res => {          
+          updateInteraction(res.data.getInteraction);
+          updateShowModal(true)
+        }))
+        .catch((err) => console.log(err))
+    }
+  }, [props.location.search])
 
   return (
     <MainView>
