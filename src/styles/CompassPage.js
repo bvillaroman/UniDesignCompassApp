@@ -262,12 +262,6 @@ export const LoggerInnerNav = styled(Box)`
   justify-content: space-between;
   padding: 0 1rem;
 `;
-export const LoggerAttachments = styled(Box)`
-  width: 100%;
-  height: 100%;
-  min-height: 12rem;
-  margin: 0.5rem auto;
-`
 // Compass Viewer Containers
 export const MainContainer = styled(Box)`
   width: 60%;
@@ -815,16 +809,6 @@ export const SessionClock = styled(Box)`
   align-items: center;
   font-size: 1.1rem;
   font-weight: 500;
-`
-export const SessionAttachments = styled(Box)`
-  font-size: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: scroll;
-  border-top: 0.1rem solid rgba(0,0,0,0.2);
-  // border-radius: 0.3rem;
 `
 export const StepAccordion = styled.div`
   text-align: center;

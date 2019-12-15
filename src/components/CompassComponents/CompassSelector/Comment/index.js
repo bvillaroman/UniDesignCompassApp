@@ -6,7 +6,7 @@ import {
   CommentTitle,
   CommentBox,
   CommentRef
-} from '../../../styles/CommentPage'
+} from '../../../../styles/CommentPage'
 
 const Comment = () => {
   const [comments, setComments] = useState([])

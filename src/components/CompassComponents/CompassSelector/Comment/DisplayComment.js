@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Auth } from 'aws-amplify';
 import {
   CommentCard
-} from '../../../styles/CommentPage';
+} from '../../../../styles/CommentPage';
 
 const DisplayComment = ({ comment }) => {
   const [name, setName] = useState('');

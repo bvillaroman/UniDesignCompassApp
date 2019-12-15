@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../styles/CompassPage"
 import { LinkNext } from "grommet-icons"
-import translateTime from "../../../utils/translateTime"
-import {getInteraction} from "../../../utils/queries"
-import {ReviewModalContext} from "../../../context/ReviewModal/context"
+import { CSInteraction, CSInteractionContainer, CSInteractionButtonContainer } from "../../../../styles/CompassPage"
+import translateTime from "../../../../utils/translateTime"
+import {getInteraction} from "../../../../utils/queries"
+import {ReviewModalContext} from "../../../../context/ReviewModal/context"
 
 const Interaction = ({interaction = {}, isLastStep = false}) => {
   const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  

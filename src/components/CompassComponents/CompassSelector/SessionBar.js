@@ -5,6 +5,8 @@ import {
   SessionTitle,
 } from "../../../styles/CompassPage"
 import { CompassContext } from "../../../context/CompassPage/context"
+import Comments from "./Comment"
+import Attachments from "./Attachments"
 
 export default (props) => {
   const {session} = useContext(CompassContext)
@@ -14,8 +16,10 @@ export default (props) => {
       <SessionSection>
         <SessionTitle >
           {session.name_of_session} 
-        </SessionTitle>
+        </SessionTitle>        
       </SessionSection> 
+      <Attachments />
+      <Comments/>
     </SessionView>
   ) 
 };
