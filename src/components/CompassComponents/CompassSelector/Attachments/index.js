@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, {useState, useEffect, useContext }  from "react";
 import styled from "styled-components"
 import { Box, } from "grommet"
 
@@ -16,31 +16,51 @@ import config from '../../../../aws-exports'
 import { CompassContext } from "../../../../context/CompassPage/context"
 
 const Attachments = (props) => {
-  const {interaction,updateInteraction} = useContext(CompassContext);
-
-  const intialStep = {
-    name_of_step: "Logger",
-    color: "black",
-  };
-
-  const [step, setStep] = useState(intialStep);
+  const {compass, interaction, updateInteraction, session} = useContext(CompassContext);
+  
   const [attachments,setAttachments] = useState([]);
 
-  // intialize interaction into the logger
+  // intialize attachments into the logger
+  // useEffect(() => {
+  //   if(compass.hasOwnProperty("id")){
+  //     let arrAttachment = []
+  
+  //     if (compass.sessions.items.length > 0) {
+  
+  //       compass.sessions.items.map((session, i) => {
+  //         session.interactions.items.map((interaction, i) => {
+  //           arrAttachment.push(interaction.attachments.items)
+  //         })
+  //       })
+  //     }
+
+  //     setAttachments(arrAttachment.flat())
+  //   }
+
+  // // eslint-disable-next-line
+  // }, [compass])
+
   useEffect(() => {
-    if(interaction.id){
-      const { step, attachments} = interaction
-      setStep(step)
-      setAttachments(attachments.items)
+    if(session.hasOwnProperty("id")){
+      let arrAttachment = []
+  
+      if (session.interactions.items.length > 0) {  
+        session.interactions.items.map((interaction, i) => {
+          arrAttachment.push(interaction.attachments.items)
+        })
+      }
+
+      setAttachments(arrAttachment.flat())
     }
 
   // eslint-disable-next-line
-  }, [interaction.id])
+  }, [session])
+  
   
   const handleUpload = async (event) => { 
     const { target: { files } } = event
     const [image] = files || []
-    if (image) {
+    if (image && interaction.hasOwnProperty("id") ) {
       const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
@@ -70,12 +90,9 @@ const Attachments = (props) => {
           Attachments
         </LoggerTitle>
         {
-          step.hasOwnProperty("id") && (
+          compass.hasOwnProperty("id") && (
             <StepClock >
-              <AttachmentButton 
-                onChange={handleUpload} 
-                color={step.color}
-              />
+              <AttachmentButton onChange={handleUpload} />
             </StepClock>
           )
         }
@@ -96,8 +113,9 @@ export default Attachments;
 
 export const LoggerAttachments = styled(Box)`
   width: 90%;
-  min-height: 10rem;
-  margin: 0.5rem auto;
+  min-height: 14rem;
+  max-height: 14rem;
+  margin: 0 auto;
 `
 export const SessionAttachments = styled(Box)`
   font-size: 1rem;
@@ -107,5 +125,4 @@ export const SessionAttachments = styled(Box)`
   height: 100%;
   overflow: scroll;
   border-top: 0.1rem solid rgba(0,0,0,0.2);
-  // border-radius: 0.3rem;
 `

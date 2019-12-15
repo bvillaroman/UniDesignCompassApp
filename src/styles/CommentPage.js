@@ -3,7 +3,7 @@ import styled from "styled-components"
 //Index
 export const CommentSession = styled.div`
   width: 90%;
-  min-height: 3rem;
+  min-height: 2.5rem;
   margin: 0 auto;
   margin-top: 1rem;
 `;
@@ -21,7 +21,7 @@ export const CommentTitle = styled.h4`
 `;
 
 export const CommentBox = styled.div`
-  height: 20vh;
+  height: 7rem;
   overflow: auto;
   padding: 0.5em;
 `;

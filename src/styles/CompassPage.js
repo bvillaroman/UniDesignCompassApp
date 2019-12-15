@@ -776,7 +776,7 @@ export const SessionView = styled(Box)`
 `
 export const SessionSection = styled(Box)`
   width: 90%;
-  min-height: 3rem;
+  min-height: 2.5rem;
   margin: 0 auto;
   margin-top: 1rem;
   display: flex;
