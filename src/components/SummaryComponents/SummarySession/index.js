@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { getCompass } from "../../../utils/queries";
 import { navigate } from "gatsby"
 import SummaryLegend from '../SummaryLegend/';
 import { Image } from 'grommet-icons';
@@ -8,7 +7,6 @@ import {
   SummaryMainView,
   SummaryTable,
   SummaryTableHeader,
-  SummaryTdHeader1,
   SummaryTableBody,
   SummaryTableRow,
   SummaryTdHeader,
@@ -19,18 +17,16 @@ import {
 import { Loader } from '../../../styles/layout';
 
 const SummarySession = (props) => {
-  const { compass, session, interaction } = useContext(CompassContext);
-  console.log("context", useContext(CompassContext))
+  const { compass } = useContext(CompassContext);
 
-  const [sessions, setSession] = useState([])
+  const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
-  const { compassID } = props;
 
   //Mounting once when the page loads
   useEffect(() => {
     setLoading(true)
     if (compass.sessions) {
-      setSession(compass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
+      setSessions(compass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }))
       setLoading(false)
     }
   }, [compass.sessions])
@@ -45,8 +41,22 @@ const SummarySession = (props) => {
     }
   }
 
+  const arrayAttachments = (sessions) => {
+    let arrAttachment = []
+
+    if (sessions && sessions.length > 0) {
+
+      sessions.map((session, i) => {
+        session.interactions.items.map((interaction, i) => {
+          arrAttachment.push(interaction.attachments.items)
+        })
+      })
+    }
+
+    return arrAttachment.flat()
+  }
+
   const SessionTable = ({ sessions }) => {
-    console.log('sessions :', sessions)
     return (
       <>
         <SummaryMainView>{sessions.sort(timeConverter).map((session, i) =>
@@ -59,24 +69,21 @@ const SummarySession = (props) => {
                 <SummaryTableRow>
                   <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
-                  {/* <SummaryTdHeader>CreatedAt</SummaryTdHeader> */}
                   <SummaryTdHeader>Log</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader>
                 </SummaryTableRow>
               </SummaryTableHeader>
-              {/* {console.log(session.interactions.items.sort(timeConverter))} */}
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
                 <SummaryTableBody>
                   <tr key={i} onClick={() => navigate(`/Compass/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                     <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
-                    {/* <SummaryTdBody>{interaction.createdAt.substring(0, 19)}</SummaryTdBody> */}
                     <SummaryTdBody>{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
                     <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
-                    {console.log(interaction)}
                   </tr>
                 </SummaryTableBody>
               )}
+
             </SummaryTable>
           </SummaryTableConatiner>
         )}
