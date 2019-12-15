@@ -18,18 +18,22 @@ import {
   FormErrorLabel
 } from "../../styles/Form"
 import { Loader } from "../../styles/layout"
+
+import { createUser } from "../../utils/mutations"
 const SignUp = ({switchToSignIn}) => {
 
   const [form,setValues] = useState({
     email: '',
-    name: '',
+    firstName: '',
+    lastName: '',
     password: '',
     password2: '',
   });
 
   const [error] = useState({  
     email: '',
-    name: '',
+    firstName: '',
+    lastName: '',
     password: '',
     password2: '',
   })
@@ -49,17 +53,18 @@ const SignUp = ({switchToSignIn}) => {
   };
 
   const submitForm = ({value}) => {
-    const { email, name, password } = value
+    const { email, firstName, lastName, password } = value
 
     setLoading(true)
     Auth.signUp({
       username: email,
       password,
-      attributes: { name },
+      attributes: { name: `${firstName.trim()} ${lastName.trim()}` },
     })
     .then(user => {
-      setMessage("User created! We emailed you a link to verify your account!")
-      setLoading(false)
+      createUser(email, firstName, lastName);
+      setMessage("User created! We emailed you a link to verify your account!");
+      setLoading(false);
     })
     .catch(err => {
       setMessage(err.message)
@@ -79,8 +84,11 @@ const SignUp = ({switchToSignIn}) => {
           <InputContainer name="email" required>
             <InputField name="email"  type="email" placeholder="Email" />
           </InputContainer>
-          <InputContainer name="name" required >
-            <InputField name="name" placeholder="Name" />
+          <InputContainer name="firstName" required >
+            <InputField name="firstName" placeholder="First Name" />
+          </InputContainer>
+          <InputContainer name="lastName" required >
+            <InputField name="lastName" placeholder="Last Name" />
           </InputContainer>
           <InputContainer name="password" required >
             <InputField name="password" type="password" placeholder="Password" />
@@ -95,7 +103,7 @@ const SignUp = ({switchToSignIn}) => {
                 <FormSwitchLabel truncate>Have an account?</FormSwitchLabel>
                 <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
               </FormSwitchContainer>
-              <FormErrorLabel truncate>
+              <FormErrorLabel >
                 {
                   message ? message : (loading && <Loader/>)
                 }
