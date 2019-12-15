@@ -59,10 +59,10 @@ const SignUp = ({switchToSignIn}) => {
     Auth.signUp({
       username: email,
       password,
-      attributes: { name: `${firstName.trim()} ${lastName.trim()}` },
+      attributes: { firstName, lastName },
     })
     .then(user => {
-      createUser(email, firstName, lastName);
+
       setMessage("User created! We emailed you a link to verify your account!");
       setLoading(false);
     })

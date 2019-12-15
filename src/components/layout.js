@@ -100,17 +100,20 @@ const Layout = (props) => {
 
   // user authentications 
   useEffect(() => {
-    if (!user.hasOwnProperty("email")) {
+    if (!user.hasOwnProperty("email") && localStorage.getItem("amplify-signin-with-hostedUI")) {
+      
       Auth.currentAuthenticatedUser({ bypassCache: false   })
         .then(cognitoUser => {
-          const { email, sub } = cognitoUser.attributes;
+          const { email, sub, firstName, lastName } = cognitoUser.attributes;
           setLoading(false)
-          loginUser({ email, id: sub }); // save email to global store
+          loginUser({ email, id: sub, firstName, lastName }); // save email to global store
         })
         .catch(err => {
           setLoading(false)
           console.log(`cognito error: ${err}`)
         });
+    } else {
+      setLoading(false)
     }
 
   }, [loginUser,user])

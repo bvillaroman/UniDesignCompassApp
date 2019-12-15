@@ -47,7 +47,6 @@ export default (props) => {
   ];
 
   const goToReview = (event) => {
-    console.log([user.email])
     createCompass("Untitled", "-", "default", [user.email], [])
       .then(res => {
         defaultCompass.forEach((step, key) =>
@@ -61,7 +60,7 @@ export default (props) => {
   return (
     <TemplateContainer onClick={goToReview}>
       <ProjectTypeDetails>
-        <CompassCircle circleLength={defaultCompass.length}>
+        <CompassCircle>
           {
             defaultCompass.map((item, key) => (
                 <StepContainer
@@ -111,7 +110,7 @@ export const CompassCardTitle = styled.div`
   text-align: center;
   
 `;
-export const CompassCircle = styled(Link)`
+export const CompassCircle = styled.div`
   min-width: 7.7rem;
   min-height: 7.7rem; 
   height: 100%;

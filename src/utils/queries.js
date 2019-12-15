@@ -11,6 +11,18 @@ export async function getCompasses() {
   
 }
 
+// export async function getUser(email) {
+//   const compass = await API.graphql(graphqlOperation(queries.getCompass, { id: compass_id }));
+
+//   return new Promise(function (resolve, reject) {
+//     if (compass.data.getCompass === null) {
+//       reject("No User Found");
+//     } else {
+//       resolve(compass);
+//     }
+//   })
+// }
+
 export async function getCompass(compass_id) {
   const compass = await API.graphql(graphqlOperation(queries.getCompass, { id: compass_id }));
 
