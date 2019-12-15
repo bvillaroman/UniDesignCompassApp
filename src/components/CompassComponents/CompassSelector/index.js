@@ -4,7 +4,7 @@ import { CompassContext } from "../../../context/CompassPage/context"
 
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
-import InteractionFeed from "./InteractionFeed"
+import InteractionFeed from "./Interactions"
 
 const CompassSelector = ({showAttachment}) => {
   const {interactions, updateTime} = useContext(CompassContext)

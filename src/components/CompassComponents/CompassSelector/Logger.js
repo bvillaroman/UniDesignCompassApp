@@ -4,15 +4,11 @@ import {
   LoggerTitle,
   LoggerInput, 
   LoggerHeader,
-  LoggerAttachments,
   StepClock,
   TimerButton,
-  SessionAttachments
 } from "../../../styles/CompassPage"
-import { AttachmentButton } from "../../../styles/Modals"
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
-import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
@@ -128,32 +124,6 @@ const Logger = (props) => {
         color={step.color}
         disabled={!start}
       />
-      <LoggerAttachments>
-        <LoggerHeader>
-          <LoggerTitle color="black">
-            Attachments
-          </LoggerTitle>
-          {
-            step.hasOwnProperty("id") && (
-              <StepClock >
-                <AttachmentButton 
-                  disabled={!start} 
-                  onChange={handleUpload} 
-                  color={step.color}
-                />
-              </StepClock>
-            )
-          }
-        </LoggerHeader>
-        <SessionAttachments>
-          { 
-            attachments.length > 0 && 
-            attachments.map((item) => (
-              <Attachment key={item.key} attachment={item}/>
-            )) 
-          }
-        </SessionAttachments>
-      </LoggerAttachments>
     </LoggerGrid>
   );
 }

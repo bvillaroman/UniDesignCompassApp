@@ -3,11 +3,11 @@ import {
   CSInteractions,
   CSInteractionsTitle,
   CSInteractionsFeed
-} from "../../../styles/CompassPage"
+} from "../../../../styles/CompassPage"
 import Interaction from "./interaction"
-import { CompassContext } from "../../../context/CompassPage/context"
+import { CompassContext } from "../../../../context/CompassPage/context"
 
-export default (props) => {
+const Interactions = (props) => {
   const {interactions} = useContext(CompassContext)
 
   // getting the current session
@@ -34,3 +34,5 @@ export default (props) => {
     </CSInteractions>
   )
 };
+
+export default Interactions;

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
-import * as Mutations from "../../../utils/mutations";
-import { CompassContext } from "../../../context/CompassPage/context";
+import * as Mutations from "../../../../utils/mutations";
+import { CompassContext } from "../../../../context/CompassPage/context";
 import { Auth } from 'aws-amplify';
 import { Waypoint } from 'grommet-icons';
 import {
@@ -8,7 +8,7 @@ import {
   CommentInput,
   CommentFormFlex,
   CommentButton
-} from '../../../styles/CommentPage';
+} from '../../../../styles/CommentPage';
 
 const CommentForm = ({ addComment }) => {
   const { interaction } = useContext(CompassContext);
