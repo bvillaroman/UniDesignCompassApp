@@ -1,25 +1,32 @@
+type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+}
+
 type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   name_of_compass: String!
   description_of_compass: String!
-  # date_start: String
-  # date_end: String
   createdAt: AWSDateTime
   compassType: String!
-  admins: [String]
-  readers: [String]
+  owner: User @connection
+  scribe: User @connection
+  teachers: [User] @connection
+  members: [User] @connection
+  visitors: [User] @connection
   sessions: [Session] @connection(name: "CompassSessions")
   steps: [Step] @connection(name: "CompassSteps")
 }
 
 type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
-  # session_start_time: Int
-  # session_end_time: Int
   name_of_session: String!
   description_of_session: String!
   createdAt: AWSDateTime
   compass: Compass @connection(name: "CompassSessions")
+  comments: [Comment] @connection(name: "SessionComments")
   interactions: [Interaction] @connection(name: "SessionInteractions")
 }
 
@@ -27,7 +34,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id: ID!
   duration: Int
   log_content: String!
-  comments: String
+  comments: [String]
   createdAt: AWSDateTime
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
@@ -36,8 +43,6 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
 
 type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
   id:ID!
-  # step_start_time: Int
-  # step_end_time: Int
   name_of_step: String!
   description_of_step: String!
   color: String
@@ -52,5 +57,12 @@ type Attachment @model{
   bucket: String!
   region: String!
   key: String!
+}
+
+type Comment @model{
+  id: ID!
+  content: String!
+  commenter: User @connection
+  session: Session @connection(name: "SessionComments")
 }
 
