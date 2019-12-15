@@ -15,7 +15,7 @@ import { GlobalContext } from "../context/context"
 import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
-import { getCompass,getSession,getInteraction } from '../utils/queries'
+import { getCompass,getSession } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
@@ -28,23 +28,19 @@ const Layout = (props) => {
     updateCompass, 
     clearCompass,
     updateSession,
-    clearSession, 
-    updateInteraction, 
-    clearInteraction,    
+    clearSession,     
     updateInteractions, 
     clearInteractions
   } = useContext(CompassContext);
 
   const [compassID, setCompassID] = useState("")
-  const [interactionID, setInteractionID] = useState("")
   const [sessionID, setSessionID] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const {compassID, sessionID, interactionID} = queryStringParser(props.location.search)
+    const {compassID, sessionID} = queryStringParser(props.location.search)
     setCompassID(compassID)
     setSessionID(sessionID)
-    setInteractionID(interactionID)
 
   }, [props.location.search])
 
@@ -55,19 +51,17 @@ const Layout = (props) => {
       setLoading(true)
       getCompass(compassID)
         .then((res) => {
-          setLoading(false);
           updateCompass(res.data.getCompass);
           setLoading(false)
         })
-        .catch((err) => {
-          setLoading(false)
+        .catch((err) => {          
           clearCompass();
+          setLoading(false)
           console.log(err)
         })
     } else {
       clearCompass()      
     } 
-
 
   // eslint-disable-next-line
   }, [compassID])
@@ -79,8 +73,7 @@ const Layout = (props) => {
       clearSession();
       setLoading(true)
       getSession(sessionID)
-        .then((res) => {
-          setLoading(false)
+        .then((res) => {          
           updateSession(res.data.getSession)
           localStorage.setItem("session", res.data.getSession.id);
           let interactions = []
@@ -90,6 +83,7 @@ const Layout = (props) => {
             })
           }
           updateInteractions(interactions);
+          setLoading(false)
         })
         .catch((err) => {
           setLoading(false)
@@ -103,29 +97,6 @@ const Layout = (props) => {
 
   // eslint-disable-next-line
   }, [sessionID])
-
-  // setting up the interaction through url
-  useEffect(() => {
-    // console.log(`called intearctionid: ${interactionID}`)
-    if (interactionID !== "") {
-      clearInteraction();
-      setLoading(true)
-      getInteraction(interactionID)
-        .then((res) => {
-          setLoading(false);
-          updateInteraction(res.data.getInteraction);
-        })
-        .catch((err) => {
-          setLoading(false);
-          clearInteraction();
-          console.log(err);
-        })
-    } else {
-      clearInteraction();
-    }
-
-  // eslint-disable-next-line
-  }, [interactionID])
 
   // user authentications 
   useEffect(() => {

@@ -98,7 +98,7 @@ export const StepDetailsDescription = styled(Box)`
 // Compass Wheel 
 export const CompassWheelContainer = styled(Box)`
   width: 100%;
-  height: 100%;
+  height: 70%;
   margin: 0 auto;
   background: transparent;
   position: relative;
@@ -124,7 +124,7 @@ export const CompassWheelContainer = styled(Box)`
 // `;
 export const CompassWheel = styled(Box)`
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
 `;
@@ -136,19 +136,70 @@ export const StepContainer = styled(Button)`
     transition: all 0.2s;
     background-color: transparent;
   }
-  top: 35%;
+  top: 40%;
   left: 40%;
+  
   background-color: ${props => props.color ? props.color : '#5567FD'};
   list-style: none;
-	height: 6.5rem;
-  width: 6.5rem;
+	height: 5rem;
+  width: 5rem;
+  font-size: 0.7rem;
+  line-height: 0.8rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.2}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.90}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
   box-shadow: 0 1px 3px 0 #b3b3b3;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
-  font-size: 0.8rem;
+  margin-bottom: 0.1rem;  
+  @media (max-width: 767px){ 
+    height: 9.5rem;
+    width: 9.5rem;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    left: 39%;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.7}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  }  
+  @media (max-width: 650px){
+    height: 9rem;
+    width: 9rem;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    left: 38%;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.6}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+  }  
+  @media (max-width: 550px){
+    height: 8rem;
+    width: 8rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    left: 37%;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+  } 
+  @media (max-width: 475px){
+    height: 7rem;
+    width: 7rem;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    left: 36%;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.2}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+  }  
+  @media (max-width: 413px){
+    height: 6.5rem;
+    width: 6.5rem;
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+    left: 35.5%;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.13}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+  }   
+  @media (max-width: 370px){
+    height: 5.5rem;
+    width: 5.5rem;
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.95}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+  }   
+    
 `
 export const StepText = styled(Box)`
   padding: 1rem 0.5rem;
@@ -167,7 +218,8 @@ export const StepText = styled(Box)`
 // Logger
 export const LoggerGrid = styled(Box)`
   width: 90%;
-  min-height: 26rem;
+  min-height: 4rem;
+  height: 30%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -175,8 +227,8 @@ export const LoggerGrid = styled(Box)`
 `;
 export const LoggerHeader = styled(Box)`
   width: 100%;
-  margin: 1rem auto;
-  height: 2.4rem;
+  margin: 0 auto;
+  min-height: 2.4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -185,6 +237,7 @@ export const LoggerHeader = styled(Box)`
 export const LoggerTitle = styled.h4`
   font-size: 1.2rem;
   padding: 0;
+  margin: 0;
   width: 50%;
   color: ${props => props.color ? props.color : '#5567FD'};
   line-height: 1.3rem;
@@ -194,7 +247,7 @@ export const LoggerTitle = styled.h4`
 export const LoggerInput = styled(TextArea)`
   border-color: black;
   resize: none;
-  min-height: 10rem;
+  min-height: 5rem;
   height: 100%;
   font-size: 0.8rem;
   font-weight: 400;
@@ -209,19 +262,12 @@ export const LoggerInnerNav = styled(Box)`
   justify-content: space-between;
   padding: 0 1rem;
 `;
-export const LoggerAttachments = styled(Box)`
-  width: 100%;
-  height: 100%;
-  min-height: 12rem;
-  margin: 0.5rem auto;
-`
 // Compass Viewer Containers
 export const MainContainer = styled(Box)`
   width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
-
   @media (max-width: 767px){
     width: 100%
   }  
@@ -604,7 +650,15 @@ export const CSGrid = styled(Box)`
   min-height: 30rem;
   margin: 0 auto;
   flex-direction: row;
-  background-color: white;
+  @media (max-width: 767px){
+    flex-direction: column;
+    min-height: 80rem;
+  }
+  @media (max-width: 650px){ min-height: 75rem; }  
+  @media (max-width: 550px){ min-height: 70rem; } 
+  @media (max-width: 475px){ min-height: 65rem; }  
+  @media (max-width: 413px){ min-height: 60rem; }   
+  @media (max-width: 370px){ min-height: 55rem; }     
 `;
 export const CSTitle = styled(Box)`
   width: 100%;
@@ -615,6 +669,11 @@ export const CSTitle = styled(Box)`
   text-align: left;
   padding-left: 1.5rem;
   margin-top: 1.0rem;
+  @media (max-width: 767px){
+    min-height:3rem;
+    font-size: 3rem;
+    font-height: 3.3rem;
+  }  
 `;
 export const CSMain = styled(Grid)`
   height: 100%;
@@ -624,9 +683,17 @@ export const CompassSectionContainer = styled(Box)`
   height: 100%;
   margin: 0 auto;
   overflow-y: auto;
+  @media (max-width: 767px){
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 50rem;
+  }
+  @media (max-width: 650px){ min-height: 40rem; }  
+  @media (max-width: 550px){ min-height: 30rem; } 
+  @media (max-width: 475px){ min-height: 20rem; }  
+  @media (max-width: 413px){ min-height: 10rem; }   
+  @media (max-width: 370px){ min-height: 9rem; }    
 `;
-
-
 
 // InteractionFeed 
 export const CSInteractions = styled(Box)`
@@ -639,7 +706,8 @@ export const CSInteractionsTitle = styled(Box)`
   text-align: left;
   font-size: 1.2rem;
   font-weight: 600;
-  width: 90%;
+  width: 100%;
+  padding-left: 1.5rem;
   margin: 0.5rem auto;
   min-height: 1.3rem;
 `;
@@ -682,16 +750,13 @@ export const CSInteraction = styled(Button)`
   }
   border-radius: 50%;
   transition: all 0.3s;
-  padding: 1rem;
+  padding: 0.5rem;
   color: black; 
   font-weight: 600;
   font-size: 0.7rem;
   line-height: 0.8rem;
-  min-height: 5rem;
-  min-width: 5rem;
-  max-height: 5rem;
-  max-width: 5rem;
-  word-break: break-all;
+  height: 5rem;
+  width: 5rem;
   background-color: ${props => props.color ? props.color : '#5567FD'};
 
 `;
@@ -704,11 +769,14 @@ export const SessionView = styled(Box)`
   display: flex;
   flex-direction: column;
   border-left: 2px solid #e3e3e3;
-
+  @media (max-width: 767px){
+    width: 100%;
+    height: 25rem;
+  }  
 `
 export const SessionSection = styled(Box)`
   width: 90%;
-  min-height: 3rem;
+  min-height: 2.5rem;
   margin: 0 auto;
   margin-top: 1rem;
   display: flex;
@@ -741,16 +809,6 @@ export const SessionClock = styled(Box)`
   align-items: center;
   font-size: 1.1rem;
   font-weight: 500;
-`
-export const SessionAttachments = styled(Box)`
-  font-size: 1rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: scroll;
-  border-top: 0.1rem solid rgba(0,0,0,0.2);
-  // border-radius: 0.3rem;
 `
 export const StepAccordion = styled.div`
   text-align: center;

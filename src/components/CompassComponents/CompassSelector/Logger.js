@@ -4,21 +4,17 @@ import {
   LoggerTitle,
   LoggerInput, 
   LoggerHeader,
-  LoggerAttachments,
   StepClock,
   TimerButton,
-  SessionAttachments
 } from "../../../styles/CompassPage"
-import { AttachmentButton } from "../../../styles/Modals"
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
-import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
-export default (props) => {
+const Logger = (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
@@ -51,7 +47,7 @@ export default (props) => {
   useEffect(() => {
     let interval = null;
 
-    if (interaction.id){
+    if (interaction.hasOwnProperty("id")){
       if (start) {
         interval = setInterval(() => {
           updateInteraction({ duration: interactionTime+1 })
@@ -65,7 +61,7 @@ export default (props) => {
     }
     
   // eslint-disable-next-line
-  }, [start,interactionTime])
+  }, [start,interactionTime, interaction])
   
   const pause = (e) => {
     const newInteraction = {
@@ -128,32 +124,8 @@ export default (props) => {
         color={step.color}
         disabled={!start}
       />
-      <LoggerAttachments>
-        <LoggerHeader>
-          <LoggerTitle color="black">
-            Attachments
-          </LoggerTitle>
-          {
-            step.hasOwnProperty("id") && (
-              <StepClock >
-                <AttachmentButton 
-                  disabled={!start} 
-                  onChange={handleUpload} 
-                  color={step.color}
-                />
-              </StepClock>
-            )
-          }
-        </LoggerHeader>
-        <SessionAttachments>
-          { 
-            attachments.length > 0 && 
-            attachments.map((item) => (
-              <Attachment key={item.key} attachment={item}/>
-            )) 
-          }
-        </SessionAttachments>
-      </LoggerAttachments>
     </LoggerGrid>
   );
 }
+
+export default Logger;

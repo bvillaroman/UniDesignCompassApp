@@ -23,6 +23,7 @@ const ProfilePage = (props) => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showErrorOldPass, setShowErrorOldPass] = useState(false);
   const [showErrorNewPass, setShowErrorNewPass] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
@@ -45,21 +46,30 @@ const ProfilePage = (props) => {
 
   const submitPassword = (e) => {
     e.preventDefault()
-    console.log('changing password from form')
+    if (!oldPassword || !newPassword || !confirmPassword) return
+
+    setShowErrorOldPass(false)
+    setShowErrorNewPass(false)
+    setShowSuccess(false)
 
     if (newPassword === confirmPassword) {
       Auth.currentAuthenticatedUser()
         .then(user => {
-          return Auth.changePassword(user, oldPassword, newPassword);
+          return Auth.changePassword(user, oldPassword, newPassword)
         })
         // .then(data => console.log(data))
-        .catch(err =>
-          console.log(err, 'old password does not match'), setShowErrorOldPass(!false)
-        );
+        .catch(err => {
+          return console.log(err, 'old password does not match'), setShowErrorOldPass(!showErrorNewPass)
+        });
     } else {
       console.log('Password does not match')
-      setShowErrorNewPass(!false)
+      setShowErrorNewPass(!showErrorNewPass)
     }
+
+    console.log('end of if')
+    setOldPassword("")
+    setNewPassword("")
+    setConfirmPassword("")
   }
 
   return (
@@ -67,30 +77,28 @@ const ProfilePage = (props) => {
       <ProfileTitle>Profile Page</ProfileTitle>
       <FormContainter>
         <FormName onSubmit={handleSubmit}>
-          <FormNameLabel>
-            Name: </FormNameLabel>
+          <FormNameLabel> Name: </FormNameLabel>
           <FormNameInput type="text" name="name" placeholder={name} value={newName} onChange={e => { setNewName(e.target.value) }} />
 
           <NameButton type="submit">Change Name</NameButton>
         </FormName>
         <br />
         <FormPassword onSubmit={submitPassword}>
-          <FormPasswordLabel>
-            Old Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} />
+          <FormPasswordLabel> Old Password:  </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} value={oldPassword} />
 
-          <FormPasswordLabel>
-            New Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} />
+          <FormPasswordLabel> New Password:  </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} value={newPassword} />
 
-          <FormPasswordLabel>
-            Confirm New Password: </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} />
+          <FormPasswordLabel> Confirm New Password: </FormPasswordLabel>
+          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
 
-          <PasswordButton type="submit">Change Password</PasswordButton>
+          <PasswordButton type="submit" disabled={newPassword != confirmPassword} >Change Password</PasswordButton>
         </FormPassword>
+        {/* {newPassword !== confirmPassword ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>} */}
         {showErrorNewPass ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>}
         {showErrorOldPass ? <h4>{"Old password does not match"}</h4> : <h4 hidden></h4>}
+        {showSuccess ? <h4>{"Password Changed!"}</h4> : <h4 hidden></h4>}
         <br />
       </FormContainter>
     </ProfileContainer>

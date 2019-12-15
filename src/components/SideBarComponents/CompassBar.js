@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { navigateTo } from 'gatsby';
 import {
   CompassSideBar,
@@ -27,6 +27,7 @@ const CompassBar = ({ page }) => {
     localStorage.setItem("session", "")
     navigateTo(`/Compass/?c=${CompassInfo.compass.id}`)
   }
+  
   return (
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
@@ -38,7 +39,7 @@ const CompassBar = ({ page }) => {
         >
           <Compass /><span>Compass</span>
         </CompassLink>
-        {session && <CompassLink size="small" to={`/Compass/?c=${CompassInfo.compass.id}&s=${session}`} active={CompassInfo.session.hasOwnProperty("id")}><FormNextLink /><span>Session</span></CompassLink>}
+        {session && <CompassLink size="small" to={`/Compass/?c=${CompassInfo.compass.id}&s=${session}`} active={page === "/Compass/" && CompassInfo.session.hasOwnProperty("id")}><FormNextLink /><span>Session</span></CompassLink>}
         <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
       </LinkContainer>

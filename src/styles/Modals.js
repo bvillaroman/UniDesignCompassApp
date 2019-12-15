@@ -177,7 +177,6 @@ export const AttachmentItem = styled(Box)`
   border: none;
   width: 100%;
   min-height: 2.2rem;
-  margin: 1rem auto;
   font-size: 0.8rem;
   font-weight: 500;
   color: black;

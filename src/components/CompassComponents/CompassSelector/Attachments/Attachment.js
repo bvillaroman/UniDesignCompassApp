@@ -1,5 +1,5 @@
 import React,{ useEffect,useState} from "react";
-import { AttachmentItemButton, AttachmentLinkStyle } from "../../../styles/Modals"
+import { AttachmentItemButton, AttachmentLinkStyle } from "../../../../styles/Modals"
 import { Storage} from 'aws-amplify'
 
 const Attachment = ({attachment}) => {
