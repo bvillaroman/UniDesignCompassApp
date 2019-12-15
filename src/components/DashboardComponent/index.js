@@ -1,17 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
+import styled from "styled-components"
 import { getCompasses } from "../../utils/queries"
 import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
 import {updateProjectsSub} from "../../utils/subscriptions"
 import { CompassContext } from "../../context/CompassPage/context"
 import { GlobalContext } from "../../context/context"
 import {ReviewModalContext} from "../../context/ReviewModal/context"
-// styles
-import {
-  DashboardContainer,
-  Header,
-  Title,
-  InfoText
-} from "../../styles/Dashboard";
+
 import { Loader } from "../../styles/layout"
 
 // components
@@ -96,3 +91,37 @@ const Dashboard = (props) => {
 }
 
 export default Dashboard; 
+
+export const DashboardContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 0 2rem;
+  @media (max-width: 767px){
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+  }
+`;
+export const Header = styled.div`
+  color: black;
+  min-height: 2.5rem;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 0.1rem solid rgba(0,0,0,0.1);
+  width: 100%;
+`;
+export const Title = styled.p`
+  color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0;
+`;
+export const InfoText = styled.p`
+  color: black;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0;
+`;
