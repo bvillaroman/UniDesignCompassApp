@@ -47,7 +47,7 @@ const Dashboard = (props) => {
     const subscriber = updateProjectsSub().subscribe({
       next: res => {
         const newProject = res.value.data.onCreateCompass
-        if(newProject.admins.includes(user.email)){
+        if(newProject.owner.id === user.id){
           setNewestProject(newProject)
         }
       }

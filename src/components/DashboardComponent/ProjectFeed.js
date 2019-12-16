@@ -58,7 +58,7 @@ const Feed = styled.div`
 const ProjectCard = styled.div`
   padding: 1rem 0;
   width: 100%;
-  min-height: 4rem;
+  min-height: 2rem;
   background-color: none;
   display: flex;
   flex-direction: row;
@@ -111,7 +111,7 @@ const CompassDate = styled(CompassHeaderStyle)`
 `
 const ProjectFeedContainer = styled.div`
   color: black;
-  height: 100%;
+  // height: 100%;
   padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
