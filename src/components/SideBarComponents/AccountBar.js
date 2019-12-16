@@ -15,6 +15,7 @@ const AccountBar = props => {
   const signOut = () => {
     Auth.signOut({ global: true })
       .then(() => {
+        localStorage.removeItem("authuser")
         logoutUser();
         goToLink('/')
       })

@@ -13,7 +13,7 @@ import {
 import {Loader} from "../../styles/layout"
 import { Auth } from 'aws-amplify';
 
-export default ({ switchToSignUp, user, switchToReset }) => {
+export default ({ switchToSignUp, user, switchToReset, switchToSignIn }) => {
 
   const [form, setValues] = useState({confirmation: "", password: '', password1: ""});
   const [errors] = useState({ confirmation: "", password: '', password1: "" })
@@ -81,7 +81,11 @@ export default ({ switchToSignUp, user, switchToReset }) => {
       </FormSwitchContainer>
       <FormSwitchContainer direction="row">
         <FormSwitchLabel truncate>Re-enter email?</FormSwitchLabel>
-        <FormSwitchButton onClick={e => switchToReset()}> Back to Sign in </FormSwitchButton>
+        <FormSwitchButton onClick={e => switchToReset()}>Reset Password</FormSwitchButton>
+      </FormSwitchContainer>
+      <FormSwitchContainer direction="row">
+        <FormSwitchLabel truncate>Want to sign back in?</FormSwitchLabel>
+        <FormSwitchButton onClick={e => switchToSignIn()}>Sign in</FormSwitchButton>
       </FormSwitchContainer>
       <FormMessageLabel truncate >
       { message }

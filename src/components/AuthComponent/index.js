@@ -20,7 +20,7 @@ const AuthenticationPage = (props) => {
           <SignUp switchToVerification={e => onActive(2)} switchToSignIn={e => onActive(0)}/>
         </Tab>
         <Tab >
-          <ForgetPassword switchToSignUp={e => onActive(1)}/>
+          <ForgetPassword switchToSignUp={e => onActive(1)} switchToSignIn={e => onActive(0)}/>
         </Tab>
       </Tabs>
     </FormContainer>
