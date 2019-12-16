@@ -16,8 +16,12 @@ import {
 } from '../styles/ProfilePage'
 
 const ProfilePage = (props) => {
-  const [name, setName] = useState('');
-  const [newName, setNewName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [newFirstName, setNewFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [newLastName, setNewLastName] = useState('');
+
+
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -27,21 +31,19 @@ const ProfilePage = (props) => {
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setName(res.attributes.name) })
+      .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
       .catch(err => console.log(err))
-  }, [name])
+  }, [firstName])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    console.log('change name')
     let user = await Auth.currentAuthenticatedUser();
     let result = await Auth.updateUserAttributes(user, {
-      'name': newName
+      'custom:firstName': newFirstName,
+      'custom:lastName': newLastName
     });
-
-    // await Auth.currentAuthenticatedUser({ bypassCache: true })
-    //     .then(res => { console.log(res.attributes.name) })
-    //     .catch(err => console.log(err))
   }
 
   const submitPassword = (e) => {
@@ -77,8 +79,11 @@ const ProfilePage = (props) => {
       <ProfileTitle>Profile Page</ProfileTitle>
       <FormContainter>
         <FormName onSubmit={handleSubmit}>
-          <FormNameLabel> Name: </FormNameLabel>
-          <FormNameInput type="text" name="name" placeholder={name} value={newName} onChange={e => { setNewName(e.target.value) }} />
+          <FormNameLabel> First Name: </FormNameLabel>
+          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} />
+
+          <FormNameLabel> Last Name: </FormNameLabel>
+          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
 
           <NameButton type="submit">Change Name</NameButton>
         </FormName>
@@ -105,3 +110,4 @@ const ProfilePage = (props) => {
   )
 };
 export default ProfilePage;
+
