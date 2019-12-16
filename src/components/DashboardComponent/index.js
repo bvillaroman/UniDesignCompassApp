@@ -30,7 +30,7 @@ const Dashboard = (props) => {
 
     getCompasses()
       .then((res) => {
-        setCompasses(res.filter((compass) => (compass.admins && compass.admins.includes(user.email))))
+        setCompasses(res.filter((compass) => (compass.owner.id === user.id)))
         setLoading(false)
       })
       .catch((error) => {

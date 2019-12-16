@@ -48,20 +48,14 @@ export default (props) => {
   ];
 
   const goToReview = (event) => {
-    getUser(user.id)
-      .then((res) => {
-        if(res.hasOwnProperty("data") && res.data.getUser ){
-          console.log(res.data.getUser)
-        }        
+    createCompass("Untitled", "-", "default", user.id)
+      .then(res => {
+        defaultCompass.forEach((step, key) =>
+          createStep(step.title, step.description, step.color, res.data.createCompass.id)
+        )
+        navigate(`/Compass/?c=${res.data.createCompass.id}`)
       })
-    // createCompass("Untitled", "-", "default", [user.email], [])
-    //   .then(res => {
-    //     defaultCompass.forEach((step, key) =>
-    //       createStep(step.title, step.description, step.color, res.data.createCompass.id)
-    //     )
-    //     navigate(`/Compass/?c=${res.data.createCompass.id}`)
-    //   })
-    //   .catch(err => console.log(err))
+      .catch(err => console.log(err))
   };
 
   return (
