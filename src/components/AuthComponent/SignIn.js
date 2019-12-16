@@ -13,6 +13,8 @@ import {
 } from "../../styles/Form"
 import { Loader } from "../../styles/layout"
 import { GlobalContext } from "../../context/context"
+import { getUser } from "../../utils/queries"
+import { createUser } from "../../utils/mutations"
 import { Auth } from 'aws-amplify';
 
 
@@ -42,15 +44,35 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
   const submitForm = ({ value }) => {
     const { email, password } = value
     setLoading(true)
-
     Auth.signIn({ username: email, password })
       .then(user => {
-        const { sub } = user.attributes;
+        const { sub, } = user.attributes;
+
         localStorage.setItem("authuser", sub)
-        loginUser({ email, id: sub }) // Save to global store    
-        setLoading(false)
+        getUser(sub)
+          .then((res) => {
+            if(res && res.data && res.data.getUser){
+              loginUser({ 
+                email: res.data.getUser.email, 
+                id: res.data.getUser.id,
+                firstName: res.data.getUser.first_name,
+                lastName: res.data.getUser.last_name
+              }) // Save to global store   
+            } else {
+              createUser(sub, email, user.attributes["custom:firstName"], user.attributes["custom:lastName"])
+                .then((res) => {
+                  loginUser({ 
+                    email: res.data.createUser.email, 
+                    id: res.data.createUser.id,
+                    firstName: res.data.createUser.first_name,
+                    lastName: res.data.createUser.last_name
+                  }) // Save to global store   
+                })                
+            }
+          })    
       })
       .catch(err => {
+        localStorage.removeItem("authuser")
         setError(err.message)
         setLoading(false)
       });
@@ -82,7 +104,7 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
               <FormSwitchLabel truncate>Forgot Password ?</FormSwitchLabel>
               <FormSwitchButton onClick={e => switchToForgetPassword()}> Reset Password </FormSwitchButton>
             </FormSwitchContainer>
-            <FormErrorLabel truncate>
+            <FormErrorLabel>
               {
                 error ? error : (loading && <Loader />)
               }

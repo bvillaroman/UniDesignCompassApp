@@ -28,7 +28,7 @@ const CompassPage = (props) => {
     const createSession = createSessionSub().subscribe({
       next: res => {
         const newSession = res.value.data.onCreateSession
-        if(newSession.compass.admins.includes(user.email) ){
+        if(newSession.compass.owner.id === user.id){
           getCompass(newSession.compass.id)
           .then((res) => {
             updateCompass(res.data.getCompass);

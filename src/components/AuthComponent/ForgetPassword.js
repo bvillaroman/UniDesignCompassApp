@@ -15,7 +15,7 @@ import {Loader} from "../../styles/layout"
 import { Auth } from 'aws-amplify';
 import SubmitNewPassword from './SubmitNewPassword'
 
-export default ({ switchToSignUp }) => {
+export default ({ switchToSignUp, switchToSignIn}) => {
   const [form, setValues] = useState({email: ''});
   const [errors] = useState({ email: '' })
   const [error,setError] = useState("")
@@ -51,7 +51,14 @@ export default ({ switchToSignUp }) => {
     <FormContainer>
       <FormTitle> Password Recovery </FormTitle>
       {
-        submitPassword ? <SubmitNewPassword switchToSignUp={switchToSignUp} user={form.email} switchToReset={changeToSubmitPassword}/>
+        submitPassword ? (
+          <SubmitNewPassword 
+            switchToSignIn={switchToSignIn} 
+            switchToSignUp={switchToSignUp} 
+            user={form.email} 
+            switchToReset={changeToSubmitPassword}
+          />
+        )
         : (
           <Form
             onSubmit={submitForm}
@@ -68,6 +75,10 @@ export default ({ switchToSignUp }) => {
                 <FormSwitchContainer direction="row">
                   <FormSwitchLabel truncate>Don't have an account?</FormSwitchLabel>
                   <FormSwitchButton onClick={e => switchToSignUp()}> Sign Up </FormSwitchButton>
+                </FormSwitchContainer>
+                <FormSwitchContainer direction="row">
+                  <FormSwitchLabel truncate>Want to sign back in?</FormSwitchLabel>
+                  <FormSwitchButton onClick={e => switchToSignIn()}> Sign In </FormSwitchButton>
                 </FormSwitchContainer>
                 <FormErrorLabel truncate>
                 { error ? error : (loading && <Loader/>) }

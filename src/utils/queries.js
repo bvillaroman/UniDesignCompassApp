@@ -11,12 +11,29 @@ export async function getCompasses() {
   
 }
 
+export async function getUser(id) {
+  return API.graphql(graphqlOperation(queries.getUser, { id }));
+  // if(user.data && user.data.listUsers.items.length > 0){
+  //   return user.data.listUsers.items[0]
+  // } else {
+  //   return {}
+  // }
+  
+  // return new Promise(function (resolve, reject) {
+  //   if (compass.data.listUsers === null) {
+  //     reject("No User Found");
+  //   } else {
+  //     resolve(compass);
+  //   }
+  // })
+}
+
 export async function getCompass(compass_id) {
   const compass = await API.graphql(graphqlOperation(queries.getCompass, { id: compass_id }));
 
   return new Promise(function (resolve, reject) {
     if (compass.data.getCompass === null) {
-      reject("No User Found");
+      reject("No Compass Found");
     } else {
       resolve(compass);
     }

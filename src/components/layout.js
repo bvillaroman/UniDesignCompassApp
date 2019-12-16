@@ -15,7 +15,8 @@ import { GlobalContext } from "../context/context"
 import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
-import { getCompass,getSession } from '../utils/queries'
+import { getCompass,getSession, getUser } from '../utils/queries'
+import { createUser } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
@@ -23,7 +24,7 @@ Amplify.configure(awsconfig);
 
 
 const Layout = (props) => {
-  const { user = {}, loginUser } = useContext(GlobalContext);
+  const { user = {}, loginUser, logoutUser } = useContext(GlobalContext);
   const {
     updateCompass, 
     clearCompass,
@@ -100,17 +101,32 @@ const Layout = (props) => {
 
   // user authentications 
   useEffect(() => {
-    if (!user.hasOwnProperty("email")) {
+    if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
+      let user = {}
       Auth.currentAuthenticatedUser({ bypassCache: false   })
         .then(cognitoUser => {
-          const { email, sub } = cognitoUser.attributes;
-          setLoading(false)
-          loginUser({ email, id: sub }); // save email to global store
+          const { sub } = cognitoUser.attributes;          
+          user = cognitoUser.attributes
+          return getUser(sub)
+        })
+        .then((res) => {
+          if(res && res.hasOwnProperty("data") && res.data.getUser){
+            loginUser({ 
+              email: res.data.getUser.email, 
+              id: res.data.getUser.id,
+              firstName: res.data.getUser.first_name,
+              lastName: res.data.getUser.last_name
+            }) // Save to global store    
+          }        
         })
         .catch(err => {
           setLoading(false)
-          console.log(`cognito error: ${err}`)
+          localStorage.removeItem("authuser")
+          alert(err.message)
+          logoutUser();
         });
+    } else {
+      setLoading(false)
     }
 
   }, [loginUser,user])

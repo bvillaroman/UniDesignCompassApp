@@ -60,6 +60,7 @@ export const FormErrorLabel = styled(Text)`
   font-size: 30%;
   text-align: center;
   margin: 0 auto;
+  width: 100%;
   img {
     width: 3rem;
     height: 3rem;
