@@ -59,7 +59,7 @@ const SignUp = ({switchToSignIn}) => {
     Auth.signUp({
       username: email,
       password,
-      attributes: { firstName, lastName },
+      attributes: { name: `${firstName} ${lastName}`, "custom:firstName": firstName, "custom:lastName":lastName },
     })
     .then(user => {
 

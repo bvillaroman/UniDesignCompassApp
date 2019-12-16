@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import styled from "styled-components"
 import { GlobalContext } from "../../context/context"
+import { getUser } from "../../utils/queries"
 import { createCompass, createStep } from "../../utils/mutations"
 import { navigate } from "gatsby"
 import {Link} from "gatsby"
@@ -47,14 +48,20 @@ export default (props) => {
   ];
 
   const goToReview = (event) => {
-    createCompass("Untitled", "-", "default", [user.email], [])
-      .then(res => {
-        defaultCompass.forEach((step, key) =>
-          createStep(step.title, step.description, step.color, res.data.createCompass.id)
-        )
-        navigate(`/Compass/?c=${res.data.createCompass.id}`)
+    getUser(user.id)
+      .then((res) => {
+        if(res.hasOwnProperty("data") && res.data.getUser ){
+          console.log(res.data.getUser)
+        }        
       })
-      .catch(err => console.log(err))
+    // createCompass("Untitled", "-", "default", [user.email], [])
+    //   .then(res => {
+    //     defaultCompass.forEach((step, key) =>
+    //       createStep(step.title, step.description, step.color, res.data.createCompass.id)
+    //     )
+    //     navigate(`/Compass/?c=${res.data.createCompass.id}`)
+    //   })
+    //   .catch(err => console.log(err))
   };
 
   return (

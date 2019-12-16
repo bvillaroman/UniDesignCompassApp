@@ -16,14 +16,14 @@ export async function createCompass(name_of_compass, description_of_compass,comp
   return newCompass;
 }
 
-export async function createUser(email,first_name,last_name) {
+export async function createUser(id,email,first_name,last_name) {
   const userInfo = {
+    id,
     first_name,
     last_name,
     email
   }
-  const newUser = await API.graphql(graphqlOperation(mutations.createUser, { input: userInfo }));
-  return newUser;
+  return API.graphql(graphqlOperation(mutations.createUser, { input: userInfo }));
 }
 
 export async function createSession(name_of_session, description_of_session, compassId) {
