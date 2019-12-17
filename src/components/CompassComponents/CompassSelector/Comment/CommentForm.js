@@ -10,10 +10,11 @@ import {
   CommentButton
 } from '../../../../styles/CommentPage';
 
-const CommentForm = ({ addComment }) => {
-  const { interaction } = useContext(CompassContext);
+const CommentForm = ({ addComment, comments }) => {
   const [commentValue, setCommentValue] = useState("");
-  const [name, setName] = useState('');
+
+  let url = window.location.search.split('i=')
+  console.log(url[1])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,25 +23,23 @@ const CommentForm = ({ addComment }) => {
     addComment(commentValue)
 
     const newInteraction = {
-      id: interaction.id,
-      comments: commentValue
+      id: url[1],
+      comments: [...comments, commentValue]
     }
+
     Mutations.updateInteraction(newInteraction)
-      .then(res => res)
+      .then(res => console.log("from form", res))
       .catch(err => console.log('updateInteraction has an error', err))
 
     setCommentValue("")
   }
 
-  useEffect(() => {
-    setCommentValue(interaction.comments)
-  }, [])
 
-  useEffect(() => {
-    Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setName(res.attributes.name) })
-      .catch(err => console.log(err))
-  }, [name])
+  // useEffect(() => {
+  //   Auth.currentAuthenticatedUser({ bypassCache: true })
+  //     .then(res => { return setName(res.attributes.name) })
+  //     .catch(err => console.log(err))
+  // }, [name])
 
   return (
     <>
