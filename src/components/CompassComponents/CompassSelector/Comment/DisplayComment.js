@@ -5,17 +5,21 @@ import {
 } from '../../../../styles/CommentPage';
 
 const DisplayComment = ({ comment }) => {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const fullName = firstName + ' ' + lastName[0]
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setName(res.attributes.name) })
+      .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
       .catch(err => console.log(err))
-  }, [name])
+  }, [firstName, lastName])
+
+  // console.log("from displaycomments", comment)
 
   return (
     <CommentCard>
-      Kenny<span>: </span>{comment.text}
+      {fullName}<span>: </span>{comment.content}
     </CommentCard>
   )
 }

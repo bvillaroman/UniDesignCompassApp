@@ -33,7 +33,7 @@ const ProfilePage = (props) => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
       .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
       .catch(err => console.log(err))
-  }, [firstName])
+  }, [firstName, lastName])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
