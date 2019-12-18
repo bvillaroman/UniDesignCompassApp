@@ -167,6 +167,7 @@ export const getCompass = `query GetCompass($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -232,6 +233,7 @@ export const getCompass = `query GetCompass($id: ID!) {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -281,6 +283,7 @@ export const getCompass = `query GetCompass($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -348,6 +351,7 @@ export const getCompass = `query GetCompass($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -522,6 +526,7 @@ export const getCompass = `query GetCompass($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -735,6 +740,7 @@ export const listCompasss = `query ListCompasss(
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -1065,6 +1071,7 @@ export const getSession = `query GetSession($id: ID!) {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -1249,6 +1256,7 @@ export const getSession = `query GetSession($id: ID!) {
       items {
         id
         content
+        createdAt
         commenter {
           id
           first_name
@@ -1349,6 +1357,7 @@ export const getSession = `query GetSession($id: ID!) {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -1535,6 +1544,7 @@ export const getSession = `query GetSession($id: ID!) {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -1906,6 +1916,7 @@ export const listSessions = `query ListSessions(
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -2030,6 +2041,7 @@ export const listSessions = `query ListSessions(
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -2110,6 +2122,7 @@ export const listSessions = `query ListSessions(
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -2236,6 +2249,7 @@ export const listSessions = `query ListSessions(
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -2523,6 +2537,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -2647,6 +2662,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -2727,6 +2743,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -2853,6 +2870,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -3130,6 +3148,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -3335,6 +3354,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -3598,6 +3618,7 @@ export const listInteractions = `query ListInteractions(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -3663,6 +3684,7 @@ export const listInteractions = `query ListInteractions(
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -3712,6 +3734,7 @@ export const listInteractions = `query ListInteractions(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -3779,6 +3802,7 @@ export const listInteractions = `query ListInteractions(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -3950,6 +3974,7 @@ export const listInteractions = `query ListInteractions(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -4065,6 +4090,7 @@ export const listInteractions = `query ListInteractions(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -4296,6 +4322,7 @@ export const getStep = `query GetStep($id: ID!) {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -4611,6 +4638,7 @@ export const listSteps = `query ListSteps(
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -4840,6 +4868,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -4905,6 +4934,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -4954,6 +4984,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -5021,6 +5052,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -5192,6 +5224,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -5307,6 +5340,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -5502,6 +5536,7 @@ export const listAttachments = `query ListAttachments(
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -5749,6 +5784,7 @@ export const getComment = `query GetComment($id: ID!) {
   getComment(id: $id) {
     id
     content
+    createdAt
     commenter {
       id
       first_name
@@ -5880,6 +5916,7 @@ export const getComment = `query GetComment($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6004,6 +6041,7 @@ export const getComment = `query GetComment($id: ID!) {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -6084,6 +6122,7 @@ export const getComment = `query GetComment($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6210,6 +6249,7 @@ export const getComment = `query GetComment($id: ID!) {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6373,6 +6413,7 @@ export const listComments = `query ListComments(
     items {
       id
       content
+      createdAt
       commenter {
         id
         first_name
@@ -6473,6 +6514,7 @@ export const listComments = `query ListComments(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -6538,6 +6580,7 @@ export const listComments = `query ListComments(
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -6587,6 +6630,7 @@ export const listComments = `query ListComments(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -6654,6 +6698,7 @@ export const listComments = `query ListComments(
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }

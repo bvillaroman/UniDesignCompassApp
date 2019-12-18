@@ -169,6 +169,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -234,6 +235,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -283,6 +285,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -350,6 +353,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -524,6 +528,7 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -732,6 +737,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -797,6 +803,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -846,6 +853,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -913,6 +921,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1087,6 +1096,7 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1295,6 +1305,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1360,6 +1371,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -1409,6 +1421,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1476,6 +1489,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1650,6 +1664,7 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -1863,6 +1878,7 @@ export const onCreateSession = `subscription OnCreateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -2047,6 +2063,7 @@ export const onCreateSession = `subscription OnCreateSession {
       items {
         id
         content
+        createdAt
         commenter {
           id
           first_name
@@ -2147,6 +2164,7 @@ export const onCreateSession = `subscription OnCreateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -2333,6 +2351,7 @@ export const onCreateSession = `subscription OnCreateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -2719,6 +2738,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -2903,6 +2923,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
       items {
         id
         content
+        createdAt
         commenter {
           id
           first_name
@@ -3003,6 +3024,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -3189,6 +3211,7 @@ export const onUpdateSession = `subscription OnUpdateSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -3575,6 +3598,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -3759,6 +3783,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
       items {
         id
         content
+        createdAt
         commenter {
           id
           first_name
@@ -3859,6 +3884,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -4045,6 +4071,7 @@ export const onDeleteSession = `subscription OnDeleteSession {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -4417,6 +4444,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -4541,6 +4569,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -4621,6 +4650,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -4747,6 +4777,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -5024,6 +5055,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -5229,6 +5261,7 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -5518,6 +5551,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -5642,6 +5676,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -5722,6 +5757,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -5848,6 +5884,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6125,6 +6162,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6330,6 +6368,7 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6619,6 +6658,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6743,6 +6783,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -6823,6 +6864,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -6949,6 +6991,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -7226,6 +7269,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -7431,6 +7475,7 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -7735,6 +7780,7 @@ export const onCreateStep = `subscription OnCreateStep {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -8065,6 +8111,7 @@ export const onUpdateStep = `subscription OnUpdateStep {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -8395,6 +8442,7 @@ export const onDeleteStep = `subscription OnDeleteStep {
             items {
               id
               content
+              createdAt
               commenter {
                 id
                 first_name
@@ -8682,6 +8730,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -8747,6 +8796,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -8796,6 +8846,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -8863,6 +8914,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9034,6 +9086,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9149,6 +9202,7 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9339,6 +9393,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9404,6 +9459,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -9453,6 +9509,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9520,6 +9577,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9691,6 +9749,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9806,6 +9865,7 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -9996,6 +10056,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -10061,6 +10122,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
           items {
             id
             content
+            createdAt
             commenter {
               id
               first_name
@@ -10110,6 +10172,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -10177,6 +10240,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -10348,6 +10412,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -10463,6 +10528,7 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
                 items {
                   id
                   content
+                  createdAt
                 }
                 nextToken
               }
@@ -10553,6 +10619,7 @@ export const onCreateComment = `subscription OnCreateComment {
   onCreateComment {
     id
     content
+    createdAt
     commenter {
       id
       first_name
@@ -10684,6 +10751,7 @@ export const onCreateComment = `subscription OnCreateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -10808,6 +10876,7 @@ export const onCreateComment = `subscription OnCreateComment {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -10888,6 +10957,7 @@ export const onCreateComment = `subscription OnCreateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -11014,6 +11084,7 @@ export const onCreateComment = `subscription OnCreateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -11172,6 +11243,7 @@ export const onUpdateComment = `subscription OnUpdateComment {
   onUpdateComment {
     id
     content
+    createdAt
     commenter {
       id
       first_name
@@ -11303,6 +11375,7 @@ export const onUpdateComment = `subscription OnUpdateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -11427,6 +11500,7 @@ export const onUpdateComment = `subscription OnUpdateComment {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -11507,6 +11581,7 @@ export const onUpdateComment = `subscription OnUpdateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -11633,6 +11708,7 @@ export const onUpdateComment = `subscription OnUpdateComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -11791,6 +11867,7 @@ export const onDeleteComment = `subscription OnDeleteComment {
   onDeleteComment {
     id
     content
+    createdAt
     commenter {
       id
       first_name
@@ -11922,6 +11999,7 @@ export const onDeleteComment = `subscription OnDeleteComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -12046,6 +12124,7 @@ export const onDeleteComment = `subscription OnDeleteComment {
         items {
           id
           content
+          createdAt
           commenter {
             id
             first_name
@@ -12126,6 +12205,7 @@ export const onDeleteComment = `subscription OnDeleteComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
@@ -12252,6 +12332,7 @@ export const onDeleteComment = `subscription OnDeleteComment {
               items {
                 id
                 content
+                createdAt
                 commenter {
                   id
                   first_name
