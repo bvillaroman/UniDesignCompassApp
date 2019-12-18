@@ -10,31 +10,18 @@ import {
 } from '../../../../styles/CommentPage'
 
 const Comment = () => {
-  const { session, comment } = useContext(CompassContext);
-
+  const messagesEndRef = useRef(null);
+  const { session } = useContext(CompassContext);
   const [comments, setComments] = useState([])
-  // const interactions = session.interactions.items
 
-
-
-  console.log("index of comment", comment)
-
+  // listening everytime session.comments changes
   useEffect(() => {
-
-    // let url = window.location.search.split('i=')
-    // if (url.length > 1) {
-    // console.log("From HOOKS", interactions.find(interaction => interaction.id === url[1]))
-    // let interaction = interactions.find(interaction => interaction.id === url[1])
-    // if (interaction !== undefined) {
     setComments(session.comments.items)
-    // }
-    // }
+  }, [session.comments.items])
 
-  }, [setComments])
-
-  const addComment = text => {
-    const newComments = [...comments, text];
-    console.log("new commentsSSSSSSSSS", newComments)
+  // gets a new COMMENT object and adds it to the feed
+  const addComment = newComment => {
+    const newComments = [...comments, newComment];
     setComments(newComments);
   };
 
@@ -47,23 +34,20 @@ const Comment = () => {
       return 0
     }
   }
-
-  const messagesEndRef = useRef(null);
+  
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
+  
   useEffect(scrollToBottom, [comments]);
 
   return (
     <CommentSession>
       <CommentTitle>Comments</CommentTitle>
       <CommentBox>
-        {comments.sort(timeConverter).map(comment => (
-          <DisplayComment
-            comment={comment}
-          />
-          // console.log(comment)
-        ))}
+        {
+          comments.sort(timeConverter).map((comment,key) => <DisplayComment comment={comment} key={key}/>)
+        }
         <CommentRef ref={messagesEndRef} />
       </CommentBox>
       <CommentForm

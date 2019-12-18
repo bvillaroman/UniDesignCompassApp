@@ -51,17 +51,27 @@ const CompassPage = (props) => {
         })
     })
 
-    // const createComment = createCommentSub().subscribe({
-    //   next: res => {
-    //     console.log(res)
-    //     const newComment = res.value.data.onCreateComment
-    //   }
-    // })
+    // every time a comment is created, check if the sessions being viewed is the one being updated
+    // if so, update the session
+    const createComment = createCommentSub().subscribe({
+      next: res => {
+        const newComment = res.value.data.onCreateComment
+        if (newComment.session.id === session.id) {
+          getSession(newComment.session.id)
+            .then((res) => {
+              updateSession(res.data.getSession)
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }
+      }
+    })
 
     return () => {
       clearInteraction()
       clearSession()
-      // createComment.unsubscribe()
+      createComment.unsubscribe()
       createSession.unsubscribe()
       updateInteraction.unsubscribe()
     }

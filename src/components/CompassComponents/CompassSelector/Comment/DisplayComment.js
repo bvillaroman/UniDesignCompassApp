@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Auth } from 'aws-amplify';
-import {
-  CommentCard
-} from '../../../../styles/CommentPage';
+import React from 'react';
+import { CommentCard } from '../../../../styles/CommentPage';
 
+// gets the value of the comment and parses it to show the message/name
 const DisplayComment = ({ comment }) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const firstName = comment.commenter ? comment.commenter.first_name : ""
+  const lastName = comment.commenter ? comment.commenter.last_name : " "
   const fullName = firstName + ' ' + lastName[0]
-
-  useEffect(() => {
-    Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
-      .catch(err => console.log(err))
-  }, [firstName, lastName])
-
-  // console.log("from displaycomments", comment)
 
   return (
     <CommentCard>

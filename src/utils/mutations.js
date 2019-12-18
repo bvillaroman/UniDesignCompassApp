@@ -47,10 +47,11 @@ export async function createStep(name_of_step, description_of_step, color, compa
   return newStep
 }
 
-export async function createComment(content, sessionId) {
+export async function createComment(content, sessionId, userID) {
   const commentInfo = {
     content,
-    commentSessionId: sessionId
+    commentSessionId: sessionId,
+    commentCommenterId: userID,
   }
 
   const newComment = await API.graphql(graphqlOperation(mutations.createComment, { input: commentInfo }));
