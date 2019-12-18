@@ -4,7 +4,7 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-export async function createCompass(name_of_compass, description_of_compass,compassType,compassOwnerId) {
+export async function createCompass(name_of_compass, description_of_compass, compassType, compassOwnerId) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
@@ -15,7 +15,7 @@ export async function createCompass(name_of_compass, description_of_compass,comp
   return newCompass;
 }
 
-export async function createUser(id,email,first_name,last_name) {
+export async function createUser(id, email, first_name, last_name) {
   const userInfo = {
     id,
     first_name,
@@ -47,6 +47,16 @@ export async function createStep(name_of_step, description_of_step, color, compa
   return newStep
 }
 
+export async function createComment(content, sessionId) {
+  const commentInfo = {
+    content,
+    commentSessionId: sessionId
+  }
+
+  const newComment = await API.graphql(graphqlOperation(mutations.createComment, { input: commentInfo }));
+  return newComment;
+}
+
 export async function startInteraction(sessionId, stepId) {
   const interactionInfo = {
     log_content: " ",
@@ -70,11 +80,12 @@ export async function updateCompass(id, name_of_compass, description_of_compass)
   return updatedCompass;
 }
 
-export async function updateSession(id, name_of_session, description_of_session) {
+export async function updateSession(id, name_of_session, description_of_session, comments) {
   const sessionInfo = {
     id,
     name_of_session,
     description_of_session,
+    comments
   }
   const updatedSession = await API.graphql(graphqlOperation(mutations.updateSession, { input: sessionInfo }));
   return updatedSession;
@@ -95,6 +106,14 @@ export async function updateInteraction(interaction) {
   const updatedIntercation = await API.graphql(graphqlOperation(mutations.updateInteraction, { input: interaction }));
   return updatedIntercation
 }
+
+export async function updateComment(comment) {
+
+  const updatedComment = await API.graphql(graphqlOperation(mutations.createComment, { input: comment }));
+  return updatedComment
+}
+
+
 export async function uploadAttachment(attachment) {
   const uploadAttachment = await API.graphql(graphqlOperation(mutations.createAttachment, { input: attachment }));
   return uploadAttachment

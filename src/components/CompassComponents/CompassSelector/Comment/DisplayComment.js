@@ -15,11 +15,11 @@ const DisplayComment = ({ comment }) => {
       .catch(err => console.log(err))
   }, [firstName, lastName])
 
-  console.log("from displaycomments", comment)
+  // console.log("from displaycomments", comment)
 
   return (
     <CommentCard>
-      {fullName}<span>: </span>{comment}
+      {fullName}<span>: </span>{comment.content}
     </CommentCard>
   )
 }

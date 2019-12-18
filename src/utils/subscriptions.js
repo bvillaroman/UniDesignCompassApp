@@ -8,6 +8,8 @@ export const updateProjectsSub = () => API.graphql(graphqlOperation(subscription
 
 export const createSessionSub = () => API.graphql(graphqlOperation(subscriptions.onCreateSession))
 
+export const createCommentSub = () => API.graphql(graphqlOperation(subscriptions.onCreateComment))
+
 export const updateInteractionSub = () => {
   const owner = localStorage.getItem("authuser");
   const subscription = API.graphql({ query: subscriptions.onUpdateInteraction, variables: { owner: owner } })
