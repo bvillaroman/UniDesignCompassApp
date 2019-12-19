@@ -50,16 +50,17 @@ const QuickTemplate = (props) => {
   const goToReview = (event) => {
     const compassID = createCompass("Untitled", "-", "default", user.id)
       .then(res => {
-        // defaultCompass.forEach((step, key) =>
-        //   createStep(step.title, step.description, step.color, res.data.createCompass.id)
-        // )
-        // navigate(`/Compass/?c=${res.data.createCompass.id}`)
+        defaultCompass.forEach((step, key) =>
+          createStep(step.title, step.description, step.color, res.data.createCompass.id)
+        )
+        navigate(`/Compass/?c=${res.data.createCompass.id}`)
         createSession("untitled", " ", res.data.createCompass.id)
           .then((result) => {
             navigate(`/Compass/?c=${res.data.createCompass.id}&s=${result.data.createSession.id}`)
           })
           .catch(err => console.log(err))
       })
+      .catch(err => console.log(err))
 
 
     console.log(compassID)
