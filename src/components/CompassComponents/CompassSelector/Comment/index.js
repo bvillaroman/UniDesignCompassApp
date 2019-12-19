@@ -27,18 +27,18 @@ const Comment = () => {
 
   const timeConverter = (a, b) => {
     if (a.createdAt > b.createdAt) {
-      return -1
-    } else if (a.createdAt < b.createdAt) {
       return 1
+    } else if (a.createdAt < b.createdAt) {
+      return -1
     } else {
       return 0
     }
   }
-  
+
   const scrollToBottom = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
-  
+
   useEffect(scrollToBottom, [comments]);
 
   return (
@@ -46,7 +46,7 @@ const Comment = () => {
       <CommentTitle>Comments</CommentTitle>
       <CommentBox>
         {
-          comments.sort(timeConverter).map((comment,key) => <DisplayComment comment={comment} key={key}/>)
+          comments.sort(timeConverter).map((comment, key) => <DisplayComment comment={comment} key={key} />)
         }
         <CommentRef ref={messagesEndRef} />
       </CommentBox>
