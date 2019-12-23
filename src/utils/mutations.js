@@ -71,6 +71,16 @@ export async function startInteraction(sessionId, stepId) {
   return newInteraction
 }
 
+export async function updateUser(id, first_name, last_name) {
+  const userInfo = {
+    id,
+    first_name,
+    last_name,
+  }
+  const updatedUser = await API.graphql(graphqlOperation(mutations.updateUser, { input: userInfo }));
+  return updatedUser;
+}
+
 export async function updateCompass(id, name_of_compass, description_of_compass) {
   const compassInfo = {
     id,

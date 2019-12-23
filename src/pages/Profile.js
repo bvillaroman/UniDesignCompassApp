@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Auth } from 'aws-amplify';
+import { updateUser } from '../utils/mutations'
+import { getUser } from '../utils/queries'
+import { GlobalContext } from "../context/context"
 import {
   ProfileContainer,
   ProfileTitle,
@@ -16,6 +19,8 @@ import {
 } from '../styles/ProfilePage'
 
 const ProfilePage = (props) => {
+  const { user } = useContext(GlobalContext);
+
   const [firstName, setFirstName] = useState('');
   const [newFirstName, setNewFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -32,18 +37,26 @@ const ProfilePage = (props) => {
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
       .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
+      // .then(res => console.log(res))
       .catch(err => console.log(err))
   }, [firstName, lastName])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if ((!newFirstName) || (!newLastName)) return;
+
     console.log('change name')
-    let user = await Auth.currentAuthenticatedUser();
-    let result = await Auth.updateUserAttributes(user, {
+    let currUser = await Auth.currentAuthenticatedUser();
+    let result = await Auth.updateUserAttributes(currUser, {
       'custom:firstName': newFirstName,
       'custom:lastName': newLastName
     });
+
+    const userID = user.id
+    updateUser(userID, newFirstName, newLastName)
+      .then(res => res)
+      .catch(err => console.log(err))
   }
 
   const submitPassword = (e) => {
@@ -76,16 +89,17 @@ const ProfilePage = (props) => {
 
   return (
     <ProfileContainer>
+      {console.log(user.id)}
       <ProfileTitle>Profile Page</ProfileTitle>
       <FormContainter>
-        <FormName onSubmit={handleSubmit}>
+        <FormName onSubmit={handleSubmit} >
           <FormNameLabel> First Name: </FormNameLabel>
           <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} />
 
           <FormNameLabel> Last Name: </FormNameLabel>
           <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
 
-          <NameButton type="submit">Change Name</NameButton>
+          <NameButton type="submit" >Change Name</NameButton>
         </FormName>
         <br />
         <FormPassword onSubmit={submitPassword}>
