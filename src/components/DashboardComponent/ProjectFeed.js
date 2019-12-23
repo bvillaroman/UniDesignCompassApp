@@ -40,7 +40,7 @@ export const CompassFeed = (props) => {
                   }
                 </Feed>
               </>
-          ) : <p>you have no compasses</p>
+          ) : <p>You have no Projects, create one from above !</p>
         }
     </ProjectFeedContainer>
   )
