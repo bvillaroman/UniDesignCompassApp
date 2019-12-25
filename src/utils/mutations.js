@@ -25,6 +25,42 @@ export async function createUser(id, email, first_name, last_name) {
   return API.graphql(graphqlOperation(mutations.createUser, { input: userInfo }));
 }
 
+export async function createTeacherCompasses(compass_id, user_id, first_name, last_name, email) {
+  const teacherCompassInfo = {
+    teacherCompassesCompassId: compass_id,
+    teacherCompassesUserId: user_id,
+    email,
+    last_name,
+    first_name
+  }
+
+  return API.graphql(graphqlOperation(mutations.createTeacherCompasses, { input: teacherCompassInfo }));
+}
+
+export async function createMemberCompasses(compass_id, user_id, first_name, last_name, email) {
+  const memberCompassInfo = {
+    memberCompassesCompassId: compass_id,
+    memberCompassesUserId: user_id,
+    email,
+    last_name,
+    first_name
+  }
+
+  return API.graphql(graphqlOperation(mutations.createMemberCompasses, { input: memberCompassInfo }));
+}
+
+export async function createReaderCompasses(compass_id, user_id, first_name, last_name, email) {
+  const readerCompassInfo = {
+    readerCompassesCompassId: compass_id,
+    readerCompassesUserId: user_id,
+    email,
+    last_name,
+    first_name
+  }
+
+  return API.graphql(graphqlOperation(mutations.createReaderCompasses, { input: readerCompassInfo }));
+}
+
 export async function createSession(name_of_session, description_of_session, compassId) {
   const sessionInfo = {
     name_of_session,
@@ -86,6 +122,15 @@ export async function updateCompass(id, name_of_compass, description_of_compass)
     id,
     name_of_compass,
     description_of_compass,
+  }
+  const updatedCompass = await API.graphql(graphqlOperation(mutations.updateCompass, { input: compassInfo }));
+  return updatedCompass;
+}
+
+export async function updateCompassPermissions(id, scribe) {
+  const compassInfo = {
+    id,
+    scribe,
   }
   const updatedCompass = await API.graphql(graphqlOperation(mutations.updateCompass, { input: compassInfo }));
   return updatedCompass;
