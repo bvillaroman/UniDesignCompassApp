@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { getUsers } from '../../../utils/queries'
 import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
+import styled from "styled-components"
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
@@ -103,83 +104,90 @@ const CompassPermissions = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="button"
-        value="Add New Teacher"
-        onClick={addTeacher}
-      />
-      {
-        teacher.map((val, idx) => {
-          const teacherId = `name-${idx}`;
-          return (
-            <div key={`teacher-${idx}`}>
-              <label >{`teacher #${idx + 1}`}</label>
-              <input
-                type="email"
-                name={teacherId}
-                data-idx={idx}
-                id={teacherId}
-                className="email"
-                value={teacher[idx].name}
-                onChange={handleTeacherChange}
-              />
-            </div>
-          );
-        })
-      }
+    <div>
+      <h3>Permission</h3>
+      <PermissionForm onSubmit={handleSubmit}>
+        <input
+          type="button"
+          value="Add New Teacher"
+          onClick={addTeacher}
+        />
+        {
+          teacher.map((val, idx) => {
+            const teacherId = `name-${idx}`;
+            return (
+              <div key={`teacher-${idx}`}>
+                <label >{`teacher #${idx + 1}`}</label>
+                <input
+                  type="email"
+                  name={teacherId}
+                  data-idx={idx}
+                  id={teacherId}
+                  className="email"
+                  value={teacher[idx].name}
+                  onChange={handleTeacherChange}
+                />
+              </div>
+            );
+          })
+        }
 
-      <input
-        type="button"
-        value="Add New Member"
-        onClick={addMember}
-      />
-      {
-        member.map((val, idx) => {
-          const memberID = `name-${idx}`;
-          return (
-            <div key={`member-${idx}`}>
-              <label >{`member #${idx + 1}`}</label>
-              <input
-                type="email"
-                name={memberID}
-                data-idx={idx}
-                id={memberID}
-                className="email"
-                value={member[idx].name}
-                onChange={handleMemberChange}
-              />
-            </div>
-          );
-        })
-      }
+        <input
+          type="button"
+          value="Add New Member"
+          onClick={addMember}
+        />
+        {
+          member.map((val, idx) => {
+            const memberID = `name-${idx}`;
+            return (
+              <div key={`member-${idx}`}>
+                <label >{`member #${idx + 1}`}</label>
+                <input
+                  type="email"
+                  name={memberID}
+                  data-idx={idx}
+                  id={memberID}
+                  className="email"
+                  value={member[idx].name}
+                  onChange={handleMemberChange}
+                />
+              </div>
+            );
+          })
+        }
 
-      <input
-        type="button"
-        value="Add New Reader"
-        onClick={addReader}
-      />
-      {
-        reader.map((val, idx) => {
-          const readerID = `name-${idx}`;
-          return (
-            <div key={`reader-${idx}`}>
-              <label >{`reader #${idx + 1}`}</label>
-              <input
-                type="email"
-                name={readerID}
-                data-idx={idx}
-                id={readerID}
-                className="email"
-                value={reader[idx].name}
-                onChange={handleReaderChange}
-              />
-            </div>
-          );
-        })
-      }
-      <input type="submit" value="Submit" />
-    </form>
+        <input
+          type="button"
+          value="Add New Reader"
+          onClick={addReader}
+        />
+        {
+          reader.map((val, idx) => {
+            const readerID = `name-${idx}`;
+            return (
+              <div key={`reader-${idx}`}>
+                <label >{`reader #${idx + 1}`}</label>
+                <input
+                  type="email"
+                  name={readerID}
+                  data-idx={idx}
+                  id={readerID}
+                  className="email"
+                  value={reader[idx].name}
+                  onChange={handleReaderChange}
+                />
+              </div>
+            );
+          })
+        }
+        <input type="submit" value="Submit" />
+      </PermissionForm>
+    </div>
   );
 };
 export default CompassPermissions
+
+export const PermissionForm = styled.form`
+
+`
