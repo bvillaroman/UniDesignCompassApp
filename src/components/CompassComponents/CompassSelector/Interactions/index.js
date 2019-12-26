@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import { 
+import React, { useContext } from "react";
+import {
   CSInteractions,
   CSInteractionsTitle,
   CSInteractionsFeed
@@ -8,22 +8,22 @@ import Interaction from "./interaction"
 import { CompassContext } from "../../../../context/CompassPage/context"
 
 const Interactions = (props) => {
-  const {interactions} = useContext(CompassContext)
+  const { interactions } = useContext(CompassContext)
 
   // getting the current session
   return (
     <CSInteractions >
-      <CSInteractionsTitle> Recent Logs </CSInteractionsTitle>
+      <CSInteractionsTitle> Recent Entries </CSInteractionsTitle>
       <CSInteractionsFeed>
         {
           interactions ? interactions.map((item, key) => {
             if (item.step) {
-              return ( 
-                <Interaction 
+              return (
+                <Interaction
                   key={key}
-                  interaction={item} 
-                  isLastStep={key === 0} 
-                /> 
+                  interaction={item}
+                  isLastStep={key === 0}
+                />
               )
             }
             return ''

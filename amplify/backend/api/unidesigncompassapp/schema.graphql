@@ -3,6 +3,36 @@ type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
   first_name: String!
   last_name: String!
   email: String!
+  teacher: [TeacherCompasses] @connection(name: "TeacherCompasses")
+  member: [MemberCompasses] @connection(name: "MemberCompasses")
+  reader: [ReaderCompasses] @connection(name: "ReaderCompasses")
+}
+
+type TeacherCompasses @model @auth(rules: [{ allow: owner, queries: null} ]) {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  user: User @connection(name: "TeacherCompasses")
+  compass: Compass @connection(name: "CompassTeachers")
+}
+
+type MemberCompasses @model @auth(rules: [{ allow: owner, queries: null} ]) {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  user: User @connection(name: "MemberCompasses")
+  compass: Compass @connection(name: "CompassMembers")
+}
+
+type ReaderCompasses @model @auth(rules: [{ allow: owner, queries: null} ]) {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  user: User @connection(name: "ReaderCompasses")
+  compass: Compass @connection(name: "CompassReaders")
 }
 
 type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -13,9 +43,9 @@ type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   compassType: String!
   owner: User @connection
   scribe: User @connection
-  teachers: [User] @connection
-  members: [User] @connection
-  visitors: [User] @connection
+  teachers: [TeacherCompasses] @connection(name: "CompassTeachers")
+  members: [MemberCompasses] @connection(name: "CompassMembers")
+  readers: [ReaderCompasses] @connection(name: "CompassReaders")
   sessions: [Session] @connection(name: "CompassSessions")
   steps: [Step] @connection(name: "CompassSteps")
 }
@@ -28,6 +58,7 @@ type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
   compass: Compass @connection(name: "CompassSessions")
   comments: [Comment] @connection(name: "SessionComments")
   interactions: [Interaction] @connection(name: "SessionInteractions")
+  attachments: [Attachment] @connection(name: "SessionAttachments")
 }
 
 type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -38,7 +69,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   createdAt: AWSDateTime
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
-  attachments: [Attachment] @connection(name: "InteractionAttachments")
+  # attachments: [Attachment] @connection(name: "InteractionAttachments")
 }
 
 type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -53,7 +84,8 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
 type Attachment @model{
   name: String
   type: String
-  interaction: Interaction @connection(name: "InteractionAttachments")
+  # interaction: Interaction @connection(name: "InteractionAttachments")
+  session: Session @connection(name: "SessionAttachments")
   bucket: String!
   region: String!
   key: String!
@@ -66,4 +98,3 @@ type Comment @model @auth(rules: [{ allow: owner, queries: null} ]){
   commenter: User @connection
   session: Session @connection(name: "SessionComments")
 }
-
