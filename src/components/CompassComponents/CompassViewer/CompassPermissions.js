@@ -3,6 +3,8 @@ import { getUsers } from '../../../utils/queries'
 import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
 import styled from "styled-components"
+import { AddCircle } from 'grommet-icons'
+import { Button } from 'grommet'
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
@@ -104,90 +106,180 @@ const CompassPermissions = () => {
   }
 
   return (
-    <div>
-      <h3>Permission</h3>
-      <PermissionForm onSubmit={handleSubmit}>
-        <input
-          type="button"
-          value="Add New Teacher"
-          onClick={addTeacher}
-        />
-        {
-          teacher.map((val, idx) => {
-            const teacherId = `name-${idx}`;
-            return (
-              <div key={`teacher-${idx}`}>
-                <label >{`teacher #${idx + 1}`}</label>
-                <input
-                  type="email"
-                  name={teacherId}
-                  data-idx={idx}
-                  id={teacherId}
-                  className="email"
-                  value={teacher[idx].name}
-                  onChange={handleTeacherChange}
-                />
-              </div>
-            );
-          })
-        }
+    <PermissionContainer>
+      <PermissionHeader>Permission</PermissionHeader>
+      <PermissionFormContainer>
+        <PermissionForm onSubmit={handleSubmit}>
 
-        <input
+          <TeacherContainer>
+            <PermissionButtom
+              onClick={addTeacher}
+              icon={AddCircle}
+            ><AddCircle /> </PermissionButtom>
+            {
+              teacher.map((val, idx) => {
+                const teacherId = `name-${idx}`;
+                return (
+                  <div key={`teacher-${idx}`}>
+                    <label >{`Teacher #${idx + 1}`}</label>
+                    <input
+                      size="35"
+                      type="email"
+                      name={teacherId}
+                      data-idx={idx}
+                      id={teacherId}
+                      className="email"
+                      value={teacher[idx].name}
+                      onChange={handleTeacherChange}
+                    />
+                  </div>
+                );
+              })
+            }
+          </TeacherContainer>
+
+          {/* <input
           type="button"
           value="Add New Member"
           onClick={addMember}
-        />
-        {
-          member.map((val, idx) => {
-            const memberID = `name-${idx}`;
-            return (
-              <div key={`member-${idx}`}>
-                <label >{`member #${idx + 1}`}</label>
-                <input
-                  type="email"
-                  name={memberID}
-                  data-idx={idx}
-                  id={memberID}
-                  className="email"
-                  value={member[idx].name}
-                  onChange={handleMemberChange}
-                />
-              </div>
-            );
-          })
-        }
-
+        /> */}
+          <MemberContainer>
+            <PermissionButtom
+              onClick={addMember}
+              icon={AddCircle}
+            ><AddCircle /> </PermissionButtom>
+            {
+              member.map((val, idx) => {
+                const memberID = `name-${idx}`;
+                return (
+                  <div key={`member-${idx}`}>
+                    <label >{`Member #${idx + 1}`}</label>
+                    <input
+                      size="35"
+                      type="email"
+                      name={memberID}
+                      data-idx={idx}
+                      id={memberID}
+                      className="email"
+                      value={member[idx].name}
+                      onChange={handleMemberChange}
+                    />
+                  </div>
+                );
+              })
+            }
+          </MemberContainer>
+          {/* 
         <input
           type="button"
           value="Add New Reader"
           onClick={addReader}
-        />
-        {
-          reader.map((val, idx) => {
-            const readerID = `name-${idx}`;
-            return (
-              <div key={`reader-${idx}`}>
-                <label >{`reader #${idx + 1}`}</label>
-                <input
-                  type="email"
-                  name={readerID}
-                  data-idx={idx}
-                  id={readerID}
-                  className="email"
-                  value={reader[idx].name}
-                  onChange={handleReaderChange}
-                />
-              </div>
-            );
-          })
-        }
-        <input type="submit" value="Submit" />
-      </PermissionForm>
-    </div>
+        /> */}
+          <ReaderContainer>
+            <PermissionButtom
+              onClick={addReader}
+              icon={AddCircle}
+            ><AddCircle /> </PermissionButtom>
+
+            {
+              reader.map((val, idx) => {
+                const readerID = `name-${idx}`;
+                return (
+                  <div key={`reader-${idx}`}>
+                    <label >{`Reader #${idx + 1}`}</label>
+                    <input
+                      size="35"
+                      type="email"
+                      name={readerID}
+                      data-idx={idx}
+                      id={readerID}
+                      className="email"
+                      value={reader[idx].name}
+                      onChange={handleReaderChange}
+                    />
+                  </div>
+                );
+              })
+            }
+          </ReaderContainer>
+          <PermissionSubmit label="submit" />
+
+        </PermissionForm>
+      </PermissionFormContainer>
+    </PermissionContainer>
   );
 };
 export default CompassPermissions
 
+export const PermissionContainer = styled.div`
+  width: 83%;
+  min-height: 15rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
+`
+
+export const PermissionHeader = styled.div`
+  text-align: left;
+  padding-left: 0.5rem;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 600;
+`
+
+export const PermissionFormContainer = styled.div`
+  margin-top: 1rem;
+  overflow: auto;
+`
+
 export const PermissionForm = styled.form`
 
+`
+
+export const PermissionButtom = styled.button`
+  float: right
+`
+
+export const TeacherContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
+export const MemberContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
+export const ReaderContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
+export const PermissionSubmit = styled(Button)`
+svg {
+  transition: all 0.3s;
+  fill: white; 
+  stroke: white;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+background: #5567FD; 
+color: white;
+padding: 0.3rem 0.7rem;
+margin: 0;
+font-size: 0.9rem;
+font-weight: 500;
 `
