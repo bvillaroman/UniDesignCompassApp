@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentCard } from '../../../../styles/CommentPage';
+import { CommentCard } from '../../../styles/CommentPage';
 
 // gets the value of the comment and parses it to show the message/name
 const DisplayComment = ({ comment }) => {

@@ -6,13 +6,13 @@ import {
   LoggerHeader,
   StepClock,
   TimerButton,
-} from "../../../styles/CompassPage"
-import translateTime from '../../../utils/translateTime'
-import * as Mutation from '../../../utils/mutations'
+} from "../../styles/CompassPage"
+import translateTime from '../../utils/translateTime'
+import * as Mutation from '../../utils/mutations'
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
-import config from '../../../aws-exports'
-import { CompassContext } from "../../../context/CompassPage/context"
+import config from '../../aws-exports'
+import { CompassContext } from "../../context/CompassPage/context"
 
 const Logger = (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
