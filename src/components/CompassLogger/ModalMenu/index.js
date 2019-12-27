@@ -2,37 +2,34 @@ import React, { useContext } from "react";
 import styled from "styled-components"
 import {navigate} from "gatsby"
 
-// import CompassLogger from "../components/CompassLogger"
-
 import { CompassContext } from "../../../context/CompassPage/context"
-// import { GlobalContext } from "../context/context"
-// import { createSessionSub, updateInteractionSub, createCommentSub } from "../utils/subscriptions"
-// import { getCompass,  getSession } from '../utils/queries'
-import { createSession} from "../../../utils/mutations"
+import { getCompass} from "../../../utils/queries"
+import { createSession } from "../../../utils/mutations"
 import { dateFormatter, timeSorter } from "../../../utils/translateTime"
 
-// import { MainView } from "../styles/CompassPage"
-
-const ModalMenu = ({setShow}) => {
+const ModalMenu = () => {
   const {compass} = useContext(CompassContext);
 
+  // get the newest session and start from there
   const continueSession = (e) => {
-    const newestSessions = compass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }).sort(timeSorter)
-    // console.log(compass.sessions.items)
-    console.log(newestSessions)
-    setShow(false)
-    // navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
+    getCompass(compass.id)
+      .then((res) => {
+        const newestSession = res.data.getCompass.sessions.items.sort(timeSorter)[0]
+        navigate(`/Logger/?c=${compass.id}&s=${newestSession.id}`)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   const newSession = (e) => {
 
     const today = new Date();
-
     const hour = today.getHours()
     const minute = today.getMinutes()
+
     createSession(`Session on ${dateFormatter(today)} at ${hour % 12}:${minute} ${hour >= 12 ? "p.m." : "a.m."}`, " ", compass.id)
       .then((result) => {
-        setShow(false)
         navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
       })
       .catch(err => console.log(err))
@@ -40,7 +37,10 @@ const ModalMenu = ({setShow}) => {
 
   return (
     <NavigationContainer>
-      <NavigationButton onClick={continueSession} > Continue Session </NavigationButton>
+      {
+        compass.sessions.items.length > 0 && 
+        <NavigationButton onClick={continueSession} > Continue Session </NavigationButton>
+      }
       <NavigationButton onClick={newSession} > New Session </NavigationButton>      
     </NavigationContainer>
   )

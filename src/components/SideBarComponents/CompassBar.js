@@ -16,10 +16,11 @@ const CompassBar = ({ page }) => {
   const CompassInfo = useContext(CompassContext);
   const [renderSidebar, setRenderSidebar] = useState(true);
 
-  const session = localStorage.getItem("session");
-
   const handleClick = () => {
     setRenderSidebar(!renderSidebar);
+  }
+  const handleLogger = (e) => {
+    CompassInfo.clearSession()
   }
   
   return (
@@ -27,12 +28,9 @@ const CompassBar = ({ page }) => {
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
         <CompassHeaderCompass className='CompassHeaderCompass' to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>
-        <CompassLink 
-          to={`/Logger/?c=${CompassInfo.compass.id}`} 
-          active={page === "/Logger/" && CompassInfo.session.hasOwnProperty("id")}
-        >
+        <CompassLink onClick={handleLogger} active={page === "/Logger/"} to={`/Logger/?c=${CompassInfo.compass.id}`}>
           <Compass />
-          <span>Compass</span>
+          <span>Logger</span>
         </CompassLink>
         <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>

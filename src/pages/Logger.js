@@ -29,8 +29,6 @@ const CompassPage = (props) => {
   
   // subscription for any new project being created
   useEffect(() => {
-    if (session.hasOwnProperty("id")) setShow(false);
-
     const createSession = createSessionSub().subscribe({
       next: res => {
         const newSession = res.value.data.onCreateSession
@@ -84,12 +82,16 @@ const CompassPage = (props) => {
     // eslint-disable-next-line
   }, [])
 
+  useEffect(() => {
+    if (session.hasOwnProperty("id")) setShow(false);
+    else setShow(true);
+  }, [session.id])
 
   return (
     <MainView>
       {
         compass.hasOwnProperty("id") ? 
-          show ? <ModalMenu setShow={setShow} /> : (
+          show ? <ModalMenu/> : (
             session.hasOwnProperty("id") ? <CompassLogger showAttachment={showItem} /> : ( 
               <div> Sorry, this Session does not exist !</div> 
             )
