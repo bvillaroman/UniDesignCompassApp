@@ -9,7 +9,7 @@ export async function createCompass(name_of_compass, description_of_compass, com
     name_of_compass,
     description_of_compass,
     compassType,
-    compassOwnerId
+    compassOwnerId,
   }
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;
@@ -117,11 +117,12 @@ export async function updateUser(id, first_name, last_name) {
   return updatedUser;
 }
 
-export async function updateCompass(id, name_of_compass, description_of_compass) {
+export async function updateCompass(id, name_of_compass, description_of_compass, compassScribeId) {
   const compassInfo = {
     id,
     name_of_compass,
     description_of_compass,
+    compassScribeId
   }
   const updatedCompass = await API.graphql(graphqlOperation(mutations.updateCompass, { input: compassInfo }));
   return updatedCompass;

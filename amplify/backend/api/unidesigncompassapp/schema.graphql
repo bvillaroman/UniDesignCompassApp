@@ -6,6 +6,7 @@ type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
   teacher: [TeacherCompasses] @connection(name: "TeacherCompasses")
   member: [MemberCompasses] @connection(name: "MemberCompasses")
   reader: [ReaderCompasses] @connection(name: "ReaderCompasses")
+  compass: [Compass] @connection(name: "UserCompasses")
 }
 
 type TeacherCompasses @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -41,7 +42,7 @@ type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   description_of_compass: String!
   createdAt: AWSDateTime
   compassType: String!
-  owner: User @connection
+  owner: User @connection(name: "UserCompasses")
   scribe: User @connection
   teachers: [TeacherCompasses] @connection(name: "CompassTeachers")
   members: [MemberCompasses] @connection(name: "CompassMembers")

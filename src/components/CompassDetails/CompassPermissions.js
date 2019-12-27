@@ -10,6 +10,8 @@ const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
   console.log(compass)
 
+  const [scribe, setScribe] = useState("")
+
   const blankTeacher = {};
   const [teacher, setTeacher] = useState([
     { ...blankTeacher },
@@ -57,7 +59,16 @@ const CompassPermissions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(teacher)
+    console.log("NOT PASSED HERE YET")
+    console.log(scribe)
+    console.log("PASS HERE")
+
+    getUsers(scribe)
+      .then(res => //console.log('scribe', res.data.listUsers.items[0].id))
+        updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
+      ).catch(err => console.log(err))
 
     teacher.map((t) => {
       console.log(t)
@@ -65,10 +76,11 @@ const CompassPermissions = () => {
       getUsers(t.email)
         .then(res => //console.log(res)) //.data.listUsers.items[0].id
 
-          createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-        .catch(err => console.log('failed at getUser', err))
+          createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        ).catch(err => console.log('failed at getUser', err))
+
     })
 
     console.log('Compass Permission Clicked')
@@ -110,6 +122,11 @@ const CompassPermissions = () => {
       <PermissionHeader>Permission</PermissionHeader>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
+
+          <label>
+            Scribe:
+              <input type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
+          </label>
 
           <TeacherContainer>
             <PermissionButtom
@@ -202,7 +219,7 @@ const CompassPermissions = () => {
               })
             }
           </ReaderContainer>
-          <PermissionSubmit label="submit" />
+          <PermissionSubmit type="submit" primary label="Submit" />
 
         </PermissionForm>
       </PermissionFormContainer>
