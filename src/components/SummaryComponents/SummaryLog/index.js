@@ -28,7 +28,7 @@ const SummaryLog = (props) => {
   const [comment, setComment] = useState("");
 
   console.log('interaction: ', interaction)
-  const { items } = interaction.attachments;
+  // const { items } = interaction.attachments;
   const handleSubmit = (e) => {
     e.preventDefault();
     const newInteraction = {
@@ -116,7 +116,7 @@ const SummaryLog = (props) => {
 
           <div>
             <h4 style={{ textAlign: "center", borderBottom: "0.1rem solid rgba(0,0,0,0.2)" }}>Attachment </h4>
-            {items && items.length && <LogLinkArray items={items} />}
+            {/* {items && items.length && <LogLinkArray items={items} />} */}
           </div>
         </div>
 
