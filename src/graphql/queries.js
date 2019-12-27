@@ -38,6 +38,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -94,6 +97,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -154,6 +160,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -188,6 +197,98 @@ export const getUser = `query GetUser($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -270,6 +371,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -342,6 +480,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -361,6 +536,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -421,6 +599,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -477,6 +658,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -667,6 +851,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -723,6 +910,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -783,6 +973,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -817,6 +1010,98 @@ export const getUser = `query GetUser($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -899,6 +1184,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -971,6 +1293,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -990,6 +1349,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -1050,6 +1412,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -1106,6 +1471,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -1296,6 +1664,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -1352,6 +1723,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -1412,6 +1786,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -1446,6 +1823,98 @@ export const getUser = `query GetUser($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -1528,6 +1997,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -1600,6 +2106,43 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -1619,6 +2162,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -1679,6 +2225,9 @@ export const getUser = `query GetUser($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -1735,6 +2284,9 @@ export const getUser = `query GetUser($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -1894,6 +2446,1257 @@ export const getUser = `query GetUser($id: ID!) {
       }
       nextToken
     }
+    compass {
+      items {
+        id
+        name_of_compass
+        description_of_compass
+        createdAt
+        compassType
+        owner {
+          id
+          first_name
+          last_name
+          email
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        scribe {
+          id
+          first_name
+          last_name
+          email
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        teachers {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        members {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        readers {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        sessions {
+          items {
+            id
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            comments {
+              items {
+                id
+                content
+                createdAt
+                commenter {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+              }
+              nextToken
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+              }
+              nextToken
+            }
+            attachments {
+              items {
+                name
+                type
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                bucket
+                region
+                key
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        steps {
+          items {
+            id
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -1985,6 +3788,43 @@ export const listUsers = `query ListUsers(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -2024,6 +3864,16 @@ export const listUsers = `query ListUsers(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -2054,6 +3904,16 @@ export const listUsers = `query ListUsers(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -2247,6 +4107,43 @@ export const listUsers = `query ListUsers(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -2286,6 +4183,16 @@ export const listUsers = `query ListUsers(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -2316,6 +4223,16 @@ export const listUsers = `query ListUsers(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -2509,6 +4426,43 @@ export const listUsers = `query ListUsers(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -2548,6 +4502,16 @@ export const listUsers = `query ListUsers(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -2578,6 +4542,16 @@ export const listUsers = `query ListUsers(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -2690,6 +4664,532 @@ export const listUsers = `query ListUsers(
               }
               nextToken
             }
+          }
+        }
+        nextToken
+      }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
           }
         }
         nextToken
@@ -2787,6 +5287,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -2826,6 +5363,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -2856,6 +5403,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -3049,6 +5606,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -3088,6 +5682,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -3118,6 +5722,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -3311,6 +5925,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -3350,6 +6001,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -3380,6 +6041,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -3496,6 +6167,532 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
         }
         nextToken
       }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+        }
+        nextToken
+      }
     }
     compass {
       id
@@ -3546,6 +6743,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -3567,6 +6774,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -3580,6 +6790,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -3671,6 +6884,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -3692,6 +6915,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -3705,6 +6931,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -3796,6 +7025,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -3817,6 +7056,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -3830,6 +7072,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -3879,6 +7124,210 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -3927,6 +7376,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -3948,6 +7407,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -3961,6 +7423,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -4052,6 +7517,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -4073,6 +7548,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -4086,6 +7564,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -4177,6 +7658,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -4198,6 +7689,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -4211,6 +7705,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -4260,6 +7757,210 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -4342,6 +8043,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -4381,6 +8119,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -4411,6 +8159,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -4604,6 +8362,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -4643,6 +8438,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -4673,6 +8478,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -4866,6 +8681,43 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -4905,6 +8757,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -4935,6 +8797,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -5095,6 +8967,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -5125,6 +9007,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -5255,6 +9147,9 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -5409,6 +9304,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -5439,6 +9344,16 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -5613,6 +9528,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -5634,6 +9559,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -5647,6 +9575,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -5738,6 +9669,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -5759,6 +9700,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -5772,6 +9716,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -5863,6 +9810,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -5884,6 +9841,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -5897,6 +9857,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -5950,6 +9913,210 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
           }
           nextToken
         }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       compass {
         id
@@ -5982,6 +10149,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -6038,6 +10208,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6098,6 +10271,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -6132,6 +10308,98 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -6162,6 +10430,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -6218,6 +10489,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6278,6 +10552,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -6312,6 +10589,98 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -6355,6 +10724,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -6376,6 +10755,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -6389,6 +10771,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6480,6 +10865,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -6501,6 +10896,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -6514,6 +10912,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6605,6 +11006,16 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -6626,6 +11037,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -6639,6 +11053,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6718,6 +11135,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -6731,6 +11151,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -6870,6 +11293,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -6883,6 +11309,9 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -7030,6 +11459,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -7069,6 +11535,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -7099,6 +11575,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -7292,6 +11778,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -7331,6 +11854,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -7361,6 +11894,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -7554,6 +12097,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -7593,6 +12173,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -7623,6 +12213,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -7739,6 +12339,532 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
         }
         nextToken
       }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+        }
+        nextToken
+      }
     }
     compass {
       id
@@ -7789,6 +12915,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -7810,6 +12946,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -7823,6 +12962,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -7914,6 +13056,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -7935,6 +13087,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -7948,6 +13103,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -8039,6 +13197,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -8060,6 +13228,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -8073,6 +13244,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -8122,6 +13296,210 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -8170,6 +13548,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -8191,6 +13579,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -8204,6 +13595,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -8295,6 +13689,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -8316,6 +13720,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -8329,6 +13736,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -8420,6 +13830,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -8441,6 +13861,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -8454,6 +13877,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -8503,6 +13929,210 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -8585,6 +14215,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -8624,6 +14291,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -8654,6 +14331,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -8847,6 +14534,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -8886,6 +14610,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -8916,6 +14650,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -9109,6 +14853,43 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -9148,6 +14929,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -9178,6 +14969,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -9338,6 +15139,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -9368,6 +15179,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -9498,6 +15319,9 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -9652,6 +15476,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -9682,6 +15516,16 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -9856,6 +15700,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -9877,6 +15731,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -9890,6 +15747,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -9981,6 +15841,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -10002,6 +15872,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10015,6 +15888,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10106,6 +15982,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -10127,6 +16013,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10140,6 +16029,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10193,6 +16085,210 @@ export const listMemberCompassess = `query ListMemberCompassess(
           }
           nextToken
         }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       compass {
         id
@@ -10225,6 +16321,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -10281,6 +16380,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10341,6 +16443,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -10375,6 +16480,98 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -10405,6 +16602,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -10461,6 +16661,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10521,6 +16724,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -10555,6 +16761,98 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -10598,6 +16896,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -10619,6 +16927,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10632,6 +16943,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10723,6 +17037,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -10744,6 +17068,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10757,6 +17084,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10848,6 +17178,16 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -10869,6 +17209,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10882,6 +17225,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -10961,6 +17307,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -10974,6 +17323,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -11113,6 +17465,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -11126,6 +17481,9 @@ export const listMemberCompassess = `query ListMemberCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -11273,6 +17631,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -11312,6 +17707,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -11342,6 +17747,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -11535,6 +17950,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -11574,6 +18026,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -11604,6 +18066,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -11797,6 +18269,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -11836,6 +18345,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -11866,6 +18385,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -11982,6 +18511,532 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
         }
         nextToken
       }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+        }
+        nextToken
+      }
     }
     compass {
       id
@@ -12032,6 +19087,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12053,6 +19118,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12066,6 +19134,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12157,6 +19228,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12178,6 +19259,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12191,6 +19275,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12282,6 +19369,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12303,6 +19400,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12316,6 +19416,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12365,6 +19468,210 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -12413,6 +19720,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12434,6 +19751,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12447,6 +19767,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12538,6 +19861,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12559,6 +19892,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12572,6 +19908,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12663,6 +20002,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -12684,6 +20033,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -12697,6 +20049,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -12746,6 +20101,210 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -12828,6 +20387,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -12867,6 +20463,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -12897,6 +20503,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -13090,6 +20706,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -13129,6 +20782,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -13159,6 +20822,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -13352,6 +21025,43 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -13391,6 +21101,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -13421,6 +21141,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -13581,6 +21311,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -13611,6 +21351,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -13741,6 +21491,9 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -13895,6 +21648,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -13925,6 +21688,16 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -14099,6 +21872,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -14120,6 +21903,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -14133,6 +21919,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14224,6 +22013,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -14245,6 +22044,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -14258,6 +22060,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14349,6 +22154,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -14370,6 +22185,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -14383,6 +22201,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14436,6 +22257,210 @@ export const listReaderCompassess = `query ListReaderCompassess(
           }
           nextToken
         }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
       }
       compass {
         id
@@ -14468,6 +22493,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -14524,6 +22552,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14584,6 +22615,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -14618,6 +22652,98 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -14648,6 +22774,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -14704,6 +22833,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14764,6 +22896,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -14798,6 +22933,98 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -14841,6 +23068,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -14862,6 +23099,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -14875,6 +23115,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -14966,6 +23209,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -14987,6 +23240,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -15000,6 +23256,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -15091,6 +23350,16 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -15112,6 +23381,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -15125,6 +23397,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -15204,6 +23479,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -15217,6 +23495,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -15356,6 +23637,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -15369,6 +23653,9 @@ export const listReaderCompassess = `query ListReaderCompassess(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -15517,6 +23804,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -15556,6 +23880,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -15586,6 +23920,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -15779,6 +24123,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -15818,6 +24199,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -15848,6 +24239,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -16041,6 +24442,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -16080,6 +24518,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -16110,6 +24558,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -16222,6 +24680,532 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+          }
+        }
+        nextToken
+      }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
           }
         }
         nextToken
@@ -16309,6 +25293,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -16348,6 +25369,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -16378,6 +25409,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -16571,6 +25612,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -16610,6 +25688,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -16640,6 +25728,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -16833,6 +25931,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -16872,6 +26007,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -16902,6 +26047,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -17018,6 +26173,532 @@ export const getCompass = `query GetCompass($id: ID!) {
         }
         nextToken
       }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+        }
+        nextToken
+      }
     }
     teachers {
       items {
@@ -17048,6 +26729,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -17108,6 +26792,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -17166,6 +26853,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -17200,6 +26890,98 @@ export const getCompass = `query GetCompass($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -17282,6 +27064,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -17354,6 +27173,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -17373,6 +27229,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -17433,6 +27292,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -17489,6 +27351,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -17679,6 +27544,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -17735,6 +27603,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -17795,6 +27666,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -17829,6 +27703,98 @@ export const getCompass = `query GetCompass($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -17911,6 +27877,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -17983,6 +27986,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -18002,6 +28042,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -18062,6 +28105,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -18118,6 +28164,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -18308,6 +28357,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -18364,6 +28416,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -18424,6 +28479,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -18458,6 +28516,98 @@ export const getCompass = `query GetCompass($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -18540,6 +28690,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -18612,6 +28799,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -18631,6 +28855,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -18691,6 +28918,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -18747,6 +28977,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -18989,6 +29222,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -19061,6 +29331,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -19080,6 +29387,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -19140,6 +29450,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -19196,6 +29509,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -19386,6 +29702,16 @@ export const getCompass = `query GetCompass($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -19745,6 +30071,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -19817,6 +30180,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -19836,6 +30236,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -19896,6 +30299,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -19952,6 +30358,9 @@ export const getCompass = `query GetCompass($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20169,6 +30578,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20190,6 +30609,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20203,6 +30625,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20294,6 +30719,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20315,6 +30750,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20328,6 +30766,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20419,6 +30860,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20440,6 +30891,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20453,6 +30907,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20502,6 +30959,210 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -20550,6 +31211,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20571,6 +31242,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20584,6 +31258,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20675,6 +31352,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20696,6 +31383,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20709,6 +31399,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20800,6 +31493,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -20821,6 +31524,9 @@ export const listCompasss = `query ListCompasss(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -20834,6 +31540,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -20883,6 +31592,210 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -20965,6 +31878,43 @@ export const listCompasss = `query ListCompasss(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -21004,6 +31954,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -21034,6 +31994,16 @@ export const listCompasss = `query ListCompasss(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -21227,6 +32197,43 @@ export const listCompasss = `query ListCompasss(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -21266,6 +32273,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -21296,6 +32313,16 @@ export const listCompasss = `query ListCompasss(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -21489,6 +32516,43 @@ export const listCompasss = `query ListCompasss(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -21528,6 +32592,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -21558,6 +32632,16 @@ export const listCompasss = `query ListCompasss(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -21718,6 +32802,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -21748,6 +32842,16 @@ export const listCompasss = `query ListCompasss(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -21878,6 +32982,9 @@ export const listCompasss = `query ListCompasss(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22032,6 +33139,16 @@ export const listCompasss = `query ListCompasss(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -22062,6 +33179,16 @@ export const listCompasss = `query ListCompasss(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -22238,6 +33365,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22259,6 +33396,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22272,6 +33412,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22363,6 +33506,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22384,6 +33537,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22397,6 +33553,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22488,6 +33647,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22509,6 +33678,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22522,6 +33694,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22571,6 +33746,210 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -22619,6 +33998,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22640,6 +34029,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22653,6 +34045,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22744,6 +34139,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22765,6 +34170,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22778,6 +34186,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22869,6 +34280,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -22890,6 +34311,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -22903,6 +34327,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -22952,6 +34379,210 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -23034,6 +34665,43 @@ export const getSession = `query GetSession($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -23073,6 +34741,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -23103,6 +34781,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -23296,6 +34984,43 @@ export const getSession = `query GetSession($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -23335,6 +35060,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -23365,6 +35100,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -23558,6 +35303,43 @@ export const getSession = `query GetSession($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -23597,6 +35379,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -23627,6 +35419,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -23787,6 +35589,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -23817,6 +35629,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -23947,6 +35769,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -24101,6 +35926,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -24131,6 +35966,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -24278,6 +36123,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -24334,6 +36182,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -24394,6 +36245,9 @@ export const getSession = `query GetSession($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -24428,6 +36282,98 @@ export const getSession = `query GetSession($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -24476,6 +36422,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -24506,6 +36462,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -24636,6 +36602,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -24796,6 +36765,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -24826,6 +36805,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -24956,6 +36945,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -25107,6 +37099,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -25137,6 +37139,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -25301,6 +37313,16 @@ export const getSession = `query GetSession($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -25331,6 +37353,16 @@ export const getSession = `query GetSession($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -25461,6 +37493,9 @@ export const getSession = `query GetSession($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -25619,6 +37654,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -25675,6 +37713,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -25735,6 +37776,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -25769,6 +37813,98 @@ export const listSessions = `query ListSessions(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -25799,6 +37935,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -25855,6 +37994,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -25915,6 +38057,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -25949,6 +38094,98 @@ export const listSessions = `query ListSessions(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -25992,6 +38229,16 @@ export const listSessions = `query ListSessions(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -26013,6 +38260,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26026,6 +38276,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26117,6 +38370,16 @@ export const listSessions = `query ListSessions(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -26138,6 +38401,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26151,6 +38417,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26242,6 +38511,16 @@ export const listSessions = `query ListSessions(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -26263,6 +38542,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26276,6 +38558,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26355,6 +38640,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26368,6 +38656,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26507,6 +38798,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26520,6 +38814,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26650,6 +38947,43 @@ export const listSessions = `query ListSessions(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           session {
             id
@@ -26676,6 +39010,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26689,6 +39026,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26834,6 +39174,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26847,6 +39190,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -26983,6 +39329,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -26996,6 +39345,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27079,6 +39431,9 @@ export const listSessions = `query ListSessions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -27092,6 +39447,9 @@ export const listSessions = `query ListSessions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27256,6 +39614,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -27312,6 +39673,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27372,6 +39736,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -27406,6 +39773,98 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -27436,6 +39895,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -27492,6 +39954,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27552,6 +40017,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -27586,6 +40054,98 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -27629,6 +40189,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -27650,6 +40220,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -27663,6 +40236,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27754,6 +40330,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -27775,6 +40361,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -27788,6 +40377,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27879,6 +40471,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -27900,6 +40502,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -27913,6 +40518,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -27992,6 +40600,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28005,6 +40616,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28144,6 +40758,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28157,6 +40774,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28287,6 +40907,43 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           session {
             id
@@ -28313,6 +40970,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28326,6 +40986,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28471,6 +41134,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28484,6 +41150,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28620,6 +41289,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28633,6 +41305,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28716,6 +41391,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -28729,6 +41407,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28883,6 +41564,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -28939,6 +41623,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -28999,6 +41686,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -29033,6 +41723,98 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -29063,6 +41845,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -29119,6 +41904,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29179,6 +41967,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -29213,6 +42004,98 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -29256,6 +42139,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -29277,6 +42170,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -29290,6 +42186,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29381,6 +42280,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -29402,6 +42311,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -29415,6 +42327,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29506,6 +42421,16 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -29527,6 +42452,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -29540,6 +42468,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29619,6 +42550,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -29632,6 +42566,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29771,6 +42708,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -29784,6 +42724,9 @@ export const getInteraction = `query GetInteraction($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -29936,6 +42879,43 @@ export const listInteractions = `query ListInteractions(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -30008,6 +42988,43 @@ export const listInteractions = `query ListInteractions(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -30027,6 +43044,9 @@ export const listInteractions = `query ListInteractions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -30087,6 +43107,9 @@ export const listInteractions = `query ListInteractions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -30143,6 +43166,9 @@ export const listInteractions = `query ListInteractions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -30333,6 +43359,16 @@ export const listInteractions = `query ListInteractions(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -30689,6 +43725,43 @@ export const listInteractions = `query ListInteractions(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -30761,6 +43834,43 @@ export const listInteractions = `query ListInteractions(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -30780,6 +43890,9 @@ export const listInteractions = `query ListInteractions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -30840,6 +43953,9 @@ export const listInteractions = `query ListInteractions(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -30896,6 +44012,9 @@ export const listInteractions = `query ListInteractions(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31114,6 +44233,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31135,6 +44264,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31148,6 +44280,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31239,6 +44374,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31260,6 +44405,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31273,6 +44421,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31364,6 +44515,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31385,6 +44546,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31398,6 +44562,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31447,6 +44614,210 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -31495,6 +44866,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31516,6 +44897,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31529,6 +44913,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31620,6 +45007,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31641,6 +45038,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31654,6 +45054,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31745,6 +45148,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -31766,6 +45179,9 @@ export const getStep = `query GetStep($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -31779,6 +45195,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -31828,6 +45247,210 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -31910,6 +45533,43 @@ export const getStep = `query GetStep($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -31949,6 +45609,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -31979,6 +45649,16 @@ export const getStep = `query GetStep($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -32172,6 +45852,43 @@ export const getStep = `query GetStep($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -32211,6 +45928,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -32241,6 +45968,16 @@ export const getStep = `query GetStep($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -32434,6 +46171,43 @@ export const getStep = `query GetStep($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -32473,6 +46247,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -32503,6 +46287,16 @@ export const getStep = `query GetStep($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -32663,6 +46457,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -32693,6 +46497,16 @@ export const getStep = `query GetStep($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -32823,6 +46637,9 @@ export const getStep = `query GetStep($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -32977,6 +46794,16 @@ export const getStep = `query GetStep($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -33007,6 +46834,16 @@ export const getStep = `query GetStep($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -33170,6 +47007,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -33226,6 +47066,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -33286,6 +47129,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -33320,6 +47166,98 @@ export const listSteps = `query ListSteps(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -33350,6 +47288,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -33406,6 +47347,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -33466,6 +47410,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -33500,6 +47447,98 @@ export const listSteps = `query ListSteps(
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -33543,6 +47582,16 @@ export const listSteps = `query ListSteps(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -33564,6 +47613,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -33577,6 +47629,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -33668,6 +47723,16 @@ export const listSteps = `query ListSteps(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -33689,6 +47754,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -33702,6 +47770,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -33793,6 +47864,16 @@ export const listSteps = `query ListSteps(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -33814,6 +47895,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -33827,6 +47911,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -33906,6 +47993,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -33919,6 +48009,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34058,6 +48151,9 @@ export const listSteps = `query ListSteps(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -34071,6 +48167,9 @@ export const listSteps = `query ListSteps(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34170,6 +48269,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -34226,6 +48328,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34286,6 +48391,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -34320,6 +48428,98 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -34350,6 +48550,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -34406,6 +48609,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34466,6 +48672,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -34500,6 +48709,98 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -34543,6 +48844,16 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -34564,6 +48875,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -34577,6 +48891,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34668,6 +48985,16 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -34689,6 +49016,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -34702,6 +49032,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34793,6 +49126,16 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -34814,6 +49157,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -34827,6 +49173,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -34906,6 +49255,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -34919,6 +49271,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35058,6 +49413,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -35071,6 +49429,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35201,6 +49562,43 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           session {
             id
@@ -35227,6 +49625,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -35240,6 +49641,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35385,6 +49789,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -35398,6 +49805,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35534,6 +49944,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -35547,6 +49960,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35630,6 +50046,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -35643,6 +50062,9 @@ export const getAttachment = `query GetAttachment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -35857,6 +50279,43 @@ export const listAttachments = `query ListAttachments(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -35929,6 +50388,43 @@ export const listAttachments = `query ListAttachments(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -35948,6 +50444,9 @@ export const listAttachments = `query ListAttachments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -36008,6 +50507,9 @@ export const listAttachments = `query ListAttachments(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -36064,6 +50566,9 @@ export const listAttachments = `query ListAttachments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -36254,6 +50759,16 @@ export const listAttachments = `query ListAttachments(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -36622,6 +51137,43 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -36661,6 +51213,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -36691,6 +51253,16 @@ export const getComment = `query GetComment($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -36884,6 +51456,43 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -36923,6 +51532,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -36953,6 +51572,16 @@ export const getComment = `query GetComment($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -37146,6 +51775,43 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           compass {
             id
@@ -37185,6 +51851,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             scribe {
               id
@@ -37215,6 +51891,16 @@ export const getComment = `query GetComment($id: ID!) {
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
@@ -37331,24 +52017,232 @@ export const getComment = `query GetComment($id: ID!) {
         }
         nextToken
       }
-    }
-    session {
-      id
-      name_of_session
-      description_of_session
-      createdAt
       compass {
-        id
-        name_of_compass
-        description_of_compass
-        createdAt
-        compassType
-        owner {
+        items {
           id
-          first_name
-          last_name
-          email
-          teacher {
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
             items {
               id
               first_name
@@ -37366,6 +52260,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -37406,7 +52303,7 @@ export const getComment = `query GetComment($id: ID!) {
             }
             nextToken
           }
-          member {
+          members {
             items {
               id
               first_name
@@ -37424,6 +52321,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -37464,7 +52364,7 @@ export const getComment = `query GetComment($id: ID!) {
             }
             nextToken
           }
-          reader {
+          readers {
             items {
               id
               first_name
@@ -37484,7 +52384,125 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
               compass {
                 id
                 name_of_compass
@@ -37523,7 +52541,21 @@ export const getComment = `query GetComment($id: ID!) {
             nextToken
           }
         }
-        scribe {
+        nextToken
+      }
+    }
+    session {
+      id
+      name_of_session
+      description_of_session
+      createdAt
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        createdAt
+        compassType
+        owner {
           id
           first_name
           last_name
@@ -37546,6 +52578,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -37606,6 +52641,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -37664,6 +52702,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -37698,6 +52739,379 @@ export const getComment = `query GetComment($id: ID!) {
                 steps {
                   nextToken
                 }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+        }
+        scribe {
+          id
+          first_name
+          last_name
+          email
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
               }
             }
             nextToken
@@ -37741,6 +53155,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -37762,6 +53186,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -37775,6 +53202,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -37866,6 +53296,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -37887,6 +53327,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -37900,6 +53343,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -37991,6 +53437,16 @@ export const getComment = `query GetComment($id: ID!) {
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -38012,6 +53468,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38025,6 +53484,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38104,6 +53566,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38117,6 +53582,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38256,6 +53724,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38269,6 +53740,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38399,6 +53873,43 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           session {
             id
@@ -38425,6 +53936,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38438,6 +53952,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38583,6 +54100,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38596,6 +54116,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38732,6 +54255,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38745,6 +54271,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -38828,6 +54357,9 @@ export const getComment = `query GetComment($id: ID!) {
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -38841,6 +54373,9 @@ export const getComment = `query GetComment($id: ID!) {
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39014,6 +54549,16 @@ export const listComments = `query ListComments(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -39035,6 +54580,9 @@ export const listComments = `query ListComments(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -39048,6 +54596,9 @@ export const listComments = `query ListComments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39139,6 +54690,16 @@ export const listComments = `query ListComments(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -39160,6 +54721,9 @@ export const listComments = `query ListComments(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -39173,6 +54737,9 @@ export const listComments = `query ListComments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39264,6 +54831,16 @@ export const listComments = `query ListComments(
                 }
                 nextToken
               }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
             }
             compass {
               id
@@ -39285,6 +54862,9 @@ export const listComments = `query ListComments(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               scribe {
                 id
@@ -39298,6 +54878,9 @@ export const listComments = `query ListComments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39347,6 +54930,210 @@ export const listComments = `query ListComments(
                 }
                 nextToken
               }
+            }
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
             }
           }
           nextToken
@@ -39434,6 +55221,43 @@ export const listComments = `query ListComments(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           scribe {
             id
@@ -39506,6 +55330,43 @@ export const listComments = `query ListComments(
               }
               nextToken
             }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
           }
           teachers {
             items {
@@ -39525,6 +55386,9 @@ export const listComments = `query ListComments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39585,6 +55449,9 @@ export const listComments = `query ListComments(
                 reader {
                   nextToken
                 }
+                compass {
+                  nextToken
+                }
               }
               compass {
                 id
@@ -39641,6 +55508,9 @@ export const listComments = `query ListComments(
                   nextToken
                 }
                 reader {
+                  nextToken
+                }
+                compass {
                   nextToken
                 }
               }
@@ -39831,6 +55701,16 @@ export const listComments = `query ListComments(
                   first_name
                   last_name
                   email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
                 }
                 nextToken
               }
