@@ -39,7 +39,7 @@ const ReviewLog = () => {
     if(interaction.id) {
       setLog(interaction.log_content)
       setStep(interaction.step)
-      setAttachments(interaction.attachments.items)
+      // setAttachments(interaction.attachments.items)
     }
   }, [interaction])
 
@@ -121,7 +121,7 @@ const ReviewLog = () => {
               {/* <AttachmentButton onChange={handleUpload}  color={step.color}/>               */}
             </ReviewLogHeader>
             <ReviewLogAttachments>
-              { 
+              {/* { 
                 attachments.length > 0 ?
                 attachments.map((attachment) => (
                   <AttachmentItemButton 
@@ -131,7 +131,7 @@ const ReviewLog = () => {
                   />
                 )) : 
                 <p>You have no attachments !</p>
-              }
+              } */}
             </ReviewLogAttachments>
           </ReviewLogAttachmentsContainer>
           <ReviewLogAttachmentPreview>

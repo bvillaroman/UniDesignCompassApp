@@ -9,12 +9,20 @@ import { CompassContext } from "../../../context/CompassPage/context"
 // import { createSessionSub, updateInteractionSub, createCommentSub } from "../utils/subscriptions"
 // import { getCompass,  getSession } from '../utils/queries'
 import { createSession} from "../../../utils/mutations"
-import { dateFormatter } from "../../../utils/translateTime"
+import { dateFormatter, timeSorter } from "../../../utils/translateTime"
 
 // import { MainView } from "../styles/CompassPage"
 
 const ModalMenu = ({setShow}) => {
   const {compass} = useContext(CompassContext);
+
+  const continueSession = (e) => {
+    const newestSessions = compass.sessions.items.filter((item) => { return item.interactions.items.length > 0 }).sort(timeSorter)
+    // console.log(compass.sessions.items)
+    console.log(newestSessions)
+    setShow(false)
+    // navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
+  }
 
   const newSession = (e) => {
 
@@ -32,7 +40,7 @@ const ModalMenu = ({setShow}) => {
 
   return (
     <NavigationContainer>
-      <NavigationButton onClick={() => setShow(false)} > Continue Session </NavigationButton>
+      <NavigationButton onClick={continueSession} > Continue Session </NavigationButton>
       <NavigationButton onClick={newSession} > New Session </NavigationButton>      
     </NavigationContainer>
   )

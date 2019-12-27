@@ -36,7 +36,7 @@ const SessionCreator = (props) => {
   const currentCompassId = compass.id
 
   const goToSession = (session) => {
-    navigate(`/Compass/?c=${currentCompassId}&s=${session}`)
+    navigate(`/Logger/?c=${currentCompassId}&s=${session}`)
   }
 
   const sendForm = (e) => {

@@ -8,7 +8,6 @@ import InteractionFeed from "./Interactions"
 
 const CompassSelector = ({showAttachment}) => {
   const {interactions, updateTime} = useContext(CompassContext)
-  const [show, setShow] = useState(true)
 
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {

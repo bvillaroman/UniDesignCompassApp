@@ -8,11 +8,11 @@ import {
   StepClock,
 } from "../../../styles/CompassPage"
 import { AttachmentButton } from "../../../styles/Modals"
-import * as Mutation from '../../../utils/mutations'
+// import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
-import { Storage } from 'aws-amplify'
-import uuid from 'uuid/v4'
-import config from '../../../aws-exports'
+// import { Storage } from 'aws-amplify'
+// import uuid from 'uuid/v4'
+// import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
 const Attachments = (props) => {
@@ -20,67 +20,48 @@ const Attachments = (props) => {
   
   const [attachments,setAttachments] = useState([]);
 
-  // intialize attachments into the logger
-  // useEffect(() => {
-  //   if(compass.hasOwnProperty("id")){
-  //     let arrAttachment = []
-  
-  //     if (compass.sessions.items.length > 0) {
-  
-  //       compass.sessions.items.map((session, i) => {
-  //         session.interactions.items.map((interaction, i) => {
-  //           arrAttachment.push(interaction.attachments.items)
-  //         })
-  //       })
-  //     }
-
-  //     setAttachments(arrAttachment.flat())
-  //   }
-
-  // // eslint-disable-next-line
-  // }, [compass])
-
   useEffect(() => {
     if(session.hasOwnProperty("id")){
       let arrAttachment = []
   
-      if (session.interactions.items.length > 0) {  
-        session.interactions.items.map((interaction, i) => {
-          arrAttachment.push(interaction.attachments.items)
+      if (session.attachments.items.length > 0) {  
+        session.attachments.items.map((attachment, i) => {
+          arrAttachment.push(attachment)
         })
       }
 
-      setAttachments(arrAttachment.flat())
+      setAttachments(arrAttachment)
     }
 
   // eslint-disable-next-line
   }, [session])
   
-  
+  // handle uploading an attachment
   const handleUpload = async (event) => { 
-    const { target: { files } } = event
-    const [image] = files || []
-    if (image && interaction.hasOwnProperty("id") ) {
-      const { name: fileName, type: mimeType } = image
-      const fileForUpload = {
-        bucket: config.aws_user_files_s3_bucket,
-        key:  `${uuid()}${fileName}`,
-        region: config.aws_user_files_s3_bucket_region,
-        name: fileName,
-        type: mimeType,
-      }
+    event.preventDefault()
+    // const { target: { files } } = event
+    // const [image] = files || []
+    // if (image && interaction.hasOwnProperty("id") ) {
+    //   const { name: fileName, type: mimeType } = image
+    //   const fileForUpload = {
+    //     bucket: config.aws_user_files_s3_bucket,
+    //     key:  `${uuid()}${fileName}`,
+    //     region: config.aws_user_files_s3_bucket_region,
+    //     name: fileName,
+    //     type: mimeType,
+    //   }
     
-      try {
-        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
-          .then((res) => {
-            setAttachments([res.data.createAttachment, ...attachments])
-            updateInteraction({attachments: [res.data.createAttachment, ...attachments]})
-          })
-      } catch (err) {
-        console.log('error cannot store file: ', err)
-      }
-    }
+    //   try {
+    //     await Storage.put(fileForUpload.key, image, { contentType: mimeType })
+    //     Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
+    //       .then((res) => {
+    //         setAttachments([res.data.createAttachment, ...attachments])
+    //         updateInteraction({attachments: [res.data.createAttachment, ...attachments]})
+    //       })
+    //   } catch (err) {
+    //     console.log('error cannot store file: ', err)
+    //   }
+    // }
   };
 
   return (
