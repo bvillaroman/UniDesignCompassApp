@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
-import * as Mutations from "../../../../utils/mutations";
-import { CompassContext } from "../../../../context/CompassPage/context";
-import { GlobalContext } from "../../../../context/context";
+import * as Mutations from "../../../utils/mutations";
+import { CompassContext } from "../../../context/CompassPage/context";
+import { GlobalContext } from "../../../context/context";
 import { Waypoint } from 'grommet-icons';
 import {
   CommentsForm,
   CommentInput,
   CommentFormFlex,
   CommentButton
-} from '../../../../styles/CommentPage';
+} from '../../../styles/CommentPage';
 
 const CommentForm = ({ addComment }) => {
   const { user } = useContext(GlobalContext);

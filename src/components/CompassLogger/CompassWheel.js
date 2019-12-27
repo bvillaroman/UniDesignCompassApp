@@ -1,11 +1,11 @@
 import React, { useState,useEffect, useContext } from "react";
-import { CompassContext } from "../../../context/CompassPage/context"
+import { CompassContext } from "../../context/CompassPage/context"
 import { 
   CSTitle,
   CompassWheelContainer,
   CompassWheel
-} from "../../../styles/CompassPage"
-import * as Mutation from "../../../utils/mutations"
+} from "../../styles/CompassPage"
+import * as Mutation from "../../utils/mutations"
 import PieChart from 'react-minimal-pie-chart';
 
 const FULL_WIDTH = 32;

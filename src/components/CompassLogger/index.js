@@ -1,6 +1,6 @@
-import React, {useEffect, useContext}  from "react";
-import { CSContainer, CSGrid } from "../../../styles/CompassPage"
-import { CompassContext } from "../../../context/CompassPage/context"
+import React, {useEffect, useContext, useState}  from "react";
+import { CSContainer, CSGrid } from "../../styles/CompassPage"
+import { CompassContext } from "../../context/CompassPage/context"
 
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
@@ -8,6 +8,7 @@ import InteractionFeed from "./Interactions"
 
 const CompassSelector = ({showAttachment}) => {
   const {interactions, updateTime} = useContext(CompassContext)
+  const [show, setShow] = useState(true)
 
   // getting the current session and distribute: session,steps, all interactions, all attachments
   useEffect(() => {

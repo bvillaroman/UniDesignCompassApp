@@ -1,10 +1,10 @@
 import React, { useState,useEffect, useContext } from "react";
-import { CompassContext } from "../../../context/CompassPage/context"
+import { CompassContext } from "../../context/CompassPage/context"
 import { 
   CSTitle,
   CompassWheelContainer,
   CompassWheel
-} from "../../../styles/CompassPage"
+} from "../../styles/CompassPage"
 import Step from "./Step"
 
 export default (props) => {

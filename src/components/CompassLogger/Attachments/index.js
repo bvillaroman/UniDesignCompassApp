@@ -6,14 +6,14 @@ import {
   LoggerTitle,
   LoggerHeader,
   StepClock,
-} from "../../../../styles/CompassPage"
-import { AttachmentButton } from "../../../../styles/Modals"
-import * as Mutation from '../../../../utils/mutations'
+} from "../../../styles/CompassPage"
+import { AttachmentButton } from "../../../styles/Modals"
+import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
-import config from '../../../../aws-exports'
-import { CompassContext } from "../../../../context/CompassPage/context"
+import config from '../../../aws-exports'
+import { CompassContext } from "../../../context/CompassPage/context"
 
 const Attachments = (props) => {
   const {compass, interaction, updateInteraction, session} = useContext(CompassContext);

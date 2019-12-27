@@ -3,8 +3,8 @@ import {
   SessionView, 
   SessionSection, 
   SessionTitle,
-} from "../../../styles/CompassPage"
-import { CompassContext } from "../../../context/CompassPage/context"
+} from "../../styles/CompassPage"
+import { CompassContext } from "../../context/CompassPage/context"
 import Comments from "./Comment"
 import Attachments from "./Attachments"
 

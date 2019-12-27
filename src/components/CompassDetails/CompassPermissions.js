@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { getUsers } from '../../../utils/queries'
-import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations'
-import { CompassContext } from "../../../context/CompassPage/context"
+import { getUsers } from '../../utils/queries'
+import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../utils/mutations'
+import { CompassContext } from "../../context/CompassPage/context"
 import styled from "styled-components"
 import { AddCircle } from 'grommet-icons'
 import { Button } from 'grommet'

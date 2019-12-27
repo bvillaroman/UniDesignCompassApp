@@ -1,5 +1,5 @@
 import React from "react";
-import { StepContainer, StepText } from "../../../styles/CompassPage"
+import { StepContainer, StepText } from "../../styles/CompassPage"
 
 const Step = ({activeStep = {}, rotateAngle, selectStep,circleLength }) => {
 

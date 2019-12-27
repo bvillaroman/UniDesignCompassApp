@@ -1,28 +1,36 @@
-// import React, { useState, useEffect, useContext } from "react";
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 
-import CompassDetails from "../components/CompassDetails"
+import CompassLogger from "../components/CompassLogger"
+import ModalMenu from "../components/CompassLogger/ModalMenu"
 
 import { CompassContext } from "../context/CompassPage/context"
 import { GlobalContext } from "../context/context"
 import { createSessionSub, updateInteractionSub, createCommentSub } from "../utils/subscriptions"
-import { getCompass, getSession } from '../utils/queries'
+import { getCompass,  getSession } from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
 
 const CompassPage = (props) => {
   const { user } = useContext(GlobalContext);
   const { 
-    compass, 
+    compass,
     session, 
     clearInteraction, 
     clearSession, 
     updateCompass, 
     updateSession 
   } = useContext(CompassContext);
+  const [show, setShow] = useState(true);
 
+  const showItem = (attachment, src) => {
+    // setAttachment(attachment)
+    // setSource(src)
+  }
+  
   // subscription for any new project being created
   useEffect(() => {
+    if (session.hasOwnProperty("id")) setShow(false);
+
     const createSession = createSessionSub().subscribe({
       next: res => {
         const newSession = res.value.data.onCreateSession
@@ -76,11 +84,16 @@ const CompassPage = (props) => {
     // eslint-disable-next-line
   }, [])
 
+
   return (
     <MainView>
       {
-        compass.hasOwnProperty("id") ? <CompassDetails /> 
-        : <div> Sorry, this project does not exist !</div>
+        compass.hasOwnProperty("id") ? 
+          show ? <ModalMenu setShow={setShow} /> : (
+            session.hasOwnProperty("id") ? <CompassLogger showAttachment={showItem} /> : ( 
+              <div> Sorry, this Session does not exist !</div> 
+            )
+          ) : <div> Sorry, this Project does not exist !</div> 
       }
     </MainView>
   )

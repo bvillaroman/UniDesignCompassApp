@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import DisplayComment from './DisplayComment';
 import CommentForm from './CommentForm';
-import { CompassContext } from "../../../../context/CompassPage/context";
+import { CompassContext } from "../../../context/CompassPage/context";
 import {
   CommentSession,
   CommentTitle,
   CommentBox,
   CommentRef
-} from '../../../../styles/CommentPage'
+} from '../../../styles/CommentPage'
 
 const Comment = () => {
   const messagesEndRef = useRef(null);
