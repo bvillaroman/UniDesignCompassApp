@@ -1,14 +1,25 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../utils/queries'
 import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../utils/mutations'
 import { CompassContext } from "../../context/CompassPage/context"
+import { GlobalContext } from "../../context/context"
 import styled from "styled-components"
 import { AddCircle } from 'grommet-icons'
 import { Button } from 'grommet'
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
   console.log(compass)
+  console.log(user)
+
+  const [disableButton, setdisableButton] = useState(true)
+
+  useEffect(() => {
+    if (compass.owner.id === user.id) {
+      setdisableButton(!disableButton)
+    }
+  }, [compass.id])
 
   const [scribe, setScribe] = useState("")
 
@@ -59,23 +70,18 @@ const CompassPermissions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("NOT PASSED HERE YET")
-    console.log(scribe)
-    console.log("PASS HERE")
+    console.log('clicked')
 
     getUsers(scribe)
-      .then(res => //console.log('scribe', res.data.listUsers.items[0].id))
+      .then(res =>
         updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
           .then(res => console.log(res))
           .catch(err => console.log(err))
       ).catch(err => console.log(err))
 
     teacher.map((t) => {
-      console.log(t)
-
       getUsers(t.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -83,21 +89,9 @@ const CompassPermissions = () => {
 
     })
 
-    console.log('Compass Permission Clicked')
-    // getUsers(teacher[0].email)
-    //   .then(res => console.log(res)) //.data.listUsers.items[0].id
-
-    //   //   createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
-    //   // .then(res => console.log(res))
-    //   // .catch(err => console.log(err))
-    //   .catch(err => console.log('failed at getUser', err))
-
     member.map((m) => {
-      console.log(m)
-
       getUsers(m.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createMemberCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -105,11 +99,8 @@ const CompassPermissions = () => {
     })
 
     reader.map((r) => {
-      console.log(r)
-
       getUsers(r.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -122,11 +113,12 @@ const CompassPermissions = () => {
       <PermissionHeader>Permission</PermissionHeader>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-
-          <label>
-            Scribe:
-              <input type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
-          </label>
+          <ScribeContainer>
+            <label>
+              Scribes
+              <AllInput size="35" type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
+            </label>
+          </ScribeContainer>
 
           <TeacherContainer>
             <PermissionButtom
@@ -139,7 +131,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`teacher-${idx}`}>
                     <label >{`Teacher #${idx + 1}`}</label>
-                    <input
+                    <AllInput
                       size="35"
                       type="email"
                       name={teacherId}
@@ -155,11 +147,6 @@ const CompassPermissions = () => {
             }
           </TeacherContainer>
 
-          {/* <input
-          type="button"
-          value="Add New Member"
-          onClick={addMember}
-        /> */}
           <MemberContainer>
             <PermissionButtom
               onClick={addMember}
@@ -171,7 +158,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`member-${idx}`}>
                     <label >{`Member #${idx + 1}`}</label>
-                    <input
+                    <AllInput
                       size="35"
                       type="email"
                       name={memberID}
@@ -186,12 +173,7 @@ const CompassPermissions = () => {
               })
             }
           </MemberContainer>
-          {/* 
-        <input
-          type="button"
-          value="Add New Reader"
-          onClick={addReader}
-        /> */}
+
           <ReaderContainer>
             <PermissionButtom
               onClick={addReader}
@@ -204,7 +186,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`reader-${idx}`}>
                     <label >{`Reader #${idx + 1}`}</label>
-                    <input
+                    <AllInput
                       size="35"
                       type="email"
                       name={readerID}
@@ -219,7 +201,8 @@ const CompassPermissions = () => {
               })
             }
           </ReaderContainer>
-          <PermissionSubmit type="submit" primary label="Submit" />
+          {/* <PermissionSubmit type="submit" primary label="Submit" /> */}
+          <button type="submit" disabled={disableButton}>Submit</button>
 
         </PermissionForm>
       </PermissionFormContainer>
@@ -264,6 +247,13 @@ export const PermissionButtom = styled.button`
   float: right
 `
 
+export const ScribeContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+`
+
 export const TeacherContainer = styled.div`
   margin-bottom: 0.5em;
   font-size: 1.2rem;
@@ -283,6 +273,13 @@ export const ReaderContainer = styled.div`
   font-size: 1.2rem;
   padding-left: 1em;
   padding-right: 1em;
+`
+
+export const AllInput = styled.input`
+  border: none;
+  padding-top: 0.3em;
+  border-bottom: 2px solid #f4f6f9;
+  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`
