@@ -48,7 +48,7 @@ const ProjectTemplate = (props) => {
   ];
 
   const goToReview = (event) => {
-    createCompass("Untitled", "-", "default", user.id)
+    createCompass("Untitled", "-", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
