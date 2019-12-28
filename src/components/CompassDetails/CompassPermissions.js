@@ -123,10 +123,12 @@ const CompassPermissions = () => {
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
 
-          <label>
-            Scribe:
+          <ScribeContainer>
+            <label>
+              Scribe:
               <input type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
-          </label>
+            </label>
+          </ScribeContainer>
 
           <TeacherContainer>
             <PermissionButtom
@@ -262,6 +264,13 @@ export const PermissionForm = styled.form`
 
 export const PermissionButtom = styled.button`
   float: right
+`
+
+export const ScribeContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
 `
 
 export const TeacherContainer = styled.div`
