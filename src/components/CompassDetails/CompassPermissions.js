@@ -8,6 +8,7 @@ import { Button } from 'grommet'
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
+  console.log(compass)
 
   const [scribe, setScribe] = useState("")
 
@@ -67,8 +68,6 @@ const CompassPermissions = () => {
       ).catch(err => console.log(err))
 
     teacher.map((t) => {
-      console.log(t)
-
       getUsers(t.email)
         .then(res =>
           createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
@@ -79,8 +78,6 @@ const CompassPermissions = () => {
     })
 
     member.map((m) => {
-      console.log(m)
-
       getUsers(m.email)
         .then(res =>
           createMemberCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
@@ -90,8 +87,6 @@ const CompassPermissions = () => {
     })
 
     reader.map((r) => {
-      console.log(r)
-
       getUsers(r.email)
         .then(res =>
           createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
