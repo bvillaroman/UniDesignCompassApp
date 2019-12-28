@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from "styled-components"
 
-import {SectionHeader} from "../style"
+import {LoggerHeaderText} from "../style"
 import DisplayComment from './DisplayComment';
 import CommentForm from './CommentForm';
 import { CompassContext } from "../../../context/CompassPage/context";
@@ -41,7 +41,7 @@ const Comment = () => {
 
   return (
     <CommentSession>
-      <SectionHeader>Comments</SectionHeader>
+      <LoggerHeaderText>Comments</LoggerHeaderText>
       <CommentBox>
         {
           comments.sort(timeConverter).map((comment, key) => <DisplayComment comment={comment} key={key} />)

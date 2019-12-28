@@ -132,14 +132,12 @@ const LoggerInput = styled(TextArea)`
   
 `;
 const StepClock = styled.div`
-  margin: 0.5rem 0;
   width: auto;
-  height: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 `
 const ControlButton = styled(Button)`

@@ -8,7 +8,6 @@ export const CompassFeed = (props) => {
   const [compasses, setCompasses] = useState([])
 
   useEffect(() => {
-    console.log(props.compasses)
     if (props.compasses.length > 0) {
       const seen = new Set();
       const filteredArr = props.compasses.filter(compass => {

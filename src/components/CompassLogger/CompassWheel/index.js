@@ -1,12 +1,18 @@
 import React, { useState,useEffect, useContext } from "react";
 import styled from "styled-components"
-import { SectionHeader } from "../style"
+import {navigate} from "gatsby"
+
+import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
+import { GlobalButton } from "../../../styles/global"
 
 import { CompassContext } from "../../../context/CompassPage/context"
+import {createSession}  from '../../../utils/mutations'
+import { dateFormatter } from "../../../utils/translateTime"
+
 import Step from "./Step"
 
 export const Wheel = (props) => {
-  const { session, interactions } = useContext(CompassContext)
+  const { compass, session, interactions } = useContext(CompassContext)
   const [steps,setSteps] = useState([])
 
   useEffect(() => {
@@ -35,12 +41,30 @@ export const Wheel = (props) => {
     }
   }, [session,interactions])
 
+  const onBreak = (e) => {
+
+    const today = new Date();
+    const hour = today.getHours()
+    const minute = today.getMinutes()
+
+    createSession(`Session on ${dateFormatter(today)} at ${hour % 12}:${minute} ${hour >= 12 ? "p.m." : "a.m."}`, " ", compass.id)
+      .then((result) => {
+        navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
+      })
+      .catch(err => console.log(err))
+  }
   
   return (
     <CompassWheelContainer >
-      <SectionHeader>
-        <span>Compass Steps</span>  
-      </SectionHeader>
+      <LoggerHeaderContainer>
+        <LoggerHeaderText> Compass Steps </LoggerHeaderText>
+        
+        <LoggerHeaderButtonContainer >
+          <GlobalButton onClick={onBreak} label="Break"/>
+        </LoggerHeaderButtonContainer>
+          
+      </LoggerHeaderContainer>
+    
       <CompassWheel >
         {
           steps.length &&  steps.map((item,key) => {
@@ -68,7 +92,6 @@ export const CompassWheelContainer = styled.div`
   margin: 0 auto;
   background: transparent;
   position: relative;
-  margin-top: 1rem;
 `;
 
 export const CSTitle = styled.div`
@@ -87,6 +110,19 @@ export const CSTitle = styled.div`
 `;
 
 export const CompassWheel = styled.div`
+  position: relative;
+  width: 100%;
+  height: 19rem;
+  @media (max-width: 767px){ height: 35.5rem;}  
+  @media (max-width: 650px){ height: 34rem; }  
+  @media (max-width: 550px){ height: 30rem; } 
+  @media (max-width: 475px){ height: 26rem; }  
+  @media (max-width: 413px){ height: 24rem; }   
+  @media (max-width: 370px){ height: 20.5rem; }    
+  margin: 0 auto;
+`;
+
+export const PauseButton = styled.div`
   position: relative;
   width: 100%;
   height: 19rem;
