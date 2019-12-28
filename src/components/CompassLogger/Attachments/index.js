@@ -3,22 +3,24 @@ import styled from "styled-components"
 
 import { SectionHeader } from "../style"
 import { AttachmentButton } from "../../../styles/Modals"
-// import * as Mutation from '../../../utils/mutations'
+import { Loader } from "../../../styles/layout"
+import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
-// import { Storage } from 'aws-amplify'
-// import uuid from 'uuid/v4'
-// import config from '../../../aws-exports'
+import { Storage } from 'aws-amplify'
+import uuid from 'uuid/v4'
+import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
 const Attachments = (props) => {
-  const {compass, interaction, updateInteraction, session} = useContext(CompassContext);
+  const {compass, session} = useContext(CompassContext);
   
   const [attachments,setAttachments] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if(session.hasOwnProperty("id")){
       let arrAttachment = []
-  
+      setLoading(false)
       if (session.attachments.items.length > 0) {  
         session.attachments.items.map((attachment, i) => {
           arrAttachment.push(attachment)
@@ -34,29 +36,26 @@ const Attachments = (props) => {
   // handle uploading an attachment
   const handleUpload = async (event) => { 
     event.preventDefault()
-    // const { target: { files } } = event
-    // const [image] = files || []
-    // if (image && interaction.hasOwnProperty("id") ) {
-    //   const { name: fileName, type: mimeType } = image
-    //   const fileForUpload = {
-    //     bucket: config.aws_user_files_s3_bucket,
-    //     key:  `${uuid()}${fileName}`,
-    //     region: config.aws_user_files_s3_bucket_region,
-    //     name: fileName,
-    //     type: mimeType,
-    //   }
+    const { target: { files } } = event
+    const [image] = files || []
+    if (image && session.hasOwnProperty("id") ) {
+      const { name: fileName, type: mimeType } = image
+      const fileForUpload = {
+        bucket: config.aws_user_files_s3_bucket,
+        key:  `${uuid()}${fileName}`,
+        region: config.aws_user_files_s3_bucket_region,
+        name: fileName,
+        type: mimeType,
+      }
     
-    //   try {
-    //     await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-    //     Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
-    //       .then((res) => {
-    //         setAttachments([res.data.createAttachment, ...attachments])
-    //         updateInteraction({attachments: [res.data.createAttachment, ...attachments]})
-    //       })
-    //   } catch (err) {
-    //     console.log('error cannot store file: ', err)
-    //   }
-    // }
+      try {
+        setLoading(true)
+        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
+        Mutation.uploadAttachment({...fileForUpload,attachmentSessionId: session.id})
+      } catch (err) {
+        console.log('error cannot store file: ', err)
+      }
+    }
   };
 
   return (
@@ -66,7 +65,7 @@ const Attachments = (props) => {
         {
           compass.hasOwnProperty("id") && (
             <AttachmentButtonContainer >
-              <AttachmentButton onChange={handleUpload} />
+              { loading ? <Loader/> : <AttachmentButton onChange={handleUpload} /> }
             </AttachmentButtonContainer>
           )
         }
@@ -107,8 +106,12 @@ export const SessionAttachments = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-height: 12rem;
   overflow: scroll;
   border-top: 0.1rem solid rgba(0,0,0,0.2);
+  @media (max-width: 767px){ 
+    max-height: 8rem;
+  }  
 `
 export const AttachmentsHeader = styled.div`
   width: 100%;

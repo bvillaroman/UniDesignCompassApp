@@ -126,10 +126,10 @@ const LoggerTitle = styled.h4`
 const LoggerInput = styled(TextArea)`
   border-color: black;
   resize: none;
-  min-height: 5rem;
-  height: 100%;
+  min-height: 8rem;
   font-size: 0.8rem;
   font-weight: 400;
+  
 `;
 const StepClock = styled.div`
   margin: 0.5rem 0;
