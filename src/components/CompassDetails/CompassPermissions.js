@@ -17,18 +17,17 @@ const CompassPermissions = () => {
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
-    const teacher = teachers.find((t) => t.email === user.email)
-    console.log('teacher', teacher.email)
-    const check = teacher.email
+    console.log("TEAHCERS HOOK1", teachers)
+    const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
+    // const teacher = teachers.length > 0 ? "YO" : " "
+    // console.log('teacher', teacher.email)
+    // const check = teacher.email
+    console.log("TEAHCERS HOOK2", teacher)
 
-    // const members = compass.members.items.filter((member) => member)
-    // const member = members.find((m) => m.email === user.email)
-    // console.log('teacher', member)
-
-    if (compass.owner.id === user.id || teacher.email === user.email) {
+    if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
       setdisableButton(false)
     }
-  }, [compass])
+  }, [compass.id])
 
   const [scribe, setScribe] = useState("")
 

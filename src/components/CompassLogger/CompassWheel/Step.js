@@ -12,8 +12,10 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
   const [disableStep, setDisableStep] = useState(false);
 
   useEffect(() => {
+    console.log(user.email)
+    console.log(compass.scribe.email)
     if (user.email === compass.scribe.email) {
-      setDisableStep(!disableStep)
+      setDisableStep(true)
     }
   }, [compass])
 
