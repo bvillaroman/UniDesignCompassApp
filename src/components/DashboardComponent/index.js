@@ -38,7 +38,7 @@ const Dashboard = (props) => {
         // 1. get all projects
         // 2. get their members list
         // 3. check if im in the members list
-        const scribe = res.filter((compass) => compass.scribe)
+        const scribe = res.filter((compass) => compass.scribe && (compass.scribe.id === user.id))
         const allMembers = res.map((compass) => compass.members.items.filter((member) => member.email === user.email)).flat().map(compass => compass.compass)
         const allTeachers = res.map((compass) => compass.teachers.items.filter((teacher) => teacher.email === user.email)).flat().map(compass => compass.compass)
         const allReaders = res.map((compass) => compass.readers.items.filter((reader) => reader.email === user.email)).flat().map(compass => compass.compass)
