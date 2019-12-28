@@ -6,6 +6,8 @@ API.configure(config);
 
 export const updateProjectsSub = () => API.graphql(graphqlOperation(subscriptions.onCreateCompass))
 
+export const createAttachmentSub = () => API.graphql(graphqlOperation(subscriptions.onCreateAttachment))
+
 export const createSessionSub = () => API.graphql(graphqlOperation(subscriptions.onCreateSession))
 
 export const createCommentSub = () => API.graphql(graphqlOperation(subscriptions.onCreateComment))

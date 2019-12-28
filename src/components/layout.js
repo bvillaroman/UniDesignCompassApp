@@ -16,7 +16,6 @@ import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
 import { getCompass,getSession, getUser } from '../utils/queries'
-import { createUser } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
@@ -76,7 +75,7 @@ const Layout = (props) => {
       getSession(sessionID)
         .then((res) => {          
           updateSession(res.data.getSession)
-          localStorage.setItem("session", res.data.getSession.id);
+          // localStorage.setItem("session", res.data.getSession.id);
           let interactions = []
           if (res.data.getSession.interactions.items.length > 0) {
             interactions = res.data.getSession.interactions.items.sort((a,b) => {
@@ -110,6 +109,7 @@ const Layout = (props) => {
           return getUser(sub)
         })
         .then((res) => {
+          console.log(res)
           if(res && res.hasOwnProperty("data") && res.data.getUser){
             loginUser({ 
               email: res.data.getUser.email, 
@@ -117,7 +117,11 @@ const Layout = (props) => {
               firstName: res.data.getUser.first_name,
               lastName: res.data.getUser.last_name
             }) // Save to global store    
-          }        
+          } else {
+            setLoading(false)
+            localStorage.removeItem("authuser")
+            logoutUser();
+          }
         })
         .catch(err => {
           setLoading(false)

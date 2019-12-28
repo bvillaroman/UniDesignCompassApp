@@ -70,6 +70,11 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
                 })                
             }
           })    
+          .catch(err => {
+            localStorage.removeItem("authuser")
+            setError(err.message)
+            setLoading(false)
+          });
       })
       .catch(err => {
         localStorage.removeItem("authuser")

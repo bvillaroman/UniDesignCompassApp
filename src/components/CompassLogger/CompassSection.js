@@ -1,18 +1,33 @@
 import React from "react";
-import { CompassSectionContainer } from "../../styles/CompassPage"
-import Loadable from "@loadable/component"
+import styled from "styled-components"
+
 import Logger from "./Logger"
+import Wheel from "./CompassWheel"
 
-// import InteractionFeed from "./InteractionFeed"
-// const CompassWheel = Loadable(() => import('./CompassWheel'));
-const NewCompassWheel = Loadable(() => import('./NewCompassWheel'));
-
-const CompassSelector = ({selectStep}) => {
+export const CompassSection = ({selectStep}) => {
 
   return (
     <CompassSectionContainer>
-      <NewCompassWheel selectStep={selectStep} />
+      <Wheel selectStep={selectStep} />
       <Logger />
     </CompassSectionContainer>
 )};
-export default CompassSelector;
+
+export default CompassSection;
+
+export const CompassSectionContainer = styled.div`
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+  overflow-y: auto;
+  @media (max-width: 767px){
+    overflow-y: hidden;
+    width: 100%;
+    min-height: 50rem;
+  }
+  @media (max-width: 650px){ min-height: 40rem; }  
+  @media (max-width: 550px){ min-height: 30rem; } 
+  @media (max-width: 475px){ min-height: 20rem; }  
+  @media (max-width: 413px){ min-height: 10rem; }   
+  @media (max-width: 370px){ min-height: 9rem; }    
+`;
