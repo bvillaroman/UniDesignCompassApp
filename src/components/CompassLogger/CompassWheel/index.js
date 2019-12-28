@@ -1,13 +1,11 @@
 import React, { useState,useEffect, useContext } from "react";
+import styled from "styled-components"
+import { SectionHeader } from "../style"
+
 import { CompassContext } from "../../../context/CompassPage/context"
-import { 
-  CSTitle,
-  CompassWheelContainer,
-  CompassWheel
-} from "../../../styles/CompassPage"
 import Step from "./Step"
 
-export default (props) => {
+export const Wheel = (props) => {
   const { session, interactions } = useContext(CompassContext)
   const [steps,setSteps] = useState([])
 
@@ -40,9 +38,9 @@ export default (props) => {
   
   return (
     <CompassWheelContainer >
-      <CSTitle gridArea="title">
+      <SectionHeader>
         <span>Compass Steps</span>  
-      </CSTitle>
+      </SectionHeader>
       <CompassWheel >
         {
           steps.length &&  steps.map((item,key) => {
@@ -60,3 +58,40 @@ export default (props) => {
     </CompassWheelContainer >
   )
 };
+
+export default Wheel;
+
+
+export const CompassWheelContainer = styled.div`
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  background: transparent;
+  position: relative;
+  margin-top: 1rem;
+`;
+
+export const CSTitle = styled.div`
+  width: 100%;
+  min-height: 2.0rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 1.5rem;
+  @media (max-width: 767px){
+    min-height:3rem;
+    font-size: 3rem;
+    font-height: 3.3rem;
+  }  
+`;
+
+export const CompassWheel = styled.div`
+  position: relative;
+  width: 100%;
+  height: 19rem;
+  @media (max-width: 767px){
+    height: 35rem;
+  }  
+  margin: 0 auto;
+`;

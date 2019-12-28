@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import styled from "styled-components"
 import { GlobalContext } from "../../context/context"
 import { getUser } from "../../utils/queries"
-import { createCompass, createStep } from "../../utils/mutations"
+import { createCompass, createStep, createSession } from "../../utils/mutations"
 import { navigate } from "gatsby"
 import { Link } from "gatsby"
 
-const ProjectTemplate = (props) => {
+const QuickTemplate = (props) => {
   const { user } = useContext(GlobalContext);
 
   const defaultCompass = [
@@ -48,14 +48,22 @@ const ProjectTemplate = (props) => {
   ];
 
   const goToReview = (event) => {
-    createCompass("Untitled", "-", "default", user.id)
+    const compassID = createCompass("Untitled", "-", "default", user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
         )
         navigate(`/Compass/?c=${res.data.createCompass.id}`)
+        createSession("untitled", " ", res.data.createCompass.id)
+          .then((result) => {
+            navigate(`/Compass/?c=${res.data.createCompass.id}&s=${result.data.createSession.id}`)
+          })
+          .catch(err => console.log(err))
       })
       .catch(err => console.log(err))
+
+
+    console.log(compassID)
   };
 
   return (
@@ -75,12 +83,13 @@ const ProjectTemplate = (props) => {
           }
         </CompassCircle>
       </ProjectTypeDetails>
-      <CompassCardTitle>Default Compass</CompassCardTitle>
+      <CompassCardTitle>Quick Start</CompassCardTitle>
     </TemplateContainer>
   )
 }
 
-export default ProjectTemplate;
+export default QuickTemplate
+
 export const TemplateContainer = styled.div`
   padding: 0 1rem;
   height: 11rem;

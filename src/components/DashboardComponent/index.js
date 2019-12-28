@@ -30,7 +30,7 @@ const Dashboard = (props) => {
 
     getCompasses()
       .then((res) => {
-        setCompasses(res.filter((compass) => (compass.owner.id === user.id)))
+        setCompasses(res.filter((compass) => (compass.owner && (compass.owner.id === user.id))))
         setLoading(false)
       })
       .catch((error) => {
@@ -40,14 +40,14 @@ const Dashboard = (props) => {
 
       
   // eslint-disable-next-line
-  }, [user.email]);
+  }, [user.id]);
 
   // subscription for any new project being created
   useEffect(() => {
     const subscriber = updateProjectsSub().subscribe({
       next: res => {
         const newProject = res.value.data.onCreateCompass
-        if(newProject.owner.id === user.id){
+        if(newProject.owner && (newProject.owner.id === user.id)){
           setNewestProject(newProject)
         }
       }
@@ -81,7 +81,7 @@ const Dashboard = (props) => {
             <ProjectCreator />
             {
               !error ? (compasses.length ? <Feed compasses={compasses} /> : <div>You have no projects, start one from above! </div>)
-                : <div> Error !</div>
+                : <div> Error !: {error}</div>
             }
           </DashboardContainer>
         )

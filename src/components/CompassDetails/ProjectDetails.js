@@ -9,14 +9,14 @@ import {
   ProjectEditButtons,
   CompassDetailsDescription,
   CompassStepAccordion
-} from "../../../styles/CompassPage"
+} from "../../styles/CompassPage"
 import {
   InputContainer,
   InputField,
   InputTextArea
-} from "../../../styles/Form"
-import { CompassContext } from "../../../context/CompassPage/context"
-import { updateCompass } from "../../../utils/mutations"
+} from "../../styles/Form"
+import { CompassContext } from "../../context/CompassPage/context"
+import { updateCompass } from "../../utils/mutations"
 import { Edit } from 'grommet-icons';
 import StepDetails from "./StepDetails"
 

@@ -41,20 +41,20 @@ const SummarySession = (props) => {
     }
   }
 
-  const arrayAttachments = (sessions) => {
-    let arrAttachment = []
+  // const arrayAttachments = (sessions) => {
+  //   let arrAttachment = []
 
-    if (sessions && sessions.length > 0) {
+  //   if (sessions && sessions.length > 0) {
 
-      sessions.map((session, i) => {
-        session.interactions.items.map((interaction, i) => {
-          arrAttachment.push(interaction.attachments.items)
-        })
-      })
-    }
+  //     sessions.map((session, i) => {
+  //       session.interactions.items.map((interaction, i) => {
+  //         arrAttachment.push(interaction.attachments.items)
+  //       })
+  //     })
+  //   }
 
-    return arrAttachment.flat()
-  }
+  //   return arrAttachment.flat()
+  // }
 
   const SessionTable = ({ sessions }) => {
     return (
@@ -79,7 +79,8 @@ const SummarySession = (props) => {
                     <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
                     <SummaryTdBody>{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
-                    <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                    {/* <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody> */}
+                    <SummaryTdBody>---</SummaryTdBody>
                   </tr>
                 </SummaryTableBody>
               )}

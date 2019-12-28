@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from "styled-components"
 import { DashboardSectionHeader } from "./style"
 import { navigate } from "gatsby"
-import {dateFormatter} from "../../utils/translateTime"
+import { dateFormatter } from "../../utils/translateTime"
 
 export const CompassFeed = (props) => {
   const [compasses, setCompasses] = useState([])
@@ -20,33 +20,33 @@ export const CompassFeed = (props) => {
   return (
     <ProjectFeedContainer>
       <DashboardSectionHeader> Past Projects </DashboardSectionHeader>
-        {
-          compasses.length > 0 ? (
-              <>
-                <ProjectFeedHeader>
-                  <CompassTitle >Name</CompassTitle>
-                  <CompassDescription >Description</CompassDescription>
-                  <CompassDate> Created On</CompassDate>
-                </ProjectFeedHeader>
-                <Feed> 
-                  {
-                    compasses.map((compass, key) => (
-                      <ProjectCard onClick={e => goToCompass(compass)} key={key}>
-                        <CompassTitle >{compass.name_of_compass}</CompassTitle>
-                        <CompassDescription >{compass.description_of_compass}</CompassDescription>
-                        <CompassDate>{dateFormatter(compass.createdAt)}</CompassDate>
-                      </ProjectCard>
-                    ))
-                  }
-                </Feed>
-              </>
-          ) : <p>you have no compasses</p>
-        }
+      {
+        compasses.length > 0 ? (
+          <>
+            <ProjectFeedHeader>
+              <CompassTitle >Name</CompassTitle>
+              <CompassDescription >Description</CompassDescription>
+              <CompassDate> Created On</CompassDate>
+            </ProjectFeedHeader>
+            <Feed>
+              {
+                compasses.map((compass, key) => (
+                  <ProjectCard onClick={e => goToCompass(compass)} key={key}>
+                    <CompassTitle >{compass.name_of_compass}</CompassTitle>
+                    <CompassDescription >{compass.description_of_compass}</CompassDescription>
+                    <CompassDate>{dateFormatter(compass.createdAt)}</CompassDate>
+                  </ProjectCard>
+                ))
+              }
+            </Feed>
+          </>
+        ) : <p>You have no Projects, create one from above !</p>
+      }
     </ProjectFeedContainer>
   )
 }
 
-export default CompassFeed; 
+export default CompassFeed;
 
 const Feed = styled.div`
   color: black;
@@ -87,6 +87,7 @@ const CompassTitle = styled(CompassHeaderStyle)`
   font-size: 1.2rem;
   line-height: 2.1rem;
   width: 30%;
+  font-size: 1.2rem;
   @media (max-width: 550px){
     padding: 0 0.5rem;
   }

@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Auth } from 'aws-amplify';
+import { updateUser } from '../utils/mutations'
+import { getUser } from '../utils/queries'
+import { GlobalContext } from "../context/context"
 import {
   ProfileContainer,
   ProfileTitle,
@@ -16,8 +19,14 @@ import {
 } from '../styles/ProfilePage'
 
 const ProfilePage = (props) => {
-  const [name, setName] = useState('');
-  const [newName, setNewName] = useState('');
+  const { user } = useContext(GlobalContext);
+
+  const [firstName, setFirstName] = useState('');
+  const [newFirstName, setNewFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [newLastName, setNewLastName] = useState('');
+
+
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -27,21 +36,27 @@ const ProfilePage = (props) => {
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setName(res.attributes.name) })
+      .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
+      // .then(res => console.log(res))
       .catch(err => console.log(err))
-  }, [name])
+  }, [firstName, lastName])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    let user = await Auth.currentAuthenticatedUser();
-    let result = await Auth.updateUserAttributes(user, {
-      'name': newName
+    if ((!newFirstName) || (!newLastName)) return;
+
+    console.log('change name')
+    let currUser = await Auth.currentAuthenticatedUser();
+    let result = await Auth.updateUserAttributes(currUser, {
+      'custom:firstName': newFirstName,
+      'custom:lastName': newLastName
     });
 
-    // await Auth.currentAuthenticatedUser({ bypassCache: true })
-    //     .then(res => { console.log(res.attributes.name) })
-    //     .catch(err => console.log(err))
+    const userID = user.id
+    updateUser(userID, newFirstName, newLastName)
+      .then(res => res)
+      .catch(err => console.log(err))
   }
 
   const submitPassword = (e) => {
@@ -74,13 +89,17 @@ const ProfilePage = (props) => {
 
   return (
     <ProfileContainer>
+      {console.log(user.id)}
       <ProfileTitle>Profile Page</ProfileTitle>
       <FormContainter>
-        <FormName onSubmit={handleSubmit}>
-          <FormNameLabel> Name: </FormNameLabel>
-          <FormNameInput type="text" name="name" placeholder={name} value={newName} onChange={e => { setNewName(e.target.value) }} />
+        <FormName onSubmit={handleSubmit} >
+          <FormNameLabel> First Name: </FormNameLabel>
+          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} />
 
-          <NameButton type="submit">Change Name</NameButton>
+          <FormNameLabel> Last Name: </FormNameLabel>
+          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
+
+          <NameButton type="submit" >Change Name</NameButton>
         </FormName>
         <br />
         <FormPassword onSubmit={submitPassword}>
@@ -105,3 +124,4 @@ const ProfilePage = (props) => {
   )
 };
 export default ProfilePage;
+

@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from "styled-components"
 
-import {DashboardSectionHeader} from "./style"
+import { DashboardSectionHeader } from "./style"
 import ProjectTemplate from "./ProjectTemplate"
 import CustomTemplate from "./CustomTemplate"
+import QuickTemplate from "./QuickTemplate"
 
 export const ProjectCreator = (props) => {
   return (
@@ -12,8 +13,9 @@ export const ProjectCreator = (props) => {
         Create a Project
       </DashboardSectionHeader>
       <ProjectTypeFeed>
-        <CustomTemplate/>
-        <ProjectTemplate/>
+        <CustomTemplate />
+        <ProjectTemplate />
+        <QuickTemplate />
       </ProjectTypeFeed>
     </ProjectTypeFeedContainer>
   )

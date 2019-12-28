@@ -1,5 +1,5 @@
 import React, {useState, useEffect}  from "react";
-import { StepDetailsTitle, StepDetailsDescription } from "../../../styles/CompassPage"
+import { StepDetailsTitle, StepDetailsDescription } from "../../styles/CompassPage"
 
 export default ({step}) => {
   const [title, setTitle] = useState("")

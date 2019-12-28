@@ -5,10 +5,10 @@ import config from '../aws-exports';
 API.configure(config);
 
 export async function getCompasses() {
-  const compasses = await API.graphql(graphqlOperation(queries.listCompasss, {limit: 100}));
+  const compasses = await API.graphql(graphqlOperation(queries.listCompasss, { limit: 100 }));
 
   return compasses.data.listCompasss.items
-  
+
 }
 
 export async function getUser(id) {
@@ -18,7 +18,7 @@ export async function getUser(id) {
   // } else {
   //   return {}
   // }
-  
+
   // return new Promise(function (resolve, reject) {
   //   if (compass.data.listUsers === null) {
   //     reject("No User Found");
@@ -27,6 +27,11 @@ export async function getUser(id) {
   //   }
   // })
 }
+
+export async function getUsers(email) {
+  return API.graphql(graphqlOperation(queries.listUsers, { filter: { email: { contains: email } } }))
+}
+
 
 export async function getCompass(compass_id) {
   const compass = await API.graphql(graphqlOperation(queries.getCompass, { id: compass_id }));
@@ -75,3 +80,4 @@ export async function getInteraction(interaction_id) {
     }
   })
 }
+

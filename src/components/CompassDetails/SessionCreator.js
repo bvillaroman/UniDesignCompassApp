@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { CompassContext } from "../../../context/CompassPage/context"
-import { createSession, deleteSession, updateSession } from "../../../utils/mutations"
-import { getCompass } from "../../../utils/queries"
-import { dateFormatter, timeSorter } from "../../../utils/translateTime"
+import { CompassContext } from "../../context/CompassPage/context"
+import { createSession, deleteSession, updateSession } from "../../utils/mutations"
+import { getCompass } from "../../utils/queries"
+import { dateFormatter, timeSorter } from "../../utils/translateTime"
 import {navigate} from "gatsby"
 import { AddCircle} from 'grommet-icons';
 
@@ -18,8 +18,8 @@ import {
   SessionRowMoreButton,
   SessionRowHeader,
   EditProjectButton
-} from "../../../styles/CompassPage"
-import { InputField } from "../../../styles/Form"
+} from "../../styles/CompassPage"
+import { InputField } from "../../styles/Form"
 
 const SessionCreator = (props) => {
   const {compass, updateCompass} = useContext(CompassContext)
@@ -36,7 +36,7 @@ const SessionCreator = (props) => {
   const currentCompassId = compass.id
 
   const goToSession = (session) => {
-    navigate(`/Compass/?c=${currentCompassId}&s=${session}`)
+    navigate(`/Logger/?c=${currentCompassId}&s=${session}`)
   }
 
   const sendForm = (e) => {

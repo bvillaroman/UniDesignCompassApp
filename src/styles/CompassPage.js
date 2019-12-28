@@ -95,39 +95,6 @@ export const StepDetailsDescription = styled(Box)`
   color: black;
 `;
 
-// Compass Wheel 
-export const CompassWheelContainer = styled(Box)`
-  width: 100%;
-  height: 70%;
-  margin: 0 auto;
-  background: transparent;
-  position: relative;
-`;
-// export const CompassWheelContainer = styled(Box)`
-//   width: 100%;
-//   margin: 0 auto;
-//   display: flex;
-//   flex-direction: column;
-//   background: transparent;
-// `;
-// export const CompassWheel = styled(Box)`
-//   width: 100%;
-//   min-width: 26rem;
-//   height: 100%;
-//   div {    
-//     height: 90%;
-//     width: 70%;
-//     margin: 0 auto;
-//     margin-top: 1rem;
-//     border-radius: 50%;
-//   }
-// `;
-export const CompassWheel = styled(Box)`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-`;
 export const StepContainer = styled(Button)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   border-radius: 50%;
@@ -215,16 +182,6 @@ export const StepText = styled(Box)`
   }
 `
 
-// Logger
-export const LoggerGrid = styled(Box)`
-  width: 90%;
-  min-height: 4rem;
-  height: 30%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-
-`;
 export const LoggerHeader = styled(Box)`
   width: 100%;
   margin: 0 auto;
@@ -244,24 +201,6 @@ export const LoggerTitle = styled.h4`
   text-align: left;
   font-weight: 600;
 `
-export const LoggerInput = styled(TextArea)`
-  border-color: black;
-  resize: none;
-  min-height: 5rem;
-  height: 100%;
-  font-size: 0.8rem;
-  font-weight: 400;
-`;
-export const StepName = styled(Text)`
-  font-size: 2rem;
-`;
-export const LoggerInnerNav = styled(Box)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-`;
 // Compass Viewer Containers
 export const MainContainer = styled(Box)`
   width: 60%;
@@ -637,63 +576,6 @@ export const DescriptionForm = styled(TextArea)`
   border: none;
 `;
 
-// Compass Selector
-export const CSContainer = styled(Box)`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  overflow-y: auto; 
-`;
-export const CSGrid = styled(Box)`
-  width: 100%;
-  height: 100%;
-  min-height: 30rem;
-  margin: 0 auto;
-  flex-direction: row;
-  @media (max-width: 767px){
-    flex-direction: column;
-    min-height: 80rem;
-  }
-  @media (max-width: 650px){ min-height: 75rem; }  
-  @media (max-width: 550px){ min-height: 70rem; } 
-  @media (max-width: 475px){ min-height: 65rem; }  
-  @media (max-width: 413px){ min-height: 60rem; }   
-  @media (max-width: 370px){ min-height: 55rem; }     
-`;
-export const CSTitle = styled(Box)`
-  width: 100%;
-  min-height: 2.0rem;
-  font-size: 2rem;
-  font-height: 2.2rem;
-  font-weight: 600;
-  text-align: left;
-  padding-left: 1.5rem;
-  margin-top: 1.0rem;
-  @media (max-width: 767px){
-    min-height:3rem;
-    font-size: 3rem;
-    font-height: 3.3rem;
-  }  
-`;
-export const CSMain = styled(Grid)`
-  height: 100%;
-`;
-export const CompassSectionContainer = styled(Box)`
-  width: 50%;
-  height: 100%;
-  margin: 0 auto;
-  overflow-y: auto;
-  @media (max-width: 767px){
-    overflow-y: hidden;
-    width: 100%;
-    min-height: 50rem;
-  }
-  @media (max-width: 650px){ min-height: 40rem; }  
-  @media (max-width: 550px){ min-height: 30rem; } 
-  @media (max-width: 475px){ min-height: 20rem; }  
-  @media (max-width: 413px){ min-height: 10rem; }   
-  @media (max-width: 370px){ min-height: 9rem; }    
-`;
 
 // InteractionFeed 
 export const CSInteractions = styled(Box)`
@@ -762,37 +644,6 @@ export const CSInteraction = styled(Button)`
 `;
 
 // Compass SessionBar
-export const SessionView = styled(Box)`
-  text-align: center;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-left: 2px solid #e3e3e3;
-  @media (max-width: 767px){
-    width: 100%;
-    height: 25rem;
-  }  
-`
-export const SessionSection = styled(Box)`
-  width: 90%;
-  min-height: 2.5rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-`
-export const SessionTitle = styled.h4`
-  word-break: break-word;
-  font-size: 2rem;
-  padding: 0;
-  width: 50%;
-  color: black;
-  line-height: 2.1rem;
-  text-align: left;
-  font-weight: 600;
-  margin: 0;
-`
 export const SessionDescription = styled(Box)`
   width: 70%;
   height: 100%;

@@ -1,20 +1,13 @@
 import React, {useState, useEffect, useContext}  from "react";
-import { 
-  LoggerGrid,
-  LoggerTitle,
-  LoggerInput, 
-  LoggerHeader,
-  StepClock,
-  TimerButton,
-} from "../../../styles/CompassPage"
+import styled from "styled-components"
+import { Button, TextArea } from "grommet"
+import { PauseFill, PlayFill } from 'grommet-icons';
+
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
-import { Storage } from 'aws-amplify'
-import uuid from 'uuid/v4'
-import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 
-const Logger = (props) => {
+export const Logger = (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
@@ -26,18 +19,16 @@ const Logger = (props) => {
   const [interactionTime,setInteractionTime] = useState(0);
   const [log, setLog] = useState('');
   const [start,setStart] = useState(false);
-  const [attachments,setAttachments] = useState([]);
 
   // intialize interaction into the logger
   useEffect(() => {
     if(interaction.id){
-      const {log_content, duration, step, attachments} = interaction
+      const {log_content, duration, step} = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
       setStart(true)
-      setAttachments(attachments.items)
     }
 
   // eslint-disable-next-line
@@ -63,6 +54,7 @@ const Logger = (props) => {
   // eslint-disable-next-line
   }, [start,interactionTime, interaction])
   
+  // pause the timer
   const pause = (e) => {
     const newInteraction = {
       id: interaction.id,
@@ -75,32 +67,6 @@ const Logger = (props) => {
     
     return setStart(!start)
   }
-
-  const handleUpload = async (event) => { 
-    const { target: { files } } = event
-    const [image] = files || []
-    if (image) {
-      const { name: fileName, type: mimeType } = image
-      const fileForUpload = {
-        bucket: config.aws_user_files_s3_bucket,
-        key:  `${uuid()}${fileName}`,
-        region: config.aws_user_files_s3_bucket_region,
-        name: fileName,
-        type: mimeType,
-      }
-    
-      try {
-        await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        Mutation.uploadAttachment({...fileForUpload,attachmentInteractionId: interaction.id})
-          .then((res) => {
-            setAttachments([res.data.createAttachment, ...attachments])
-            updateInteraction({attachments: [res.data.createAttachment, ...attachments]})
-          })
-      } catch (err) {
-        console.log('error cannot store file: ', err)
-      }
-    }
-  };
 
   return (
     <LoggerGrid>
@@ -129,3 +95,64 @@ const Logger = (props) => {
 }
 
 export default Logger;
+
+const LoggerGrid = styled.div`
+  width: 90%;
+  min-height: 4rem;
+  height: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`
+const LoggerHeader = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  min-height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+const LoggerTitle = styled.h4`
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  color: ${props => props.color ? props.color : '#5567FD'};
+  line-height: 1.3rem;
+  text-align: left;
+  font-weight: 600;
+`
+const LoggerInput = styled(TextArea)`
+  border-color: black;
+  resize: none;
+  min-height: 8rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  
+`;
+const StepClock = styled.div`
+  margin: 0.5rem 0;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+`
+const ControlButton = styled(Button)`
+  svg {
+    width: 1.0rem;
+    height: 1.0rem;
+  }
+  padding-right: 0;
+`
+
+export const TimerButton = ({ onClick, start, color }) => (
+  <ControlButton
+    onClick={e => onClick()}
+    icon={start ? <PauseFill color={color ? color : '#5567FD'} /> : <PlayFill color={color ? color : '#5567FD'} />}
+  />
+)
