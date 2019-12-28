@@ -1,14 +1,25 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../utils/queries'
 import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../utils/mutations'
 import { CompassContext } from "../../context/CompassPage/context"
+import { GlobalContext } from "../../context/context"
 import styled from "styled-components"
 import { AddCircle } from 'grommet-icons'
 import { Button } from 'grommet'
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
   console.log(compass)
+  console.log(user)
+
+  const [disableButton, setdisableButton] = useState(true)
+
+  useEffect(() => {
+    if (compass.owner.id === user.id) {
+      setdisableButton(!disableButton)
+    }
+  }, [compass.id])
 
   const [scribe, setScribe] = useState("")
 
@@ -59,6 +70,7 @@ const CompassPermissions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log('clicked')
 
     getUsers(scribe)
       .then(res =>
@@ -189,7 +201,8 @@ const CompassPermissions = () => {
               })
             }
           </ReaderContainer>
-          <PermissionSubmit type="submit" primary label="Submit" />
+          {/* <PermissionSubmit type="submit" primary label="Submit" /> */}
+          <button type="submit" disabled={disableButton}>Submit</button>
 
         </PermissionForm>
       </PermissionFormContainer>
