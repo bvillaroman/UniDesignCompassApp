@@ -59,7 +59,6 @@ const CompassPage = (props) => {
     // if so, update the session
     const createAttachment = createAttachmentSub().subscribe({
       next: res => {
-        console.log(res)
         const newAttachment = res.value.data.onCreateAttachment
         if (newAttachment.session.id === session.id) {        
           getSession(session.id)

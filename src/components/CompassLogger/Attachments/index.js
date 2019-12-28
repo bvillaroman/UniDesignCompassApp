@@ -52,7 +52,13 @@ const Attachments = (props) => {
         setLoading(true)
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
         Mutation.uploadAttachment({...fileForUpload,attachmentSessionId: session.id})
+          .then((res) => {
+            setLoading(false)
+            setAttachments([res.data.createAttachment, ...attachments])
+            
+          })
       } catch (err) {
+        setLoading(false)
         console.log('error cannot store file: ', err)
       }
     }

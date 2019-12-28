@@ -90,8 +90,11 @@ export const CompassWheel = styled.div`
   position: relative;
   width: 100%;
   height: 19rem;
-  @media (max-width: 767px){
-    height: 35rem;
-  }  
+  @media (max-width: 767px){ height: 35.5rem;}  
+  @media (max-width: 650px){ height: 34rem; }  
+  @media (max-width: 550px){ height: 30rem; } 
+  @media (max-width: 475px){ height: 26rem; }  
+  @media (max-width: 413px){ height: 24rem; }   
+  @media (max-width: 370px){ height: 20.5rem; }    
   margin: 0 auto;
 `;

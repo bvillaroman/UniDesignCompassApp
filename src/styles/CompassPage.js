@@ -577,71 +577,7 @@ export const DescriptionForm = styled(TextArea)`
 `;
 
 
-// InteractionFeed 
-export const CSInteractions = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  min-height: 10rem;
-`;
-export const CSInteractionsTitle = styled(Box)`
-  text-align: left;
-  font-size: 1.2rem;
-  font-weight: 600;
-  width: 100%;
-  padding-left: 1.5rem;
-  margin: 0.5rem auto;
-  min-height: 1.3rem;
-`;
-export const CSInteractionsFeed = styled(Box)`
-  flex-direction: row-reverse;
-  align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
-  flex-wrap: nowrap; 
-  min-height: 8.5rem;
-  width: 100%;
-  padding: 1rem;
-`;
-export const CSInteractionContainer = styled(Box)`
-  margin: 0 0.5rem;
-  min-width: 7.6rem;
-  min-height: 7rem;
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  justify-content: space-between;
-  svg {
-    margin-bottom: 1rem;
-  }
-`;
-export const CSInteractionButtonContainer = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  span {
-    font-size: 0.8rem;
-  }
-`;
-export const CSInteraction = styled(Button)`
-  border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
-  :hover {
-    transition: all 0.2s;
-    background-color: transparent;
-    border: 0.15rem solid transparent;
-  }
-  border-radius: 50%;
-  transition: all 0.3s;
-  padding: 0.5rem;
-  color: black; 
-  font-weight: 600;
-  font-size: 0.7rem;
-  line-height: 0.8rem;
-  height: 5rem;
-  width: 5rem;
-  background-color: ${props => props.color ? props.color : '#5567FD'};
 
-`;
 
 // Compass SessionBar
 export const SessionDescription = styled(Box)`

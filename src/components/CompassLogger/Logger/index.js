@@ -99,7 +99,7 @@ export default Logger;
 const LoggerGrid = styled.div`
   width: 90%;
   min-height: 4rem;
-  height: 30%;
+  height: auto;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
