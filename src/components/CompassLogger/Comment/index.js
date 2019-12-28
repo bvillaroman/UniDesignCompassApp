@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import styled from "styled-components"
+
+import {SectionHeader} from "../style"
 import DisplayComment from './DisplayComment';
 import CommentForm from './CommentForm';
 import { CompassContext } from "../../../context/CompassPage/context";
-import {
-  CommentSession,
-  CommentTitle,
-  CommentBox,
-  CommentRef
-} from '../../../styles/CommentPage'
+
 
 const Comment = () => {
   const messagesEndRef = useRef(null);
@@ -43,7 +41,7 @@ const Comment = () => {
 
   return (
     <CommentSession>
-      <CommentTitle>Comments</CommentTitle>
+      <SectionHeader>Comments</SectionHeader>
       <CommentBox>
         {
           comments.sort(timeConverter).map((comment, key) => <DisplayComment comment={comment} key={key} />)
@@ -59,3 +57,19 @@ const Comment = () => {
 
 export default Comment;
 
+export const CommentSession = styled.div`
+  width: 90%;
+  min-height: 2.5rem;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: 1rem;
+`;
+
+export const CommentBox = styled.div`
+  height: 10rem;
+  overflow: auto;
+  padding: 0.5em;
+`;
+
+export const CommentRef = styled.div`
+`;

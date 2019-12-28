@@ -1,12 +1,7 @@
 import React, {useState, useEffect, useContext }  from "react";
 import styled from "styled-components"
-import { Box, } from "grommet"
 
-import { 
-  LoggerTitle,
-  LoggerHeader,
-  StepClock,
-} from "../../../styles/CompassPage"
+import { SectionHeader } from "../style"
 import { AttachmentButton } from "../../../styles/Modals"
 // import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
@@ -65,19 +60,17 @@ const Attachments = (props) => {
   };
 
   return (
-    <LoggerAttachments>
-      <LoggerHeader>
-        <LoggerTitle color="black">
-          Attachments
-        </LoggerTitle>
+    <AttachmentsContainer>
+      <AttachmentsHeader>
+        <SectionHeader> Attachments </SectionHeader>
         {
           compass.hasOwnProperty("id") && (
-            <StepClock >
+            <AttachmentButtonContainer >
               <AttachmentButton onChange={handleUpload} />
-            </StepClock>
+            </AttachmentButtonContainer>
           )
         }
-      </LoggerHeader>
+      </AttachmentsHeader>
       <SessionAttachments>
         { 
           attachments.length > 0 && 
@@ -86,19 +79,29 @@ const Attachments = (props) => {
           )) 
         }
       </SessionAttachments>
-    </LoggerAttachments>
+    </AttachmentsContainer>
   );
 }
 
 export default Attachments;
 
-export const LoggerAttachments = styled(Box)`
+export const AttachmentsContainer = styled.div`
   width: 90%;
-  min-height: 14rem;
-  max-height: 14rem;
+  height: 50%;
   margin: 0 auto;
 `
-export const SessionAttachments = styled(Box)`
+export const AttachmentButtonContainer = styled.div`
+  margin: 0.5rem 0;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+`
+export const SessionAttachments = styled.div`
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -107,3 +110,12 @@ export const SessionAttachments = styled(Box)`
   overflow: scroll;
   border-top: 0.1rem solid rgba(0,0,0,0.2);
 `
+export const AttachmentsHeader = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  min-height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;

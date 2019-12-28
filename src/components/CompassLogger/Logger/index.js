@@ -1,17 +1,13 @@
 import React, {useState, useEffect, useContext}  from "react";
-import { 
-  LoggerGrid,
-  LoggerTitle,
-  LoggerInput, 
-  LoggerHeader,
-  StepClock,
-  TimerButton,
-} from "../../styles/CompassPage"
-import translateTime from '../../utils/translateTime'
-import * as Mutation from '../../utils/mutations'
-import { CompassContext } from "../../context/CompassPage/context"
+import styled from "styled-components"
+import { Button, TextArea } from "grommet"
+import { PauseFill, PlayFill } from 'grommet-icons';
 
-const Logger = (props) => {
+import translateTime from '../../../utils/translateTime'
+import * as Mutation from '../../../utils/mutations'
+import { CompassContext } from "../../../context/CompassPage/context"
+
+export const Logger = (props) => {
   const {interaction,updateInteraction} = useContext(CompassContext);
 
   const intialStep = {
@@ -99,3 +95,64 @@ const Logger = (props) => {
 }
 
 export default Logger;
+
+const LoggerGrid = styled.div`
+  width: 90%;
+  min-height: 4rem;
+  height: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`
+const LoggerHeader = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  min-height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
+const LoggerTitle = styled.h4`
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  color: ${props => props.color ? props.color : '#5567FD'};
+  line-height: 1.3rem;
+  text-align: left;
+  font-weight: 600;
+`
+const LoggerInput = styled(TextArea)`
+  border-color: black;
+  resize: none;
+  min-height: 5rem;
+  height: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+`;
+const StepClock = styled.div`
+  margin: 0.5rem 0;
+  width: auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+`
+const ControlButton = styled(Button)`
+  svg {
+    width: 1.0rem;
+    height: 1.0rem;
+  }
+  padding-right: 0;
+`
+
+export const TimerButton = ({ onClick, start, color }) => (
+  <ControlButton
+    onClick={e => onClick()}
+    icon={start ? <PauseFill color={color ? color : '#5567FD'} /> : <PlayFill color={color ? color : '#5567FD'} />}
+  />
+)

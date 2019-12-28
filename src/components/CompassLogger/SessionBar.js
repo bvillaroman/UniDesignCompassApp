@@ -1,25 +1,28 @@
-import React,{useContext} from "react";
-import { 
-  SessionView, 
-  SessionSection, 
-  SessionTitle,
-} from "../../styles/CompassPage"
-import { CompassContext } from "../../context/CompassPage/context"
+import React from "react";
+import styled from "styled-components"
+
 import Comments from "./Comment"
 import Attachments from "./Attachments"
 
 export default (props) => {
-  const {session} = useContext(CompassContext)
-
   return (
     <SessionView>
-      <SessionSection>
-        <SessionTitle >
-          {session.name_of_session} 
-        </SessionTitle>        
-      </SessionSection> 
       <Attachments />
       <Comments/>
     </SessionView>
   ) 
 };
+
+// Compass SessionBar
+export const SessionView = styled.div`
+  text-align: center;
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #e3e3e3;
+  @media (max-width: 767px){
+    width: 100%;
+    height: 25rem;
+  }  
+`
