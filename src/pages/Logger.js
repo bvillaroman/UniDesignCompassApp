@@ -1,12 +1,12 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 
 import CompassLogger from "../components/CompassLogger"
-import ModalMenu from "../components/CompassLogger/ModalMenu"
 
 import { CompassContext } from "../context/CompassPage/context"
 import { GlobalContext } from "../context/context"
+
 import { createSessionSub, updateInteractionSub, createCommentSub, createAttachmentSub } from "../utils/subscriptions"
-import { getCompass,  getSession } from '../utils/queries'
+import { getCompass, getSession } from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
 
@@ -20,7 +20,6 @@ const CompassPage = (props) => {
     updateCompass, 
     updateSession 
   } = useContext(CompassContext);
-  const [show, setShow] = useState(true);
 
   const showItem = (attachment, src) => {
     // setAttachment(attachment)
@@ -59,7 +58,6 @@ const CompassPage = (props) => {
     // if so, update the session
     const createAttachment = createAttachmentSub().subscribe({
       next: res => {
-        console.log(res)
         const newAttachment = res.value.data.onCreateAttachment
         if (newAttachment.session.id === session.id) {        
           getSession(session.id)
@@ -101,19 +99,12 @@ const CompassPage = (props) => {
     // eslint-disable-next-line
   }, [])
 
-  useEffect(() => {
-    if (session.hasOwnProperty("id")) setShow(false);
-    else setShow(true);
-  }, [session.id])
-
   return (
     <MainView>
       {
         compass.hasOwnProperty("id") ? 
-          show ? <ModalMenu/> : (
-            session.hasOwnProperty("id") ? <CompassLogger showAttachment={showItem} /> : ( 
-              <div> Sorry, this Session does not exist !</div> 
-            )
+          session.hasOwnProperty("id") ? <CompassLogger showAttachment={showItem} /> : ( 
+            <div> Sorry, this Session does not exist !</div> 
           ) : <div> Sorry, this Project does not exist !</div> 
       }
     </MainView>

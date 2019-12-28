@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useContext }  from "react";
 import styled from "styled-components"
+import * as Icons from 'grommet-icons';
 
-import { SectionHeader } from "../style"
-import { AttachmentButton } from "../../../styles/Modals"
+import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 import * as Mutation from '../../../utils/mutations'
 import Attachment from "./Attachment"
@@ -52,7 +52,13 @@ const Attachments = (props) => {
         setLoading(true)
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
         Mutation.uploadAttachment({...fileForUpload,attachmentSessionId: session.id})
+          .then((res) => {
+            setLoading(false)
+            setAttachments([res.data.createAttachment, ...attachments])
+            
+          })
       } catch (err) {
+        setLoading(false)
         console.log('error cannot store file: ', err)
       }
     }
@@ -60,16 +66,16 @@ const Attachments = (props) => {
 
   return (
     <AttachmentsContainer>
-      <AttachmentsHeader>
-        <SectionHeader> Attachments </SectionHeader>
+      <LoggerHeaderContainer>
+        <LoggerHeaderText> Attachments </LoggerHeaderText>
         {
           compass.hasOwnProperty("id") && (
-            <AttachmentButtonContainer >
+            <LoggerHeaderButtonContainer >
               { loading ? <Loader/> : <AttachmentButton onChange={handleUpload} /> }
-            </AttachmentButtonContainer>
+            </LoggerHeaderButtonContainer>
           )
         }
-      </AttachmentsHeader>
+      </LoggerHeaderContainer>
       <SessionAttachments>
         { 
           attachments.length > 0 && 
@@ -84,23 +90,12 @@ const Attachments = (props) => {
 
 export default Attachments;
 
-export const AttachmentsContainer = styled.div`
+const AttachmentsContainer = styled.div`
   width: 90%;
   height: 50%;
   margin: 0 auto;
 `
-export const AttachmentButtonContainer = styled.div`
-  margin: 0.5rem 0;
-  width: auto;
-  height: 3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 500;
-`
-export const SessionAttachments = styled.div`
+const SessionAttachments = styled.div`
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -113,12 +108,38 @@ export const SessionAttachments = styled.div`
     max-height: 8rem;
   }  
 `
-export const AttachmentsHeader = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  min-height: 2.4rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
+const ButtonLabel = styled.label`
+  cursor: ${ props => props.disabled ? "unset" : "pointer"}; ;
+  border: 0.15rem solid transparent;
+  border-radius: 2rem;
+  transition: all 0.3s;
+  padding: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  svg {
+    fill: ${ props => props.disabled ? "grey" : "black"}; 
+    stroke: ${ props => props.disabled ? "grey" : props.color}; 
+  }
+  :hover {
+    transition: all 0.3s;
+    border: 0.15rem solid ${ props => props.disabled ? "transparent" : (props.color ? props.color : '#5567FD')};
+    border-radius: 2rem;
+    background-color:${ props => props.disabled ? "transparent" : props.color ? props.color : '#5567FD'};
+    color: white; 
+    svg {
+      transition: all 0.3s;
+      fill: ${ props => props.disabled ? "grey" : "white"}; 
+      stroke: ${ props => props.disabled ? "grey" : "white"}; 
+    }
+  }
+  input {
+    display: none;
+  }
+`
+
+const AttachmentButton = ({ onChange, color, disabled }) => (
+  <ButtonLabel color={color} disabled={disabled}>
+    <Icons.Attachment color={color ? color : "#5567FD"} />
+    <input type="file" onChange={onChange} disabled={disabled} />
+  </ButtonLabel>
+)

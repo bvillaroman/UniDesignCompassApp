@@ -89,9 +89,9 @@ const Dashboard = (props) => {
               <InfoText>What are projects?</InfoText>
             </Header>
             {showModal && <CustomCompassForm />}
-            <ProjectCreator />
+            <ProjectCreator setLoading={setLoading}/>
             {
-              !error ? (compasses.length ? <Feed compasses={compasses} /> : <div>You have no projects, start one from above! </div>)
+              !error ? (compasses.length ? <Feed compasses={compasses}/> : <div>You have no projects, start one from above! </div>)
                 : <div> Error !: {error}</div>
             }
           </DashboardContainer>

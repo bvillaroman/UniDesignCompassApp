@@ -25,9 +25,9 @@ export const CompassSectionContainer = styled.div`
     width: 100%;
     min-height: 50rem;
   }
-  @media (max-width: 650px){ min-height: 40rem; }  
-  @media (max-width: 550px){ min-height: 30rem; } 
-  @media (max-width: 475px){ min-height: 20rem; }  
-  @media (max-width: 413px){ min-height: 10rem; }   
-  @media (max-width: 370px){ min-height: 9rem; }    
+  @media (max-width: 650px){ min-height: 50rem; }  
+  @media (max-width: 550px){ min-height: 45rem; } 
+  @media (max-width: 475px){ min-height: 40rem; }  
+  @media (max-width: 413px){ min-height: 38rem; }   
+  @media (max-width: 370px){ min-height: 35rem; }    
 `;
