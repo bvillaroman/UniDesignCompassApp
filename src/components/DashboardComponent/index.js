@@ -30,8 +30,6 @@ const Dashboard = (props) => {
 
     getCompasses()
       .then((res) => {
-        console.log("does this hit?")
-        console.log("FIRST RES", res)
         const owners = res.filter((compass) => (compass.owner && (compass.owner.id === user.id)))
 
         // finding the projects i am a member of:
@@ -43,12 +41,6 @@ const Dashboard = (props) => {
         const allTeachers = res.map((compass) => compass.teachers.items.filter((teacher) => teacher.email === user.email)).flat().map(compass => compass.compass)
         const allReaders = res.map((compass) => compass.readers.items.filter((reader) => reader.email === user.email)).flat().map(compass => compass.compass)
         // setCompasses(res.filter((compass) => ((compass.owner && (compass.owner.id === user.id))) || (compass.members.items.filter((member) => member.email === user.email))))
-        console.log(owners)
-        console.log('scribe', scribe)
-        console.log("SECOND Members", allMembers)
-        console.log("SECOND Members", allTeachers)
-        console.log("SECOND Members", allReaders)
-
         setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders, ...scribe])
         setLoading(false)
       })

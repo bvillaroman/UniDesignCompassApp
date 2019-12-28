@@ -4,12 +4,13 @@ import config from '../aws-exports';
 
 API.configure(config);
 
-export async function createCompass(name_of_compass, description_of_compass, compassType, compassOwnerId) {
+export async function createCompass(name_of_compass, description_of_compass, compassType, compassOwnerId, compassScribeId) {
   const compassInfo = {
     name_of_compass,
     description_of_compass,
     compassType,
     compassOwnerId,
+    compassScribeId
   }
   const newCompass = await API.graphql(graphqlOperation(mutations.createCompass, { input: compassInfo }));
   return newCompass;

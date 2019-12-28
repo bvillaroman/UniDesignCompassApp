@@ -16,8 +16,16 @@ const CompassPermissions = () => {
   const [disableButton, setdisableButton] = useState(true)
 
   useEffect(() => {
-    if (compass.owner.id === user.id) {
-      setdisableButton(!disableButton)
+    const teachers = compass.teachers.items.filter((teacher) => teacher)
+    console.log("TEAHCERS HOOK1", teachers)
+    const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
+    // const teacher = teachers.length > 0 ? "YO" : " "
+    // console.log('teacher', teacher.email)
+    // const check = teacher.email
+    console.log("TEAHCERS HOOK2", teacher)
+
+    if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
+      setdisableButton(false)
     }
   }, [compass.id])
 
@@ -70,7 +78,9 @@ const CompassPermissions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('clicked')
+    console.log("NOT PASSED HERE YET")
+    console.log(scribe)
+    console.log("PASS HERE")
 
     getUsers(scribe)
       .then(res =>
@@ -80,6 +90,8 @@ const CompassPermissions = () => {
       ).catch(err => console.log(err))
 
     teacher.map((t) => {
+      console.log(t)
+
       getUsers(t.email)
         .then(res =>
           createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
@@ -90,6 +102,8 @@ const CompassPermissions = () => {
     })
 
     member.map((m) => {
+      console.log(m)
+
       getUsers(m.email)
         .then(res =>
           createMemberCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
@@ -99,6 +113,8 @@ const CompassPermissions = () => {
     })
 
     reader.map((r) => {
+      console.log(r)
+
       getUsers(r.email)
         .then(res =>
           createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
@@ -113,10 +129,11 @@ const CompassPermissions = () => {
       <PermissionHeader>Permission</PermissionHeader>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
+
           <ScribeContainer>
             <label>
-              Scribes
-              <AllInput size="35" type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
+              Scribe:
+              <input type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
             </label>
           </ScribeContainer>
 
@@ -131,7 +148,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`teacher-${idx}`}>
                     <label >{`Teacher #${idx + 1}`}</label>
-                    <AllInput
+                    <input
                       size="35"
                       type="email"
                       name={teacherId}
@@ -158,7 +175,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`member-${idx}`}>
                     <label >{`Member #${idx + 1}`}</label>
-                    <AllInput
+                    <input
                       size="35"
                       type="email"
                       name={memberID}
@@ -186,7 +203,7 @@ const CompassPermissions = () => {
                 return (
                   <div key={`reader-${idx}`}>
                     <label >{`Reader #${idx + 1}`}</label>
-                    <AllInput
+                    <input
                       size="35"
                       type="email"
                       name={readerID}
@@ -203,7 +220,6 @@ const CompassPermissions = () => {
           </ReaderContainer>
           {/* <PermissionSubmit type="submit" primary label="Submit" /> */}
           <button type="submit" disabled={disableButton}>Submit</button>
-
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -240,7 +256,6 @@ export const PermissionFormContainer = styled.div`
 `
 
 export const PermissionForm = styled.form`
-
 `
 
 export const PermissionButtom = styled.button`
@@ -273,13 +288,6 @@ export const ReaderContainer = styled.div`
   font-size: 1.2rem;
   padding-left: 1em;
   padding-right: 1em;
-`
-
-export const AllInput = styled.input`
-  border: none;
-  padding-top: 0.3em;
-  border-bottom: 2px solid #f4f6f9;
-  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`
