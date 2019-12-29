@@ -9,7 +9,13 @@ export const CompassFeed = (props) => {
 
   useEffect(() => {
     if (props.compasses.length > 0) {
-      setCompasses(props.compasses)
+      const seen = new Set();
+      const filteredArr = props.compasses.filter(compass => {
+        const duplicate = seen.has(compass.id);
+        seen.add(compass.id);
+        return !duplicate;
+      });
+      setCompasses(filteredArr)
     }
   }, [props.compasses]);
 

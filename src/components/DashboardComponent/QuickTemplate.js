@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import styled from "styled-components"
 import { GlobalContext } from "../../context/context"
-import { getUser } from "../../utils/queries"
 import { createCompass, createStep, createSession } from "../../utils/mutations"
+import { dateFormatter } from "../../utils/translateTime"
 import { navigate } from "gatsby"
-import { Link } from "gatsby"
 
 const QuickTemplate = (props) => {
   const { user } = useContext(GlobalContext);
@@ -48,22 +47,29 @@ const QuickTemplate = (props) => {
   ];
 
   const goToReview = (event) => {
-    const compassID = createCompass("Untitled", "-", "default", user.id)
+    props.setLoading(false)
+    createCompass("Untitled", "-", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id)
         )
-        navigate(`/Compass/?c=${res.data.createCompass.id}`)
-        createSession("untitled", " ", res.data.createCompass.id)
+        const today = new Date();
+        const hour = today.getHours()
+        const minute = today.getMinutes()
+
+        createSession(`Session on ${dateFormatter(today)} at ${hour % 12}:${minute} ${hour >= 12 ? "p.m." : "a.m."}`, " ", res.data.createCompass.id)
           .then((result) => {
-            navigate(`/Compass/?c=${res.data.createCompass.id}&s=${result.data.createSession.id}`)
+            navigate(`/Logger/?c=${res.data.createCompass.id}&s=${result.data.createSession.id}`)
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            props.setLoading(false)
+            console.log(err)
+          })
       })
-      .catch(err => console.log(err))
-
-
-    console.log(compassID)
+      .catch(err => {
+        props.setLoading(false)
+        console.log(err)
+      })
   };
 
   return (

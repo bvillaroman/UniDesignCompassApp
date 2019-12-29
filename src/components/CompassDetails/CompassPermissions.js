@@ -1,14 +1,33 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../utils/queries'
 import { updateCompass, updateCompassPermissions, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../utils/mutations'
 import { CompassContext } from "../../context/CompassPage/context"
+import { GlobalContext } from "../../context/context"
 import styled from "styled-components"
 import { AddCircle } from 'grommet-icons'
 import { Button } from 'grommet'
 
 const CompassPermissions = () => {
   const { compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
   console.log(compass)
+  console.log(user)
+
+  const [disableButton, setdisableButton] = useState(true)
+
+  useEffect(() => {
+    const teachers = compass.teachers.items.filter((teacher) => teacher)
+    console.log("TEAHCERS HOOK1", teachers)
+    const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
+    // const teacher = teachers.length > 0 ? "YO" : " "
+    // console.log('teacher', teacher.email)
+    // const check = teacher.email
+    console.log("TEAHCERS HOOK2", teacher)
+
+    if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
+      setdisableButton(false)
+    }
+  }, [compass.id])
 
   const [scribe, setScribe] = useState("")
 
@@ -64,7 +83,7 @@ const CompassPermissions = () => {
     console.log("PASS HERE")
 
     getUsers(scribe)
-      .then(res => //console.log('scribe', res.data.listUsers.items[0].id))
+      .then(res =>
         updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
           .then(res => console.log(res))
           .catch(err => console.log(err))
@@ -74,8 +93,7 @@ const CompassPermissions = () => {
       console.log(t)
 
       getUsers(t.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
             .then(res => console.log(res))
             .catch(err => console.log(err))
@@ -83,21 +101,11 @@ const CompassPermissions = () => {
 
     })
 
-    console.log('Compass Permission Clicked')
-    // getUsers(teacher[0].email)
-    //   .then(res => console.log(res)) //.data.listUsers.items[0].id
-
-    //   //   createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
-    //   // .then(res => console.log(res))
-    //   // .catch(err => console.log(err))
-    //   .catch(err => console.log('failed at getUser', err))
-
     member.map((m) => {
       console.log(m)
 
       getUsers(m.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createMemberCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -108,8 +116,7 @@ const CompassPermissions = () => {
       console.log(r)
 
       getUsers(r.email)
-        .then(res => //console.log(res)) //.data.listUsers.items[0].id
-
+        .then(res =>
           createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
         .catch(err => console.log(err))
@@ -123,10 +130,12 @@ const CompassPermissions = () => {
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
 
-          <label>
-            Scribe:
+          <ScribeContainer>
+            <label>
+              Scribe:
               <input type="email" name="scribe" value={scribe} onChange={e => { setScribe(e.target.value) }} />
-          </label>
+            </label>
+          </ScribeContainer>
 
           <TeacherContainer>
             <PermissionButtom
@@ -155,11 +164,6 @@ const CompassPermissions = () => {
             }
           </TeacherContainer>
 
-          {/* <input
-          type="button"
-          value="Add New Member"
-          onClick={addMember}
-        /> */}
           <MemberContainer>
             <PermissionButtom
               onClick={addMember}
@@ -186,12 +190,7 @@ const CompassPermissions = () => {
               })
             }
           </MemberContainer>
-          {/* 
-        <input
-          type="button"
-          value="Add New Reader"
-          onClick={addReader}
-        /> */}
+
           <ReaderContainer>
             <PermissionButtom
               onClick={addReader}
@@ -219,8 +218,8 @@ const CompassPermissions = () => {
               })
             }
           </ReaderContainer>
-          <PermissionSubmit type="submit" primary label="Submit" />
-
+          {/* <PermissionSubmit type="submit" primary label="Submit" /> */}
+          <button type="submit" disabled={disableButton}>Submit</button>
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -257,11 +256,17 @@ export const PermissionFormContainer = styled.div`
 `
 
 export const PermissionForm = styled.form`
-
 `
 
 export const PermissionButtom = styled.button`
   float: right
+`
+
+export const ScribeContainer = styled.div`
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
 `
 
 export const TeacherContainer = styled.div`

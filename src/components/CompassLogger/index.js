@@ -37,7 +37,7 @@ export default CompassSelector;
 export const CSGrid = styled.div`
   width: 100%;
   height: 75%;
-  min-height: 32rem;
+  min-height: 33rem;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -56,4 +56,6 @@ export const CSContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   overflow-y: auto; 
+  display: flex;
+  flex-direction: column;
 `;
