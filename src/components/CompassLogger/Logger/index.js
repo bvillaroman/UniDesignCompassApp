@@ -8,7 +8,7 @@ import * as Mutation from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
 
 export const Logger = (props) => {
-  const {interaction,updateInteraction} = useContext(CompassContext);
+  const {interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated} = useContext(CompassContext);
 
   const intialStep = {
     name_of_step: "Logger",
@@ -19,8 +19,10 @@ export const Logger = (props) => {
   const [interactionTime,setInteractionTime] = useState(0);
   const [log, setLog] = useState('');
   const [start,setStart] = useState(false);
+  const [edit, setEdit] = useState(false);
+  const [timer, setTimer] = useState(false);
 
-  // intialize interaction into the logger
+  // initialize the logger
   useEffect(() => {
     if(interaction.id){
       const {log_content, duration, step} = interaction
@@ -28,11 +30,43 @@ export const Logger = (props) => {
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
-      setStart(true)
+    } 
+
+  // eslint-disable-next-line
+  }, [])
+  
+  // place a past interaction into the logger if it is updateInteraction is called
+  useEffect(() => {
+
+    if(interaction.id && interactionUpdated){
+      const {log_content, duration, step} = interaction
+      const parsedLog = log_content !== " " ? log_content : ""
+      setInteractionTime(duration)
+      setStep(step)
+      setLog(parsedLog)
+      setTimer(false)      
+      setEdit(true)
+      console.log("IN UPDATE")
     }
 
   // eslint-disable-next-line
-  }, [interaction.id])
+  }, [updateInteraction, interactionUpdated])
+
+  // place new interaction into the logger if it is addInteraction is called
+  useEffect(() => {
+    if(interaction.id && interactionAdded && !start){
+      const {log_content, duration, step} = interaction
+      const parsedLog = log_content !== " " ? log_content : ""
+      setInteractionTime(duration)
+      setStep(step)
+      setLog(parsedLog)           
+      setEdit(false)
+      setTimer(true)
+      console.log("IN ADD")
+    }
+
+  // eslint-disable-next-line
+  }, [addInteraction, interactionAdded])
 
   // handle interaction time
   useEffect(() => {
@@ -41,7 +75,7 @@ export const Logger = (props) => {
     if (interaction.hasOwnProperty("id")){
       if (start) {
         interval = setInterval(() => {
-          updateInteraction({ duration: interactionTime+1 })
+          addInteraction({ duration: interactionTime+1})
           setInteractionTime(interactionTime+1)
         }, 1000)
 
@@ -74,14 +108,18 @@ export const Logger = (props) => {
         <LoggerTitle color={step.color}>
           {step.name_of_step} 
         </LoggerTitle>
-        {
-          step.hasOwnProperty("id") && (
-            <StepClock >
-              {translateTime(interactionTime)}
-              <TimerButton color={step.color} onClick={pause} start={start}/>
-            </StepClock>
-          )
-        }
+        <StepClock>
+          { 
+            step.hasOwnProperty("id") && edit ? (<> Edit </> ) 
+            : timer && (  
+              <>
+                {translateTime(interactionTime)}
+                <TimerButton color={step.color} onClick={pause} start={start}/>
+              </>
+            )
+          }
+          
+        </StepClock>
       </LoggerHeader>
       <LoggerInput
         placeholder="Enter Log"

@@ -15,7 +15,7 @@ import { GlobalContext } from "../context/context"
 import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
-import { getCompass,getSession, getUser } from '../utils/queries'
+import { getCompass,getSession, getUser, getInteraction } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
@@ -30,17 +30,21 @@ const Layout = (props) => {
     updateSession,
     clearSession,     
     updateInteractions, 
-    clearInteractions
+    clearInteractions,
+    updateInteraction, 
+    clearInteraction
   } = useContext(CompassContext);
 
   const [compassID, setCompassID] = useState("")
   const [sessionID, setSessionID] = useState("")
+  const [interactionID, setInteractionID] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const {compassID, sessionID} = queryStringParser(props.location.search)
+    const {compassID, sessionID, interactionID} = queryStringParser(props.location.search)
     setCompassID(compassID)
     setSessionID(sessionID)
+    setInteractionID(interactionID)
 
   }, [props.location.search])
 
@@ -134,6 +138,25 @@ const Layout = (props) => {
     }
 
   }, [loginUser,user])
+
+  // setting up the interaction through url
+  useEffect(() => {
+    // console.log(`called intearctionid: ${interactionID}`)
+    if (interactionID !== "") {
+      getInteraction(interactionID)
+        .then((res) => {
+          updateInteraction(res.data.getInteraction);
+        })
+        .catch((err) => {
+          clearInteraction();
+          console.log(err);
+        })
+    } else {
+      clearInteraction();
+    }
+
+  // eslint-disable-next-line
+  }, [interactionID])
 
   return (
     <LayoutContainer >

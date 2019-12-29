@@ -6,14 +6,14 @@ import translateTime from '../../../utils/translateTime'
 import { GlobalContext } from "../../../context/context";
 
 export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
-  const { session, updateInteraction, interaction, compass } = useContext(CompassContext)
+  const { session, addInteraction, interaction, compass } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
 
   useEffect(() => {
-    console.log(user.email)
-    console.log(compass.scribe.email)
+    // console.log(user.email)
+    // console.log(compass.scribe.email)
     if (user.email === compass.scribe.email) {
       setDisableStep(true)
     }
@@ -32,7 +32,7 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
       if (!interaction.hasOwnProperty("id") || id !== interaction.step.id) {
         startInteraction(session.id, id)
           .then((interaction) => {
-            updateInteraction(interaction.data.createInteraction)
+            addInteraction(interaction.data.createInteraction)
           })
       }
     }

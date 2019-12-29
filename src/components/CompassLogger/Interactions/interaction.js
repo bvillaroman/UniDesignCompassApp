@@ -2,22 +2,18 @@ import React, {useContext} from "react";
 import styled from "styled-components"
 import { LinkNext } from "grommet-icons"
 import { Button } from "grommet"
+import { navigate } from "gatsby"
 
 import translateTime from "../../../utils/translateTime"
-import {getInteraction} from "../../../utils/queries"
-import {ReviewModalContext} from "../../../context/ReviewModal/context"
+import {CompassContext} from "../../../context/CompassPage/context"
 
 const Interaction = ({interaction = {}, isLastStep = false}) => {
+  const { compass, session } = useContext(CompassContext);
   const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
-  const { updateShowModal, updateInteraction } = useContext(ReviewModalContext)
 
   const openReviewLog = (evt) => {    
-    getInteraction(interaction.id)
-      .then((res => {
-        updateInteraction(res.data.getInteraction);
-        updateShowModal(true)        
-      }))
-      .catch((err) => console.log(err))
+    evt.preventDefault()
+    navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
   }
   
   return (
