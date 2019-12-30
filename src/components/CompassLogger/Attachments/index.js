@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext }  from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import * as Icons from 'grommet-icons';
 
@@ -10,18 +10,30 @@ import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
+import { GlobalContext } from "../../../context/context"
 
 const Attachments = (props) => {
-  const {compass, session} = useContext(CompassContext);
-  
-  const [attachments,setAttachments] = useState([]);
+  const { compass, session } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
+
+  const [attachments, setAttachments] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const readers = compass.readers.items.map((reader) => reader)
+  console.log("check all readers", readers)
+
+  const reader = readers.find((r) => r.email === user.email)
+
+  console.log("where do you exist", reader)
+
   useEffect(() => {
-    if(session.hasOwnProperty("id")){
+    console.log("User Hooks", user)
+    console.log("Compass Hooks", compass)
+
+    if (session.hasOwnProperty("id")) {
       let arrAttachment = []
       setLoading(false)
-      if (session.attachments.items.length > 0) {  
+      if (session.attachments.items.length > 0) {
         session.attachments.items.map((attachment, i) => {
           arrAttachment.push(attachment)
         })
@@ -30,32 +42,37 @@ const Attachments = (props) => {
       setAttachments(arrAttachment)
     }
 
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [session])
-  
+
   // handle uploading an attachment
-  const handleUpload = async (event) => { 
+  const handleUpload = async (event) => {
     event.preventDefault()
+
+    console.log("Clicked handleUpload")
+    console.log("User Hooks", user)
+    console.log("Compass Hooks", compass)
+
     const { target: { files } } = event
     const [image] = files || []
-    if (image && session.hasOwnProperty("id") ) {
+    if (image && session.hasOwnProperty("id")) {
       const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
-        key:  `${uuid()}${fileName}`,
+        key: `${uuid()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
         name: fileName,
         type: mimeType,
       }
-    
+
       try {
         setLoading(true)
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        Mutation.uploadAttachment({...fileForUpload,attachmentSessionId: session.id})
+        Mutation.uploadAttachment({ ...fileForUpload, attachmentSessionId: session.id })
           .then((res) => {
             setLoading(false)
             setAttachments([res.data.createAttachment, ...attachments])
-            
+
           })
       } catch (err) {
         setLoading(false)
@@ -71,17 +88,20 @@ const Attachments = (props) => {
         {
           compass.hasOwnProperty("id") && (
             <LoggerHeaderButtonContainer >
-              { loading ? <Loader/> : <AttachmentButton onChange={handleUpload} /> }
+
+              {loading ? <Loader /> : reader === undefined ? <AttachmentButton onChange={handleUpload} /> : reader.email === user.email ? "" : <AttachmentButton onChange={handleUpload} />}
+              {/* {loading ? <Loader /> : <AttachmentButton onChange={handleUpload} />} */}
+              {"where is this being held"}
             </LoggerHeaderButtonContainer>
           )
         }
       </LoggerHeaderContainer>
       <SessionAttachments>
-        { 
-          attachments.length > 0 && 
+        {
+          attachments.length > 0 &&
           attachments.map((item) => (
-            <Attachment key={item.key} attachment={item}/>
-          )) 
+            <Attachment key={item.key} attachment={item} />
+          ))
         }
       </SessionAttachments>
     </AttachmentsContainer>
