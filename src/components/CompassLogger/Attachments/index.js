@@ -91,7 +91,6 @@ const Attachments = (props) => {
 
               {loading ? <Loader /> : reader === undefined ? <AttachmentButton onChange={handleUpload} /> : reader.email === user.email ? "" : <AttachmentButton onChange={handleUpload} />}
               {/* {loading ? <Loader /> : <AttachmentButton onChange={handleUpload} />} */}
-              {"where is this being held"}
             </LoggerHeaderButtonContainer>
           )
         }
