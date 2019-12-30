@@ -2,6 +2,7 @@ import React, { useReducer, createContext} from "react";
 import CompassReducer, { 
   UPDATE_COMPASS, 
   UPDATE_SESSION,
+  ADD_INTERACTION,
   UPDATE_INTERACTION,
   UPDATE_INTERACTIONS,
   UPDATE_TIME,
@@ -20,7 +21,9 @@ export const initialState = {
   session: {},
   interaction: {},
   interactions: [],
-  time: 0
+  time: 0,
+  interactionAdded: false,
+  interactionUpdated: false
 }
 
 export const CompassProvider = ({children}) => {
@@ -30,6 +33,7 @@ export const CompassProvider = ({children}) => {
       value={{
         updateCompass: (compass) => dispatch({type: UPDATE_COMPASS, payload: compass}),
         updateSession: (session) => dispatch({type: UPDATE_SESSION, payload: session}),
+        addInteraction: (interaction) => dispatch({type: ADD_INTERACTION, payload: interaction}),
         updateInteraction: (interaction) => dispatch({type: UPDATE_INTERACTION, payload: interaction}),
         updateInteractions: (interactions) => dispatch({type: UPDATE_INTERACTIONS, payload: interactions}), 
         updateTime: (time) => dispatch({type: UPDATE_TIME, payload: time}), 
