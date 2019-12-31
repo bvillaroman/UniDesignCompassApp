@@ -77,8 +77,9 @@ const TeachersPermission = () => {
                 const teacherId = `name-${idx}`;
                 return (
                   <div key={`teacher-${idx}`}>
-                    <label >{`Teacher #${idx + 1}`}</label>
+                    <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}> {`Teacher #${idx + 1}`} </label>
                     <input
+                      style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
                       size="35"
                       type="email"
                       name={teacherId}
@@ -93,8 +94,8 @@ const TeachersPermission = () => {
               })
             }
           </TeacherContainer>
-
-          <button type="submit" disabled={disableButton}>Submit</button>
+          <PermissionSubmit type="submit" primary label="Submit" disabled={disableButton} />
+          {/* <button type="submit" disabled={disableButton}>Submit</button> */}
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -138,13 +139,6 @@ export const PermissionButtom = styled.button`
   float: right
 `
 
-export const ScribeContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
 export const TeacherContainer = styled.div`
   margin-bottom: 0.5em;
   font-size: 1.2rem;
@@ -152,18 +146,17 @@ export const TeacherContainer = styled.div`
   padding-right: 1em;
 `
 
-export const MemberContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
+export const TeacherLabel = styled.label`
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: inline-block
+  width: 5em;
 `
 
-export const ReaderContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
+export const TeacherInput = styled.input`
+  border: none;
+  border-bottom: 2px solid #f4f6f9;
+  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`
@@ -180,4 +173,5 @@ padding: 0.3rem 0.7rem;
 margin: 0;
 font-size: 0.9rem;
 font-weight: 500;
+float: right;
 `

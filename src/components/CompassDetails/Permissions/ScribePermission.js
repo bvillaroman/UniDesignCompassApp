@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { AddCircle } from 'grommet-icons';
 import { Button } from 'grommet';
 
-const ReadersPermission = () => {
+const ScribePermission = () => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
   console.log(compass)
@@ -29,34 +29,20 @@ const ReadersPermission = () => {
     }
   }, [compass.id])
 
-  const blankReader = {};
-  const [reader, setReader] = useState([
-    { ...blankReader },
-  ]);
-
-  const addReader = () => {
-    setReader([...reader, { ...blankReader }]);
-  };
-
-  const handleReaderChange = (e) => {
-    const updatedReaders = [...reader];
-    updatedReaders[e.target.dataset.idx][e.target.className] = e.target.value;
-    setReader(updatedReaders);
-  };
+  const [scribe, setScribe] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    console.log("NOT PASSED HERE YET")
+    console.log(scribe)
+    console.log("PASS HERE")
 
-    reader.map((r) => {
-      console.log(r)
-
-      getUsers(r.email)
-        .then(res =>
-          createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-        .catch(err => console.log('failed at getUser', err))
-    })
+    getUsers(scribe)
+      .then(res =>
+        updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
+          .then(res => console.log(res))
+          .catch(err => console.log(err))
+      ).catch(err => console.log(err))
   }
 
   return (
@@ -64,34 +50,19 @@ const ReadersPermission = () => {
       <PermissionHeader>Permission</PermissionHeader>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-          <ReaderContainer>
-            <PermissionButtom
-              onClick={addReader}
-              icon={AddCircle}
-            ><AddCircle /> </PermissionButtom>
 
-            {
-              reader.map((val, idx) => {
-                const readerID = `name-${idx}`;
-                return (
-                  <div key={`reader-${idx}`}>
-                    <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>{`Reader #${idx + 1}`}</label>
-                    <input
-                      style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
-                      size="35"
-                      type="email"
-                      name={readerID}
-                      data-idx={idx}
-                      id={readerID}
-                      className="email"
-                      value={reader[idx].name}
-                      onChange={handleReaderChange}
-                    />
-                  </div>
-                );
-              })
-            }
-          </ReaderContainer>
+          <ScribeContainer>
+            <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>
+              Scribe
+            </label>
+            <input
+              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              type="email"
+              name="scribe"
+              value={scribe}
+              onChange={e => { setScribe(e.target.value) }} />
+          </ScribeContainer>
+
           <PermissionSubmit type="submit" primary label="Submit" disabled={disableButton} />
           {/* <button type="submit" disabled={disableButton}>Submit</button> */}
         </PermissionForm>
@@ -100,7 +71,7 @@ const ReadersPermission = () => {
   )
 }
 
-export default ReadersPermission;
+export default ScribePermission;
 
 export const PermissionContainer = styled.div`
   width: 83%;
@@ -144,25 +115,17 @@ export const ScribeContainer = styled.div`
   padding-right: 1em;
 `
 
-export const TeacherContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
+export const ScribeLabel = styled.label`
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: inline-block
+  width: 5em;
 `
 
-export const MemberContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
-export const ReaderContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
+export const ScribeInput = styled.input`
+  border: none;
+  border-bottom: 2px solid #f4f6f9;
+  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`

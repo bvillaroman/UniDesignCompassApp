@@ -54,7 +54,7 @@ const MembersPermission = () => {
         .then(res =>
           createMemberCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
-        .catch(err => console.log(err))
+        .catch(err => console.log(err), console.log("catch hit"))
         .catch(err => console.log('failed at getUser', err))
     })
   }
@@ -75,8 +75,9 @@ const MembersPermission = () => {
                 const memberID = `name-${idx}`;
                 return (
                   <div key={`member-${idx}`}>
-                    <label >{`Member #${idx + 1}`}</label>
+                    <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>{`Member #${idx + 1}`}</label>
                     <input
+                      style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
                       size="35"
                       type="email"
                       name={memberID}
@@ -91,8 +92,8 @@ const MembersPermission = () => {
               })
             }
           </MemberContainer>
-
-          <button type="submit" disabled={disableButton}>Submit</button>
+          <PermissionSubmit type="submit" primary label="Submit" disabled={disableButton} />
+          {/* <button type="submit" disabled={disableButton}>Submit</button> */}
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -178,4 +179,5 @@ padding: 0.3rem 0.7rem;
 margin: 0;
 font-size: 0.9rem;
 font-weight: 500;
+float: right;
 `
