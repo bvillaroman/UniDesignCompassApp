@@ -3,6 +3,10 @@ import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../
 import ProjectDetails from "./ProjectDetails"
 import SessionCreator from "./SessionCreator"
 import CompassPermission from "./CompassPermissions"
+import TeachersPermission from "./Permissions/TeachersPermission";
+import MembersPermission from "./Permissions/MembersPermission";
+import ReadersPermission from "./Permissions/ReadersPermission";
+
 
 export default (props) => {
 
@@ -13,7 +17,10 @@ export default (props) => {
       </MainContainer>
       <CompassNavigationBar>
         <ProjectDetails />
-        <CompassPermission />
+        {/* <CompassPermission /> */}
+        <TeachersPermission />
+        <MembersPermission />
+        <ReadersPermission />
       </CompassNavigationBar>
     </CompassViewerContainer>
   )

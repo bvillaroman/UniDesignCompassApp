@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import SummarySession from "../components/SummaryComponents/SummarySession/";
-//import SummaryLog from "../components/SummaryComponents/SummaryLog/";
 import { CompassContext } from "../context/CompassPage/context";
 import { ReviewModalContext } from "../context/ReviewModal/context";
 import ReviewLog from "../components/ModalComponents/ReviewLog";
