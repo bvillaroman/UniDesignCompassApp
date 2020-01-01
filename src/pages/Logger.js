@@ -21,10 +21,6 @@ const CompassPage = (props) => {
     updateSession 
   } = useContext(CompassContext);
 
-  const showItem = (attachment, src) => {
-    // setAttachment(attachment)
-    // setSource(src)
-  }
   
   // subscription for any new project being created
   // useEffect(() => {
@@ -104,7 +100,7 @@ const CompassPage = (props) => {
     <MainView>
       {
         compass.hasOwnProperty("id") ? 
-          session.hasOwnProperty("id") ? <CompassLogger showAttachment={showItem} /> : ( 
+          session.hasOwnProperty("id") ? <CompassLogger /> : ( 
             <div> Sorry, this Session does not exist !</div> 
           ) : <div> Sorry, this Project does not exist !</div> 
       }

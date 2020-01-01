@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { navigate } from "gatsby"
 import SummaryLegend from '../SummaryLegend/';
-import { Image } from 'grommet-icons';
+// import { Image } from 'grommet-icons';
 import { CompassContext } from "../../../context/CompassPage/context";
 import {
   SummaryMainView,

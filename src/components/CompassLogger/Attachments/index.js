@@ -35,7 +35,7 @@ const Attachments = (props) => {
       setLoading(false)
       if (session.attachments.items.length > 0) {
         session.attachments.items.map((attachment, i) => {
-          arrAttachment.push(attachment)
+          return arrAttachment.push(attachment)
         })
       }
 

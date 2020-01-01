@@ -19,7 +19,6 @@ import {
 } from "../../styles/Form"
 import { Loader } from "../../styles/layout"
 
-import { createUser } from "../../utils/mutations"
 const SignUp = ({switchToSignIn}) => {
 
   const [form,setValues] = useState({

@@ -105,15 +105,12 @@ const Layout = (props) => {
   // user authentications 
   useEffect(() => {
     if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
-      let user = {}
       Auth.currentAuthenticatedUser({ bypassCache: false   })
         .then(cognitoUser => {
-          const { sub } = cognitoUser.attributes;          
-          user = cognitoUser.attributes
+          const { sub } = cognitoUser.attributes;
           return getUser(sub)
         })
         .then((res) => {
-          console.log(res)
           if(res && res.hasOwnProperty("data") && res.data.getUser){
             loginUser({ 
               email: res.data.getUser.email, 
@@ -137,6 +134,7 @@ const Layout = (props) => {
       setLoading(false)
     }
 
+  // eslint-disable-next-line
   }, [loginUser,user])
 
   // setting up the interaction through url

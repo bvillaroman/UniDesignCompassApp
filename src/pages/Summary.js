@@ -1,14 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import SummarySession from "../components/SummaryComponents/SummarySession/";
 import { CompassContext } from "../context/CompassPage/context";
-import { ReviewModalContext } from "../context/ReviewModal/context";
-import ReviewLog from "../components/ModalComponents/ReviewLog";
 import { updateInteractionSub } from "../utils/subscriptions"
 import { getCompass } from '../utils/queries'
 
 const SummaryPage = (props) => {
-  const { interaction, updateCompass } = useContext(CompassContext);
-  const { showModal } = useContext(ReviewModalContext);
+  const { updateCompass } = useContext(CompassContext);
 
   useEffect(() => {
     const sub = updateInteractionSub().subscribe((updatedInteraction) => {
@@ -25,11 +22,7 @@ const SummaryPage = (props) => {
     // eslint-disable-next-line
   }, [])
 
-  return (
-    <>
-      <SummarySession />
-    </>
-  )
+  return ( <SummarySession /> )
 };
 
 export default SummaryPage;

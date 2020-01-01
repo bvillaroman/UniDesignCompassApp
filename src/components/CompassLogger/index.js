@@ -4,13 +4,13 @@ import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
 import InteractionFeed from "./Interactions"
 
-const CompassSelector = ({showAttachment}) => {
+const CompassSelector = (props) => {
 
   return (
     <CSContainer>
       <CSGrid>
         <CompassSection/>
-        <SessionBar showAttachment={showAttachment} />
+        <SessionBar />
       </CSGrid>
       <InteractionFeed/>
     </CSContainer>
