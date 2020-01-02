@@ -1,37 +1,42 @@
-import React, { useState,useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
-import {navigate} from "gatsby"
+import { navigate } from "gatsby"
 
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { GlobalButton } from "../../../styles/global"
 
 import { CompassContext } from "../../../context/CompassPage/context"
-import {createSession}  from '../../../utils/mutations'
+import { GlobalContext } from "../../../context/context"
+import { createSession } from '../../../utils/mutations'
 import { dateFormatter } from "../../../utils/translateTime"
 
 import Step from "./Step"
 
 export const Wheel = (props) => {
   const { compass, session, interactions } = useContext(CompassContext)
-  const [steps,setSteps] = useState([])
+  const { user } = useContext(GlobalContext)
+
+  const scribe = compass.scribe.email === user.email
+
+  const [steps, setSteps] = useState([])
 
   useEffect(() => {
-    if(session.hasOwnProperty("compass")){
+    if (session.hasOwnProperty("compass")) {
       const compassSteps = session.compass.steps.items.flat();
       let arr = compassSteps.map((step, key) => ({
-          id : step.id,
-          key,
-          name_of_step : step.name_of_step,
-          color: step.color,
-          defaultColor: step.color,
-          duration: 0,
-          title: step.name_of_step,
-          value: 100/compassSteps.length
+        id: step.id,
+        key,
+        name_of_step: step.name_of_step,
+        color: step.color,
+        defaultColor: step.color,
+        duration: 0,
+        title: step.name_of_step,
+        value: 100 / compassSteps.length
 
-        })
+      })
       );
 
-      arr.forEach( step => {
+      arr.forEach(step => {
         let temp = interactions.filter(interaction => interaction.step.id === step.id)
         const value = temp.reduce((totalTime = 0, interaction) => parseInt(totalTime) + parseInt(interaction.duration), 0)
         step.duration = value
@@ -39,7 +44,7 @@ export const Wheel = (props) => {
 
       setSteps(arr)
     }
-  }, [session,interactions])
+  }, [session, interactions])
 
   const onBreak = (e) => {
 
@@ -53,27 +58,27 @@ export const Wheel = (props) => {
       })
       .catch(err => console.log(err))
   }
-  
+
   return (
     <CompassWheelContainer >
       <LoggerHeaderContainer>
         <LoggerHeaderText> Compass Steps </LoggerHeaderText>
-        
+
         <LoggerHeaderButtonContainer >
-          <GlobalButton onClick={onBreak} label="Break"/>
+          {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}
         </LoggerHeaderButtonContainer>
-          
+
       </LoggerHeaderContainer>
-    
+
       <CompassWheel >
         {
-          steps.length &&  steps.map((item,key) => {
+          steps.length && steps.map((item, key) => {
             return (
-              <Step 
-                activeStep={item} 
-                key={key} 
+              <Step
+                activeStep={item}
+                key={key}
                 circleLength={steps.length}
-                rotateAngle={key*(360/(steps.length))}
+                rotateAngle={key * (360 / (steps.length))}
               />
             )
           })
