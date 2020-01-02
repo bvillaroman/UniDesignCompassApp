@@ -20,7 +20,7 @@ export default CompassSelector;
 export const CSGrid = styled.div`
   width: 100%;
   height: 75%;
-  min-height: 33rem;
+  min-height: 37rem;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
