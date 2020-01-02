@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext}  from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
 import { PauseFill, PlayFill, Edit } from 'grommet-icons';
@@ -6,11 +6,15 @@ import { PauseFill, PlayFill, Edit } from 'grommet-icons';
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
-import {LoggerHeaderText, LoggerHeaderContainer} from "../style"
+import { GlobalContext } from "../../../context/context"
+import { LoggerHeaderText, LoggerHeaderContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 
 export const Logger = (props) => {
-  const {interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated} = useContext(CompassContext);
+  const { interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated, compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext)
+
+  const scribe = compass.scribe.email === user.email
 
   const intialStep = {
     name_of_step: "Notes",
@@ -18,67 +22,67 @@ export const Logger = (props) => {
   };
 
   const [step, setStep] = useState(intialStep);
-  const [interactionTime,setInteractionTime] = useState(0);
+  const [interactionTime, setInteractionTime] = useState(0);
   const [log, setLog] = useState('');
-  const [start,setStart] = useState(false);
+  const [start, setStart] = useState(false);
   const [edit, setEdit] = useState(false);
   const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState(false);
 
   // initialize the logger
   useEffect(() => {
-    if(interaction.id){
-      const {log_content, duration, step} = interaction
+    if (interaction.id) {
+      const { log_content, duration, step } = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
-    } 
+    }
 
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [])
-  
+
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
 
-    if(interaction.id && interactionUpdated){
-      const {log_content, duration, step} = interaction
+    if (interaction.id && interactionUpdated) {
+      const { log_content, duration, step } = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
-      setTimer(false)      
+      setTimer(false)
       setEdit(true)
       setStart(false);
     }
 
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [updateInteraction, interactionUpdated])
 
   // place new interaction into the logger if it is addInteraction is called
   useEffect(() => {
-    if(interaction.id && interactionAdded && !start){
-      const {log_content, duration, step} = interaction
+    if (interaction.id && interactionAdded && !start) {
+      const { log_content, duration, step } = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
-      setLog(parsedLog)           
+      setLog(parsedLog)
       setEdit(false)
       setTimer(true)
     }
 
-  // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [addInteraction, interactionAdded])
 
   // handle interaction time
   useEffect(() => {
     let interval = null;
 
-    if (interaction.hasOwnProperty("id")){
+    if (interaction.hasOwnProperty("id")) {
       if (start) {
         interval = setInterval(() => {
-          addInteraction({ duration: interactionTime+1})
-          setInteractionTime(interactionTime+1)
+          addInteraction({ duration: interactionTime + 1 })
+          setInteractionTime(interactionTime + 1)
         }, 1000)
 
       } else if (!start) {
@@ -86,10 +90,10 @@ export const Logger = (props) => {
       }
       return () => clearInterval(interval);
     }
-    
-  // eslint-disable-next-line
-  }, [start,interactionTime, interaction])
-  
+
+    // eslint-disable-next-line
+  }, [start, interactionTime, interaction])
+
   // pause the timer
   const pause = (e) => {
     const newInteraction = {
@@ -100,7 +104,7 @@ export const Logger = (props) => {
     if (start) {
       Mutation.updateInteraction(newInteraction)
     }
-    
+
     return setStart(!start)
   }
 
@@ -113,31 +117,31 @@ export const Logger = (props) => {
       log_content: log ? log : " ",
       duration: interactionTime,
     }
-    
+
     Mutation.updateInteraction(newInteraction)
-    .then(() => {
-      setLoading(false)
-      setStart(false)
-    })
+      .then(() => {
+        setLoading(false)
+        setStart(false)
+      })
   }
 
   return (
     <LoggerGrid>
       <LoggerHeaderContainer>
         <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
-        
+
         <StepClock>
-          { 
-            step.hasOwnProperty("id") && edit ? (
-              start ? (loading ? <Loader/> : <SaveButton onClick={editLog} label="Save"/>) : <EditLogButton onClick={togglingEdit}/>
-            ) : timer && (  
+          {
+            step.hasOwnProperty("id") && edit && scribe ? (
+              start ? (loading ? <Loader /> : <SaveButton onClick={editLog} label="Save" />) : <EditLogButton onClick={togglingEdit} />
+            ) : timer && (
               <>
                 {translateTime(interactionTime)}
-                <TimerButton color={step.color} onClick={pause} start={start}/>
+                <TimerButton color={step.color} onClick={pause} start={start} />
               </>
             )
           }
-          
+
         </StepClock>
       </LoggerHeaderContainer>
       <LoggerInput
