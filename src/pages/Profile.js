@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Auth } from 'aws-amplify';
 import { updateUser } from '../utils/mutations'
-import { getUser } from '../utils/queries'
 import { GlobalContext } from "../context/context"
 import {
   ProfileContainer,
@@ -36,8 +35,10 @@ const ProfilePage = (props) => {
 
   useEffect(() => {
     Auth.currentAuthenticatedUser({ bypassCache: true })
-      .then(res => { return setFirstName(res.attributes['custom:firstName']), setLastName(res.attributes['custom:lastName']) })
-      // .then(res => console.log(res))
+      .then(res => {
+        setFirstName(res.attributes['custom:firstName'])
+        setLastName(res.attributes['custom:lastName'])
+      })
       .catch(err => console.log(err))
   }, [firstName, lastName])
 
@@ -46,9 +47,8 @@ const ProfilePage = (props) => {
 
     if ((!newFirstName) || (!newLastName)) return;
 
-    console.log('change name')
     let currUser = await Auth.currentAuthenticatedUser();
-    let result = await Auth.updateUserAttributes(currUser, {
+    await Auth.updateUserAttributes(currUser, {
       'custom:firstName': newFirstName,
       'custom:lastName': newLastName
     });
@@ -72,16 +72,13 @@ const ProfilePage = (props) => {
         .then(user => {
           return Auth.changePassword(user, oldPassword, newPassword)
         })
-        // .then(data => console.log(data))
         .catch(err => {
-          return console.log(err, 'old password does not match'), setShowErrorOldPass(!showErrorNewPass)
+          return setShowErrorOldPass(!showErrorNewPass)
         });
     } else {
-      console.log('Password does not match')
       setShowErrorNewPass(!showErrorNewPass)
     }
 
-    console.log('end of if')
     setOldPassword("")
     setNewPassword("")
     setConfirmPassword("")
@@ -89,7 +86,6 @@ const ProfilePage = (props) => {
 
   return (
     <ProfileContainer>
-      {console.log(user.id)}
       <ProfileTitle>Profile Page</ProfileTitle>
       <FormContainter>
         <FormName onSubmit={handleSubmit} >
@@ -112,12 +108,12 @@ const ProfilePage = (props) => {
           <FormPasswordLabel> Confirm New Password: </FormPasswordLabel>
           <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
 
-          <PasswordButton type="submit" disabled={newPassword != confirmPassword} >Change Password</PasswordButton>
+          <PasswordButton type="submit" disabled={newPassword !== confirmPassword} >Change Password</PasswordButton>
         </FormPassword>
         {/* {newPassword !== confirmPassword ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>} */}
-        {showErrorNewPass ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>}
-        {showErrorOldPass ? <h4>{"Old password does not match"}</h4> : <h4 hidden></h4>}
-        {showSuccess ? <h4>{"Password Changed!"}</h4> : <h4 hidden></h4>}
+        {showErrorNewPass && <h4>{"Passwords does not match"}</h4>}
+        {showErrorOldPass && <h4>{"Old password does not match"}</h4>}
+        {showSuccess && <h4>{"Password Changed!"}</h4>}
         <br />
       </FormContainter>
     </ProfileContainer>

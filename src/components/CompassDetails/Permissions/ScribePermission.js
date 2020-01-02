@@ -1,41 +1,32 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../../utils/queries';
-import { updateCompass, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations';
+import { updateCompass } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import styled from "styled-components";
-import { AddCircle } from 'grommet-icons';
 import { Button } from 'grommet';
 
 const ScribePermission = () => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
-  console.log(compass)
-  console.log(user)
 
   const [disableButton, setdisableButton] = useState(true)
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
-    console.log("TEAHCERS HOOK1", teachers)
     const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
-    // const teacher = teachers.length > 0 ? "YO" : " "
-    // console.log('teacher', teacher.email)
-    // const check = teacher.email
-    console.log("TEAHCERS HOOK2", teacher)
 
     if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
       setdisableButton(false)
     }
+
+    // eslint-disable-next-line
   }, [compass.id])
 
   const [scribe, setScribe] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("NOT PASSED HERE YET")
-    console.log(scribe)
-    console.log("PASS HERE")
 
     getUsers(scribe)
       .then(res =>
@@ -113,19 +104,6 @@ export const ScribeContainer = styled.div`
   font-size: 1.2rem;
   padding-left: 1em;
   padding-right: 1em;
-`
-
-export const ScribeLabel = styled.label`
-  font-size: 1.3rem;
-  font-weight: 500;
-  display: inline-block
-  width: 5em;
-`
-
-export const ScribeInput = styled.input`
-  border: none;
-  border-bottom: 2px solid #f4f6f9;
-  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`

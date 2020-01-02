@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../../utils/queries';
-import { updateCompass, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations';
+import { createTeacherCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import styled from "styled-components";
@@ -10,23 +10,18 @@ import { Button } from 'grommet';
 const TeachersPermission = () => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
-  console.log(compass)
-  console.log(user)
 
   const [disableButton, setdisableButton] = useState(true)
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
-    console.log("TEAHCERS HOOK1", teachers)
     const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
-    // const teacher = teachers.length > 0 ? "YO" : " "
-    // console.log('teacher', teacher.email)
-    // const check = teacher.email
-    console.log("TEAHCERS HOOK2", teacher)
 
     if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
       setdisableButton(false)
     }
+
+    // eslint-disable-next-line
   }, [compass.id])
 
   const blankTeacher = {};
@@ -47,9 +42,7 @@ const TeachersPermission = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    teacher.map((t) => {
-      console.log(t)
-
+    teacher.map((t) =>
       getUsers(t.email)
         .then(res =>
           createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
@@ -57,7 +50,7 @@ const TeachersPermission = () => {
             .catch(err => console.log(err))
         ).catch(err => console.log('failed at getUser', err))
 
-    })
+    )
 
   }
 
@@ -144,19 +137,6 @@ export const TeacherContainer = styled.div`
   font-size: 1.2rem;
   padding-left: 1em;
   padding-right: 1em;
-`
-
-export const TeacherLabel = styled.label`
-  font-size: 1.3rem;
-  font-weight: 500;
-  display: inline-block
-  width: 5em;
-`
-
-export const TeacherInput = styled.input`
-  border: none;
-  border-bottom: 2px solid #f4f6f9;
-  font-size: large;
 `
 
 export const PermissionSubmit = styled(Button)`

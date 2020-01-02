@@ -1,10 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { getUsers } from '../../../utils/queries';
-import { updateCompass, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
-import { GlobalContext } from "../../../context/context";
 import styled from "styled-components";
-import { AddCircle } from 'grommet-icons';
 import { Button } from 'grommet';
 
 const DisplayPermission = () => {
@@ -17,21 +13,17 @@ const DisplayPermission = () => {
   const [readers, setReaders] = useState([]);
 
   useEffect(() => {
-    console.log("DisplayPermission", compass)
-
     const teacher = compass.teachers.items.map((t) => t.email)
     const member = compass.members.items.map((m) => m.email)
     const reader = compass.readers.items.map((r) => r.email)
-
-    console.log(teacher)
-    console.log(member)
-    console.log(reader)
 
     setTeamLeader(compass.owner.email)
     setScribe(compass.scribe.email)
     setTeachers(teacher)
     setMembers(member)
     setReaders(reader)
+
+    // eslint-disable-next-line
   }, [compass.id])
 
   return (

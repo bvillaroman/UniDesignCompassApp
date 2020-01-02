@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../../utils/queries';
-import { updateCompass, createTeacherCompasses, createMemberCompasses, createReaderCompasses } from '../../../utils/mutations';
+import { createReaderCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import styled from "styled-components";
@@ -10,23 +10,18 @@ import { Button } from 'grommet';
 const ReadersPermission = () => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
-  console.log(compass)
-  console.log(user)
 
   const [disableButton, setdisableButton] = useState(true)
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
-    console.log("TEAHCERS HOOK1", teachers)
     const teacher = teachers.length > 0 ? teachers.find((t) => t) : " "
-    // const teacher = teachers.length > 0 ? "YO" : " "
-    // console.log('teacher', teacher.email)
-    // const check = teacher.email
-    console.log("TEAHCERS HOOK2", teacher)
 
     if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
       setdisableButton(false)
     }
+
+    // eslint-disable-next-line
   }, [compass.id])
 
   const blankReader = {};
@@ -47,16 +42,14 @@ const ReadersPermission = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    reader.map((r) => {
-      console.log(r)
-
+    reader.map((r) =>
       getUsers(r.email)
         .then(res =>
           createReaderCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email))
         .then(res => console.log(res))
         .catch(err => console.log(err))
         .catch(err => console.log('failed at getUser', err))
-    })
+    )
   }
 
   return (
@@ -135,27 +128,6 @@ export const PermissionForm = styled.form`
 
 export const PermissionButtom = styled.button`
   float: right
-`
-
-export const ScribeContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
-export const TeacherContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
-export const MemberContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
 `
 
 export const ReaderContainer = styled.div`
