@@ -66,8 +66,8 @@ const SessionCreator = (props) => {
     updateSession(session.id, title, session.description_of_session)
     .then((res) => {
       getCompass(res.data.updateSession.compass.id)
-        .then((res) => {
-          updateCompass(res.data.getCompass)
+        .then((result) => {
+          updateCompass(result.data.getCompass)
           setSelectedSession({})
           setTitle("")
         })

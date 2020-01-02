@@ -22,12 +22,13 @@ const addInteraction = (newInteraction, state) => {
     ...state, 
     interaction, 
     interactions: newInteractions,
+    newestInteraction: interaction,
     interactionAdded: true,
     interactionUpdated: false
   }
 }
 const updateInteraction = (newInteraction, state) => ({...state, interaction: newInteraction, interactionAdded: false, interactionUpdated: true }) 
-const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions})
+const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions, newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}})
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
 
 const clearCompass = (state) => ({ ...state, compass: {}})

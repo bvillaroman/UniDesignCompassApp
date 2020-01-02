@@ -11,7 +11,7 @@ import { LoggerHeaderText, LoggerHeaderContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 
 export const Logger = (props) => {
-  const { interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated, compass } = useContext(CompassContext);
+  const { interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated, compass, newestInteraction } = useContext(CompassContext);
   const { user } = useContext(GlobalContext)
 
   const scribe = compass.scribe.email === user.email
@@ -37,11 +37,13 @@ export const Logger = (props) => {
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
+    } else if (newestInteraction.id){
+      addInteraction(newestInteraction);
     }
-
-    // eslint-disable-next-line
+  // eslint-disable-next-line
   }, [])
 
+  
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
 
