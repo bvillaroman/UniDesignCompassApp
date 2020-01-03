@@ -10,6 +10,7 @@ import {
   FormNameLabel,
   FormNameInput,
   NameButton,
+  ProfileButton,
   FormPassword,
   FormPasswordLabel,
   FormPasswordInput,
@@ -95,7 +96,8 @@ const ProfilePage = (props) => {
           <FormNameLabel> Last Name: </FormNameLabel>
           <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
 
-          <NameButton type="submit" >Change Name</NameButton>
+          {/* <NameButton type="submit" >Change Name</NameButton> */}
+          <ProfileButton type="submit" primary label="Submit" />
         </FormName>
         <br />
         <FormPassword onSubmit={submitPassword}>
@@ -108,7 +110,8 @@ const ProfilePage = (props) => {
           <FormPasswordLabel> Confirm New Password: </FormPasswordLabel>
           <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
 
-          <PasswordButton type="submit" disabled={newPassword !== confirmPassword} >Change Password</PasswordButton>
+          {/* <PasswordButton type="submit" disabled={newPassword !== confirmPassword} >Change Password</PasswordButton> */}
+          <ProfileButton type="submit" primary label="Submit" disabled={newPassword !== confirmPassword} />
         </FormPassword>
         {/* {newPassword !== confirmPassword ? <h4>{"Passwords does not match"}</h4> : <h4 hidden></h4>} */}
         {showErrorNewPass && <h4>{"Passwords does not match"}</h4>}
