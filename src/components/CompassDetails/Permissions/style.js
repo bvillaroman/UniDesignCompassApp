@@ -15,6 +15,10 @@ export const PermissionContainer = styled.div`
   padding: 1rem;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   transition: box-shadow 150ms ease;
+
+  @media (max-width: 767px){
+    width: 100%;
+  } 
 `
 
 export const PermissionHeaderBar = styled.div`

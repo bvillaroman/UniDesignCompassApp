@@ -37,6 +37,7 @@ export const CompassNavigationBar2 = styled(Box)`
   // background: white;
 
   @media (max-width: 767px){
-    width: 100%
+    width: 100%;
+    flex-direction: row;
   } 
 `;

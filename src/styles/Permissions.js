@@ -18,6 +18,10 @@ export const PermissionContainer = styled.div`
   padding: 1em;
   margin: 1em;
   height: fit-content;
+
+  @media (max-width: 767px){
+    width: 100%;
+  } 
 `;
 
 export const PermissionForm = styled.form`
