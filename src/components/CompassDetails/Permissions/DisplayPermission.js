@@ -44,7 +44,7 @@ export default DisplayPermission;
 
 export const PermissionContainer = styled.div`
   width: 83%;
-  min-height: 15rem;
+  min-height: 1rem;
   margin: 1rem auto;
   display: flex;
   flex-direction: column;

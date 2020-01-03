@@ -3,8 +3,12 @@ import { Button } from 'grommet';
 
 export const PermissionContainer = styled.div`
   // width: 83%;
+  height: 40.5%;
   min-height: 15rem;
-  margin: 1rem auto;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
   background: white;
@@ -23,7 +27,7 @@ export const PermissionHeader = styled.div`
   margin: 0 auto;
   width: 100%;
   height: auto;
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   color: black;
   font-weight: 600;
   overflow: auto;

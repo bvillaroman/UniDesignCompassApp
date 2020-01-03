@@ -3,6 +3,7 @@ import { getUsers } from '../../../utils/queries';
 import { updateCompass } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
+import styled from "styled-components"
 import {
   PermissionContainer,
   PermissionHeader,
@@ -47,18 +48,18 @@ const ScribePermission = () => {
       <PermissionHeader>Change Scribe</PermissionHeader>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-          <Permissions>
+          <Scribe>
             <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>
               Scribe
             </label>
             <input
-              size="26"
+              // size="26"
               style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
               type="email"
               name="scribe"
               value={scribe}
               onChange={e => { setScribe(e.target.value) }} />
-          </Permissions>
+          </Scribe>
 
           <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />
         </PermissionForm>
@@ -68,3 +69,11 @@ const ScribePermission = () => {
 }
 
 export default ScribePermission;
+
+export const Scribe = styled.div`
+  margin-top: 0.7em;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+`
