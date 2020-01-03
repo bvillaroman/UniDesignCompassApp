@@ -219,12 +219,15 @@ const EditLogButtonStyle = styled(Button)`
   svg {
     color: white
   }
-  background: white;
+  background: transparent;
   color: black;
   padding: 0.3rem .5rem;
   font-weight: 500;
   font-size: 1rem;
   width: 8rem;
+  :hover {
+    background: white;
+  }
 `
 const SaveButton = styled(EditLogButtonStyle)`
   width: 5rem;

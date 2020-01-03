@@ -146,7 +146,7 @@ const SessionAttachments = styled.div`
   }  
 `
 const ButtonLabel = styled.label`
-  cursor: ${ props => props.disabled ? "unset" : "pointer"}; ;
+  cursor: ${ props => props.disabled ? "unset" : "pointer"}; 
   border: 0.15rem solid transparent;
   border-radius: 2rem;
   transition: all 0.3s;
