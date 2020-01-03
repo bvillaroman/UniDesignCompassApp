@@ -6,7 +6,7 @@ import {
   Text,
   FormField,
   TextInput,
-  Form, 
+  Form,
   Tab,
   Accordion,
   AccordionPanel,
@@ -125,7 +125,7 @@ export const MainContainer = styled(Box)`
 `;
 
 export const CompassNavigationBar = styled(Box)`
-  width: 40%;
+  width: 50%;
   height: 100%
   display: flex;
   flex-direction: column;
@@ -402,8 +402,8 @@ export const SessionRowMoreButton = ({ onDelete, onEdit }) => (
     icon={<More />}
     round
     items={[
-      { label: 'edit', onClick: () => onEdit()},
-      { label: 'delete', onClick: () => onDelete()},
+      { label: 'edit', onClick: () => onEdit() },
+      { label: 'delete', onClick: () => onDelete() },
     ]}
   />
 );

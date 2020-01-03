@@ -19,8 +19,8 @@ export default (props) => {
         <DisplayPermission />
       </CompassNavigationBar>
       <CompassNavigationBar2>
-        <ScribePermission />
         <TeachersPermission />
+        <ScribePermission />
         <MembersPermission />
         <ReadersPermission />
       </CompassNavigationBar2>
@@ -29,7 +29,7 @@ export default (props) => {
 };
 
 export const CompassNavigationBar2 = styled(Box)`
-  width: 100%;
+  width: 20%;
   height: 100%
   display: flex;
   flex-direction: column;

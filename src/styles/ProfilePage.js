@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Button } from 'grommet'
 
 export const ProfileContainer = styled.div`
   display: flex; 
@@ -47,17 +48,23 @@ export const FormNameInput = styled.input`
   font-size: large;
 `;
 
-export const NameButton = styled.button`
-  color: black; 
-  width: 16%;
-  -webkit-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: 0.15em solid #5567FD;
-  background-color: #5567FD;
+export const ProfileButton = styled(Button)`
+  svg {
+    transition: all 0.3s;
+    fill: white; 
+    stroke: white;
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  background: #5567FD; 
   color: white;
-  //margin: 0 auto;
+  padding: 0.3rem 0.7rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
   float: left;
+  width: 10%;
+  margin-top: 1em;
 `;
 
 export const FormPassword = styled.form`
