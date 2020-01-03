@@ -759,16 +759,6 @@ export const onCreateUser = `subscription OnCreateUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -1572,16 +1562,6 @@ export const onCreateUser = `subscription OnCreateUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -2382,16 +2362,6 @@ export const onCreateUser = `subscription OnCreateUser {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -3573,22 +3543,9 @@ export const onCreateUser = `subscription OnCreateUser {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -4458,16 +4415,6 @@ export const onUpdateUser = `subscription OnUpdateUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -5271,16 +5218,6 @@ export const onUpdateUser = `subscription OnUpdateUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -6081,16 +6018,6 @@ export const onUpdateUser = `subscription OnUpdateUser {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -7272,22 +7199,9 @@ export const onUpdateUser = `subscription OnUpdateUser {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -8157,16 +8071,6 @@ export const onDeleteUser = `subscription OnDeleteUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -8970,16 +8874,6 @@ export const onDeleteUser = `subscription OnDeleteUser {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -9780,16 +9674,6 @@ export const onDeleteUser = `subscription OnDeleteUser {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -10971,22 +10855,9 @@ export const onDeleteUser = `subscription OnDeleteUser {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -11401,9 +11272,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -11720,9 +11588,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -12037,9 +11902,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -12529,16 +12391,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -13205,9 +13057,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -13838,9 +13687,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -14155,9 +14001,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -14476,9 +14319,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -14795,9 +14635,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -15005,9 +14842,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -15070,9 +14904,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -15102,9 +14933,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -15120,38 +14948,16 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -15340,9 +15146,6 @@ export const onCreateTeacherCompasses = `subscription OnCreateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -15676,9 +15479,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -15995,9 +15795,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -16312,9 +16109,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -16804,16 +16598,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -17480,9 +17264,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -18113,9 +17894,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -18430,9 +18208,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -18751,9 +18526,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -19070,9 +18842,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -19280,9 +19049,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -19345,9 +19111,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -19377,9 +19140,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -19395,38 +19155,16 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -19615,9 +19353,6 @@ export const onUpdateTeacherCompasses = `subscription OnUpdateTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -19951,9 +19686,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -20270,9 +20002,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -20587,9 +20316,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -21079,16 +20805,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -21755,9 +21471,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -22388,9 +22101,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -22705,9 +22415,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -23026,9 +22733,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -23345,9 +23049,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -23555,9 +23256,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -23620,9 +23318,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -23652,9 +23347,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -23670,38 +23362,16 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -23890,9 +23560,6 @@ export const onDeleteTeacherCompasses = `subscription OnDeleteTeacherCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -24226,9 +23893,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -24545,9 +24209,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -24862,9 +24523,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -25354,16 +25012,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -26030,9 +25678,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -26663,9 +26308,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -26980,9 +26622,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -27301,9 +26940,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -27620,9 +27256,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -27830,9 +27463,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -27895,9 +27525,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -27927,9 +27554,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -27945,38 +27569,16 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -28165,9 +27767,6 @@ export const onCreateMemberCompasses = `subscription OnCreateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -28501,9 +28100,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -28820,9 +28416,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -29137,9 +28730,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -29629,16 +29219,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -30305,9 +29885,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -30938,9 +30515,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -31255,9 +30829,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -31576,9 +31147,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -31895,9 +31463,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -32105,9 +31670,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -32170,9 +31732,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -32202,9 +31761,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -32220,38 +31776,16 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -32440,9 +31974,6 @@ export const onUpdateMemberCompasses = `subscription OnUpdateMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -32776,9 +32307,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -33095,9 +32623,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -33412,9 +32937,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -33904,16 +33426,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -34580,9 +34092,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -35213,9 +34722,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -35530,9 +35036,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -35851,9 +35354,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -36170,9 +35670,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -36380,9 +35877,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -36445,9 +35939,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -36477,9 +35968,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -36495,38 +35983,16 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -36715,9 +36181,6 @@ export const onDeleteMemberCompasses = `subscription OnDeleteMemberCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -37051,9 +36514,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -37370,9 +36830,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -37687,9 +37144,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -38179,16 +37633,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -38855,9 +38299,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -39488,9 +38929,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -39805,9 +39243,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -40126,9 +39561,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -40445,9 +39877,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -40655,9 +40084,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -40720,9 +40146,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -40752,9 +40175,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -40770,38 +40190,16 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -40990,9 +40388,6 @@ export const onCreateReaderCompasses = `subscription OnCreateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -41326,9 +40721,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -41645,9 +41037,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -41962,9 +41351,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -42454,16 +41840,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -43130,9 +42506,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -43763,9 +43136,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -44080,9 +43450,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -44401,9 +43768,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -44720,9 +44084,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -44930,9 +44291,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -44995,9 +44353,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -45027,9 +44382,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -45045,38 +44397,16 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -45265,9 +44595,6 @@ export const onUpdateReaderCompasses = `subscription OnUpdateReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -45601,9 +44928,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -45920,9 +45244,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -46237,9 +45558,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -46729,16 +46047,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -47405,9 +46713,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -48038,9 +47343,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -48355,9 +47657,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -48676,9 +47975,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -48995,9 +48291,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -49205,9 +48498,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -49270,9 +48560,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -49302,9 +48589,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -49320,38 +48604,16 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -49540,9 +48802,6 @@ export const onDeleteReaderCompasses = `subscription OnDeleteReaderCompasses {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -49877,9 +49136,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -50196,9 +49452,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -50513,9 +49766,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -51005,16 +50255,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -51366,9 +50606,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -51685,9 +50922,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -52002,9 +51236,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -52494,16 +51725,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -53310,16 +52531,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -54120,16 +53331,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -54936,16 +54137,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -55468,16 +54659,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -55631,16 +54812,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
           }
           nextToken
@@ -55709,16 +54880,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             step {
               id
@@ -55761,84 +54922,23 @@ export const onCreateCompass = `subscription OnCreateCompass {
                 }
               }
             }
-          }
-          nextToken
-        }
-        attachments {
-          items {
-            name
-            type
-            session {
-              id
-              name_of_session
-              description_of_session
-              createdAt
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              comments {
-                items {
-                  id
-                  content
-                  createdAt
-                }
-                nextToken
-              }
-              interactions {
-                items {
+            attachments {
+              items {
+                name
+                type
+                interaction {
                   id
                   duration
                   log_content
                   comments
                   createdAt
                 }
-                nextToken
+                bucket
+                region
+                key
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
+              nextToken
             }
-            bucket
-            region
-            key
           }
           nextToken
         }
@@ -56314,16 +55414,6 @@ export const onCreateCompass = `subscription OnCreateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -56685,9 +55775,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -57004,9 +56091,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -57321,9 +56405,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -57813,16 +56894,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -58174,9 +57245,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -58493,9 +57561,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -58810,9 +57875,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -59302,16 +58364,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -60118,16 +59170,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -60928,16 +59970,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -61744,16 +60776,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -62276,16 +61298,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -62439,16 +61451,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
           }
           nextToken
@@ -62517,16 +61519,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             step {
               id
@@ -62569,84 +61561,23 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                 }
               }
             }
-          }
-          nextToken
-        }
-        attachments {
-          items {
-            name
-            type
-            session {
-              id
-              name_of_session
-              description_of_session
-              createdAt
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              comments {
-                items {
-                  id
-                  content
-                  createdAt
-                }
-                nextToken
-              }
-              interactions {
-                items {
+            attachments {
+              items {
+                name
+                type
+                interaction {
                   id
                   duration
                   log_content
                   comments
                   createdAt
                 }
-                nextToken
+                bucket
+                region
+                key
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
+              nextToken
             }
-            bucket
-            region
-            key
           }
           nextToken
         }
@@ -63122,16 +62053,6 @@ export const onUpdateCompass = `subscription OnUpdateCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -63493,9 +62414,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -63812,9 +62730,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -64129,9 +63044,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -64621,16 +63533,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -64982,9 +63884,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -65301,9 +64200,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -65618,9 +64514,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -66110,16 +65003,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -66926,16 +65809,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -67736,16 +66609,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -68552,16 +67415,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -69084,16 +67937,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             nextToken
           }
@@ -69247,16 +68090,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
           }
           nextToken
@@ -69325,16 +68158,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
                 nextToken
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
             }
             step {
               id
@@ -69377,84 +68200,23 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                 }
               }
             }
-          }
-          nextToken
-        }
-        attachments {
-          items {
-            name
-            type
-            session {
-              id
-              name_of_session
-              description_of_session
-              createdAt
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              comments {
-                items {
-                  id
-                  content
-                  createdAt
-                }
-                nextToken
-              }
-              interactions {
-                items {
+            attachments {
+              items {
+                name
+                type
+                interaction {
                   id
                   duration
                   log_content
                   comments
                   createdAt
                 }
-                nextToken
+                bucket
+                region
+                key
               }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
-                }
-                nextToken
-              }
+              nextToken
             }
-            bucket
-            region
-            key
           }
           nextToken
         }
@@ -69930,16 +68692,6 @@ export const onDeleteCompass = `subscription OnDeleteCompass {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -70615,9 +69367,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -71248,9 +69997,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -71565,9 +70311,6 @@ export const onCreateSession = `subscription OnCreateSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -71886,9 +70629,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -72205,9 +70945,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -72415,9 +71152,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -72480,9 +71214,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -72512,9 +71243,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -72530,38 +71258,16 @@ export const onCreateSession = `subscription OnCreateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -72750,9 +71456,6 @@ export const onCreateSession = `subscription OnCreateSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -73248,9 +71951,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -73313,9 +72013,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -73345,9 +72042,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -73363,38 +72057,16 @@ export const onCreateSession = `subscription OnCreateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -73591,9 +72263,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -73656,9 +72325,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -73688,9 +72354,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -73706,38 +72369,16 @@ export const onCreateSession = `subscription OnCreateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -73925,9 +72566,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -73950,269 +72588,11 @@ export const onCreateSession = `subscription OnCreateSession {
             }
           }
         }
-      }
-      nextToken
-    }
-    attachments {
-      items {
-        name
-        type
-        session {
-          id
-          name_of_session
-          description_of_session
-          createdAt
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-          comments {
-            items {
-              id
-              content
-              createdAt
-              commenter {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          interactions {
-            items {
+        attachments {
+          items {
+            name
+            type
+            interaction {
               id
               duration
               log_content
@@ -74236,9 +72616,6 @@ export const onCreateSession = `subscription OnCreateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -74254,45 +72631,23 @@ export const onCreateSession = `subscription OnCreateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
-            nextToken
+            bucket
+            region
+            key
           }
+          nextToken
         }
-        bucket
-        region
-        key
       }
       nextToken
     }
@@ -74917,9 +73272,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -75550,9 +73902,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -75867,9 +74216,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -76188,9 +74534,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -76507,9 +74850,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -76717,9 +75057,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -76782,9 +75119,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -76814,9 +75148,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -76832,38 +75163,16 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -77052,9 +75361,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -77550,9 +75856,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -77615,9 +75918,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -77647,9 +75947,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -77665,38 +75962,16 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -77893,9 +76168,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -77958,9 +76230,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -77990,9 +76259,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -78008,38 +76274,16 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -78227,9 +76471,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -78252,269 +76493,11 @@ export const onUpdateSession = `subscription OnUpdateSession {
             }
           }
         }
-      }
-      nextToken
-    }
-    attachments {
-      items {
-        name
-        type
-        session {
-          id
-          name_of_session
-          description_of_session
-          createdAt
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-          comments {
-            items {
-              id
-              content
-              createdAt
-              commenter {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          interactions {
-            items {
+        attachments {
+          items {
+            name
+            type
+            interaction {
               id
               duration
               log_content
@@ -78538,9 +76521,6 @@ export const onUpdateSession = `subscription OnUpdateSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -78556,45 +76536,23 @@ export const onUpdateSession = `subscription OnUpdateSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
-            nextToken
+            bucket
+            region
+            key
           }
+          nextToken
         }
-        bucket
-        region
-        key
       }
       nextToken
     }
@@ -79219,9 +77177,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -79852,9 +77807,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -80169,9 +78121,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -80490,9 +78439,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -80809,9 +78755,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -81019,9 +78962,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -81084,9 +79024,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -81116,9 +79053,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -81134,38 +79068,16 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -81354,9 +79266,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -81852,9 +79761,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -81917,9 +79823,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -81949,9 +79852,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -81967,38 +79867,16 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -82195,9 +80073,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -82260,9 +80135,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -82292,9 +80164,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -82310,38 +80179,16 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -82529,9 +80376,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -82554,269 +80398,11 @@ export const onDeleteSession = `subscription OnDeleteSession {
             }
           }
         }
-      }
-      nextToken
-    }
-    attachments {
-      items {
-        name
-        type
-        session {
-          id
-          name_of_session
-          description_of_session
-          createdAt
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-          comments {
-            items {
-              id
-              content
-              createdAt
-              commenter {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          interactions {
-            items {
+        attachments {
+          items {
+            name
+            type
+            interaction {
               id
               duration
               log_content
@@ -82840,9 +80426,6 @@ export const onDeleteSession = `subscription OnDeleteSession {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -82858,45 +80441,23 @@ export const onDeleteSession = `subscription OnDeleteSession {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
-            nextToken
+            bucket
+            region
+            key
           }
+          nextToken
         }
-        bucket
-        region
-        key
       }
       nextToken
     }
@@ -84041,22 +81602,9 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -84411,22 +81959,9 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -84575,22 +82110,9 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -84691,129 +82213,11 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -84832,29 +82236,16 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
@@ -85991,22 +83382,9 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -86113,6 +83491,293 @@ export const onCreateInteraction = `subscription OnCreateInteraction {
           nextToken
         }
       }
+    }
+    attachments {
+      items {
+        name
+        type
+        interaction {
+          id
+          duration
+          log_content
+          comments
+          createdAt
+          session {
+            id
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            comments {
+              items {
+                id
+                content
+                createdAt
+                commenter {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+              }
+              nextToken
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -87255,22 +84920,9 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -87625,22 +85277,9 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -87789,22 +85428,9 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -87905,129 +85531,11 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -88046,29 +85554,16 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
@@ -89205,22 +86700,9 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -89327,6 +86809,293 @@ export const onUpdateInteraction = `subscription OnUpdateInteraction {
           nextToken
         }
       }
+    }
+    attachments {
+      items {
+        name
+        type
+        interaction {
+          id
+          duration
+          log_content
+          comments
+          createdAt
+          session {
+            id
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            comments {
+              items {
+                id
+                content
+                createdAt
+                commenter {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+              }
+              nextToken
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -90469,22 +88238,9 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -90839,22 +88595,9 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -91003,22 +88746,9 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -91119,129 +88849,11 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -91260,29 +88872,16 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
@@ -92419,22 +90018,9 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -92541,6 +90127,293 @@ export const onDeleteInteraction = `subscription OnDeleteInteraction {
           nextToken
         }
       }
+    }
+    attachments {
+      items {
+        name
+        type
+        interaction {
+          id
+          duration
+          log_content
+          comments
+          createdAt
+          session {
+            id
+            name_of_session
+            description_of_session
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            comments {
+              items {
+                id
+                content
+                createdAt
+                commenter {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+              }
+              nextToken
+            }
+            interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          step {
+            id
+            name_of_step
+            description_of_step
+            color
+            createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          attachments {
+            items {
+              name
+              type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+                session {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                }
+                step {
+                  id
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                }
+                attachments {
+                  nextToken
+                }
+              }
+              bucket
+              region
+              key
+            }
+            nextToken
+          }
+        }
+        bucket
+        region
+        key
+      }
+      nextToken
     }
   }
 }
@@ -93162,9 +91035,6 @@ export const onCreateStep = `subscription OnCreateStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -93797,9 +91667,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -94114,9 +91981,6 @@ export const onCreateStep = `subscription OnCreateStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -94435,9 +92299,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -94754,9 +92615,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -94964,9 +92822,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -95029,9 +92884,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -95061,9 +92913,6 @@ export const onCreateStep = `subscription OnCreateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -95079,38 +92928,16 @@ export const onCreateStep = `subscription OnCreateStep {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -95299,9 +93126,6 @@ export const onCreateStep = `subscription OnCreateStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -95951,9 +93775,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -96584,9 +94405,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -96901,9 +94719,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -97222,9 +95037,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -97541,9 +95353,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -97751,9 +95560,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -97816,9 +95622,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -97848,9 +95651,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -97866,38 +95666,16 @@ export const onUpdateStep = `subscription OnUpdateStep {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -98086,9 +95864,6 @@ export const onUpdateStep = `subscription OnUpdateStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -98738,9 +96513,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -99371,9 +97143,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -99688,9 +97457,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -100009,9 +97775,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -100328,9 +98091,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -100538,9 +98298,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -100603,9 +98360,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
             }
             nextToken
@@ -100635,9 +98389,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               step {
                 id
@@ -100653,38 +98404,16 @@ export const onDeleteStep = `subscription OnDeleteStep {
                   compassType
                 }
               }
-            }
-            nextToken
-          }
-          attachments {
-            items {
-              name
-              type
-              session {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
+              attachments {
+                items {
+                  name
+                  type
+                  bucket
+                  region
+                  key
                 }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-                attachments {
-                  nextToken
-                }
+                nextToken
               }
-              bucket
-              region
-              key
             }
             nextToken
           }
@@ -100875,9 +98604,6 @@ export const onDeleteStep = `subscription OnDeleteStep {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -100910,1265 +98636,24 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
   onCreateAttachment {
     name
     type
-    session {
+    interaction {
       id
-      name_of_session
-      description_of_session
+      duration
+      log_content
+      comments
       createdAt
-      compass {
+      session {
         id
-        name_of_compass
-        description_of_compass
+        name_of_session
+        description_of_session
         createdAt
-        compassType
-        owner {
+        compass {
           id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        members {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        readers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        sessions {
-          items {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                bucket
-                region
-                key
-              }
-              nextToken
-            }
-          }
-          nextToken
-        }
-        steps {
-          items {
-            id
-            name_of_step
-            description_of_step
-            color
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-      }
-      comments {
-        items {
-          id
-          content
+          name_of_compass
+          description_of_compass
           createdAt
-          commenter {
+          compassType
+          owner {
             id
             first_name
             last_name
@@ -102277,151 +98762,628 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
               nextToken
             }
           }
-          session {
+          scribe {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
             }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            id
+            content
+            createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-                step {
+                nextToken
+              }
+              member {
+                items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
                   createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            comments
+            createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -102431,418 +99393,647 @@ export const onCreateAttachment = `subscription OnCreateAttachment {
               nextToken
             }
           }
+          nextToken
         }
-        nextToken
       }
-      interactions {
-        items {
+      step {
+        id
+        name_of_step
+        description_of_step
+        color
+        createdAt
+        compass {
           id
-          duration
-          log_content
-          comments
+          name_of_compass
+          description_of_compass
           createdAt
-          session {
+          compassType
+          owner {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
               items {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                teachers {
+                  nextToken
                 }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
+                members {
+                  nextToken
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                readers {
+                  nextToken
                 }
-                bucket
-                region
-                key
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
               nextToken
             }
           }
-          step {
+          scribe {
             id
-            name_of_step
-            description_of_step
-            color
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
           }
         }
-        nextToken
       }
       attachments {
         items {
           name
           type
-          session {
+          interaction {
             id
-            name_of_session
-            description_of_session
+            duration
+            log_content
+            comments
             createdAt
-            compass {
+            session {
               id
-              name_of_compass
-              description_of_compass
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -102869,1265 +100060,24 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
   onUpdateAttachment {
     name
     type
-    session {
+    interaction {
       id
-      name_of_session
-      description_of_session
+      duration
+      log_content
+      comments
       createdAt
-      compass {
+      session {
         id
-        name_of_compass
-        description_of_compass
+        name_of_session
+        description_of_session
         createdAt
-        compassType
-        owner {
+        compass {
           id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        members {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        readers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        sessions {
-          items {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                bucket
-                region
-                key
-              }
-              nextToken
-            }
-          }
-          nextToken
-        }
-        steps {
-          items {
-            id
-            name_of_step
-            description_of_step
-            color
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-      }
-      comments {
-        items {
-          id
-          content
+          name_of_compass
+          description_of_compass
           createdAt
-          commenter {
+          compassType
+          owner {
             id
             first_name
             last_name
@@ -104236,151 +100186,628 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
               nextToken
             }
           }
-          session {
+          scribe {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
             }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            id
+            content
+            createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-                step {
+                nextToken
+              }
+              member {
+                items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
                   createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            comments
+            createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -104390,418 +100817,647 @@ export const onUpdateAttachment = `subscription OnUpdateAttachment {
               nextToken
             }
           }
+          nextToken
         }
-        nextToken
       }
-      interactions {
-        items {
+      step {
+        id
+        name_of_step
+        description_of_step
+        color
+        createdAt
+        compass {
           id
-          duration
-          log_content
-          comments
+          name_of_compass
+          description_of_compass
           createdAt
-          session {
+          compassType
+          owner {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
               items {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                teachers {
+                  nextToken
                 }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
+                members {
+                  nextToken
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                readers {
+                  nextToken
                 }
-                bucket
-                region
-                key
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
               nextToken
             }
           }
-          step {
+          scribe {
             id
-            name_of_step
-            description_of_step
-            color
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
           }
         }
-        nextToken
       }
       attachments {
         items {
           name
           type
-          session {
+          interaction {
             id
-            name_of_session
-            description_of_session
+            duration
+            log_content
+            comments
             createdAt
-            compass {
+            session {
               id
-              name_of_compass
-              description_of_compass
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -104828,1265 +101484,24 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
   onDeleteAttachment {
     name
     type
-    session {
+    interaction {
       id
-      name_of_session
-      description_of_session
+      duration
+      log_content
+      comments
       createdAt
-      compass {
+      session {
         id
-        name_of_compass
-        description_of_compass
+        name_of_session
+        description_of_session
         createdAt
-        compassType
-        owner {
+        compass {
           id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        members {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        readers {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        sessions {
-          items {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                bucket
-                region
-                key
-              }
-              nextToken
-            }
-          }
-          nextToken
-        }
-        steps {
-          items {
-            id
-            name_of_step
-            description_of_step
-            color
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-      }
-      comments {
-        items {
-          id
-          content
+          name_of_compass
+          description_of_compass
           createdAt
-          commenter {
+          compassType
+          owner {
             id
             first_name
             last_name
@@ -106195,151 +101610,628 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
               nextToken
             }
           }
-          session {
+          scribe {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
             }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
+            nextToken
+          }
+        }
+        comments {
+          items {
+            id
+            content
+            createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+              teacher {
+                items {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-                step {
+                nextToken
+              }
+              member {
+                items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
                   createdAt
+                  compassType
+                }
+                nextToken
+              }
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+          }
+          nextToken
+        }
+        interactions {
+          items {
+            id
+            duration
+            log_content
+            comments
+            createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                }
+                nextToken
+              }
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -106349,418 +102241,647 @@ export const onDeleteAttachment = `subscription OnDeleteAttachment {
               nextToken
             }
           }
+          nextToken
         }
-        nextToken
       }
-      interactions {
-        items {
+      step {
+        id
+        name_of_step
+        description_of_step
+        color
+        createdAt
+        compass {
           id
-          duration
-          log_content
-          comments
+          name_of_compass
+          description_of_compass
           createdAt
-          session {
+          compassType
+          owner {
             id
-            name_of_session
-            description_of_session
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
               items {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
                 }
-              }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                teachers {
+                  nextToken
                 }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
+                members {
+                  nextToken
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                readers {
+                  nextToken
                 }
-                bucket
-                region
-                key
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
               nextToken
             }
           }
-          step {
+          scribe {
             id
-            name_of_step
-            description_of_step
-            color
-            createdAt
+            first_name
+            last_name
+            email
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+              }
+              nextToken
+            }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+          }
+          teachers {
+            items {
               id
-              name_of_compass
-              description_of_compass
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+            }
+            nextToken
           }
         }
-        nextToken
       }
       attachments {
         items {
           name
           type
-          session {
+          interaction {
             id
-            name_of_session
-            description_of_session
+            duration
+            log_content
+            comments
             createdAt
-            compass {
+            session {
               id
-              name_of_compass
-              description_of_compass
+              name_of_session
+              description_of_session
               createdAt
-              compassType
-              owner {
+              compass {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              sessions {
+              comments {
                 items {
                   id
-                  name_of_session
-                  description_of_session
+                  content
                   createdAt
                 }
                 nextToken
               }
-              steps {
+              interactions {
                 items {
                   id
-                  name_of_step
-                  description_of_step
-                  color
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 nextToken
               }
             }
-            comments {
-              items {
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
                 id
-                content
+                name_of_compass
+                description_of_compass
                 createdAt
-                commenter {
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
                 }
-                session {
+                scribe {
                   id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                  first_name
+                  last_name
+                  email
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
                 }
               }
-              nextToken
-            }
-            interactions {
-              items {
-                id
-                duration
-                log_content
-                comments
-                createdAt
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                step {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-              }
-              nextToken
             }
             attachments {
               items {
                 name
                 type
-                session {
+                interaction {
                   id
-                  name_of_session
-                  description_of_session
+                  duration
+                  log_content
+                  comments
                   createdAt
                 }
                 bucket
@@ -107085,9 +103206,6 @@ export const onCreateComment = `subscription OnCreateComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -107404,9 +103522,6 @@ export const onCreateComment = `subscription OnCreateComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -107721,9 +103836,6 @@ export const onCreateComment = `subscription OnCreateComment {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -108213,16 +104325,6 @@ export const onCreateComment = `subscription OnCreateComment {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -109408,22 +105510,9 @@ export const onCreateComment = `subscription OnCreateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -109778,22 +105867,9 @@ export const onCreateComment = `subscription OnCreateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -109942,22 +106018,9 @@ export const onCreateComment = `subscription OnCreateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -110058,129 +106121,11 @@ export const onCreateComment = `subscription OnCreateComment {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -110199,29 +106144,16 @@ export const onCreateComment = `subscription OnCreateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
@@ -110531,9 +106463,6 @@ export const onUpdateComment = `subscription OnUpdateComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -110850,9 +106779,6 @@ export const onUpdateComment = `subscription OnUpdateComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -111167,9 +107093,6 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -111659,16 +107582,6 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -112854,22 +108767,9 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -113224,22 +109124,9 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -113388,22 +109275,9 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -113504,129 +109378,11 @@ export const onUpdateComment = `subscription OnUpdateComment {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -113645,29 +109401,16 @@ export const onUpdateComment = `subscription OnUpdateComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
@@ -113977,9 +109720,6 @@ export const onDeleteComment = `subscription OnDeleteComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -114296,9 +110036,6 @@ export const onDeleteComment = `subscription OnDeleteComment {
                 interactions {
                   nextToken
                 }
-                attachments {
-                  nextToken
-                }
               }
               nextToken
             }
@@ -114613,9 +110350,6 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   nextToken
                 }
                 interactions {
-                  nextToken
-                }
-                attachments {
                   nextToken
                 }
               }
@@ -115105,16 +110839,6 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   log_content
                   comments
                   createdAt
-                }
-                nextToken
-              }
-              attachments {
-                items {
-                  name
-                  type
-                  bucket
-                  region
-                  key
                 }
                 nextToken
               }
@@ -116300,22 +112024,9 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -116670,22 +112381,9 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -116834,22 +112532,9 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
               nextToken
             }
@@ -116950,129 +112635,11 @@ export const onDeleteComment = `subscription OnDeleteComment {
               }
             }
           }
-        }
-        nextToken
-      }
-      attachments {
-        items {
-          name
-          type
-          session {
-            id
-            name_of_session
-            description_of_session
-            createdAt
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            comments {
-              items {
-                id
-                content
-                createdAt
-                commenter {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-              }
-              nextToken
-            }
-            interactions {
-              items {
+          attachments {
+            items {
+              name
+              type
+              interaction {
                 id
                 duration
                 log_content
@@ -117091,29 +112658,16 @@ export const onDeleteComment = `subscription OnDeleteComment {
                   color
                   createdAt
                 }
-              }
-              nextToken
-            }
-            attachments {
-              items {
-                name
-                type
-                session {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                attachments {
+                  nextToken
                 }
-                bucket
-                region
-                key
               }
-              nextToken
+              bucket
+              region
+              key
             }
+            nextToken
           }
-          bucket
-          region
-          key
         }
         nextToken
       }
