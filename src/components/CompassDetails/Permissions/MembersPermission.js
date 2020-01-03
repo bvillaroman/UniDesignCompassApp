@@ -11,7 +11,7 @@ import {
   PermissionForm,
   Permissions,
   PermissionButton
-} from "../../../styles/PermissionPage"
+} from "./style"
 import { AddCircle } from 'grommet-icons';
 
 const MembersPermission = () => {

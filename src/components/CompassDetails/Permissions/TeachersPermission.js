@@ -12,7 +12,7 @@ import {
   PermissionForm,
   Permissions,
   PermissionButton,
-} from "../../../styles/PermissionPage"
+} from "./style"
 
 const TeachersPermission = () => {
   const { compass } = useContext(CompassContext);
