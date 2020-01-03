@@ -63,7 +63,7 @@ export const ProfileButton = styled(Button)`
   font-size: 0.9rem;
   font-weight: 500;
   float: left;
-  width: 10%;
+  width: 100px;
   margin-top: 1em;
 `;
 

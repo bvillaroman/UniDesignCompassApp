@@ -261,6 +261,10 @@ export const SummaryMainView = styled.div`
   margin-bottom: 1em;
   margin-right: 1em;
   //border: groove;
+
+  @media (max-width: 500px){
+    height: 60%;
+  }
 `;
 
 export const SummaryTdHeader = styled.td`
