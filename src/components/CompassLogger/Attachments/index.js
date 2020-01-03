@@ -13,28 +13,23 @@ import { CompassContext } from "../../../context/CompassPage/context"
 import { GlobalContext } from "../../../context/context"
 
 const Attachments = (props) => {
-  const { compass, session } = useContext(CompassContext);
+  const { compass,interaction } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [attachments, setAttachments] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const readers = compass.readers.items.map((reader) => reader)
-  console.log("check all readers", readers)
 
   const reader = readers.find((r) => r.email === user.email)
 
-  console.log("where do you exist", reader)
+  useEffect(() => { 
 
-  useEffect(() => {
-    console.log("User Hooks", user)
-    console.log("Compass Hooks", compass)
-
-    if (session.hasOwnProperty("id")) {
+    if (interaction.hasOwnProperty("id")) {
       let arrAttachment = []
       setLoading(false)
-      if (session.attachments.items.length > 0) {
-        session.attachments.items.map((attachment, i) => {
+      if (interaction.attachments.items.length > 0) {
+        interaction.attachments.items.map((attachment, i) => {
           return arrAttachment.push(attachment)
         })
       }
@@ -43,19 +38,14 @@ const Attachments = (props) => {
     }
 
     // eslint-disable-next-line
-  }, [session])
+  }, [interaction])
 
   // handle uploading an attachment
   const handleUpload = async (event) => {
     event.preventDefault()
-
-    console.log("Clicked handleUpload")
-    console.log("User Hooks", user)
-    console.log("Compass Hooks", compass)
-
     const { target: { files } } = event
     const [image] = files || []
-    if (image && session.hasOwnProperty("id")) {
+    if (image && interaction.hasOwnProperty("id")) {
       const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
@@ -68,7 +58,7 @@ const Attachments = (props) => {
       try {
         setLoading(true)
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        Mutation.uploadAttachment({ ...fileForUpload, attachmentSessionId: session.id })
+        Mutation.uploadAttachment({ ...fileForUpload, attachmentInteractionId: interaction.id })
           .then((res) => {
             setLoading(false)
             setAttachments([res.data.createAttachment, ...attachments])
