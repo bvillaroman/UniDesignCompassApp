@@ -59,7 +59,7 @@ type Session @model @auth(rules: [{ allow: owner, queries: null} ]) {
   compass: Compass @connection(name: "CompassSessions")
   comments: [Comment] @connection(name: "SessionComments")
   interactions: [Interaction] @connection(name: "SessionInteractions")
-  attachments: [Attachment] @connection(name: "SessionAttachments")
+  # attachments: [Attachment] @connection(name: "SessionAttachments")
 }
 
 type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -70,7 +70,7 @@ type Interaction @model @auth(rules: [{ allow: owner, queries: null} ]) {
   createdAt: AWSDateTime
   session: Session @connection(name: "SessionInteractions")
   step: Step @connection
-  # attachments: [Attachment] @connection(name: "InteractionAttachments")
+  attachments: [Attachment] @connection(name: "InteractionAttachments")
 }
 
 type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
@@ -85,8 +85,8 @@ type Step @model @auth(rules: [{ allow: owner, queries: null} ]) {
 type Attachment @model{
   name: String
   type: String
-  # interaction: Interaction @connection(name: "InteractionAttachments")
-  session: Session @connection(name: "SessionAttachments")
+  interaction: Interaction @connection(name: "InteractionAttachments")
+  # session: Session @connection(name: "SessionAttachments")
   bucket: String!
   region: String!
   key: String!

@@ -3,9 +3,16 @@ import { getUsers } from '../../../utils/queries';
 import { createTeacherCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
-import styled from "styled-components";
 import { AddCircle } from 'grommet-icons';
-import { Button } from 'grommet';
+import {
+  PermissionContainer,
+  PermissionHeaderBar,
+  PermissionHeader,
+  PermissionFormContainer,
+  PermissionForm,
+  Permissions,
+  PermissionButton,
+} from "../../../styles/PermissionPage"
 
 const TeachersPermission = () => {
   const { compass } = useContext(CompassContext);
@@ -49,22 +56,23 @@ const TeachersPermission = () => {
             .then(res => console.log(res))
             .catch(err => console.log(err))
         ).catch(err => console.log('failed at getUser', err))
-
     )
-
   }
 
   return (
     <PermissionContainer>
-      <PermissionHeader>Permission</PermissionHeader>
+      <PermissionHeaderBar>
+        <PermissionHeader>Add Teacher</PermissionHeader>
+        <PermissionButton
+          label="Add"
+          onClick={addTeacher}
+          icon={<AddCircle />}
+        >
+        </PermissionButton>
+      </PermissionHeaderBar>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-
-          <TeacherContainer>
-            <PermissionButtom
-              onClick={addTeacher}
-              icon={AddCircle}
-            ><AddCircle /> </PermissionButtom>
+          <Permissions>
             {
               teacher.map((val, idx) => {
                 const teacherId = `name-${idx}`;
@@ -73,7 +81,7 @@ const TeachersPermission = () => {
                     <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}> {`Teacher #${idx + 1}`} </label>
                     <input
                       style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
-                      size="35"
+
                       type="email"
                       name={teacherId}
                       data-idx={idx}
@@ -86,9 +94,8 @@ const TeachersPermission = () => {
                 );
               })
             }
-          </TeacherContainer>
-          <PermissionSubmit type="submit" primary label="Submit" disabled={disableButton} />
-          {/* <button type="submit" disabled={disableButton}>Submit</button> */}
+          </Permissions>
+          <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -96,62 +103,3 @@ const TeachersPermission = () => {
 }
 
 export default TeachersPermission;
-
-export const PermissionContainer = styled.div`
-  width: 83%;
-  min-height: 15rem;
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  transition: box-shadow 150ms ease;
-`
-
-export const PermissionHeader = styled.div`
-  text-align: left;
-  padding-left: 0.5rem;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  font-size: 1.5rem;
-  color: black;
-  font-weight: 600;
-`
-
-export const PermissionFormContainer = styled.div`
-  margin-top: 1rem;
-  overflow: auto;
-`
-
-export const PermissionForm = styled.form`
-`
-
-export const PermissionButtom = styled.button`
-  float: right
-`
-
-export const TeacherContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
-export const PermissionSubmit = styled(Button)`
-svg {
-  transition: all 0.3s;
-  fill: white; 
-  stroke: white;
-  height: 1.2rem;
-  width: 1.2rem;
-}
-background: #5567FD; 
-color: white;
-padding: 0.3rem 0.7rem;
-margin: 0;
-font-size: 0.9rem;
-font-weight: 500;
-float: right;
-`

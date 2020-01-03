@@ -3,9 +3,16 @@ import { getUsers } from '../../../utils/queries';
 import { createReaderCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
-import styled from "styled-components";
 import { AddCircle } from 'grommet-icons';
-import { Button } from 'grommet';
+import {
+  PermissionContainer,
+  PermissionHeaderBar,
+  PermissionHeader,
+  PermissionFormContainer,
+  PermissionForm,
+  Permissions,
+  PermissionButton,
+} from "../../../styles/PermissionPage"
 
 const ReadersPermission = () => {
   const { compass } = useContext(CompassContext);
@@ -54,15 +61,19 @@ const ReadersPermission = () => {
 
   return (
     <PermissionContainer>
-      <PermissionHeader>Permission</PermissionHeader>
+      <PermissionHeaderBar >
+        <PermissionHeader>Add Reader</PermissionHeader>
+        <PermissionButton
+          label="Add"
+          onClick={addReader}
+          icon={<AddCircle />}
+        >
+        </PermissionButton>
+      </PermissionHeaderBar>
+
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-          <ReaderContainer>
-            <PermissionButtom
-              onClick={addReader}
-              icon={AddCircle}
-            ><AddCircle /> </PermissionButtom>
-
+          <Permissions>
             {
               reader.map((val, idx) => {
                 const readerID = `name-${idx}`;
@@ -71,7 +82,6 @@ const ReadersPermission = () => {
                     <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>{`Reader #${idx + 1}`}</label>
                     <input
                       style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
-                      size="35"
                       type="email"
                       name={readerID}
                       data-idx={idx}
@@ -84,9 +94,8 @@ const ReadersPermission = () => {
                 );
               })
             }
-          </ReaderContainer>
-          <PermissionSubmit type="submit" primary label="Submit" disabled={disableButton} />
-          {/* <button type="submit" disabled={disableButton}>Submit</button> */}
+          </Permissions>
+          <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
@@ -94,62 +103,3 @@ const ReadersPermission = () => {
 }
 
 export default ReadersPermission;
-
-export const PermissionContainer = styled.div`
-  width: 83%;
-  min-height: 15rem;
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 1rem;
-  box-shadow: 0 1px 3px 0 #d2d4d6;
-  transition: box-shadow 150ms ease;
-`
-
-export const PermissionHeader = styled.div`
-  text-align: left;
-  padding-left: 0.5rem;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  font-size: 1.5rem;
-  color: black;
-  font-weight: 600;
-`
-
-export const PermissionFormContainer = styled.div`
-  margin-top: 1rem;
-  overflow: auto;
-`
-
-export const PermissionForm = styled.form`
-`
-
-export const PermissionButtom = styled.button`
-  float: right
-`
-
-export const ReaderContainer = styled.div`
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
-
-export const PermissionSubmit = styled(Button)`
-svg {
-  transition: all 0.3s;
-  fill: white; 
-  stroke: white;
-  height: 1.2rem;
-  width: 1.2rem;
-}
-background: #5567FD; 
-color: white;
-padding: 0.3rem 0.7rem;
-margin: 0;
-font-size: 0.9rem;
-font-weight: 500;
-float: right;
-`
