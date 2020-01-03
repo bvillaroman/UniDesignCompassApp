@@ -20,6 +20,7 @@ export const initialState = {
   compass: {},
   session: {},
   interaction: {},
+  newestInteraction: {},
   interactions: [],
   time: 0,
   interactionAdded: false,

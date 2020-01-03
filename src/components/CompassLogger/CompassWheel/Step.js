@@ -7,7 +7,7 @@ import translateTime from '../../../utils/translateTime'
 import { GlobalContext } from "../../../context/context";
 
 export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
-  const { session, addInteraction, interaction, compass } = useContext(CompassContext)
+  const { session, addInteraction, interaction, compass, newestInteraction } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
@@ -30,7 +30,7 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
   const goToLog = (e) => {
     // console.log(interaction.hasOwnProperty("id"))
     if (disableStep) {
-      if (!interaction.hasOwnProperty("id") || id !== interaction.step.id) {
+      if (!interaction.hasOwnProperty("id") || id !== interaction.step.id || newestInteraction.step.id !== id) {
         startInteraction(session.id, id)
           .then((interaction) => {
             addInteraction(interaction.data.createInteraction)

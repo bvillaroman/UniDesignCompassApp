@@ -11,7 +11,7 @@ import {
   PermissionForm,
   Permissions,
   PermissionButton
-} from "../../../styles/PermissionPage"
+} from "./style"
 
 const ScribePermission = () => {
   const { compass } = useContext(CompassContext);

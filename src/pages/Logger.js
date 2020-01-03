@@ -50,7 +50,7 @@ const CompassPage = (props) => {
   //       })
   //   })
 
-  //   // every time a comment is created, check if the sessions being viewed is the one being updated
+  //   // every time an attachment is created, check if the sessions being viewed is the one being updated
   //   // if so, update the session
   //   const createAttachment = createAttachmentSub().subscribe({
   //     next: res => {
