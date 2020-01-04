@@ -6,6 +6,7 @@ import TeachersPermission from "./Permissions/TeachersPermission";
 import MembersPermission from "./Permissions/MembersPermission";
 import ReadersPermission from "./Permissions/ReadersPermission";
 import DisplayPermission from "./Permissions/DisplayPermission";
+// import DeletePermission from "./Permissions/DeletePermission";
 import { Box } from "grommet";
 import styled from "styled-components";
 
@@ -23,6 +24,8 @@ export default (props) => {
         <ScribePermission />
         <MembersPermission />
         <ReadersPermission />
+
+        {/* <DeletePermission /> */}
       </CompassNavigationBar2>
     </CompassViewerContainer>
   )

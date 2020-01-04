@@ -9,12 +9,10 @@ import {
   FormName,
   FormNameLabel,
   FormNameInput,
-  NameButton,
   ProfileButton,
   FormPassword,
   FormPasswordLabel,
   FormPasswordInput,
-  PasswordButton
 
 } from '../styles/ProfilePage'
 
