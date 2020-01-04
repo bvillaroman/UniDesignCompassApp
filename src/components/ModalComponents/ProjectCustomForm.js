@@ -56,10 +56,10 @@ const CustomCompassForm = () => {
     else {
       steps.map(step => {
         if (step.description === "" || step.title === "") {
-          alert("Title or Description cannot be empty")
+          return alert("Title or Description cannot be empty")
 
         } else {
-          createCompass("Untitled", "-", "default", [user.email], [])
+          return createCompass("Untitled", "-", "default", [user.email], [])
             .then(res => {
               steps.forEach((step, key) =>
                 createStep(step.title, step.description, step.color, res.data.createCompass.id)

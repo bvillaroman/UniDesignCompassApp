@@ -41,21 +41,6 @@ const SummarySession = (props) => {
     }
   }
 
-  // const arrayAttachments = (sessions) => {
-  //   let arrAttachment = []
-
-  //   if (sessions && sessions.length > 0) {
-
-  //     sessions.map((session, i) => {
-  //       session.interactions.items.map((interaction, i) => {
-  //         arrAttachment.push(interaction.attachments.items)
-  //       })
-  //     })
-  //   }
-
-  //   return arrAttachment.flat()
-  // }
-
   const SessionTable = ({ sessions }) => {
     return (
       <>
@@ -75,12 +60,11 @@ const SummarySession = (props) => {
               </SummaryTableHeader>
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
                 <SummaryTableBody>
-                  <tr key={i} onClick={() => navigate(`/Compass/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
+                  <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                     <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
                     <SummaryTdBody>{interaction.log_content.substring(0, 25) + "..."}</SummaryTdBody>
-                    {/* <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody> */}
-                    <SummaryTdBody>---</SummaryTdBody>
+                    <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                   </tr>
                 </SummaryTableBody>
               )}

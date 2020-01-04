@@ -4,11 +4,11 @@ import styled from "styled-components"
 import Logger from "./Logger"
 import Wheel from "./CompassWheel"
 
-export const CompassSection = ({selectStep}) => {
+export const CompassSection = (props) => {
 
   return (
     <CompassSectionContainer>
-      <Wheel selectStep={selectStep} />
+      <Wheel />
       <Logger />
     </CompassSectionContainer>
 )};

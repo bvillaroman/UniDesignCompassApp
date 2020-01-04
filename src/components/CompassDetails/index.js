@@ -1,21 +1,46 @@
 import React from "react";
-import { CompassViewerContainer, MainContainer, CompassNavigationBar } from "../../styles/CompassPage"
-import ProjectDetails from "./ProjectDetails"
-import SessionCreator from "./SessionCreator"
-import CompassPermission from "./CompassPermissions"
+import { CompassViewerContainer, CompassNavigationBar } from "../../styles/CompassPage"
+import ProjectDetails from "./ProjectDetails";
+import ScribePermission from "./Permissions/ScribePermission";
+import TeachersPermission from "./Permissions/TeachersPermission";
+import MembersPermission from "./Permissions/MembersPermission";
+import ReadersPermission from "./Permissions/ReadersPermission";
+import DisplayPermission from "./Permissions/DisplayPermission";
+// import DeletePermission from "./Permissions/DeletePermission";
+import { Box } from "grommet";
+import styled from "styled-components";
+
 
 export default (props) => {
 
   return (
     <CompassViewerContainer>
-      <MainContainer >
-        <SessionCreator />
-      </MainContainer>
       <CompassNavigationBar>
         <ProjectDetails />
-        <CompassPermission />
+        <DisplayPermission />
       </CompassNavigationBar>
+      <CompassNavigationBar2>
+        <TeachersPermission />
+        <ScribePermission />
+        <MembersPermission />
+        <ReadersPermission />
+
+        {/* <DeletePermission /> */}
+      </CompassNavigationBar2>
     </CompassViewerContainer>
   )
 };
 
+export const CompassNavigationBar2 = styled(Box)`
+  width: 20%;
+  height: 100%
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // background: white;
+
+  @media (max-width: 767px){
+    width: 100%;
+    flex-direction: row;
+  } 
+`;

@@ -22,7 +22,7 @@ export const MainViewContainer = styled(Box)`
   background: #F4F6F9;
 
   @media (max-width: 500px){
-    flex-direction: column-reverse;
+    flex-flow: wrap-reverse;
     //block-size: inherit;
   }  
 `;

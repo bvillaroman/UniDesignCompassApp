@@ -1,33 +1,16 @@
-import React, {useEffect, useContext}  from "react";
+import React from "react";
 import styled from "styled-components"
-
-import { CompassContext } from "../../context/CompassPage/context"
-
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
 import InteractionFeed from "./Interactions"
 
-const CompassSelector = ({showAttachment}) => {
-  const {interactions, updateTime} = useContext(CompassContext)
-
-  // getting the current session and distribute: session,steps, all interactions, all attachments
-  useEffect(() => {
-    if (interactions.length > 0) {
-      let time = 0;
-      interactions.forEach(element => {
-        time += element.duration
-      });
-      updateTime(time)
-    }
-    
-  // eslint-disable-next-line
-  },[interactions])
+const CompassSelector = (props) => {
 
   return (
     <CSContainer>
       <CSGrid>
         <CompassSection/>
-        <SessionBar showAttachment={showAttachment} />
+        <SessionBar />
       </CSGrid>
       <InteractionFeed/>
     </CSContainer>
@@ -37,7 +20,7 @@ export default CompassSelector;
 export const CSGrid = styled.div`
   width: 100%;
   height: 75%;
-  min-height: 33rem;
+  min-height: 37rem;
   margin: 0 auto;
   display: flex;
   flex-direction: row;

@@ -208,3 +208,28 @@ export async function deleteStep(id) {
   const deletedStep = await API.graphql(graphqlOperation(mutations.deleteStep, { input: StepInfo }));
   return deletedStep;
 }
+
+export async function deleteTeacherCompasses(id) {
+  const TeacherInfo = {
+    id
+  }
+  const deletedTeacher = await API.graphql(graphqlOperation(mutations.deleteTeacherCompasses, { input: TeacherInfo }));
+  return deletedTeacher;
+}
+
+export async function deleteMemberCompasses(id) {
+  const MemberInfo = {
+    id
+  }
+  const deletedMember = await API.graphql(graphqlOperation(mutations.deleteMemberCompasses, { input: MemberInfo }));
+  return deletedMember;
+}
+
+export async function deleteReaderCompasses(id) {
+  const ReaderInfo = {
+    id
+  }
+  const deletedReader = await API.graphql(graphqlOperation(mutations.deleteReaderCompasses, { input: ReaderInfo }));
+  return deletedReader;
+}
+

@@ -1,6 +1,7 @@
-import React, {useState, useEffect, useContext }  from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import * as Icons from 'grommet-icons';
+import {Menu} from 'grommet';
 
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { Loader } from "../../../styles/layout"
@@ -10,52 +11,81 @@ import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
+import { GlobalContext } from "../../../context/context"
 
 const Attachments = (props) => {
-  const {compass, session} = useContext(CompassContext);
-  
-  const [attachments,setAttachments] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { compass,interaction, session } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
 
-  useEffect(() => {
-    if(session.hasOwnProperty("id")){
+  const [attachments, setAttachments] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+
+  const readers = compass.readers.items.map((reader) => reader)
+
+  const reader = readers.find((r) => r.email === user.email)
+
+  // let allInteractions = sessions
+  // .map(item => item.interactions.items)
+  // .flat().filter((interaction) => (interaction.duration > 0))
+  useEffect(() => { 
+
+    if (interaction.hasOwnProperty("id")) {
       let arrAttachment = []
       setLoading(false)
-      if (session.attachments.items.length > 0) {  
-        session.attachments.items.map((attachment, i) => {
-          arrAttachment.push(attachment)
+      if (interaction.attachments.items.length > 0) {
+        interaction.attachments.items.map((attachment, i) => {
+          return arrAttachment.push(attachment)
         })
       }
 
       setAttachments(arrAttachment)
     }
 
-  // eslint-disable-next-line
-  }, [session])
+    // eslint-disable-next-line
+  }, [interaction])
   
+  useEffect(() => { 
+    let array = []
+    if (showAll && session.hasOwnProperty("id")){
+      setLoading(false)
+      array = session.interactions.items.map(item => item.attachments.items).filter(arr => arr.length > 0).flat()
+    } else if ( !showAll && interaction.hasOwnProperty("id")) {
+      setLoading(false)
+      if (interaction.attachments.items.length > 0) {
+        interaction.attachments.items.map((attachment, i) => {
+          return array.push(attachment)
+        })
+      }
+    }
+    setAttachments(array)
+    // eslint-disable-next-line
+  }, [showAll, interaction])
+
+
   // handle uploading an attachment
-  const handleUpload = async (event) => { 
+  const handleUpload = async (event) => {
     event.preventDefault()
     const { target: { files } } = event
     const [image] = files || []
-    if (image && session.hasOwnProperty("id") ) {
+    if (image && interaction.hasOwnProperty("id")) {
       const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
-        key:  `${uuid()}${fileName}`,
+        key: `${uuid()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
         name: fileName,
         type: mimeType,
       }
-    
+
       try {
         setLoading(true)
         await Storage.put(fileForUpload.key, image, { contentType: mimeType })
-        Mutation.uploadAttachment({...fileForUpload,attachmentSessionId: session.id})
+        Mutation.uploadAttachment({ ...fileForUpload, attachmentInteractionId: interaction.id })
           .then((res) => {
             setLoading(false)
             setAttachments([res.data.createAttachment, ...attachments])
-            
+
           })
       } catch (err) {
         setLoading(false)
@@ -67,21 +97,24 @@ const Attachments = (props) => {
   return (
     <AttachmentsContainer>
       <LoggerHeaderContainer>
-        <LoggerHeaderText> Attachments </LoggerHeaderText>
-        {
-          compass.hasOwnProperty("id") && (
-            <LoggerHeaderButtonContainer >
-              { loading ? <Loader/> : <AttachmentButton onChange={handleUpload} /> }
-            </LoggerHeaderButtonContainer>
-          )
-        }
+        <AttachmentsSelector
+          label={ showAll ? <LoggerHeaderText>All Attachments </LoggerHeaderText> : <LoggerHeaderText> Attachments </LoggerHeaderText>}
+          items={[
+            { label: "Attachments", onClick: () => setShowAll(false) },
+            { label: "All Attachments", onClick: () => setShowAll(true) }
+          ]}
+          dropAlign={{ top: "bottom" }}
+        />
+        <LoggerHeaderButtonContainer >
+
+          {loading ? <Loader /> : reader === undefined ? <AttachmentButton onChange={handleUpload} /> : reader.email === user.email ? "" : <AttachmentButton onChange={handleUpload} />}
+          {/* {loading ? <Loader /> : <AttachmentButton onChange={handleUpload} />} */}
+        </LoggerHeaderButtonContainer>
       </LoggerHeaderContainer>
       <SessionAttachments>
-        { 
-          attachments.length > 0 && 
-          attachments.map((item) => (
-            <Attachment key={item.key} attachment={item}/>
-          )) 
+        {
+          attachments.length > 0 &&
+          attachments.map((item) => (<Attachment key={item.key} attachment={item} />))
         }
       </SessionAttachments>
     </AttachmentsContainer>
@@ -89,6 +122,10 @@ const Attachments = (props) => {
 }
 
 export default Attachments;
+
+export const AttachmentsSelector = styled(Menu)`
+  width: 100%;
+`
 
 const AttachmentsContainer = styled.div`
   width: 90%;
@@ -109,7 +146,7 @@ const SessionAttachments = styled.div`
   }  
 `
 const ButtonLabel = styled.label`
-  cursor: ${ props => props.disabled ? "unset" : "pointer"}; ;
+  cursor: ${ props => props.disabled ? "unset" : "pointer"}; 
   border: 0.15rem solid transparent;
   border-radius: 2rem;
   transition: all 0.3s;

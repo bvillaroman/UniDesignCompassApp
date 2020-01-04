@@ -1,6 +1,7 @@
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
+export const ADD_INTERACTION = "ADD_INTERACTION";
 export const UPDATE_INTERACTIONS = "UPDATE_INTERACTIONS";
 export const UPDATE_TIME = "UPDATE_TIME";
 export const CLEAR_COMPASS = "CLEAR_COMPASS";
@@ -11,7 +12,7 @@ export const CLEAR_TIME = "CLEAR_TIME";
 
 const updateCompass = (newCompass, state) => ({ ...state, compass: newCompass})
 const updateSession = (newSession, state) => ({ ...state, session: newSession})
-const updateInteraction = (newInteraction, state) => {
+const addInteraction = (newInteraction, state) => {
   const interaction = {...state.interaction, ...newInteraction}
   let newInteractions = state.interactions;
   newInteractions = newInteractions.filter((item) => { return interaction.id !== item.id })
@@ -20,10 +21,14 @@ const updateInteraction = (newInteraction, state) => {
   return { 
     ...state, 
     interaction, 
-    interactions: newInteractions
+    interactions: newInteractions,
+    newestInteraction: interaction,
+    interactionAdded: true,
+    interactionUpdated: false
   }
 }
-const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions})
+const updateInteraction = (newInteraction, state) => ({...state, interaction: newInteraction, interactionAdded: false, interactionUpdated: true }) 
+const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions, newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}})
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
 
 const clearCompass = (state) => ({ ...state, compass: {}})
@@ -40,6 +45,8 @@ export default (state,{type,payload}) => {
       return updateSession(payload, state);
     case UPDATE_INTERACTION:
       return updateInteraction(payload, state);
+    case ADD_INTERACTION:
+      return addInteraction(payload, state);
     case UPDATE_INTERACTIONS:
       return updateInteractions(payload, state);
     case UPDATE_TIME:

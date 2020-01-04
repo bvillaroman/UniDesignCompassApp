@@ -1,16 +1,11 @@
 import React, { useContext, useState } from 'react';
+import styled from "styled-components"
 import * as Mutations from "../../../utils/mutations";
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import { Waypoint } from 'grommet-icons';
-import {
-  CommentsForm,
-  CommentInput,
-  CommentFormFlex,
-  CommentButton
-} from '../../../styles/CommentPage';
 
-const CommentForm = ({ addComment }) => {
+const CommentForm = (props) => {
   const { user } = useContext(GlobalContext);
   const { session  } = useContext(CompassContext);
   const [commentValue, setCommentValue] = useState("");
@@ -52,3 +47,20 @@ const CommentForm = ({ addComment }) => {
 }
 
 export default CommentForm;
+
+const CommentsForm = styled.form`
+
+`;
+const CommentInput = styled.input`
+  width: 90%;
+  font-size: 18px;
+`;
+
+const CommentFormFlex = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+`;
+
+const CommentButton = styled.button`
+`;

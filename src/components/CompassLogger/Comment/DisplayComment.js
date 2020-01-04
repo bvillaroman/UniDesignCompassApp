@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommentCard } from '../../../styles/CommentPage';
+import styled from "styled-components"
 
 // gets the value of the comment and parses it to show the message/name
 const DisplayComment = ({ comment }) => {
@@ -15,3 +15,11 @@ const DisplayComment = ({ comment }) => {
 }
 
 export default DisplayComment
+
+const CommentCard = styled.div`
+  padding: 0.6em; 
+  border-bottom: 0.2px solid rgba(0,0,0,0.8);
+  text-align: left;
+  background: white;
+  margin: 0.5rem auto;
+`;

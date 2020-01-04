@@ -6,7 +6,7 @@ export default (props) => {
   const {updateShowModal} = useContext(ReviewModalContext)
 
   const goToReview = (event) => {
-    updateShowModal(true)
+    return updateShowModal(true)
   };
 
   return (
