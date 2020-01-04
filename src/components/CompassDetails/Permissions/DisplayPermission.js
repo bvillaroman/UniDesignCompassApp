@@ -1,7 +1,9 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { CompassContext } from "../../../context/CompassPage/context";
+import { deleteMemberCompasses, deleteReaderCompasses } from '../../../utils/mutations';
+import DeleteMembers from "./DeleteMembers";
+import DeleteReaders from "./DeleteReaders";
 import styled from "styled-components";
-import { Button } from 'grommet';
 
 const DisplayPermission = () => {
   const { compass } = useContext(CompassContext);
@@ -13,9 +15,9 @@ const DisplayPermission = () => {
   const [readers, setReaders] = useState([]);
 
   useEffect(() => {
-    const teacher = compass.teachers.items.map((t) => t.email)
-    const member = compass.members.items.map((m) => m.email)
-    const reader = compass.readers.items.map((r) => r.email)
+    const teacher = compass.teachers.items.map((t) => t)
+    const member = compass.members.items.map((m) => m)
+    const reader = compass.readers.items.map((r) => r)
 
     setTeamLeader(compass.owner.email)
     setScribe(compass.scribe.email)
@@ -26,15 +28,29 @@ const DisplayPermission = () => {
     // eslint-disable-next-line
   }, [compass.id])
 
+  const removeMember = id => {
+    deleteMemberCompasses(id)
+      .then(res => console.log("success", res))
+      .catch(err => console.log("failed", err))
+  };
+
+  const removeReader = id => {
+    deleteReaderCompasses(id)
+      .then(res => console.log("success", res))
+      .catch(err => console.log("failed", err))
+  };
+
   return (
     <PermissionContainer>
       <PermissionHeader>Permission</PermissionHeader>
       <PermissionFormContainer>
-        <h4>Team Leader: {teamLeader}</h4>
-        <h4>Scribe: {scribe}</h4>
-        <h4>Teachers: {teachers}</h4>
-        <h4>Members: {members}</h4>
-        <h4>Readers: {readers}</h4>
+        <PermissionType>Team Leader: {teamLeader}</PermissionType>
+        <PermissionType>Scribe: {scribe}</PermissionType>
+        <PermissionType>Teachers: {teachers.map((t) => <h4>{t.email}</h4>)}</PermissionType>
+        {/* <PermissionType>Members: {members.map((m) => <h4>{m.email}</h4>)}</PermissionType> */}
+        <PermissionType>Members: {members.map((m) => <DeleteMembers id={m.id} email={m.email} removeMember={removeMember} />)}</PermissionType>
+        {/* <PermissionType>Readers: {readers.map((r) => <h4>{r.email}</h4>)}</PermissionType> */}
+        <PermissionType>Readers: {readers.map((r) => <DeleteReaders id={r.id} email={r.email} removeReader={removeReader} />)}</PermissionType>
       </PermissionFormContainer>
     </PermissionContainer>
   )
@@ -70,19 +86,7 @@ export const PermissionFormContainer = styled.div`
   overflow: auto;
 `
 
-export const PermissionSubmit = styled(Button)`
-svg {
-  transition: all 0.3s;
-  fill: white; 
-  stroke: white;
-  height: 1.2rem;
-  width: 1.2rem;
-}
-background: #5567FD; 
-color: white;
-padding: 0.3rem 0.7rem;
-margin: 0;
-font-size: 0.9rem;
-font-weight: 500;
-float: right;
+
+export const PermissionType = styled.h4`
+
 `
