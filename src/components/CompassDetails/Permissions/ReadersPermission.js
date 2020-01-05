@@ -64,7 +64,7 @@ const ReadersPermission = () => {
       <PermissionHeaderBar >
         <PermissionHeader>Add Reader</PermissionHeader>
         <PermissionButton
-          label="Add"
+          label="New"
           onClick={addReader}
           icon={<AddCircle />}
         >
@@ -79,10 +79,11 @@ const ReadersPermission = () => {
                 const readerID = `name-${idx}`;
                 return (
                   <div key={`reader-${idx}`}>
-                    <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>{`Reader #${idx + 1}`}</label>
+                    <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }} />
                     <input
                       style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
                       type="email"
+                      placeholder="Enter Reader Email"
                       name={readerID}
                       data-idx={idx}
                       id={readerID}

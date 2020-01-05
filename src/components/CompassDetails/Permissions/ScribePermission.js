@@ -48,11 +48,10 @@ const ScribePermission = () => {
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
           <Scribe>
-            <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }}>
-              Scribe
-            </label>
+            <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }} />
             <input
               style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              placeholder="Enter Scribe Email"
               type="email"
               name="scribe"
               value={scribe}

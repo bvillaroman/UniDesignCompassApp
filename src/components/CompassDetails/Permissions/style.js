@@ -34,7 +34,6 @@ export const PermissionHeader = styled.div`
   height: auto;
   color: black;
   font-weight: 600;
-  overflow: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -85,5 +84,5 @@ float: right;
 `
 
 export const DeleteContainer = styled.div`
-  padding: 1rem;
+  padding: 0.7rem;
 `
