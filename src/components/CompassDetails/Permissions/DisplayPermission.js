@@ -67,7 +67,7 @@ export const PermissionContainer = styled.div`
   // width: 83%;
   height: 40.5%;
   min-height: 15rem;
-  margin: 1rem auto;
+  margin: 1.65rem;
   display: flex;
   flex-direction: column;
   background: white;
