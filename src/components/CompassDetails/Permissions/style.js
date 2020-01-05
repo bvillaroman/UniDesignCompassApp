@@ -34,7 +34,6 @@ export const PermissionHeader = styled.div`
   // font-size: 1.5rem;
   color: black;
   font-weight: 600;
-  overflow: auto;
 `
 
 export const PermissionFormContainer = styled.div`

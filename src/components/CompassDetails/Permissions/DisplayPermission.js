@@ -5,7 +5,6 @@ import DeleteMembers from "./DeleteMembers";
 import DeleteReaders from "./DeleteReaders";
 import styled from "styled-components";
 import {
-  PermissionContainer,
   PermissionHeader,
   PermissionFormContainer,
   DeleteContainer,
@@ -63,6 +62,23 @@ const DisplayPermission = () => {
 }
 
 export default DisplayPermission;
+
+export const PermissionContainer = styled.div`
+  // width: 83%;
+  height: 40.5%;
+  min-height: 15rem;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
+
+  @media (max-width: 767px){
+    width: 100%;
+  } 
+`
 
 export const PermissionType = styled.h4`
 
