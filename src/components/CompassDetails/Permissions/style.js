@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { Button } from 'grommet';
 
 export const PermissionContainer = styled.div`
-  // width: 83%;
-  height: 40.5%;
-  min-height: 15rem;
-  margin-top: 1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  width: 80%;
+  // height: 40.5%;
+  height: 8rem;
+  // margin-top: 1rem;
+  // margin-left: 0.5rem;
+  // margin-right: 0.5rem;
+  // margin-bottom: 0.5rem;
+  margin: 1rem auto;
   display: flex;
   flex-direction: column;
   background: white;
@@ -35,15 +36,29 @@ export const PermissionHeader = styled.div`
   color: black;
   font-weight: 600;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const PermissionFormContainer = styled.div`
   margin-top: 1rem;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `
 
 export const PermissionForm = styled.form`
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `
 
 export const Permissions = styled.div`
