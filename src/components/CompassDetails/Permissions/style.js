@@ -69,3 +69,7 @@ font-size: 0.9rem;
 font-weight: 500;
 float: right;
 `
+
+export const DeleteContainer = styled.div`
+  padding: 1rem;
+`

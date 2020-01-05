@@ -3,7 +3,8 @@ import { FormClose } from 'grommet-icons'
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import {
-  PermissionButton
+  PermissionButton,
+  DeleteContainer
 } from './style'
 
 const DeleteReaders = ({ email, id, removeReader }) => {
@@ -24,10 +25,10 @@ const DeleteReaders = ({ email, id, removeReader }) => {
   }, [compass.id])
 
   return (
-    <div>
+    <DeleteContainer>
       {email}
       <PermissionButton icon={<FormClose />} disabled={disableButton} label="Del" onClick={() => removeReader(id)} />
-    </div>
+    </DeleteContainer>
   )
 }
 
