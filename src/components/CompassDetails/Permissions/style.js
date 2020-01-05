@@ -32,7 +32,6 @@ export const PermissionHeader = styled.div`
   margin: 0 auto;
   width: 100%;
   height: auto;
-  // font-size: 1.5rem;
   color: black;
   font-weight: 600;
   overflow: auto;
@@ -83,4 +82,8 @@ margin: 0;
 font-size: 0.9rem;
 font-weight: 500;
 float: right;
+`
+
+export const DeleteContainer = styled.div`
+  padding: 1rem;
 `

@@ -9,7 +9,6 @@ import {
   PermissionHeader,
   PermissionFormContainer,
   PermissionForm,
-  Permissions,
   PermissionButton
 } from "./style"
 
@@ -53,7 +52,6 @@ const ScribePermission = () => {
               Scribe
             </label>
             <input
-              // size="26"
               style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
               type="email"
               name="scribe"
