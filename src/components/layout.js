@@ -112,12 +112,7 @@ const Layout = (props) => {
         })
         .then((res) => {
           if(res && res.hasOwnProperty("data") && res.data.getUser){
-            loginUser({ 
-              email: res.data.getUser.email, 
-              id: res.data.getUser.id,
-              firstName: res.data.getUser.first_name,
-              lastName: res.data.getUser.last_name
-            }) // Save to global store    
+            loginUser(res.data.getUser) // Save to global store    
           } else {
             setLoading(false)
             localStorage.removeItem("authuser")
