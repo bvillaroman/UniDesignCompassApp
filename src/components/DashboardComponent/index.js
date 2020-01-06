@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from "styled-components"
-import { getCompasses } from "../../utils/queries"
 import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
 import { updateProjectsSub } from "../../utils/subscriptions"
 import { CompassContext } from "../../context/CompassPage/context"
@@ -8,58 +7,59 @@ import { GlobalContext } from "../../context/context"
 import { ReviewModalContext } from "../../context/ReviewModal/context"
 
 import { Loader } from "../../styles/layout"
+import { getUser } from "../../utils/queries"
 
 // components
 import ProjectCreator from "./ProjectCreator";
 import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
-  const { user } = useContext(GlobalContext);
+  const { user, loginUser } = useContext(GlobalContext);
   const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
-  const [newestProject, setNewestProject] = useState({})
+  // const [newestProject, setNewestProject] = useState({})
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    if(user.id){
+      const owners = user.compass.items
+
+      // finding the projects i am a member of:
+      // 1. get all projects
+      // 2. get their members list
+      // 3. check if im in the members list
+      // const scribe = res.filter((compass) => compass.scribe && (compass.scribe.id === user.id))
+      const allMembers = user.member.items.map(res => res.compass)
+      const allTeachers = user.teacher.items.map(res => res.compass)
+      const allReaders = user.reader.items.map(res => res.compass)
+      setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders].filter(res => res))
+      setLoading(false)
+    }
+
+    // eslint-disable-next-line
+  }, [user]);
+
+  // subscription for any new project being created
   useEffect(() => {
     clearCompass()
     clearSession()
     clearInteraction()
     clearInteractions()
 
-    getCompasses()
-      .then((res) => {
-        const owners = res.filter((compass) => (compass.owner && (compass.owner.id === user.id)))
-
-        // finding the projects i am a member of:
-        // 1. get all projects
-        // 2. get their members list
-        // 3. check if im in the members list
-        const scribe = res.filter((compass) => compass.scribe && (compass.scribe.id === user.id))
-        const allMembers = res.map((compass) => compass.members.items.filter((member) => member.email === user.email)).flat().map(compass => compass.compass)
-        const allTeachers = res.map((compass) => compass.teachers.items.filter((teacher) => teacher.email === user.email)).flat().map(compass => compass.compass)
-        const allReaders = res.map((compass) => compass.readers.items.filter((reader) => reader.email === user.email)).flat().map(compass => compass.compass)
-        // setCompasses(res.filter((compass) => ((compass.owner && (compass.owner.id === user.id))) || (compass.members.items.filter((member) => member.email === user.email))))
-        setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders, ...scribe])
-        setLoading(false)
-      })
-      .catch((error) => {
-        setError(error.message)
-        setLoading(false)
-      });
-
-
-    // eslint-disable-next-line
-  }, [user.id]);
-
-  // subscription for any new project being created
-  useEffect(() => {
     const subscriber = updateProjectsSub().subscribe({
       next: res => {
         const newProject = res.value.data.onCreateCompass
         if (newProject.owner && (newProject.owner.id === user.id)) {
-          setNewestProject(newProject)
+          getUser(user.id)
+            .then((res) => {
+              loginUser(res.data.getUser) // Save to global store                 
+            })    
+            .catch(err => {
+              localStorage.removeItem("authuser")
+              setError(err.message)
+            });
         }
       }
     });
@@ -68,16 +68,6 @@ const Dashboard = (props) => {
 
     // eslint-disable-next-line
   }, [])
-
-  // if a new project is created, add it to existing projects
-  useEffect(() => {
-    if (newestProject !== {}) {
-      if (compasses.length) setCompasses([newestProject, ...compasses])
-      else setCompasses([newestProject])
-    }
-
-    // eslint-disable-next-line
-  }, [newestProject])
 
   return (
     <>
@@ -88,7 +78,7 @@ const Dashboard = (props) => {
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
-            {showModal && <CustomCompassForm />}
+            {showModal && <CustomCompassForm setLoading={setLoading}/>}
             <ProjectCreator setLoading={setLoading}/>
             {
               !error ? (compasses.length ? <Feed compasses={compasses}/> : <div>You have no projects, start one from above! </div>)

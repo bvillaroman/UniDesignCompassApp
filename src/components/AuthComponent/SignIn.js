@@ -52,21 +52,11 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
         getUser(sub)
           .then((res) => {
             if(res && res.data && res.data.getUser){
-              loginUser({ 
-                email: res.data.getUser.email, 
-                id: res.data.getUser.id,
-                firstName: res.data.getUser.first_name,
-                lastName: res.data.getUser.last_name
-              }) // Save to global store   
+              loginUser(res.data.getUser) // Save to global store   
             } else {
               createUser(sub, email, user.attributes["custom:firstName"], user.attributes["custom:lastName"])
-                .then((res) => {
-                  loginUser({ 
-                    email: res.data.createUser.email, 
-                    id: res.data.createUser.id,
-                    firstName: res.data.createUser.first_name,
-                    lastName: res.data.createUser.last_name
-                  }) // Save to global store   
+                .then((result) => {
+                  loginUser(result.data.getUser) // Save to global store   
                 })                
             }
           })    

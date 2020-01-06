@@ -7,12 +7,13 @@ import { navigate } from "gatsby"
 import translateTime from "../../../utils/translateTime"
 import {CompassContext} from "../../../context/CompassPage/context"
 
-const Interaction = ({interaction = {}, isLastStep = false}) => {
+const Interaction = ({interaction = {}, isLastStep = false, setLoading}) => {
   const { compass, session } = useContext(CompassContext);
   const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
 
   const openReviewLog = (evt) => {    
     evt.preventDefault()
+    setLoading(true);
     navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
   }
   
