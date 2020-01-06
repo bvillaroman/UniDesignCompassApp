@@ -37,7 +37,9 @@ export const Wheel = (props) => {
       );
 
       arr.forEach(step => {
-        let temp = interactions.filter(interaction => interaction.step.id === step.id)
+        
+        let temp = interactions.filter(interaction => interaction.step && (interaction.step.id === step.id))
+        
         const value = temp.reduce((totalTime = 0, interaction) => parseInt(totalTime) + parseInt(interaction.duration), 0)
         step.duration = value
       })

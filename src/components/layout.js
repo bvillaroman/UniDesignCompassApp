@@ -79,7 +79,6 @@ const Layout = (props) => {
       getSession(sessionID)
         .then((res) => {          
           updateSession(res.data.getSession)
-          // localStorage.setItem("session", res.data.getSession.id);
           let interactions = []
           if (res.data.getSession.interactions.items.length > 0) {
             interactions = res.data.getSession.interactions.items.sort((a,b) => {
