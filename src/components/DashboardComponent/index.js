@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from "styled-components"
-import { getCompasses, getUser } from "../../utils/queries"
 import CustomCompassForm from "../ModalComponents/ProjectCustomForm"
 import { updateProjectsSub } from "../../utils/subscriptions"
 import { CompassContext } from "../../context/CompassPage/context"
@@ -8,17 +7,18 @@ import { GlobalContext } from "../../context/context"
 import { ReviewModalContext } from "../../context/ReviewModal/context"
 
 import { Loader } from "../../styles/layout"
+import { getUser } from "../../utils/queries"
 
 // components
 import ProjectCreator from "./ProjectCreator";
 import Feed from "./ProjectFeed";
 
 const Dashboard = (props) => {
-  const { user } = useContext(GlobalContext);
+  const { user, loginUser } = useContext(GlobalContext);
   const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [compasses, setCompasses] = useState([])
-  const [newestProject, setNewestProject] = useState({})
+  // const [newestProject, setNewestProject] = useState({})
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
@@ -34,50 +34,40 @@ const Dashboard = (props) => {
       const allMembers = user.member.items.map(res => res.compass)
       const allTeachers = user.teacher.items.map(res => res.compass)
       const allReaders = user.reader.items.map(res => res.compass)
-      console.log([...owners, ...allMembers, ...allTeachers, ...allReaders])
-      setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders])
+      setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders].filter(res => res))
       setLoading(false)
-    } else {
-      clearCompass()
-      clearSession()
-      clearInteraction()
-      clearInteractions()
     }
 
     // eslint-disable-next-line
-  }, [user.id]);
+  }, [user]);
 
   // subscription for any new project being created
-  // useEffect(() => {
-  //   clearCompass()
-  //   clearSession()
-  //   clearInteraction()
-  //   clearInteractions()
+  useEffect(() => {
+    clearCompass()
+    clearSession()
+    clearInteraction()
+    clearInteractions()
 
-  //   const subscriber = updateProjectsSub().subscribe({
-  //     next: res => {
-  //       console.log(res)
-  //       const newProject = res.value.data.onCreateCompass
-  //       if (newProject.owner && (newProject.owner.id === user.id)) {
-  //         setNewestProject(newProject)
-  //       }
-  //     }
-  //   });
+    const subscriber = updateProjectsSub().subscribe({
+      next: res => {
+        const newProject = res.value.data.onCreateCompass
+        if (newProject.owner && (newProject.owner.id === user.id)) {
+          getUser(user.id)
+            .then((res) => {
+              loginUser(res.data.getUser) // Save to global store                 
+            })    
+            .catch(err => {
+              localStorage.removeItem("authuser")
+              setError(err.message)
+            });
+        }
+      }
+    });
 
-  //   return () => subscriber.unsubscribe()
+    return () => subscriber.unsubscribe()
 
-  //   // eslint-disable-next-line
-  // }, [])
-
-  // // if a new project is created, add it to existing projects
-  // useEffect(() => {
-  //   if (newestProject !== {}) {
-  //     if (compasses.length) setCompasses([newestProject, ...compasses])
-  //     else setCompasses([newestProject])
-  //   }
-
-  //   // eslint-disable-next-line
-  // }, [newestProject])
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <>
@@ -88,7 +78,7 @@ const Dashboard = (props) => {
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
-            {showModal && <CustomCompassForm />}
+            {showModal && <CustomCompassForm setLoading={setLoading}/>}
             <ProjectCreator setLoading={setLoading}/>
             {
               !error ? (compasses.length ? <Feed compasses={compasses}/> : <div>You have no projects, start one from above! </div>)
