@@ -31,17 +31,27 @@ export const Logger = (props) => {
 
   // initialize the logger
   useEffect(() => {
-    if (interaction.id) {
+    if (newestInteraction.id){
+      addInteraction(newestInteraction);
+    } else if (interaction.id) {
       const { log_content, duration, step } = interaction
       const parsedLog = log_content !== " " ? log_content : ""
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
-    } else if (newestInteraction.id){
-      addInteraction(newestInteraction);
-    }
+    } 
   // eslint-disable-next-line
   }, [])
+
+    // initialize the logger
+    useEffect(() => {    
+      if (newestInteraction.id === interaction.id){
+        addInteraction(newestInteraction);
+        props.setLoading(false)
+      } 
+    // eslint-disable-next-line
+    }, [interaction.id])
+  
 
   
   // place a past interaction into the logger if it is updateInteraction is called
@@ -56,6 +66,7 @@ export const Logger = (props) => {
       setTimer(false)
       setEdit(true)
       setStart(false);
+      props.setLoading(false)
     }
 
     // eslint-disable-next-line
@@ -71,6 +82,7 @@ export const Logger = (props) => {
       setLog(parsedLog)
       setEdit(false)
       setTimer(true)
+      props.setLoading(false)
     }
 
     // eslint-disable-next-line
@@ -81,7 +93,7 @@ export const Logger = (props) => {
     let interval = null;
 
     if (interaction.hasOwnProperty("id")) {
-      if (start) {
+      if (start && timer) {
         interval = setInterval(() => {
           addInteraction({ duration: interactionTime + 1 })
           setInteractionTime(interactionTime + 1)
@@ -94,7 +106,7 @@ export const Logger = (props) => {
     }
 
     // eslint-disable-next-line
-  }, [start, interactionTime, interaction])
+  }, [start, interactionTime, interaction, timer])
 
   // pause the timer
   const pause = (e) => {
@@ -129,21 +141,22 @@ export const Logger = (props) => {
 
   return (
     <LoggerGrid>
-      <LoggerHeaderContainer>
+      <LoggerHeaderContainer height="69px">
         <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
-
-        <StepClock>
+        <StepClock>        
           {
-            step.hasOwnProperty("id") && edit && scribe ? (
-              start ? (loading ? <Loader /> : <SaveButton onClick={editLog} label="Save" />) : <EditLogButton onClick={togglingEdit} />
-            ) : timer && (
+            props.loading ? <Loader/> : 
+            step.hasOwnProperty("id") && edit && scribe ? (/* if edit mode is on, is a scribe and the step exists */
+              start ? (  /* if it is saveable */
+                loading ? <Loader /> : <SaveButton onClick={editLog} label="Save" />
+              ) : <EditLogButton onClick={togglingEdit} />
+            ) : timer && ( /* show the timer */
               <>
                 {translateTime(interactionTime)}
                 <TimerButton color={step.color} onClick={pause} start={start} />
               </>
             )
           }
-
         </StepClock>
       </LoggerHeaderContainer>
       <LoggerInput
@@ -191,10 +204,11 @@ const LoggerInput = styled(TextArea)`
   
 `;
 const StepClock = styled.div`
-  width: auto;
+  height: 4rem;
+  width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 1.8rem;
   font-weight: 500;

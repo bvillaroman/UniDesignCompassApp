@@ -79,6 +79,7 @@ export const Wheel = (props) => {
                 key={key}
                 circleLength={steps.length}
                 rotateAngle={key * (360 / (steps.length))}
+                setLoading={props.setLoading}
               />
             )
           })

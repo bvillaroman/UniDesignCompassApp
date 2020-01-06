@@ -21,6 +21,7 @@ const Interactions = (props) => {
                   key={key}
                   interaction={item}
                   isLastStep={key === 0}
+                  setLoading={props.setLoading}
                 />
               )
             }

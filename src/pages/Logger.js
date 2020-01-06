@@ -21,6 +21,21 @@ const CompassPage = (props) => {
   // subscription for any new project being created
   useEffect(() => {
 
+    // const updateInteraction = updateInteractionSub().subscribe((updatedInteraction) => {
+    //   const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
+    //   console.log(updatedInteraction)
+    //   // if (newUpdatedInteraction.session.id === session.id) {        
+    //   //   getSession(session.id) 
+    //   //     .then((res) => {
+            
+    //   //       updateSession(res.data.getSession)
+    //   //     })
+    //   //     .catch((err) => {
+    //   //       console.log(err)
+    //   //     })
+    //   // }
+    // })
+
     const updateInteraction = updateInteractionSub().subscribe((updatedInteraction) => {
       console.log(updatedInteraction)
       // const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
