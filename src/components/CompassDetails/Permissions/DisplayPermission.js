@@ -1,8 +1,9 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { CompassContext } from "../../../context/CompassPage/context";
-import { deleteMemberCompasses, deleteReaderCompasses } from '../../../utils/mutations';
+import { deleteMemberCompasses, deleteReaderCompasses, deleteTeacherCompasses } from '../../../utils/mutations';
 import DeleteMembers from "./DeleteMembers";
 import DeleteReaders from "./DeleteReaders";
+import DeleteTeachers from "./DeleteTeachers";
 import styled from "styled-components";
 import {
   PermissionHeader,
@@ -46,11 +47,17 @@ const DisplayPermission = () => {
       .catch(err => console.log("failed", err))
   };
 
+  const removeTeacher = id => {
+    deleteTeacherCompasses(id)
+      .then(res => console.log("success", res))
+      .catch(err => console.log("failed", err))
+  };
+
   return (
     <PermissionContainer>
       <PermissionHeader>All Users</PermissionHeader>
       <PermissionFormContainer>
-        <PermissionType>Teachers: {teachers.map((t) => <DeleteContainer>{t.email}</DeleteContainer>)}</PermissionType>
+        <PermissionType>Teachers: {teachers.map((t) => <DeleteTeachers id={t.id} email={t.email} removeTeacher={removeTeacher} />)}</PermissionType>
         <PermissionType>Team Leader: {teamLeader}</PermissionType>
         <PermissionType>Scribe: {scribe}</PermissionType>
         {/* <PermissionType>Members: {members.map((m) => <h4>{m.email}</h4>)}</PermissionType> */}
