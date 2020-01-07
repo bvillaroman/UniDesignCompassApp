@@ -1,17 +1,19 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { CompassContext } from "../../../context/CompassPage/context";
-import { deleteMemberCompasses, deleteReaderCompasses } from '../../../utils/mutations';
+import { deleteMemberCompasses, deleteReaderCompasses, deleteTeacherCompasses } from '../../../utils/mutations';
 import DeleteMembers from "./DeleteMembers";
 import DeleteReaders from "./DeleteReaders";
+import DeleteTeachers from "./DeleteTeachers";
 import styled from "styled-components";
 import {
   PermissionHeader,
-  PermissionFormContainer,
-  DeleteContainer,
+  DeleteContainer
 } from "./style"
 
 const DisplayPermission = () => {
   const { compass } = useContext(CompassContext);
+
+  console.log(compass)
 
   const [teamLeader, setTeamLeader] = useState("");
   const [scribe, setScribe] = useState("");
@@ -45,13 +47,19 @@ const DisplayPermission = () => {
       .catch(err => console.log("failed", err))
   };
 
+  const removeTeacher = id => {
+    deleteTeacherCompasses(id)
+      .then(res => console.log("success", res))
+      .catch(err => console.log("failed", err))
+  };
+
   return (
     <PermissionContainer>
-      <PermissionHeader>Permission</PermissionHeader>
+      <PermissionHeader>All Users</PermissionHeader>
       <PermissionFormContainer>
+        <PermissionType>Teachers: {teachers.map((t) => <DeleteTeachers id={t.id} email={t.email} removeTeacher={removeTeacher} />)}</PermissionType>
         <PermissionType>Team Leader: {teamLeader}</PermissionType>
         <PermissionType>Scribe: {scribe}</PermissionType>
-        <PermissionType>Teachers: {teachers.map((t) => <DeleteContainer>{t.email}</DeleteContainer>)}</PermissionType>
         {/* <PermissionType>Members: {members.map((m) => <h4>{m.email}</h4>)}</PermissionType> */}
         <PermissionType>Members: {members.map((m) => <DeleteMembers id={m.id} email={m.email} removeMember={removeMember} />)}</PermissionType>
         {/* <PermissionType>Readers: {readers.map((r) => <h4>{r.email}</h4>)}</PermissionType> */}
@@ -80,6 +88,16 @@ export const PermissionContainer = styled.div`
   } 
 `
 
-export const PermissionType = styled.h4`
+export const PermissionFormContainer = styled.div`
+  flex-direction: column;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`
 
+export const PermissionType = styled.h4`
+  width: -webkit-fill-available;
+  margin: 0.5em;
 `

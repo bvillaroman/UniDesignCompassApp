@@ -3,7 +3,7 @@ import { getUsers } from '../../../utils/queries';
 import { createTeacherCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
-import {Loader} from "../../../styles/layout"
+import { Loader } from "../../../styles/layout"
 import {
   PermissionContainer,
   PermissionHeaderBar,
@@ -48,7 +48,7 @@ const TeachersPermission = () => {
         setLoading(false);
       })
       .catch(err => console.log('failed at getUser', err))
-    
+
   }
 
   return (
@@ -64,11 +64,11 @@ const TeachersPermission = () => {
               type="email"
               className="email"
               value={teacher}
-              placeholder="Enter Teach Email"
+              placeholder="Enter Teacher Email"
               onChange={handleTeacherChange}
-            />                
+            />
           </Permissions>
-          {loading ? <Loader/> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}
+          {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
