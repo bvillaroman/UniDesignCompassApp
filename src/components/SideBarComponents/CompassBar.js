@@ -40,7 +40,7 @@ const CompassBar = ({ page }) => {
         <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Log </span></CompassLink>
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Overview</span></CompassLink>
       </LinkContainer>
-      <LinkContainer>
+      <LinkContainer center>
         <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>
         <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
       </LinkContainer>

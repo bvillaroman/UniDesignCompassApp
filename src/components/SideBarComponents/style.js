@@ -74,7 +74,7 @@ export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   // width: 7.2rem;
-  align-items: flex-start;
+  align-items: ${props => props.center ? "center" : "flex-start"};
 
   @media (max-width: 768px){
     //width: 20%;

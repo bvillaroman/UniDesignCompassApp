@@ -15,6 +15,7 @@ export const PermissionContainer = styled.div`
   flex-direction: column;
   background: white;
   padding: 1rem;
+  padding-bottom: 0;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   transition: box-shadow 150ms ease;
 
