@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
 import { PauseFill, PlayFill, Edit } from 'grommet-icons';
@@ -14,6 +14,8 @@ export const Logger = (props) => {
   const { interaction, updateInteraction, addInteraction, interactionAdded, interactionUpdated, compass, newestInteraction } = useContext(CompassContext);
   const { user } = useContext(GlobalContext)
 
+  const previousFooRef = useRef(newestInteraction);
+
   const scribe = compass.scribe.email === user.email
 
   const intialStep = {
@@ -28,6 +30,7 @@ export const Logger = (props) => {
   const [edit, setEdit] = useState(false);
   const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState(false);
+
 
   // initialize the logger
   useEffect(() => {
@@ -45,12 +48,55 @@ export const Logger = (props) => {
 
   // change logger when a new interaction comes in or the most recent interaction was selected from the feed
   useEffect(() => {    
-    if (newestInteraction.id === interaction.id){
-      addInteraction(interaction);
-      props.setLoading(false)
+    if (newestInteraction.id){
+      if(previousFooRef.current && previousFooRef.current.id){
+        const id = previousFooRef.current.id
+        const newInteraction = {
+          id,
+          log_content: log ? log : " ",
+          duration: interactionTime,
+        }
+      
+        Mutation.updateInteraction(newInteraction)
+          .then((res) => {
+            const { log_content, duration, step } = newestInteraction
+            const parsedLog = log_content !== " " ? log_content : ""
+            setInteractionTime(duration)
+            setStep(step)
+            setLog(parsedLog)
+            setEdit(false);
+            setTimer(true);
+            setStart(false)
+            props.setLoading(false)     
+          })
+      } else {
+        const { log_content, duration, step } = newestInteraction
+        const parsedLog = log_content !== " " ? log_content : ""
+        setInteractionTime(duration)
+        setStep(step)
+        setLog(parsedLog)
+        setEdit(false);
+        setTimer(true);
+        setStart(false)
+        props.setLoading(false)      
+      }
+      
     } 
+
+    return () => {
+      previousFooRef.current = newestInteraction
+    }
   // eslint-disable-next-line
-  }, [interaction.id, newestInteraction.id])
+  }, [newestInteraction.id])
+
+  // change logger when a new interaction comes in or the most recent interaction was selected from the feed
+  // useEffect(() => {    
+  //   if (newestInteraction.id === interaction.id){
+  //     addInteraction(newestInteraction);
+  //     props.setLoading(false)
+  //   } 
+  // // eslint-disable-next-line
+  // }, [interaction.id, newestInteraction.id])
 
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
@@ -71,20 +117,20 @@ export const Logger = (props) => {
   }, [updateInteraction, interactionUpdated])
 
   // place new interaction into the logger if it is addInteraction is called
-  useEffect(() => {
-    if (interaction.id && interactionAdded && !start) {
-      const { log_content, duration, step } = interaction
-      const parsedLog = log_content !== " " ? log_content : ""
-      setInteractionTime(duration)
-      setStep(step)
-      setLog(parsedLog)
-      setEdit(false);
-      setTimer(true);
-      props.setLoading(false)      
-    }
+  // useEffect(() => {
+  //   if (interaction.id && interactionAdded && !start) {
+  //     const { log_content, duration, step } = interaction
+  //     const parsedLog = log_content !== " " ? log_content : ""
+  //     setInteractionTime(duration)
+  //     setStep(step)
+  //     setLog(parsedLog)
+  //     setEdit(false);
+  //     setTimer(true);
+  //     props.setLoading(false)      
+  //   }
 
-    // eslint-disable-next-line
-  }, [addInteraction, interactionAdded])
+  //   // eslint-disable-next-line
+  // }, [addInteraction, interactionAdded, interaction.id])
 
   // handle interaction time
   useEffect(() => {
@@ -119,6 +165,8 @@ export const Logger = (props) => {
 
     return setStart(!start)
   }
+
+  const getLog = () => (log)
 
   const editLog = (e) => {
     setLoading(true);
