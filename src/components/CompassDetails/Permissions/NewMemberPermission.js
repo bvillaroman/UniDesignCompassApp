@@ -64,7 +64,7 @@ const MembersPermission = () => {
               type="email"
               className="email"
               value={member}
-              placeholder="Enter Teacher Email"
+              placeholder="Enter Member Email"
               onChange={handleMemberChange}
             />
           </Permissions>
