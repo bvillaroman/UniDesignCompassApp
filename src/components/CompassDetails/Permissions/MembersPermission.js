@@ -63,12 +63,12 @@ const MembersPermission = () => {
     <PermissionContainer>
       <PermissionHeaderBar>
         <PermissionHeader>Add Member</PermissionHeader>
-        <PermissionButton
+        {/* <PermissionButton
           label="New"
           onClick={addMember}
           icon={<AddCircle />}
         >
-        </PermissionButton>
+        </PermissionButton> */}
       </PermissionHeaderBar>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>

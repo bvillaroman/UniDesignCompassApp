@@ -63,12 +63,6 @@ const ReadersPermission = () => {
     <PermissionContainer>
       <PermissionHeaderBar >
         <PermissionHeader>Add Reader</PermissionHeader>
-        <PermissionButton
-          label="New"
-          onClick={addReader}
-          icon={<AddCircle />}
-        >
-        </PermissionButton>
       </PermissionHeaderBar>
 
       <PermissionFormContainer>

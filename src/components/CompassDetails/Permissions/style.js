@@ -9,7 +9,8 @@ export const PermissionContainer = styled.div`
   // margin-left: 0.5rem;
   // margin-right: 0.5rem;
   // margin-bottom: 0.5rem;
-  margin: 1rem auto;
+  margin: 0 auto;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   background: white;
