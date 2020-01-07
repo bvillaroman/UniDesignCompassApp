@@ -1,3 +1,5 @@
+import {initialState} from "./context"
+
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
@@ -31,9 +33,17 @@ const updateInteraction = (newInteraction, state) => ({...state, interaction: ne
 const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions, newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}})
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
 
-const clearCompass = (state) => ({ ...state, compass: {}})
-const clearSession = (state) => ({ ...state, session: {}})
-const clearInteraction = (state) => ({ ...state, interaction: {}})
+const clearCompass = () => (initialState)
+const clearSession = (state) => ({ 
+  ...state, 
+  session: {}, 
+  newestInteraction: {}, 
+  interaction: {}, 
+  interactions: [], 
+  interactionAdded: false,
+  interactionUpdated: false
+  })
+const clearInteraction = (state) => ({ ...state, interaction: {}, interactionAdded: false, interactionUpdated: false})
 const clearInteractions = (state) => ({ ...state, interactions: []})
 const clearTime = (state) => ({ ...state, time: 0})
 
