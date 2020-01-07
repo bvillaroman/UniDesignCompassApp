@@ -43,17 +43,15 @@ export const Logger = (props) => {
   // eslint-disable-next-line
   }, [])
 
-    // initialize the logger
-    useEffect(() => {    
-      if (newestInteraction.id === interaction.id){
-        addInteraction(newestInteraction);
-        props.setLoading(false)
-      } 
-    // eslint-disable-next-line
-    }, [interaction.id])
-  
+  // change logger when a new interaction comes in or the most recent interaction was selected from the feed
+  useEffect(() => {    
+    if (newestInteraction.id === interaction.id){
+      addInteraction(interaction);
+      props.setLoading(false)
+    } 
+  // eslint-disable-next-line
+  }, [interaction.id, newestInteraction.id])
 
-  
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
 
@@ -80,9 +78,9 @@ export const Logger = (props) => {
       setInteractionTime(duration)
       setStep(step)
       setLog(parsedLog)
-      setEdit(false)
-      setTimer(true)
-      props.setLoading(false)
+      setEdit(false);
+      setTimer(true);
+      props.setLoading(false)      
     }
 
     // eslint-disable-next-line
@@ -122,8 +120,6 @@ export const Logger = (props) => {
     return setStart(!start)
   }
 
-  const togglingEdit = (e) => { setStart(!start); }
-
   const editLog = (e) => {
     setLoading(true);
     const newInteraction = {
@@ -149,7 +145,7 @@ export const Logger = (props) => {
             step.hasOwnProperty("id") && edit && scribe ? (/* if edit mode is on, is a scribe and the step exists */
               start ? (  /* if it is saveable */
                 loading ? <Loader /> : <SaveButton onClick={editLog} label="Save" />
-              ) : <EditLogButton onClick={togglingEdit} />
+              ) : <EditLogButton onClick={ e => setStart(!start) } />
             ) : timer && ( /* show the timer */
               <>
                 {translateTime(interactionTime)}
