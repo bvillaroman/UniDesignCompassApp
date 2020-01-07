@@ -20,6 +20,10 @@ export const MainViewContainer = styled(Box)`
   width: ${props => props.Compass ? '80%' : '100%'};
   height: 100vh;
   background: #F4F6F9;
+  @media (max-width: 768px){
+    height: auto;
+    //block-size: inherit;
+  } 
 
   @media (max-width: 500px){
     flex-flow: wrap-reverse;

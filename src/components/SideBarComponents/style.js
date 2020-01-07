@@ -22,19 +22,17 @@ export const CompassSideBar = styled(Box)`
   display: flex;
   flex-direction: column;
   width: 11rem;
-  padding: 1rem 0;
+  padding: 1rem;
   height: 100vh;
   justify-content: space-between;
 
   @media (max-width: 768px){
     width: 100%;
     height: 0%;
-    
-    
+        
     a:not(:nth-last-child(5)){
       ${props => props.renderSidebar ? 'display: none;' : 'initial'};
     };
-
   }
 `
 export const CompassHeaderDash = styled(Link)`
@@ -62,6 +60,7 @@ export const CompassHeaderCompass = styled(Link)`
   font-weight: 900;
   color: white;
   text-decoration: underline;
+  align-self: center;
 
   @media (max-width: 768px){
     //flex: 0 0 100%;
@@ -74,11 +73,12 @@ export const CompassHeaderCompass = styled(Link)`
 export const LinkContainer = styled(Box)`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  //height: 100%
+  // width: 7.2rem;
+  align-items: flex-start;
 
   @media (max-width: 768px){
     //width: 20%;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -93,7 +93,7 @@ const CompassLinkStyles = styled(Link)`
   color: white;
   text-decoration: none;
   font-weight: 560;
-  align-items: center;
+  margin: 0.5rem 0!important;
   svg {
     fill: black;
     stroke:  black;
@@ -140,7 +140,7 @@ export const HamburgerIcon = styled.label`
   display: none;
 
   @media (max-width: 768px){
-    display: block;
+    display: flex;
     cursor: pointer;
     align-self: flex-end;
   }

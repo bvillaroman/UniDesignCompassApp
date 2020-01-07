@@ -5,7 +5,7 @@ import {
   LinkContainer,
   CompassLink,
   HamburgerIcon
-} from '../../styles/SideBar'
+} from './style'
 import { Compass, DocumentText, BarChart, Home, User } from 'grommet-icons'
 
 import { CompassContext } from "../../context/CompassPage/context"
@@ -32,7 +32,7 @@ const CompassBar = ({ page }) => {
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
-        <CompassHeaderCompass className='CompassHeaderCompass' to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>
+        {<CompassHeaderCompass to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>}
         <CompassLink active={page === "/Logger/"} to={`/Logger/?c=${CompassInfo.compass.id}&s=${newestSession}`}>
           <Compass />
           <span>Compass</span>
