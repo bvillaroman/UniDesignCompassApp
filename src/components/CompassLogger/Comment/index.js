@@ -37,7 +37,7 @@ const Comment = () => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [comments]);
+  // useEffect(scrollToBottom, [comments]);
 
   return (
     <CommentSession>

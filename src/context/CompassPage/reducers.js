@@ -15,7 +15,7 @@ export const CLEAR_TIME = "CLEAR_TIME";
 const updateCompass = (newCompass, state) => ({ ...state, compass: newCompass})
 const updateSession = (newSession, state) => ({ ...state, session: newSession})
 const addInteraction = (newInteraction, state) => {
-  const interaction = {...state.interaction, ...newInteraction}
+  const interaction = {...state.newestInteraction, ...newInteraction}
   let newInteractions = state.interactions;
   newInteractions = newInteractions.filter((item) => { return interaction.id !== item.id })
   newInteractions = [interaction, ...newInteractions]
@@ -29,8 +29,19 @@ const addInteraction = (newInteraction, state) => {
     interactionUpdated: false
   }
 }
-const updateInteraction = (newInteraction, state) => ({...state, interaction: newInteraction, interactionAdded: false, interactionUpdated: true }) 
-const updateInteractions = (newInteractions, state) => ({ ...state, interactions: newInteractions, newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}})
+const updateInteraction = (newInteraction, state) => ({
+  ...state, 
+  interaction: newInteraction, 
+  interactionAdded: false, 
+  interactionUpdated: true 
+}) 
+const updateInteractions = (newInteractions, state) => ({ 
+  ...state, 
+  interactions: newInteractions, 
+  newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}, 
+  interactionAdded: true, 
+  interactionUpdated: false 
+})
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
 
 const clearCompass = () => (initialState)
