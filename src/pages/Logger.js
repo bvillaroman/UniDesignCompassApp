@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from "react";
-
-import CompassLogger from "../components/CompassLogger"
+import React, { useEffect, useContext,  Suspense, lazy } from "react";
+import styled from "styled-components"
 
 import { CompassContext } from "../context/CompassPage/context"
 
@@ -8,6 +7,9 @@ import { updateInteractionSub, createCommentSub, createAttachmentSub } from "../
 import { getSession } from '../utils/queries'
 
 import { MainView } from "../styles/CompassPage"
+import { Loader } from "../styles/layout"
+
+const CompassLogger = lazy(() => import( "../components/CompassLogger"));
 
 const CompassPage = (props) => {
   const { 
@@ -96,11 +98,26 @@ const CompassPage = (props) => {
     <MainView>
       {
         compass.hasOwnProperty("id") ? 
-          session.hasOwnProperty("id") ? <CompassLogger /> : ( 
-            <div> Sorry, this Session does not exist !</div> 
-          ) : <div> Sorry, this Project does not exist !</div> 
+          session.hasOwnProperty("id") ? (
+            <Suspense fallback={<Loader/>}>
+              <CompassLogger /> 
+            </Suspense>
+          ) : ( 
+            <Loader />
+            // <ErrorContainer> Sorry, this Session does not exist !</ErrorContainer> 
+          ) : <Loader/>
+          // <ErrorContainer> Sorry, this Project does not exist !</ErrorContainer> 
       }
     </MainView>
   )
 }
 export default CompassPage;
+
+const ErrorContainer = styled.h4`
+  width: 100&;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-self: center;
+`
