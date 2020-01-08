@@ -21,28 +21,24 @@ const CommentForm = (props) => {
     // the session its in and the user id from the user context
     Mutations.createComment(commentValue, sessionId, user.id)
       .then(res => {
-        // addComment(res.data.createComment);
+        props.addComment(res.data.createComment);
         setCommentValue("")
       })
       .catch(err => console.log(err))
   }
 
-  return (
-    <>
-      <CommentsForm onSubmit={handleSubmit} >
-        <CommentFormFlex style={{
-          display: 'flex', width: '100%',
-          justifyContent: 'space-evenly'
-        }}>
-          <CommentInput
-            onChange={e => { setCommentValue(e.target.value) }}
-            value={commentValue}
-            placeholder='Enter Comments...'
-          />
-          <CommentButton type='submit' ><Waypoint /></CommentButton>
-        </CommentFormFlex>
-      </CommentsForm>
-    </>
+  return (    
+    <CommentsForm onSubmit={handleSubmit} >
+      <CommentFormFlex>
+        <CommentInput
+          onChange={e => { setCommentValue(e.target.value) }}
+          value={commentValue}
+          placeholder='Enter Comments...'
+        />
+        <CommentButton type='submit' ><Waypoint /></CommentButton>
+      </CommentFormFlex>
+    </CommentsForm>
+    
   )
 }
 
@@ -52,15 +48,17 @@ const CommentsForm = styled.form`
 
 `;
 const CommentInput = styled.input`
-  width: 90%;
+  width: 85%;
   font-size: 18px;
 `;
 
 const CommentFormFlex = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-top: 1rem;
 `;
 
 const CommentButton = styled.button`
+
 `;

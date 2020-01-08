@@ -54,7 +54,7 @@ export const Wheel = (props) => {
     const hour = today.getHours()
     const minute = today.getMinutes()
 
-    createSession(`Session on ${dateFormatter(today)} at ${hour % 12}:${minute} ${hour >= 12 ? "p.m." : "a.m."}`, " ", compass.id)
+    createSession(`Session on ${dateFormatter(today)} at ${hour < 13 ? hour : hour % 12 }:${minute} ${hour > 12 ? "p.m." : "a.m."}`, " ", compass.id)
       .then((result) => {
         navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
       })
