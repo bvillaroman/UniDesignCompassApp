@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from "../../context/context";
 import { ReviewModalContext } from "../../context/ReviewModal/context"
-import { createCompass, createStep } from "../../utils/mutations";
+import { createCompass, createStep, createSession } from "../../utils/mutations";
+import { dateFormatter } from "../../utils/translateTime"
 import { navigate } from "gatsby";
 import {
   CustomStepsForm,
@@ -27,9 +28,11 @@ import {
 
 import { AddCircle, FormClose } from 'grommet-icons';
 
-const CustomCompassForm = () => {
+const CustomCompassForm = (props) => {
   const { user } = useContext(GlobalContext);
   const { updateShowModal } = useContext(ReviewModalContext);
+
+  const [compassTitle, setCompassTitle] = useState('')
 
   const blankStep = { title: '', description: '', color: '#5361FE' }
   const [steps, setSteps] = useState([
@@ -57,19 +60,31 @@ const CustomCompassForm = () => {
       steps.map(step => {
         if (step.description === "" || step.title === "") {
           return alert("Title or Description cannot be empty")
-
-        } else {
-          return createCompass("Untitled", "-", "default", [user.email], [])
-            .then(res => {
-              steps.forEach((step, key) =>
-                createStep(step.title, step.description, step.color, res.data.createCompass.id)
-              )
-              updateShowModal(false)
-              navigate(`/Compass/?c=${res.data.createCompass.id}`)
-            })
-            .catch(err => console.log(err))
         }
       })
+      createCompass(compassTitle, "-", "default", user.id, user.id)
+        .then(res => {
+          steps.forEach((step, key) =>
+            createStep(step.title, step.description, step.color, res.data.createCompass.id)
+          )
+
+          const today = new Date();
+          const hour = today.getHours()
+          const minute = today.getMinutes()
+
+          createSession(`Session on ${dateFormatter(today)} at ${hour % 12}:${minute} ${hour >= 12 ? "p.m." : "a.m."}`, " ", res.data.createCompass.id)
+            .then((result) => {
+              navigate(`/Compass/?c=${res.data.createCompass.id}`)
+            })
+            .catch(err => {
+              console.log(err)
+              props.setLoading(false)
+            })
+
+          updateShowModal(false)
+          navigate(`/Compass/?c=${res.data.createCompass.id}`)
+        })
+        .catch(err => console.log(err))
     }
   }
 
@@ -97,7 +112,7 @@ const CustomCompassForm = () => {
         </ReviewLogHeader>
         <CustomStepsForm onSubmit={CustomStepSubmit}>
           <CustomStepsHeaderContainer>
-            <CustomStepsHeader placeholder="Compass Title" />
+            <CustomStepsHeader placeholder="Compass Title" value={compassTitle} onChange={e => { setCompassTitle(e.target.value) }} />
             <CustomStepsButton
               label="Add New Step"
               onClick={addStep}

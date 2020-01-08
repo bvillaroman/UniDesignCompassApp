@@ -2,17 +2,20 @@ import styled from "styled-components";
 import { Button } from 'grommet';
 
 export const PermissionContainer = styled.div`
-  // width: 83%;
-  height: 40.5%;
-  min-height: 15rem;
+  width: 80%;
+  // height: 40.5%;
+  height: 8rem;
+  // margin-top: 1rem;
+  // margin-left: 0.5rem;
+  // margin-right: 0.5rem;
+  // margin-bottom: 0.5rem;
+  margin: 0 auto;
   margin-top: 1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
   background: white;
   padding: 1rem;
+  padding-bottom: 0;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   transition: box-shadow 150ms ease;
 
@@ -31,19 +34,31 @@ export const PermissionHeader = styled.div`
   margin: 0 auto;
   width: 100%;
   height: auto;
-  // font-size: 1.5rem;
   color: black;
   font-weight: 600;
-  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const PermissionFormContainer = styled.div`
   margin-top: 1rem;
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `
 
 export const PermissionForm = styled.form`
   overflow: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 `
 
 export const Permissions = styled.div`
@@ -68,4 +83,8 @@ margin: 0;
 font-size: 0.9rem;
 font-weight: 500;
 float: right;
+`
+
+export const DeleteContainer = styled.div`
+  padding: 0.7rem;
 `

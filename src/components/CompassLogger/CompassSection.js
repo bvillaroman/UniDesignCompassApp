@@ -8,8 +8,8 @@ export const CompassSection = (props) => {
 
   return (
     <CompassSectionContainer>
-      <Wheel />
-      <Logger />
+      <Wheel loading={props.loading} setLoading={props.setLoading}/>
+      <Logger loading={props.loading} setLoading={props.setLoading}/>
     </CompassSectionContainer>
 )};
 

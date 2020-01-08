@@ -7,7 +7,7 @@ import {
   DeleteContainer
 } from './style'
 
-const DeleteMembers = ({ email, id, removeMember }) => {
+const DeleteTeachers = ({ email, id, removeTeacher }) => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
@@ -27,10 +27,9 @@ const DeleteMembers = ({ email, id, removeMember }) => {
   return (
     <DeleteContainer>
       {email}
-      <PermissionButton icon={<FormClose />} disabled={disableButton} label="Del" onClick={() => removeMember(id)} />
+      <PermissionButton icon={<FormClose />} disabled={disableButton} label="Del" onClick={() => removeTeacher(id)} />
     </DeleteContainer>
   )
 }
 
-export default DeleteMembers
-
+export default DeleteTeachers

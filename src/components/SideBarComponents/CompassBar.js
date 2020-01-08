@@ -5,7 +5,7 @@ import {
   LinkContainer,
   CompassLink,
   HamburgerIcon
-} from '../../styles/SideBar'
+} from './style'
 import { Compass, DocumentText, BarChart, Home, User } from 'grommet-icons'
 
 import { CompassContext } from "../../context/CompassPage/context"
@@ -18,29 +18,29 @@ const CompassBar = ({ page }) => {
   const [newestSession, setNewestSession] = useState("")
 
   useEffect(() => {
-    if(CompassInfo.compass.sessions && CompassInfo.compass.sessions.items.length > 0){
+    if (CompassInfo.compass.sessions && CompassInfo.compass.sessions.items.length > 0) {
       setNewestSession(CompassInfo.compass.sessions.items.sort(timeSorter)[0].id)
     }
 
-  },[CompassInfo.compass])
+  }, [CompassInfo.compass])
 
   const handleClick = () => {
     setRenderSidebar(!renderSidebar);
   }
-  
+
   return (
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
-        <CompassHeaderCompass className='CompassHeaderCompass' to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>
+        {<CompassHeaderCompass to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>}
         <CompassLink active={page === "/Logger/"} to={`/Logger/?c=${CompassInfo.compass.id}&s=${newestSession}`}>
           <Compass />
-          <span>Logger</span>
+          <span>Compass</span>
         </CompassLink>
-        <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Summary</span></CompassLink>
-        <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Analytics</span></CompassLink>
+        <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Log </span></CompassLink>
+        <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Overview</span></CompassLink>
       </LinkContainer>
-      <LinkContainer>
+      <LinkContainer center>
         <CompassLink to={`/`}><Home /><span>Home</span> </CompassLink>
         <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
       </LinkContainer>

@@ -1,18 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components"
 import SessionBar from "./SessionBar"
 import CompassSection from "./CompassSection"
 import InteractionFeed from "./Interactions"
 
 const CompassSelector = (props) => {
-
+  const [loading, setLoading] = useState(false)
   return (
     <CSContainer>
       <CSGrid>
-        <CompassSection/>
+        <CompassSection loading={loading} setLoading={setLoading}/>
         <SessionBar />
       </CSGrid>
-      <InteractionFeed/>
+      <InteractionFeed setLoading={setLoading}/>
     </CSContainer>
 )};
 export default CompassSelector;

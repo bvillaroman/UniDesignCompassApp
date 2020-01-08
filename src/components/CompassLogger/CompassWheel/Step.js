@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
+import {navigate} from "gatsby";
 import styled from "styled-components"
 import { Button } from "grommet"
 import { CompassContext } from "../../../context/CompassPage/context"
@@ -6,8 +7,8 @@ import { startInteraction } from "../../../utils/mutations"
 import translateTime from '../../../utils/translateTime'
 import { GlobalContext } from "../../../context/context";
 
-export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
-  const { session, addInteraction, interaction, compass, newestInteraction } = useContext(CompassContext)
+export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading }) => {
+  const { session, addInteraction, interaction, compass, newestInteraction, interactionAdded } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
@@ -31,9 +32,11 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
     // console.log(interaction.hasOwnProperty("id"))
     if (disableStep) {
       if (!interaction.hasOwnProperty("id") || id !== interaction.step.id || newestInteraction.step.id !== id) {
+        setLoading(true)
         startInteraction(session.id, id)
-          .then((interaction) => {
+          .then((interaction) => {            
             addInteraction(interaction.data.createInteraction)
+            navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
           })
       }
     }
@@ -44,6 +47,7 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength }) => {
       rotateAngle={rotateAngle}
       onClick={goToLog}
       color={color}
+      active={interactionAdded && newestInteraction.step && newestInteraction.step.id === id}
       circleLength={circleLength}
     >
       <StepText>
@@ -61,12 +65,12 @@ export const StepContainer = styled(Button)`
   transition: all 0.3s;
   :hover {
     transition: all 0.2s;
-    background-color: transparent;
+    background-color: ${props => props.color ? props.color : '#5567FD'};
   }
   top: 40%;
   left: 40%;
   
-  background-color: ${props => props.color ? props.color : '#5567FD'};
+  background-color: ${props => props.active && props.color ? props.color : 'transparent'};
   list-style: none;
 	height: 5rem;
   width: 5rem;

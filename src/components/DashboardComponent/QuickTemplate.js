@@ -47,7 +47,7 @@ const QuickTemplate = (props) => {
   ];
 
   const goToReview = (event) => {
-    props.setLoading(false)
+    props.setLoading(true)
     createCompass("Untitled", "-", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>

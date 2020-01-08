@@ -1,24 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from "styled-components"
 import { DashboardSectionHeader } from "./style"
 import { navigate } from "gatsby"
 import { dateFormatter } from "../../utils/translateTime"
 
-export const CompassFeed = (props) => {
-  const [compasses, setCompasses] = useState([])
-
-  useEffect(() => {
-    if (props.compasses.length > 0) {
-      const seen = new Set();
-      const filteredArr = props.compasses.filter(compass => {
-        const duplicate = seen.has(compass.id);
-        seen.add(compass.id);
-        return !duplicate;
-      });
-      setCompasses(filteredArr)
-    }
-  }, [props.compasses]);
-
+export const CompassFeed = ({compasses}) => {
+  
   const goToCompass = (compass) => {
     navigate(`/Compass/?c=${compass.id}`)
   }

@@ -32,7 +32,10 @@ const Layout = (props) => {
     updateInteractions, 
     clearInteractions,
     updateInteraction, 
-    clearInteraction
+    clearInteraction,
+    newestInteraction, 
+    addInteraction
+
   } = useContext(CompassContext);
 
   const [compassID, setCompassID] = useState("")
@@ -79,7 +82,6 @@ const Layout = (props) => {
       getSession(sessionID)
         .then((res) => {          
           updateSession(res.data.getSession)
-          // localStorage.setItem("session", res.data.getSession.id);
           let interactions = []
           if (res.data.getSession.interactions.items.length > 0) {
             interactions = res.data.getSession.interactions.items.sort((a,b) => {
@@ -112,12 +114,7 @@ const Layout = (props) => {
         })
         .then((res) => {
           if(res && res.hasOwnProperty("data") && res.data.getUser){
-            loginUser({ 
-              email: res.data.getUser.email, 
-              id: res.data.getUser.id,
-              firstName: res.data.getUser.first_name,
-              lastName: res.data.getUser.last_name
-            }) // Save to global store    
+            loginUser(res.data.getUser) // Save to global store    
           } else {
             setLoading(false)
             localStorage.removeItem("authuser")
@@ -143,7 +140,11 @@ const Layout = (props) => {
     if (interactionID !== "") {
       getInteraction(interactionID)
         .then((res) => {
-          updateInteraction(res.data.getInteraction);
+          if(newestInteraction.id === res.data.getInteraction.id ){
+            addInteraction(res.data.getInteraction);
+          }  else {
+            updateInteraction(res.data.getInteraction);
+          }
         })
         .catch((err) => {
           clearInteraction();

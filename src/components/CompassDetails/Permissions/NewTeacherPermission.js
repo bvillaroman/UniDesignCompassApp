@@ -1,22 +1,26 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../../utils/queries';
-import { updateCompass } from '../../../utils/mutations';
+import { createTeacherCompasses } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
-import styled from "styled-components"
+import { Loader } from "../../../styles/layout"
 import {
   PermissionContainer,
+  PermissionHeaderBar,
   PermissionHeader,
   PermissionFormContainer,
   PermissionForm,
-  PermissionButton
+  Permissions,
+  PermissionButton,
 } from "./style"
 
-const ScribePermission = () => {
+const TeachersPermission = () => {
   const { compass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [teacher, setTeacher] = useState("");
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
@@ -29,48 +33,46 @@ const ScribePermission = () => {
     // eslint-disable-next-line
   }, [compass.id])
 
-  const [scribe, setScribe] = useState("")
+  const handleTeacherChange = (e) => { setTeacher(e.target.value) };
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    getUsers(scribe)
-      .then(res =>
-        updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
-          .then(res => console.log(res))
-          .catch(err => console.log(err))
-      ).catch(err => console.log(err))
+    getUsers(teacher)
+      .then(res => {
+        setLoading(true)
+        return createTeacherCompasses(compass.id, res.data.listUsers.items[0].id, res.data.listUsers.items[0].first_name, res.data.listUsers.items[0].last_name, res.data.listUsers.items[0].email)
+      })
+      .then(res => {
+        setTeacher("");
+        setLoading(false);
+      })
+      .catch(err => console.log('failed at getUser', err))
+
   }
 
   return (
     <PermissionContainer>
-      <PermissionHeader>Change Scribe</PermissionHeader>
+      <PermissionHeaderBar>
+        <PermissionHeader>Add Teacher</PermissionHeader>
+      </PermissionHeaderBar>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
-          <Scribe>
-            <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }} />
+          <Permissions>
             <input
               style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
-              placeholder="Enter Scribe Email"
               type="email"
-              name="scribe"
-              value={scribe}
-              onChange={e => { setScribe(e.target.value) }} />
-          </Scribe>
-
-          <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />
+              className="email"
+              value={teacher}
+              placeholder="Enter Teacher Email"
+              onChange={handleTeacherChange}
+            />
+          </Permissions>
+          {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>
   )
 }
 
-export default ScribePermission;
-
-export const Scribe = styled.div`
-  margin-top: 0.7em;
-  margin-bottom: 0.5em;
-  font-size: 1.2rem;
-  padding-left: 1em;
-  padding-right: 1em;
-`
+export default TeachersPermission;

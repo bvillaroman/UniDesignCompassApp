@@ -12,7 +12,7 @@ const LoggerHeaderContainer = styled.div`
 const LoggerHeaderButtonContainer = styled.div`
   margin: 0.5rem 0;
   width: auto;
-  height: 2.5rem;
+  height: ${props => props.height ? props.height : '2.5rem'}; 
   display: flex;
   flex-direction: row;
   justify-content: center;
