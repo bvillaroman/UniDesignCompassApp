@@ -29,7 +29,7 @@ export const Logger = (props) => {
 
     if (newestInteraction.id) {
       
-      if(previousFooRef.current && previousFooRef.current.id !== newestInteraction.id){
+      if(previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id ){
         setStart(false)
         const id = previousFooRef.current.id
         const newInteraction = {
