@@ -227,7 +227,7 @@ export const SummaryTdBody = styled.td`
   //border-bottom: solid 1px;
   //border: hidden;
   background-color: ${props => props.color ? props.color : "transparent"};
-  
+  padding: 0.2rem 0.5rem;
 `;
 
 export const SummaryLogHeader = styled.div`
@@ -240,9 +240,7 @@ export const SummaryTableConatiner = styled.div`
   width: auto;
   padding: 1rem;
   display: block;
-  overflow: auto;
-  margin: 1em;
-  width: 96%;
+  margin: 1rem auto;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   background: white;
 `;

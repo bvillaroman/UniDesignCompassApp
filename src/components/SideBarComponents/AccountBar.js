@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavigationContainer, CompassLink, SignOutButton, CompassHeaderDash } from '../../styles/SideBar';
+import { NavigationContainer, CompassLink, SignOutButton, CompassHeaderDash } from './style';
 import { navigate } from "gatsby"
 import { User } from 'grommet-icons'
 import { GlobalContext } from "../../context/context"

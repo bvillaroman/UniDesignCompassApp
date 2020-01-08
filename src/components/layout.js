@@ -32,7 +32,10 @@ const Layout = (props) => {
     updateInteractions, 
     clearInteractions,
     updateInteraction, 
-    clearInteraction
+    clearInteraction,
+    newestInteraction, 
+    addInteraction
+
   } = useContext(CompassContext);
 
   const [compassID, setCompassID] = useState("")
@@ -137,7 +140,11 @@ const Layout = (props) => {
     if (interactionID !== "") {
       getInteraction(interactionID)
         .then((res) => {
-          updateInteraction(res.data.getInteraction);
+          if(newestInteraction.id === res.data.getInteraction.id ){
+            addInteraction(res.data.getInteraction);
+          }  else {
+            updateInteraction(res.data.getInteraction);
+          }
         })
         .catch((err) => {
           clearInteraction();

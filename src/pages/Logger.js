@@ -13,7 +13,6 @@ const CompassPage = (props) => {
   const { 
     compass,
     session, 
-    clearInteraction, 
     clearSession, 
     updateSession 
   } = useContext(CompassContext);
@@ -85,10 +84,7 @@ const CompassPage = (props) => {
     // })
 
     return () => {
-      clearInteraction()
       clearSession()
-      // createComment.unsubscribe()
-      // createInteraction.unsubscribe()
       updateInteraction.unsubscribe()
       createAttachment.unsubscribe();
     }

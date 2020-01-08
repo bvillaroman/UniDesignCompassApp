@@ -7,14 +7,16 @@ import { navigate } from "gatsby"
 import translateTime from "../../../utils/translateTime"
 import {CompassContext} from "../../../context/CompassPage/context"
 
-const Interaction = ({interaction = {}, isLastStep = false, setLoading}) => {
-  const { compass, session } = useContext(CompassContext);
-  const { step = {name_of_step: "", color: ""}, duration = 0 } = interaction;  
+const Interaction = (props) => {
+  const { compass, session, interaction } = useContext(CompassContext);
+  const { step = {name_of_step: "", color: ""}, duration = 0, id } = props.interaction;  
 
   const openReviewLog = (evt) => {    
     evt.preventDefault()
-    setLoading(true);
-    navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)
+    if(interaction.id !== id){
+      props.setLoading(true);
+      navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${props.interaction.id}`)
+    }
   }
   
   return (
@@ -24,11 +26,12 @@ const Interaction = ({interaction = {}, isLastStep = false, setLoading}) => {
           label={step.name_of_step} 
           color={step.color}
           onClick={openReviewLog}
+          active={interaction.id === id}
         /> 
         <span>{translateTime(duration)}</span>
       </InteractionButtonContainer>
       
-      {!isLastStep && <LinkNext color="#5567FD" />}
+      {!props.isLastStep && <LinkNext color="#5567FD" />}
     </InteractionContainer>
 
     
@@ -72,6 +75,6 @@ const InteractionButton = styled(Button)`
   line-height: 0.8rem;
   height: 5rem;
   width: 5rem;
-  background-color: ${props => props.color ? props.color : '#5567FD'};
+  background-color: ${props => props.active && props.color ? props.color : 'transparent'};
 
 `;
