@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
+import {navigate} from "gatsby";
 import styled from "styled-components"
 import { Button } from "grommet"
 import { CompassContext } from "../../../context/CompassPage/context"
@@ -33,8 +34,9 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading })
       if (!interaction.hasOwnProperty("id") || id !== interaction.step.id || newestInteraction.step.id !== id) {
         setLoading(true)
         startInteraction(session.id, id)
-          .then((interaction) => {
+          .then((interaction) => {            
             addInteraction(interaction.data.createInteraction)
+            navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
           })
       }
     }

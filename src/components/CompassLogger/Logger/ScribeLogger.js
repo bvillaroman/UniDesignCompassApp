@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
-import { PauseFill, PlayFill, Edit } from 'grommet-icons';
+import { PauseFill, PlayFill } from 'grommet-icons';
 
 import translateTime from '../../../utils/translateTime'
 import * as Mutation from '../../../utils/mutations'
@@ -10,9 +10,9 @@ import { LoggerHeaderText, LoggerHeaderContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 
 export const Logger = (props) => {
-  const { interaction, newestInteraction, updateInteraction, addInteraction } = useContext(CompassContext);
+  const { newestInteraction, addInteraction } = useContext(CompassContext);
 
-  // const previousFooRef = useRef(newestInteraction);
+  const previousFooRef = useRef(newestInteraction);
 
   const intialStep = {
     name_of_step: "Notes",
@@ -28,13 +28,37 @@ export const Logger = (props) => {
   useEffect(() => {
 
     if (newestInteraction.id) {
-      const { log_content, step, duration } = newestInteraction
-      const parsedLog = log_content !== " " ? log_content : ""  
-      setInteractionTime(duration)
-      setStep(step)
-      setLog(parsedLog)      
-      props.setLoading(false)     
-      // setStart(true);
+      
+      if(previousFooRef.current && previousFooRef.current.id !== newestInteraction.id){
+        setStart(false)
+        const id = previousFooRef.current.id
+        const newInteraction = {
+          id,
+          log_content: log ? log : " ",
+          duration: interactionTime,
+        }      
+        
+        Mutation.updateInteraction(newInteraction)
+          .then((res) => {
+            previousFooRef.current = newestInteraction
+            const { log_content, step, duration } = newestInteraction
+            const parsedLog = log_content !== " " ? log_content : ""  
+            setInteractionTime(duration)
+            setStep(step)
+            setLog(parsedLog)      
+            props.setLoading(false)     
+            setStart(true);
+          })
+      }
+       else {
+        const { log_content, step, duration } = newestInteraction
+        const parsedLog = log_content !== " " ? log_content : ""  
+        setInteractionTime(duration)
+        setStep(step)
+        setLog(parsedLog)      
+        props.setLoading(false)     
+        setStart(true);
+      }    
     }
 
     // eslint-disable-next-line

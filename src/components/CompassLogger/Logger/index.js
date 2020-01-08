@@ -1,36 +1,32 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useContext  } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
 import { PauseFill, PlayFill, Edit } from 'grommet-icons';
 
 import { CompassContext } from "../../../context/CompassPage/context"
-import { GlobalContext } from "../../../context/context"
+// import { GlobalContext } from "../../../context/context"
 
 import EditLogger from "./EditingLogger"
 import ScribeLogger from "./ScribeLogger"
 
 export const Logger = (props) => {
-  const { interactionAdded, compass} = useContext(CompassContext);
-  const { user } = useContext(GlobalContext)
+  // const { interactionAdded, compass} = useContext(CompassContext);
+  const { interactionAdded, interactionUpdated } = useContext(CompassContext);
+  // const { user } = useContext(GlobalContext)
 
   // const previousFooRef = useRef(newestInteraction);
 
-  const scribe = compass.scribe.email === user.email
+  // const scribe = compass.scribe.email === user.email
 
-  const intialStep = {
-    name_of_step: "Notes",
-    color: "black",
-  };
-  
+  // const intialStep = {
+  //   name_of_step: "Notes",
+  //   color: "black",
+  // };
+
   return (
     <LoggerGrid>
-      { 
-        interactionAdded ? (
-          <ScribeLogger setLoading={props.setLoading} loading={props.loading}/>
-        ) : (
-          <EditLogger setLoading={props.setLoading} loading={props.loading}/>
-        )
-      }
+      { interactionAdded && <ScribeLogger setLoading={props.setLoading} loading={props.loading}/> }
+      { interactionUpdated && <EditLogger setLoading={props.setLoading} loading={props.loading}/> }
     </LoggerGrid>
   );
 }

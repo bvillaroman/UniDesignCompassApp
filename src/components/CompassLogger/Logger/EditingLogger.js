@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
-import { PauseFill, PlayFill, Edit } from 'grommet-icons';
+import { Edit } from 'grommet-icons';
 
 import * as Mutation from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
@@ -110,21 +110,6 @@ const StepClock = styled.div`
   font-size: 1.8rem;
   font-weight: 500;
 `
-const ControlButton = styled(Button)`
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-  padding-right: 0;
-  padding-left: 0.5rem;
-`
-
-export const TimerButton = ({ onClick, start, color }) => (
-  <ControlButton
-    onClick={e => onClick()}
-    icon={start ? <PauseFill color={color ? color : '#5567FD'} /> : <PlayFill color={color ? color : '#5567FD'} />}
-  />
-)
 
 const EditLogButtonStyle = styled(Button)`
   svg {
