@@ -20,9 +20,8 @@ export const SessionView = styled.div`
   height: auto;
   display: flex;
   flex-direction: column;
-  border-left: 2px solid #e3e3e3;
   @media (max-width: 767px){
     width: 100%;
-    height: 25rem;
+    height: 50rem;
   }  
 `

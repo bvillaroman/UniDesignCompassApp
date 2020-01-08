@@ -26,13 +26,13 @@ export const CSGrid = styled.div`
   flex-direction: row;
   @media (max-width: 767px){
     flex-direction: column;
-    min-height: 80rem;
+    min-height: 81rem;
   }
-  @media (max-width: 650px){ min-height: 75rem; }  
-  @media (max-width: 550px){ min-height: 70rem; } 
-  @media (max-width: 475px){ min-height: 65rem; }  
-  @media (max-width: 413px){ min-height: 60rem; }   
-  @media (max-width: 370px){ min-height: 55rem; }     
+  @media (max-width: 650px){ min-height: 80rem; }  
+  @media (max-width: 550px){ min-height: 76rem; } 
+  @media (max-width: 475px){ min-height: 72rem; }  
+  @media (max-width: 413px){ min-height: 70rem; }   
+  @media (max-width: 370px){ min-height: 68rem; }     
 `;
 export const CSContainer = styled.div`
   width: 100%;

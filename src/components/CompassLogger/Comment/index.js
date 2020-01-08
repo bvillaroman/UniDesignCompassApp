@@ -34,10 +34,10 @@ const Comment = () => {
   }
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth",  block: 'nearest' });
   };
 
-  // useEffect(scrollToBottom, [comments]);
+  useEffect(scrollToBottom, [comments]);
 
   return (
     <CommentSession>
@@ -58,11 +58,21 @@ const Comment = () => {
 export default Comment;
 
 export const CommentSession = styled.div`
-  width: 90%;
+  width: 85%;
   min-height: 2.5rem;
   height: 50%;
   margin: 0 auto;
   margin-top: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
+  background: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 `;
 
 export const CommentBox = styled.div`

@@ -128,9 +128,13 @@ export const AttachmentsSelector = styled(Menu)`
 `
 
 const AttachmentsContainer = styled.div`
-  width: 90%;
+  width: 85%;
   height: 50%;
-  margin: 0 auto;
+  margin: 1rem auto;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
 `
 const SessionAttachments = styled.div`
   font-size: 1rem;

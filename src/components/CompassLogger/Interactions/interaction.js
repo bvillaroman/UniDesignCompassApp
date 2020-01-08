@@ -18,6 +18,7 @@ const Interaction = (props) => {
       navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${props.interaction.id}`)
     }
   }
+
   
   return (
     <InteractionContainer>
