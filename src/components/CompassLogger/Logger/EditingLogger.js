@@ -49,6 +49,9 @@ export const EditingLogger = (props) => {
         setLoading(false)
         setEdit(true)
       })
+    } else {
+      setLoading(false)
+      setEdit(true)
     }
     
   }
@@ -60,7 +63,7 @@ export const EditingLogger = (props) => {
         <StepClock>        
           {
             (props.loading || loading) ? <Loader/> : (  /* if it is saveable */
-              edit ? <EditLogButton onClick={ e => setEdit(false) } /> : <SaveButton onClick={editLog} label="Save" /> 
+              edit ? <EditLogButton color={step.color} onClick={ e => setEdit(false) } /> : <SaveButton onClick={editLog} color={step.color} label="Save" /> 
             )
           }
         </StepClock>
@@ -117,6 +120,7 @@ const EditLogButtonStyle = styled(Button)`
   }
   background: transparent;
   color: black;
+  border-color: ${props => props.color ? props.color : '#5567FD'};
   padding: 0.3rem .5rem;
   font-weight: 500;
   font-size: 1rem;
@@ -128,10 +132,11 @@ const EditLogButtonStyle = styled(Button)`
 const SaveButton = styled(EditLogButtonStyle)`
   width: 5rem;
 `
-export const EditLogButton = ({ onClick }) => (
+export const EditLogButton = ({ onClick,color }) => (
   <EditLogButtonStyle
     onClick={onClick}
-    icon={<Edit color="#5567FD" />}
+    icon={<Edit color={color ? color : '#5567FD'} />}
     label="Edit Log"
+    color={color}
   />
 )
