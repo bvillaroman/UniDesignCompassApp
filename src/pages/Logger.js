@@ -1,10 +1,12 @@
-import React, { useEffect, useContext,  Suspense, lazy } from "react";
+import React, { useEffect, useContext, useState, Suspense, lazy } from "react";
 import styled from "styled-components"
 
 import { CompassContext } from "../context/CompassPage/context"
 
-import { updateInteractionSub, createCommentSub, createAttachmentSub } from "../utils/subscriptions"
-import { getSession } from '../utils/queries'
+// import { updateInteractionSub, createCommentSub, createAttachmentSub } from "../utils/subscriptions"
+import { updateInteractionSub, createAttachmentSub } from "../utils/subscriptions"
+import { getSession, getInteraction } from '../utils/queries'
+import queryStringParser from '../utils/queryStringParser'
 
 import { MainView } from "../styles/CompassPage"
 import { Loader } from "../styles/layout"
@@ -14,14 +16,23 @@ const CompassLogger = lazy(() => import( "../components/CompassLogger"));
 const CompassPage = (props) => {
   const { 
     compass,
-    session, 
-    clearSession, 
-    updateSession 
+    session,
+    updateSession,
+    clearSession,     
+    updateInteractions, 
+    clearInteractions,
+    updateInteraction, 
+    clearInteraction,
+    newestInteraction, 
+    addInteraction
+
   } = useContext(CompassContext);
+  const [loading, setLoading] = useState(true)
+
+  const { sessionID, interactionID } = queryStringParser(props.location.search)
 
   // subscription for any new project being created
   useEffect(() => {
-
     // const updateInteraction = updateInteractionSub().subscribe((updatedInteraction) => {
     //   const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
     //   console.log(updatedInteraction)
@@ -92,21 +103,75 @@ const CompassPage = (props) => {
     }
     // eslint-disable-next-line
   }, [])
+
+  // setting up the session through url
+  useEffect(() => {
+    
+    if (sessionID !== "") {
+      clearSession();
+      setLoading(true)
+      getSession(sessionID)
+        .then((res) => {          
+          updateSession(res.data.getSession)
+          let interactions = []
+          if (res.data.getSession.interactions.items.length > 0) {
+            interactions = res.data.getSession.interactions.items.sort((a,b) => {
+              return new Date(b.createdAt) - new Date(a.createdAt);
+            })
+          }
+          updateInteractions(interactions);
+          setLoading(false)
+        })
+        .catch((err) => {
+          setLoading(false)
+          clearSession();
+          clearInteractions();
+          console.log(err)
+        })
+    } else {
+      clearSession();
+      setLoading(false)
+    }
+
+  // eslint-disable-next-line
+  }, [sessionID])
+
+  // setting up the interaction through url
+  useEffect(() => {
+    if (interactionID !== "") {
+      getInteraction(interactionID)
+        .then((res) => {
+          if(newestInteraction.id === res.data.getInteraction.id ){
+            addInteraction(res.data.getInteraction);
+          }  else {
+            updateInteraction(res.data.getInteraction);
+          }
+        })
+        .catch((err) => {
+          clearInteraction();
+          console.log(err);
+        })
+    } else {
+      clearInteraction();
+    }
+
+  // eslint-disable-next-line
+  }, [interactionID])
   
 
   return (
     <MainView>
       {
-        compass.hasOwnProperty("id") ? 
-          session.hasOwnProperty("id") ? (
-            <Suspense fallback={<Loader/>}>
-              <CompassLogger /> 
-            </Suspense>
-          ) : ( 
-            <Loader />
-            // <ErrorContainer> Sorry, this Session does not exist !</ErrorContainer> 
-          ) : <Loader/>
-          // <ErrorContainer> Sorry, this Project does not exist !</ErrorContainer> 
+        loading ? <Loader /> : (
+          compass.hasOwnProperty("id") ? 
+            session.hasOwnProperty("id") ? (
+              <Suspense fallback={<Loader/>}>
+                <CompassLogger /> 
+              </Suspense>
+            ) : ( 
+            <ErrorContainer> Sorry, this Session does not exist !</ErrorContainer> 
+            ) : <ErrorContainer> Sorry, this Project does not exist !</ErrorContainer> 
+        )  
       }
     </MainView>
   )
@@ -114,10 +179,10 @@ const CompassPage = (props) => {
 export default CompassPage;
 
 const ErrorContainer = styled.h4`
-  width: 100&;
-  height: 100%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   display: flex;
   align-self: center;
+  flex-direction: column;
 `

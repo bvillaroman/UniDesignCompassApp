@@ -22,6 +22,7 @@ const Interactions = (props) => {
       setCanScroll(true)
     }
     
+    // eslint-disable-next-line
   }, [newestInteraction.id, interaction.id]);
 
   

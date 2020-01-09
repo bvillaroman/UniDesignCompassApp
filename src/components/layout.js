@@ -15,41 +15,52 @@ import { GlobalContext } from "../context/context"
 import {CompassContext} from "../context/CompassPage/context"
 
 import { Auth } from 'aws-amplify'
-import { getCompass,getSession, getUser, getInteraction } from '../utils/queries'
+import { getCompass, getUser } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 import awsconfig from '../aws-exports';
 
 Amplify.configure(awsconfig);
-
 
 const Layout = (props) => {
   const { user = {}, loginUser, logoutUser } = useContext(GlobalContext);
   const {
     updateCompass, 
     clearCompass,
-    updateSession,
-    clearSession,     
-    updateInteractions, 
-    clearInteractions,
-    updateInteraction, 
-    clearInteraction,
-    newestInteraction, 
-    addInteraction
-
   } = useContext(CompassContext);
 
-  const [compassID, setCompassID] = useState("")
-  const [sessionID, setSessionID] = useState("")
-  const [interactionID, setInteractionID] = useState("")
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const {compassID, sessionID, interactionID} = queryStringParser(props.location.search)
-    setCompassID(compassID)
-    setSessionID(sessionID)
-    setInteractionID(interactionID)
+  const {compassID} = queryStringParser(props.location.search)
 
-  }, [props.location.search])
+    // user authentications 
+    useEffect(() => {
+      if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
+        Auth.currentAuthenticatedUser({ bypassCache: false   })
+          .then(cognitoUser => {
+            const { sub } = cognitoUser.attributes;
+            return getUser(sub)
+          })
+          .then((res) => {
+            if(res && res.hasOwnProperty("data") && res.data.getUser){
+              loginUser(res.data.getUser) // Save to global store    
+            } else {
+              setLoading(false)
+              localStorage.removeItem("authuser")
+              logoutUser();
+            }
+          })
+          .catch(err => {
+            setLoading(false)
+            localStorage.removeItem("authuser")
+            alert(err.message)
+            logoutUser();
+          });
+      } else {
+        setLoading(false)
+      }
+  
+    // eslint-disable-next-line
+    }, [loginUser,user]) 
 
   // setting up the compass through the url
   useEffect(() => {
@@ -72,90 +83,6 @@ const Layout = (props) => {
 
   // eslint-disable-next-line
   }, [compassID])
-
-  // setting up the session through url
-  useEffect(() => {
-    
-    if (sessionID !== "") {
-      clearSession();
-      setLoading(true)
-      getSession(sessionID)
-        .then((res) => {          
-          updateSession(res.data.getSession)
-          let interactions = []
-          if (res.data.getSession.interactions.items.length > 0) {
-            interactions = res.data.getSession.interactions.items.sort((a,b) => {
-              return new Date(b.createdAt) - new Date(a.createdAt);
-            })
-          }
-          updateInteractions(interactions);
-          setLoading(false)
-        })
-        .catch((err) => {
-          setLoading(false)
-          clearSession();
-          clearInteractions();
-          console.log(err)
-        })
-    } else {
-      clearSession();
-    }
-
-  // eslint-disable-next-line
-  }, [sessionID])
-
-  // user authentications 
-  useEffect(() => {
-    if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
-      Auth.currentAuthenticatedUser({ bypassCache: false   })
-        .then(cognitoUser => {
-          const { sub } = cognitoUser.attributes;
-          return getUser(sub)
-        })
-        .then((res) => {
-          if(res && res.hasOwnProperty("data") && res.data.getUser){
-            loginUser(res.data.getUser) // Save to global store    
-          } else {
-            setLoading(false)
-            localStorage.removeItem("authuser")
-            logoutUser();
-          }
-        })
-        .catch(err => {
-          setLoading(false)
-          localStorage.removeItem("authuser")
-          alert(err.message)
-          logoutUser();
-        });
-    } else {
-      setLoading(false)
-    }
-
-  // eslint-disable-next-line
-  }, [loginUser,user])
-
-  // setting up the interaction through url
-  useEffect(() => {
-    // console.log(`called intearctionid: ${interactionID}`)
-    if (interactionID !== "") {
-      getInteraction(interactionID)
-        .then((res) => {
-          if(newestInteraction.id === res.data.getInteraction.id ){
-            addInteraction(res.data.getInteraction);
-          }  else {
-            updateInteraction(res.data.getInteraction);
-          }
-        })
-        .catch((err) => {
-          clearInteraction();
-          console.log(err);
-        })
-    } else {
-      clearInteraction();
-    }
-
-  // eslint-disable-next-line
-  }, [interactionID])
 
   return (
     <LayoutContainer >
