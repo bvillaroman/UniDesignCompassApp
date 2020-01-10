@@ -9,10 +9,15 @@ import { CompassContext } from "../../../context/CompassPage/context"
 import { LoggerHeaderText, LoggerHeaderContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 
+import { GlobalContext } from "../../../context/context"
+
 export const Logger = (props) => {
-  const { newestInteraction, addInteraction } = useContext(CompassContext);
+  const { newestInteraction, addInteraction, compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext)
 
   const previousFooRef = useRef(newestInteraction);
+
+  const scribe = compass.scribe.email === user.email
 
   const intialStep = {
     name_of_step: "Notes",
@@ -28,42 +33,50 @@ export const Logger = (props) => {
   useEffect(() => {
 
     if (newestInteraction.id) {
-      
-      if(previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id ){
+
+      if (previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id) {
         setStart(false)
         const id = previousFooRef.current.id
         const newInteraction = {
           id,
           log_content: log ? log : " ",
           duration: interactionTime,
-        }      
-        
+        }
+
         Mutation.updateInteraction(newInteraction)
           .then((res) => {
             previousFooRef.current = newestInteraction
             const { log_content, step, duration } = newestInteraction
-            const parsedLog = log_content !== " " ? log_content : ""  
+            const parsedLog = log_content !== " " ? log_content : ""
             setInteractionTime(duration)
             setStep(step)
-            setLog(parsedLog)      
-            props.setLoading(false)     
+            setLog(parsedLog)
+            props.setLoading(false)
             setStart(true);
           })
-      }
-       else {
+      } else if (compass.scribe.email === user.email) {
         const { log_content, step, duration } = newestInteraction
-        const parsedLog = log_content !== " " ? log_content : ""  
+        const parsedLog = log_content !== " " ? log_content : ""
         setInteractionTime(duration)
         setStep(step)
-        setLog(parsedLog)      
-        props.setLoading(false)     
+        setLog(parsedLog)
+        props.setLoading(false)
         setStart(true);
-      }    
+      }
+      else {
+        const { log_content, step, duration } = newestInteraction
+        const parsedLog = log_content !== " " ? log_content : ""
+        setInteractionTime(duration)
+        setStep(step)
+        setLog(parsedLog)
+        props.setLoading(false)
+        setStart(false);
+      }
     }
 
     // eslint-disable-next-line
   }, [newestInteraction.id])
- 
+
   // handle interaction time
   useEffect(() => {
     let interval = null;
@@ -102,12 +115,12 @@ export const Logger = (props) => {
     <>
       <LoggerHeaderContainer height="69px">
         <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
-        <StepClock>        
+        <StepClock>
           {
-            props.loading ? <Loader/> : ( /* show the timer */
+            props.loading ? <Loader /> : ( /* show the timer */
               <>
                 {translateTime(interactionTime)}
-                <TimerButton color={step.color} onClick={pause} start={start} />
+                {scribe ? <TimerButton color={step.color} onClick={pause} start={start} /> : ""}
               </>
             )
           }

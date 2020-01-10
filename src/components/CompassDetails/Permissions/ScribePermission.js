@@ -3,6 +3,7 @@ import { getUsers } from '../../../utils/queries';
 import { updateCompass } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
+import { Loader } from "../../../styles/layout"
 import styled from "styled-components"
 import {
   PermissionContainer,
@@ -17,6 +18,8 @@ const ScribePermission = () => {
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [scribe, setScribe] = useState("")
 
   useEffect(() => {
     const teachers = compass.teachers.items.filter((teacher) => teacher)
@@ -29,17 +32,20 @@ const ScribePermission = () => {
     // eslint-disable-next-line
   }, [compass.id])
 
-  const [scribe, setScribe] = useState("")
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
     getUsers(scribe)
-      .then(res =>
-        updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
-          .then(res => console.log(res))
-          .catch(err => console.log(err))
-      ).catch(err => console.log(err))
+      .then(res => {
+        setLoading(true)
+        return updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
+      })
+      .then(res => {
+        setScribe("");
+        setLoading(false);
+      })
+      .catch(err => console.log(err))
+
   }
 
   return (
@@ -57,8 +63,8 @@ const ScribePermission = () => {
               value={scribe}
               onChange={e => { setScribe(e.target.value) }} />
           </Scribe>
-
-          <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />
+          {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}
+          {/* <PermissionButton type="submit" primary label="Submit" disabled={disableButton} /> */}
         </PermissionForm>
       </PermissionFormContainer>
     </PermissionContainer>

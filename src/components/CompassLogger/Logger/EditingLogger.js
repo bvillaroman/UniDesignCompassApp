@@ -5,11 +5,15 @@ import { Edit } from 'grommet-icons';
 
 import * as Mutation from '../../../utils/mutations'
 import { CompassContext } from "../../../context/CompassPage/context"
+import { GlobalContext } from "../../../context/context"
 import { LoggerHeaderText, LoggerHeaderContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 
 export const EditingLogger = (props) => {
-  const { interaction, updateInteraction, interactionUpdated } = useContext(CompassContext);
+  const { interaction, updateInteraction, interactionUpdated, compass } = useContext(CompassContext);
+  const { user } = useContext(GlobalContext);
+
+  const scribe = compass.scribe.email === user.email
 
   const intialStep = {
     name_of_step: "Notes",
@@ -26,11 +30,11 @@ export const EditingLogger = (props) => {
 
     if (interaction.id && interactionUpdated) {
       const { log_content, step } = interaction
-      const parsedLog = log_content !== " " ? log_content : ""  
+      const parsedLog = log_content !== " " ? log_content : ""
       setStep(step)
       setLog(parsedLog)
       setEdit(true);
-      props.setLoading(false)     
+      props.setLoading(false)
     }
 
     // eslint-disable-next-line
@@ -43,27 +47,28 @@ export const EditingLogger = (props) => {
       id: interaction.id,
       log_content: log ? log : " "
     }
-    if(interaction.log_content !== log){
+    if (interaction.log_content !== log) {
       Mutation.updateInteraction(newInteraction)
-      .then(() => {
-        setLoading(false)
-        setEdit(true)
-      })
+        .then(() => {
+          setLoading(false)
+          setEdit(true)
+        })
     } else {
       setLoading(false)
       setEdit(true)
     }
-    
+
   }
 
   return (
     <>
       <LoggerHeaderContainer height="69px">
         <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
-        <StepClock>        
+        <StepClock>
           {
-            (props.loading || loading) ? <Loader/> : (  /* if it is saveable */
-              edit ? <EditLogButton color={step.color} onClick={ e => setEdit(false) } /> : <SaveButton onClick={editLog} color={step.color} label="Save" /> 
+            (props.loading || loading) ? <Loader /> : (  /* if it is saveable */
+              // edit ? <EditLogButton color={step.color} onClick={e => setEdit(false)} /> : < SaveButton onClick={editLog} color={step.color} label="Save" />
+              (scribe && (edit ? <EditLogButton color={step.color} onClick={e => setEdit(false)} /> : < SaveButton onClick={editLog} color={step.color} label="Save" />))
             )
           }
         </StepClock>
@@ -132,11 +137,12 @@ const EditLogButtonStyle = styled(Button)`
 const SaveButton = styled(EditLogButtonStyle)`
   width: 5rem;
 `
-export const EditLogButton = ({ onClick,color }) => (
+export const EditLogButton = ({ onClick, color }) => (
   <EditLogButtonStyle
     onClick={onClick}
     icon={<Edit color={color ? color : '#5567FD'} />}
     label="Edit Log"
     color={color}
+
   />
 )
