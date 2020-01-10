@@ -8,12 +8,15 @@ import { GlobalContext } from "../../context/context"
 import { getCompass } from "../../utils/queries"
 import {
   CompassRowMoreButton,
-  CompassRowMore
+  CompassRowMore,
+  InvisCompassRowMore,
+  InvisCompassRowMoreButton
 } from "../../styles/CompassPage"
 
-export const CompassFeed = ({ compasses }) => {
+export const CompassFeed = ({ compasses, type, onShow }) => {
 
   const { user } = useContext(GlobalContext);
+
 
   const goToCompass = (compass) => {
     navigate(`/Compass/?c=${compass.id}`)
@@ -32,7 +35,7 @@ export const CompassFeed = ({ compasses }) => {
 
   return (
     <ProjectFeedContainer>
-      <DashboardSectionHeader> Past Projects </DashboardSectionHeader>
+      <DashboardSectionHeader> {type} Projects </DashboardSectionHeader>
       {
         compasses.length > 0 ? (
           <>
@@ -40,6 +43,7 @@ export const CompassFeed = ({ compasses }) => {
               <CompassTitle >Name</CompassTitle>
               <CompassDescription >Description</CompassDescription>
               <CompassDate> Created On</CompassDate>
+              <InvisCompassRowMore><InvisCompassRowMoreButton /></InvisCompassRowMore>
             </ProjectFeedHeader>
             <Feed>
               {
@@ -48,9 +52,7 @@ export const CompassFeed = ({ compasses }) => {
                     <CompassTitle onClick={e => goToCompass(compass)} key={key}>{compass.name_of_compass}</CompassTitle>
                     <CompassDescription onClick={e => goToCompass(compass)} key={key}>{compass.description_of_compass}</CompassDescription>
                     <CompassDate onClick={e => goToCompass(compass)} key={key}>{dateFormatter(compass.createdAt)}</CompassDate>
-                    {compass.owner.email === user.email ? <CompassRowMore><CompassRowMoreButton onDelete={e => onDelete(compass)} /></CompassRowMore> : ""}
-                    {console.log("all", compass)}
-
+                    {compass.owner.email === user.email ? <CompassRowMore><CompassRowMoreButton onDelete={e => onDelete(compass)} /></CompassRowMore> : <InvisCompassRowMore><InvisCompassRowMoreButton /></InvisCompassRowMore>}
                   </ProjectCard>
                 ))
               }
