@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from "styled-components"
 import { DashboardSectionHeader } from "./style"
 import { navigate } from "gatsby"
 import { dateFormatter } from "../../utils/translateTime"
+import { deleteCompass, updateCompass } from "../../utils/mutations"
+import { GlobalContext } from "../../context/context"
+import { getCompass } from "../../utils/queries"
+import {
+  CompassRowMoreButton,
+  CompassRowMore
+} from "../../styles/CompassPage"
 
-export const CompassFeed = ({compasses}) => {
-  
+export const CompassFeed = ({ compasses }) => {
+
+  const { user } = useContext(GlobalContext);
+
   const goToCompass = (compass) => {
     navigate(`/Compass/?c=${compass.id}`)
+  }
+
+  const onDelete = (compass) => {
+    console.log("compass being deleted")
+    deleteCompass(compass.id)
+      .then(res => {
+        getCompass(res.data.deleteCompass.compass.id)
+          .then((res) => updateCompass(res.data.getCompass))
+          .catch((err) => console.log(err))
+      })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -24,10 +44,13 @@ export const CompassFeed = ({compasses}) => {
             <Feed>
               {
                 compasses.map((compass, key) => (
-                  <ProjectCard onClick={e => goToCompass(compass)} key={key}>
-                    <CompassTitle >{compass.name_of_compass}</CompassTitle>
-                    <CompassDescription >{compass.description_of_compass}</CompassDescription>
-                    <CompassDate>{dateFormatter(compass.createdAt)}</CompassDate>
+                  <ProjectCard >
+                    <CompassTitle onClick={e => goToCompass(compass)} key={key}>{compass.name_of_compass}</CompassTitle>
+                    <CompassDescription onClick={e => goToCompass(compass)} key={key}>{compass.description_of_compass}</CompassDescription>
+                    <CompassDate onClick={e => goToCompass(compass)} key={key}>{dateFormatter(compass.createdAt)}</CompassDate>
+                    {compass.owner.email === user.email ? <CompassRowMore><CompassRowMoreButton onDelete={e => onDelete(compass)} /></CompassRowMore> : ""}
+                    {console.log("all", compass)}
+
                   </ProjectCard>
                 ))
               }
@@ -35,7 +58,7 @@ export const CompassFeed = ({compasses}) => {
           </>
         ) : <p>You have no Projects, create one from above !</p>
       }
-    </ProjectFeedContainer>
+    </ProjectFeedContainer >
   )
 }
 

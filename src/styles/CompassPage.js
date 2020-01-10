@@ -372,7 +372,7 @@ export const SessionRowDate = styled(Box)`
   white-space: nowrap;
   overflow: hidden;
 `
-export const SessionRowMore = styled(Box)`
+export const CompassRowMore = styled(Box)`
   padding: 0 1rem;
   width: 10%;
 `
@@ -399,12 +399,12 @@ const SessionRowMoreStyle = styled(Menu)`
   border-radius: 100%;
   text-align: center;
 `
-export const SessionRowMoreButton = ({ onDelete, onEdit }) => (
+export const CompassRowMoreButton = ({ onDelete /*, onEdit */ }) => (
   <SessionRowMoreStyle
     icon={<More />}
     round
     items={[
-      { label: 'edit', onClick: () => onEdit() },
+      // { label: 'edit', onClick: () => onEdit() },
       { label: 'delete', onClick: () => onDelete() },
     ]}
   />
