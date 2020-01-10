@@ -1,16 +1,16 @@
 import React,{ useEffect,useState} from "react";
 import styled from "styled-components"
 import { Image, Document, Multimedia} from 'grommet-icons';
-import { Storage } from 'aws-amplify'
+import { getAttachment } from '../../../utils/queries'
 
 const Attachment = ({attachment}) => {
   const [source, setSource] = useState("")
   
   useEffect(() => {
     if (attachment.hasOwnProperty("key")){
-      Storage.get(attachment.key)
-      .then(result => setSource(result))
-      .catch(err =>  setSource(''));
+      getAttachment(attachment)
+        .then(result => setSource(result))
+        .catch(err =>  setSource(''));
     }
   }, [attachment])
 

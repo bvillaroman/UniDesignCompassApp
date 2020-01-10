@@ -1,4 +1,4 @@
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 import * as queries from '../graphql/queries';
 import config from '../aws-exports';
 
@@ -10,6 +10,11 @@ export async function getCompasses() {
   return compasses.data.listCompasss.items
 
 }
+
+export async function getAttachment(attachment){
+  return Storage.get(attachment.key)
+}
+  
 
 export async function getUser(id) {
   return API.graphql(graphqlOperation(queries.getUser, { id }));

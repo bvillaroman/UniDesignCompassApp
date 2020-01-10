@@ -35,6 +35,7 @@ const Layout = (props) => {
     // user authentications 
     useEffect(() => {
       if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
+        setLoading(true)
         Auth.currentAuthenticatedUser({ bypassCache: false   })
           .then(cognitoUser => {
             const { sub } = cognitoUser.attributes;
@@ -43,6 +44,7 @@ const Layout = (props) => {
           .then((res) => {
             if(res && res.hasOwnProperty("data") && res.data.getUser){
               loginUser(res.data.getUser) // Save to global store    
+              setLoading(false)
             } else {
               setLoading(false)
               localStorage.removeItem("authuser")
