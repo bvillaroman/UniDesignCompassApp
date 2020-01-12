@@ -17,13 +17,16 @@ const Dashboard = (props) => {
   const { user, loginUser } = useContext(GlobalContext);
   const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
-  const [compasses, setCompasses] = useState([])
+  const [ownerCompasses, setOwnerCompasses] = useState([])
   // const [newestProject, setNewestProject] = useState({})
+  const [teacherCompasses, setTeacherCompasses] = useState([])
+  const [memberCompasses, setMemberCompasses] = useState([])
+  const [readerCompasses, setReaderCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if(user.id){
+    if (user.id) {
       const owners = user.compass.items
 
       // finding the projects i am a member of:
@@ -34,7 +37,11 @@ const Dashboard = (props) => {
       const allMembers = user.member.items.map(res => res.compass)
       const allTeachers = user.teacher.items.map(res => res.compass)
       const allReaders = user.reader.items.map(res => res.compass)
-      setCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders].filter(res => res))
+      // setOwnerCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders].filter(res => res))
+      setOwnerCompasses([...owners])
+      setTeacherCompasses([...allTeachers])
+      setMemberCompasses([...allMembers])
+      setReaderCompasses([...allReaders])
       setLoading(false)
     }
 
@@ -55,7 +62,7 @@ const Dashboard = (props) => {
           getUser(user.id)
             .then((res) => {
               loginUser(res.data.getUser) // Save to global store                 
-            })    
+            })
             .catch(err => {
               localStorage.removeItem("authuser")
               setError(err.message)
@@ -78,10 +85,26 @@ const Dashboard = (props) => {
               <Title>Project Hub</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
-            {showModal && <CustomCompassForm setLoading={setLoading}/>}
-            <ProjectCreator setLoading={setLoading}/>
+            {showModal && <CustomCompassForm setLoading={setLoading} />}
+            <ProjectCreator setLoading={setLoading} />
+            {/* {
+              !error ? (ownerCompasses.length || memberCompasses.length ? (<><Feed compasses={ownerCompasses} type={"Past"} />  <Feed compasses={memberCompasses} type={"Member"} onShow={true}/> </>) : <div>You have no projects, start one from above! </div>)
+                : <div> Error !: {error}</div>
+            } */}
             {
-              !error ? (compasses.length ? <Feed compasses={compasses}/> : <div>You have no projects, start one from above! </div>)
+              !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} />) : <div>You have no projects, start one from above! </div>)
+                : <div> Error !: {error}</div>
+            }
+            {
+              !error ? (teacherCompasses.length ? (<Feed compasses={teacherCompasses} type={"Teacher"} onShow={true} />) : "")
+                : <div> Error !: {error}</div>
+            }
+            {
+              !error ? (memberCompasses.length ? (<Feed compasses={memberCompasses} type={"Member"} onShow={true} />) : "")
+                : <div> Error !: {error}</div>
+            }
+            {
+              !error ? (readerCompasses.length ? (<Feed compasses={readerCompasses} type={"Reader"} onShow={true} />) : "")
                 : <div> Error !: {error}</div>
             }
           </DashboardContainer>

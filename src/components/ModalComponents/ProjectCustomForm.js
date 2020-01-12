@@ -147,11 +147,13 @@ const CustomCompassForm = (props) => {
                       name="color"
                       value={steps[idx].color}
                       onChange={handleStepChange}>
-                      <CustomStepsOption>#5361FE</CustomStepsOption>
-                      <CustomStepsOption>#99EDCC</CustomStepsOption>
-                      <CustomStepsOption>#9D96B8</CustomStepsOption>
-                      <CustomStepsOption>#8D6A9F</CustomStepsOption>
-                      <CustomStepsOption>#03F7EB</CustomStepsOption>
+                      <CustomStepsOption>Blue</CustomStepsOption>
+                      <CustomStepsOption>Turquoise</CustomStepsOption>
+                      <CustomStepsOption>Lavender</CustomStepsOption>
+                      <CustomStepsOption>Purple</CustomStepsOption>
+                      <CustomStepsOption>Teal</CustomStepsOption>
+                      <CustomStepsOption>Pink</CustomStepsOption>
+                      <CustomStepsOption>Yellow</CustomStepsOption>
                     </CustomStepsSelect>
                     <CustomStepsRemoveButton onClick={() => handleRemove(idx)} icon={<FormClose />} />
                   </CustomStepsDiv2>
