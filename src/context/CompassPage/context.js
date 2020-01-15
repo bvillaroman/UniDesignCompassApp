@@ -1,5 +1,7 @@
 import React, { useReducer, createContext} from "react";
 import CompassReducer, { 
+  PAUSE_TIMER,
+  START_TIMER,
   UPDATE_COMPASS, 
   UPDATE_SESSION,
   ADD_INTERACTION,
@@ -24,7 +26,8 @@ export const initialState = {
   interactions: [],
   time: 0,
   interactionAdded: false,
-  interactionUpdated: false
+  interactionUpdated: false,
+  pause: false
 }
 
 export const CompassProvider = ({children}) => {
@@ -32,6 +35,8 @@ export const CompassProvider = ({children}) => {
   return (
     <CompassContext.Provider 
       value={{
+        pauseTimer: () => dispatch({type: PAUSE_TIMER}),
+        startTimer: () => dispatch({type: START_TIMER}),
         updateCompass: (compass) => dispatch({type: UPDATE_COMPASS, payload: compass}),
         updateSession: (session) => dispatch({type: UPDATE_SESSION, payload: session}),
         addInteraction: (interaction) => dispatch({type: ADD_INTERACTION, payload: interaction}),

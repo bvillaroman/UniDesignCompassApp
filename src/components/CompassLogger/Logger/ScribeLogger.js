@@ -12,65 +12,66 @@ import { Loader } from "../../../styles/layout"
 import { GlobalContext } from "../../../context/context"
 
 export const Logger = (props) => {
-  const { newestInteraction, addInteraction, compass } = useContext(CompassContext);
+  const { newestInteraction, addInteraction, compass,pause, startTimer, pauseTimer } = useContext(CompassContext);
   const { user } = useContext(GlobalContext)
+
+  const { duration, log_content, id, step} = newestInteraction
+
 
   const previousFooRef = useRef(newestInteraction);
 
   const scribe = compass.scribe.email === user.email
 
-  const intialStep = {
+  const initialStep = {
     name_of_step: "Notes",
-    color: "black",
+    color: "black"
   };
 
-  const [step, setStep] = useState(intialStep);
-  const [interactionTime, setInteractionTime] = useState(0);
-  const [log, setLog] = useState('');
-  const [start, setStart] = useState(false);
+  // const [step, setStep] = useState(intialStep);
+  // const [interactionTime, setInteractionTime] = useState(0);
+  // const [log, setLog] = useState('');
 
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
 
-    if (newestInteraction.id) {
+    if (id) {
 
       if (previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id) {
-        setStart(false)
-        const id = previousFooRef.current.id
+        pauseTimer()
+        const oldID = previousFooRef.current.id
         const newInteraction = {
-          id,
-          log_content: log ? log : " ",
-          duration: interactionTime,
+          id: oldID,
+          log_content: log_content ? log_content : " ",
+          duration
         }
 
         Mutation.updateInteraction(newInteraction)
           .then((res) => {
             previousFooRef.current = newestInteraction
-            const { log_content, step, duration } = newestInteraction
-            const parsedLog = log_content !== " " ? log_content : ""
-            setInteractionTime(duration)
-            setStep(step)
-            setLog(parsedLog)
+            // const { log_content, step, duration } = newestInteraction
+            // const parsedLog = log_content !== " " ? log_content : ""
+            // setInteractionTime(duration)
+            // setStep(newestInteraction.step)
+            // setLog(parsedLog)
             props.setLoading(false)
-            setStart(true);
+            startTimer();
           })
       } else if (compass.scribe.email === user.email) {
-        const { log_content, step, duration } = newestInteraction
-        const parsedLog = log_content !== " " ? log_content : ""
-        setInteractionTime(duration)
-        setStep(step)
-        setLog(parsedLog)
+        // const { log_content, step, duration } = newestInteraction
+        // const parsedLog = log_content !== " " ? log_content : ""
+        // setInteractionTime(duration)
+        // setStep(newestInteraction.step)
+        // setLog(parsedLog)
         props.setLoading(false)
-        setStart(true);
-      }
-      else {
-        const { log_content, step, duration } = newestInteraction
-        const parsedLog = log_content !== " " ? log_content : ""
-        setInteractionTime(duration)
-        setStep(step)
-        setLog(parsedLog)
+        startTimer();
+      }  else {
+        // const { log_content, step } = newestInteraction
+        // const parsedLog = log_content !== " " ? log_content : ""
+        // setInteractionTime(duration)
+        // setStep(newestInteraction.step)
+        // setLog(parsedLog)
         props.setLoading(false)
-        setStart(false);
+        pauseTimer();
       }
     }
 
@@ -81,57 +82,62 @@ export const Logger = (props) => {
   useEffect(() => {
     let interval = null;
 
-    if (newestInteraction.hasOwnProperty("id")) {
-      if (start) {
+    if (id) {
+      if (!pause) {
         interval = setInterval(() => {
-          addInteraction({ duration: interactionTime + 1 })
-          setInteractionTime(interactionTime + 1)
+          addInteraction({ duration: duration + 1 })
+          // setInteractionTime(interactionTime + 1)
         }, 1000)
 
-      } else if (!start) {
+      } else if (pause) {
         clearInterval(interval)
       }
       return () => clearInterval(interval);
     }
 
     // eslint-disable-next-line
-  }, [start, interactionTime, newestInteraction])
+  }, [ id, duration , pause])
 
   // pause the timer
-  const pause = (e) => {
+  const onPause = (e) => {
     const newInteraction = {
       id: newestInteraction.id,
-      log_content: log ? log : " ",
-      duration: interactionTime,
+      log_content: newestInteraction.log_content ? newestInteraction.log_content : " ",
+      duration: newestInteraction.duration,
     }
-    if (start) {
+    if (!pause) {
       Mutation.updateInteraction(newInteraction)
+      return pauseTimer()
+    } else {
+      startTimer()
     }
-
-    return setStart(!start)
+    
   }
+
+  const color = step ? step.color: initialStep.color
+  const name = step? step.name_of_step : initialStep.name_of_step
 
   return (
     <>
       <LoggerHeaderContainer height="69px">
-        <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
+        <LoggerHeaderText><LoggerTitle color={color}>{name}</LoggerTitle> </LoggerHeaderText>
         <StepClock>
           {
             props.loading ? <Loader /> : ( /* show the timer */
               <>
-                {translateTime(interactionTime)}
-                {scribe ? <TimerButton color={step.color} onClick={pause} start={start} /> : ""}
+                {translateTime(duration)}
+                {scribe ? <TimerButton color={color} onClick={onPause} start={!pause} /> : ""}
               </>
             )
           }
         </StepClock>
       </LoggerHeaderContainer>
       <LoggerInput
-        placeholder={step.name_of_step !== "Notes" ? "Enter Log" : "Select a log or create a new log."}
-        value={log}
-        onChange={event => setLog(event.target.value)}
-        color={step.color}
-        disabled={!start}
+        placeholder={name !== "Notes" ? "Enter Log" : "Select a log or create a new log."}
+        value={log_content}
+        onChange={e => addInteraction({ log_content: e.target.value})}
+        color={color}
+        disabled={pause}
       />
     </>
   );
