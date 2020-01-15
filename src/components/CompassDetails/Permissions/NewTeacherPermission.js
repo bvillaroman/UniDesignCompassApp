@@ -54,7 +54,7 @@ const TeachersPermission = () => {
   return (
     <PermissionContainer>
       <PermissionHeaderBar>
-        <PermissionHeader>Add Teacher</PermissionHeader>
+        <PermissionHeader>Add Team Leader</PermissionHeader>
       </PermissionHeaderBar>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>

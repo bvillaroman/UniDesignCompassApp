@@ -23,7 +23,6 @@ export const CompassFeed = ({ compasses, type, onShow }) => {
   }
 
   const onDelete = (compass) => {
-    console.log("compass being deleted")
     deleteCompass(compass.id)
       .then(res => {
         getCompass(res.data.deleteCompass.compass.id)
@@ -52,7 +51,7 @@ export const CompassFeed = ({ compasses, type, onShow }) => {
                     <CompassTitle onClick={e => goToCompass(compass)} key={key}>{compass.name_of_compass}</CompassTitle>
                     <CompassDescription onClick={e => goToCompass(compass)} key={key}>{compass.description_of_compass}</CompassDescription>
                     <CompassDate onClick={e => goToCompass(compass)} key={key}>{dateFormatter(compass.createdAt)}</CompassDate>
-                    {compass.owner.email === user.email ? <CompassRowMore><CompassRowMoreButton onDelete={e => onDelete(compass)} /></CompassRowMore> : <InvisCompassRowMore><InvisCompassRowMoreButton /></InvisCompassRowMore>}
+                    {onShow ? <CompassRowMore><CompassRowMoreButton onDelete={e => onDelete(compass)} /></CompassRowMore> : <InvisCompassRowMore><InvisCompassRowMoreButton /></InvisCompassRowMore>}
                   </ProjectCard>
                 ))
               }

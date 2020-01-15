@@ -57,8 +57,8 @@ const DisplayPermission = () => {
     <PermissionContainer>
       <PermissionHeader>All Users</PermissionHeader>
       <PermissionFormContainer>
-        <PermissionType>Teachers: {teachers.map((t) => <DeleteTeachers id={t.id} email={t.email} removeTeacher={removeTeacher} />)}</PermissionType>
-        <PermissionType>Team Leader: {teamLeader}</PermissionType>
+        <PermissionType>Owner: {teamLeader}</PermissionType>
+        <PermissionType>Team Leaders: {teachers.map((t) => <DeleteTeachers id={t.id} email={t.email} removeTeacher={removeTeacher} />)}</PermissionType>        
         <PermissionType>Scribe: {scribe}</PermissionType>
         {/* <PermissionType>Members: {members.map((m) => <h4>{m.email}</h4>)}</PermissionType> */}
         <PermissionType>Members: {members.map((m) => <DeleteMembers id={m.id} email={m.email} removeMember={removeMember} />)}</PermissionType>
