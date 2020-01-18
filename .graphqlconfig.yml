@@ -10,4 +10,4 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-        maxDepth: 8
+        maxDepth: 5
