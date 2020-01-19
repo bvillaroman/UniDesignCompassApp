@@ -1,14 +1,15 @@
 import React, { useEffect, useContext, useState, Suspense, lazy } from "react";
+import styled from "styled-components"
 
 import { CompassContext } from "../context/CompassPage/context"
 
 // import { updateInteractionSub, createCommentSub, createAttachmentSub } from "../utils/subscriptions"
 // import { updateInteractionSub, createAttachmentSub } from "../utils/subscriptions"
-import { getCompass, getSession, getInteraction } from '../utils/queries'
+import { getSession, getInteraction } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 
 import { MainView } from "../styles/CompassPage"
-import { Loader, ErrorContainer } from "../styles/layout"
+import { Loader } from "../styles/layout"
 
 const CompassLogger = lazy(() => import( "../components/CompassLogger"));
 
@@ -17,8 +18,6 @@ const CompassPage = (props) => {
     compass,
     session,
     updateSession,
-    updateCompass, 
-    clearCompass,
     clearSession,     
     updateInteractions, 
     clearInteractions,
@@ -30,7 +29,7 @@ const CompassPage = (props) => {
   } = useContext(CompassContext);
   const [loading, setLoading] = useState(true)
 
-  const { compassID, sessionID, interactionID } = queryStringParser(props.location.search)
+  const { sessionID, interactionID } = queryStringParser(props.location.search)
 
   // subscription for any new project being created
   // useEffect(() => {
@@ -105,28 +104,6 @@ const CompassPage = (props) => {
   //   // eslint-disable-next-line
   // }, [])
 
-  // setting up the compass through the url
-  useEffect(() => {
-    if (compassID !== "") {
-      setLoading(true)
-      getCompass(compassID)
-        .then((res) => {
-          updateCompass(res.data.getCompass);
-          setLoading(false)
-        })
-        .catch((err) => {          
-          clearCompass();
-          setLoading(false)
-          console.log(err)
-        })
-    } else {
-      clearCompass()      
-    } 
-
-  // eslint-disable-next-line
-  }, [compassID])
-
-
   // setting up the session through url
   useEffect(() => {
     
@@ -200,3 +177,12 @@ const CompassPage = (props) => {
   )
 }
 export default CompassPage;
+
+const ErrorContainer = styled.h4`
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+`
