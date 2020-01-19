@@ -32,37 +32,37 @@ const Layout = (props) => {
 
   const {compassID} = queryStringParser(props.location.search)
 
-    // user authentications 
-    useEffect(() => {
-      if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
-        setLoading(true)
-        Auth.currentAuthenticatedUser({ bypassCache: false   })
-          .then(cognitoUser => {
-            const { sub } = cognitoUser.attributes;
-            return getUser(sub)
-          })
-          .then((res) => {
-            if(res && res.hasOwnProperty("data") && res.data.getUser){
-              loginUser(res.data.getUser) // Save to global store    
-              setLoading(false)
-            } else {
-              setLoading(false)
-              localStorage.removeItem("authuser")
-              logoutUser();
-            }
-          })
-          .catch(err => {
+  // user authentications 
+  useEffect(() => {
+    if (!user.hasOwnProperty("email") && localStorage.getItem("authuser")) {
+      setLoading(true)
+      Auth.currentAuthenticatedUser({ bypassCache: false   })
+        .then(cognitoUser => {
+          const { sub } = cognitoUser.attributes;
+          return getUser(sub)
+        })
+        .then((res) => {
+          if(res && res.hasOwnProperty("data") && res.data.getUser){
+            loginUser(res.data.getUser) // Save to global store    
+            setLoading(false)
+          } else {
             setLoading(false)
             localStorage.removeItem("authuser")
-            alert(err.message)
             logoutUser();
-          });
-      } else {
-        setLoading(false)
-      }
-  
-    // eslint-disable-next-line
-    }, [loginUser,user]) 
+          }
+        })
+        .catch(err => {
+          setLoading(false)
+          localStorage.removeItem("authuser")
+          alert(err.message)
+          logoutUser();
+        });
+    } else {
+      setLoading(false)
+    }
+
+  // eslint-disable-next-line
+  }, [loginUser,user]) 
 
   // setting up the compass through the url
   useEffect(() => {
@@ -84,7 +84,7 @@ const Layout = (props) => {
     } 
 
   // eslint-disable-next-line
-  }, [compassID])
+  }, [compassID, props.location.pathname])
 
   return (
     <LayoutContainer >
