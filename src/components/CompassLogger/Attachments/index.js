@@ -35,7 +35,7 @@ const Attachments = (props) => {
       setLoading(false)
       if (interaction.attachments.items.length > 0) {
         interaction.attachments.items.map((attachment, i) => {
-          return arrAttachment.push(attachment)
+          return arrAttachment.push({...attachment, step: interaction.step})
         })
       }
 
@@ -45,16 +45,28 @@ const Attachments = (props) => {
     // eslint-disable-next-line
   }, [interaction])
   
+  // for all attachments
   useEffect(() => { 
     let array = []
     if (showAll && session.hasOwnProperty("id")){
       setLoading(false)
-      array = session.interactions.items.map(item => item.attachments.items).filter(arr => arr.length > 0).flat()
+      let tempArray = session.interactions.items.map(interaction => {
+        if (interaction.attachments.items && interaction.attachments.items.length > 0){
+          // get all attachments
+          let allAttachments = interaction.attachments.items.flat()
+          // assign their step to them
+          return allAttachments.map(attachment => ({
+            ...attachment,
+            step: interaction.step
+          }));
+        }
+      })
+      array = tempArray.filter(i => i).flat()
     } else if ( !showAll && interaction.hasOwnProperty("id")) {
       setLoading(false)
       if (interaction.attachments.items.length > 0) {
         interaction.attachments.items.map((attachment, i) => {
-          return array.push(attachment)
+          return array.push({...attachment, step: interaction.step})
         })
       }
     }
