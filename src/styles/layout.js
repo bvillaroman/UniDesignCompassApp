@@ -30,6 +30,15 @@ export const MainViewContainer = styled(Box)`
     //block-size: inherit;
   }  
 `;
+
+export const ErrorContainer = styled.h4`
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+`
 export const Loader = () => (
   <div className="lds-ring">
     <div></div>
