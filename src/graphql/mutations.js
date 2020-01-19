@@ -19,15 +19,40 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -42,26 +67,81 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -80,15 +160,40 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -103,26 +208,81 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -141,15 +301,40 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -164,26 +349,81 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -203,15 +443,40 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -221,15 +486,40 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -239,6 +529,19 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -248,6 +551,19 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -257,6 +573,19 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -266,6 +595,19 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -276,6 +618,13 @@ export const createUser = `mutation CreateUser($input: CreateUserInput!) {
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -303,15 +652,40 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -326,26 +700,81 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -364,15 +793,40 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -387,26 +841,81 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -425,15 +934,40 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -448,26 +982,81 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -487,15 +1076,40 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -505,15 +1119,40 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -523,6 +1162,19 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -532,6 +1184,19 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -541,6 +1206,19 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -550,6 +1228,19 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -560,6 +1251,13 @@ export const updateUser = `mutation UpdateUser($input: UpdateUserInput!) {
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -587,15 +1285,40 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -610,26 +1333,81 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -648,15 +1426,40 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -671,26 +1474,81 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -709,15 +1567,40 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -732,26 +1615,81 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -771,15 +1709,40 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -789,15 +1752,40 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -807,6 +1795,19 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -816,6 +1817,19 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -825,6 +1839,19 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -834,6 +1861,19 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -844,6 +1884,13 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -875,6 +1922,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -882,6 +1941,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -897,6 +1983,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -904,6 +2002,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -919,6 +2044,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -926,6 +2063,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -942,26 +2106,81 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -985,6 +2204,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -994,6 +2226,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1003,6 +2248,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1013,6 +2271,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1028,6 +2313,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1037,6 +2335,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1046,6 +2357,19 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1056,6 +2380,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1071,6 +2422,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1078,6 +2441,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1093,6 +2483,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1100,6 +2502,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1115,6 +2544,18 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1122,6 +2563,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1138,11 +2606,50 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -1161,6 +2668,33 @@ export const createTeacherCompasses = `mutation CreateTeacherCompasses($input: C
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1191,6 +2725,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1198,6 +2744,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1213,6 +2786,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1220,6 +2805,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1235,6 +2847,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1242,6 +2866,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1258,26 +2909,81 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -1301,6 +3007,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1310,6 +3029,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1319,6 +3051,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1329,6 +3074,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1344,6 +3116,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1353,6 +3138,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1362,6 +3160,19 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1372,6 +3183,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1387,6 +3225,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1394,6 +3244,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1409,6 +3286,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1416,6 +3305,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1431,6 +3347,18 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1438,6 +3366,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1454,11 +3409,50 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -1477,6 +3471,33 @@ export const updateTeacherCompasses = `mutation UpdateTeacherCompasses($input: U
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1507,6 +3528,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1514,6 +3547,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1529,6 +3589,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1536,6 +3608,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1551,6 +3650,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1558,6 +3669,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1574,26 +3712,81 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -1617,6 +3810,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1626,6 +3832,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1635,6 +3854,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1645,6 +3877,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1660,6 +3919,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1669,6 +3941,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1678,6 +3963,19 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1688,6 +3986,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1703,6 +4028,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1710,6 +4047,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1725,6 +4089,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1732,6 +4108,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1747,6 +4150,18 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1754,6 +4169,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1770,11 +4212,50 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -1793,6 +4274,33 @@ export const deleteTeacherCompasses = `mutation DeleteTeacherCompasses($input: D
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1823,6 +4331,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1830,6 +4350,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1845,6 +4392,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1852,6 +4411,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1867,6 +4453,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -1874,6 +4472,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -1890,26 +4515,81 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -1933,6 +4613,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1942,6 +4635,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1951,6 +4657,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1961,6 +4680,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -1976,6 +4722,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1985,6 +4744,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -1994,6 +4766,19 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2004,6 +4789,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2019,6 +4831,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2026,6 +4850,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2041,6 +4892,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2048,6 +4911,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2063,6 +4953,18 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2070,6 +4972,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2086,11 +5015,50 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -2109,6 +5077,33 @@ export const createMemberCompasses = `mutation CreateMemberCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2139,6 +5134,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2146,6 +5153,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2161,6 +5195,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2168,6 +5214,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2183,6 +5256,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2190,6 +5275,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2206,26 +5318,81 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -2249,6 +5416,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2258,6 +5438,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2267,6 +5460,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2277,6 +5483,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2292,6 +5525,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2301,6 +5547,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2310,6 +5569,19 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2320,6 +5592,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2335,6 +5634,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2342,6 +5653,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2357,6 +5695,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2364,6 +5714,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2379,6 +5756,18 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2386,6 +5775,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2402,11 +5818,50 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -2425,6 +5880,33 @@ export const updateMemberCompasses = `mutation UpdateMemberCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2455,6 +5937,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2462,6 +5956,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2477,6 +5998,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2484,6 +6017,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2499,6 +6059,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2506,6 +6078,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2522,26 +6121,81 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -2565,6 +6219,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2574,6 +6241,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2583,6 +6263,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2593,6 +6286,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2608,6 +6328,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2617,6 +6350,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2626,6 +6372,19 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2636,6 +6395,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2651,6 +6437,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2658,6 +6456,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2673,6 +6498,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2680,6 +6517,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2695,6 +6559,18 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2702,6 +6578,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2718,11 +6621,50 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -2741,6 +6683,33 @@ export const deleteMemberCompasses = `mutation DeleteMemberCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2771,6 +6740,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2778,6 +6759,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2793,6 +6801,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2800,6 +6820,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2815,6 +6862,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2822,6 +6881,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2838,26 +6924,81 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -2881,6 +7022,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2890,6 +7044,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2899,6 +7066,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2909,6 +7089,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2924,6 +7131,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2933,6 +7153,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2942,6 +7175,19 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -2952,6 +7198,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -2967,6 +7240,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2974,6 +7259,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -2989,6 +7301,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -2996,6 +7320,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3011,6 +7362,18 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3018,6 +7381,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3034,11 +7424,50 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -3057,6 +7486,33 @@ export const createReaderCompasses = `mutation CreateReaderCompasses($input: Cre
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3087,6 +7543,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3094,6 +7562,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3109,6 +7604,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3116,6 +7623,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3131,6 +7665,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3138,6 +7684,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3154,26 +7727,81 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -3197,6 +7825,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3206,6 +7847,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3215,6 +7869,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3225,6 +7892,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -3240,6 +7934,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3249,6 +7956,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3258,6 +7978,19 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3268,6 +8001,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -3283,6 +8043,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3290,6 +8062,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3305,6 +8104,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3312,6 +8123,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3327,6 +8165,18 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3334,6 +8184,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3350,11 +8227,50 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -3373,6 +8289,33 @@ export const updateReaderCompasses = `mutation UpdateReaderCompasses($input: Upd
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3403,6 +8346,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3410,6 +8365,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3425,6 +8407,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3432,6 +8426,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3447,6 +8468,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3454,6 +8487,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3470,26 +8530,81 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -3513,6 +8628,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3522,6 +8650,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3531,6 +8672,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3541,6 +8695,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -3556,6 +8737,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3565,6 +8759,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3574,6 +8781,19 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -3584,6 +8804,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -3599,6 +8846,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3606,6 +8865,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3621,6 +8907,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3628,6 +8926,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3643,6 +8968,18 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3650,6 +8987,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3666,11 +9030,50 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -3689,6 +9092,33 @@ export const deleteReaderCompasses = `mutation DeleteReaderCompasses($input: Del
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3720,6 +9150,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3727,6 +9169,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3742,6 +9211,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3749,6 +9230,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3764,6 +9272,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3771,6 +9291,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3787,26 +9334,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -3829,6 +9431,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3836,6 +9450,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3851,6 +9492,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3858,6 +9511,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3873,6 +9553,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -3880,6 +9572,33 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -3896,26 +9615,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -3934,15 +9708,40 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -3957,26 +9756,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -3995,15 +9849,40 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4018,26 +9897,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4056,15 +9990,40 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4079,26 +10038,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4122,26 +10136,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4150,6 +10219,18 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -4160,6 +10241,22 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -4184,26 +10281,81 @@ export const createCompass = `mutation CreateCompass($input: CreateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4236,6 +10388,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4243,6 +10407,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4258,6 +10449,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4265,6 +10468,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4280,6 +10510,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4287,6 +10529,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4303,26 +10572,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4345,6 +10669,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4352,6 +10688,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4367,6 +10730,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4374,6 +10749,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4389,6 +10791,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4396,6 +10810,33 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4412,26 +10853,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4450,15 +10946,40 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4473,26 +10994,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4511,15 +11087,40 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4534,26 +11135,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4572,15 +11228,40 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4595,26 +11276,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4638,26 +11374,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4666,6 +11457,18 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -4676,6 +11479,22 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -4700,26 +11519,81 @@ export const updateCompass = `mutation UpdateCompass($input: UpdateCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4752,6 +11626,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4759,6 +11645,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4774,6 +11687,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4781,6 +11706,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4796,6 +11748,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4803,6 +11767,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4819,26 +11810,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4861,6 +11907,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4868,6 +11926,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4883,6 +11968,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4890,6 +11987,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4905,6 +12029,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -4912,6 +12048,33 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -4928,26 +12091,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -4966,15 +12184,40 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -4989,26 +12232,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -5027,15 +12325,40 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -5050,26 +12373,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -5088,15 +12466,40 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -5111,26 +12514,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -5154,26 +12612,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -5182,6 +12695,18 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -5192,6 +12717,22 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5216,26 +12757,81 @@ export const deleteCompass = `mutation DeleteCompass($input: DeleteCompassInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -5268,6 +12864,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5277,6 +12886,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5286,6 +12908,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5296,6 +12931,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5311,6 +12973,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5320,6 +12995,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5329,6 +13017,19 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5339,6 +13040,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5354,6 +13082,18 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5361,6 +13101,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5376,6 +13143,18 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5383,6 +13162,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5398,6 +13204,18 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5405,6 +13223,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5421,11 +13266,50 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5444,6 +13328,33 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5460,15 +13371,40 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -5483,11 +13419,50 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5512,11 +13487,50 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5532,12 +13546,46 @@ export const createSession = `mutation CreateSession($input: CreateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         attachments {
           items {
             name
             type
+            interaction {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             bucket
             region
             key
@@ -5573,6 +13621,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5582,6 +13643,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5591,6 +13665,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5601,6 +13688,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5616,6 +13730,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5625,6 +13752,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5634,6 +13774,19 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5644,6 +13797,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5659,6 +13839,18 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5666,6 +13858,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5681,6 +13900,18 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5688,6 +13919,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5703,6 +13961,18 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5710,6 +13980,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5726,11 +14023,50 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5749,6 +14085,33 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5765,15 +14128,40 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -5788,11 +14176,50 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5817,11 +14244,50 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -5837,12 +14303,46 @@ export const updateSession = `mutation UpdateSession($input: UpdateSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         attachments {
           items {
             name
             type
+            interaction {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             bucket
             region
             key
@@ -5878,6 +14378,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5887,6 +14400,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5896,6 +14422,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5906,6 +14445,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5921,6 +14487,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5930,6 +14509,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5939,6 +14531,19 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -5949,6 +14554,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -5964,6 +14596,18 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5971,6 +14615,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -5986,6 +14657,18 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -5993,6 +14676,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6008,6 +14718,18 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -6015,6 +14737,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6031,11 +14780,50 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -6054,6 +14842,33 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6070,15 +14885,40 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6093,11 +14933,50 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -6122,11 +15001,50 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -6142,12 +15060,46 @@ export const deleteSession = `mutation DeleteSession($input: DeleteSessionInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         attachments {
           items {
             name
             type
+            interaction {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             bucket
             region
             key
@@ -6184,15 +15136,40 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6202,15 +15179,40 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6220,6 +15222,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6229,6 +15244,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6238,6 +15266,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6247,6 +15288,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6257,6 +15311,13 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6271,12 +15332,37 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6293,6 +15379,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6300,8 +15399,22 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -6326,15 +15439,40 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6344,15 +15482,40 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6362,6 +15525,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6371,6 +15547,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6380,6 +15569,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6389,6 +15591,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6399,6 +15614,13 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6419,6 +15641,19 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6426,8 +15661,22 @@ export const createInteraction = `mutation CreateInteraction($input: CreateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -6464,15 +15713,40 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6482,15 +15756,40 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6500,6 +15799,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6509,6 +15821,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6518,6 +15843,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6527,6 +15865,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6537,6 +15888,13 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6551,12 +15909,37 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6573,6 +15956,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6580,8 +15976,22 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -6606,15 +16016,40 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6624,15 +16059,40 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6642,6 +16102,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6651,6 +16124,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6660,6 +16146,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6669,6 +16168,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6679,6 +16191,13 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6699,6 +16218,19 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6706,8 +16238,22 @@ export const updateInteraction = `mutation UpdateInteraction($input: UpdateInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -6744,15 +16290,40 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6762,15 +16333,40 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6780,6 +16376,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6789,6 +16398,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6798,6 +16420,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6807,6 +16442,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6817,6 +16465,13 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6831,12 +16486,37 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -6853,6 +16533,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6860,8 +16553,22 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -6886,15 +16593,40 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6904,15 +16636,40 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -6922,6 +16679,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6931,6 +16701,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6940,6 +16723,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6949,6 +16745,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -6959,6 +16768,13 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -6979,6 +16795,19 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -6986,8 +16815,22 @@ export const deleteInteraction = `mutation DeleteInteraction($input: DeleteInter
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -7024,6 +16867,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7033,6 +16889,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7042,6 +16911,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7052,6 +16934,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7067,6 +16976,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7076,6 +16998,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7085,6 +17020,19 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7095,6 +17043,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7110,6 +17085,18 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7117,6 +17104,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7132,6 +17146,18 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7139,6 +17165,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7154,6 +17207,18 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7161,6 +17226,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7177,11 +17269,50 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -7200,6 +17331,33 @@ export const createStep = `mutation CreateStep($input: CreateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7232,6 +17390,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7241,6 +17412,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7250,6 +17434,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7260,6 +17457,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7275,6 +17499,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7284,6 +17521,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7293,6 +17543,19 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7303,6 +17566,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7318,6 +17608,18 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7325,6 +17627,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7340,6 +17669,18 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7347,6 +17688,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7362,6 +17730,18 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7369,6 +17749,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7385,11 +17792,50 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -7408,6 +17854,33 @@ export const updateStep = `mutation UpdateStep($input: UpdateStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7440,6 +17913,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7449,6 +17935,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7458,6 +17957,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7468,6 +17980,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7483,6 +18022,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7492,6 +18044,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7501,6 +18066,19 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -7511,6 +18089,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7526,6 +18131,18 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7533,6 +18150,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7548,6 +18192,18 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7555,6 +18211,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7570,6 +18253,18 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -7577,6 +18272,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7593,11 +18315,50 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
           comments {
+            items {
+              id
+              content
+              createdAt
+            }
             nextToken
           }
           interactions {
+            items {
+              id
+              duration
+              log_content
+              comments
+              createdAt
+            }
             nextToken
           }
         }
@@ -7616,6 +18377,33 @@ export const deleteStep = `mutation DeleteStep($input: DeleteStepInput!) {
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -7650,26 +18438,81 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -7678,6 +18521,18 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -7688,6 +18543,22 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7709,26 +18580,81 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -7743,6 +18669,22 @@ export const createAttachment = `mutation CreateAttachment($input: CreateAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           bucket
           region
@@ -7783,26 +18725,81 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -7811,6 +18808,18 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -7821,6 +18830,22 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7842,26 +18867,81 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -7876,6 +18956,22 @@ export const updateAttachment = `mutation UpdateAttachment($input: UpdateAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           bucket
           region
@@ -7916,26 +19012,81 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -7944,6 +19095,18 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             id
             content
             createdAt
+            commenter {
+              id
+              first_name
+              last_name
+              email
+            }
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
           }
           nextToken
         }
@@ -7954,6 +19117,22 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           nextToken
         }
@@ -7975,26 +19154,81 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -8009,6 +19243,22 @@ export const deleteAttachment = `mutation DeleteAttachment($input: DeleteAttachm
             log_content
             comments
             createdAt
+            session {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
+            step {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
+            attachments {
+              nextToken
+            }
           }
           bucket
           region
@@ -8044,6 +19294,18 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8051,6 +19313,33 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8066,6 +19355,18 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8073,6 +19374,33 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8088,6 +19416,18 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8095,6 +19435,33 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8111,26 +19478,81 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -8154,15 +19576,40 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8172,15 +19619,40 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8190,6 +19662,19 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8199,6 +19684,19 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8208,6 +19706,19 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8217,6 +19728,19 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -8227,6 +19751,13 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8241,12 +19772,37 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8263,6 +19819,19 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -8270,8 +19839,22 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -8302,6 +19885,18 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8309,6 +19904,33 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8324,6 +19946,18 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8331,6 +19965,33 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8346,6 +20007,18 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8353,6 +20026,33 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8369,26 +20069,81 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -8412,15 +20167,40 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8430,15 +20210,40 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8448,6 +20253,19 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8457,6 +20275,19 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8466,6 +20297,19 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8475,6 +20319,19 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -8485,6 +20342,13 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8499,12 +20363,37 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8521,6 +20410,19 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -8528,8 +20430,22 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
@@ -8560,6 +20476,18 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8567,6 +20495,33 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8582,6 +20537,18 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8589,6 +20556,33 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8604,6 +20598,18 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           compass {
             id
@@ -8611,6 +20617,33 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             description_of_compass
             createdAt
             compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+            }
+            teachers {
+              nextToken
+            }
+            members {
+              nextToken
+            }
+            readers {
+              nextToken
+            }
+            sessions {
+              nextToken
+            }
+            steps {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8627,26 +20660,81 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           scribe {
             id
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           members {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+            }
             nextToken
           }
           steps {
+            items {
+              id
+              name_of_step
+              description_of_step
+              color
+              createdAt
+            }
             nextToken
           }
         }
@@ -8670,15 +20758,40 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8688,15 +20801,40 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
           last_name
           email
           teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           member {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+            }
             nextToken
           }
           compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
             nextToken
           }
         }
@@ -8706,6 +20844,19 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8715,6 +20866,19 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8724,6 +20888,19 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            user {
+              id
+              first_name
+              last_name
+              email
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8733,6 +20910,19 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           nextToken
         }
@@ -8743,6 +20933,13 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           nextToken
         }
@@ -8757,12 +20954,37 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             first_name
             last_name
             email
+            teacher {
+              nextToken
+            }
+            member {
+              nextToken
+            }
+            reader {
+              nextToken
+            }
+            compass {
+              nextToken
+            }
           }
           session {
             id
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
         }
         nextToken
@@ -8779,6 +21001,19 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             name_of_session
             description_of_session
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
+            comments {
+              nextToken
+            }
+            interactions {
+              nextToken
+            }
           }
           step {
             id
@@ -8786,8 +21021,22 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
             description_of_step
             color
             createdAt
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+            }
           }
           attachments {
+            items {
+              name
+              type
+              bucket
+              region
+              key
+            }
             nextToken
           }
         }
