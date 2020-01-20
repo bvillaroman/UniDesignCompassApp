@@ -6,16 +6,29 @@ import { navigate } from "gatsby"
 
 import translateTime from "../../../utils/translateTime"
 import {CompassContext} from "../../../context/CompassPage/context"
+import * as Mutation from '../../../utils/mutations'
+
 
 const Interaction = (props) => {
-  const { compass, session, interaction } = useContext(CompassContext);
+  const { compass, session, interaction, interactionAdded, newestInteraction,pauseTimer } = useContext(CompassContext);
   const { step = {name_of_step: "", color: ""}, duration = 0, id } = props.interaction;  
 
-  const openReviewLog = (evt) => {    
+  const openReviewLog = async (evt) => {    
     evt.preventDefault()
+    // clicking addInteraction when 
+
     if(interaction.id !== id){
       props.setLoading(true);
-      navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${props.interaction.id}`)
+      if(interactionAdded){
+        pauseTimer()
+        const newInteraction = {
+          id : newestInteraction.id,
+          log_content: newestInteraction.log_content,
+          duration: newestInteraction.duration,
+        }
+        await Mutation.updateInteraction(newInteraction)        
+      }
+      navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${id}`)
     }
   }
 

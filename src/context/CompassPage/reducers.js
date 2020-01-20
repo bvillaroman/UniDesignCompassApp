@@ -1,5 +1,7 @@
 import {initialState} from "./context"
 
+export const PAUSE_TIMER = "PAUSE_TIMER";
+export const START_TIMER = "START_TIMER";
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
@@ -60,6 +62,16 @@ const clearTime = (state) => ({ ...state, time: 0})
 
 export default (state,{type,payload}) => {
   switch(type){
+    case PAUSE_TIMER:
+      return {
+        ...state, 
+        pause: true
+      }  
+    case START_TIMER:
+      return {
+        ...state, 
+        pause: false
+      }  
     case UPDATE_COMPASS:
       return updateCompass(payload, state);
     case UPDATE_SESSION:

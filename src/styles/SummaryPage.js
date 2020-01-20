@@ -224,8 +224,9 @@ export const SummaryTableCellBody = styled(TableCell)`
 `;
 
 export const SummaryTdBody = styled.td`
-  //border-bottom: solid 1px;
-  //border: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background-color: ${props => props.color ? props.color : "transparent"};
   padding: 0.2rem 0.5rem;
 `;

@@ -1,16 +1,16 @@
 import React,{ useEffect,useState} from "react";
 import styled from "styled-components"
 import { Image, Document, Multimedia} from 'grommet-icons';
-import { Storage } from 'aws-amplify'
+import { getAttachment } from '../../../utils/queries'
 
 const Attachment = ({attachment}) => {
   const [source, setSource] = useState("")
   
   useEffect(() => {
     if (attachment.hasOwnProperty("key")){
-      Storage.get(attachment.key)
-      .then(result => setSource(result))
-      .catch(err =>  setSource(''));
+      getAttachment(attachment)
+        .then(result => setSource(result))
+        .catch(err =>  setSource(''));
     }
   }, [attachment])
 
@@ -18,7 +18,7 @@ const Attachment = ({attachment}) => {
     <AttachmentLinkStyle href={source} target="_blank" rel="noopener noreferrer">
       <AttachmentLinkContainer>
         <AttachmentItemButton attachment={attachment}/>
-        <AttachmentText color={attachment.interaction.step.color}>{attachment.interaction.step.name_of_step}</AttachmentText>
+        <AttachmentText color={attachment.step.color}>{attachment.step.name_of_step}</AttachmentText>
       </AttachmentLinkContainer>      
     </AttachmentLinkStyle>
   );
@@ -67,9 +67,14 @@ export const AttachmentItem = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  text-align: left;
   justify-content: flex-start;
   span {
     padding-left: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
   }
   svg {
     width: 2rem;

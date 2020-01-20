@@ -4,26 +4,28 @@ import DashboardReducer, { UPDATE_FORM, SUBMIT_FORM,SWITCH_TAB,UPDATE_ERROR, CLE
 // CONTEXT
 export const DashboardContext = createContext();
 
+export const initialState = {
+  form : {
+    title: "",
+    description: "",
+    compassType: "",
+    steps: [],
+    admins: [],
+    readers: []
+  },
+  errors: {
+    title: "",
+    description: "",
+    compassType: "",
+    steps: [],
+    admins: [],
+    readers: []
+  },
+  tab: 0
+}
+
 export const DashboardProvider = ({children}) => {
-  const [DashboardState,dispatch] = useReducer(DashboardReducer, {
-    form : {
-      title: "",
-      description: "",
-      compassType: "",
-      steps: [],
-      admins: [],
-      readers: []
-    },
-    errors: {
-      title: "",
-      description: "",
-      compassType: "",
-      steps: [],
-      admins: [],
-      readers: []
-    },
-    tab: 0
-  })
+  const [DashboardState,dispatch] = useReducer(DashboardReducer, initialState)
   return (
     <DashboardContext.Provider 
       value={{

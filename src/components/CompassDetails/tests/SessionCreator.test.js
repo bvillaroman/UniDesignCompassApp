@@ -1,6 +1,6 @@
 import React from "react";
-import { CompassContext } from "../../../../context/CompassPage/context"
-import { ReviewModalContext } from "../../../../context/ReviewModal/context"
+import { CompassContext } from "../../../context/CompassPage/context"
+import { ReviewModalContext } from "../../../context/ReviewModal/context"
 import SessionCreator from "../SessionCreator"
 import {render, waitForElement, cleanup, fireEvent} from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'

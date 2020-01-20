@@ -372,10 +372,16 @@ export const SessionRowDate = styled(Box)`
   white-space: nowrap;
   overflow: hidden;
 `
-export const SessionRowMore = styled(Box)`
+export const CompassRowMore = styled(Box)`
   padding: 0 1rem;
   width: 10%;
 `
+
+export const InvisCompassRowMore = styled(Box)`
+  padding: 0 1rem;
+  width: 10%;
+`
+
 const SessionRowMoreStyle = styled(Menu)`
   svg {
     transform: rotate(90deg);
@@ -399,15 +405,25 @@ const SessionRowMoreStyle = styled(Menu)`
   border-radius: 100%;
   text-align: center;
 `
-export const SessionRowMoreButton = ({ onDelete, onEdit }) => (
+
+const InvisSessionRowMoreStyle = styled(Menu)`
+  opacity: 0;
+  display: none;
+`
+
+export const CompassRowMoreButton = ({ onDelete /*, onEdit */ }) => (
   <SessionRowMoreStyle
     icon={<More />}
     round
     items={[
-      { label: 'edit', onClick: () => onEdit() },
+      // { label: 'edit', onClick: () => onEdit() },
       { label: 'delete', onClick: () => onDelete() },
     ]}
   />
+);
+
+export const InvisCompassRowMoreButton = () => (
+  <InvisSessionRowMoreStyle />
 );
 
 export const SCForm = styled(Form)`
