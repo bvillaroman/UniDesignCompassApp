@@ -61,8 +61,8 @@ export const EditingLogger = (props) => {
   }
 
   return (
-    <>
-      <LoggerHeaderContainer height="69px">
+    <LoggerContainer>
+      <LoggerHeaderContainer underline>
         <LoggerHeaderText><LoggerTitle color={step.color}>{step.name_of_step}</LoggerTitle> </LoggerHeaderText>
         <StepClock>
           {
@@ -80,11 +80,22 @@ export const EditingLogger = (props) => {
         color={step.color}
         disabled={edit}
       />
-    </>
+    </LoggerContainer>
   );
 }
 
 export default EditingLogger;
+
+const LoggerContainer = styled.div`
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  background: white;
+  padding: 1rem;
+  padding-top: 0;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
+`
 
 const LoggerTitle = styled.span`
   align-self: center;

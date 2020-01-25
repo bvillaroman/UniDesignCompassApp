@@ -63,15 +63,16 @@ export const Wheel = (props) => {
 
   return (
     <CompassWheelContainer >
-      <LoggerHeaderContainer>
-        <LoggerHeaderText>{compass.name_of_compass}</LoggerHeaderText>
+      <CSTitle>
+        <LoggerHeaderContainer>
+          <LoggerHeaderText>{compass.name_of_compass}</LoggerHeaderText>
 
-        <LoggerHeaderButtonContainer >
-          {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}
-        </LoggerHeaderButtonContainer>
-
+          <LoggerHeaderButtonContainer >
+            {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}
+          </LoggerHeaderButtonContainer>
       </LoggerHeaderContainer>
 
+      </CSTitle>      
       <CompassWheel >
         {
           steps.length && steps.map((item, key) => {
@@ -102,19 +103,14 @@ export const CompassWheelContainer = styled.div`
   position: relative;
 `;
 
-export const CSTitle = styled.div`
-  width: 100%;
-  min-height: 2.0rem;
-  font-size: 2rem;
-  line-height: 2.2rem;
-  font-weight: 600;
-  text-align: left;
-  padding-left: 1.5rem;
-  @media (max-width: 767px){
-    min-height:3rem;
-    font-size: 3rem;
-    font-height: 3.3rem;
-  }  
+export const CSTitle = styled.div`  
+  width: 95%;
+  margin: 1rem auto;
+  margin-bottom: 0;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
 `;
 
 export const CompassWheel = styled.div`

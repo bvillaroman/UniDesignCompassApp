@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from "styled-components"
 
-import {LoggerHeaderText} from "../style"
+import {LoggerHeaderContainer, LoggerHeaderText, LoggerHeaderButtonContainer} from "../style"
 import DisplayComment from './DisplayComment';
 import CommentForm from './CommentForm';
 import { CompassContext } from "../../../context/CompassPage/context";
@@ -41,7 +41,11 @@ const Comment = () => {
 
   return (
     <CommentSession>
-      <LoggerHeaderText>Comments</LoggerHeaderText>
+      <LoggerHeaderContainer>
+        <LoggerHeaderText>Comments</LoggerHeaderText>
+        <LoggerHeaderButtonContainer />
+      </LoggerHeaderContainer>
+      
       <CommentBox>
         {
           comments.sort(timeConverter).map((comment, key) => <DisplayComment comment={comment} key={key} />)
@@ -79,6 +83,7 @@ export const CommentBox = styled.div`
   height: 10rem;
   overflow: auto;
   padding: 0.5em;
+  border-top: 0.1rem solid rgba(0,0,0,0.2);
 `;
 
 export const CommentRef = styled.div`

@@ -8,6 +8,9 @@ const LoggerHeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  // ${props => props.underline && `border-bottom: 0.1rem solid rgba(0,0,0,0.2)` };   
+
+
 `
 const LoggerHeaderButtonContainer = styled.div`
   margin: 0.5rem 0;
@@ -30,6 +33,7 @@ const LoggerHeaderText = styled.h4`
   font-weight: 600;
   text-align: left;
 `
+
 export {
   LoggerHeaderText,
   LoggerHeaderButtonContainer,
