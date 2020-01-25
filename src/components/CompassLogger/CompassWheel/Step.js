@@ -64,13 +64,16 @@ export const StepContainer = styled(Button)`
   border-radius: 50%;
   transition: all 0.3s;
   :hover {
-    transition: all 0.2s;
-    background-color: ${props => props.color ? props.color : '#5567FD'};
+    transition: background-color 150ms, border 150ms, background-color 0.2s;
+    background-color: transparent;
+    ${props => props.active && props.color && `border: 0.30rem solid ${props.color}`};
+    ${props => props.active && `box-shadow: 0 3px 6px 0 #999999;`}
+
   }
   top: 40%;
   left: 40%;
   
-  background-color: ${props => props.active && props.color ? props.color : 'transparent'};
+  background-color: ${props => !props.active && props.color ? props.color : 'transparent'};
   list-style: none;
 	height: 5rem;
   width: 5rem;
@@ -80,8 +83,8 @@ export const StepContainer = styled(Button)`
 	position: absolute;
   transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.90}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
   box-shadow: 0 1px 3px 0 #b3b3b3;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
   margin-bottom: 0.1rem;  
   @media (max-width: 767px){ 
     height: 9.5rem;

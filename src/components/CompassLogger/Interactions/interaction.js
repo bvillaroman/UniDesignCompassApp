@@ -77,9 +77,10 @@ const InteractionButtonContainer = styled.div`
 const InteractionButton = styled(Button)`
   border: 0.15rem solid ${props => props.color ? props.color : '#5567FD'};
   :hover {
-    transition: all 0.2s;
+    transition: background-color 150ms, border 150ms, background-color 0.2s;
     background-color: transparent;
-    border: 0.15rem solid transparent;
+    ${props => props.active && props.color && `border: 0.35rem solid ${props.color}`};
+    ${props => props.active && `box-shadow: 0 3px 6px 0 #999999;`}
   }
   border-radius: 50%;
   transition: all 0.3s;
@@ -90,6 +91,6 @@ const InteractionButton = styled(Button)`
   line-height: 0.8rem;
   height: 5rem;
   width: 5rem;
-  background-color: ${props => props.active && props.color ? props.color : 'transparent'};
+  background-color: ${props => !props.active && props.color ? props.color : 'transparent'};
 
 `;
