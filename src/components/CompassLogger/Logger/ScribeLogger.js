@@ -12,11 +12,10 @@ import { Loader } from "../../../styles/layout"
 import { GlobalContext } from "../../../context/context"
 
 export const Logger = (props) => {
-  const { newestInteraction, addInteraction, compass,pause, startTimer, pauseTimer } = useContext(CompassContext);
+  const { newestInteraction, compass, pause, startTimer, pauseTimer, newestLog, updateNewestLog, updateNewestDuration, increaseTimer, newestDuration } = useContext(CompassContext);
   const { user } = useContext(GlobalContext)
 
-  const { duration, log_content, id, step} = newestInteraction
-
+  const { id, step} = newestInteraction
 
   const previousFooRef = useRef(newestInteraction);
 
@@ -27,49 +26,36 @@ export const Logger = (props) => {
     color: "black"
   };
 
-  // const [step, setStep] = useState(intialStep);
-  // const [interactionTime, setInteractionTime] = useState(0);
-  // const [log, setLog] = useState('');
-
   // place a past interaction into the logger if it is updateInteraction is called
   useEffect(() => {
 
     if (id) {
-
+      // leaving interaction to go to an old one
       if (previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id) {
         pauseTimer()
         const oldID = previousFooRef.current.id
         const newInteraction = {
           id: oldID,
-          log_content: log_content ? log_content : " ",
-          duration
+          log_content: newestLog ? newestLog : " ",
+          duration: newestDuration ? newestDuration : 0
         }
 
         Mutation.updateInteraction(newInteraction)
           .then((res) => {
             previousFooRef.current = newestInteraction
-            // const { log_content, step, duration } = newestInteraction
-            // const parsedLog = log_content !== " " ? log_content : ""
-            // setInteractionTime(duration)
-            // setStep(newestInteraction.step)
-            // setLog(parsedLog)
+            updateNewestLog(newestInteraction.log_content)
+            updateNewestDuration(newestInteraction.duration)
             props.setLoading(false)
             startTimer();
           })
       } else if (compass.scribe.email === user.email) {
-        // const { log_content, step, duration } = newestInteraction
-        // const parsedLog = log_content !== " " ? log_content : ""
-        // setInteractionTime(duration)
-        // setStep(newestInteraction.step)
-        // setLog(parsedLog)
+        // entering a new interaction
+        updateNewestLog(newestInteraction.log_content)
+        updateNewestDuration(newestInteraction.duration)
         props.setLoading(false)
         startTimer();
-      }  else {
-        // const { log_content, step } = newestInteraction
-        // const parsedLog = log_content !== " " ? log_content : ""
-        // setInteractionTime(duration)
-        // setStep(newestInteraction.step)
-        // setLog(parsedLog)
+      } else {
+        // entering a new interaction, paused
         props.setLoading(false)
         pauseTimer();
       }
@@ -85,24 +71,25 @@ export const Logger = (props) => {
     if (id) {
       if (!pause) {
         interval = setInterval(() => {
-          addInteraction({ duration: duration + 1 })
-          // setInteractionTime(interactionTime + 1)
+          increaseTimer()
         }, 1000)
 
       } else if (pause) {
         clearInterval(interval)
       }
-      return () => clearInterval(interval);
+      return () => {
+        clearInterval(interval)
+      };
     }
 
     // eslint-disable-next-line
-  }, [ id, duration , pause])
+  }, [ id, newestDuration , pause]) 
 
   // pause the timer
   const onPause = (e) => {
     const newInteraction = {
       id: newestInteraction.id,
-      log_content: newestInteraction.log_content ? newestInteraction.log_content : " ",
+      log_content: newestLog ? newestLog : " ",
       duration: newestInteraction.duration,
     }
     if (!pause) {
@@ -114,18 +101,22 @@ export const Logger = (props) => {
     
   }
 
+  const onChange = (e) => {
+    updateNewestLog(e.target.value)
+  }
+
   const color = step ? step.color: initialStep.color
   const name = step? step.name_of_step : initialStep.name_of_step
 
   return (
-    <>
-      <LoggerHeaderContainer height="69px">
+    <LoggerContainer>
+      <LoggerHeaderContainer underline>
         <LoggerHeaderText><LoggerTitle color={color}>{name}</LoggerTitle> </LoggerHeaderText>
         <StepClock>
           {
             props.loading ? <Loader /> : ( /* show the timer */
               <>
-                {translateTime(duration)}
+                {translateTime(newestDuration)}
                 {scribe ? <TimerButton color={color} onClick={onPause} start={!pause} /> : ""}
               </>
             )
@@ -134,16 +125,27 @@ export const Logger = (props) => {
       </LoggerHeaderContainer>
       <LoggerInput
         placeholder={name !== "Notes" ? "Enter Log" : "Select a log or create a new log."}
-        value={log_content}
-        onChange={e => addInteraction({ log_content: e.target.value})}
+        value={newestLog}
+        onChange={onChange}
         color={color}
         disabled={pause}
       />
-    </>
+    </LoggerContainer>
   );
 }
 
 export default Logger;
+
+const LoggerContainer = styled.div`
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  background: white;
+  padding: 1rem;
+  padding-top: 0;
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  transition: box-shadow 150ms ease;
+`
 
 const LoggerTitle = styled.span`
   align-self: center;
@@ -184,6 +186,7 @@ const ControlButton = styled(Button)`
   }
   padding-right: 0;
   padding-left: 0.5rem;
+  
 `
 
 export const TimerButton = ({ onClick, start, color }) => (

@@ -10,7 +10,7 @@ export const ProjectCreator = (props) => {
   return (
     <ProjectTypeFeedContainer>
       <DashboardSectionHeader>
-        Create a Project
+        New Project
       </DashboardSectionHeader>
       <ProjectTypeFeed>
         <CustomTemplate setLoading={props.setLoading}/>

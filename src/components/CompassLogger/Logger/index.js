@@ -34,9 +34,9 @@ export default Logger;
 const LoggerGrid = styled.div`
   width: 90%;
   min-height: 4rem;
-  height: auto;
   margin: 1rem auto;
+  margin-bottom: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;    
 `
 

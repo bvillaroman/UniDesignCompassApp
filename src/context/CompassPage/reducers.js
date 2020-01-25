@@ -2,6 +2,9 @@ import {initialState} from "./context"
 
 export const PAUSE_TIMER = "PAUSE_TIMER";
 export const START_TIMER = "START_TIMER";
+export const INCREASE_TIMER = "INCREASE_TIMER";
+export const UPDATE_NEWEST_LOG = "UPDATE_NEWEST_LOG";
+export const UPDATE_NEWEST_DURATION = "UPDATE_NEWEST_DURATION";
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
@@ -26,6 +29,36 @@ const addInteraction = (newInteraction, state) => {
     ...state, 
     interaction, 
     interactions: newInteractions,
+    newestDuration: newInteraction.duration,
+    newestLog: newInteraction.log_content,
+    newestInteraction: interaction,
+    interactionAdded: true,
+    interactionUpdated: false
+  }
+}
+const increaseDuration = (state) => {
+  const interaction = {...state.newestInteraction, duration: state.newestDuration + 1}
+  let newInteractions = state.interactions;
+  newInteractions = [interaction , ...newInteractions.filter((item) => { return interaction.id !== item.id })]
+  
+  return { 
+    ...state, 
+    interactions: newInteractions,
+    newestDuration: state.newestDuration + 1,
+    newestInteraction: interaction
+  }
+}
+const updateNewestDuration = (newDuration, state) => {
+  const interaction = {...state.newestInteraction, duration: newDuration}
+  let newInteractions = state.interactions;
+  newInteractions = newInteractions.filter((item) => { return interaction.id !== item.id })
+  newInteractions = [interaction, ...newInteractions]
+  
+  return { 
+    ...state, 
+    interaction, 
+    interactions: newInteractions,
+    newestDuration: newDuration,
     newestInteraction: interaction,
     interactionAdded: true,
     interactionUpdated: false
@@ -45,7 +78,6 @@ const updateInteractions = (newInteractions, state) => ({
   interactionUpdated: false 
 })
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
-
 const clearCompass = () => (initialState)
 const clearSession = (state) => ({ 
   ...state, 
@@ -72,6 +104,15 @@ export default (state,{type,payload}) => {
         ...state, 
         pause: false
       }  
+    case INCREASE_TIMER:
+      return increaseDuration(state);
+    case UPDATE_NEWEST_LOG:
+      return {
+        ...state, 
+        newestLog: payload
+      }  
+    case UPDATE_NEWEST_DURATION:
+      return updateNewestDuration(payload, state);
     case UPDATE_COMPASS:
       return updateCompass(payload, state);
     case UPDATE_SESSION:

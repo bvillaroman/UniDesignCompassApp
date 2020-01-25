@@ -67,7 +67,6 @@ const Layout = (props) => {
   // setting up the compass through the url
   useEffect(() => {
     if (compassID !== "") {
-      clearCompass()
       setLoading(true)
       getCompass(compassID)
         .then((res) => {
