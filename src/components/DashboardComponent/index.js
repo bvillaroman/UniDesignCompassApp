@@ -82,7 +82,7 @@ const Dashboard = (props) => {
         loading ? <Loader /> : (
           <DashboardContainer>
             <Header >
-              <Title>Project Hub</Title>
+              <Title>Dashboard</Title>
               <InfoText>What are projects?</InfoText>
             </Header>
             {showModal && <CustomCompassForm setLoading={setLoading} />}

@@ -51,6 +51,7 @@ const Attachments = (props) => {
     if (showAll && session.hasOwnProperty("id")){
       setLoading(false)
       let tempArray = session.interactions.items.map(interaction => {
+        
         if (interaction.attachments.items && interaction.attachments.items.length > 0){
           // get all attachments
           let allAttachments = interaction.attachments.items.flat()
@@ -59,7 +60,7 @@ const Attachments = (props) => {
             ...attachment,
             step: interaction.step
           }));
-        }
+        } else return null;
       })
       array = tempArray.filter(i => i).flat()
     } else if ( !showAll && interaction.hasOwnProperty("id")) {

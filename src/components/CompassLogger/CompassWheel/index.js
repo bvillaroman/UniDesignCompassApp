@@ -64,7 +64,7 @@ export const Wheel = (props) => {
   return (
     <CompassWheelContainer >
       <LoggerHeaderContainer>
-        <LoggerHeaderText> Compass Steps </LoggerHeaderText>
+        <LoggerHeaderText>{compass.name_of_compass}</LoggerHeaderText>
 
         <LoggerHeaderButtonContainer >
           {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}

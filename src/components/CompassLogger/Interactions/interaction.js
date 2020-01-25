@@ -10,8 +10,8 @@ import * as Mutation from '../../../utils/mutations'
 
 
 const Interaction = (props) => {
-  const { compass, session, interaction, interactionAdded, newestInteraction,pauseTimer } = useContext(CompassContext);
-  const { step = {name_of_step: "", color: ""}, duration = 0, id } = props.interaction;  
+  const { compass, session, interaction, interactionAdded, newestInteraction,pauseTimer, newestLog, newestDuration } = useContext(CompassContext);
+  const { step = {name_of_step: "", color: ""}, id } = props.interaction;  
 
   const openReviewLog = async (evt) => {    
     evt.preventDefault()
@@ -23,8 +23,8 @@ const Interaction = (props) => {
         pauseTimer()
         const newInteraction = {
           id : newestInteraction.id,
-          log_content: newestInteraction.log_content,
-          duration: newestInteraction.duration,
+          log_content: newestLog ? newestLog : " ",
+          duration: newestDuration ? newestDuration : 0
         }
         await Mutation.updateInteraction(newInteraction)        
       }
@@ -32,6 +32,7 @@ const Interaction = (props) => {
     }
   }
 
+  const duration = newestInteraction.id === id ? newestDuration : props.interaction.duration
   
   return (
     <InteractionContainer>
