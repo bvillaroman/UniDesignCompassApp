@@ -113,7 +113,7 @@ export const ContainerHeader = styled(Box)`
 
 export const HeaderText = styled(Text)`
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.8rem;
   word-break: break-word;
   line-height: 2.1rem;
 `
