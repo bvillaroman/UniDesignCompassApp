@@ -18,7 +18,7 @@ const CompassPage = (props) => {
     compass,
     session,
     updateSession,
-    clearSession,     
+    clearSession,
     updateInteractions, 
     clearInteractions,
     updateInteraction, 
@@ -120,6 +120,7 @@ const CompassPage = (props) => {
             })
           }
           updateInteractions(interactions);
+          if (interactions.length > 0) addInteraction(interactions[0]);
           setLoading(false)
         })
         .catch((err) => {
@@ -141,7 +142,7 @@ const CompassPage = (props) => {
     if (interactionID !== "") {
       getInteraction(interactionID)
         .then((res) => {
-          if(newestInteraction.id === res.data.getInteraction.id ){
+          if(newestInteraction.id === res.data.getInteraction.id){
             addInteraction(res.data.getInteraction);
           }  else {
             updateInteraction(res.data.getInteraction);

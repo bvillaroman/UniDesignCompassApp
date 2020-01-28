@@ -72,23 +72,32 @@ const updateInteraction = (newInteraction, state) => ({
 }) 
 const updateInteractions = (newInteractions, state) => ({ 
   ...state, 
-  interactions: newInteractions, 
-  newestInteraction: newInteractions.length > 0 ? newInteractions[0] : {}, 
-  interactionAdded: true, 
-  interactionUpdated: false 
+  interactions: newInteractions
 })
 const updateTime = (newTime, state) => ({ ...state, time: newTime})
 const clearCompass = () => (initialState)
 const clearSession = (state) => ({ 
   ...state, 
   session: {}, 
-  newestInteraction: {}, 
+  newestInteraction: {},
+  newestLog: "",
+  newestDuration: 0,
   interaction: {}, 
   interactions: [], 
   interactionAdded: false,
-  interactionUpdated: false
+  interactionUpdated: false,
+  pause: true
   })
-const clearInteraction = (state) => ({ ...state, interaction: {}, interactionAdded: false, interactionUpdated: false})
+const clearInteraction = (state) => ({ 
+  ...state, 
+  interaction: {}, 
+  newestInteraction: {},
+  newestLog: "",
+  newestDuration: 0,
+  interactionAdded: false,
+  interactionUpdated: false,
+  pause: true
+})
 const clearInteractions = (state) => ({ ...state, interactions: []})
 const clearTime = (state) => ({ ...state, time: 0})
 
