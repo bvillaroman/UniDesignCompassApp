@@ -22,9 +22,8 @@ export const Logger = (props) => {
   // };
 
   return (
-    <LoggerGrid>
-      { interactionAdded && <ScribeLogger setLoading={props.setLoading} loading={props.loading}/> }
-      { interactionUpdated && <EditLogger setLoading={props.setLoading} loading={props.loading}/> }
+    <LoggerGrid>      
+      { interactionUpdated ? <EditLogger setLoading={props.setLoading} loading={props.loading}/> : <ScribeLogger setLoading={props.setLoading} loading={props.loading}/>}
     </LoggerGrid>
   );
 }

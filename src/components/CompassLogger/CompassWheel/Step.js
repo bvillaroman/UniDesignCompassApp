@@ -3,12 +3,12 @@ import {navigate} from "gatsby";
 import styled from "styled-components"
 import { Button } from "grommet"
 import { CompassContext } from "../../../context/CompassPage/context"
-import { startInteraction } from "../../../utils/mutations"
+import { startInteraction, updateInteraction } from "../../../utils/mutations"
 import translateTime from '../../../utils/translateTime'
 import { GlobalContext } from "../../../context/context";
 
 export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading }) => {
-  const { session, addInteraction, interaction, compass, newestInteraction, interactionAdded } = useContext(CompassContext)
+  const { session, addInteraction, interaction, compass, newestInteraction, newestLog, newestDuration, interactionAdded, pauseTimer } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
@@ -28,16 +28,33 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading })
     duration
   } = activeStep;
 
-  const goToLog = (e) => {
+  const goToLog = async (e) => {
     // console.log(interaction.hasOwnProperty("id"))
     if (disableStep) {
       if (!interaction.hasOwnProperty("id") || id !== interaction.step.id || newestInteraction.step.id !== id) {
         setLoading(true)
-        startInteraction(session.id, id)
-          .then((interaction) => {            
-            addInteraction(interaction.data.createInteraction)
-            navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
-          })
+        if(interactionAdded){
+          pauseTimer()
+          const newInteraction = {
+            id : newestInteraction.id,
+            log_content: newestLog ? newestLog : " ",
+            duration: newestDuration ? newestDuration : 0
+          }          
+          updateInteraction(newInteraction)
+            .then((res) => {
+              startInteraction(session.id, id)
+                .then((interaction) => {            
+                  addInteraction(interaction.data.createInteraction)
+                  navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
+                })
+            })
+        } else {
+          startInteraction(session.id, id)
+            .then((interaction) => {            
+              addInteraction(interaction.data.createInteraction)
+              navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
+            })
+        }
       }
     }
   }

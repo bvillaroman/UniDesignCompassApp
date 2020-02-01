@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components"
 import { Button, TextArea } from "grommet"
 import { PauseFill, PlayFill } from 'grommet-icons';
@@ -12,12 +12,10 @@ import { Loader } from "../../../styles/layout"
 import { GlobalContext } from "../../../context/context"
 
 export const Logger = (props) => {
-  const { newestInteraction, compass, pause, startTimer, pauseTimer, newestLog, updateNewestLog, updateNewestDuration, increaseTimer, newestDuration } = useContext(CompassContext);
+  const { newestInteraction, compass, pause, startTimer, pauseTimer, newestLog, updateNewestLog, updateNewestDuration, increaseTimer, newestDuration, interactionAdded } = useContext(CompassContext);
   const { user } = useContext(GlobalContext)
 
-  const { id, step} = newestInteraction
-
-  const previousFooRef = useRef(newestInteraction);
+  const { id, step } = newestInteraction
 
   const scribe = compass.scribe.email === user.email
 
@@ -30,25 +28,7 @@ export const Logger = (props) => {
   useEffect(() => {
 
     if (id) {
-      // leaving interaction to go to an old one
-      if (previousFooRef.current && previousFooRef.current.id !== newestInteraction.id && previousFooRef.current.id) {
-        pauseTimer()
-        const oldID = previousFooRef.current.id
-        const newInteraction = {
-          id: oldID,
-          log_content: newestLog ? newestLog : " ",
-          duration: newestDuration ? newestDuration : 0
-        }
-
-        Mutation.updateInteraction(newInteraction)
-          .then((res) => {
-            previousFooRef.current = newestInteraction
-            updateNewestLog(newestInteraction.log_content)
-            updateNewestDuration(newestInteraction.duration)
-            props.setLoading(false)
-            startTimer();
-          })
-      } else if (compass.scribe.email === user.email) {
+      if (compass.scribe.email === user.email) {
         // entering a new interaction
         updateNewestLog(newestInteraction.log_content)
         updateNewestDuration(newestInteraction.duration)
@@ -116,8 +96,8 @@ export const Logger = (props) => {
           {
             props.loading ? <Loader /> : ( /* show the timer */
               <>
-                {translateTime(newestDuration)}
-                {scribe ? <TimerButton color={color} onClick={onPause} start={!pause} /> : ""}
+                {interactionAdded && translateTime(newestDuration)}
+                {scribe && interactionAdded ? <TimerButton color={color} onClick={onPause} start={!pause} /> : ""}
               </>
             )
           }
