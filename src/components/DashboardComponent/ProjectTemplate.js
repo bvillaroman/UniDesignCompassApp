@@ -21,23 +21,28 @@ const ProjectTemplate = (props) => {
     },
     {
       title: "Brainstorm",
-      description: "Creating ideas/ rough drafts of solutions",
+      description: "Creating ideas/rough drafts of solutions",
       color: "#9b59b6"
     },
     {
-      title: "Test",
-      description: "Created and test new solutions",
+      title: "Model & Test",
+      description: "Visualize and test new solutions",
       color: "#f1c40f"
     },
     {
-      title: "Prototype",
-      description: "Choosing the best solution and implementing it",
+      title: "Weigh Options",
+      description: "Choosing the best solution and implement it",
       color: "#e67e22"
     },
     {
-      title: "Revise",
-      description: "Edit/revise current implementation of solution",
+      title: "Build",
+      description: "Create implementation of the solution",
       color: "#e74c3c"
+    },
+    {
+      title: "Test & Revise",
+      description: "Test/revise current implementation of solution",
+      color: "#008080"
     },
     {
       title: "Reflect",
@@ -65,7 +70,7 @@ const ProjectTemplate = (props) => {
             console.log(err)
             props.setLoading(false)
           })
-        
+
       })
       .catch(err => {
         console.log(err)
