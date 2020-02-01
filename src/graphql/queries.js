@@ -24,6 +24,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -33,6 +46,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -42,6 +68,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -52,6 +91,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -68,15 +134,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -86,15 +177,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -104,6 +220,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -113,6 +242,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -122,6 +264,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -131,16 +286,37 @@ export const getUser = `query GetUser($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -165,6 +341,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -174,6 +363,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -183,6 +385,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -193,6 +408,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -209,15 +451,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -227,15 +494,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -245,6 +537,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -254,6 +559,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -263,6 +581,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -272,16 +603,37 @@ export const getUser = `query GetUser($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -306,6 +658,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -315,6 +680,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -324,6 +702,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -334,6 +725,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -350,15 +768,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -368,15 +811,40 @@ export const getUser = `query GetUser($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -386,6 +854,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -395,6 +876,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -404,6 +898,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -413,16 +920,37 @@ export const getUser = `query GetUser($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -448,6 +976,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -457,6 +998,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -466,6 +1020,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -476,6 +1043,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -491,6 +1085,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -500,6 +1107,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -509,6 +1129,19 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -519,6 +1152,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -534,6 +1194,18 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -541,6 +1213,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -556,6 +1255,18 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -563,6 +1274,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -578,6 +1316,18 @@ export const getUser = `query GetUser($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -585,6 +1335,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -601,11 +1378,50 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -614,6 +1430,7 @@ export const getUser = `query GetUser($id: ID!) {
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -624,6 +1441,33 @@ export const getUser = `query GetUser($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -657,15 +1501,40 @@ export const listUsers = `query ListUsers(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -680,26 +1549,82 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -718,15 +1643,40 @@ export const listUsers = `query ListUsers(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -741,26 +1691,82 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -779,15 +1785,40 @@ export const listUsers = `query ListUsers(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -802,26 +1833,82 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -841,15 +1928,40 @@ export const listUsers = `query ListUsers(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -859,15 +1971,40 @@ export const listUsers = `query ListUsers(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -877,6 +2014,19 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -886,6 +2036,19 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -895,6 +2058,19 @@ export const listUsers = `query ListUsers(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -904,16 +2080,37 @@ export const listUsers = `query ListUsers(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -948,15 +2145,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -971,26 +2193,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1009,15 +2287,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1032,26 +2335,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1070,15 +2429,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1093,26 +2477,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1132,15 +2572,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1150,15 +2615,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1168,6 +2658,19 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1177,6 +2680,19 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1186,6 +2702,19 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1195,16 +2724,37 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1234,6 +2784,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1241,6 +2803,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1256,6 +2845,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1263,6 +2864,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1278,6 +2906,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1285,6 +2925,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1301,26 +2968,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1343,6 +3066,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1350,6 +3085,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1365,6 +3127,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1372,6 +3146,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1387,6 +3188,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1394,6 +3207,33 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1410,26 +3250,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1448,15 +3344,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1471,26 +3392,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1509,15 +3486,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1532,26 +3534,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1570,15 +3628,40 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -1593,26 +3676,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1636,26 +3775,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1664,6 +3859,18 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -1674,6 +3881,23 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -1683,6 +3907,7 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -1698,26 +3923,82 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1755,6 +4036,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1762,6 +4055,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1777,6 +4097,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1784,6 +4116,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1799,6 +4158,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1806,6 +4177,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1822,26 +4220,82 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -1865,6 +4319,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1874,6 +4341,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1883,6 +4363,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1893,6 +4386,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -1908,6 +4428,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1917,6 +4450,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1926,6 +4472,19 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -1936,6 +4495,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -1951,6 +4537,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1958,6 +4556,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1973,6 +4598,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -1980,6 +4617,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -1995,6 +4659,18 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2002,6 +4678,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2018,11 +4721,50 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -2031,6 +4773,7 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -2041,6 +4784,33 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2074,15 +4844,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2097,26 +4892,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2135,15 +4986,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2158,26 +5034,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2196,15 +5128,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2219,26 +5176,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2258,15 +5271,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2276,15 +5314,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2294,6 +5357,19 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -2303,6 +5379,19 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -2312,6 +5401,19 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -2321,16 +5423,37 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -2360,6 +5483,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2367,6 +5502,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2382,6 +5544,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2389,6 +5563,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2404,6 +5605,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2411,6 +5624,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2427,26 +5667,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2469,6 +5765,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2476,6 +5784,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2491,6 +5826,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2498,6 +5845,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2513,6 +5887,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2520,6 +5906,33 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2536,26 +5949,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2574,15 +6043,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2597,26 +6091,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2635,15 +6185,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2658,26 +6233,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2696,15 +6327,40 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -2719,26 +6375,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2762,26 +6474,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2790,6 +6558,18 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -2800,6 +6580,23 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -2809,6 +6606,7 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -2824,26 +6622,82 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2881,6 +6735,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2888,6 +6754,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2903,6 +6796,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2910,6 +6815,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2925,6 +6857,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -2932,6 +6876,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -2948,26 +6919,82 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -2991,6 +7018,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3000,6 +7040,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3009,6 +7062,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3019,6 +7085,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -3034,6 +7127,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3043,6 +7149,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3052,6 +7171,19 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3062,6 +7194,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -3077,6 +7236,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3084,6 +7255,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3099,6 +7297,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3106,6 +7316,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3121,6 +7358,18 @@ export const listMemberCompassess = `query ListMemberCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3128,6 +7377,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3144,11 +7420,50 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -3157,6 +7472,7 @@ export const listMemberCompassess = `query ListMemberCompassess(
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -3167,6 +7483,33 @@ export const listMemberCompassess = `query ListMemberCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3200,15 +7543,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3223,26 +7591,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3261,15 +7685,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3284,26 +7733,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3322,15 +7827,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3345,26 +7875,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3384,15 +7970,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3402,15 +8013,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3420,6 +8056,19 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3429,6 +8078,19 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3438,6 +8100,19 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3447,16 +8122,37 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -3486,6 +8182,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3493,6 +8201,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3508,6 +8243,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3515,6 +8262,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3530,6 +8304,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3537,6 +8323,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3553,26 +8366,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3595,6 +8464,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3602,6 +8483,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3617,6 +8525,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3624,6 +8544,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3639,6 +8586,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -3646,6 +8605,33 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -3662,26 +8648,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3700,15 +8742,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3723,26 +8790,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3761,15 +8884,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3784,26 +8932,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3822,15 +9026,40 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -3845,26 +9074,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3888,26 +9173,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -3916,6 +9257,18 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -3926,6 +9279,23 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -3935,6 +9305,7 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -3950,26 +9321,82 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4007,6 +9434,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4014,6 +9453,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4029,6 +9495,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4036,6 +9514,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4051,6 +9556,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4058,6 +9575,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4074,26 +9618,82 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4117,6 +9717,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4126,6 +9739,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4135,6 +9761,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4145,6 +9784,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -4160,6 +9826,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4169,6 +9848,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4178,6 +9870,19 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4188,6 +9893,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -4203,6 +9935,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4210,6 +9954,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4225,6 +9996,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4232,6 +10015,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4247,6 +10057,18 @@ export const listReaderCompassess = `query ListReaderCompassess(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -4254,6 +10076,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4270,11 +10119,50 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -4283,6 +10171,7 @@ export const listReaderCompassess = `query ListReaderCompassess(
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -4293,6 +10182,33 @@ export const listReaderCompassess = `query ListReaderCompassess(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -4327,15 +10243,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4350,26 +10291,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4388,15 +10385,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4411,26 +10433,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4449,15 +10527,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4472,26 +10575,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4511,15 +10670,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4529,15 +10713,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4547,6 +10756,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4556,6 +10778,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4565,6 +10800,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4574,16 +10822,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4608,15 +10877,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4631,26 +10925,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4669,15 +11019,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4692,26 +11067,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4730,15 +11161,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4753,26 +11209,82 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -4792,15 +11304,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4810,15 +11347,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4828,6 +11390,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4837,6 +11412,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4846,6 +11434,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4855,16 +11456,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4889,6 +11511,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4898,6 +11533,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4907,6 +11555,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4917,6 +11578,33 @@ export const getCompass = `query GetCompass($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -4933,15 +11621,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4951,15 +11664,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -4969,6 +11707,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4978,6 +11729,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4987,6 +11751,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -4996,16 +11773,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5030,6 +11828,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5039,6 +11850,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5048,6 +11872,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5058,6 +11895,33 @@ export const getCompass = `query GetCompass($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -5074,15 +11938,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5092,15 +11981,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5110,6 +12024,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5119,6 +12046,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5128,6 +12068,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5137,16 +12090,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5171,6 +12145,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5180,6 +12167,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5189,6 +12189,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5199,6 +12212,33 @@ export const getCompass = `query GetCompass($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -5215,15 +12255,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5233,15 +12298,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5251,6 +12341,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5260,6 +12363,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5269,6 +12385,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5278,16 +12407,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5313,15 +12463,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5331,15 +12506,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5349,6 +12549,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5358,6 +12571,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5367,6 +12593,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5376,16 +12615,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5400,12 +12660,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             session {
               id
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5422,15 +12707,43 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
@@ -5442,6 +12755,7 @@ export const getCompass = `query GetCompass($id: ID!) {
     steps {
       items {
         id
+        index
         name_of_step
         description_of_step
         color
@@ -5458,15 +12772,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5476,15 +12815,40 @@ export const getCompass = `query GetCompass($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5494,6 +12858,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5503,6 +12880,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5512,6 +12902,19 @@ export const getCompass = `query GetCompass($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5521,16 +12924,37 @@ export const getCompass = `query GetCompass($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -5569,6 +12993,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5576,6 +13012,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5591,6 +13054,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5598,6 +13073,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5613,6 +13115,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5620,6 +13134,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5636,26 +13177,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5678,6 +13275,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5685,6 +13294,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5700,6 +13336,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5707,6 +13355,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5722,6 +13397,18 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -5729,6 +13416,33 @@ export const listCompasss = `query ListCompasss(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -5745,26 +13459,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5783,15 +13553,40 @@ export const listCompasss = `query ListCompasss(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5806,26 +13601,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5844,15 +13695,40 @@ export const listCompasss = `query ListCompasss(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5867,26 +13743,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5905,15 +13837,40 @@ export const listCompasss = `query ListCompasss(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -5928,26 +13885,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5971,26 +13984,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -5999,6 +14068,18 @@ export const listCompasss = `query ListCompasss(
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -6009,6 +14090,23 @@ export const listCompasss = `query ListCompasss(
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6018,6 +14116,7 @@ export const listCompasss = `query ListCompasss(
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -6033,26 +14132,82 @@ export const listCompasss = `query ListCompasss(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6092,6 +14247,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6099,6 +14266,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6114,6 +14308,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6121,6 +14327,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6136,6 +14369,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6143,6 +14388,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6159,26 +14431,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6201,6 +14529,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6208,6 +14548,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6223,6 +14590,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6230,6 +14609,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6245,6 +14651,18 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6252,6 +14670,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6268,26 +14713,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6306,15 +14807,40 @@ export const getSession = `query GetSession($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -6329,26 +14855,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6367,15 +14949,40 @@ export const getSession = `query GetSession($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -6390,26 +14997,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6428,15 +15091,40 @@ export const getSession = `query GetSession($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -6451,26 +15139,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6494,26 +15238,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6522,6 +15322,18 @@ export const getSession = `query GetSession($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -6532,6 +15344,23 @@ export const getSession = `query GetSession($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6541,6 +15370,7 @@ export const getSession = `query GetSession($id: ID!) {
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -6556,26 +15386,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6599,6 +15485,19 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6608,6 +15507,19 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6617,6 +15529,19 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6627,6 +15552,33 @@ export const getSession = `query GetSession($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6647,26 +15599,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6675,6 +15683,18 @@ export const getSession = `query GetSession($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -6685,6 +15705,23 @@ export const getSession = `query GetSession($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6715,26 +15752,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6743,6 +15836,18 @@ export const getSession = `query GetSession($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -6753,12 +15858,30 @@ export const getSession = `query GetSession($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
         }
         step {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -6774,26 +15897,82 @@ export const getSession = `query GetSession($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -6808,6 +15987,23 @@ export const getSession = `query GetSession($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             bucket
             region
@@ -6849,6 +16045,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6858,6 +16067,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6867,6 +16089,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6877,6 +16112,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6892,6 +16154,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6901,6 +16176,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6910,6 +16198,19 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -6920,6 +16221,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -6935,6 +16263,18 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6942,6 +16282,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6957,6 +16324,18 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6964,6 +16343,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -6979,6 +16385,18 @@ export const listSessions = `query ListSessions(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -6986,6 +16404,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7002,11 +16447,50 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -7015,6 +16499,7 @@ export const listSessions = `query ListSessions(
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7025,6 +16510,33 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7041,15 +16553,40 @@ export const listSessions = `query ListSessions(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7064,11 +16601,50 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -7093,16 +16669,56 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
           step {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7113,12 +16729,46 @@ export const listSessions = `query ListSessions(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           attachments {
             items {
               name
               type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               bucket
               region
               key
@@ -7162,6 +16812,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7171,6 +16834,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7180,6 +16856,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7190,6 +16879,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -7205,6 +16921,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7214,6 +16943,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7223,6 +16965,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7233,6 +16988,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -7248,6 +17030,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7255,6 +17049,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7270,6 +17091,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7277,6 +17110,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7292,6 +17152,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7299,6 +17171,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7315,11 +17214,50 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -7328,6 +17266,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7338,6 +17277,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7354,15 +17320,40 @@ export const getInteraction = `query GetInteraction($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7377,11 +17368,50 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -7406,16 +17436,56 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
           step {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7426,12 +17496,46 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           attachments {
             items {
               name
               type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               bucket
               region
               key
@@ -7444,6 +17548,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
     }
     step {
       id
+      index
       name_of_step
       description_of_step
       color
@@ -7465,6 +17570,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7474,6 +17592,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7483,6 +17614,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7493,6 +17637,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -7508,6 +17679,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7517,6 +17701,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7526,6 +17723,19 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7536,6 +17746,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -7551,6 +17788,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7558,6 +17807,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7573,6 +17849,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7580,6 +17868,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7595,6 +17910,18 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -7602,6 +17929,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7618,11 +17972,50 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -7631,6 +18024,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7641,6 +18035,33 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7668,16 +18089,56 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
           step {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -7688,12 +18149,46 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           attachments {
             items {
               name
               type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               bucket
               region
               key
@@ -7739,15 +18234,40 @@ export const listInteractions = `query ListInteractions(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7757,15 +18277,40 @@ export const listInteractions = `query ListInteractions(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7775,6 +18320,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7784,6 +18342,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7793,6 +18364,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7802,16 +18386,37 @@ export const listInteractions = `query ListInteractions(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7826,12 +18431,37 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             session {
               id
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
           }
           nextToken
@@ -7848,15 +18478,43 @@ export const listInteractions = `query ListInteractions(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
@@ -7865,6 +18523,7 @@ export const listInteractions = `query ListInteractions(
       }
       step {
         id
+        index
         name_of_step
         description_of_step
         color
@@ -7881,15 +18540,40 @@ export const listInteractions = `query ListInteractions(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7899,15 +18583,40 @@ export const listInteractions = `query ListInteractions(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -7917,6 +18626,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7926,6 +18648,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7935,6 +18670,19 @@ export const listInteractions = `query ListInteractions(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7944,16 +18692,37 @@ export const listInteractions = `query ListInteractions(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -7974,15 +18743,43 @@ export const listInteractions = `query ListInteractions(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
@@ -8000,6 +18797,7 @@ export const listInteractions = `query ListInteractions(
 export const getStep = `query GetStep($id: ID!) {
   getStep(id: $id) {
     id
+    index
     name_of_step
     description_of_step
     color
@@ -8026,6 +18824,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8033,6 +18843,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8048,6 +18885,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8055,6 +18904,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8070,6 +18946,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8077,6 +18965,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8093,26 +19008,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8135,6 +19106,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8142,6 +19125,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8157,6 +19167,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8164,6 +19186,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8179,6 +19228,18 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8186,6 +19247,33 @@ export const getStep = `query GetStep($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8202,26 +19290,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8240,15 +19384,40 @@ export const getStep = `query GetStep($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8263,26 +19432,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8301,15 +19526,40 @@ export const getStep = `query GetStep($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8324,26 +19574,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8362,15 +19668,40 @@ export const getStep = `query GetStep($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8385,26 +19716,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8428,26 +19815,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8456,6 +19899,18 @@ export const getStep = `query GetStep($id: ID!) {
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -8466,6 +19921,23 @@ export const getStep = `query GetStep($id: ID!) {
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
@@ -8475,6 +19947,7 @@ export const getStep = `query GetStep($id: ID!) {
       steps {
         items {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -8490,26 +19963,82 @@ export const getStep = `query GetStep($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -8528,6 +20057,7 @@ export const listSteps = `query ListSteps(
   listSteps(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      index
       name_of_step
       description_of_step
       color
@@ -8549,6 +20079,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8558,6 +20101,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8567,6 +20123,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8577,6 +20146,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -8592,6 +20188,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8601,6 +20210,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8610,6 +20232,19 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8620,6 +20255,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -8635,6 +20297,18 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8642,6 +20316,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8657,6 +20358,18 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8664,6 +20377,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8679,6 +20419,18 @@ export const listSteps = `query ListSteps(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -8686,6 +20438,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8702,11 +20481,50 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -8715,6 +20533,7 @@ export const listSteps = `query ListSteps(
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -8725,6 +20544,33 @@ export const listSteps = `query ListSteps(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8762,15 +20608,40 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8780,15 +20651,40 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8798,6 +20694,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8807,6 +20716,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8816,6 +20738,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8825,16 +20760,37 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8849,12 +20805,37 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             session {
               id
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
           }
           nextToken
@@ -8871,15 +20852,43 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
@@ -8888,6 +20897,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
       }
       step {
         id
+        index
         name_of_step
         description_of_step
         color
@@ -8904,15 +20914,40 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8922,15 +20957,40 @@ export const getAttachment = `query GetAttachment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -8940,6 +21000,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8949,6 +21022,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8958,6 +21044,19 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8967,16 +21066,37 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -8997,15 +21117,43 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
@@ -9053,26 +21201,82 @@ export const listAttachments = `query ListAttachments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9081,6 +21285,18 @@ export const listAttachments = `query ListAttachments(
               id
               content
               createdAt
+              commenter {
+                id
+                first_name
+                last_name
+                email
+              }
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
             }
             nextToken
           }
@@ -9091,12 +21307,30 @@ export const listAttachments = `query ListAttachments(
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             nextToken
           }
         }
         step {
           id
+          index
           name_of_step
           description_of_step
           color
@@ -9112,26 +21346,82 @@ export const listAttachments = `query ListAttachments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9146,6 +21436,23 @@ export const listAttachments = `query ListAttachments(
               log_content
               comments
               createdAt
+              session {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
+              step {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
+              attachments {
+                nextToken
+              }
             }
             bucket
             region
@@ -9184,15 +21491,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9207,26 +21539,82 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9245,15 +21633,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9268,26 +21681,82 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9306,15 +21775,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9329,26 +21823,82 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9368,15 +21918,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9386,15 +21961,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9404,6 +22004,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9413,6 +22026,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9422,6 +22048,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9431,16 +22070,37 @@ export const getComment = `query GetComment($id: ID!) {
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9470,6 +22130,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9479,6 +22152,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9488,6 +22174,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9498,6 +22197,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -9513,6 +22239,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9522,6 +22261,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9531,6 +22283,19 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9541,6 +22306,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             nextToken
           }
@@ -9556,6 +22348,18 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9563,6 +22367,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9578,6 +22409,18 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9585,6 +22428,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9600,6 +22470,18 @@ export const getComment = `query GetComment($id: ID!) {
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9607,6 +22489,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9623,11 +22532,50 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -9636,6 +22584,7 @@ export const getComment = `query GetComment($id: ID!) {
         steps {
           items {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -9646,6 +22595,33 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9662,15 +22638,40 @@ export const getComment = `query GetComment($id: ID!) {
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9685,11 +22686,50 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
@@ -9714,16 +22754,56 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
             comments {
+              items {
+                id
+                content
+                createdAt
+              }
               nextToken
             }
             interactions {
+              items {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               nextToken
             }
           }
           step {
             id
+            index
             name_of_step
             description_of_step
             color
@@ -9734,12 +22814,46 @@ export const getComment = `query GetComment($id: ID!) {
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           attachments {
             items {
               name
               type
+              interaction {
+                id
+                duration
+                log_content
+                comments
+                createdAt
+              }
               bucket
               region
               key
@@ -9779,6 +22893,18 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9786,6 +22912,33 @@ export const listComments = `query ListComments(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9801,6 +22954,18 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9808,6 +22973,33 @@ export const listComments = `query ListComments(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9823,6 +23015,18 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             compass {
               id
@@ -9830,6 +23034,33 @@ export const listComments = `query ListComments(
               description_of_compass
               createdAt
               compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+              }
+              teachers {
+                nextToken
+              }
+              members {
+                nextToken
+              }
+              readers {
+                nextToken
+              }
+              sessions {
+                nextToken
+              }
+              steps {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9846,26 +23077,82 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             scribe {
               id
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             members {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+              }
               nextToken
             }
             steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+              }
               nextToken
             }
           }
@@ -9889,15 +23176,40 @@ export const listComments = `query ListComments(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9907,15 +23219,40 @@ export const listComments = `query ListComments(
             last_name
             email
             teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             member {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+              }
               nextToken
             }
             compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
               nextToken
             }
           }
@@ -9925,6 +23262,19 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9934,6 +23284,19 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9943,6 +23306,19 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              user {
+                id
+                first_name
+                last_name
+                email
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9952,16 +23328,37 @@ export const listComments = `query ListComments(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             nextToken
           }
           steps {
             items {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             nextToken
           }
@@ -9976,12 +23373,37 @@ export const listComments = `query ListComments(
               first_name
               last_name
               email
+              teacher {
+                nextToken
+              }
+              member {
+                nextToken
+              }
+              reader {
+                nextToken
+              }
+              compass {
+                nextToken
+              }
             }
             session {
               id
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
           }
           nextToken
@@ -9998,15 +23420,43 @@ export const listComments = `query ListComments(
               name_of_session
               description_of_session
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
+              comments {
+                nextToken
+              }
+              interactions {
+                nextToken
+              }
             }
             step {
               id
+              index
               name_of_step
               description_of_step
               color
               createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+              }
             }
             attachments {
+              items {
+                name
+                type
+                bucket
+                region
+                key
+              }
               nextToken
             }
           }
