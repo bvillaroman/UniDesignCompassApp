@@ -66,6 +66,7 @@ const MembersPermission = () => {
               value={member}
               placeholder="Enter Member Email"
               onChange={handleMemberChange}
+              required
             />
           </Permissions>
           {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}

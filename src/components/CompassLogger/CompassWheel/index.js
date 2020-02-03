@@ -36,9 +36,9 @@ export const Wheel = (props) => {
     );
 
       arr.forEach(step => {
-        
+
         let temp = interactions.filter(interaction => interaction.step && (interaction.step.id === step.id))
-        
+
         const value = temp.reduce((totalTime = 0, interaction) => parseInt(totalTime) + parseInt(interaction.duration), 0)
         step.duration = value
       })
@@ -53,7 +53,7 @@ export const Wheel = (props) => {
     const hour = today.getHours()
     const minute = today.getMinutes()
 
-    createSession(`Session on ${dateFormatter(today)} at ${hour < 13 ? hour : hour % 12 }:${minute} ${hour > 12 ? "p.m." : "a.m."}`, " ", compass.id)
+    createSession(`Session on ${dateFormatter(today)} at ${hour < 13 ? hour : hour % 12}:${minute} ${hour > 12 ? "p.m." : "a.m."}`, " ", compass.id)
       .then((result) => {
         navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
       })
@@ -69,15 +69,16 @@ export const Wheel = (props) => {
           <LoggerHeaderButtonContainer >
             {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}
           </LoggerHeaderButtonContainer>
-      </LoggerHeaderContainer>
+        </LoggerHeaderContainer>
 
-      </CSTitle>      
+      </CSTitle>
       <CompassWheel >
         {
           steps.length && steps.map((item, key) => {
             return (
               <Step
                 activeStep={item}
+                index={item.index}
                 key={key}
                 circleLength={steps.length}
                 rotateAngle={(key+ Math.ceil(steps.length/2)) * (360 / (steps.length))}

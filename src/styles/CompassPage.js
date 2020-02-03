@@ -139,11 +139,31 @@ export const CompassNavigationBar = styled(Box)`
 `;
 
 // Project Details 
-export const ProjectDetailsContainer = styled(Box)`
+export const ProjectDetailsTitleContainer = styled(Box)`
   width: 90%;
-  min-height: 15rem;
+  min-height: 10rem;
 
   margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 1rem;
+  svg {
+    width: 50%;
+    height: 6rem;
+    margin: auto;
+    stroke: #5567FD;
+  }
+  box-shadow: 0 1px 3px 0 #d2d4d6;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+`;
+
+export const ProjectDetailsStepContainer = styled(Box)`
+  width: 90%;
+  min-height: 35rem;
+
+  margin: 2.5rem auto;
   display: flex;
   flex-direction: column;
   background: white;
@@ -225,6 +245,7 @@ export const ProjectEditButtons = styled(Box)`
   width: 100%;
   flex-direction: row;  
   justify-content: space-between;
+  padding: 1rem 0;
 `
 export const CompassDetailsDescription = styled(Box)`
   width: 100%;
