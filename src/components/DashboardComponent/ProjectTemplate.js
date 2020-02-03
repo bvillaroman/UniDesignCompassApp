@@ -10,41 +10,49 @@ const ProjectTemplate = (props) => {
 
   const defaultCompass = [
     {
+      index: 1,
       title: "Grasp Challenge",
       description: "Understanding the challenge/ problem ",
       color: "#3498db"
     },
     {
+      index: 2,
       title: "Research",
       description: "Investigating/ Researching ideas to incorporate into a solution",
       color: "#2ecc71"
     },
     {
+      index: 3,
       title: "Brainstorm",
       description: "Creating ideas/rough drafts of solutions",
       color: "#9b59b6"
     },
     {
+      index: 4,
       title: "Model & Test",
       description: "Visualize and test new solutions",
       color: "#f1c40f"
     },
     {
+      index: 5,
       title: "Weigh Options",
       description: "Choosing the best solution and implement it",
       color: "#e67e22"
     },
     {
+      index: 6,
       title: "Build",
       description: "Create implementation of the solution",
       color: "#e74c3c"
     },
     {
+      index: 7,
       title: "Test & Revise",
       description: "Test/revise current implementation of solution",
       color: "#008080"
     },
     {
+      index: 8,
       title: "Reflect",
       description: "Discuss the overall reflection of the process",
       color: "#7f8c8d"
@@ -85,6 +93,7 @@ const ProjectTemplate = (props) => {
           {
             defaultCompass.map((item, key) => (
               <StepContainer
+                index={item.index}
                 key={key}
                 circleLength={defaultCompass.length}
                 rotateAngle={key * (360 / (defaultCompass.length))}
