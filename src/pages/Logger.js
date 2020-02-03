@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { CompassContext } from "../context/CompassPage/context"
 
 // import { updateInteractionSub, createCommentSub, createAttachmentSub } from "../utils/subscriptions"
-// import { updateInteractionSub, createAttachmentSub } from "../utils/subscriptions"
+import { createAttachmentSub } from "../utils/subscriptions"
 import { getSession, getInteraction } from '../utils/queries'
 import queryStringParser from '../utils/queryStringParser'
 
@@ -32,7 +32,7 @@ const CompassPage = (props) => {
   const { sessionID, interactionID } = queryStringParser(props.location.search)
 
   // subscription for any new project being created
-  // useEffect(() => {
+  useEffect(() => {
   //   // const updateInteraction = updateInteractionSub().subscribe((updatedInteraction) => {
   //   //   const newUpdatedInteraction = updatedInteraction.value.data.onUpdateInteraction
   //   //   console.log(updatedInteraction)
@@ -61,22 +61,22 @@ const CompassPage = (props) => {
   //   })
 
 
-  //   // every time an attachment is created, check if the sessions being viewed is the one being updated
-  //   // if so, update the session
-  //   const createAttachment = createAttachmentSub().subscribe({
-  //     next: res => {
-  //       const newAttachment = res.value.data.onCreateAttachment
-  //       if (newAttachment.interaction.session.id === session.id) {        
-  //         getSession(session.id) 
-  //           .then((res) => {
-  //             updateSession(res.data.getSession)
-  //           })
-  //           .catch((err) => {
-  //             console.log(err)
-  //           })
-  //       }
-  //     }
-  //   })
+    // every time an attachment is created, check if the sessions being viewed is the one being updated
+    // if so, update the session
+    const createAttachment = createAttachmentSub().subscribe({
+      next: res => {
+        const newAttachment = res.value.data.onCreateAttachment
+        if (newAttachment.interaction.session.id === session.id) {        
+          getSession(session.id) 
+            .then((res) => {
+              updateSession(res.data.getSession)
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }
+      }
+    })
 
     
   //   // every time a comment is created, check if the sessions being viewed is the one being updated
@@ -96,13 +96,13 @@ const CompassPage = (props) => {
   //   //   }
   //   // })
 
-  //   return () => {
-  //     clearSession()
-  //     updateInteraction.unsubscribe()
-  //     createAttachment.unsubscribe();
-  //   }
+    return () => {
+      // clearSession()
+      // updateInteraction.unsubscribe()
+      createAttachment.unsubscribe();
+    }
   //   // eslint-disable-next-line
-  // }, [])
+  }, [])
 
   // setting up the session through url
   useEffect(() => {
