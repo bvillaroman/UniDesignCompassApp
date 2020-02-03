@@ -1,12 +1,13 @@
-import React,{useContext,useEffect, useState} from "react";
-import { 
-  ProjectDetailsContainer, 
-  ProjectDetailsTitle, 
+import React, { useContext, useEffect, useState } from "react";
+import {
+  ProjectDetailsTitleContainer,
+  ProjectDetailsTitle,
   ProjectDetailsDescription,
   EditProjectButton,
   // ProjectTitleText,
   ProjectDescriptionText,
   ProjectEditButtons,
+  ProjectDetailsStepContainer,
   CompassDetailsDescription,
   CompassStepAccordion
 } from "../../styles/CompassPage"
@@ -21,7 +22,7 @@ import { Edit } from 'grommet-icons';
 import StepDetails from "./StepDetails"
 
 export default (props) => {
-  const {compass} = useContext(CompassContext)
+  const { compass } = useContext(CompassContext)
   const [title, setTitle] = useState("Compass Details")
   const [description, setDescription] = useState(" ")
   const [steps, setSteps] = useState([])
@@ -34,7 +35,7 @@ export default (props) => {
 
   const onChange = event => {
     const { target: { value, name } } = event;
-    if(name === "title") setTitle(value)
+    if (name === "title") setTitle(value)
     else setDescription(value)
     setErrors('')
     setMessage('')
@@ -42,73 +43,86 @@ export default (props) => {
 
   const submitForm = (e) => {
     updateCompass(compass.id, title, description)
-    .then((res) => {
-      setMessage("Saved!")
-    }).catch(err => {
-      setMessage(err.message)
-    })
+      .then((res) => {
+        setMessage("Saved!")
+      }).catch(err => {
+        setMessage(err.message)
+      })
   }
 
   useEffect(() => {
-    if(compass.hasOwnProperty("id")){
+    if (compass.hasOwnProperty("id")) {
       const name = compass.name_of_compass.charAt(0).toUpperCase() + compass.name_of_compass.slice(1);
       setTitle(name)
-      const desc = compass.description_of_compass.charAt(0).toUpperCase() + compass.description_of_compass.slice(1) ;
+      const desc = compass.description_of_compass.charAt(0).toUpperCase() + compass.description_of_compass.slice(1);
       setDescription(desc)
 
       setSteps(compass.steps.items)
-    }  
+    }
   }, [compass])
-  
+
   return (
-    <ProjectDetailsContainer>
-      {/* <ProjectDetailsTitle > 
+    <>
+      <ProjectDetailsTitleContainer>
+        {/* <ProjectDetailsTitle > 
         <span>{compass.name_of_compass}</span>
         <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
       </ProjectDetailsTitle> */}
-      { 
-        edit ? (        
-          <form
-            onSubmit={submitForm}
-            onChange={onChange}
-            value={{title,description}}
-            errors={{ ...errors }}
-          >
-            <ProjectDetailsTitle > 
-              <InputContainer name="title" >
-                <InputField name="title" value={title} />
+        {
+          edit ? (
+            <form
+              onSubmit={submitForm}
+              onChange={onChange}
+              value={{ title, description }}
+              errors={{ ...errors }}
+            >
+              <ProjectDetailsTitle >
+                <InputContainer name="title" >
+                  <InputField name="title" value={title} />
+                </InputContainer>
+                <EditProjectButton label="Edit" icon={<Edit />} onClick={e => setEdit(!edit)} />
+              </ProjectDetailsTitle>
+              <InputContainer name="description">
+                <InputTextArea name="description" value={description} />
               </InputContainer>
-              <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
-            </ProjectDetailsTitle>
-            <InputContainer name="description">
-              <InputTextArea name="description" value={description} />
-            </InputContainer>
-            <ProjectEditButtons>
-              <span> {message} </span>
-              <EditProjectButton label="Save" onClick={submitForm} />
-            </ProjectEditButtons>
-          </form>
-        ) : (
-          <>
-            <ProjectDetailsTitle > 
-              <span>{compass.name_of_compass}</span>
-              <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
-            </ProjectDetailsTitle>
-            <ProjectDetailsDescription>
-              <ProjectDescriptionText> {description} </ProjectDescriptionText>
-            </ProjectDetailsDescription>
-          </>
-        )
-      }
-      <ProjectDetailsTitle> 
+              <ProjectEditButtons>
+                <span> {message} </span>
+                <EditProjectButton label="Save" onClick={submitForm} />
+              </ProjectEditButtons>
+            </form>
+          ) : (
+              <>
+                <ProjectDetailsTitle >
+                  <span>{compass.name_of_compass}</span>
+                  <EditProjectButton label="Edit" icon={<Edit />} onClick={e => setEdit(!edit)} />
+                </ProjectDetailsTitle>
+                <ProjectDetailsDescription>
+                  <ProjectDescriptionText> {description} </ProjectDescriptionText>
+                </ProjectDetailsDescription>
+              </>
+            )
+        }
+        {/* <ProjectDetailsTitle> 
         <span> {compass.compassType} </span> 
       </ProjectDetailsTitle>
       <CompassDetailsDescription>
         <CompassStepAccordion>
           { steps && steps.map(step => (<StepDetails step={step} />)) }
         </CompassStepAccordion> 
-      </CompassDetailsDescription>
-        
-    </ProjectDetailsContainer>
-  ) 
+      </CompassDetailsDescription> */}
+
+      </ProjectDetailsTitleContainer>
+
+      <ProjectDetailsStepContainer>
+        <ProjectDetailsTitle>
+          <span> {compass.compassType.charAt(0).toUpperCase() + compass.compassType.slice(1)} </span>
+        </ProjectDetailsTitle>
+        <CompassDetailsDescription>
+          <CompassStepAccordion>
+            {steps && steps.map(step => (<StepDetails step={step} />))}
+          </CompassStepAccordion>
+        </CompassDetailsDescription>
+      </ProjectDetailsStepContainer>
+    </>
+  )
 };

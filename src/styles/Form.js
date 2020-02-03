@@ -76,7 +76,7 @@ export const InputTextArea = styled(TextArea)`
   font-size: 1rem;
   resize: none;
   height: 100%;
-  min-height: 10rem;
+  // min-height: 10rem;
   color: black;
   border: 0.01rem solid grey;
 `;

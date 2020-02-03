@@ -61,7 +61,9 @@ const ScribePermission = () => {
               type="email"
               name="scribe"
               value={scribe}
-              onChange={e => { setScribe(e.target.value) }} />
+              onChange={e => { setScribe(e.target.value) }}
+              required
+            />
           </Scribe>
           {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}
           {/* <PermissionButton type="submit" primary label="Submit" disabled={disableButton} /> */}

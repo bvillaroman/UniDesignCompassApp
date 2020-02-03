@@ -66,6 +66,7 @@ const TeachersPermission = () => {
               value={teacher}
               placeholder="Enter Teacher Email"
               onChange={handleTeacherChange}
+              required
             />
           </Permissions>
           {loading ? <Loader /> : <PermissionButton type="submit" primary label="Submit" disabled={disableButton} />}

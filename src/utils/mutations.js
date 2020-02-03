@@ -75,6 +75,7 @@ export async function createSession(name_of_session, description_of_session, com
 
 export async function createStep(name_of_step, description_of_step, color, compassId, index) {
   const stepInfo = {
+    index,
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
