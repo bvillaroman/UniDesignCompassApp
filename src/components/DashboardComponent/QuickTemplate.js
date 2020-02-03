@@ -56,7 +56,7 @@ const QuickTemplate = (props) => {
     createCompass("Untitled", "-", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
-          createStep(step.title, step.description, step.color, res.data.createCompass.id)
+          createStep(step.title, step.description, step.color, res.data.createCompass.id, key)
         )
         const today = new Date();
         const hour = today.getHours()

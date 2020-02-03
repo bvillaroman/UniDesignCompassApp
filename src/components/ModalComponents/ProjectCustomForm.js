@@ -65,7 +65,7 @@ const CustomCompassForm = (props) => {
       createCompass(compassTitle, "-", "default", user.id, user.id)
         .then(res => {
           steps.forEach((step, key) =>
-            createStep(step.title, step.description, step.color, res.data.createCompass.id)
+            createStep(step.title, step.description, step.color, res.data.createCompass.id, key)
           )
 
           const today = new Date();

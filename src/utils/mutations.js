@@ -73,12 +73,13 @@ export async function createSession(name_of_session, description_of_session, com
   return newSession;
 }
 
-export async function createStep(name_of_step, description_of_step, color, compassId) {
+export async function createStep(name_of_step, description_of_step, color, compassId, index) {
   const stepInfo = {
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
-    color
+    color,
+    index
   }
   const newStep = await API.graphql(graphqlOperation(mutations.createStep, { input: stepInfo }));
   return newStep
