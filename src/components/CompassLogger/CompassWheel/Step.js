@@ -3,12 +3,12 @@ import {navigate} from "gatsby";
 import styled from "styled-components"
 import { Button } from "grommet"
 import { CompassContext } from "../../../context/CompassPage/context"
-import { startInteraction } from "../../../utils/mutations"
+import { startInteraction, updateInteraction } from "../../../utils/mutations"
 import translateTime from '../../../utils/translateTime'
 import { GlobalContext } from "../../../context/context";
 
 export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading }) => {
-  const { session, addInteraction, interaction, compass, newestInteraction, interactionAdded } = useContext(CompassContext)
+  const { session, addInteraction, interaction, compass, newestInteraction, newestLog, newestDuration, interactionAdded, pauseTimer } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
@@ -28,16 +28,33 @@ export const Step = ({ activeStep = {}, rotateAngle, circleLength, setLoading })
     duration
   } = activeStep;
 
-  const goToLog = (e) => {
+  const goToLog = async (e) => {
     // console.log(interaction.hasOwnProperty("id"))
     if (disableStep) {
       if (!interaction.hasOwnProperty("id") || id !== interaction.step.id || newestInteraction.step.id !== id) {
         setLoading(true)
-        startInteraction(session.id, id)
-          .then((interaction) => {            
-            addInteraction(interaction.data.createInteraction)
-            navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
-          })
+        if(interactionAdded){
+          pauseTimer()
+          const newInteraction = {
+            id : newestInteraction.id,
+            log_content: newestLog ? newestLog : " ",
+            duration: newestDuration ? newestDuration : 0
+          }          
+          updateInteraction(newInteraction)
+            .then((res) => {
+              startInteraction(session.id, id)
+                .then((interaction) => {            
+                  addInteraction(interaction.data.createInteraction)
+                  navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
+                })
+            })
+        } else {
+          startInteraction(session.id, id)
+            .then((interaction) => {            
+              addInteraction(interaction.data.createInteraction)
+              navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.data.createInteraction.id}`)
+            })
+        }
       }
     }
   }
@@ -81,7 +98,7 @@ export const StepContainer = styled(Button)`
   line-height: 0.8rem;
   display: block;
 	position: absolute;
-  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.90}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+  transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength < 6 ? '5rem' : '7rem'}) rotate(-${props.rotateAngle}deg)` || 'none'};
   box-shadow: 0 1px 3px 0 #b3b3b3;
   -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
@@ -92,7 +109,7 @@ export const StepContainer = styled(Button)`
     font-size: 1.2rem;
     line-height: 1.3rem;
     left: 39%;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.7}rem) rotate(-${props.rotateAngle}deg)` || 'none'};
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength < 6 ? '10.6rem' : '13.6rem'}) rotate(-${props.rotateAngle}deg)` || 'none'};
   }  
   @media (max-width: 650px){
     height: 9rem;
@@ -100,7 +117,7 @@ export const StepContainer = styled(Button)`
     font-size: 1.1rem;
     line-height: 1.2rem;
     left: 38%;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.6}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength < 6 ? '9.8rem' : '12.8rem'}) rotate(-${props.rotateAngle}deg)` || 'none'}; 
   }  
   @media (max-width: 550px){
     height: 8rem;
@@ -108,7 +125,7 @@ export const StepContainer = styled(Button)`
     font-size: 1rem;
     line-height: 1.1rem;
     left: 37%;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.4}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+    transform: ${props => `rotate(${props.rotateAngle}deg)  translate(${props.circleLength < 6 ? '8.2rem' : '11.2rem'})  rotate(-${props.rotateAngle}deg)` || 'none'}; 
   } 
   @media (max-width: 475px){
     height: 7rem;
@@ -116,7 +133,7 @@ export const StepContainer = styled(Button)`
     font-size: 0.9rem;
     line-height: 1rem;
     left: 36%;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.2}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength < 6 ? '6.6rem' : '9.6rem'})  rotate(-${props.rotateAngle}deg)` || 'none'}; 
   }  
   @media (max-width: 413px){
     height: 6.5rem;
@@ -124,14 +141,14 @@ export const StepContainer = styled(Button)`
     font-size: 0.8rem;
     line-height: 0.9rem;
     left: 35.5%;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 1.13}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+    transform: ${props => `rotate(${props.rotateAngle}deg)  translate(${props.circleLength < 6 ? '6.04rem' : '9.04rem'}) rotate(-${props.rotateAngle}deg)` || 'none'}; 
   }   
   @media (max-width: 370px){
     height: 5.5rem;
     width: 5.5rem;
     font-size: 0.7rem;
     line-height: 0.8rem;
-    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength * 0.95}rem) rotate(-${props.rotateAngle}deg)` || 'none'}; 
+    transform: ${props => `rotate(${props.rotateAngle}deg) translate(${props.circleLength < 6 ? '5.0rem' : '7.6rem'})rotate(-${props.rotateAngle}deg)` || 'none'}; 
   }   
     
 `

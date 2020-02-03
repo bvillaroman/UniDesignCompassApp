@@ -22,7 +22,7 @@ export const Wheel = (props) => {
 
   useEffect(() => {
     if (session.hasOwnProperty("compass")) {
-      const compassSteps = session.compass.steps.items.flat();
+      const compassSteps = session.compass.steps.items.flat().sort((a, b) => (a.index) - b.index)
       let arr = compassSteps.map((step, key) => ({
         id: step.id,
         key,
@@ -32,9 +32,8 @@ export const Wheel = (props) => {
         duration: 0,
         title: step.name_of_step,
         value: 100 / compassSteps.length
-
       })
-      );
+    );
 
       arr.forEach(step => {
         
@@ -81,7 +80,7 @@ export const Wheel = (props) => {
                 activeStep={item}
                 key={key}
                 circleLength={steps.length}
-                rotateAngle={key * (360 / (steps.length))}
+                rotateAngle={(key+ Math.ceil(steps.length/2)) * (360 / (steps.length))}
                 setLoading={props.setLoading}
               />
             )
@@ -116,25 +115,12 @@ export const CSTitle = styled.div`
 export const CompassWheel = styled.div`
   position: relative;
   width: 100%;
-  height: 19rem;
-  @media (max-width: 767px){ height: 35.5rem;}  
-  @media (max-width: 650px){ height: 34rem; }  
-  @media (max-width: 550px){ height: 30rem; } 
-  @media (max-width: 475px){ height: 26rem; }  
-  @media (max-width: 413px){ height: 24rem; }   
-  @media (max-width: 370px){ height: 20.5rem; }    
-  margin: 0 auto;
-`;
-
-export const PauseButton = styled.div`
-  position: relative;
-  width: 100%;
-  height: 19rem;
-  @media (max-width: 767px){ height: 35.5rem;}  
-  @media (max-width: 650px){ height: 34rem; }  
-  @media (max-width: 550px){ height: 30rem; } 
-  @media (max-width: 475px){ height: 26rem; }  
-  @media (max-width: 413px){ height: 24rem; }   
-  @media (max-width: 370px){ height: 20.5rem; }    
+  height: 20.5rem;
+  @media (max-width: 767px){ height: 40rem;}  
+  @media (max-width: 650px){ height: 38rem; }  
+  @media (max-width: 550px){ height: 33rem; } 
+  @media (max-width: 475px){ height: 30rem; }  
+  @media (max-width: 413px){ height: 28rem; }   
+  @media (max-width: 370px){ height: 24rem; }    
   margin: 0 auto;
 `;

@@ -47,7 +47,7 @@ const SummarySession = (props) => {
         <SummaryMainView>{sessions.sort(timeConverter).map((session, i) =>
           <SummaryTableConatiner key={i}>
             <SummarySessionName>
-              {session.name_of_session}
+              {session.name_of_session.substring(0, session.name_of_session.length - 1)}
             </SummarySessionName>
             <SummaryTable alignSelf="stretch">
               <SummaryTableHeader>
@@ -55,7 +55,7 @@ const SummarySession = (props) => {
                   <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
                   <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
                   <SummaryTdHeader>Log</SummaryTdHeader>
-                  {/* <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader> */}
+                  <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader>
                 </SummaryTableRow>
               </SummaryTableHeader>
               {session.interactions.items.sort(timeConverter).map((interaction, i) =>
@@ -63,8 +63,8 @@ const SummarySession = (props) => {
                   <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                     <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                     <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
-                    <SummaryTdBody>{ interaction.log_content.length > 24 ? interaction.log_content.substring(0, 25) + "..." : interaction.log_content}</SummaryTdBody>
-                    {/* <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody> */}
+                    <SummaryTdBody>{interaction.log_content.length > 24 ? interaction.log_content.substring(0, 25) + "..." : interaction.log_content}</SummaryTdBody>
+                    <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                   </tr>
                 </SummaryTableBody>
               )}

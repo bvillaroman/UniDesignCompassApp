@@ -13,9 +13,9 @@ export const ProjectCreator = (props) => {
         New Project
       </DashboardSectionHeader>
       <ProjectTypeFeed>
-        <CustomTemplate setLoading={props.setLoading}/>
-        <ProjectTemplate setLoading={props.setLoading}/>
-        <QuickTemplate setLoading={props.setLoading}/>
+        <QuickTemplate setLoading={props.setLoading} />
+        <ProjectTemplate setLoading={props.setLoading} />
+        <CustomTemplate setLoading={props.setLoading} />
       </ProjectTypeFeed>
     </ProjectTypeFeedContainer>
   )

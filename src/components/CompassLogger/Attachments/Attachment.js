@@ -18,7 +18,7 @@ const Attachment = ({attachment}) => {
     <AttachmentLinkStyle href={source} target="_blank" rel="noopener noreferrer">
       <AttachmentLinkContainer>
         <AttachmentItemButton attachment={attachment}/>
-        <AttachmentText color={attachment.step.color}>{attachment.step.name_of_step}</AttachmentText>
+        { attachment.interaction.step && <AttachmentText color={attachment.interaction.step.color}>{attachment.interaction.step.name_of_step}</AttachmentText>}
       </AttachmentLinkContainer>      
     </AttachmentLinkStyle>
   );
