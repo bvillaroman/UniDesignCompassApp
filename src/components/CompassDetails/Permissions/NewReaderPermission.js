@@ -15,7 +15,7 @@ import {
 } from "./style"
 
 const ReadersPermission = () => {
-  const { compass } = useContext(CompassContext);
+  const { compass, updateCompass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
@@ -46,6 +46,7 @@ const ReadersPermission = () => {
       .then(res => {
         setReader("");
         setLoading(false);
+        updateCompass(res.data.createReaderCompasses.compass);
       })
       .catch(err => console.log('failed at getUser', err))
 
@@ -60,11 +61,11 @@ const ReadersPermission = () => {
         <PermissionForm onSubmit={handleSubmit}>
           <Permissions>
             <input
-              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large", width: "250px" }}
               type="email"
               className="email"
               value={reader}
-              placeholder="Enter Teacher Email"
+              placeholder="Enter Reader Email"
               onChange={handleReaderChange}
               required
             />

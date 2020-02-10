@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { CompassSideBar, CompassLink, SignOutButton, CompassHeaderCompass, LinkContainer } from './style';
-import { navigate } from "gatsby"
-import { User } from 'grommet-icons'
-import { GlobalContext } from "../../context/context"
-import { Auth } from 'aws-amplify'
+import styled from "styled-components";
+import { navigate } from "gatsby";
+import { User, Logout } from 'grommet-icons';
+import { GlobalContext } from "../../context/context";
+import { Auth } from 'aws-amplify';
 
 
 const AccountBar = props => {
@@ -29,11 +30,15 @@ const AccountBar = props => {
       </LinkContainer>
       <LinkContainer center>
         <CompassLink to="/Profile"><User /><span>Profile</span></CompassLink>
-        <SignOutButton onClick={e => signOut()}>Sign out</SignOutButton>
+        <SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton>
       </LinkContainer>
-      
+
     </CompassSideBar>
   )
 }
 
 export default AccountBar;
+
+const Span = styled.span`
+  margin-left: 0.8rem;
+`;

@@ -15,7 +15,7 @@ import {
 } from "./style"
 
 const MembersPermission = () => {
-  const { compass } = useContext(CompassContext);
+  const { compass, updateCompass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
@@ -46,6 +46,8 @@ const MembersPermission = () => {
       .then(res => {
         setMember("");
         setLoading(false);
+        updateCompass(res.data.createMemberCompasses.compass);
+
       })
       .catch(err => console.log('failed at getUser', err))
 
@@ -60,7 +62,7 @@ const MembersPermission = () => {
         <PermissionForm onSubmit={handleSubmit}>
           <Permissions>
             <input
-              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large", width: "250px" }}
               type="email"
               className="email"
               value={member}
