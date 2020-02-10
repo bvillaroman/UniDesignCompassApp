@@ -2,20 +2,13 @@ import styled from "styled-components";
 import { Button } from 'grommet';
 
 export const PermissionContainer = styled.div`
-  width: 80%;
-  // height: 40.5%;
-  height: 8rem;
-  // margin-top: 1rem;
-  // margin-left: 0.5rem;
-  // margin-right: 0.5rem;
-  // margin-bottom: 0.5rem;
+  width: 88%;
   margin: 0 auto;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   background: white;
   padding: 1rem;
-  padding-bottom: 0;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   transition: box-shadow 150ms ease;
 
@@ -87,4 +80,5 @@ float: right;
 
 export const DeleteContainer = styled.div`
   padding: 0.7rem;
+  padding-right: 0rem;
 `

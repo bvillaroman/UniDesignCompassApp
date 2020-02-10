@@ -6,6 +6,7 @@ import { dateFormatter } from "../../utils/translateTime"
 import { deleteCompass, updateCompass } from "../../utils/mutations"
 import { GlobalContext } from "../../context/context"
 import { getCompass } from "../../utils/queries"
+import { timeSorter } from "../../utils/translateTime"
 import {
   CompassRowMoreButton,
   CompassRowMore,
@@ -46,7 +47,7 @@ export const CompassFeed = ({ compasses, type, onShow }) => {
             </ProjectFeedHeader>
             <Feed>
               {
-                compasses.map((compass, key) => (
+                compasses.sort(timeSorter).map((compass, key) => (
                   <ProjectCard >
                     <CompassTitle onClick={e => goToCompass(compass)} key={key}>{compass.name_of_compass}</CompassTitle>
                     <CompassDescription onClick={e => goToCompass(compass)} key={key}>{compass.description_of_compass}</CompassDescription>
