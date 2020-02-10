@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from "styled-components"
 
-import {LoggerHeaderContainer, LoggerHeaderText, LoggerHeaderButtonContainer} from "../style"
+import { LoggerHeaderContainer, LoggerHeaderText, LoggerHeaderButtonContainer } from "../style"
 import DisplayComment from './DisplayComment';
 import CommentForm from './CommentForm';
 import { CompassContext } from "../../../context/CompassPage/context";
@@ -34,7 +34,7 @@ const Comment = () => {
   }
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth",  block: 'nearest' });
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth", block: 'nearest' });
   };
 
   useEffect(scrollToBottom, [comments]);
@@ -45,7 +45,7 @@ const Comment = () => {
         <LoggerHeaderText>Comments</LoggerHeaderText>
         <LoggerHeaderButtonContainer />
       </LoggerHeaderContainer>
-      
+
       <CommentBox>
         {
           comments.sort(timeConverter).map((comment, key) => <DisplayComment comment={comment} key={key} />)

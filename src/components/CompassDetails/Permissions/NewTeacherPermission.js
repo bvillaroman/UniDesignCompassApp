@@ -14,8 +14,8 @@ import {
   PermissionButton,
 } from "./style"
 
-const TeachersPermission = () => {
-  const { compass } = useContext(CompassContext);
+const TeachersPermission = (props) => {
+  const { compass, updateCompass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
@@ -29,6 +29,7 @@ const TeachersPermission = () => {
     if (compass.owner.id === user.id || (teacher.hasOwnProperty("email") && (teacher.email === user.email))) {
       setdisableButton(false)
     }
+
 
     // eslint-disable-next-line
   }, [compass.id])
@@ -46,9 +47,9 @@ const TeachersPermission = () => {
       .then(res => {
         setTeacher("");
         setLoading(false);
+        updateCompass(res.data.createTeacherCompasses.compass)
       })
       .catch(err => console.log('failed at getUser', err))
-
   }
 
   return (
@@ -60,11 +61,11 @@ const TeachersPermission = () => {
         <PermissionForm onSubmit={handleSubmit}>
           <Permissions>
             <input
-              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large", width: "250px" }}
               type="email"
               className="email"
               value={teacher}
-              placeholder="Enter Teacher Email"
+              placeholder="Enter Team Leader Email"
               onChange={handleTeacherChange}
               required
             />

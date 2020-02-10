@@ -92,11 +92,11 @@ const Dashboard = (props) => {
                 : <div> Error !: {error}</div>
             } */}
             {
-              !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} onShow={true}/>) : <div>You have no projects, start one from above! </div>)
+              !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} onShow={true} />) : <div>You have no projects, start one from above! </div>)
                 : <div> Error !: {error}</div>
             }
             {
-              !error ? (teacherCompasses.length ? (<Feed compasses={teacherCompasses} type={"Teacher"} onShow={false} />) : "")
+              !error ? (teacherCompasses.length ? (<Feed compasses={teacherCompasses} type={"Team Leader"} onShow={false} />) : "")
                 : <div> Error !: {error}</div>
             }
             {

@@ -16,15 +16,13 @@ export default (props) => {
     <CompassViewerContainer>
       <CompassNavigationBar>
         <ProjectDetails />
-        <DisplayPermission />
       </CompassNavigationBar>
       <CompassNavigationBar2>
+        <DisplayPermission />
         <TeachersPermission />
         <ScribePermission />
         <MembersPermission />
         <ReadersPermission />
-
-        {/* <DeletePermission /> */}
       </CompassNavigationBar2>
     </CompassViewerContainer>
   )

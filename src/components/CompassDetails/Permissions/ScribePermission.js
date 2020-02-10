@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { getUsers } from '../../../utils/queries';
-import { updateCompass } from '../../../utils/mutations';
+import { updateCompass as mutationsUpdateCompass } from '../../../utils/mutations';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
 import { Loader } from "../../../styles/layout"
@@ -14,7 +14,7 @@ import {
 } from "./style"
 
 const ScribePermission = () => {
-  const { compass } = useContext(CompassContext);
+  const { compass, updateCompass } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [disableButton, setdisableButton] = useState(true)
@@ -38,11 +38,12 @@ const ScribePermission = () => {
     getUsers(scribe)
       .then(res => {
         setLoading(true)
-        return updateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
+        return mutationsUpdateCompass(compass.id, compass.name_of_compass, compass.description_of_compass, res.data.listUsers.items[0].id)
       })
       .then(res => {
         setScribe("");
         setLoading(false);
+        updateCompass(res.data.updateCompass)
       })
       .catch(err => console.log(err))
 
@@ -56,7 +57,7 @@ const ScribePermission = () => {
           <Scribe>
             <label style={{ fontSize: "1.3rem", fontWeight: "500", width: "5em" }} />
             <input
-              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large" }}
+              style={{ border: "none", borderBottom: "2px solid #f4f6f9", fontSize: "large", width: "250px" }}
               placeholder="Enter Scribe Email"
               type="email"
               name="scribe"
