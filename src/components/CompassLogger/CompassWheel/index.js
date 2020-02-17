@@ -22,8 +22,9 @@ export const Wheel = (props) => {
 
   useEffect(() => {
     if (session.hasOwnProperty("compass")) {
-      console.log(session.compass.steps.items)
+      // console.log(session.compass.steps.items)
       const compassSteps = session.compass.steps.items.flat().sort((a, b) => (a.index) - b.index)
+      console.log(compassSteps)
       let arr = compassSteps.map((step, key) => ({
         id: step.id,
         key,
@@ -82,7 +83,7 @@ export const Wheel = (props) => {
                 index={item.index}
                 key={key}
                 circleLength={steps.length}
-                rotateAngle={(key + Math.ceil(steps.length / 2)) * (360 / (steps.length))}
+                rotateAngle={((key + Math.ceil(steps.length / 2)) * (360 / (steps.length))) + 90}
                 setLoading={props.setLoading}
               />
             )
