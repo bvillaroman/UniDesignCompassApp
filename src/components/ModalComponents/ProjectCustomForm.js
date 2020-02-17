@@ -62,7 +62,7 @@ const CustomCompassForm = (props) => {
           return alert("Title or Description cannot be empty")
         }
       })
-      createCompass(compassTitle, "-", "default", user.id, user.id)
+      createCompass(compassTitle, "Type in Project Details here", "default", user.id, user.id)
         .then(res => {
           steps.forEach((step, key) =>
             createStep(step.title, step.description, step.color, res.data.createCompass.id, key)
@@ -154,6 +154,10 @@ const CustomCompassForm = (props) => {
                       <CustomStepsOption>Teal</CustomStepsOption>
                       <CustomStepsOption>Pink</CustomStepsOption>
                       <CustomStepsOption>Yellow</CustomStepsOption>
+                      <CustomStepsOption>Aqua</CustomStepsOption>
+                      <CustomStepsOption>Magenta</CustomStepsOption>
+                      <CustomStepsOption>Salmon</CustomStepsOption>
+
                     </CustomStepsSelect>
                     <CustomStepsRemoveButton onClick={() => handleRemove(idx)} icon={<FormClose />} />
                   </CustomStepsDiv2>

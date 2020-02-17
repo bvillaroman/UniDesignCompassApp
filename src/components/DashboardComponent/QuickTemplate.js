@@ -53,7 +53,7 @@ const QuickTemplate = (props) => {
 
   const goToReview = (event) => {
     props.setLoading(true)
-    createCompass("Untitled Project", "Project Details", "default", user.id, user.id)
+    createCompass("Untitled Project", "Type in Project Details here", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id, key)
@@ -128,8 +128,8 @@ export const CompassCardTitle = styled.div`
   width: 100%;
   height: 1rem;
   color: black;
-  font-weight: 450;
-  font-size: 0.9rem;
+  font-weight: 530;
+  font-size: 0.8rem;
   text-align: center;
   
 `;

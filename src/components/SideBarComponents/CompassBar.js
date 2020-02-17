@@ -65,7 +65,7 @@ const CompassBar = ({ page }) => {
       <LinkContainer>
         {/* <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink> */}
         <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
-        <SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton>
+        <CompassLink ><SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton></CompassLink>
       </LinkContainer>
     </CompassSideBar >
   )

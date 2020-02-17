@@ -13,7 +13,7 @@ export const PermissionContainer = styled.div`
   transition: box-shadow 150ms ease;
 
   @media (max-width: 767px){
-    width: 100%;
+    width: 90%;
   } 
 `
 

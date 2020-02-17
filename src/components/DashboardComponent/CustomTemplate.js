@@ -15,7 +15,7 @@ export default (props) => {
       <ProjectTypeDetails>
         <img src={CustomCompass} alt="source: Cliparts.co CustomCompass-1" style={{ maxWidth: '5.1em' }} />
       </ProjectTypeDetails>
-      <CompassCardTitle>Custom Compass</CompassCardTitle>
+      <CompassCardTitle>Custom Compass: <br /> Solo or Team Design</CompassCardTitle>
     </TemplateContainer>
   )
 }
@@ -47,8 +47,8 @@ export const CompassCardTitle = styled.div`
   width: 100%;
   height: 1rem;
   color: black;
-  font-weight: 450;
-  font-size: 0.9rem;
+  font-weight: 530;
+  font-size: 0.8rem;
   text-align: center;
   
 `;

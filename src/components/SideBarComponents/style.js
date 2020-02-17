@@ -30,7 +30,7 @@ export const CompassSideBar = styled(Box)`
     width: 100%;
     height: 0%;
         
-    a:not(:nth-last-child(5)){
+    a:not(:nth-last-child(6)){
       ${props => props.renderSidebar ? 'display: none;' : 'initial'};
     };
   }
