@@ -53,7 +53,7 @@ const QuickTemplate = (props) => {
 
   const goToReview = (event) => {
     props.setLoading(true)
-    createCompass("Untitled", "-", "default", user.id, user.id)
+    createCompass("Untitled Project", "Project Details", "default", user.id, user.id)
       .then(res => {
         defaultCompass.forEach((step, key) =>
           createStep(step.title, step.description, step.color, res.data.createCompass.id, key)
@@ -94,7 +94,7 @@ const QuickTemplate = (props) => {
           }
         </CompassCircle>
       </ProjectTypeDetails>
-      <CompassCardTitle>Quick Start</CompassCardTitle>
+      <CompassCardTitle>Quick Start: <br /> Solo Designer</CompassCardTitle>
     </TemplateContainer>
   )
 }

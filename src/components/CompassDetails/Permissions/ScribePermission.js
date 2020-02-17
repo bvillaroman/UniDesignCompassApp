@@ -7,7 +7,7 @@ import { Loader } from "../../../styles/layout"
 import styled from "styled-components"
 import {
   PermissionContainer,
-  PermissionHeader,
+  PermissionHeaderBox,
   PermissionFormContainer,
   PermissionForm,
   PermissionButton
@@ -51,7 +51,7 @@ const ScribePermission = () => {
 
   return (
     <PermissionContainer>
-      <PermissionHeader>Change Scribe</PermissionHeader>
+      <PermissionHeaderBox>Change Scribe</PermissionHeaderBox>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
           <Scribe>

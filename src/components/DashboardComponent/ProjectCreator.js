@@ -30,7 +30,7 @@ const ProjectTypeFeedContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 1rem 2rem; 
+  // padding: 1rem 2rem; 
   @media (max-width: 767px){
     padding: 0;
   }

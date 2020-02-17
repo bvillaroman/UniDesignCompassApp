@@ -24,6 +24,22 @@ export const PermissionHeaderBar = styled.div`
 export const PermissionHeader = styled.div`
   text-align: left;
   padding-left: 0.5rem;
+  padding-top: 0.5em;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+`
+
+export const PermissionHeaderBox = styled.div`
+  text-align: left;
+  padding-left: 0.5rem;
   margin: 0 auto;
   width: 100%;
   height: auto;
