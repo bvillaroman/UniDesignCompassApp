@@ -3,11 +3,11 @@ import styled from "styled-components"
 import * as Mutations from "../../../utils/mutations";
 import { CompassContext } from "../../../context/CompassPage/context";
 import { GlobalContext } from "../../../context/context";
-import { Waypoint } from 'grommet-icons';
+import { Send } from 'grommet-icons';
 
 const CommentForm = (props) => {
   const { user } = useContext(GlobalContext);
-  const { session  } = useContext(CompassContext);
+  const { session } = useContext(CompassContext);
   const [commentValue, setCommentValue] = useState("");
 
   const sessionId = session.id
@@ -27,7 +27,7 @@ const CommentForm = (props) => {
       .catch(err => console.log(err))
   }
 
-  return (    
+  return (
     <CommentsForm onSubmit={handleSubmit} >
       <CommentFormFlex>
         <CommentInput
@@ -35,10 +35,10 @@ const CommentForm = (props) => {
           value={commentValue}
           placeholder='Enter Comments...'
         />
-        <CommentButton type='submit' ><Waypoint /></CommentButton>
+        <CommentButton type='submit' ><Send /></CommentButton>
       </CommentFormFlex>
     </CommentsForm>
-    
+
   )
 }
 

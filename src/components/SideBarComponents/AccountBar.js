@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { CompassSideBar, CompassLink, SignOutButton, CompassHeaderCompass, LinkContainer } from './style';
+import { CompassSideBar, CompassLink, SignOutButton, CompassHeaderCompass, LinkContainer, CompassLink2 } from './style';
 import styled from "styled-components";
 import { navigate } from "gatsby";
-import { User, Logout } from 'grommet-icons';
+import { User, Logout, Compass, DocumentText, BarChart, Home, Notes } from 'grommet-icons';
 import { GlobalContext } from "../../context/context";
 import { Auth } from 'aws-amplify';
-
 
 const AccountBar = props => {
   const { logoutUser } = useContext(GlobalContext);
@@ -27,6 +26,12 @@ const AccountBar = props => {
     <CompassSideBar>
       <LinkContainer>
         <CompassHeaderCompass to={`/`} >UDC</CompassHeaderCompass>
+        <CompassLink to={`/`}><Home /><span style={{ borderBottom: '0.1rem solid white' }}>Dashboard</span> </CompassLink>
+        {/* <CompassLink2><Home /><span style={{ borderBottom: '0.1rem solid white' }}>Dashboard</span> </CompassLink2> */}
+        <CompassLink2><Notes /><span>Details</span></CompassLink2>
+        <CompassLink2><Compass /><span>Compass</span></CompassLink2>
+        <CompassLink2><DocumentText /><span>Log </span></CompassLink2>
+        <CompassLink2><BarChart /><span>Overview</span></CompassLink2>
       </LinkContainer>
       <LinkContainer center>
         <CompassLink to="/Profile"><User /><span>Profile</span></CompassLink>

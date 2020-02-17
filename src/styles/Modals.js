@@ -11,9 +11,9 @@ export const LayerView = styled(Layer)`
 `
 
 export const ReviewLogContainer = styled(Box)`
-  width: 99%;
+  width: 96.5%;
   padding: 0 1.5rem;
-  height: 98%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

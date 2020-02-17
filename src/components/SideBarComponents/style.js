@@ -30,7 +30,7 @@ export const CompassSideBar = styled(Box)`
     width: 100%;
     height: 0%;
         
-    a:not(:nth-last-child(5)){
+    a:not(:nth-last-child(6)){
       ${props => props.renderSidebar ? 'display: none;' : 'initial'};
     };
   }
@@ -54,13 +54,14 @@ export const CompassHeaderDash = styled(Link)`
 
 export const CompassHeaderCompass = styled(Link)`
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   line-height: 2rem;
   font-weight: 900;
   color: white;
   text-decoration: underline;
   align-self: center;
+  text-decoration: none;
 
   @media (max-width: 768px){
     //flex: 0 0 100%;
@@ -124,6 +125,46 @@ const CompassLinkStyles = styled(Link)`
     //display: none;
   }
 `
+const CompassLinkStyles2 = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 560;
+  margin: 0.5rem 0!important;
+  pointer-events: none;
+  svg {
+    fill: black;
+    stroke:  black;
+    ${({ size }) => size === "small" && "height: 1.5rem"};
+    ${({ size }) => size === "small" && "width: 1.5rem"};
+    ${({ size }) => size === "small" && "margin-left: 1.5rem"};
+    ${({ active }) => active && "margin-bottom: 0.2rem"};
+  }
+  span {
+    ${({ size }) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
+    ${({ active, size }) => {
+    if (active) {
+      if (size === "small") return "border-bottom: 0.05rem solid white"
+      else return "border-bottom: 0.1rem solid white"
+    }
+  }};
+    ${({ active, size }) => {
+    if (active) {
+      if (size === "small") return "padding-bottom: 0.05rem"
+      else return "padding-bottom: 0.1rem"
+    }
+  }};
+    ${({ size }) => size === "small" && "font-size: 0.8rem"};
+  }
+  justify-content: center;
+  ${({ size }) => size === "small" ? "margin: 0 auto" : "margin: 0.5rem auto"};
+  @media (max-width: 768px){
+    //display: none;
+  }
+`
+
 export const SignOutButton = styled(Button)`
   display: flex;
   flex-direction: row;
@@ -157,3 +198,16 @@ export const CompassLink = ({ to, children, active, size, onClick }) => (
     {children}
   </CompassLinkStyles>
 )
+
+export const CompassLink2 = ({ to, children, active, size, onClick }) => (
+  <CompassLinkStyles2
+    to={to}
+    active={active}
+    partiallyActive={to !== "/" ? true : false}
+    size={size}
+    onClick={onClick}
+  >
+    {children}
+  </CompassLinkStyles2>
+)
+

@@ -115,11 +115,12 @@ export default (props) => {
 
       <ProjectDetailsStepContainer>
         <ProjectDetailsTitle>
-          <span> {compass.compassType.charAt(0).toUpperCase() + compass.compassType.slice(1)} </span>
+          <span>Default Compass</span>
+          {/* <span> {compass.compassType.charAt(0).toUpperCase() + compass.compassType.slice(1)} </span> */}
         </ProjectDetailsTitle>
         <CompassDetailsDescription>
           <CompassStepAccordion>
-            {steps && steps.map(step => (<StepDetails step={step} />))}
+            {steps && steps.sort((a, b) => (a.index) - b.index).map(step => (<StepDetails step={step} />))}
           </CompassStepAccordion>
         </CompassDetailsDescription>
       </ProjectDetailsStepContainer>

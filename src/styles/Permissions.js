@@ -20,7 +20,8 @@ export const PermissionContainer = styled.div`
   height: fit-content;
 
   @media (max-width: 767px){
-    width: 100%;
+    margin: 0rem;
+    width: 90%
   } 
 `;
 
