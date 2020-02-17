@@ -7,7 +7,7 @@ import { Loader } from "../../../styles/layout"
 import {
   PermissionContainer,
   PermissionHeaderBar,
-  PermissionHeader,
+  PermissionHeaderBox,
   PermissionFormContainer,
   PermissionForm,
   Permissions,
@@ -55,7 +55,7 @@ const ReadersPermission = () => {
   return (
     <PermissionContainer>
       <PermissionHeaderBar>
-        <PermissionHeader>Add Reader</PermissionHeader>
+        <PermissionHeaderBox>Add Reader</PermissionHeaderBox>
       </PermissionHeaderBar>
       <PermissionFormContainer>
         <PermissionForm onSubmit={handleSubmit}>
