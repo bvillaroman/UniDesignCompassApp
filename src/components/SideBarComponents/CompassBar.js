@@ -33,6 +33,7 @@ const CompassBar = ({ page }) => {
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
       <LinkContainer>
         {<CompassHeaderCompass to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>}
+        <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink>
         <CompassLink active={page === "/Logger/"} to={`/Logger/?c=${CompassInfo.compass.id}&s=${newestSession}`}>
           <Compass />
           <span>Compass</span>
@@ -41,7 +42,7 @@ const CompassBar = ({ page }) => {
         <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Overview</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
-        <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink>
+        {/* <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink> */}
         <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
       </LinkContainer>
     </CompassSideBar >

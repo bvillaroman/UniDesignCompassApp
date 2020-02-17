@@ -11,25 +11,25 @@ const Interactions = (props) => {
 
   const [canScroll, setCanScroll] = useState(true)
   const scrollToRight = () => {
-    EndRef.current.scrollIntoView({ behavior: "smooth", inline: "end"});
+    EndRef.current.scrollIntoView({ behavior: "smooth", inline: "end" });
     setCanScroll(false)
   };
 
-  useEffect( () => {
-    if(newestInteraction.id === interaction.id && canScroll){
-      scrollToRight()      
+  useEffect(() => {
+    if (newestInteraction.id === interaction.id && canScroll) {
+      scrollToRight()
     } else {
       setCanScroll(true)
     }
-    
+
     // eslint-disable-next-line
   }, [newestInteraction.id, interaction.id]);
 
-  
+
   // getting the current session
   return (
     <InteractionsContainer >
-      <InteractionsTitle> Recent Entries </InteractionsTitle>
+      <InteractionsTitle> Recent Steps </InteractionsTitle>
       <InteractionsFeed >
         {
           interactions ? interactions.map((item, key) => {
@@ -45,7 +45,7 @@ const Interactions = (props) => {
             }
             return ''
           }
-          ).reverse() : <p>There are no logs!</p>          
+          ).reverse() : <p>There are no logs!</p>
         }
         <LastRef ref={EndRef} />
       </InteractionsFeed>

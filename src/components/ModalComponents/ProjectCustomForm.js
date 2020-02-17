@@ -107,7 +107,7 @@ const CustomCompassForm = (props) => {
     >
       <ReviewLogContainer>
         <ReviewLogHeader>
-          <ReviewLogTitle> Custom Project </ReviewLogTitle>
+          <ReviewLogTitle> Custom Compass </ReviewLogTitle>
           <CloseButton onClick={closeWindow} />
         </ReviewLogHeader>
         <CustomStepsForm onSubmit={CustomStepSubmit}>
