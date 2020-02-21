@@ -5,9 +5,12 @@ import { updateProjectsSub } from "../../utils/subscriptions"
 import { CompassContext } from "../../context/CompassPage/context"
 import { GlobalContext } from "../../context/context"
 import { ReviewModalContext } from "../../context/ReviewModal/context"
+import { CircleQuestion } from 'grommet-icons'
 
 import { Loader } from "../../styles/layout"
 import { getUser } from "../../utils/queries"
+
+import ReactJoyride from "react-joyride";
 
 // components
 import ProjectCreator from "./ProjectCreator";
@@ -24,6 +27,52 @@ const Dashboard = (props) => {
   const [readerCompasses, setReaderCompasses] = useState([])
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(true)
+
+  const [step, setStep] = useState({
+    run: false,
+    steps: [
+      {
+        target: ".tour1",
+        content: "1st feature of my website!",
+        disableBeacon: true
+      },
+      {
+        target: ".details-help",
+        content: "1st feature of my website!",
+        disableBeacon: true
+      },
+      {
+        target: ".quick-template-help",
+        content: "1st feature of my website!",
+        disableBeacon: true
+      },
+      {
+        target: ".default-compass-help",
+        content: "1st feature of my website!",
+        disableBeacon: true
+      },
+      {
+        target: ".custom-template-help",
+        content: "1st feature of my website!",
+        disableBeacon: true
+      },
+
+    ]
+  })
+
+  const checkprops = (callback) => {
+    if (callback.status === 'finished' || callback.status === 'skipped') {
+      const updateState = { ...step, run: false }
+      setStep(updateState)
+    }
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    const updateState = { ...step, run: true }
+    setStep(updateState)
+  }
 
   useEffect(() => {
     if (user.id) {
@@ -78,12 +127,40 @@ const Dashboard = (props) => {
 
   return (
     <>
+      <ReactJoyride
+        steps={step.steps}
+        run={step.run}
+        continuous={true}
+        showProgress={true}
+        showSkipButton={true}
+        callback={checkprops}
+        styles={{
+          options: {
+            // modal arrow and background color
+            arrowColor: "#eee",
+            backgroundColor: "#eee",
+            // page overlay color
+            overlayColor: "rgba(79, 26, 0, 0.4)",
+            //button color
+            primaryColor: "mediumaquamarine",
+            //text color
+            textColor: "#333",
+
+            //width of modal
+            width: 500,
+            //zindex of modal
+            zIndex: 1000
+          }
+        }}
+      />
       {
         loading ? <Loader /> : (
           <DashboardContainer>
             <Header >
               <Title>Dashboard</Title>
               {/* <InfoText>What are projects?</InfoText> */}
+              {/* <InfoText className="tour1"><button onClick={handleClick}><CircleQuestion /></button></InfoText> */}
+              <InfoText className="tour1"><CircleQuestion onClick={handleClick} style={{ cursor: 'pointer' }} /></InfoText>
             </Header>
             {showModal && <CustomCompassForm setLoading={setLoading} />}
             <ProjectCreator setLoading={setLoading} />
