@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { Button } from 'grommet';
 
 export const PermissionContainer = styled.div`
-  width: 88%;
-  margin: 0 auto;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;

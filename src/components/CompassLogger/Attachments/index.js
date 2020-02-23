@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import * as Icons from 'grommet-icons';
-import {Menu} from 'grommet';
+import { Menu } from 'grommet';
 
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { Loader } from "../../../styles/layout"
@@ -14,7 +14,7 @@ import { CompassContext } from "../../../context/CompassPage/context"
 import { GlobalContext } from "../../../context/context"
 
 const Attachments = (props) => {
-  const { compass,interaction, session } = useContext(CompassContext);
+  const { compass, interaction, session } = useContext(CompassContext);
   const { user } = useContext(GlobalContext);
 
   const [attachments, setAttachments] = useState([]);
@@ -28,13 +28,13 @@ const Attachments = (props) => {
   // let allInteractions = sessions
   // .map(item => item.interactions.items)
   // .flat().filter((interaction) => (interaction.duration > 0))
-  useEffect(() => { 
+  useEffect(() => {
 
     if (interaction.hasOwnProperty("id")) {
       let arrAttachment = []
       setLoading(false)
       if (interaction.attachments.items.length > 0) {
-        interaction.attachments.items.map((attachment, i) => arrAttachment.push({...attachment}))
+        interaction.attachments.items.map((attachment, i) => arrAttachment.push({ ...attachment }))
       }
 
       setAttachments(arrAttachment)
@@ -43,7 +43,7 @@ const Attachments = (props) => {
     // eslint-disable-next-line
   }, [interaction])
 
-  useEffect(() => { 
+  useEffect(() => {
 
     if (interaction.hasOwnProperty("id")) {
       setShowAll(false)
@@ -51,27 +51,27 @@ const Attachments = (props) => {
 
     // eslint-disable-next-line
   }, [interaction.id])
-  
+
   // for all attachments
-  useEffect(() => { 
+  useEffect(() => {
     let array = []
-    if (showAll && session.hasOwnProperty("id")){
+    if (showAll && session.hasOwnProperty("id")) {
       setLoading(false)
       let tempArray = session.interactions.items.map(interaction => {
-        
-        if (interaction.attachments.items && interaction.attachments.items.length > 0){
+
+        if (interaction.attachments.items && interaction.attachments.items.length > 0) {
           // get all attachments
           let allAttachments = interaction.attachments.items.flat()
           // assign their step to them
-          return allAttachments.map(attachment => ({ ...attachment}));
+          return allAttachments.map(attachment => ({ ...attachment }));
         } else return null;
       })
       array = tempArray.filter(i => i).flat()
-    } else if ( !showAll && interaction.hasOwnProperty("id")) {
+    } else if (!showAll && interaction.hasOwnProperty("id")) {
       setLoading(false)
       if (interaction.attachments.items.length > 0) {
         interaction.attachments.items.map((attachment, i) => {
-          return array.push({...attachment})
+          return array.push({ ...attachment })
         })
       }
     }
@@ -112,10 +112,10 @@ const Attachments = (props) => {
   };
 
   return (
-    <AttachmentsContainer>
+    <AttachmentsContainer className="attachment-help">
       <LoggerHeaderContainer>
         <AttachmentsSelector
-          label={ showAll ? <LoggerHeaderText>All Attachments </LoggerHeaderText> : <LoggerHeaderText> Attachments </LoggerHeaderText>}
+          label={showAll ? <LoggerHeaderText>All Attachments </LoggerHeaderText> : <LoggerHeaderText> Attachments </LoggerHeaderText>}
           items={[
             { label: "Attachments", onClick: () => setShowAll(false) },
             { label: "All Attachments", onClick: () => setShowAll(true) }

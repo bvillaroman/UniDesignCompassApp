@@ -87,7 +87,7 @@ const ProjectTemplate = (props) => {
   };
 
   return (
-    <TemplateContainer onClick={goToReview}>
+    <TemplateContainer onClick={goToReview} className="default-compass-help">
       <ProjectTypeDetails>
         <CompassCircle>
           {

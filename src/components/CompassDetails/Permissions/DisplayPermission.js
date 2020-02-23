@@ -59,7 +59,7 @@ const DisplayPermission = () => {
   };
 
   return (
-    <PermissionContainer>
+    <PermissionContainer className="all-users-help">
       <PermissionHeader>All Users</PermissionHeader>
       <PermissionFormContainer>
         <PermissionType>Owner: {teamLeader}</PermissionType>
@@ -80,7 +80,7 @@ export const PermissionContainer = styled.div`
   // width: 83%;
   height: 40.5%;
   min-height: 15rem;
-  margin: 1rem;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   background: white;
@@ -88,9 +88,6 @@ export const PermissionContainer = styled.div`
   box-shadow: 0 1px 3px 0 #d2d4d6;
   transition: box-shadow 150ms ease;
 
-  @media (max-width: 767px){
-    width: 100%;
-  } 
 `
 
 export const PermissionFormContainer = styled.div`

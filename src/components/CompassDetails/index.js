@@ -1,11 +1,12 @@
 import React from "react";
-import { CompassViewerContainer, CompassNavigationBar } from "../../styles/CompassPage"
+import { CompassNavigationBar } from "../../styles/CompassPage"
 import ProjectDetails from "./ProjectDetails";
 import ScribePermission from "./Permissions/ScribePermission";
 import TeachersPermission from "./Permissions/NewTeacherPermission";
 import MembersPermission from "./Permissions/NewMemberPermission";
 import ReadersPermission from "./Permissions/NewReaderPermission";
 import DisplayPermission from "./Permissions/DisplayPermission";
+import HeaderInfo from "./HeaderInfo";
 import { Box } from "grommet";
 import styled from "styled-components";
 
@@ -13,25 +14,23 @@ import styled from "styled-components";
 export default (props) => {
 
   return (
-    <>
-      <HeaderSpacing>
-        <Header>
-          <Title>Project Details</Title>
-        </Header>
-      </HeaderSpacing>
-      <CompassViewerContainer>
+    <CompassViewerContainer>
+      <HeaderInfo />
+      <ProjectDetailBody>
         <CompassNavigationBar>
           <ProjectDetails />
         </CompassNavigationBar>
         <CompassNavigationBar2>
           <DisplayPermission />
-          <TeachersPermission />
-          <ScribePermission />
-          <MembersPermission />
-          <ReadersPermission />
+          <ContainerPermission className="all-permissions-help">
+            <TeachersPermission />
+            <ScribePermission />
+            <MembersPermission />
+            <ReadersPermission />
+          </ContainerPermission>
         </CompassNavigationBar2>
-      </CompassViewerContainer>
-    </>
+      </ProjectDetailBody>
+    </CompassViewerContainer>
   )
 };
 
@@ -46,7 +45,6 @@ export const CompassNavigationBar2 = styled(Box)`
   @media (max-width: 767px){
     width: 100%;
     flex-direction: column;
-    margin: 0 2.3rem;
   } 
 `;
 
@@ -69,4 +67,29 @@ export const Title = styled.p`
   font-weight: 500;
   font-size: 1.5rem;
   margin: 0;
+`;
+
+export const CompassViewerContainer = styled(Box)`
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 767px){
+    flex-direction: column;
+  }    
+`
+
+export const ContainerPermission = styled.div`
+
+`;
+
+export const ProjectDetailBody = styled.div`
+  display: flex;
+
+  @media (max-width: 767px){
+    flex-direction: column;
+  }  
 `;

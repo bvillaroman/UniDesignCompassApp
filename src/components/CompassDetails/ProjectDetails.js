@@ -63,7 +63,7 @@ export default (props) => {
 
   return (
     <>
-      <ProjectDetailsTitleContainer>
+      <ProjectDetailsTitleContainer className="project-detail-title-help">
         {/* <ProjectDetailsTitle > 
         <span>{compass.name_of_compass}</span>
         <EditProjectButton label="Edit" icon={<Edit/>} onClick={e => setEdit(!edit)} />
@@ -113,7 +113,7 @@ export default (props) => {
 
       </ProjectDetailsTitleContainer>
 
-      <ProjectDetailsStepContainer>
+      <ProjectDetailsStepContainer className="project-detail-steps-help">
         <ProjectDetailsTitle>
           <span>Default Compass</span>
           {/* <span> {compass.compassType.charAt(0).toUpperCase() + compass.compassType.slice(1)} </span> */}

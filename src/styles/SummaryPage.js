@@ -1,4 +1,3 @@
-// import React from 'react';
 import styled from 'styled-components';
 import {
   Button,
@@ -237,11 +236,11 @@ export const SummaryLogHeader = styled.div`
   }
 `;
 
-export const SummaryTableConatiner = styled.div`
+export const SummaryTableConatiner = styled.div`  
+  margin-top: 1em;
   width: auto;
   padding: 1rem;
   display: block;
-  margin: 1rem auto;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   background: white;
 `;
@@ -254,11 +253,8 @@ export const SummarySessionName = styled.div`
 
 export const SummaryMainView = styled.div`
   overflow: auto;
-  width: 90%; 
-  margin-top: 1em;
-  margin-Left: 1em; 
-  margin-bottom: 1em;
-  margin-right: 1em;
+  width: 100%; 
+  padding: 0 2rem;
   //border: groove;
 
   @media (max-width: 500px){
