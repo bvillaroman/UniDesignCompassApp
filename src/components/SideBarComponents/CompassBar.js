@@ -50,7 +50,7 @@ const CompassBar = ({ page }) => {
   return (
     <CompassSideBar renderSidebar={renderSidebar}>
       <HamburgerIcon onClick={handleClick}>&#9776;</HamburgerIcon>
-      <LinkContainer>
+      <LinkContainer className="navbar-help">
         {/* {<CompassHeaderCompass to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>} */}
         <CompassHeaderCompass to={`/`} >UDC</CompassHeaderCompass>
         <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink>

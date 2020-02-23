@@ -74,7 +74,7 @@ export const Wheel = (props) => {
         </LoggerHeaderContainer>
 
       </CSTitle>
-      <CompassWheel >
+      <CompassWheel className="compass-wheel-help">
         {
           steps.length && steps.map((item, key) => {
             return (

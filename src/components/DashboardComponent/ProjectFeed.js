@@ -34,7 +34,7 @@ export const CompassFeed = ({ compasses, type, onShow }) => {
   }
 
   return (
-    <ProjectFeedContainer>
+    <ProjectFeedContainer className="projects-help">
       <DashboardSectionHeader> {type} Projects </DashboardSectionHeader>
       {
         compasses.length > 0 ? (

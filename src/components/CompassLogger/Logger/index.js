@@ -1,4 +1,4 @@
-import React, { useContext  } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components"
 
 import { CompassContext } from "../../../context/CompassPage/context"
@@ -22,8 +22,8 @@ export const Logger = (props) => {
   // };
 
   return (
-    <LoggerGrid>      
-      { interactionUpdated ? <EditLogger setLoading={props.setLoading} loading={props.loading}/> : <ScribeLogger setLoading={props.setLoading} loading={props.loading}/>}
+    <LoggerGrid className="logger-grid-help">
+      {interactionUpdated ? <EditLogger setLoading={props.setLoading} loading={props.loading} /> : <ScribeLogger setLoading={props.setLoading} loading={props.loading} />}
     </LoggerGrid>
   );
 }

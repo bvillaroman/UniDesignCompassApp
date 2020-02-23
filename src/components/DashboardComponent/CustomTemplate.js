@@ -11,7 +11,7 @@ export default (props) => {
   };
 
   return (
-    <TemplateContainer onClick={goToReview}>
+    <TemplateContainer onClick={goToReview} className="custom-template-help">
       <ProjectTypeDetails>
         <img src={CustomCompass} alt="source: Cliparts.co CustomCompass-1" style={{ maxWidth: '5.1em' }} />
       </ProjectTypeDetails>

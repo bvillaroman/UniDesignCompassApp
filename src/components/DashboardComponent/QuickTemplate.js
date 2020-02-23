@@ -78,7 +78,7 @@ const QuickTemplate = (props) => {
   };
 
   return (
-    <TemplateContainer onClick={goToReview}>
+    <TemplateContainer onClick={goToReview} className="quick-template-help">
       <ProjectTypeDetails>
         <CompassCircle>
           {

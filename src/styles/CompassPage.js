@@ -39,6 +39,7 @@ export const MainContent = styled(Tab)`
 export const CompassViewerContainer = styled(Box)`
   width: 100%;
   height: 100%;
+  padding: 0 2em;
   overflow: auto;
   display: flex;
   flex-direction: row;
@@ -143,7 +144,7 @@ export const ProjectDetailsTitleContainer = styled(Box)`
   width: 90%;
   min-height: 10rem;
 
-  margin: 1rem auto;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
   background: white;
@@ -157,13 +158,17 @@ export const ProjectDetailsTitleContainer = styled(Box)`
   box-shadow: 0 1px 3px 0 #d2d4d6;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+
+  @media (max-width: 767px){
+    width: 100%
+  }  
 `;
 
 export const ProjectDetailsStepContainer = styled(Box)`
   width: 90%;
   min-height: 35rem;
 
-  margin: 2.5rem auto;
+  margin: 2.5rem 0;
   display: flex;
   flex-direction: column;
   background: white;
@@ -177,6 +182,10 @@ export const ProjectDetailsStepContainer = styled(Box)`
   box-shadow: 0 1px 3px 0 #d2d4d6;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+
+  @media (max-width: 767px){
+    width: 100%
+  }  
 `;
 
 export const ProjectDetailsTitle = styled(Box)`

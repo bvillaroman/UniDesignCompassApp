@@ -21,7 +21,6 @@ export const PermissionContainer = styled.div`
 
   @media (max-width: 767px){
     margin: 0rem;
-    width: 90%
   } 
 `;
 

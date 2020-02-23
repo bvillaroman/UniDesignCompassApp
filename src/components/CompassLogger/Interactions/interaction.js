@@ -1,55 +1,55 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import styled from "styled-components"
 import { LinkNext } from "grommet-icons"
 import { Button } from "grommet"
 import { navigate } from "gatsby"
 
 import translateTime from "../../../utils/translateTime"
-import {CompassContext} from "../../../context/CompassPage/context"
+import { CompassContext } from "../../../context/CompassPage/context"
 import * as Mutation from '../../../utils/mutations'
 
 
 const Interaction = (props) => {
-  const { compass, session, interaction, interactionAdded, newestInteraction,pauseTimer, newestLog, newestDuration } = useContext(CompassContext);
-  const { step = {name_of_step: "", color: ""}, id } = props.interaction;  
+  const { compass, session, interaction, interactionAdded, newestInteraction, pauseTimer, newestLog, newestDuration } = useContext(CompassContext);
+  const { step = { name_of_step: "", color: "" }, id } = props.interaction;
 
-  const openReviewLog = async (evt) => {    
+  const openReviewLog = async (evt) => {
     evt.preventDefault()
     // clicking addInteraction when 
 
-    if(interaction.id !== id){
+    if (interaction.id !== id) {
       props.setLoading(true);
-      if(interactionAdded){
+      if (interactionAdded) {
         pauseTimer()
         const newInteraction = {
-          id : newestInteraction.id,
+          id: newestInteraction.id,
           log_content: newestLog ? newestLog : " ",
           duration: newestDuration ? newestDuration : 0
         }
-        await Mutation.updateInteraction(newInteraction)        
+        await Mutation.updateInteraction(newInteraction)
       }
       navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${id}`)
     }
   }
 
   const duration = newestInteraction.id === id ? newestDuration : props.interaction.duration
-  
+
   return (
-    <InteractionContainer>
+    <InteractionContainer className="recent-steps-help">
       <InteractionButtonContainer>
-        <InteractionButton 
-          label={step.name_of_step} 
+        <InteractionButton
+          label={step.name_of_step}
           color={step.color}
           onClick={openReviewLog}
           active={interaction.id === id}
-        /> 
+        />
         <span>{translateTime(duration)}</span>
       </InteractionButtonContainer>
-      
+
       {!props.isLastStep && <LinkNext color="#5567FD" />}
     </InteractionContainer>
 
-    
+
   )
 };
 export default Interaction;
