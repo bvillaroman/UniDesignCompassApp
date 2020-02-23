@@ -1,7 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { navigate } from "gatsby"
-import SummaryLegend from '../SummaryLegend/';
+// import SummaryLegend from '../SummaryLegend/';
 import { Image } from 'grommet-icons';
+import HeaderInfo from './HeaderInfo.js';
 import { CompassContext } from "../../../context/CompassPage/context";
 import {
   SummaryMainView,
@@ -33,9 +34,9 @@ const SummarySession = (props) => {
 
   const timeConverter = (a, b) => {
     if (a.createdAt > b.createdAt) {
-      return -1
-    } else if (a.createdAt < b.createdAt) {
       return 1
+    } else if (a.createdAt < b.createdAt) {
+      return -1
     } else {
       return 0
     }
@@ -44,36 +45,40 @@ const SummarySession = (props) => {
   const SessionTable = ({ sessions }) => {
     return (
       <>
-        <SummaryMainView>{sessions.sort(timeConverter).map((session, i) =>
-          <SummaryTableConatiner key={i}>
-            <SummarySessionName>
-              {session.name_of_session.substring(0, session.name_of_session.length - 1)}
-            </SummarySessionName>
-            <SummaryTable alignSelf="stretch">
-              <SummaryTableHeader>
-                <SummaryTableRow>
-                  <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
-                  <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
-                  <SummaryTdHeader>Log</SummaryTdHeader>
-                  <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader>
-                </SummaryTableRow>
-              </SummaryTableHeader>
-              {session.interactions.items.sort(timeConverter).map((interaction, i) =>
-                <SummaryTableBody>
-                  <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
-                    <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
-                    <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
-                    <SummaryTdBody>{interaction.log_content.length > 24 ? interaction.log_content.substring(0, 25) + "..." : interaction.log_content}</SummaryTdBody>
-                    <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
-                  </tr>
-                </SummaryTableBody>
-              )}
+        <SummaryMainView>
 
-            </SummaryTable>
-          </SummaryTableConatiner>
-        )}
+          <HeaderInfo />
+
+          {sessions.sort(timeConverter).map((session, i) =>
+            <SummaryTableConatiner key={i} className="summary-help">
+              <SummarySessionName>
+                {session.name_of_session.substring(0, session.name_of_session.length - 1)}
+              </SummarySessionName>
+              <SummaryTable alignSelf="stretch">
+                <SummaryTableHeader>
+                  <SummaryTableRow>
+                    <SummaryTdHeader style={{ width: '10%' }}>Step</SummaryTdHeader>
+                    <SummaryTdHeader style={{ width: '10%' }}>Time</SummaryTdHeader>
+                    <SummaryTdHeader>Log</SummaryTdHeader>
+                    <SummaryTdHeader style={{ width: '14%' }}>Attachments</SummaryTdHeader>
+                  </SummaryTableRow>
+                </SummaryTableHeader>
+                {session.interactions.items.sort(timeConverter).map((interaction, i) =>
+                  <SummaryTableBody>
+                    <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
+                      <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
+                      <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
+                      <SummaryTdBody>{interaction.log_content.length > 24 ? interaction.log_content.substring(0, 50) + "..." : interaction.log_content}</SummaryTdBody>
+                      <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
+                    </tr>
+                  </SummaryTableBody>
+                )}
+
+              </SummaryTable>
+            </SummaryTableConatiner>
+          )}
         </SummaryMainView>
-        <SummaryLegend></SummaryLegend>
+        {/* <SummaryLegend></SummaryLegend> */}
       </>
     )
   }

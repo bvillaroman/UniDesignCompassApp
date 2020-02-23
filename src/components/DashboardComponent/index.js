@@ -32,31 +32,30 @@ const Dashboard = (props) => {
     run: false,
     steps: [
       {
-        target: ".tour1",
-        content: "1st feature of my website!",
-        disableBeacon: true
-      },
-      {
-        target: ".details-help",
-        content: "1st feature of my website!",
-        disableBeacon: true
-      },
-      {
         target: ".quick-template-help",
-        content: "1st feature of my website!",
+        content: "Quick Start",
         disableBeacon: true
       },
       {
         target: ".default-compass-help",
-        content: "1st feature of my website!",
+        content: "Default Project",
         disableBeacon: true
       },
       {
         target: ".custom-template-help",
-        content: "1st feature of my website!",
+        content: "Custom Project",
         disableBeacon: true
       },
-
+      {
+        target: ".projects-help",
+        content: "View and access all your projects here",
+        disableBeacon: true
+      },
+      {
+        target: ".navbar-help",
+        content: "Navigate with this sidebar",
+        disableBeacon: true
+      },
     ]
   })
 
@@ -140,7 +139,7 @@ const Dashboard = (props) => {
             arrowColor: "#eee",
             backgroundColor: "#eee",
             // page overlay color
-            overlayColor: "rgba(79, 26, 0, 0.4)",
+            overlayColor: "rgba(46, 49, 49, 1)",
             //button color
             primaryColor: "mediumaquamarine",
             //text color
@@ -160,7 +159,7 @@ const Dashboard = (props) => {
               <Title>Dashboard</Title>
               {/* <InfoText>What are projects?</InfoText> */}
               {/* <InfoText className="tour1"><button onClick={handleClick}><CircleQuestion /></button></InfoText> */}
-              <InfoText className="tour1"><CircleQuestion onClick={handleClick} style={{ cursor: 'pointer' }} /></InfoText>
+              <InfoText><CircleQuestion onClick={handleClick} style={{ cursor: 'pointer' }} /></InfoText>
             </Header>
             {showModal && <CustomCompassForm setLoading={setLoading} />}
             <ProjectCreator setLoading={setLoading} />
@@ -169,7 +168,7 @@ const Dashboard = (props) => {
                 : <div> Error !: {error}</div>
             } */}
             {
-              !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} onShow={true} />) : <div>You have no projects, start one from above! </div>)
+              !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} onShow={true} />) : <NoProjects>You have no projects, start one from above! </NoProjects>)
                 : <div> Error !: {error}</div>
             }
             {
@@ -225,4 +224,8 @@ export const InfoText = styled.p`
   font-weight: 400;
   font-size: 1rem;
   margin: 0;
+`;
+
+export const NoProjects = styled.div`
+  margin-top: 1.5em;
 `;

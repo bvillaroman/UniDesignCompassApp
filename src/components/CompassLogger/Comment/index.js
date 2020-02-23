@@ -40,7 +40,7 @@ const Comment = () => {
   useEffect(scrollToBottom, [comments]);
 
   return (
-    <CommentSession>
+    <CommentSession className="comment-help">
       <LoggerHeaderContainer>
         <LoggerHeaderText>Comments</LoggerHeaderText>
         <LoggerHeaderButtonContainer />
