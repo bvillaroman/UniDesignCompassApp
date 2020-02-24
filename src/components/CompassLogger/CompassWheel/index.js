@@ -22,9 +22,7 @@ export const Wheel = (props) => {
 
   useEffect(() => {
     if (session.hasOwnProperty("compass")) {
-      // console.log(session.compass.steps.items)
       const compassSteps = session.compass.steps.items.flat().sort((a, b) => (a.index) - b.index)
-      console.log(compassSteps)
       let arr = compassSteps.map((step, key) => ({
         id: step.id,
         key,

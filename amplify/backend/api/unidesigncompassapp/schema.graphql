@@ -3,6 +3,7 @@ type User @model @auth(rules: [{ allow: owner, queries: null} ]) {
   first_name: String!
   last_name: String!
   email: String!
+  scribe: [Compass] @connection(name: "ScribeCompasses")
   teacher: [TeacherCompasses] @connection(name: "TeacherCompasses")
   member: [MemberCompasses] @connection(name: "MemberCompasses")
   reader: [ReaderCompasses] @connection(name: "ReaderCompasses")
@@ -43,7 +44,7 @@ type Compass @model @auth(rules: [{ allow: owner, queries: null} ]) {
   createdAt: AWSDateTime
   compassType: String!
   owner: User @connection(name: "UserCompasses")
-  scribe: User @connection
+  scribe: User @connection(name: "ScribeCompasses")
   teachers: [TeacherCompasses] @connection(name: "CompassTeachers")
   members: [MemberCompasses] @connection(name: "CompassMembers")
   readers: [ReaderCompasses] @connection(name: "CompassReaders")
