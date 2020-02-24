@@ -8,7 +8,8 @@
             "DeploymentBucketName": "unidesigncompassapp-dev-20190819124209-deployment",
             "UnauthRoleName": "unidesigncompassapp-dev-20190819124209-unauthRole",
             "StackName": "unidesigncompassapp-dev-20190819124209",
-            "StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-dev-20190819124209/49f4d9d0-c2a0-11e9-a745-0a20b68b404c"
+            "StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/unidesigncompassapp-dev-20190819124209/49f4d9d0-c2a0-11e9-a745-0a20b68b404c",
+            "AmplifyAppId": "d2hyyvc05g7b0l"
         },
         "categories": {
             "auth": {

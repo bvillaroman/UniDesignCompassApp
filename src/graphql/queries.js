@@ -8,958 +8,7 @@ export const getUser = /* GraphQL */ `
       first_name
       last_name
       email
-      teacher {
-        items {
-          id
-          first_name
-          last_name
-          email
-          user {
-            id
-            first_name
-            last_name
-            email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
-              items {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-          }
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                index
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-        }
-        nextToken
-      }
-      member {
-        items {
-          id
-          first_name
-          last_name
-          email
-          user {
-            id
-            first_name
-            last_name
-            email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
-              items {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-          }
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                index
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-        }
-        nextToken
-      }
-      reader {
-        items {
-          id
-          first_name
-          last_name
-          email
-          user {
-            id
-            first_name
-            last_name
-            email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
-              items {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-          }
-          compass {
-            id
-            name_of_compass
-            description_of_compass
-            createdAt
-            compassType
-            owner {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            scribe {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            teachers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            members {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            readers {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            sessions {
-              items {
-                id
-                name_of_session
-                description_of_session
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                comments {
-                  nextToken
-                }
-                interactions {
-                  nextToken
-                }
-              }
-              nextToken
-            }
-            steps {
-              items {
-                id
-                index
-                name_of_step
-                description_of_step
-                color
-                createdAt
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-          }
-        }
-        nextToken
-      }
-      compass {
+      scribe {
         items {
           id
           name_of_compass
@@ -971,73 +20,7 @@ export const getUser = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -1049,12 +32,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1074,79 +59,125 @@ export const getUser = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -1158,12 +189,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1183,6 +216,118 @@ export const getUser = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -1195,6 +340,9 @@ export const getUser = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -1207,6 +355,7 @@ export const getUser = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -1219,12 +368,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1242,6 +393,7 @@ export const getUser = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -1256,6 +408,9 @@ export const getUser = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -1268,6 +423,7 @@ export const getUser = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -1280,12 +436,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1303,6 +461,7 @@ export const getUser = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -1317,6 +476,9 @@ export const getUser = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -1329,6 +491,7 @@ export const getUser = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -1341,12 +504,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1364,6 +529,7 @@ export const getUser = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -1384,12 +550,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1412,6 +580,7 @@ export const getUser = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -1422,9 +591,11 @@ export const getUser = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -1447,12 +618,14 @@ export const getUser = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -1470,455 +643,177 @@ export const getUser = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
         nextToken
       }
-    }
-  }
-`;
-export const listUsers = /* GraphQL */ `
-  query ListUsers(
-    $filter: ModelUserFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        first_name
-        last_name
-        email
-        teacher {
-          items {
+      teacher {
+        items {
+          id
+          first_name
+          last_name
+          email
+          user {
             id
             first_name
             last_name
             email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
+            scribe {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
-                nextToken
-              }
-              member {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
-                nextToken
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
-              reader {
-                items {
+              nextToken
+            }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
-                nextToken
-              }
-              compass {
-                items {
+                compass {
                   id
                   name_of_compass
                   description_of_compass
                   createdAt
                   compassType
                 }
-                nextToken
+                owner
               }
+              nextToken
             }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
+            member {
+              items {
                 id
                 first_name
                 last_name
                 email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
                 }
                 compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
                   id
                   name_of_compass
                   description_of_compass
                   createdAt
                   compassType
                 }
-                nextToken
+                owner
               }
+              nextToken
             }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
+            reader {
+              items {
                 id
                 first_name
                 last_name
                 email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
                 }
                 compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
                   id
                   name_of_compass
                   description_of_compass
                   createdAt
                   compassType
                 }
-                nextToken
+                owner
               }
+              nextToken
             }
             compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
+              items {
                 id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
-                nextToken
-              }
-              members {
-                items {
+                scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
+                teachers {
+                  nextToken
                 }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
+                members {
+                  nextToken
                 }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
+                readers {
+                  nextToken
                 }
-                nextToken
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
               }
+              nextToken
             }
+            owner
           }
-          nextToken
-        }
-        compass {
-          items {
+          compass {
             id
             name_of_compass
             description_of_compass
@@ -1929,12 +824,23 @@ export const listUsers = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -1944,6 +850,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -1953,6 +860,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -1966,18 +874,30 @@ export const listUsers = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -1987,6 +907,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -1996,6 +917,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2009,6 +931,7 @@ export const listUsers = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -2021,6 +944,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2029,6 +953,7 @@ export const listUsers = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2043,6 +968,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2051,6 +977,7 @@ export const listUsers = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2065,6 +992,7 @@ export const listUsers = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2073,6 +1001,7 @@ export const listUsers = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2095,6 +1024,7 @@ export const listUsers = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -2113,12 +1043,2464 @@ export const listUsers = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
+              }
+              nextToken
+            }
+          }
+          owner
+        }
+        nextToken
+      }
+      member {
+        items {
+          id
+          first_name
+          last_name
+          email
+          user {
+            id
+            first_name
+            last_name
+            email
+            scribe {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
+          }
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          owner
+        }
+        nextToken
+      }
+      reader {
+        items {
+          id
+          first_name
+          last_name
+          email
+          user {
+            id
+            first_name
+            last_name
+            email
+            scribe {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
+          }
+          compass {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          owner
+        }
+        nextToken
+      }
+      compass {
+        items {
+          id
+          name_of_compass
+          description_of_compass
+          createdAt
+          compassType
+          owner {
+            id
+            first_name
+            last_name
+            email
+            scribe {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
+          }
+          scribe {
+            id
+            first_name
+            last_name
+            email
+            scribe {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
+          }
+          teachers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          members {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          readers {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          sessions {
+            items {
+              id
+              name_of_session
+              description_of_session
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              comments {
+                items {
+                  id
+                  content
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              interactions {
+                items {
+                  id
+                  duration
+                  log_content
+                  comments
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              owner
+            }
+            nextToken
+          }
+          steps {
+            items {
+              id
+              index
+              name_of_step
+              description_of_step
+              color
+              createdAt
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+        }
+        nextToken
+      }
+      owner
+    }
+  }
+`;
+export const listUsers = /* GraphQL */ `
+  query ListUsers(
+    $filter: ModelUserFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        first_name
+        last_name
+        email
+        scribe {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
+        teacher {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
       }
       nextToken
     }
@@ -2136,433 +3518,7 @@ export const getTeacherCompasses = /* GraphQL */ `
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -2574,12 +3530,23 @@ export const getTeacherCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2589,6 +3556,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2598,6 +3566,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2611,18 +3580,30 @@ export const getTeacherCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2632,6 +3613,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2641,6 +3623,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -2654,6 +3637,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -2666,6 +3650,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2674,6 +3659,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2688,6 +3674,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2696,6 +3683,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2710,6 +3698,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -2718,6 +3707,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -2740,6 +3730,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -2758,584 +3749,14 @@ export const getTeacherCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
-      }
-      compass {
-        id
-        name_of_compass
-        description_of_compass
-        createdAt
-        compassType
-        owner {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
+        teacher {
           items {
             id
             first_name
@@ -3346,12 +3767,23 @@ export const getTeacherCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3361,6 +3793,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3370,6 +3803,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3383,6 +3817,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -3395,6 +3830,9 @@ export const getTeacherCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3407,12 +3845,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3425,6 +3867,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -3432,6 +3875,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3441,6 +3885,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3450,6 +3895,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3459,6 +3905,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -3470,10 +3917,1614 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
+      }
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        createdAt
+        compassType
+        owner {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        scribe {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        teachers {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
           }
           nextToken
         }
@@ -3488,12 +5539,23 @@ export const getTeacherCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3503,6 +5565,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3512,6 +5575,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3525,6 +5589,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -3537,6 +5602,9 @@ export const getTeacherCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3549,12 +5617,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3567,6 +5639,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -3574,6 +5647,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3583,6 +5657,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3592,6 +5667,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3601,6 +5677,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -3612,10 +5689,12 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -3630,12 +5709,23 @@ export const getTeacherCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3645,6 +5735,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3654,6 +5745,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3667,6 +5759,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -3679,6 +5772,9 @@ export const getTeacherCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3691,12 +5787,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3709,6 +5809,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -3716,6 +5817,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3725,6 +5827,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3734,6 +5837,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3743,6 +5847,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -3754,10 +5859,12 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -3778,6 +5885,9 @@ export const getTeacherCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3790,12 +5900,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3808,6 +5922,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -3815,6 +5930,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3824,6 +5940,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3833,6 +5950,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3842,6 +5960,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -3853,6 +5972,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -3867,13 +5987,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -3889,6 +6012,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -3897,13 +6021,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -3926,6 +6053,9 @@ export const getTeacherCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3938,12 +6068,16 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -3956,6 +6090,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -3963,6 +6098,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3972,6 +6108,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3981,6 +6118,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -3990,6 +6128,7 @@ export const getTeacherCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -4001,14 +6140,17 @@ export const getTeacherCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
       }
+      owner
     }
   }
 `;
@@ -4033,17 +6175,21 @@ export const listTeacherCompassess = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4056,6 +6202,112 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -4068,12 +6320,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4091,6 +6345,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4105,6 +6360,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4117,6 +6375,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -4129,12 +6388,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4152,6 +6413,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4166,6 +6428,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4178,6 +6443,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -4190,12 +6456,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4213,6 +6481,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4228,6 +6497,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4240,12 +6512,16 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4258,6 +6534,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -4265,6 +6542,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -4274,6 +6552,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -4283,6 +6562,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -4292,6 +6572,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -4303,12 +6584,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         compass {
           id
@@ -4321,73 +6604,7 @@ export const listTeacherCompassess = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -4399,12 +6616,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4424,79 +6643,125 @@ export const listTeacherCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -4508,12 +6773,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4533,6 +6800,118 @@ export const listTeacherCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -4545,6 +6924,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4557,6 +6939,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -4569,12 +6952,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4592,6 +6977,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4606,6 +6992,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4618,6 +7007,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -4630,12 +7020,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4653,6 +7045,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4667,6 +7060,9 @@ export const listTeacherCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -4679,6 +7075,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -4691,12 +7088,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4714,6 +7113,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -4734,12 +7134,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4762,6 +7164,7 @@ export const listTeacherCompassess = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -4772,9 +7175,11 @@ export const listTeacherCompassess = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -4797,12 +7202,14 @@ export const listTeacherCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -4820,10 +7227,12 @@ export const listTeacherCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
+        owner
       }
       nextToken
     }
@@ -4841,433 +7250,7 @@ export const getMemberCompasses = /* GraphQL */ `
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -5279,12 +7262,23 @@ export const getMemberCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5294,6 +7288,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5303,6 +7298,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5316,18 +7312,30 @@ export const getMemberCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5337,6 +7345,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5346,6 +7355,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -5359,6 +7369,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -5371,6 +7382,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -5379,6 +7391,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -5393,6 +7406,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -5401,6 +7415,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -5415,6 +7430,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -5423,6 +7439,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -5445,6 +7462,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -5463,584 +7481,14 @@ export const getMemberCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
-      }
-      compass {
-        id
-        name_of_compass
-        description_of_compass
-        createdAt
-        compassType
-        owner {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
+        teacher {
           items {
             id
             first_name
@@ -6051,12 +7499,23 @@ export const getMemberCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6066,6 +7525,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6075,6 +7535,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6088,6 +7549,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -6100,6 +7562,9 @@ export const getMemberCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6112,12 +7577,16 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6130,6 +7599,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6137,6 +7607,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6146,6 +7617,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6155,6 +7627,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6164,6 +7637,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6175,10 +7649,1614 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
+      }
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        createdAt
+        compassType
+        owner {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        scribe {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        teachers {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
           }
           nextToken
         }
@@ -6193,12 +9271,23 @@ export const getMemberCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6208,6 +9297,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6217,6 +9307,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6230,6 +9321,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -6242,6 +9334,9 @@ export const getMemberCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6254,12 +9349,16 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6272,6 +9371,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6279,6 +9379,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6288,6 +9389,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6297,6 +9399,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6306,6 +9409,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6317,10 +9421,12 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -6335,12 +9441,23 @@ export const getMemberCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6350,6 +9467,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6359,6 +9477,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6372,6 +9491,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -6384,6 +9504,9 @@ export const getMemberCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6396,12 +9519,16 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6414,6 +9541,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6421,6 +9549,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6430,6 +9559,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6439,6 +9569,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6448,6 +9579,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6459,10 +9591,12 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -6483,6 +9617,9 @@ export const getMemberCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6495,12 +9632,16 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6513,6 +9654,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6520,6 +9662,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6529,6 +9672,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6538,6 +9682,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6547,6 +9692,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6558,6 +9704,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6572,13 +9719,16 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -6594,6 +9744,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -6602,13 +9753,16 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -6631,6 +9785,9 @@ export const getMemberCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6643,12 +9800,16 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6661,6 +9822,7 @@ export const getMemberCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6668,6 +9830,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6677,6 +9840,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6686,6 +9850,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6695,6 +9860,7 @@ export const getMemberCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -6706,14 +9872,17 @@ export const getMemberCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
       }
+      owner
     }
   }
 `;
@@ -6738,17 +9907,21 @@ export const listMemberCompassess = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6761,6 +9934,112 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -6773,12 +10052,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -6796,6 +10077,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -6810,6 +10092,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6822,6 +10107,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -6834,12 +10120,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -6857,6 +10145,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -6871,6 +10160,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6883,6 +10175,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -6895,12 +10188,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -6918,6 +10213,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -6933,6 +10229,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6945,12 +10244,16 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -6963,6 +10266,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -6970,6 +10274,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6979,6 +10284,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6988,6 +10294,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -6997,6 +10304,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -7008,12 +10316,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         compass {
           id
@@ -7026,73 +10336,7 @@ export const listMemberCompassess = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -7104,12 +10348,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7129,79 +10375,125 @@ export const listMemberCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -7213,12 +10505,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7238,6 +10532,118 @@ export const listMemberCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -7250,6 +10656,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -7262,6 +10671,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -7274,12 +10684,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7297,6 +10709,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -7311,6 +10724,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -7323,6 +10739,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -7335,12 +10752,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7358,6 +10777,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -7372,6 +10792,9 @@ export const listMemberCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -7384,6 +10807,7 @@ export const listMemberCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -7396,12 +10820,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7419,6 +10845,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -7439,12 +10866,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7467,6 +10896,7 @@ export const listMemberCompassess = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -7477,9 +10907,11 @@ export const listMemberCompassess = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -7502,12 +10934,14 @@ export const listMemberCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -7525,10 +10959,12 @@ export const listMemberCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
+        owner
       }
       nextToken
     }
@@ -7546,433 +10982,7 @@ export const getReaderCompasses = /* GraphQL */ `
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -7984,12 +10994,23 @@ export const getReaderCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -7999,6 +11020,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8008,6 +11030,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8021,18 +11044,30 @@ export const getReaderCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8042,6 +11077,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8051,6 +11087,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8064,6 +11101,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -8076,6 +11114,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -8084,6 +11123,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -8098,6 +11138,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -8106,6 +11147,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -8120,6 +11162,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -8128,6 +11171,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -8150,6 +11194,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -8168,584 +11213,14 @@ export const getReaderCompasses = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
-      }
-      compass {
-        id
-        name_of_compass
-        description_of_compass
-        createdAt
-        compassType
-        owner {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        scribe {
-          id
-          first_name
-          last_name
-          email
-          teacher {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          member {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          reader {
-            items {
-              id
-              first_name
-              last_name
-              email
-              user {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              compass {
-                id
-                name_of_compass
-                description_of_compass
-                createdAt
-                compassType
-                owner {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                scribe {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                teachers {
-                  nextToken
-                }
-                members {
-                  nextToken
-                }
-                readers {
-                  nextToken
-                }
-                sessions {
-                  nextToken
-                }
-                steps {
-                  nextToken
-                }
-              }
-            }
-            nextToken
-          }
-          compass {
-            items {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-            nextToken
-          }
-        }
-        teachers {
+        teacher {
           items {
             id
             first_name
@@ -8756,12 +11231,23 @@ export const getReaderCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8771,6 +11257,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8780,6 +11267,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8793,6 +11281,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -8805,6 +11294,9 @@ export const getReaderCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -8817,12 +11309,16 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -8835,6 +11331,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -8842,6 +11339,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8851,6 +11349,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8860,6 +11359,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8869,6 +11369,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -8880,10 +11381,1614 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
+      }
+      compass {
+        id
+        name_of_compass
+        description_of_compass
+        createdAt
+        compassType
+        owner {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        scribe {
+          id
+          first_name
+          last_name
+          email
+          scribe {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          member {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          reader {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              compass {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              owner
+            }
+            nextToken
+          }
+          compass {
+            items {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          owner
+        }
+        teachers {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
           }
           nextToken
         }
@@ -8898,12 +13003,23 @@ export const getReaderCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8913,6 +13029,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8922,6 +13039,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8935,6 +13053,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -8947,6 +13066,9 @@ export const getReaderCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -8959,12 +13081,16 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -8977,6 +13103,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -8984,6 +13111,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -8993,6 +13121,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9002,6 +13131,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9011,6 +13141,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9022,10 +13153,12 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -9040,12 +13173,23 @@ export const getReaderCompasses = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9055,6 +13199,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9064,6 +13209,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9077,6 +13223,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -9089,6 +13236,9 @@ export const getReaderCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9101,12 +13251,16 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9119,6 +13273,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -9126,6 +13281,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9135,6 +13291,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9144,6 +13301,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9153,6 +13311,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9164,10 +13323,12 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -9188,6 +13349,9 @@ export const getReaderCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9200,12 +13364,16 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9218,6 +13386,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -9225,6 +13394,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9234,6 +13404,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9243,6 +13414,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9252,6 +13424,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9263,6 +13436,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9277,13 +13451,16 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -9299,6 +13476,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -9307,13 +13485,16 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -9336,6 +13517,9 @@ export const getReaderCompasses = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9348,12 +13532,16 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9366,6 +13554,7 @@ export const getReaderCompasses = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -9373,6 +13562,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9382,6 +13572,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9391,6 +13582,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9400,6 +13592,7 @@ export const getReaderCompasses = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9411,14 +13604,17 @@ export const getReaderCompasses = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
       }
+      owner
     }
   }
 `;
@@ -9443,17 +13639,21 @@ export const listReaderCompassess = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9466,6 +13666,112 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -9478,12 +13784,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -9501,6 +13809,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -9515,6 +13824,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9527,6 +13839,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -9539,12 +13852,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -9562,6 +13877,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -9576,6 +13892,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9588,6 +13907,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -9600,12 +13920,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -9623,6 +13945,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -9638,6 +13961,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9650,12 +13976,16 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9668,6 +13998,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -9675,6 +14006,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9684,6 +14016,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9693,6 +14026,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -9702,6 +14036,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -9713,12 +14048,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         compass {
           id
@@ -9731,73 +14068,7 @@ export const listReaderCompassess = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -9809,12 +14080,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -9834,79 +14107,125 @@ export const listReaderCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -9918,12 +14237,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -9943,6 +14264,118 @@ export const listReaderCompassess = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -9955,6 +14388,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -9967,6 +14403,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -9979,12 +14416,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -10002,6 +14441,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -10016,6 +14456,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -10028,6 +14471,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -10040,12 +14484,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -10063,6 +14509,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -10077,6 +14524,9 @@ export const listReaderCompassess = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -10089,6 +14539,7 @@ export const listReaderCompassess = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -10101,12 +14552,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -10124,6 +14577,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -10144,12 +14598,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -10172,6 +14628,7 @@ export const listReaderCompassess = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -10182,9 +14639,11 @@ export const listReaderCompassess = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -10207,12 +14666,14 @@ export const listReaderCompassess = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -10230,10 +14691,12 @@ export const listReaderCompassess = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
+        owner
       }
       nextToken
     }
@@ -10252,433 +14715,7 @@ export const getCompass = /* GraphQL */ `
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -10690,12 +14727,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10705,6 +14753,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10714,6 +14763,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10727,18 +14777,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10748,6 +14810,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10757,6 +14820,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -10770,6 +14834,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -10782,6 +14847,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -10790,6 +14856,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -10804,6 +14871,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -10812,6 +14880,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -10826,6 +14895,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -10834,6 +14904,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -10856,6 +14927,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -10874,445 +14946,769 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
+        teacher {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
       }
       scribe {
         id
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -11324,12 +15720,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11339,6 +15746,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11348,6 +15756,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11361,18 +15770,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11382,6 +15803,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11391,6 +15813,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11404,6 +15827,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -11416,6 +15840,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11424,6 +15849,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11438,6 +15864,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11446,6 +15873,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11460,6 +15888,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11468,6 +15897,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11490,6 +15920,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -11508,12 +15939,762 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
+        teacher {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
       }
       teachers {
         items {
@@ -11526,73 +16707,7 @@ export const getCompass = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -11604,12 +16719,14 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -11629,6 +16746,118 @@ export const getCompass = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           compass {
             id
@@ -11641,12 +16870,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11656,6 +16896,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11665,6 +16906,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11678,18 +16920,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11699,6 +16953,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11708,6 +16963,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11721,6 +16977,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -11733,6 +16990,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11741,6 +16999,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11755,6 +17014,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11763,6 +17023,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11777,6 +17038,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -11785,6 +17047,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -11807,6 +17070,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -11825,10 +17089,12 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         nextToken
       }
@@ -11843,73 +17109,7 @@ export const getCompass = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -11921,12 +17121,14 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -11946,6 +17148,118 @@ export const getCompass = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           compass {
             id
@@ -11958,12 +17272,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11973,6 +17298,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11982,6 +17308,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -11995,18 +17322,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12016,6 +17355,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12025,6 +17365,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12038,6 +17379,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -12050,6 +17392,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12058,6 +17401,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12072,6 +17416,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12080,6 +17425,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12094,6 +17440,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12102,6 +17449,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12124,6 +17472,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -12142,10 +17491,12 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         nextToken
       }
@@ -12160,73 +17511,7 @@ export const getCompass = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -12238,12 +17523,14 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -12263,6 +17550,118 @@ export const getCompass = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           compass {
             id
@@ -12275,12 +17674,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12290,6 +17700,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12299,6 +17710,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12312,18 +17724,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12333,6 +17757,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12342,6 +17767,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12355,6 +17781,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -12367,6 +17794,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12375,6 +17803,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12389,6 +17818,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12397,6 +17827,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12411,6 +17842,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12419,6 +17851,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12441,6 +17874,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -12459,10 +17893,12 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         nextToken
       }
@@ -12483,12 +17919,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12498,6 +17945,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12507,6 +17955,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12520,18 +17969,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12541,6 +18002,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12550,6 +18012,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12563,6 +18026,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -12575,6 +18039,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12583,6 +18048,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12597,6 +18063,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12605,6 +18072,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12619,6 +18087,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12627,6 +18096,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12649,6 +18119,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -12667,6 +18138,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12681,6 +18153,9 @@ export const getCompass = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -12693,6 +18168,7 @@ export const getCompass = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               session {
                 id
@@ -12712,7 +18188,9 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
+              owner
             }
             nextToken
           }
@@ -12741,6 +18219,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -12756,6 +18235,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -12767,9 +18247,11 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
+          owner
         }
         nextToken
       }
@@ -12792,12 +18274,23 @@ export const getCompass = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12807,6 +18300,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12816,6 +18310,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12829,18 +18324,30 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12850,6 +18357,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12859,6 +18367,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -12872,6 +18381,7 @@ export const getCompass = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -12884,6 +18394,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12892,6 +18403,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12906,6 +18418,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12914,6 +18427,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12928,6 +18442,7 @@ export const getCompass = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -12936,6 +18451,7 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -12958,6 +18474,7 @@ export const getCompass = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -12976,10 +18493,12 @@ export const getCompass = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         nextToken
       }
@@ -13004,17 +18523,21 @@ export const listCompasss = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13027,6 +18550,112 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -13039,12 +18668,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13062,6 +18693,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13076,6 +18708,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13088,6 +18723,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -13100,12 +18736,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13123,6 +18761,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13137,6 +18776,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13149,6 +18791,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -13161,12 +18804,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13184,6 +18829,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13199,6 +18845,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13211,12 +18860,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13229,6 +18882,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -13236,6 +18890,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13245,6 +18900,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13254,6 +18910,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13263,6 +18920,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -13274,29 +18932,35 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         scribe {
           id
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13309,6 +18973,112 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -13321,12 +19091,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13344,6 +19116,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13358,6 +19131,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13370,6 +19146,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -13382,12 +19159,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13405,6 +19184,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13419,6 +19199,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13431,6 +19214,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -13443,12 +19227,14 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -13466,6 +19252,7 @@ export const listCompasss = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -13481,6 +19268,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13493,12 +19283,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13511,6 +19305,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -13518,6 +19313,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13527,6 +19323,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13536,6 +19333,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13545,6 +19343,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -13556,12 +19355,14 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         teachers {
           items {
@@ -13574,12 +19375,23 @@ export const listCompasss = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13589,6 +19401,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13598,6 +19411,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13611,6 +19425,7 @@ export const listCompasss = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -13623,6 +19438,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13635,12 +19453,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13653,6 +19475,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -13660,6 +19483,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13669,6 +19493,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13678,6 +19503,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13687,6 +19513,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -13698,10 +19525,12 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -13716,12 +19545,23 @@ export const listCompasss = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13731,6 +19571,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13740,6 +19581,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13753,6 +19595,7 @@ export const listCompasss = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -13765,6 +19608,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13777,12 +19623,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13795,6 +19645,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -13802,6 +19653,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13811,6 +19663,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13820,6 +19673,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13829,6 +19683,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -13840,10 +19695,12 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -13858,12 +19715,23 @@ export const listCompasss = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13873,6 +19741,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13882,6 +19751,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13895,6 +19765,7 @@ export const listCompasss = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -13907,6 +19778,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13919,12 +19793,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -13937,6 +19815,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -13944,6 +19823,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13953,6 +19833,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13962,6 +19843,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -13971,6 +19853,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -13982,10 +19865,12 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -14006,6 +19891,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14018,12 +19906,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14036,6 +19928,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -14043,6 +19936,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14052,6 +19946,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14061,6 +19956,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14070,6 +19966,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14081,6 +19978,7 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14095,13 +19993,16 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -14117,6 +20018,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -14125,13 +20027,16 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -14154,6 +20059,9 @@ export const listCompasss = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14166,12 +20074,16 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14184,6 +20096,7 @@ export const listCompasss = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -14191,6 +20104,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14200,6 +20114,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14209,6 +20124,7 @@ export const listCompasss = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14218,6 +20134,7 @@ export const listCompasss = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14229,10 +20146,12 @@ export const listCompasss = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -14259,17 +20178,21 @@ export const getSession = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14282,6 +20205,112 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -14294,12 +20323,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14317,6 +20348,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14331,6 +20363,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14343,6 +20378,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -14355,12 +20391,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14378,6 +20416,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14392,6 +20431,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14404,6 +20446,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -14416,12 +20459,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14439,6 +20484,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14454,6 +20500,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14466,12 +20515,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14484,6 +20537,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -14491,6 +20545,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14500,6 +20555,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14509,6 +20565,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14518,6 +20575,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14529,29 +20587,35 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         scribe {
           id
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14564,6 +20628,112 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -14576,12 +20746,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14599,6 +20771,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14613,6 +20786,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14625,6 +20801,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -14637,12 +20814,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14660,6 +20839,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14674,6 +20854,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14686,6 +20869,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -14698,12 +20882,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -14721,6 +20907,7 @@ export const getSession = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -14736,6 +20923,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14748,12 +20938,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14766,6 +20960,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -14773,6 +20968,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14782,6 +20978,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14791,6 +20988,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14800,6 +20998,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14811,12 +21010,14 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         teachers {
           items {
@@ -14829,12 +21030,23 @@ export const getSession = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14844,6 +21056,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14853,6 +21066,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14866,6 +21080,7 @@ export const getSession = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -14878,6 +21093,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14890,12 +21108,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -14908,6 +21130,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -14915,6 +21138,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14924,6 +21148,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14933,6 +21158,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14942,6 +21168,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -14953,10 +21180,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -14971,12 +21200,23 @@ export const getSession = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14986,6 +21226,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -14995,6 +21236,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15008,6 +21250,7 @@ export const getSession = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -15020,6 +21263,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15032,12 +21278,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15050,6 +21300,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15057,6 +21308,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15066,6 +21318,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15075,6 +21328,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15084,6 +21338,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15095,10 +21350,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -15113,12 +21370,23 @@ export const getSession = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15128,6 +21396,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15137,6 +21406,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15150,6 +21420,7 @@ export const getSession = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -15162,6 +21433,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15174,12 +21448,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15192,6 +21470,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15199,6 +21478,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15208,6 +21488,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15217,6 +21498,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15226,6 +21508,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15237,10 +21520,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -15261,6 +21546,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15273,12 +21561,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15291,6 +21583,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15298,6 +21591,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15307,6 +21601,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15316,6 +21611,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15325,6 +21621,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15336,6 +21633,7 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15350,13 +21648,16 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -15372,6 +21673,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -15380,13 +21682,16 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -15409,6 +21714,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15421,12 +21729,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15439,6 +21751,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15446,6 +21759,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15455,6 +21769,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15464,6 +21779,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15473,6 +21789,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15484,10 +21801,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -15502,73 +21821,7 @@ export const getSession = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -15580,12 +21833,14 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -15605,6 +21860,118 @@ export const getSession = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           session {
             id
@@ -15622,6 +21989,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15634,12 +22004,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15652,6 +22026,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15659,6 +22034,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15668,6 +22044,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15677,6 +22054,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15686,6 +22064,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15697,6 +22076,7 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15711,13 +22091,16 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -15733,6 +22116,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -15741,14 +22125,18 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
+          owner
         }
         nextToken
       }
@@ -15775,6 +22163,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15787,12 +22178,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15805,6 +22200,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15812,6 +22208,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15821,6 +22218,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15830,6 +22228,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15839,6 +22238,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15850,6 +22250,7 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15864,13 +22265,16 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -15886,6 +22290,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -15894,13 +22299,16 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           step {
             id
@@ -15920,6 +22328,9 @@ export const getSession = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15932,12 +22343,16 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -15950,6 +22365,7 @@ export const getSession = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -15957,6 +22373,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15966,6 +22383,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15975,6 +22393,7 @@ export const getSession = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -15984,6 +22403,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -15995,10 +22415,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           attachments {
             items {
@@ -16015,6 +22437,7 @@ export const getSession = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -16023,10 +22446,12 @@ export const getSession = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               bucket
               region
@@ -16034,9 +22459,11 @@ export const getSession = /* GraphQL */ `
             }
             nextToken
           }
+          owner
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -16063,73 +22490,7 @@ export const listSessions = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -16141,12 +22502,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16166,79 +22529,125 @@ export const listSessions = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -16250,12 +22659,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16275,6 +22686,118 @@ export const listSessions = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -16287,6 +22810,9 @@ export const listSessions = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -16299,6 +22825,7 @@ export const listSessions = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -16311,12 +22838,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16334,6 +22863,7 @@ export const listSessions = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -16348,6 +22878,9 @@ export const listSessions = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -16360,6 +22893,7 @@ export const listSessions = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -16372,12 +22906,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16395,6 +22931,7 @@ export const listSessions = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -16409,6 +22946,9 @@ export const listSessions = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -16421,6 +22961,7 @@ export const listSessions = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -16433,12 +22974,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16456,6 +22999,7 @@ export const listSessions = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -16476,12 +23020,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16504,6 +23050,7 @@ export const listSessions = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -16514,9 +23061,11 @@ export const listSessions = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -16539,12 +23088,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16562,6 +23113,7 @@ export const listSessions = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -16576,12 +23128,23 @@ export const listSessions = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -16591,6 +23154,7 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -16600,6 +23164,7 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -16613,6 +23178,7 @@ export const listSessions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             session {
               id
@@ -16630,12 +23196,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16658,6 +23226,7 @@ export const listSessions = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -16668,10 +23237,13 @@ export const listSessions = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
+            owner
           }
           nextToken
         }
@@ -16698,12 +23270,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16726,6 +23300,7 @@ export const listSessions = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -16736,9 +23311,11 @@ export const listSessions = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             step {
               id
@@ -16758,12 +23335,14 @@ export const listSessions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16781,6 +23360,7 @@ export const listSessions = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             attachments {
               items {
@@ -16792,6 +23372,7 @@ export const listSessions = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 bucket
                 region
@@ -16799,9 +23380,11 @@ export const listSessions = /* GraphQL */ `
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
+        owner
       }
       nextToken
     }
@@ -16831,73 +23414,7 @@ export const getInteraction = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -16909,12 +23426,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -16934,79 +23453,125 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -17018,12 +23583,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17043,6 +23610,118 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -17055,6 +23734,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17067,6 +23749,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17079,12 +23762,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17102,6 +23787,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17116,6 +23802,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17128,6 +23817,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17140,12 +23830,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17163,6 +23855,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17177,6 +23870,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17189,6 +23885,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17201,12 +23898,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17224,6 +23923,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17244,12 +23944,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17272,6 +23974,7 @@ export const getInteraction = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -17282,9 +23985,11 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -17307,12 +24012,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17330,6 +24037,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17344,12 +24052,23 @@ export const getInteraction = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -17359,6 +24078,7 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -17368,6 +24088,7 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -17381,6 +24102,7 @@ export const getInteraction = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             session {
               id
@@ -17398,12 +24120,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17426,6 +24150,7 @@ export const getInteraction = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -17436,10 +24161,13 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
+            owner
           }
           nextToken
         }
@@ -17466,12 +24194,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17494,6 +24224,7 @@ export const getInteraction = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -17504,9 +24235,11 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             step {
               id
@@ -17526,12 +24259,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17549,6 +24284,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             attachments {
               items {
@@ -17560,6 +24296,7 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 bucket
                 region
@@ -17567,9 +24304,11 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
+        owner
       }
       step {
         id
@@ -17589,73 +24328,7 @@ export const getInteraction = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -17667,12 +24340,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17692,79 +24367,125 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -17776,12 +24497,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17801,6 +24524,118 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -17813,6 +24648,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17825,6 +24663,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17837,12 +24676,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17860,6 +24701,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17874,6 +24716,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17886,6 +24731,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17898,12 +24744,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17921,6 +24769,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -17935,6 +24784,9 @@ export const getInteraction = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -17947,6 +24799,7 @@ export const getInteraction = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -17959,12 +24812,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -17982,6 +24837,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -18002,12 +24858,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18030,6 +24888,7 @@ export const getInteraction = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -18040,9 +24899,11 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -18065,12 +24926,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18088,10 +24951,12 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
+        owner
       }
       attachments {
         items {
@@ -18119,12 +24984,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18147,6 +25014,7 @@ export const getInteraction = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -18157,9 +25025,11 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             step {
               id
@@ -18179,12 +25049,14 @@ export const getInteraction = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18202,6 +25074,7 @@ export const getInteraction = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             attachments {
               items {
@@ -18213,6 +25086,7 @@ export const getInteraction = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 bucket
                 region
@@ -18220,6 +25094,7 @@ export const getInteraction = /* GraphQL */ `
               }
               nextToken
             }
+            owner
           }
           bucket
           region
@@ -18227,6 +25102,7 @@ export const getInteraction = /* GraphQL */ `
         }
         nextToken
       }
+      owner
     }
   }
 `;
@@ -18259,12 +25135,23 @@ export const listInteractions = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18274,6 +25161,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18283,6 +25171,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18296,18 +25185,30 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18317,6 +25218,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18326,6 +25228,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18339,6 +25242,7 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -18351,6 +25255,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18359,6 +25264,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18373,6 +25279,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18381,6 +25288,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18395,6 +25303,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18403,6 +25312,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18425,6 +25335,7 @@ export const listInteractions = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -18443,6 +25354,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18457,6 +25369,9 @@ export const listInteractions = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -18469,6 +25384,7 @@ export const listInteractions = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               session {
                 id
@@ -18488,7 +25404,9 @@ export const listInteractions = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
+              owner
             }
             nextToken
           }
@@ -18517,6 +25435,7 @@ export const listInteractions = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -18532,6 +25451,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -18543,9 +25463,11 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
+          owner
         }
         step {
           id
@@ -18565,12 +25487,23 @@ export const listInteractions = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18580,6 +25513,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18589,6 +25523,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18602,18 +25537,30 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18623,6 +25570,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18632,6 +25580,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -18645,6 +25594,7 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -18657,6 +25607,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18665,6 +25616,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18679,6 +25631,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18687,6 +25640,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18701,6 +25655,7 @@ export const listInteractions = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -18709,6 +25664,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -18731,6 +25687,7 @@ export const listInteractions = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -18749,10 +25706,12 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         attachments {
           items {
@@ -18782,6 +25741,7 @@ export const listInteractions = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -18797,6 +25757,7 @@ export const listInteractions = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -18808,6 +25769,7 @@ export const listInteractions = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             bucket
             region
@@ -18815,6 +25777,7 @@ export const listInteractions = /* GraphQL */ `
           }
           nextToken
         }
+        owner
       }
       nextToken
     }
@@ -18840,17 +25803,21 @@ export const getStep = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -18863,6 +25830,112 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -18875,12 +25948,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18898,6 +25973,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -18912,6 +25988,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -18924,6 +26003,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -18936,12 +26016,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -18959,6 +26041,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -18973,6 +26056,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -18985,6 +26071,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -18997,12 +26084,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -19020,6 +26109,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -19035,6 +26125,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19047,12 +26140,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19065,6 +26162,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19072,6 +26170,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19081,6 +26180,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19090,6 +26190,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19099,6 +26200,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19110,29 +26212,35 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         scribe {
           id
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19145,6 +26253,112 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -19157,12 +26371,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -19180,6 +26396,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -19194,6 +26411,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19206,6 +26426,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -19218,12 +26439,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -19241,6 +26464,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -19255,6 +26479,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19267,6 +26494,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -19279,12 +26507,14 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -19302,6 +26532,7 @@ export const getStep = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -19317,6 +26548,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19329,12 +26563,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19347,6 +26585,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19354,6 +26593,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19363,6 +26603,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19372,6 +26613,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19381,6 +26623,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19392,12 +26635,14 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         teachers {
           items {
@@ -19410,12 +26655,23 @@ export const getStep = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19425,6 +26681,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19434,6 +26691,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19447,6 +26705,7 @@ export const getStep = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -19459,6 +26718,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19471,12 +26733,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19489,6 +26755,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19496,6 +26763,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19505,6 +26773,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19514,6 +26783,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19523,6 +26793,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19534,10 +26805,12 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -19552,12 +26825,23 @@ export const getStep = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19567,6 +26851,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19576,6 +26861,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19589,6 +26875,7 @@ export const getStep = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -19601,6 +26888,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19613,12 +26903,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19631,6 +26925,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19638,6 +26933,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19647,6 +26943,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19656,6 +26953,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19665,6 +26963,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19676,10 +26975,12 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -19694,12 +26995,23 @@ export const getStep = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19709,6 +27021,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19718,6 +27031,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19731,6 +27045,7 @@ export const getStep = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             compass {
               id
@@ -19743,6 +27058,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19755,12 +27073,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19773,6 +27095,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19780,6 +27103,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19789,6 +27113,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19798,6 +27123,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19807,6 +27133,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19818,10 +27145,12 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
@@ -19842,6 +27171,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19854,12 +27186,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -19872,6 +27208,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -19879,6 +27216,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19888,6 +27226,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19897,6 +27236,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -19906,6 +27246,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19917,6 +27258,7 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -19931,13 +27273,16 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -19953,6 +27298,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -19961,13 +27307,16 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
@@ -19990,6 +27339,9 @@ export const getStep = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20002,12 +27354,16 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20020,6 +27376,7 @@ export const getStep = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -20027,6 +27384,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20036,6 +27394,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20045,6 +27404,7 @@ export const getStep = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20054,6 +27414,7 @@ export const getStep = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -20065,14 +27426,17 @@ export const getStep = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           nextToken
         }
       }
+      owner
     }
   }
 `;
@@ -20101,73 +27465,7 @@ export const listSteps = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -20179,12 +27477,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20204,79 +27504,125 @@ export const listSteps = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -20288,12 +27634,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20313,6 +27661,118 @@ export const listSteps = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -20325,6 +27785,9 @@ export const listSteps = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20337,6 +27800,7 @@ export const listSteps = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -20349,12 +27813,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20372,6 +27838,7 @@ export const listSteps = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -20386,6 +27853,9 @@ export const listSteps = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20398,6 +27868,7 @@ export const listSteps = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -20410,12 +27881,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20433,6 +27906,7 @@ export const listSteps = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -20447,6 +27921,9 @@ export const listSteps = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20459,6 +27936,7 @@ export const listSteps = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -20471,12 +27949,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20494,6 +27974,7 @@ export const listSteps = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -20514,12 +27995,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20542,6 +28025,7 @@ export const listSteps = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -20552,9 +28036,11 @@ export const listSteps = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -20577,12 +28063,14 @@ export const listSteps = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -20600,10 +28088,12 @@ export const listSteps = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
         }
+        owner
       }
       nextToken
     }
@@ -20636,12 +28126,23 @@ export const getAttachment = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20651,6 +28152,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20660,6 +28162,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20673,18 +28176,30 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20694,6 +28209,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20703,6 +28219,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20716,6 +28233,7 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -20728,6 +28246,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -20736,6 +28255,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -20750,6 +28270,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -20758,6 +28279,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -20772,6 +28294,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -20780,6 +28303,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -20802,6 +28326,7 @@ export const getAttachment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -20820,6 +28345,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -20834,6 +28360,9 @@ export const getAttachment = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -20846,6 +28375,7 @@ export const getAttachment = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               session {
                 id
@@ -20865,7 +28395,9 @@ export const getAttachment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
+              owner
             }
             nextToken
           }
@@ -20894,6 +28426,7 @@ export const getAttachment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -20909,6 +28442,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -20920,9 +28454,11 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
+          owner
         }
         step {
           id
@@ -20942,12 +28478,23 @@ export const getAttachment = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20957,6 +28504,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20966,6 +28514,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -20979,18 +28528,30 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21000,6 +28561,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21009,6 +28571,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21022,6 +28585,7 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -21034,6 +28598,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -21042,6 +28607,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -21056,6 +28622,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -21064,6 +28631,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -21078,6 +28646,7 @@ export const getAttachment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -21086,6 +28655,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -21108,6 +28678,7 @@ export const getAttachment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -21126,10 +28697,12 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
+          owner
         }
         attachments {
           items {
@@ -21159,6 +28732,7 @@ export const getAttachment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -21174,6 +28748,7 @@ export const getAttachment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -21185,6 +28760,7 @@ export const getAttachment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             bucket
             region
@@ -21192,6 +28768,7 @@ export const getAttachment = /* GraphQL */ `
           }
           nextToken
         }
+        owner
       }
       bucket
       region
@@ -21231,6 +28808,9 @@ export const listAttachments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -21243,12 +28823,16 @@ export const listAttachments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -21261,6 +28845,7 @@ export const listAttachments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -21268,6 +28853,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21277,6 +28863,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21286,6 +28873,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21295,6 +28883,7 @@ export const listAttachments = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -21306,6 +28895,7 @@ export const listAttachments = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -21320,13 +28910,16 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 session {
                   id
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
+                owner
               }
               nextToken
             }
@@ -21342,6 +28935,7 @@ export const listAttachments = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -21350,13 +28944,16 @@ export const listAttachments = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
+            owner
           }
           step {
             id
@@ -21376,6 +28973,9 @@ export const listAttachments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -21388,12 +28988,16 @@ export const listAttachments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -21406,6 +29010,7 @@ export const listAttachments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -21413,6 +29018,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21422,6 +29028,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21431,6 +29038,7 @@ export const listAttachments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21440,6 +29048,7 @@ export const listAttachments = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -21451,10 +29060,12 @@ export const listAttachments = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
+            owner
           }
           attachments {
             items {
@@ -21471,6 +29082,7 @@ export const listAttachments = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 step {
                   id
@@ -21479,10 +29091,12 @@ export const listAttachments = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 attachments {
                   nextToken
                 }
+                owner
               }
               bucket
               region
@@ -21490,6 +29104,7 @@ export const listAttachments = /* GraphQL */ `
             }
             nextToken
           }
+          owner
         }
         bucket
         region
@@ -21510,433 +29125,7 @@ export const getComment = /* GraphQL */ `
         first_name
         last_name
         email
-        teacher {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        member {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        reader {
-          items {
-            id
-            first_name
-            last_name
-            email
-            user {
-              id
-              first_name
-              last_name
-              email
-              teacher {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              member {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              reader {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              compass {
-                items {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-                nextToken
-              }
-            }
-            compass {
-              id
-              name_of_compass
-              description_of_compass
-              createdAt
-              compassType
-              owner {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              scribe {
-                id
-                first_name
-                last_name
-                email
-                teacher {
-                  nextToken
-                }
-                member {
-                  nextToken
-                }
-                reader {
-                  nextToken
-                }
-                compass {
-                  nextToken
-                }
-              }
-              teachers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              members {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              readers {
-                items {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                nextToken
-              }
-              sessions {
-                items {
-                  id
-                  name_of_session
-                  description_of_session
-                  createdAt
-                }
-                nextToken
-              }
-              steps {
-                items {
-                  id
-                  index
-                  name_of_step
-                  description_of_step
-                  color
-                  createdAt
-                }
-                nextToken
-              }
-            }
-          }
-          nextToken
-        }
-        compass {
+        scribe {
           items {
             id
             name_of_compass
@@ -21948,12 +29137,23 @@ export const getComment = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21963,6 +29163,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21972,6 +29173,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -21985,18 +29187,30 @@ export const getComment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22006,6 +29220,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22015,6 +29230,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22028,6 +29244,7 @@ export const getComment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -22040,6 +29257,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -22048,6 +29266,7 @@ export const getComment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -22062,6 +29281,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -22070,6 +29290,7 @@ export const getComment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -22084,6 +29305,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -22092,6 +29314,7 @@ export const getComment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -22114,6 +29337,7 @@ export const getComment = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -22132,12 +29356,762 @@ export const getComment = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
           }
           nextToken
         }
+        teacher {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        member {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        reader {
+          items {
+            id
+            first_name
+            last_name
+            email
+            user {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            compass {
+              id
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            owner
+          }
+          nextToken
+        }
+        compass {
+          items {
+            id
+            name_of_compass
+            description_of_compass
+            createdAt
+            compassType
+            owner {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            scribe {
+              id
+              first_name
+              last_name
+              email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              teacher {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              member {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              reader {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              compass {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
+              owner
+            }
+            teachers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            members {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            readers {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            sessions {
+              items {
+                id
+                name_of_session
+                description_of_session
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                comments {
+                  nextToken
+                }
+                interactions {
+                  nextToken
+                }
+                owner
+              }
+              nextToken
+            }
+            steps {
+              items {
+                id
+                index
+                name_of_step
+                description_of_step
+                color
+                createdAt
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+          }
+          nextToken
+        }
+        owner
       }
       session {
         id
@@ -22155,73 +30129,7 @@ export const getComment = /* GraphQL */ `
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -22233,12 +30141,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22258,79 +30168,125 @@ export const getComment = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           scribe {
             id
             first_name
             last_name
             email
-            teacher {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            member {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            reader {
-              items {
-                id
-                first_name
-                last_name
-                email
-                user {
-                  id
-                  first_name
-                  last_name
-                  email
-                }
-                compass {
-                  id
-                  name_of_compass
-                  description_of_compass
-                  createdAt
-                  compassType
-                }
-              }
-              nextToken
-            }
-            compass {
+            scribe {
               items {
                 id
                 name_of_compass
@@ -22342,12 +30298,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22367,6 +30325,118 @@ export const getComment = /* GraphQL */ `
               }
               nextToken
             }
+            teacher {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            member {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            reader {
+              items {
+                id
+                first_name
+                last_name
+                email
+                user {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                compass {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                owner
+              }
+              nextToken
+            }
+            compass {
+              items {
+                id
+                name_of_compass
+                description_of_compass
+                createdAt
+                compassType
+                owner {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                scribe {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                teachers {
+                  nextToken
+                }
+                members {
+                  nextToken
+                }
+                readers {
+                  nextToken
+                }
+                sessions {
+                  nextToken
+                }
+                steps {
+                  nextToken
+                }
+              }
+              nextToken
+            }
+            owner
           }
           teachers {
             items {
@@ -22379,6 +30449,9 @@ export const getComment = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -22391,6 +30464,7 @@ export const getComment = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -22403,12 +30477,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22426,6 +30502,7 @@ export const getComment = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -22440,6 +30517,9 @@ export const getComment = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -22452,6 +30532,7 @@ export const getComment = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -22464,12 +30545,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22487,6 +30570,7 @@ export const getComment = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -22501,6 +30585,9 @@ export const getComment = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -22513,6 +30600,7 @@ export const getComment = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -22525,12 +30613,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22548,6 +30638,7 @@ export const getComment = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -22568,12 +30659,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22596,6 +30689,7 @@ export const getComment = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -22606,9 +30700,11 @@ export const getComment = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
@@ -22631,12 +30727,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22654,6 +30752,7 @@ export const getComment = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -22668,12 +30767,23 @@ export const getComment = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22683,6 +30793,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22692,6 +30803,7 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -22705,6 +30817,7 @@ export const getComment = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             session {
               id
@@ -22722,12 +30835,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22750,6 +30865,7 @@ export const getComment = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -22760,10 +30876,13 @@ export const getComment = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
+            owner
           }
           nextToken
         }
@@ -22790,12 +30909,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22818,6 +30939,7 @@ export const getComment = /* GraphQL */ `
                   id
                   content
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -22828,9 +30950,11 @@ export const getComment = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 nextToken
               }
+              owner
             }
             step {
               id
@@ -22850,12 +30974,14 @@ export const getComment = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22873,6 +30999,7 @@ export const getComment = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             attachments {
               items {
@@ -22884,6 +31011,7 @@ export const getComment = /* GraphQL */ `
                   log_content
                   comments
                   createdAt
+                  owner
                 }
                 bucket
                 region
@@ -22891,10 +31019,13 @@ export const getComment = /* GraphQL */ `
               }
               nextToken
             }
+            owner
           }
           nextToken
         }
+        owner
       }
+      owner
     }
   }
 `;
@@ -22914,17 +31045,21 @@ export const listComments = /* GraphQL */ `
           first_name
           last_name
           email
-          teacher {
+          scribe {
             items {
               id
-              first_name
-              last_name
-              email
-              user {
+              name_of_compass
+              description_of_compass
+              createdAt
+              compassType
+              owner {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -22937,6 +31072,112 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
+              }
+              scribe {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
+              }
+              teachers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              members {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              readers {
+                items {
+                  id
+                  first_name
+                  last_name
+                  email
+                  owner
+                }
+                nextToken
+              }
+              sessions {
+                items {
+                  id
+                  name_of_session
+                  description_of_session
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+              steps {
+                items {
+                  id
+                  index
+                  name_of_step
+                  description_of_step
+                  color
+                  createdAt
+                  owner
+                }
+                nextToken
+              }
+            }
+            nextToken
+          }
+          teacher {
+            items {
+              id
+              first_name
+              last_name
+              email
+              user {
+                id
+                first_name
+                last_name
+                email
+                scribe {
+                  nextToken
+                }
+                teacher {
+                  nextToken
+                }
+                member {
+                  nextToken
+                }
+                reader {
+                  nextToken
+                }
+                compass {
+                  nextToken
+                }
+                owner
               }
               compass {
                 id
@@ -22949,12 +31190,14 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -22972,6 +31215,7 @@ export const listComments = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -22986,6 +31230,9 @@ export const listComments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -22998,6 +31245,7 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -23010,12 +31258,14 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -23033,6 +31283,7 @@ export const listComments = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -23047,6 +31298,9 @@ export const listComments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -23059,6 +31313,7 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               compass {
                 id
@@ -23071,12 +31326,14 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 scribe {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 teachers {
                   nextToken
@@ -23094,6 +31351,7 @@ export const listComments = /* GraphQL */ `
                   nextToken
                 }
               }
+              owner
             }
             nextToken
           }
@@ -23109,6 +31367,9 @@ export const listComments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -23121,12 +31382,16 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               scribe {
                 id
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -23139,6 +31404,7 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               teachers {
                 items {
@@ -23146,6 +31412,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23155,6 +31422,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23164,6 +31432,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23173,6 +31442,7 @@ export const listComments = /* GraphQL */ `
                   name_of_session
                   description_of_session
                   createdAt
+                  owner
                 }
                 nextToken
               }
@@ -23184,12 +31454,14 @@ export const listComments = /* GraphQL */ `
                   description_of_step
                   color
                   createdAt
+                  owner
                 }
                 nextToken
               }
             }
             nextToken
           }
+          owner
         }
         session {
           id
@@ -23207,12 +31479,23 @@ export const listComments = /* GraphQL */ `
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23222,6 +31505,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23231,6 +31515,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23244,18 +31529,30 @@ export const listComments = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             scribe {
               id
               first_name
               last_name
               email
+              scribe {
+                items {
+                  id
+                  name_of_compass
+                  description_of_compass
+                  createdAt
+                  compassType
+                }
+                nextToken
+              }
               teacher {
                 items {
                   id
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23265,6 +31562,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23274,6 +31572,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 nextToken
               }
@@ -23287,6 +31586,7 @@ export const listComments = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             teachers {
               items {
@@ -23299,6 +31599,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -23307,6 +31608,7 @@ export const listComments = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -23321,6 +31623,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -23329,6 +31632,7 @@ export const listComments = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -23343,6 +31647,7 @@ export const listComments = /* GraphQL */ `
                   first_name
                   last_name
                   email
+                  owner
                 }
                 compass {
                   id
@@ -23351,6 +31656,7 @@ export const listComments = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -23373,6 +31679,7 @@ export const listComments = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               nextToken
             }
@@ -23391,6 +31698,7 @@ export const listComments = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               nextToken
             }
@@ -23405,6 +31713,9 @@ export const listComments = /* GraphQL */ `
                 first_name
                 last_name
                 email
+                scribe {
+                  nextToken
+                }
                 teacher {
                   nextToken
                 }
@@ -23417,6 +31728,7 @@ export const listComments = /* GraphQL */ `
                 compass {
                   nextToken
                 }
+                owner
               }
               session {
                 id
@@ -23436,7 +31748,9 @@ export const listComments = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
+              owner
             }
             nextToken
           }
@@ -23465,6 +31779,7 @@ export const listComments = /* GraphQL */ `
                 interactions {
                   nextToken
                 }
+                owner
               }
               step {
                 id
@@ -23480,6 +31795,7 @@ export const listComments = /* GraphQL */ `
                   createdAt
                   compassType
                 }
+                owner
               }
               attachments {
                 items {
@@ -23491,10 +31807,13 @@ export const listComments = /* GraphQL */ `
                 }
                 nextToken
               }
+              owner
             }
             nextToken
           }
+          owner
         }
+        owner
       }
       nextToken
     }
