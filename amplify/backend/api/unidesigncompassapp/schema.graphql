@@ -101,3 +101,4 @@ type Comment @model @auth(rules: [{ allow: owner, queries: null} ]){
   commenter: User @connection
   session: Session @connection(name: "SessionComments")
 }
+
