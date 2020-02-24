@@ -21,6 +21,7 @@ const Dashboard = (props) => {
   const { clearCompass, clearSession, clearInteraction, clearInteractions } = useContext(CompassContext);
   const { showModal } = useContext(ReviewModalContext);
   const [ownerCompasses, setOwnerCompasses] = useState([])
+  const [scribeCompasses, setScribeCompasses] = useState([])
   // const [newestProject, setNewestProject] = useState({})
   const [teacherCompasses, setTeacherCompasses] = useState([])
   const [memberCompasses, setMemberCompasses] = useState([])
@@ -76,17 +77,21 @@ const Dashboard = (props) => {
   useEffect(() => {
     if (user.id) {
       const owners = user.compass.items
-
+      const scribe = user.scribe.items
       // finding the projects i am a member of:
       // 1. get all projects
       // 2. get their members list
       // 3. check if im in the members list
       // const scribe = res.filter((compass) => compass.scribe && (compass.scribe.id === user.id))
+
+      const scriber = scribe.filter(own => own.owner.id !== own.scribe.id)
+
       const allMembers = user.member.items.map(res => res.compass)
       const allTeachers = user.teacher.items.map(res => res.compass)
       const allReaders = user.reader.items.map(res => res.compass)
       // setOwnerCompasses([...owners, ...allMembers, ...allTeachers, ...allReaders].filter(res => res))
       setOwnerCompasses([...owners])
+      setScribeCompasses([...scriber])
       setTeacherCompasses([...allTeachers])
       setMemberCompasses([...allMembers])
       setReaderCompasses([...allReaders])
@@ -169,6 +174,10 @@ const Dashboard = (props) => {
             } */}
             {
               !error ? (ownerCompasses.length ? (<Feed compasses={ownerCompasses} type={"Past"} onShow={true} />) : <NoProjects>You have no projects, start one from above! </NoProjects>)
+                : <div> Error !: {error}</div>
+            }
+            {
+              !error ? (scribeCompasses.length ? (<Feed compasses={scribeCompasses} type={"Scribe"} onShow={true} />) : "")
                 : <div> Error !: {error}</div>
             }
             {
