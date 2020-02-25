@@ -16,5 +16,23 @@
                 "unidesigncompassapp155c42e4": {}
             }
         }
+    },
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-unidesigncompassapp-develop-113540-authRole",
+            "UnauthRoleArn": "arn:aws:iam::754786653450:role/amplify-unidesigncompassapp-develop-113540-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::754786653450:role/amplify-unidesigncompassapp-develop-113540-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-unidesigncompassapp-develop-113540-deployment",
+            "UnauthRoleName": "amplify-unidesigncompassapp-develop-113540-unauthRole",
+            "StackName": "amplify-unidesigncompassapp-develop-113540",
+            "StackId": "arn:aws:cloudformation:us-east-1:754786653450:stack/amplify-unidesigncompassapp-develop-113540/ddc6e7c0-57ec-11ea-9e25-0e715b49d7c1",
+            "AmplifyAppId": "d16dr5h9dkcsw6"
+        },
+        "categories": {
+            "auth": {
+                "unidesigncompassapp155c42e4": {}
+            }
+        }
     }
 }
