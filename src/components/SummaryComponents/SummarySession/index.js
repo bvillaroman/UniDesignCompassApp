@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { navigate } from "gatsby"
 // import SummaryLegend from '../SummaryLegend/';
-import { Image } from 'grommet-icons';
+import { Image, More } from 'grommet-icons';
 import HeaderInfo from './HeaderInfo.js';
 import { CompassContext } from "../../../context/CompassPage/context";
 import {
@@ -12,6 +12,7 @@ import {
   SummaryTableRow,
   SummaryTdHeader,
   SummaryTdBody,
+  SummaryTdBody2,
   SummaryTableConatiner,
   SummarySessionName
 } from '../../../styles/SummaryPage';
@@ -22,6 +23,7 @@ const SummarySession = (props) => {
 
   const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
+  const [show, setShow] = useState(false)
 
   //Mounting once when the page loads
   useEffect(() => {
@@ -52,7 +54,7 @@ const SummarySession = (props) => {
           {sessions.sort(timeConverter).map((session, i) =>
             <SummaryTableConatiner key={i} className="summary-help">
               <SummarySessionName>
-                {session.name_of_session.substring(0, session.name_of_session.length - 1)}
+                {session.name_of_session.substring(0, session.name_of_session.length - 1)}{<More onClick={() => setShow(!show)} />}
               </SummarySessionName>
               <SummaryTable alignSelf="stretch">
                 <SummaryTableHeader>
@@ -68,7 +70,7 @@ const SummarySession = (props) => {
                     <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                       <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                       <SummaryTdBody>{interaction.duration}s</SummaryTdBody>
-                      <SummaryTdBody>{interaction.log_content.length > 24 ? interaction.log_content.substring(0, 50) + "..." : interaction.log_content}</SummaryTdBody>
+                      {show ? <SummaryTdBody>{interaction.log_content.length > 24 ? interaction.log_content.substring(0, 50) + "..." : interaction.log_content}</SummaryTdBody> : <SummaryTdBody2>{interaction.log_content.length > 24 ? interaction.log_content + "..." : interaction.log_content}</SummaryTdBody2>}
                       <SummaryTdBody>{interaction.attachments.items.length > 0 ? <Image color="#5567FD" size="medium" /> : "---"}</SummaryTdBody>
                     </tr>
                   </SummaryTableBody>

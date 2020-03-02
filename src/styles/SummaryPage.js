@@ -222,6 +222,13 @@ export const SummaryTableCellBody = styled(TableCell)`
   background-color: ${props => props.color ? props.color : "transparent"};
 `;
 
+export const SummaryTdBody2 = styled.td`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: ${props => props.color ? props.color : "transparent"};
+  padding: 0.2rem 0.5rem;
+`;
+
 export const SummaryTdBody = styled.td`
   white-space: nowrap;
   overflow: hidden;
@@ -249,6 +256,8 @@ export const SummarySessionName = styled.div`
   font-size: x-large;
   font-weight: 500;
   margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const SummaryMainView = styled.div`
