@@ -25,8 +25,8 @@ const AccountBar = props => {
   return (
     <CompassSideBar>
       <LinkContainer className="navbar-help">
-        <CompassHeaderCompass to={`/`} >UDC</CompassHeaderCompass>
-        <CompassLink to={`/`}><Home /><span style={{ borderBottom: '0.1rem solid white' }}>Dashboard</span> </CompassLink>
+        <CompassHeaderCompass to="/">UDC</CompassHeaderCompass>
+        <CompassLink to="/"><Home /><span style={{ borderBottom: '0.1rem solid white' }}>Dashboard</span> </CompassLink>
         {/* <CompassLink2><Home /><span style={{ borderBottom: '0.1rem solid white' }}>Dashboard</span> </CompassLink2> */}
         <CompassLink2><Notes /><span style={{ color: '#D3D3D3' }} className={'details-help'}>Details</span></CompassLink2>
         <CompassLink2><Compass /><span style={{ color: '#D3D3D3' }}>Compass</span></CompassLink2>

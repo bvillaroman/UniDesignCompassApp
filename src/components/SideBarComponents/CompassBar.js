@@ -54,18 +54,18 @@ const CompassBar = ({ page }) => {
         {/* {<CompassHeaderCompass to={`/Compass/?c=${CompassInfo.compass.id}`} >UDC</CompassHeaderCompass>} */}
         <CompassHeaderCompass to={`/`} >UDC</CompassHeaderCompass>
         <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink>
-        <CompassLink to={`/Compass/?c=${CompassInfo.compass.id}`} active={page === "/Compass/"}><Notes /><span>Details </span></CompassLink>
-        <CompassLink active={page === "/Logger/"} to={`/Logger/?c=${CompassInfo.compass.id}&s=${newestSession}`}>
+        <CompassLink to={`/Compass/?c=${CompassInfo.compass.id}`} active={page === "/Compass/" ? "true" : "false"}><Notes /><span>Details </span></CompassLink>
+        <CompassLink active={page === "/Logger/" ? "true" : "false"} to={`/Logger/?c=${CompassInfo.compass.id}&s=${newestSession}`}>
           <Compass />
           <span>Compass</span>
         </CompassLink>
-        <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/"}><DocumentText /><span>Log </span></CompassLink>
-        <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/"}><BarChart /><span>Overview</span></CompassLink>
+        <CompassLink to={`/Summary/?c=${CompassInfo.compass.id}`} active={page === "/Summary/" ? "true" : "false"}><DocumentText /><span>Log </span></CompassLink>
+        <CompassLink to={`/Analytics/?c=${CompassInfo.compass.id}`} active={page === "/Analytics/" ? "true" : "false"}><BarChart /><span>Overview</span></CompassLink>
       </LinkContainer>
       <LinkContainer>
         {/* <CompassLink to={`/`}><Home /><span>Dashboard</span> </CompassLink> */}
         <CompassLink to={`/Profile`}><User /><span>Profile</span></CompassLink>
-        <CompassLink ><SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton></CompassLink>
+        <CompassLink to="/" ><SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton></CompassLink>
       </LinkContainer>
     </CompassSideBar >
   )

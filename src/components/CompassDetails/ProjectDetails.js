@@ -120,7 +120,7 @@ export default (props) => {
         </ProjectDetailsTitle>
         <CompassDetailsDescription>
           <CompassStepAccordion>
-            {steps && steps.sort((a, b) => (a.index) - b.index).map(step => (<StepDetails step={step} />))}
+            {steps && steps.sort((a, b) => (a.index) - b.index).map((step,key) => (<StepDetails step={step} key={key}/>))}
           </CompassStepAccordion>
         </CompassDetailsDescription>
       </ProjectDetailsStepContainer>

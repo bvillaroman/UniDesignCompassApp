@@ -1,10 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from "styled-components"
 import { DashboardSectionHeader } from "./style"
 import { navigate } from "gatsby"
 import { dateFormatter } from "../../utils/translateTime"
 import { deleteCompass, updateCompass } from "../../utils/mutations"
-import { GlobalContext } from "../../context/context"
 import { getCompass } from "../../utils/queries"
 import { timeSorter } from "../../utils/translateTime"
 import {
@@ -15,9 +14,6 @@ import {
 } from "../../styles/CompassPage"
 
 export const CompassFeed = ({ compasses, type, onShow }) => {
-
-  const { user } = useContext(GlobalContext);
-
 
   const goToCompass = (compass) => {
     navigate(`/Compass/?c=${compass.id}`)

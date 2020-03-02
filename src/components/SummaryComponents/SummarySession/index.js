@@ -66,7 +66,7 @@ const SummarySession = (props) => {
                   </SummaryTableRow>
                 </SummaryTableHeader>
                 {session.interactions.items.sort(timeConverter).map((interaction, i) =>
-                  <SummaryTableBody>
+                  <SummaryTableBody key={i}>
                     <tr key={i} onClick={() => navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${interaction.id}`)} style={{ cursor: "pointer" }}>
                       <SummaryTdBody color={interaction.step.color}>{interaction.step.name_of_step.substring(0, 10)}</SummaryTdBody>
                       <SummaryTdBody>{interaction.duration}s</SummaryTdBody>

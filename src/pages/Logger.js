@@ -101,7 +101,7 @@ const CompassPage = (props) => {
       // updateInteraction.unsubscribe()
       createAttachment.unsubscribe();
     }
-  //   // eslint-disable-next-line
+  // eslint-disable-next-line
   }, [])
 
   // setting up the session through url

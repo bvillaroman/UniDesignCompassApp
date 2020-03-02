@@ -1,14 +1,11 @@
-import React, { useEffect, useContext, useState, useRef } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { CompassContext } from "../../../context/CompassPage/context";
 import { deleteMemberCompasses, deleteReaderCompasses, deleteTeacherCompasses } from '../../../utils/mutations';
 import DeleteMembers from "./DeleteMembers";
 import DeleteReaders from "./DeleteReaders";
 import DeleteTeachers from "./DeleteTeachers";
 import styled from "styled-components";
-import {
-  PermissionHeader,
-  DeleteContainer
-} from "./style"
+import { PermissionHeader } from "./style"
 
 const DisplayPermission = () => {
   const { compass, updateCompass } = useContext(CompassContext);
