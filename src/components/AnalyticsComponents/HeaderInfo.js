@@ -8,29 +8,19 @@ const HeaderInfo = () => {
   const [step, setStep] = useState({
     run: false,
     steps: [
+      // {
+      //   target: ".one-pie-chart-help",
+      //   content: "View specific session",
+      //   disableBeacon: true
+      // },
+      // {
+      //   target: ".test-help",
+      //   content: "View your timeline here",
+      //   disableBeacon: true
+      // },
       {
-        target: ".compass-wheel-help",
-        content: "Click on a step to start the time",
-        disableBeacon: true
-      },
-      {
-        target: ".logger-grid-help",
-        content: "Log your selected step here",
-        disableBeacon: true
-      },
-      {
-        target: ".attachment-help",
-        content: "Add an attachment",
-        disableBeacon: true
-      },
-      {
-        target: ".comment-help",
-        content: "Comment here",
-        disableBeacon: true
-      },
-      {
-        target: ".recent-steps-help",
-        content: "View and access your previous steps",
+        target: "select-pie-help",
+        content: "View all sessions",
         disableBeacon: true
       },
       {
@@ -60,7 +50,7 @@ const HeaderInfo = () => {
     <div style={{ margin: '0 2em' }}>
       <HeaderInfoContainer >
         <Title>
-          Compass Page
+          Overview
       </Title>
 
         <ReactJoyride

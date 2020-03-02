@@ -29,7 +29,7 @@ const Interactions = (props) => {
   // getting the current session
   return (
     <InteractionsContainer >
-      <InteractionsTitle> Recent Steps </InteractionsTitle>
+      <InteractionsTitle> Timeline </InteractionsTitle>
       <InteractionsFeed >
         {
           interactions ? interactions.map((item, key) => {
