@@ -50,7 +50,6 @@ export const CompassProvider = ({children}) => {
         updateNewestDuration: (duration) => dispatch({type: UPDATE_NEWEST_DURATION, payload: duration}),
         updateInteractions: (interactions) => dispatch({type: UPDATE_INTERACTIONS, payload: interactions}), 
         updateInteraction: (interaction) => dispatch({type: UPDATE_INTERACTION, payload: interaction}),
-        updateInteractions: (interactions) => dispatch({type: UPDATE_INTERACTIONS, payload: interactions}), 
         updateTime: (time) => dispatch({type: UPDATE_TIME, payload: time}), 
         clearCompass: () => dispatch({type: CLEAR_COMPASS}),
         clearSession: () => dispatch({type: CLEAR_SESSION}),

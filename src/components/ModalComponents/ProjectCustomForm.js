@@ -61,6 +61,7 @@ const CustomCompassForm = (props) => {
         if (step.description === "" || step.title === "") {
           return alert("Title or Description cannot be empty")
         }
+        return null;
       })
       createCompass(compassTitle, "Type in Project Details here", "default", user.id, user.id)
         .then(res => {

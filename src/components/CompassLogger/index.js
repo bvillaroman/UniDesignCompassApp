@@ -23,7 +23,7 @@ export default CompassSelector;
 export const CSGrid = styled.div`
   width: 100%;
   height: 75%;
-  min-height: 41rem;
+  min-height: 42rem;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -31,11 +31,11 @@ export const CSGrid = styled.div`
     flex-direction: column;
     min-height: 81rem;
   }
-  @media (max-width: 650px){ min-height: 80rem; }  
-  @media (max-width: 550px){ min-height: 76rem; } 
-  @media (max-width: 475px){ min-height: 72rem; }  
-  @media (max-width: 413px){ min-height: 70rem; }   
-  @media (max-width: 370px){ min-height: 68rem; }     
+  @media (max-width: 650px){ min-height: 81rem; }  
+  @media (max-width: 550px){ min-height: 77rem; } 
+  @media (max-width: 475px){ min-height: 73rem; }  
+  @media (max-width: 413px){ min-height: 71rem; }   
+  @media (max-width: 370px){ min-height: 69rem; }     
 `;
 export const CSContainer = styled.div`
   width: 100%;

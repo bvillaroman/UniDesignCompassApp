@@ -101,18 +101,18 @@ const CompassLinkStyles = styled(Link)`
     ${({ size }) => size === "small" && "height: 1.5rem"};
     ${({ size }) => size === "small" && "width: 1.5rem"};
     ${({ size }) => size === "small" && "margin-left: 1.5rem"};
-    ${({ active }) => active && "margin-bottom: 0.2rem"};
+    ${({ active }) => active === "true" && "margin-bottom: 0.2rem"};
   }
   span {
     ${({ size }) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
     ${({ active, size }) => {
-    if (active) {
+    if (active === "true") {
       if (size === "small") return "border-bottom: 0.05rem solid white"
       else return "border-bottom: 0.1rem solid white"
     }
   }};
     ${({ active, size }) => {
-    if (active) {
+    if (active === "true" ) {
       if (size === "small") return "padding-bottom: 0.05rem"
       else return "padding-bottom: 0.1rem"
     }
@@ -125,7 +125,7 @@ const CompassLinkStyles = styled(Link)`
     //display: none;
   }
 `
-const CompassLinkStyles2 = styled(Link)`
+const CompassLinkStyles2 = styled.div`
   display: flex;
   flex-direction: row;
   height: 2rem;
@@ -140,18 +140,18 @@ const CompassLinkStyles2 = styled(Link)`
     ${({ size }) => size === "small" && "height: 1.5rem"};
     ${({ size }) => size === "small" && "width: 1.5rem"};
     ${({ size }) => size === "small" && "margin-left: 1.5rem"};
-    ${({ active }) => active && "margin-bottom: 0.2rem"};
+    ${({ active }) => active === "true"  && "margin-bottom: 0.2rem"};
   }
   span {
     ${({ size }) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
     ${({ active, size }) => {
-    if (active) {
+    if (active === "true" ) {
       if (size === "small") return "border-bottom: 0.05rem solid white"
       else return "border-bottom: 0.1rem solid white"
     }
   }};
     ${({ active, size }) => {
-    if (active) {
+    if (active === "true" ) {
       if (size === "small") return "padding-bottom: 0.05rem"
       else return "padding-bottom: 0.1rem"
     }

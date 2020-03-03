@@ -9,7 +9,7 @@ import ScribeLogger from "./ScribeLogger"
 
 export const Logger = (props) => {
   // const { interactionAdded, compass} = useContext(CompassContext);
-  const { interactionAdded, interactionUpdated } = useContext(CompassContext);
+  const { interactionUpdated } = useContext(CompassContext);
   // const { user } = useContext(GlobalContext)
 
   // const previousFooRef = useRef(newestInteraction);

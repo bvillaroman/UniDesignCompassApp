@@ -79,8 +79,7 @@ export async function createStep(name_of_step, description_of_step, color, compa
     name_of_step,
     description_of_step,
     stepCompassId: compassId,
-    color,
-    index
+    color
   }
   const newStep = await API.graphql(graphqlOperation(mutations.createStep, { input: stepInfo }));
   return newStep
