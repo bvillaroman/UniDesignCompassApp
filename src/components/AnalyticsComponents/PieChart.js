@@ -1,8 +1,8 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ReactApexChart from 'react-apexcharts';
 
-export default ({labels, data, colors}) => {
-  const [options, setOptions]= useState({})
+export default ({ labels, data, colors }) => {
+  const [options, setOptions] = useState({})
 
   useEffect(() => {
     setOptions({
@@ -10,7 +10,7 @@ export default ({labels, data, colors}) => {
       responsive: [{
         breakpoint: 480,
         options: {
-          
+
         }
       }],
       legend: {
@@ -23,8 +23,8 @@ export default ({labels, data, colors}) => {
 
 
   return (
-    <ReactApexChart 
-      options={options} 
+    <ReactApexChart
+      options={options}
       series={data}
       type="pie"
     />

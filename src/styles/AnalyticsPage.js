@@ -9,8 +9,8 @@ import {
 // Time Line elements
 export const TimeLineContainer = styled(Box)`
   width: 100%;
-  min-height: 15rem;
-  margin : 1rem auto;
+  //min-height: 15rem;
+  //margin : 1rem auto;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -68,8 +68,8 @@ export const PieChartContainer = styled(Box)`
 `;
 
 // Grids and Containers
-export const AnalyticsGrid = styled(Grid)`
-  height: 100%;
+export const AnalyticsGrid = styled.div`
+  // height: 90%;
   width: 100%;
   overflow: auto;
 
@@ -118,5 +118,9 @@ export const HeaderText = styled(Text)`
   line-height: 2.1rem;
 `
 export const SessionSelector = styled(Menu)`
+  width: 100%;
+`
+
+export const AnalyticsContainer = styled.div`
   width: 100%;
 `
