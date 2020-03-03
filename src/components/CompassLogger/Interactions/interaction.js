@@ -10,7 +10,7 @@ import * as Mutation from '../../../utils/mutations'
 
 
 const Interaction = (props) => {
-  const { compass, session, interaction, interactionAdded, newestInteraction, pauseTimer, newestLog, newestDuration } = useContext(CompassContext);
+  const { compass, session, interaction, interactionAdded, newestInteraction, pauseTimer, startTimer, pause, newestLog, newestDuration } = useContext(CompassContext);
   const { step = { name_of_step: "", color: "" }, id } = props.interaction;
 
   const openReviewLog = async (evt) => {
@@ -29,7 +29,15 @@ const Interaction = (props) => {
         await Mutation.updateInteraction(newInteraction)
       }
       navigate(`/Logger/?c=${compass.id}&s=${session.id}&i=${id}`)
+    } else if (newestInteraction.id === id){
+      if(pause){
+        startTimer()
+      } else {
+        pauseTimer()
+      }
+
     }
+
   }
 
   const duration = newestInteraction.id === id ? newestDuration : props.interaction.duration
