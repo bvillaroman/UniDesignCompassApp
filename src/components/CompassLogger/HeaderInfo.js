@@ -59,7 +59,7 @@ const HeaderInfo = () => {
   return (
     <HeaderInfoContainer >
       <Title>
-        ProjectDetails
+        Project Details
       </Title>
 
       <ReactJoyride
