@@ -3,12 +3,12 @@ import styled from "styled-components"
 import { navigate } from "gatsby"
 
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
-import { GlobalButton } from "../../../styles/global"
 
 import { CompassContext } from "../../../context/CompassPage/context"
 import { GlobalContext } from "../../../context/context"
 import { createSession } from '../../../utils/mutations'
 import { dateFormatter } from "../../../utils/translateTime"
+import BreakModal from "../../../components/ModalComponents/BreakModal"
 
 import Step from "./Step"
 
@@ -19,6 +19,7 @@ export const Wheel = (props) => {
   const scribe = compass.scribe.email === user.email
 
   const [steps, setSteps] = useState([])
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     if (session.hasOwnProperty("compass")) {
@@ -67,7 +68,7 @@ export const Wheel = (props) => {
           <LoggerHeaderText>{compass.name_of_compass}</LoggerHeaderText>
 
           <LoggerHeaderButtonContainer >
-            {scribe ? <GlobalButton onClick={onBreak} label="Break" /> : ""}
+            {scribe ? <BreakModal show={show} setShow={setShow} onClick={onBreak}/> : ""}
           </LoggerHeaderButtonContainer>
         </LoggerHeaderContainer>
 
