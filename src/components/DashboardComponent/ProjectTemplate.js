@@ -10,6 +10,12 @@ const ProjectTemplate = (props) => {
 
   const defaultCompass = [
     {
+      index: 0,
+      title: "Pause",
+      description: "Pausing the process",
+      color: "#2d3436"
+    },
+    {
       index: 1,
       title: "Grasp Challenge",
       description: "Understanding the challenge/ problem ",
