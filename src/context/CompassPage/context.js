@@ -4,6 +4,8 @@ import CompassReducer, {
   START_TIMER,
   UPDATE_COMPASS, 
   UPDATE_SESSION,
+  PAUSE_SESSION,
+  CONTINUE_SESSION,
   UPDATE_NEWEST_LOG,
   UPDATE_NEWEST_DURATION,
   ADD_INTERACTION,
@@ -32,7 +34,8 @@ export const initialState = {
   time: 0,
   interactionAdded: false,
   interactionUpdated: false,
-  pause: false
+  pause: false,
+  sessionPaused: false
 }
 
 export const CompassProvider = ({children}) => {
@@ -45,6 +48,8 @@ export const CompassProvider = ({children}) => {
         increaseTimer: () => dispatch({type: INCREASE_TIMER}),
         updateCompass: (compass) => dispatch({type: UPDATE_COMPASS, payload: compass}),
         updateSession: (session) => dispatch({type: UPDATE_SESSION, payload: session}),
+        pauseSession: () => dispatch({type: PAUSE_SESSION}),
+        continueSession: () => dispatch({type: CONTINUE_SESSION}),
         addInteraction: (interaction) => dispatch({type: ADD_INTERACTION, payload: interaction}),
         updateNewestLog: (log) => dispatch({type: UPDATE_NEWEST_LOG, payload: log}),
         updateNewestDuration: (duration) => dispatch({type: UPDATE_NEWEST_DURATION, payload: duration}),
