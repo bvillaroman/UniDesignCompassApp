@@ -7,7 +7,7 @@ import { startInteraction, updateInteraction } from "../../../utils/mutations"
 import { GlobalContext } from "../../../context/context";
 
 export const PauseButton = ({ activeStep = {}, setLoading }) => {
-  const { session, addInteraction, interaction, compass, newestInteraction, interactionAdded, pauseTimer } = useContext(CompassContext)
+  const { session, addInteraction, interaction, compass, newestInteraction, interactionAdded, pauseTimer, newestLog, newestDuration } = useContext(CompassContext)
   const { user } = useContext(GlobalContext)
 
   const [disableStep, setDisableStep] = useState(false);
@@ -33,9 +33,9 @@ export const PauseButton = ({ activeStep = {}, setLoading }) => {
           pauseTimer()
           const newInteraction = {
             id : newestInteraction.id,
-            log_content: " ",
-            duration: 0
-          }          
+            log_content: newestLog ? newestLog : " ",
+            duration: newestDuration ? newestDuration : 0
+          }               
           updateInteraction(newInteraction)
             .then((res) => {
               startInteraction(session.id, id)

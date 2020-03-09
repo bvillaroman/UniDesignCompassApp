@@ -25,8 +25,6 @@ const CompassPage = (props) => {
     clearInteraction,
     newestInteraction, 
     addInteraction,
-    continueSession, 
-    pauseSession
   } = useContext(CompassContext);
   const [loading, setLoading] = useState(true)
 
@@ -145,10 +143,8 @@ const CompassPage = (props) => {
         .then((res) => {
           if(newestInteraction.id === res.data.getInteraction.id){
             addInteraction(res.data.getInteraction);
-            continueSession()
           } else {
             updateInteraction(res.data.getInteraction);
-            continueSession()
           }
         })
         .catch((err) => {

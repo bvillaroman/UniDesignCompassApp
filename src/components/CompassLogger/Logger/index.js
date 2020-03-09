@@ -36,7 +36,7 @@ export const Logger = (props) => {
   return (
     <LoggerGrid className="logger-grid-help">
       { 
-        sessionPaused ? <PauseLogger /> : (
+        sessionPaused ? <PauseLogger interaction={interaction}/> : (
           ( 
             interactionUpdated ? <EditLogger setLoading={props.setLoading} loading={props.loading} /> 
             : <ScribeLogger setLoading={props.setLoading} loading={props.loading} />
