@@ -5,7 +5,6 @@ import {dateTimeFormatter} from "../../../utils/translateTime"
 
 export const EditingLogger = (props) => {
 
-  console.log((props.interaction.createdAt))
   return (
     <LoggerContainer>
       <div>

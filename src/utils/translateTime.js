@@ -41,7 +41,15 @@ export const dateTimeFormatter = (date) => {
   const hours = newDate.getHours() % 12
   const minute = newDate.getMinutes()
 
-  return  `${monthNames[monthIndex]} ${day}, ${year} ${hours}:${minute} ${newDate.getHours() > 12 ? "P.M." :"A.M."}`;
+  return  `${monthNames[monthIndex]} ${day}, ${year} ${hours}:${minute < 10 ? `0${minute}` : minute} ${newDate.getHours() > 12 ? "P.M." :"A.M."}`;
+}
+
+export const timeFormatter = (date) => {
+  const newDate = new Date(date)
+  const hours = newDate.getHours() % 12
+  const minute = newDate.getMinutes()
+
+  return  `${hours}:${minute < 10 ? `0${minute}` : minute} ${newDate.getHours() > 12 ? "P.M." :"A.M."}`;
 }
 
 export const timeSorter = (a, b) => {
