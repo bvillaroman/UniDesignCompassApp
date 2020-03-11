@@ -112,7 +112,7 @@ const CompassLinkStyles = styled(Link)`
     }
   }};
     ${({ active, size }) => {
-    if (active === "true" ) {
+    if (active === "true") {
       if (size === "small") return "padding-bottom: 0.05rem"
       else return "padding-bottom: 0.1rem"
     }
@@ -140,18 +140,18 @@ const CompassLinkStyles2 = styled.div`
     ${({ size }) => size === "small" && "height: 1.5rem"};
     ${({ size }) => size === "small" && "width: 1.5rem"};
     ${({ size }) => size === "small" && "margin-left: 1.5rem"};
-    ${({ active }) => active === "true"  && "margin-bottom: 0.2rem"};
+    ${({ active }) => active === "true" && "margin-bottom: 0.2rem"};
   }
   span {
     ${({ size }) => size === "small" ? "margin-left: 0.5rem;" : "margin-left: 0.8rem;"};
     ${({ active, size }) => {
-    if (active === "true" ) {
+    if (active === "true") {
       if (size === "small") return "border-bottom: 0.05rem solid white"
       else return "border-bottom: 0.1rem solid white"
     }
   }};
     ${({ active, size }) => {
-    if (active === "true" ) {
+    if (active === "true") {
       if (size === "small") return "padding-bottom: 0.05rem"
       else return "padding-bottom: 0.1rem"
     }
@@ -174,7 +174,7 @@ export const SignOutButton = styled(Button)`
   font-weight: 560;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem 0;
+  // margin: 0.5rem 0;
 `
 
 export const HamburgerIcon = styled.label`

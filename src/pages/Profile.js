@@ -89,10 +89,10 @@ const ProfilePage = (props) => {
       <FormContainter>
         <FormName onSubmit={handleSubmit} >
           <FormNameLabel> First Name: </FormNameLabel>
-          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} />
+          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} required />
 
           <FormNameLabel> Last Name: </FormNameLabel>
-          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
+          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} required />
 
           {/* <NameButton type="submit" >Change Name</NameButton> */}
           <ProfileButton type="submit" primary label="Submit" />
