@@ -6,6 +6,7 @@ import { Menu } from 'grommet';
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 import * as Mutation from '../../../utils/mutations'
+import { timeSorter } from "../../../utils/translateTime"
 import Attachment from "./Attachment"
 import { Storage } from 'aws-amplify'
 import uuid from 'uuid/v4'
@@ -18,6 +19,7 @@ const Attachments = (props) => {
   const { user } = useContext(GlobalContext);
 
   const [attachments, setAttachments] = useState([]);
+  const [allAttachments, setAllAttachments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
@@ -25,16 +27,14 @@ const Attachments = (props) => {
 
   const reader = readers.find((r) => r.email === user.email)
 
-  // let allInteractions = sessions
-  // .map(item => item.interactions.items)
-  // .flat().filter((interaction) => (interaction.duration > 0))
+  // setup interaction attachments array
   useEffect(() => {
 
     if (interaction.hasOwnProperty("id")) {
       let arrAttachment = []
       setLoading(false)
       if (interaction.attachments.items.length > 0) {
-        interaction.attachments.items.map((attachment, i) => arrAttachment.push({ ...attachment }))
+        interaction.attachments.items.map((attachment) => arrAttachment.push({ ...attachment }))
       }
 
       setAttachments(arrAttachment)
@@ -43,44 +43,33 @@ const Attachments = (props) => {
     // eslint-disable-next-line
   }, [interaction])
 
+
+  // set up for for all attachments array
   useEffect(() => {
+    let tempArray = session.interactions.items.map(interaction => {
 
-    if (interaction.hasOwnProperty("id")) {
-      setShowAll(false)
-    }
+      if (interaction.attachments.items && interaction.attachments.items.length > 0) {
+        // get all attachments
+        let allAttachments = interaction.attachments.items.flat()
+        // assign their step to them
+        return allAttachments.map(attachment => ({ ...attachment }));
+      } else return null;
+    })
 
+    tempArray = tempArray.filter(i => i).flat()
+
+    setAllAttachments(tempArray)
+
+    // eslint-disable-next-line
+  }, [session])
+
+  useEffect(() => {
+    if (interaction.hasOwnProperty("id")) setShowAll(false)
     // eslint-disable-next-line
   }, [interaction.id])
 
-  // for all attachments
-  useEffect(() => {
-    let array = []
-    if (showAll && session.hasOwnProperty("id")) {
-      setLoading(false)
-      let tempArray = session.interactions.items.map(interaction => {
-
-        if (interaction.attachments.items && interaction.attachments.items.length > 0) {
-          // get all attachments
-          let allAttachments = interaction.attachments.items.flat()
-          // assign their step to them
-          return allAttachments.map(attachment => ({ ...attachment }));
-        } else return null;
-      })
-      array = tempArray.filter(i => i).flat()
-    } else if (!showAll && interaction.hasOwnProperty("id")) {
-      setLoading(false)
-      if (interaction.attachments.items.length > 0) {
-        interaction.attachments.items.map((attachment, i) => {
-          return array.push({ ...attachment })
-        })
-      }
-    }
-    setAttachments(array)
-    // eslint-disable-next-line
-  }, [showAll, interaction, session])
-
-
   // handle uploading an attachment
+  
   const handleUpload = async (event) => {
     event.preventDefault()
     const { target: { files } } = event
@@ -101,7 +90,8 @@ const Attachments = (props) => {
         Mutation.uploadAttachment({ ...fileForUpload, attachmentInteractionId: interaction.id })
           .then((res) => {
             setLoading(false)
-            setAttachments([res.data.createAttachment, ...attachments])
+            setAttachments([res.data.createAttachment, ...attachments].sort(timeSorter))
+            setAllAttachments([res.data.createAttachment, ...allAttachments].sort(timeSorter))
 
           })
       } catch (err) {
@@ -130,8 +120,8 @@ const Attachments = (props) => {
       </LoggerHeaderContainer>
       <SessionAttachments>
         {
-          attachments.length > 0 &&
-          attachments.map((item) => (<Attachment key={item.key} attachment={item} />))
+          showAll ? allAttachments.length > 0 && allAttachments.map((item) => (<Attachment key={item.key} attachment={item} />))
+                  : attachments.length > 0 && attachments.map((item) => (<Attachment key={item.key} attachment={item} />))
         }
       </SessionAttachments>
     </AttachmentsContainer>
