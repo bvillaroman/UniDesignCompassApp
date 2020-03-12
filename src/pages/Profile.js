@@ -100,13 +100,13 @@ const ProfilePage = (props) => {
         <br />
         <FormPassword onSubmit={submitPassword}>
           <FormPasswordLabel> Old Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} value={oldPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} value={oldPassword} required />
 
           <FormPasswordLabel> New Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} value={newPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} value={newPassword} required />
 
           <FormPasswordLabel> Confirm New Password: </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} required />
 
           {/* <PasswordButton type="submit" disabled={newPassword !== confirmPassword} >Change Password</PasswordButton> */}
           <ProfileButton type="submit" primary label="Submit" disabled={newPassword !== confirmPassword} />

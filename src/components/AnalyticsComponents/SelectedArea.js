@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Loadable from "@loadable/component"
 import TimeLine from './TimeLine';
-// import {
-//   SelectedArea,
-//   PieChartContainer,
-//   ContainerHeader,
-//   HeaderText,
-//   SessionSelector,
-// } from '../../styles/AnalyticsPage';
 
 import styled from "styled-components"
 import {
   Box,
-  Grid,
   Text,
   Menu
 } from "grommet"
@@ -32,29 +24,49 @@ export default ({ sessions = [], steps = [] }) => {
     const filteredSessions = sessions.length ? sessions.filter((session) => (session.interactions && session.interactions.items.length > 0)) : []
     if (filteredSessions.length > 0) {
 
-      let arrOfSessions = filteredSessions.map((item, index) => ({
+      let combinedInteractions = sessions
+        .map(item => item.interactions.items)
+        .flat().filter((interaction) => (interaction.duration > 0))
+
+      let arrOfSessions1 = filteredSessions.map((item, index) => ({
         onClick: () => {
           setSelectedSession(item)
-          setSelectedSessionIndex(index)
+          setSelectedSessionIndex(index + 1)
         },
         label: item.name_of_session
       }))
 
-      let session = filteredSessions[selectedSessionIndex]
+      let arrOfSessions2 = [{
+        onClick: () => {
+          setSelectedSession(combinedInteractions)
+          setSelectedSessionIndex(0)
+        },
+        label: 'All Sessions'
+      }]
 
+      let arrOfSessions = [...arrOfSessions1, ...arrOfSessions2]
+
+      let session = selectedSessionIndex === 0 ? {
+        interactions: {
+          items: combinedInteractions
+        },
+        compass: {
+          steps: {
+            items: filteredSessions[0].compass.steps.items
+          }
+        }
+      } : filteredSessions[selectedSessionIndex - 1]
 
       let allInteractions = session.interactions.items
         .flat()
         .filter((interaction) => (interaction.duration > 0))
-
 
       const parsedInteractions = session.compass.steps.items.map((step) => ({
         id: step.id,
         title: step.name_of_step,
         color: step.color,
         value: 0
-      })
-      );
+      }));
 
       parsedInteractions.forEach(step => {
         let temp = allInteractions.filter(interaction => interaction.step.id === step.id)
@@ -63,6 +75,7 @@ export default ({ sessions = [], steps = [] }) => {
       })
 
       const filteredData = parsedInteractions.filter((interaction) => (interaction.value > 0))
+
       setFormatterSessions(arrOfSessions)
       setSelectedSession(session)
       setInteractions(allInteractions)
@@ -78,7 +91,7 @@ export default ({ sessions = [], steps = [] }) => {
     <SelectedArea gridArea='selected'>
       <ContainerHeader>
         <SessionSelector
-          label={(<HeaderText> {selectedSession.name_of_session} </HeaderText>)}
+          label={(<HeaderText> {selectedSession.name_of_session !== undefined ? selectedSession.name_of_session : 'All Sessions'} </HeaderText>)}
           items={formattedSessions}
           dropAlign={{ top: "bottom" }}
         />
