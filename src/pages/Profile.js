@@ -89,10 +89,10 @@ const ProfilePage = (props) => {
       <FormContainter>
         <FormName onSubmit={handleSubmit} >
           <FormNameLabel> First Name: </FormNameLabel>
-          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} />
+          <FormNameInput type="text" name="firstName" placeholder={firstName} value={newFirstName} onChange={e => { setNewFirstName(e.target.value) }} required />
 
           <FormNameLabel> Last Name: </FormNameLabel>
-          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} />
+          <FormNameInput type="text" name="lastName" placeholder={lastName} value={newLastName} onChange={e => { setNewLastName(e.target.value) }} required />
 
           {/* <NameButton type="submit" >Change Name</NameButton> */}
           <ProfileButton type="submit" primary label="Submit" />
@@ -100,13 +100,13 @@ const ProfilePage = (props) => {
         <br />
         <FormPassword onSubmit={submitPassword}>
           <FormPasswordLabel> Old Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} value={oldPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='Old Password' onChange={e => setOldPassword(e.target.value)} value={oldPassword} required />
 
           <FormPasswordLabel> New Password:  </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} value={newPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='New Password' onChange={e => setNewPassword(e.target.value)} value={newPassword} required />
 
           <FormPasswordLabel> Confirm New Password: </FormPasswordLabel>
-          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} />
+          <FormPasswordInput type="password" password="password" placeholder='Confirm New Password' onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword} required />
 
           {/* <PasswordButton type="submit" disabled={newPassword !== confirmPassword} >Change Password</PasswordButton> */}
           <ProfileButton type="submit" primary label="Submit" disabled={newPassword !== confirmPassword} />

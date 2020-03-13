@@ -10,6 +10,7 @@ import { createSession } from '../../../utils/mutations'
 import { dateFormatter } from "../../../utils/translateTime"
 import BreakModal from "../../../components/ModalComponents/BreakModal"
 
+import PauseButton from "./Pause"
 import Step from "./Step"
 
 export const Wheel = (props) => {
@@ -19,6 +20,7 @@ export const Wheel = (props) => {
   const scribe = compass.scribe.email === user.email
 
   const [steps, setSteps] = useState([])
+  const [pause, setPause] = useState({})
   const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -36,6 +38,9 @@ export const Wheel = (props) => {
       })
       );
 
+      setPause(arr[0])
+      arr.shift()
+      
       arr.forEach(step => {
 
         let temp = interactions.filter(interaction => interaction.step && (interaction.step.id === step.id))
@@ -54,7 +59,7 @@ export const Wheel = (props) => {
     const hour = today.getHours()
     const minute = today.getMinutes()
 
-    createSession(`Session on ${dateFormatter(today)} at ${hour < 13 ? hour : hour % 12}:${minute} ${hour > 12 ? "p.m." : "a.m."}`, " ", compass.id)
+    createSession(`Session on ${dateFormatter(today)} at ${hour < 13 ? hour : hour % 12}:${minute < 10 ? `0${minute}` : minute} ${hour > 12 ? "p.m." : "a.m."}`, " ", compass.id)
       .then((result) => {
         navigate(`/Logger/?c=${compass.id}&s=${result.data.createSession.id}`)
       })
@@ -74,6 +79,15 @@ export const Wheel = (props) => {
 
       </CSTitle>
       <CompassWheel className="compass-wheel-help">
+        {
+          pause.hasOwnProperty("id") && (
+            <PauseButton 
+              activeStep={pause}
+              index={0}
+              setLoading={props.setLoading}
+            />
+          )
+        }
         {
           steps.length && steps.map((item, key) => {
             return (

@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import styled from "styled-components"
 
 import Interaction from "./interaction"
+import Pause from "./paused"
+
 import { CompassContext } from "../../../context/CompassPage/context"
 
 const Interactions = (props) => {
@@ -34,7 +36,16 @@ const Interactions = (props) => {
         {
           interactions ? interactions.map((item, key) => {
             if (item.step) {
-              return (
+              if(item.step.name_of_step === "Pause") {
+                return (
+                  <Pause
+                    key={key}
+                    interaction={item}
+                    isLastStep={key === 0}
+                    setLoading={props.setLoading}
+                  />
+                )
+              } else return (
                 <Interaction
                   key={key}
                   interaction={item}

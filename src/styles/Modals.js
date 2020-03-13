@@ -30,9 +30,9 @@ export const ReviewLogHeader = styled(Box)`
   justify-content: space-between;
 `;
 export const ReviewLogTitle = styled.h4`
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   padding: 0;
-  width: 50%;
+  // width: 50%;
   color: ${props => props.color ? props.color : '#5567FD'};
   line-height: 1.3rem;
   text-align: left;

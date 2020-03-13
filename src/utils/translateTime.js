@@ -26,6 +26,32 @@ export const dateFormatter = (date) => {
   return  monthNames[monthIndex] + " " + day + ', ' + year;
 }
 
+export const dateTimeFormatter = (date) => {
+  const newDate = new Date(date)
+  const monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  const day = newDate.getDate();
+  const monthIndex = newDate.getMonth();
+  const year = newDate.getFullYear();
+  const hours = newDate.getHours() % 12
+  const minute = newDate.getMinutes()
+
+  return  `${monthNames[monthIndex]} ${day}, ${year} ${hours}:${minute < 10 ? `0${minute}` : minute} ${newDate.getHours() > 12 ? "P.M." :"A.M."}`;
+}
+
+export const timeFormatter = (date) => {
+  const newDate = new Date(date)
+  const hours = newDate.getHours() % 12
+  const minute = newDate.getMinutes()
+
+  return  `${hours}:${minute < 10 ? `0${minute}` : minute} ${newDate.getHours() > 12 ? "P.M." :"A.M."}`;
+}
+
 export const timeSorter = (a, b) => {
   if (a.createdAt > b.createdAt) {
     return -1

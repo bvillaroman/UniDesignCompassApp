@@ -7,6 +7,8 @@ export const UPDATE_NEWEST_LOG = "UPDATE_NEWEST_LOG";
 export const UPDATE_NEWEST_DURATION = "UPDATE_NEWEST_DURATION";
 export const UPDATE_COMPASS = "UPDATE_COMPASS";
 export const UPDATE_SESSION = "UPDATE_SESSION";
+export const PAUSE_SESSION = "PAUSE_SESSION";
+export const CONTINUE_SESSION = "CONTINUE_SESSION";
 export const UPDATE_INTERACTION = "UPDATE_INTERACTION";
 export const ADD_INTERACTION = "ADD_INTERACTION";
 export const UPDATE_INTERACTIONS = "UPDATE_INTERACTIONS";
@@ -16,6 +18,7 @@ export const CLEAR_SESSION = "CLEAR_SESSION";
 export const CLEAR_INTERACTION = "CLEAR_INTERACTION";
 export const CLEAR_INTERACTIONS = "CLEAR_INTERACTION";
 export const CLEAR_TIME = "CLEAR_TIME";
+
 
 const updateCompass = (newCompass, state) => ({ ...state, compass: newCompass})
 const updateSession = (newSession, state) => ({ ...state, session: newSession})
@@ -120,6 +123,16 @@ export default (state,{type,payload}) => {
         ...state, 
         newestLog: payload
       }  
+    case PAUSE_SESSION:
+      return {
+        ...state,
+        sessionPaused: true
+      }
+    case CONTINUE_SESSION:
+      return {
+        ...state,
+        sessionPaused: false
+      }
     case UPDATE_NEWEST_DURATION:
       return updateNewestDuration(payload, state);
     case UPDATE_COMPASS:

@@ -28,6 +28,9 @@ export const TemplateContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
   width: 123.188px;
+  @media (max-width: 767px){
+    padding: 0;
+  }
 `;
 export const ProjectTypeDetails = styled.div`
   cursor: pointer;

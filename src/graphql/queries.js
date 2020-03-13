@@ -333,7 +333,7 @@ export const getUser = `query GetUser($id: ID!) {
                 nextToken
               }
             }
-            compass {
+          compass {
               id
               name_of_compass
               description_of_compass
@@ -546,7 +546,7 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -953,7 +953,7 @@ export const getUser = `query GetUser($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -1327,7 +1327,7 @@ export const getUser = `query GetUser($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -1701,7 +1701,7 @@ export const getUser = `query GetUser($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -2268,7 +2268,7 @@ export const getUser = `query GetUser($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -2538,7 +2538,7 @@ export const listUsers = `query ListUsers(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -3234,7 +3234,7 @@ export const listUsers = `query ListUsers(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -3472,7 +3472,7 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -4168,7 +4168,7 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -5590,7 +5590,7 @@ export const getTeacherCompasses = `query GetTeacherCompasses($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -6676,7 +6676,7 @@ export const listTeacherCompassess = `query ListTeacherCompassess(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -6946,7 +6946,7 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -7642,7 +7642,7 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -9064,7 +9064,7 @@ export const getMemberCompasses = `query GetMemberCompasses($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -10150,7 +10150,7 @@ export const listMemberCompassess = `query ListMemberCompassess(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -10420,7 +10420,7 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -11116,7 +11116,7 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -12538,7 +12538,7 @@ export const getReaderCompasses = `query GetReaderCompasses($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -13624,7 +13624,7 @@ export const listReaderCompassess = `query ListReaderCompassess(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -13895,7 +13895,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -14591,7 +14591,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -14819,7 +14819,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -15515,7 +15515,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -15889,7 +15889,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -16263,7 +16263,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -16637,7 +16637,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -16865,7 +16865,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -16931,14 +16931,14 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
           }
           nextToken
         }
-        interactions {
+        interactions (limit: 100){
           items {
             id
             duration
@@ -16960,7 +16960,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -17197,7 +17197,7 @@ export const getCompass = `query GetCompass($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -18628,7 +18628,7 @@ export const listCompasss = `query ListCompasss(
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -20170,7 +20170,7 @@ export const getSession = `query GetSession($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -20580,7 +20580,7 @@ export const getSession = `query GetSession($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -20611,7 +20611,7 @@ export const getSession = `query GetSession($id: ID!) {
       }
       nextToken
     }
-    interactions {
+    interactions (limit: 100){
       items {
         id
         duration
@@ -20739,7 +20739,7 @@ export const getSession = `query GetSession($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions(limit: 100) {
             items {
               id
               duration
@@ -21460,7 +21460,7 @@ export const listSessions = `query ListSessions(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -21624,7 +21624,7 @@ export const listSessions = `query ListSessions(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -21638,7 +21638,7 @@ export const listSessions = `query ListSessions(
         }
         nextToken
       }
-      interactions {
+      interactions (limit: 100){
         items {
           id
           duration
@@ -21692,7 +21692,7 @@ export const listSessions = `query ListSessions(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -22320,7 +22320,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -22484,7 +22484,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -22498,7 +22498,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
         }
         nextToken
       }
-      interactions {
+      interactions (limit: 100){
         items {
           id
           duration
@@ -22552,7 +22552,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -23171,7 +23171,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -23288,7 +23288,7 @@ export const getInteraction = `query GetInteraction($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -23579,7 +23579,7 @@ export const listInteractions = `query ListInteractions(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -23645,14 +23645,14 @@ export const listInteractions = `query ListInteractions(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
           }
           nextToken
         }
-        interactions {
+        interactions (limit: 100){
           items {
             id
             duration
@@ -23674,7 +23674,7 @@ export const listInteractions = `query ListInteractions(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -23908,7 +23908,7 @@ export const listInteractions = `query ListInteractions(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -23959,7 +23959,7 @@ export const listInteractions = `query ListInteractions(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -25402,7 +25402,7 @@ export const getStep = `query GetStep($id: ID!) {
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -26094,7 +26094,7 @@ export const listSteps = `query ListSteps(
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -26367,7 +26367,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -26433,14 +26433,14 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
           }
           nextToken
         }
-        interactions {
+        interactions (limit: 100){
           items {
             id
             duration
@@ -26462,7 +26462,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -26696,7 +26696,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -26747,7 +26747,7 @@ export const getAttachment = `query GetAttachment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -26926,7 +26926,7 @@ export const listAttachments = `query ListAttachments(
             }
             nextToken
           }
-          interactions {
+          interactions (limit: 100){
             items {
               id
               duration
@@ -27306,7 +27306,7 @@ export const getComment = `query GetComment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -28002,7 +28002,7 @@ export const getComment = `query GetComment($id: ID!) {
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -28573,7 +28573,7 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -28737,7 +28737,7 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -28751,7 +28751,7 @@ export const getComment = `query GetComment($id: ID!) {
         }
         nextToken
       }
-      interactions {
+      interactions (limit: 100){
         items {
           id
           duration
@@ -28805,7 +28805,7 @@ export const getComment = `query GetComment($id: ID!) {
               }
               nextToken
             }
-            interactions {
+            interactions (limit: 100){
               items {
                 id
                 duration
@@ -29487,7 +29487,7 @@ export const listComments = `query ListComments(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
@@ -29553,14 +29553,14 @@ export const listComments = `query ListComments(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
           }
           nextToken
         }
-        interactions {
+        interactions (limit: 100){
           items {
             id
             duration
@@ -29582,7 +29582,7 @@ export const listComments = `query ListComments(
               comments {
                 nextToken
               }
-              interactions {
+              interactions (limit: 100){
                 nextToken
               }
             }
