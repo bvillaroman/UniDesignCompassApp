@@ -10,7 +10,7 @@ import { createSession } from '../../../utils/mutations'
 import { dateFormatter } from "../../../utils/translateTime"
 import BreakModal from "../../../components/ModalComponents/BreakModal"
 
-import PauseButton from "./Pause"
+import PauseButton from "./pause"
 import Step from "./Step"
 
 export const Wheel = (props) => {
@@ -72,9 +72,9 @@ export const Wheel = (props) => {
         <LoggerHeaderContainer>
           <LoggerHeaderText>{compass.name_of_compass}</LoggerHeaderText>
 
-          <LoggerHeaderButtonContainer >
+          {/* <LoggerHeaderButtonContainer >
             {scribe ? <BreakModal show={show} setShow={setShow} onClick={onBreak}/> : ""}
-          </LoggerHeaderButtonContainer>
+          </LoggerHeaderButtonContainer> */}
         </LoggerHeaderContainer>
 
       </CSTitle>
