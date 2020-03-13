@@ -35,7 +35,7 @@ const AccountBar = props => {
       </LinkContainer>
       <LinkContainer >
         <CompassLink to="/Profile"><User /><span>Profile</span></CompassLink>
-        <SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton>
+        <CompassLink to="/" ><SignOutButton onClick={e => signOut()}><Logout color="black" /><Span>Sign out</Span></SignOutButton></CompassLink>
       </LinkContainer>
 
     </CompassSideBar>

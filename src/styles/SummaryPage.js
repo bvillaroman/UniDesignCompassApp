@@ -250,6 +250,7 @@ export const SummaryTableConatiner = styled.div`
   display: block;
   box-shadow: 0 1px 3px 0 #d2d4d6;
   background: white;
+  overflow-x: auto;
 `;
 
 export const SummarySessionName = styled.div`

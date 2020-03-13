@@ -122,6 +122,9 @@ export const TemplateContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 1rem;
+  @media (max-width: 767px){
+    padding: 0;
+  }
 `;
 export const ProjectTypeDetails = styled.div`
   cursor: pointer;
