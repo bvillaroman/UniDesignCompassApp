@@ -1,10 +1,10 @@
 import React from "react"
 import Enzyme, { shallow } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
-import LandingPage from "./LandingPage"
-import { LandingPageContainer } from "../../styles/LandingPage"
-import NavBar from "./NavBar"
-import MainView from "./MainView"
+import LandingPage from "../LandingPage"
+import { LandingPageContainer } from "../../../styles/LandingPage"
+import NavBar from "../NavBar"
+import MainView from "../MainView"
 
 Enzyme.configure({ adapter: new Adapter() })
 

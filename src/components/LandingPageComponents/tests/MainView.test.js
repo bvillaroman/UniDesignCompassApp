@@ -1,15 +1,15 @@
 import React from "react"
 import Enzyme, { shallow } from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
-import MainView from "./MainView"
+import MainView from "../MainView"
 import {
   MainViewContainer,
   MainContent,
   AuthContainer,
   AboutContainer,
   ContactContainer,
-} from "../../styles/LandingPage"
-import Auth from "../../components/AuthComponent"
+} from "../../../styles/LandingPage"
+import Auth from "../../AuthComponent"
 
 Enzyme.configure({ adapter: new Adapter() })
 
