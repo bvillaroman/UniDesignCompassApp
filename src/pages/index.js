@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import Landing from "../components/LandingPageComponents"
+import React, { useContext } from "react"
+import { Landing } from "../components/LandingPageComponents/"
 import Dashboard from "../components/DashboardComponent"
 import { GlobalContext } from "../context/context"
 import { DashboardProvider } from "../context/DashboardPage/context"
