@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components"
 import * as Icons from 'grommet-icons';
 import { Menu } from 'grommet';
+import { Storage } from 'aws-amplify'
+import { v4 as uuidv4 } from 'uuid';
 
 import { LoggerHeaderText, LoggerHeaderContainer, LoggerHeaderButtonContainer } from "../style"
 import { Loader } from "../../../styles/layout"
 import * as Mutation from '../../../utils/mutations'
 import { timeSorter } from "../../../utils/translateTime"
 import Attachment from "./Attachment"
-import { Storage } from 'aws-amplify'
-import uuid from 'uuid/v4'
 import config from '../../../aws-exports'
 import { CompassContext } from "../../../context/CompassPage/context"
 import { GlobalContext } from "../../../context/context"
@@ -78,7 +78,7 @@ const Attachments = (props) => {
       const { name: fileName, type: mimeType } = image
       const fileForUpload = {
         bucket: config.aws_user_files_s3_bucket,
-        key: `${uuid()}${fileName}`,
+        key: `${uuidv4()}${fileName}`,
         region: config.aws_user_files_s3_bucket_region,
         name: fileName,
         type: mimeType,
