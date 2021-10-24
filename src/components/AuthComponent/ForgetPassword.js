@@ -23,10 +23,9 @@ export default ({ switchToSignUp, switchToSignIn}) => {
   const [submitPassword,changeToSubmitPassword] = useState(false)
 
   const onChange = event => {
-    const { target: { value, name } } = event;
+    console.log(event)
     setValues({
-      ...form,
-      [name]: value
+      ...event
     })
     setError('')
     setLoading(false)

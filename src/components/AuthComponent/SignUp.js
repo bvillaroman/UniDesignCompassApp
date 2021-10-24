@@ -42,10 +42,8 @@ const SignUp = ({switchToSignIn}) => {
 
 
   const onChange = event => {
-    const { target: { value,name } } = event;
     setValues({
-      ...form,
-      [name]: value
+      ...event
     })
     setMessage("")
     setLoading(false)
