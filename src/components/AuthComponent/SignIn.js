@@ -32,10 +32,8 @@ const SignIn = ({ switchToSignUp, switchToForgetPassword }) => {
   const [loading, setLoading] = useState(false)
 
   const onChange = event => {
-    const { target: { value, name } } = event;
     setValues({
-      ...form,
-      [name]: value
+      ...event
     })
     setError('')
     setLoading(false)
